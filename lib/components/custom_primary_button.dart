@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:invesier/constant/color_manger.dart';
 
-class CustomPrimaryButton extends StatelessWidget {
+class CustomPrimaryButton extends StatefulWidget {
   const CustomPrimaryButton({super.key, this.onTap, required this.textColor});
   final void Function()? onTap;
   final Color textColor;
+
+  @override
+  State<CustomPrimaryButton> createState() => _CustomPrimaryButtonState();
+}
+
+class _CustomPrimaryButtonState extends State<CustomPrimaryButton> {
   @override
   Widget build(BuildContext context) {
     final kText = Theme.of(context).textTheme;
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 30),
         padding: EdgeInsets.symmetric(vertical: 11),
@@ -24,7 +30,7 @@ class CustomPrimaryButton extends StatelessWidget {
             'Next',
             style: kText.titleMedium!.copyWith(
               fontWeight: FontWeight.w600,
-              color: textColor,
+              color: widget.textColor,
             ),
           ),
         ),
