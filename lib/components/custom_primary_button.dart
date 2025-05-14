@@ -1,36 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/color_manger.dart';
 
-class CustomPrimaryButton extends StatefulWidget {
-  const CustomPrimaryButton({super.key, this.onTap, required this.textColor});
+class CustomPrimaryButton extends StatelessWidget {
+  const CustomPrimaryButton({
+    super.key,
+    this.onTap,
+    required this.titelColor,
+    required this.titel,
+    this.gradient,
+    this.border,
+  });
   final void Function()? onTap;
-  final Color textColor;
-
-  @override
-  State<CustomPrimaryButton> createState() => _CustomPrimaryButtonState();
-}
-
-class _CustomPrimaryButtonState extends State<CustomPrimaryButton> {
+  final String titel;
+  final BoxBorder? border;
+  final Color titelColor;
+  final Gradient? gradient;
   @override
   Widget build(BuildContext context) {
-    final kText = Theme.of(context).textTheme;
+    final kTextTheme = Theme.of(context).textTheme;
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 30),
         padding: EdgeInsets.symmetric(vertical: 11),
         decoration: BoxDecoration(
+          border: border,
           borderRadius: BorderRadius.circular(60),
-          gradient: LinearGradient(
-            colors: [ColorManger.kEucalyptus, ColorManger.kTurquoiseBlue],
-          ),
+          gradient: gradient,
         ),
         child: Center(
           child: Text(
-            'Next',
-            style: kText.titleMedium!.copyWith(
+            titel,
+            style: kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w600,
-              color: widget.textColor,
+              color: titelColor,
             ),
           ),
         ),

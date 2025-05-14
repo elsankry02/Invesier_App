@@ -4,8 +4,8 @@ import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/constant/image_manger.dart';
 
 @RoutePage()
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
           children: [
             Text(
               textAlign: TextAlign.center,
-              'LoginPage',
+              'SignupPage',
               style: TextStyle(fontSize: 55, color: ColorManger.kPersianRed),
             ),
           ],

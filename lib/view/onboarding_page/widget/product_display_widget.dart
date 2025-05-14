@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/model/onboarding_model.dart';
 
-class ItemsPageWidget extends StatelessWidget {
-  const ItemsPageWidget({super.key, required this.item});
+class ProductDisplayWidget extends StatelessWidget {
+  const ProductDisplayWidget({super.key, required this.item});
 
   final OnboardingModel item;
 

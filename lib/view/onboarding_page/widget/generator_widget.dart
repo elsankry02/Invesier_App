@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/model/onboarding_model.dart';
 
-class GenerateWidget extends StatelessWidget {
-  const GenerateWidget({super.key, required this.currentIndex});
+class GeneratorWidget extends StatelessWidget {
+  const GeneratorWidget({super.key, required this.currentIndex});
 
   final int currentIndex;
 
@@ -15,7 +15,7 @@ class GenerateWidget extends StatelessWidget {
         ...List.generate(items(context).length, (index) {
           return Container(
             margin: EdgeInsets.only(right: 8),
-            width: currentIndex == index ? 25 : 6,
+            width: currentIndex == index ? 30 : 6,
             height: 6,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
