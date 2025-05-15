@@ -13,9 +13,9 @@ class WelcomeDisplayWidget extends StatelessWidget {
     return ListTile(
       title: Column(
         children: [
-          SizedBox(height: h * 0.22),
+          SizedBox(height: h * 0.18),
           SvgPicture.asset(SvgManger.kGroup),
-          SizedBox(height: h * 0.19),
+          SizedBox(height: h * 0.18),
           //! titel
           Text(
             'Compete for Rewards',

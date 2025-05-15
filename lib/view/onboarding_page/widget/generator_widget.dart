@@ -17,7 +17,7 @@ class GeneratorWidget extends StatelessWidget {
           final w = MediaQuery.of(context).size.width;
           return Container(
             margin: EdgeInsets.only(right: 8),
-            width: currentIndex == index ? w * 0.060 : h * 0.006,
+            width: currentIndex == index ? w * 0.060 : w * 0.012,
             height: h * 0.006,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
