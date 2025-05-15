@@ -14,8 +14,10 @@ class SkipWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         GestureDetector(
+          //! onTap
           onTap: onTap,
           child: Text(
+            //! skip
             skip,
             style: appTextTheme.titleMedium!.copyWith(
               color: ColorManger.kWhite,

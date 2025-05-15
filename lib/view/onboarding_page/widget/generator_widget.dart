@@ -13,10 +13,12 @@ class GeneratorWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ...List.generate(items(context).length, (index) {
+          final h = MediaQuery.of(context).size.height;
+          final w = MediaQuery.of(context).size.width;
           return Container(
             margin: EdgeInsets.only(right: 8),
-            width: currentIndex == index ? 30 : 6,
-            height: 6,
+            width: currentIndex == index ? w * 0.060 : h * 0.006,
+            height: h * 0.006,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color:

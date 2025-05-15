@@ -25,19 +25,13 @@ List<OnboardingModel> items(BuildContext context) {
       titel: 'Practice with Virtual Currency',
       subTitel:
           'Gain experience through simulated trading. No risks, just rewards.',
-      image: SvgManger.kGroup,
+      image: SvgManger.kLogo,
     ),
     OnboardingModel(
       titel: 'Join Chats & Live Streams',
       subTitel:
           'Talk to experts, join communities, and go live to share your investment journey',
-      image: SvgManger.kSvgexport,
-    ),
-    OnboardingModel(
-      titel: 'Compete for Rewards',
-      subTitel:
-          'Climb the leaderboard, unlock perks, and earn real-world opportunities',
-      image: SvgManger.kGroup,
+      image: SvgManger.kLogo,
     ),
   ];
 }

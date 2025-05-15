@@ -11,14 +11,15 @@ class ProductDisplayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final kText = Theme.of(context).textTheme;
-
+    final h = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        SizedBox(height: 180),
-        // Svg
-        SvgPicture.asset(item.image, fit: BoxFit.cover, height: 110),
-        SizedBox(height: 200),
-        // Titel
+        SizedBox(height: h * 0.24),
+        //! Svg
+        SvgPicture.asset(item.image, fit: BoxFit.cover),
+        //
+        SizedBox(height: h * 0.250),
+        //! Titel
         Text(
           item.titel,
           textAlign: TextAlign.center,
@@ -27,8 +28,9 @@ class ProductDisplayWidget extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        SizedBox(height: 15),
-        // SubTitel
+        //
+        SizedBox(height: h * 0.02),
+        //! SubTitel
         Text(
           item.subTitel,
           textAlign: TextAlign.center,
