@@ -83,7 +83,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   onTap: () {
                     if (currentIndex == items(context).length - 1) {
-                      context.router.replace(WelcomeRoute());
+                      context.router.push(WelcomeRoute());
                     }
                     pageController.animateToPage(
                       ++currentIndex,

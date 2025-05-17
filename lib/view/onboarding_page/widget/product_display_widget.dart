@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/model/onboarding_model.dart';
+import 'package:lottie/lottie.dart';
 
 class ProductDisplayWidget extends StatelessWidget {
   const ProductDisplayWidget({super.key, required this.item});
@@ -14,11 +14,10 @@ class ProductDisplayWidget extends StatelessWidget {
     final h = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        SizedBox(height: h * 0.24),
         //! Svg
-        SvgPicture.asset(item.image, fit: BoxFit.cover),
+        Lottie.asset(item.image, fit: BoxFit.cover),
         //
-        SizedBox(height: h * 0.250),
+        SizedBox(height: h * 0.140),
         //! Titel
         Text(
           item.titel,

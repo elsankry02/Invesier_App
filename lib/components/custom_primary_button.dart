@@ -20,8 +20,8 @@ class CustomPrimaryButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30),
-        padding: EdgeInsets.symmetric(vertical: 11),
+        margin: EdgeInsets.symmetric(horizontal: 56),
+        padding: EdgeInsets.symmetric(vertical: 13),
         decoration: BoxDecoration(
           border: border,
           borderRadius: BorderRadius.circular(60),

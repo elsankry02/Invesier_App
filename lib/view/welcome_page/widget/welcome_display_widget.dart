@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:invesier/constant/color_manger.dart';
-import 'package:invesier/constant/svg_manger.dart';
+import 'package:invesier/constant/lottie_manger.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomeDisplayWidget extends StatelessWidget {
   const WelcomeDisplayWidget({super.key});
@@ -14,8 +14,8 @@ class WelcomeDisplayWidget extends StatelessWidget {
       title: Column(
         children: [
           SizedBox(height: h * 0.18),
-          SvgPicture.asset(SvgManger.kGroup),
-          SizedBox(height: h * 0.18),
+          Lottie.asset(LottieManger.kOnboardingTwo),
+
           //! titel
           Text(
             'Compete for Rewards',
@@ -25,9 +25,10 @@ class WelcomeDisplayWidget extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
+          SizedBox(height: h * 0.012),
           //! SubTitel
           Text(
-            'Climb the leaderboard, unlock perks, and earn real-world opportunities',
+            'Climb the leaderboard, unlock perks, and \nearn real-world opportunities',
             textAlign: TextAlign.center,
             style: appTextTheme.titleMedium!.copyWith(
               color: ColorManger.kWhite,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/svg_manger.dart';
+import 'package:invesier/constant/lottie_manger.dart';
 
 class OnboardingModel {
   final String image;
@@ -18,20 +18,20 @@ List<OnboardingModel> items(BuildContext context) {
     OnboardingModel(
       titel: 'Welcome to Invesier',
       subTitel:
-          'Stay connected with the latest financial news, market trends, and expert insights to keep you informed and ahead.',
-      image: SvgManger.kLogo,
+          'Stay connected with the latest financial \nnews, market trends, and expert insights \nto keep you informed and ahead.',
+      image: LottieManger.kOnboardingOne,
     ),
     OnboardingModel(
       titel: 'Practice with Virtual Currency',
       subTitel:
-          'Gain experience through simulated trading. No risks, just rewards.',
-      image: SvgManger.kLogo,
+          'Gain experience through simulated \ntrading. No risks, just rewards.',
+      image: LottieManger.kOnboardingTwo,
     ),
     OnboardingModel(
       titel: 'Join Chats & Live Streams',
       subTitel:
-          'Talk to experts, join communities, and go live to share your investment journey',
-      image: SvgManger.kLogo,
+          'Talk to experts, join communities, and go \nlive to share your investment journey',
+      image: LottieManger.kOnboardingThree,
     ),
   ];
 }
