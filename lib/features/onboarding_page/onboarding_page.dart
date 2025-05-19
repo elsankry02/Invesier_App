@@ -5,9 +5,9 @@ import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/constant/image_manger.dart';
 import 'package:invesier/model/onboarding_model.dart';
 import 'package:invesier/router/router.dart';
-import 'package:invesier/view/onboarding_page/widget/generator_widget.dart';
-import 'package:invesier/view/onboarding_page/widget/product_display_widget.dart';
-import 'package:invesier/view/onboarding_page/widget/skip_widget.dart';
+import 'package:invesier/features/onboarding_page/widget/generator_widget.dart';
+import 'package:invesier/features/onboarding_page/widget/product_display_widget.dart';
+import 'package:invesier/features/onboarding_page/widget/skip_widget.dart';
 
 @RoutePage()
 class OnboardingPage extends StatefulWidget {
