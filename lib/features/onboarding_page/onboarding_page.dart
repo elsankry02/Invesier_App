@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:invesier/components/custom_primary_button.dart';
 import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/constant/image_manger.dart';
-import 'package:invesier/model/onboarding_model.dart';
-import 'package:invesier/router/router.dart';
 import 'package:invesier/features/onboarding_page/widget/generator_widget.dart';
 import 'package:invesier/features/onboarding_page/widget/product_display_widget.dart';
 import 'package:invesier/features/onboarding_page/widget/skip_widget.dart';
+import 'package:invesier/model/onboarding_model.dart';
+import 'package:invesier/router/router.dart';
 
 @RoutePage()
 class OnboardingPage extends StatefulWidget {
@@ -74,7 +74,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 SizedBox(height: h * 0.060),
                 //! Conditional
                 CustomPrimaryButton(
-                  titel: 'Next',
+                  title: 'Next',
+                  horizontal: 56,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -91,7 +92,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       curve: Curves.easeIn,
                     );
                   },
-                  titelColor: ColorManger.kWhite,
+                  titleColor: ColorManger.kWhite,
                 ),
                 //
                 SizedBox(height: h * 0.057),

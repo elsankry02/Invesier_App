@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/model/onboarding_model.dart';
 import 'package:lottie/lottie.dart';
 
@@ -22,10 +21,7 @@ class ProductDisplayWidget extends StatelessWidget {
         Text(
           item.titel,
           textAlign: TextAlign.center,
-          style: kText.headlineMedium!.copyWith(
-            color: ColorManger.kWhite,
-            fontWeight: FontWeight.w700,
-          ),
+          style: kText.headlineMedium!.copyWith(fontWeight: FontWeight.w700),
         ),
         //
         SizedBox(height: h * 0.02),
@@ -33,10 +29,7 @@ class ProductDisplayWidget extends StatelessWidget {
         Text(
           item.subTitel,
           textAlign: TextAlign.center,
-          style: kText.titleMedium!.copyWith(
-            color: ColorManger.kWhite,
-            fontWeight: FontWeight.w400,
-          ),
+          style: kText.titleMedium!.copyWith(fontWeight: FontWeight.w400),
         ),
       ],
     );

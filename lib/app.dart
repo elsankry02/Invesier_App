@@ -10,7 +10,31 @@ class Invesier extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
-      theme: ThemeData(fontFamily: StringManger.kManrope),
+      theme: ThemeData(
+        textTheme: textTheme(),
+        fontFamily: StringManger.kManrope,
+      ),
+    );
+  }
+
+  TextTheme textTheme() {
+    final kColorWhite = TextStyle(color: Colors.white);
+    return TextTheme(
+      displayLarge: kColorWhite,
+      displayMedium: kColorWhite,
+      displaySmall: kColorWhite,
+      headlineLarge: kColorWhite,
+      headlineMedium: kColorWhite,
+      headlineSmall: kColorWhite,
+      bodyLarge: kColorWhite,
+      bodyMedium: kColorWhite,
+      bodySmall: kColorWhite,
+      titleLarge: kColorWhite,
+      titleMedium: kColorWhite,
+      titleSmall: kColorWhite,
+      labelLarge: kColorWhite,
+      labelMedium: kColorWhite,
+      labelSmall: kColorWhite,
     );
   }
 }

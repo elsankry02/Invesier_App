@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/constant/lottie_manger.dart';
 import 'package:lottie/lottie.dart';
 
@@ -8,7 +7,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appTextTheme = Theme.of(context).textTheme;
+    final kTextTheme = Theme.of(context).textTheme;
     final h = MediaQuery.of(context).size.height;
     return ListTile(
       title: Column(
@@ -20,8 +19,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
           Text(
             'Compete for Rewards',
             textAlign: TextAlign.center,
-            style: appTextTheme.headlineMedium!.copyWith(
-              color: ColorManger.kWhite,
+            style: kTextTheme.headlineMedium!.copyWith(
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -30,8 +28,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
           Text(
             'Climb the leaderboard, unlock perks, and \nearn real-world opportunities',
             textAlign: TextAlign.center,
-            style: appTextTheme.titleMedium!.copyWith(
-              color: ColorManger.kWhite,
+            style: kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w400,
             ),
           ),

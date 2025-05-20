@@ -6,14 +6,10 @@ class CustomRichText extends StatelessWidget {
     super.key,
     required this.textSpanOne,
     required this.textSpanTwo,
-    required this.colorSpanOne,
-    required this.colorSpanTwo,
     required this.onTap,
   });
   final String textSpanOne;
-  final Color colorSpanOne;
   final String textSpanTwo;
-  final Color colorSpanTwo;
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
@@ -23,17 +19,11 @@ class CustomRichText extends StatelessWidget {
         children: [
           TextSpan(
             text: textSpanOne,
-            style: kTextTheme.titleSmall!.copyWith(
-              fontWeight: FontWeight.w500,
-              color: colorSpanOne,
-            ),
+            style: kTextTheme.titleSmall!.copyWith(fontWeight: FontWeight.w600),
           ),
           TextSpan(
             text: textSpanTwo,
-            style: kTextTheme.titleSmall!.copyWith(
-              fontWeight: FontWeight.w500,
-              color: colorSpanTwo,
-            ),
+            style: kTextTheme.titleSmall!.copyWith(fontWeight: FontWeight.w600),
             recognizer: TapGestureRecognizer()..onTap = onTap,
           ),
         ],

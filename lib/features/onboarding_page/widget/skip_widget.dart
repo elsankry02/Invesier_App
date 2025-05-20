@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/color_manger.dart';
 
 class SkipWidget extends StatelessWidget {
   const SkipWidget({super.key, required this.onTap, required this.skip});
@@ -9,7 +8,7 @@ class SkipWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appTextTheme = Theme.of(context).textTheme;
+    final kTextTheme = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -19,8 +18,7 @@ class SkipWidget extends StatelessWidget {
           child: Text(
             //! skip
             skip,
-            style: appTextTheme.titleMedium!.copyWith(
-              color: ColorManger.kWhite,
+            style: kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w400,
             ),
           ),

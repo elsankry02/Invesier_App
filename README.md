@@ -15,6 +15,6 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-final appTextTheme = Theme.of(context).textTheme;
+final kTextTheme = Theme.of(context).textTheme;
 final h = MediaQuery.of(context).size.height;
 final w = MediaQuery.of(context).size.width;

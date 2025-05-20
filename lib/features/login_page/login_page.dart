@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
+          //! Image
           image: DecorationImage(
             fit: BoxFit.cover,
 
