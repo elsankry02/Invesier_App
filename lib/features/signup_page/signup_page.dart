@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/components/custom_enum_login.dart';
 import 'package:invesier/components/custom_rich_text.dart';
 import 'package:invesier/constant/image_manger.dart';
+import 'package:invesier/features/signup_page/widget/enum_login_widget.dart';
 import 'package:invesier/router/router.dart';
 
 @RoutePage()
@@ -46,7 +46,7 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: h * 0.024),
-            CustomEnumLogin(),
+            EnumLoginWidget(),
           ],
         ),
       ),

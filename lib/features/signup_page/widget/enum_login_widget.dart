@@ -3,18 +3,18 @@ import 'package:invesier/components/custom_button_enum.dart';
 import 'package:invesier/components/custom_text_field.dart';
 import 'package:invesier/constant/color_manger.dart';
 
-enum IsSelected { email, phone }
+enum ContactType { email, phone }
 
-class CustomEnumLogin extends StatefulWidget {
-  const CustomEnumLogin({super.key});
+class EnumLoginWidget extends StatefulWidget {
+  const EnumLoginWidget({super.key});
 
   @override
-  State<CustomEnumLogin> createState() => _CustomEnumLoginState();
+  State<EnumLoginWidget> createState() => _EnumLoginWidgetState();
 }
 
-class _CustomEnumLoginState extends State<CustomEnumLogin> {
-  IsSelected isSelected = IsSelected.phone;
-  final pageController = PageController(initialPage: 0);
+class _EnumLoginWidgetState extends State<EnumLoginWidget> {
+  ContactType contactType = ContactType.phone;
+  final pageController = PageController(initialPage: 1);
   final phoneController = TextEditingController();
   final emailController = TextEditingController();
 
@@ -43,16 +43,21 @@ class _CustomEnumLoginState extends State<CustomEnumLogin> {
                 topLeft: 26,
                 bottomLeft: 26,
                 titleColor:
-                    isSelected == IsSelected.email
+                    contactType == ContactType.email
                         ? ColorManger.kWhite
                         : ColorManger.kTurquoiseBlue,
                 color:
-                    isSelected == IsSelected.email
+                    contactType == ContactType.email
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kCodGray,
                 onTap: () {
                   setState(() {
-                    isSelected = IsSelected.email;
+                    contactType = ContactType.email;
+                    pageController.animateToPage(
+                      0,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
                   });
                 },
               ),
@@ -62,16 +67,21 @@ class _CustomEnumLoginState extends State<CustomEnumLogin> {
                 topRight: 26,
                 bottomRight: 26,
                 titleColor:
-                    isSelected == IsSelected.phone
+                    contactType == ContactType.phone
                         ? ColorManger.kWhite
                         : ColorManger.kTurquoiseBlue,
                 color:
-                    isSelected == IsSelected.phone
+                    contactType == ContactType.phone
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kCodGray,
                 onTap: () {
                   setState(() {
-                    isSelected = IsSelected.phone;
+                    contactType = ContactType.phone;
+                    pageController.animateToPage(
+                      1,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
                   });
                 },
               ),
@@ -82,15 +92,14 @@ class _CustomEnumLoginState extends State<CustomEnumLogin> {
             height: h * 0.150,
             //! PageView
             child: PageView(
+              physics: NeverScrollableScrollPhysics(),
               controller: pageController,
-              onPageChanged: (value) {
-                setState(() {});
-              },
+
               children: [
+                //! Email
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //! Email
                     Text(
                       'Email',
                       style: kTextTheme.labelLarge!.copyWith(
@@ -104,10 +113,10 @@ class _CustomEnumLoginState extends State<CustomEnumLogin> {
                     ),
                   ],
                 ),
+                //! Phone
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //! Phone
                     Text(
                       'Phone number',
                       style: kTextTheme.labelLarge!.copyWith(
@@ -135,7 +144,7 @@ class _CustomEnumLoginState extends State<CustomEnumLogin> {
                           ),
                         ),
                         SizedBox(width: 5),
-                        //! CustomTextFormField
+                        //! Custom TextForm Field
                         CustomTextFormField(
                           title: '0109******',
                           controller: phoneController,
