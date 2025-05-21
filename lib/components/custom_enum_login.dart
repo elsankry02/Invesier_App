@@ -14,12 +14,22 @@ class CustomEnumLogin extends StatefulWidget {
 
 class _CustomEnumLoginState extends State<CustomEnumLogin> {
   IsSelected isSelected = IsSelected.phone;
+  final pageController = PageController(initialPage: 0);
+  final phoneController = TextEditingController();
+  final emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    phoneController.dispose();
+    pageController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
     final h = MediaQuery.of(context).size.height;
-    // final w = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 28),
       child: Column(
@@ -68,42 +78,75 @@ class _CustomEnumLoginState extends State<CustomEnumLogin> {
             ],
           ),
           SizedBox(height: h * 0.047),
-          Align(
-            alignment: Alignment.centerLeft,
-            //! Phone number
-            child: Text(
-              'Phone number',
-              style: kTextTheme.labelLarge!.copyWith(
-                fontWeight: FontWeight.w600,
-                // color: ColorManger.kWhite,
-              ),
-            ),
-          ),
-          SizedBox(height: h * 0.004),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: ColorManger.kWhite),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
+          SizedBox(
+            height: h * 0.150,
+            //! PageView
+            child: PageView(
+              controller: pageController,
+              onPageChanged: (value) {
+                setState(() {});
+              },
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('🇪🇬'),
+                    //! Email
                     Text(
-                      ' +20',
+                      'Email',
                       style: kTextTheme.labelLarge!.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
+                    SizedBox(height: h * 0.004),
+                    CustomTextFormField(
+                      title: 'name@gmail.com',
+                      controller: emailController,
+                    ),
                   ],
                 ),
-              ),
-              CustomTextFormField(),
-            ],
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //! Phone
+                    Text(
+                      'Phone number',
+                      style: kTextTheme.labelLarge!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: h * 0.004),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: ColorManger.kBorder),
+                          ),
+                          child: Center(
+                            //! TextCountry
+                            child: Text(
+                              '🇪🇬 +20',
+                              style: kTextTheme.labelLarge!.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 5),
+                        //! CustomTextFormField
+                        CustomTextFormField(
+                          title: '0109******',
+                          controller: phoneController,
+                          keyboardType: TextInputType.number,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
