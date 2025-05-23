@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/components/custom_text_field.dart';
+import 'package:invesier/components/custom_text_form_field.dart';
 
 class ContactEmailWidget extends StatelessWidget {
-  const ContactEmailWidget({super.key, required this.emailController});
+  const ContactEmailWidget({
+    super.key,
+    required this.emailController,
+    this.validator,
+  });
 
   final TextEditingController emailController;
-
+  final String? Function(String? value)? validator;
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
@@ -23,6 +27,7 @@ class ContactEmailWidget extends StatelessWidget {
         CustomTextFormField(
           title: 'name@gmail.com',
           controller: emailController,
+          validator: validator,
         ),
       ],
     );

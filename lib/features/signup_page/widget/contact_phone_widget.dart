@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/components/custom_text_field.dart';
+import 'package:invesier/components/custom_text_form_field.dart';
 import 'package:invesier/constant/color_manger.dart';
 
 class ContactPhoneWidget extends StatelessWidget {
-  const ContactPhoneWidget({super.key, required this.phoneController});
+  const ContactPhoneWidget({
+    super.key,
+    required this.phoneController,
+    this.validator,
+  });
 
   final TextEditingController phoneController;
+  final String? Function(String? value)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +49,7 @@ class ContactPhoneWidget extends StatelessWidget {
             CustomTextFormField(
               title: '0109******',
               controller: phoneController,
+              validator: validator,
               keyboardType: TextInputType.number,
             ),
           ],

@@ -6,14 +6,19 @@ import 'package:invesier/features/signup_page/widget/contact_phone_widget.dart';
 
 enum ContactType { email, phone }
 
-class EnumLoginWidget extends StatefulWidget {
-  const EnumLoginWidget({super.key});
-
+class LoginOptionsWidget extends StatefulWidget {
+  const LoginOptionsWidget({
+    super.key,
+    this.emailValidator,
+    this.phoneValidator,
+  });
+  final String? Function(String? value)? emailValidator;
+  final String? Function(String? value)? phoneValidator;
   @override
-  State<EnumLoginWidget> createState() => _EnumLoginWidgetState();
+  State<LoginOptionsWidget> createState() => _LoginOptionsWidgetState();
 }
 
-class _EnumLoginWidgetState extends State<EnumLoginWidget> {
+class _LoginOptionsWidgetState extends State<LoginOptionsWidget> {
   final pageController = PageController(initialPage: 1);
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
@@ -45,9 +50,15 @@ class _EnumLoginWidgetState extends State<EnumLoginWidget> {
               controller: pageController,
               children: [
                 //! Email Widget
-                ContactEmailWidget(emailController: emailController),
+                ContactEmailWidget(
+                  emailController: emailController,
+                  validator: widget.emailValidator,
+                ),
                 //! Phone Widget
-                ContactPhoneWidget(phoneController: phoneController),
+                ContactPhoneWidget(
+                  phoneController: phoneController,
+                  validator: widget.phoneValidator,
+                ),
               ],
             ),
           ),

@@ -7,15 +7,18 @@ class CustomTextFormField extends StatelessWidget {
     required this.title,
     this.keyboardType,
     required this.controller,
+    this.validator,
   });
   final String title;
   final TextInputType? keyboardType;
   final TextEditingController controller;
+  final String? Function(String? value)? validator;
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
     return Expanded(
       child: TextFormField(
+        validator: validator,
         controller: controller,
         cursorColor: ColorManger.kWhite,
         keyboardType: keyboardType,

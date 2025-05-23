@@ -2,13 +2,19 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/components/custom_rich_text.dart';
 import 'package:invesier/constant/image_manger.dart';
-import 'package:invesier/features/signup_page/widget/enum_login_widget.dart';
+import 'package:invesier/features/signup_page/widget/login_options_widget.dart';
 import 'package:invesier/router/router.dart';
 
 @RoutePage()
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
@@ -24,6 +30,7 @@ class SignupPage extends StatelessWidget {
           ),
         ),
         child: ListView(
+          key: formkey,
           children: [
             //! Create an account
             Text(
@@ -46,7 +53,10 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: h * 0.024),
-            EnumLoginWidget(),
+            LoginOptionsWidget(
+              //! email Validator
+            ),
+            SizedBox(height: h * 0.024),
           ],
         ),
       ),
