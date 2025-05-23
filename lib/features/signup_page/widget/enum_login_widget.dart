@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/components/custom_button_enum.dart';
+import 'package:invesier/components/custom_button_style_enum.dart';
 import 'package:invesier/constant/color_manger.dart';
 import 'package:invesier/features/signup_page/widget/contact_email_widget.dart';
 import 'package:invesier/features/signup_page/widget/contact_phone_widget.dart';
@@ -61,7 +61,7 @@ class _EnumLoginWidgetState extends State<EnumLoginWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         //! CustomButton Email
-        CustomButtonEnum(
+        CustomButtonStyleEnum(
           title: 'Email',
           topLeft: 26,
           bottomLeft: 26,
@@ -85,7 +85,7 @@ class _EnumLoginWidgetState extends State<EnumLoginWidget> {
           },
         ),
         //! CustomButton Phone
-        CustomButtonEnum(
+        CustomButtonStyleEnum(
           title: 'Phone',
           topRight: 26,
           bottomRight: 26,

@@ -14,6 +14,7 @@ class ContactPhoneWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        //! Phone number
         Text(
           'Phone number',
           style: kTextTheme.labelLarge!.copyWith(fontWeight: FontWeight.w600),
