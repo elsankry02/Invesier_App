@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:invesier/components/custom_text_field.dart';
+
+class ContactEmailWidget extends StatelessWidget {
+  const ContactEmailWidget({super.key, required this.emailController});
+
+  final TextEditingController emailController;
+
+  @override
+  Widget build(BuildContext context) {
+    final kTextTheme = Theme.of(context).textTheme;
+    final h = MediaQuery.of(context).size.height;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        //! title email
+        Text(
+          'Email',
+          style: kTextTheme.labelLarge!.copyWith(fontWeight: FontWeight.w600),
+        ),
+        SizedBox(height: h * 0.004),
+        //! textFormField Email
+        CustomTextFormField(
+          title: 'name@gmail.com',
+          controller: emailController,
+        ),
+      ],
+    );
+  }
+}
