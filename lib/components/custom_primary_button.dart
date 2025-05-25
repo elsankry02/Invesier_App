@@ -9,12 +9,14 @@ class CustomPrimaryButton extends StatelessWidget {
     required this.onTap,
     this.gradient,
     this.border,
+    this.backgroundColor,
   });
   final String title;
   final Color titleColor;
   final double horizontal;
   final BoxBorder? border;
   final Gradient? gradient;
+  final Color? backgroundColor;
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class CustomPrimaryButton extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: horizontal),
         padding: EdgeInsets.symmetric(vertical: 13),
         decoration: BoxDecoration(
+          color: backgroundColor,
           //! border
           border: border,
           borderRadius: BorderRadius.circular(60),

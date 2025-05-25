@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:invesier/components/custom_text_form_field.dart';
-import 'package:invesier/constant/color_manger.dart';
 
 class ContactPhoneWidget extends StatelessWidget {
   const ContactPhoneWidget({
@@ -28,22 +27,6 @@ class ContactPhoneWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: ColorManger.kBorder),
-              ),
-              child: Center(
-                //! TextCountry
-                child: Text(
-                  '🇪🇬 +20',
-                  style: kTextTheme.labelLarge!.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-            ),
             SizedBox(width: 5),
             //! TextFormField Phone
             CustomTextFormField(

@@ -25,17 +25,18 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: title,
           hintStyle: kTextTheme.titleSmall,
-          enabledBorder: outlineInputBorder(),
-          focusedBorder: outlineInputBorder(),
+          enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
+          focusedBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
+          errorBorder: outlineInputBorder(borderColor: ColorManger.kPersianRed),
         ),
       ),
     );
   }
 
-  OutlineInputBorder outlineInputBorder() {
+  OutlineInputBorder outlineInputBorder({required Color borderColor}) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: ColorManger.kBorder),
+      borderSide: BorderSide(color: borderColor),
     );
   }
 }
