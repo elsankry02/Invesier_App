@@ -29,11 +29,13 @@ class ContactPhoneWidget extends StatelessWidget {
           children: [
             SizedBox(width: 5),
             //! TextFormField Phone
-            CustomTextFormField(
-              title: '0109******',
-              controller: phoneController,
-              validator: validator,
-              keyboardType: TextInputType.number,
+            Expanded(
+              child: CustomTextFormField(
+                title: '0109******',
+                controller: phoneController,
+                validator: validator,
+                keyboardType: TextInputType.number,
+              ),
             ),
           ],
         ),

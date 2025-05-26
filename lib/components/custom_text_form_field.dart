@@ -16,19 +16,17 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
-    return Expanded(
-      child: TextFormField(
-        validator: validator,
-        controller: controller,
-        cursorColor: ColorManger.kWhite,
-        keyboardType: keyboardType,
-        decoration: InputDecoration(
-          hintText: title,
-          hintStyle: kTextTheme.titleSmall,
-          enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
-          focusedBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
-          errorBorder: outlineInputBorder(borderColor: ColorManger.kPersianRed),
-        ),
+    return TextFormField(
+      validator: validator,
+      controller: controller,
+      cursorColor: ColorManger.kWhite,
+      keyboardType: keyboardType,
+      decoration: InputDecoration(
+        hintText: title,
+        hintStyle: kTextTheme.titleSmall,
+        enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
+        focusedBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
+        errorBorder: outlineInputBorder(borderColor: ColorManger.kPersianRed),
       ),
     );
   }
