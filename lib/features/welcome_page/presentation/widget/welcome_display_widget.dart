@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/lottie_manger.dart';
+import 'package:invesier/core/constant/lottie_manger.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomeDisplayWidget extends StatelessWidget {

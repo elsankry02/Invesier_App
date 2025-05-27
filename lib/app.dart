@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/string_manger.dart';
+import 'package:invesier/core/constant/string_manger.dart';
 import 'package:invesier/router/router.dart';
 
 class Invesier extends StatelessWidget {

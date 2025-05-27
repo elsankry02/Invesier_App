@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/constant/color_manger.dart';
-import 'package:invesier/model/onboarding_model.dart';
+import 'package:invesier/core/constant/color_manger.dart';
+import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
 
 class GeneratorWidget extends StatelessWidget {
   const GeneratorWidget({super.key, required this.currentIndex});

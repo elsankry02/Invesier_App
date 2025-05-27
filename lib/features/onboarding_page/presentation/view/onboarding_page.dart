@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/components/custom_primary_button.dart';
-import 'package:invesier/constant/color_manger.dart';
-import 'package:invesier/constant/image_manger.dart';
-import 'package:invesier/features/onboarding_page/widget/generator_widget.dart';
-import 'package:invesier/features/onboarding_page/widget/product_display_widget.dart';
-import 'package:invesier/features/onboarding_page/widget/skip_widget.dart';
-import 'package:invesier/model/onboarding_model.dart';
+import 'package:invesier/core/components/custom_primary_button.dart';
+import 'package:invesier/core/constant/color_manger.dart';
+import 'package:invesier/core/constant/image_manger.dart';
+import 'package:invesier/features/onboarding_page/presentation/widget/generator_widget.dart';
+import 'package:invesier/features/onboarding_page/presentation/widget/product_display_widget.dart';
+import 'package:invesier/features/onboarding_page/presentation/widget/skip_widget.dart';
+import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
 import 'package:invesier/router/router.dart';
 
 @RoutePage()

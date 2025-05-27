@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/constant/color_manger.dart';
+import 'package:invesier/core/constant/color_manger.dart';
 
-class CustomOrConnectWith extends StatelessWidget {
-  const CustomOrConnectWith({super.key, required this.assetName, this.onTap});
+class CustomSocialButton extends StatelessWidget {
+  const CustomSocialButton({
+    super.key,
+    required this.onTapGoogle,
+    required this.assetName,
+  });
+
+  final void Function()? onTapGoogle;
   final String assetName;
-  final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTapGoogle,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 11, horizontal: 40),
         decoration: BoxDecoration(
