@@ -5,8 +5,8 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     required this.title,
-    this.keyboardType,
     required this.controller,
+    this.keyboardType,
     this.validator,
   });
   final String title;
