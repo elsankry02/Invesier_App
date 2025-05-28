@@ -22,10 +22,10 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final formkey = GlobalKey<FormState>();
-  final pageController = PageController(initialPage: 1);
+  ContactType contactType = ContactType.phone;
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
-  ContactType contactType = ContactType.phone;
+  final pageController = PageController(initialPage: 1);
 
   @override
   void dispose() {
@@ -136,7 +136,6 @@ class _SignupPageState extends State<SignupPage> {
                   horizontal: 0,
                   onTap: () {
                     context.router.push(CreateAnAccountRoute());
-                    formkey.currentState!.validate();
                   },
                 ),
               ],

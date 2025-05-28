@@ -18,12 +18,19 @@ class CreateAnAccountPage extends StatefulWidget {
 
 class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
   final formKey = GlobalKey<FormState>();
+  final userNameController = TextEditingController();
+  final fullNameController = TextEditingController();
+  @override
+  void dispose() {
+    userNameController.dispose();
+    fullNameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
     final kTextTheme = Theme.of(context).textTheme;
-    final userNameController = TextEditingController();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -90,33 +97,35 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 CustomTextFormField(
                   title: 'Username',
                   controller: userNameController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'username has already been taken';
-                    } else {
-                      return 'Valid';
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: (value) {
+                    if (formKey.currentState != null) {
+                      setState(() {});
                     }
+                  },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a valid Username';
+                    }
+                    return null;
                   },
                 ),
                 SizedBox(height: 22),
-                //! Text: Fullname
-                Text(
-                  'Full Name',
-                  style: kTextTheme.labelLarge!.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(height: 4),
-                //! Full name
+                //! Fullname
                 CustomTextFormField(
                   title: 'Fullname',
-                  controller: userNameController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'username has already been taken';
-                    } else {
-                      return 'Valid';
+                  controller: fullNameController,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: (value) {
+                    if (formKey.currentState != null) {
+                      setState(() {});
                     }
+                  },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a valid Fullname';
+                    }
+                    return null;
                   },
                 ),
                 SizedBox(height: h * 0.090),
@@ -130,7 +139,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   horizontal: 0,
                   //! Navigate
                   onTap: () {
-                    formKey.currentState!.validate();
+                    if (formKey.currentState!.validate()) {}
                   },
                 ),
               ],
