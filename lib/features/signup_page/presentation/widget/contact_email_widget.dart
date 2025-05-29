@@ -6,8 +6,12 @@ class ContactEmailWidget extends StatelessWidget {
     super.key,
     required this.emailController,
     this.validator,
+    this.autovalidateMode,
+    this.onChanged,
   });
+  final Function(String)? onChanged;
 
+  final AutovalidateMode? autovalidateMode;
   final TextEditingController emailController;
   final String? Function(String? value)? validator;
   @override
@@ -25,6 +29,7 @@ class ContactEmailWidget extends StatelessWidget {
         SizedBox(height: h * 0.004),
         //! textFormField Email
         CustomTextFormField(
+          autovalidateMode: autovalidateMode,
           title: 'name@gmail.com',
           controller: emailController,
           validator: validator,

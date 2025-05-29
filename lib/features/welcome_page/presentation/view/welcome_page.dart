@@ -5,7 +5,7 @@ import 'package:invesier/core/components/custom_rich_text.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/features/welcome_page/presentation/widget/welcome_display_widget.dart';
-import 'package:invesier/router/router.dart';
+import 'package:invesier/core/router/router.dart';
 
 @RoutePage()
 class WelcomePage extends StatelessWidget {

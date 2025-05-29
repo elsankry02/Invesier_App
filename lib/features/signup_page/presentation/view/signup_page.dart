@@ -6,9 +6,9 @@ import 'package:invesier/core/components/custom_rich_text.dart';
 import 'package:invesier/core/components/custom_social_auth_buttons.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/signup_page/presentation/widget/contact_email_widget.dart';
 import 'package:invesier/features/signup_page/presentation/widget/contact_phone_widget.dart';
-import 'package:invesier/router/router.dart';
 
 enum ContactType { email, phone }
 
@@ -21,7 +21,7 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-  final formkey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   ContactType contactType = ContactType.phone;
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
@@ -51,7 +51,7 @@ class _SignupPageState extends State<SignupPage> {
         ),
         child: SafeArea(
           child: Form(
-            key: formkey,
+            key: formKey,
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 24),
               children: [
@@ -92,22 +92,36 @@ class _SignupPageState extends State<SignupPage> {
                           //! Email Widget
                           ContactEmailWidget(
                             emailController: emailController,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            onChanged: (value) {
+                              if (formKey.currentState != null) {
+                                setState(() {});
+                              }
+                            },
                             validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter a valid Email';
+                              if (value!.trim().toLowerCase() == 'mohamed') {
+                                return null;
                               } else {
-                                return 'valid';
+                                return 'Please enter a valid phone number';
                               }
                             },
                           ),
                           //! Phone Widget
                           ContactPhoneWidget(
                             phoneController: phoneController,
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
+                            onChanged: (value) {
+                              if (formKey.currentState != null) {
+                                setState(() {});
+                              }
+                            },
                             validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter a valid phone number.';
+                              if (value!.trim().toLowerCase() == '12345') {
+                                return null;
                               } else {
-                                return 'valid';
+                                return 'Please enter a valid phone number.';
                               }
                             },
                           ),
@@ -135,7 +149,9 @@ class _SignupPageState extends State<SignupPage> {
                           : "Next",
                   horizontal: 0,
                   onTap: () {
-                    context.router.push(CreateAnAccountRoute());
+                    if (formKey.currentState!.validate()) {
+                      context.router.push(CreateAnAccountRoute());
+                    }
                   },
                 ),
               ],

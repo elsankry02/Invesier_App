@@ -6,8 +6,11 @@ class ContactPhoneWidget extends StatelessWidget {
     super.key,
     required this.phoneController,
     this.validator,
+    this.autovalidateMode,
+    this.onChanged,
   });
-
+  final Function(String value)? onChanged;
+  final AutovalidateMode? autovalidateMode;
   final TextEditingController phoneController;
   final String? Function(String? value)? validator;
 
@@ -32,6 +35,8 @@ class ContactPhoneWidget extends StatelessWidget {
             //! TextFormField Phone
             Expanded(
               child: CustomTextFormField(
+                onChanged: onChanged,
+                autovalidateMode: autovalidateMode,
                 title: '0109******',
                 controller: phoneController,
                 validator: validator,

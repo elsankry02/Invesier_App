@@ -75,6 +75,22 @@ class SignupRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [VerifyYourPhoneNumberPage]
+class VerifyYourPhoneNumberRoute extends PageRouteInfo<void> {
+  const VerifyYourPhoneNumberRoute({List<PageRouteInfo>? children})
+    : super(VerifyYourPhoneNumberRoute.name, initialChildren: children);
+
+  static const String name = 'VerifyYourPhoneNumberRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const VerifyYourPhoneNumberPage();
+    },
+  );
+}
+
+/// generated route for
 /// [WelcomePage]
 class WelcomeRoute extends PageRouteInfo<void> {
   const WelcomeRoute({List<PageRouteInfo>? children})

@@ -7,7 +7,7 @@ import 'package:invesier/features/onboarding_page/presentation/widget/generator_
 import 'package:invesier/features/onboarding_page/presentation/widget/product_display_widget.dart';
 import 'package:invesier/features/onboarding_page/presentation/widget/skip_widget.dart';
 import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
-import 'package:invesier/router/router.dart';
+import 'package:invesier/core/router/router.dart';
 
 @RoutePage()
 class OnboardingPage extends StatefulWidget {

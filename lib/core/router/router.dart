@@ -3,6 +3,7 @@ import 'package:invesier/features/create_an_account_page/presentation/view/creat
 import 'package:invesier/features/login_page/presentation/view/login_page.dart';
 import 'package:invesier/features/onboarding_page/presentation/view/onboarding_page.dart';
 import 'package:invesier/features/signup_page/presentation/view/signup_page.dart';
+import 'package:invesier/features/verify_your_phone_number_page/presentation/view/verify_your_phone_number_page.dart';
 import 'package:invesier/features/welcome_page/presentation/view/welcome_page.dart';
 
 part 'router.gr.dart';
@@ -18,5 +19,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: WelcomeRoute.page),
     AutoRoute(page: CreateAnAccountRoute.page),
+    AutoRoute(page: VerifyYourPhoneNumberRoute.page),
   ];
 }

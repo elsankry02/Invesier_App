@@ -6,7 +6,7 @@ import 'package:invesier/core/components/custom_text_form_field.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/features/create_an_account_page/presentation/widget/circle_avatar_widget.dart';
-import 'package:invesier/router/router.dart';
+import 'package:invesier/core/router/router.dart';
 
 @RoutePage()
 class CreateAnAccountPage extends StatefulWidget {
@@ -104,10 +104,10 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                     }
                   },
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a valid Username';
+                    if (value!.trim().toLowerCase() == 'mohamed') {
+                      return null;
                     }
-                    return null;
+                    return 'Please enter a valid Username';
                   },
                 ),
                 SizedBox(height: 22),
@@ -122,10 +122,10 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                     }
                   },
                   validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a valid Fullname';
+                    if (value!.trim().toLowerCase() == 'mohamed') {
+                      return null;
                     }
-                    return null;
+                    return 'Please enter a valid Fullname';
                   },
                 ),
                 SizedBox(height: h * 0.090),
@@ -139,7 +139,10 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   horizontal: 0,
                   //! Navigate
                   onTap: () {
-                    if (formKey.currentState!.validate()) {}
+                    if (formKey.currentState!.validate()) {
+
+                      context.router.push(VerifyYourPhoneNumberRoute());
+                    }
                   },
                 ),
               ],
