@@ -4,8 +4,8 @@ import 'package:invesier/core/components/custom_primary_button.dart';
 import 'package:invesier/core/components/custom_rich_text.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/features/welcome_page/presentation/widget/welcome_display_widget.dart';
 import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/welcome_page/presentation/widget/welcome_display_widget.dart';
 
 @RoutePage()
 class WelcomePage extends StatelessWidget {
@@ -33,7 +33,7 @@ class WelcomePage extends StatelessWidget {
               title: 'Get Started',
               horizontal: 56,
               onTap: () {
-                context.router.push(SignupRoute());
+                context.router.push(LoginRoute());
               },
               titleColor: ColorManger.kWhite,
               gradient: LinearGradient(
@@ -44,22 +44,22 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: h * 0.012),
             //! Login
             CustomPrimaryButton(
-              title: 'Login',
+              title: 'Signin',
               titleColor: ColorManger.kEucalyptus,
               border: Border.all(width: 2, color: ColorManger.kEucalyptus),
               horizontal: 56,
               onTap: () {
-                context.router.push(LoginRoute());
+                context.router.push(SignupRoute());
               },
             ),
             SizedBox(height: h * 0.012),
             //! RichTextWidget
             CustomRichText(
               onTap: () {
-                context.router.push(SignupRoute());
+                context.router.push(LoginRoute());
               },
-              textSpanOne: 'Dont have an account?',
-              textSpanTwo: ' Sign up',
+              textSpanOne: 'Already have an account?',
+              textSpanTwo: ' Login',
             ),
           ],
         ),

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/components/custom_primary_button.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
+import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
 import 'package:invesier/features/onboarding_page/presentation/widget/generator_widget.dart';
 import 'package:invesier/features/onboarding_page/presentation/widget/product_display_widget.dart';
 import 'package:invesier/features/onboarding_page/presentation/widget/skip_widget.dart';
-import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
-import 'package:invesier/core/router/router.dart';
 
 @RoutePage()
 class OnboardingPage extends StatefulWidget {
@@ -88,7 +88,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     }
                     pageController.animateToPage(
                       ++currentIndex,
-                      duration: Duration(milliseconds: 400),
+                      duration: Duration(milliseconds: 300),
                       curve: Curves.easeIn,
                     );
                   },

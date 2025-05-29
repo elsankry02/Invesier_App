@@ -5,8 +5,8 @@ import 'package:invesier/core/components/custom_rich_text.dart';
 import 'package:invesier/core/components/custom_text_form_field.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/features/create_an_account_page/presentation/widget/circle_avatar_widget.dart';
 import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/create_an_account_page/presentation/widget/circle_avatar_widget.dart';
 
 @RoutePage()
 class CreateAnAccountPage extends StatefulWidget {
@@ -93,39 +93,31 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   ),
                 ),
                 SizedBox(height: 4),
-                //! Username
+                //! Username FormField
                 CustomTextFormField(
                   title: 'Username',
                   controller: userNameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (value) {
-                    if (formKey.currentState != null) {
-                      setState(() {});
-                    }
-                  },
                   validator: (value) {
-                    if (value!.trim().toLowerCase() == 'mohamed') {
-                      return null;
+                    if (value!.trim().toLowerCase() != 'mohamed') {
+                      return 'Please enter a valid Username';
                     }
-                    return 'Please enter a valid Username';
+
+                    return null;
                   },
                 ),
                 SizedBox(height: 22),
-                //! Fullname
+                //! Fullname FormField
                 CustomTextFormField(
                   title: 'Fullname',
                   controller: fullNameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (value) {
-                    if (formKey.currentState != null) {
-                      setState(() {});
-                    }
-                  },
+                  onChanged: (value) {},
                   validator: (value) {
-                    if (value!.trim().toLowerCase() == 'mohamed') {
-                      return null;
+                    if (value!.trim().toLowerCase() != 'mohamed') {
+                      return 'Please enter a valid Fullname';
                     }
-                    return 'Please enter a valid Fullname';
+                    return null;
                   },
                 ),
                 SizedBox(height: h * 0.090),
@@ -140,7 +132,6 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   //! Navigate
                   onTap: () {
                     if (formKey.currentState!.validate()) {
-
                       context.router.push(VerifyYourPhoneNumberRoute());
                     }
                   },
