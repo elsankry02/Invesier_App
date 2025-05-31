@@ -33,7 +33,7 @@ class WelcomePage extends StatelessWidget {
               title: 'Get Started',
               horizontal: 56,
               onTap: () {
-                context.router.push(LoginRoute());
+                context.router.push(SignupRoute());
               },
               titleColor: ColorManger.kWhite,
               gradient: LinearGradient(
@@ -44,7 +44,7 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: h * 0.012),
             //! Login
             CustomPrimaryButton(
-              title: 'Signin',
+              title: 'Login',
               titleColor: ColorManger.kEucalyptus,
               border: Border.all(width: 2, color: ColorManger.kEucalyptus),
               horizontal: 56,
@@ -55,11 +55,11 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: h * 0.012),
             //! RichTextWidget
             CustomRichText(
-              onTap: () {
-                context.router.push(LoginRoute());
-              },
               textSpanOne: 'Already have an account?',
-              textSpanTwo: ' Login',
+              textSpanTwo: ' Sign up',
+              onTap: () {
+                context.router.push(SignupRoute());
+              },
             ),
           ],
         ),

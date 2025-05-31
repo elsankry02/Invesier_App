@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorManger {
   static const kPrimary = Color(0xff44A570);
+  static const kAppBar = Color(0xff171717);
   static const kSecondary = Color(0xffB9A435);
   static const kTertiary = Color(0xff171B1A);
   static const kHeavyMetal = Color(0xff222B25);

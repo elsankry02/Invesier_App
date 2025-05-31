@@ -32,6 +32,25 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
     final h = MediaQuery.of(context).size.height;
     final kTextTheme = Theme.of(context).textTheme;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: ColorManger.kAppBar,
+        centerTitle: true,
+        //! Create an account
+        title: Text(
+          textAlign: TextAlign.center,
+          'Create an account',
+          style: kTextTheme.headlineSmall!.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        //! Icon Back
+        leading: IconButton(
+          onPressed: () {
+            context.router.maybePop();
+          },
+          icon: Icon(Icons.arrow_back_ios_rounded, color: ColorManger.kWhite),
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -39,105 +58,78 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
             image: AssetImage(ImageManger.kLogIn2),
           ),
         ),
-        child: SafeArea(
-          child: Form(
-            key: formKey,
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 24),
-              children: [
-                //! Create an account
-                Row(
-                  children: [
-                    //! Icon Back
-                    IconButton(
-                      onPressed: () {
-                        context.router.maybePop();
-                      },
-                      icon: Icon(
-                        Icons.arrow_back_ios_rounded,
-                        color: ColorManger.kWhite,
-                      ),
-                    ),
-                    Spacer(),
-                    //! Create an account
-                    Text(
-                      textAlign: TextAlign.center,
-                      'Create an account',
-                      style: kTextTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Spacer(flex: 2),
-                  ],
-                ),
-                //! Rich Text
-                Center(
-                  child: CustomRichText(
-                    textSpanOne: 'Already have an account?',
-                    textSpanTwo: ' Log in',
-                    onTap: () {
-                      //! Navigate to Login
-                      context.router.replace(LoginRoute());
-                    },
-                  ),
-                ),
-                SizedBox(height: 16),
-                //! circle avatar
-                CircleAvatarWidget(onPressed: () {}),
-                SizedBox(height: 22),
-                //! Text: Username
-                Text(
-                  'User Name',
-                  style: kTextTheme.labelLarge!.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(height: 4),
-                //! Username FormField
-                CustomTextFormField(
-                  title: 'Username',
-                  controller: userNameController,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    if (value!.trim().toLowerCase() != 'mohamed') {
-                      return 'Please enter a valid Username';
-                    }
-
-                    return null;
-                  },
-                ),
-                SizedBox(height: 22),
-                //! Fullname FormField
-                CustomTextFormField(
-                  title: 'Fullname',
-                  controller: fullNameController,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (value) {},
-                  validator: (value) {
-                    if (value!.trim().toLowerCase() != 'mohamed') {
-                      return 'Please enter a valid Fullname';
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(height: h * 0.090),
-                //! Next Button
-                CustomPrimaryButton(
-                  titleColor: ColorManger.kWhite,
-                  title: 'Next',
-                  gradient: LinearGradient(
-                    colors: [ColorManger.kEucalyptus, ColorManger.kPrimary],
-                  ),
-                  horizontal: 0,
-                  //! Navigate
+        child: Form(
+          key: formKey,
+          child: ListView(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            children: [
+              //! Rich Text
+              Center(
+                child: CustomRichText(
+                  textSpanOne: 'Already have an account?',
+                  textSpanTwo: ' Log in',
                   onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      context.router.push(VerifyYourPhoneNumberRoute());
-                    }
+                    //! Navigate to Login
+                    context.router.replace(LoginRoute());
                   },
                 ),
-              ],
-            ),
+              ),
+              SizedBox(height: 16),
+              //! circle avatar
+              CircleAvatarWidget(onPressed: () {}),
+              SizedBox(height: 22),
+              //! Text: Username
+              Text(
+                'User Name',
+                style: kTextTheme.labelLarge!.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 4),
+              //! Username FormField
+              CustomTextFormField(
+                title: 'Username',
+                controller: userNameController,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (value) {
+                  if (value!.trim().toLowerCase() != 'mohamed') {
+                    return 'Please enter a valid Username';
+                  }
+
+                  return null;
+                },
+              ),
+              SizedBox(height: 22),
+              //! Fullname FormField
+              CustomTextFormField(
+                title: 'Fullname',
+                controller: fullNameController,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (value) {},
+                validator: (value) {
+                  if (value!.trim().toLowerCase() != 'mohamed') {
+                    return 'Please enter a valid Fullname';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: h * 0.090),
+              //! Next Button
+              CustomPrimaryButton(
+                titleColor: ColorManger.kWhite,
+                title: 'Next',
+                gradient: LinearGradient(
+                  colors: [ColorManger.kEucalyptus, ColorManger.kPrimary],
+                ),
+                horizontal: 0,
+                //! Navigate
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    context.router.push(VerifyYourPhoneNumberRoute());
+                  }
+                },
+              ),
+            ],
           ),
         ),
       ),

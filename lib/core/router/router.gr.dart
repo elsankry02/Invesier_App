@@ -75,7 +75,7 @@ class SignupRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [VerifyYourPhoneNumberPage]
+/// [SignUpOtpPage]
 class VerifyYourPhoneNumberRoute extends PageRouteInfo<void> {
   const VerifyYourPhoneNumberRoute({List<PageRouteInfo>? children})
     : super(VerifyYourPhoneNumberRoute.name, initialChildren: children);
@@ -85,7 +85,7 @@ class VerifyYourPhoneNumberRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const VerifyYourPhoneNumberPage();
+      return const SignUpOtpPage();
     },
   );
 }
