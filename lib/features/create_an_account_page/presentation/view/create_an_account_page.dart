@@ -132,7 +132,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 //! Navigate
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    context.router.push(VerifyYourPhoneNumberRoute());
+                    context.router.push(SignUpConfirmOtpRoute());
                   }
                 },
               ),

@@ -76,7 +76,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
                 SizedBox(height: h * 0.024),
-                //! LoginOptionsWidget
                 Column(
                   children: [
                     //! Contact Type
@@ -94,11 +93,13 @@ class _SignupPageState extends State<SignupPage> {
                             emailController: emailController,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
+                            //? onChanged
                             onChanged: (value) {
                               if (formKey.currentState != null) {
                                 setState(() {});
                               }
                             },
+                            //? validator
                             validator: (value) {
                               if (value!.trim().toLowerCase() == 'a') {
                                 return null;
@@ -112,11 +113,13 @@ class _SignupPageState extends State<SignupPage> {
                             phoneController: phoneController,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
+                            //? onChanged
                             onChanged: (value) {
                               if (formKey.currentState != null) {
                                 setState(() {});
                               }
                             },
+                            //? validator
                             validator: (value) {
                               if (value!.trim().toLowerCase() == '1') {
                                 return null;

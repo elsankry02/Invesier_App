@@ -47,7 +47,7 @@ class CustomButtonStyleEnum extends StatelessWidget {
           child: Text(
             //! title
             title,
-            style: kTextTheme.titleLarge!.copyWith(
+            style: kTextTheme.titleMedium!.copyWith(
               //! titleColor
               color: titleColor,
               fontWeight: FontWeight.w600,

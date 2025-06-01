@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:pinput/pinput.dart';
 
-class LogInPinPutWidget extends StatefulWidget {
-  const LogInPinPutWidget({super.key});
+class CustomConfirmOTP extends StatefulWidget {
+  const CustomConfirmOTP({super.key, this.validator, this.onChanged});
+
+  final String? Function(String?)? validator;
+  final Function(String)? onChanged;
 
   @override
-  State<LogInPinPutWidget> createState() => _LogInPinPutWidgetState();
+  State<CustomConfirmOTP> createState() => _CustomConfirmOTPState();
 }
 
-class _LogInPinPutWidgetState extends State<LogInPinPutWidget> {
+class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
   final pinController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Pinput(
@@ -27,13 +29,8 @@ class _LogInPinPutWidgetState extends State<LogInPinPutWidget> {
         borderColor: ColorManger.kBorder,
         backGroundColor: ColorManger.kAppBar,
       ),
-      onChanged: (value) {},
-      validator: (value) {
-        if (value!.length < 6) {
-          return 'Wrong code, try again';
-        }
-        return null;
-      },
+      onChanged: widget.onChanged,
+      validator: widget.validator,
     );
   }
 

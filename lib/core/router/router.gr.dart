@@ -27,6 +27,22 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [LoginConfirmOtpPage]
+class LoginConfirmOtpRoute extends PageRouteInfo<void> {
+  const LoginConfirmOtpRoute({List<PageRouteInfo>? children})
+    : super(LoginConfirmOtpRoute.name, initialChildren: children);
+
+  static const String name = 'LoginConfirmOtpRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LoginConfirmOtpPage();
+    },
+  );
+}
+
+/// generated route for
 /// [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
@@ -59,6 +75,22 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [SignUpConfirmOtpPage]
+class SignUpConfirmOtpRoute extends PageRouteInfo<void> {
+  const SignUpConfirmOtpRoute({List<PageRouteInfo>? children})
+    : super(SignUpConfirmOtpRoute.name, initialChildren: children);
+
+  static const String name = 'SignUpConfirmOtpRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SignUpConfirmOtpPage();
+    },
+  );
+}
+
+/// generated route for
 /// [SignupPage]
 class SignupRoute extends PageRouteInfo<void> {
   const SignupRoute({List<PageRouteInfo>? children})
@@ -70,22 +102,6 @@ class SignupRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const SignupPage();
-    },
-  );
-}
-
-/// generated route for
-/// [SignUpOtpPage]
-class VerifyYourPhoneNumberRoute extends PageRouteInfo<void> {
-  const VerifyYourPhoneNumberRoute({List<PageRouteInfo>? children})
-    : super(VerifyYourPhoneNumberRoute.name, initialChildren: children);
-
-  static const String name = 'VerifyYourPhoneNumberRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const SignUpOtpPage();
     },
   );
 }
