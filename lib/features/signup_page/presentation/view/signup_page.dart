@@ -100,7 +100,7 @@ class _SignupPageState extends State<SignupPage> {
                               }
                             },
                             validator: (value) {
-                              if (value!.trim().toLowerCase() == 'mohamed') {
+                              if (value!.trim().toLowerCase() == 'a') {
                                 return null;
                               } else {
                                 return 'Please enter a valid phone number';
@@ -118,7 +118,7 @@ class _SignupPageState extends State<SignupPage> {
                               }
                             },
                             validator: (value) {
-                              if (value!.trim().toLowerCase() == '12345') {
+                              if (value!.trim().toLowerCase() == '1') {
                                 return null;
                               } else {
                                 return 'Please enter a valid phone number.';

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/components/custom_primary_button.dart';
@@ -16,8 +18,44 @@ class SignUpOtpPage extends StatefulWidget {
 }
 
 class _SignUpOtpPageState extends State<SignUpOtpPage> {
+  Timer? timer;
+  int secondsRemaining = 60;
   final formKey = GlobalKey<FormState>();
   final pinController = TextEditingController();
+
+  @override
+  void initState() {
+    startTimer();
+    super.initState();
+  }
+
+  void startTimer() {
+    timer?.cancel();
+    secondsRemaining = 60;
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      if (secondsRemaining > 0) {
+        setState(() {
+          secondsRemaining--;
+        });
+      } else {
+        timer.cancel();
+      }
+    });
+  }
+
+  void reSendCode() {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('A new code has been sent')));
+    startTimer();
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
@@ -89,13 +127,25 @@ class _SignUpOtpPageState extends State<SignUpOtpPage> {
               SizedBox(height: h * 0.196),
 
               //!
-              Text(
-                textAlign: TextAlign.center,
-                'Resend OTP (59 seconds)',
-                style: kTextTheme.titleMedium!.copyWith(
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+              secondsRemaining > 0
+                  ? Text(
+                    textAlign: TextAlign.center,
+                    'Resend OTP ($secondsRemaining seconds)',
+                    style: kTextTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w400,
+                    ),
+                  )
+                  : GestureDetector(
+                    onTap: reSendCode,
+                    child: Text(
+                      "Resend OTP",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.greenAccent,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
               SizedBox(height: h * 0.015),
               //! Verify code
               CustomPrimaryButton(
@@ -108,7 +158,7 @@ class _SignUpOtpPageState extends State<SignUpOtpPage> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     //! Navigate to ###########
-                    context.router.push(WelcomeRoute());
+                    context.router.replace(WelcomeRoute());
                   }
                 },
               ),

@@ -92,7 +92,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 controller: userNameController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
-                  if (value!.trim().toLowerCase() != 'mohamed') {
+                  if (value!.trim().toLowerCase() != 'a') {
                     return 'Please enter a valid Username';
                   }
 
@@ -100,6 +100,13 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 },
               ),
               SizedBox(height: 22),
+              Text(
+                'Full Name',
+                style: kTextTheme.labelLarge!.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 4),
               //! Fullname FormField
               CustomTextFormField(
                 title: 'Fullname',
@@ -107,7 +114,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 onChanged: (value) {},
                 validator: (value) {
-                  if (value!.trim().toLowerCase() != 'mohamed') {
+                  if (value!.trim().toLowerCase() != 'a') {
                     return 'Please enter a valid Fullname';
                   }
                   return null;
