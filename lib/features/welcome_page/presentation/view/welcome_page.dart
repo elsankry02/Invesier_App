@@ -49,7 +49,7 @@ class WelcomePage extends StatelessWidget {
               border: Border.all(width: 2, color: ColorManger.kEucalyptus),
               horizontal: 56,
               onTap: () {
-                context.router.push(SignupRoute());
+                context.router.push(LoginRoute());
               },
             ),
             SizedBox(height: h * 0.012),
