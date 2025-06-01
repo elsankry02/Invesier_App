@@ -9,7 +9,6 @@ import 'package:invesier/core/components/custom_title_appbar.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/signup_confirm_otp_page/presentation/widget/signup_pinput_widget.dart';
 import 'package:invesier/features/signup_confirm_otp_page/presentation/widget/signup_rich_text_widget.dart';
 
 @RoutePage()
@@ -110,8 +109,6 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
               SizedBox(height: h * 0.015),
               //! Signup Pinput Widget
               CustomConfirmOTP(
-                
-
                 onChanged: (value) {},
                 validator: (value) {
                   if (value!.length < 6) {
