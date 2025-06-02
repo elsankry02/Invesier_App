@@ -33,7 +33,6 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
 
   void startTimer() {
     timer?.cancel();
-    secondsRemaining = 60;
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (secondsRemaining > 0) {
         setState(() {
