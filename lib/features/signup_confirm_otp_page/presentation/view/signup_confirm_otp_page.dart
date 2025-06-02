@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/components/custom_confirm_otp.dart';
-import 'package:invesier/core/components/custom_icon_button.dart';
+import 'package:invesier/core/components/custom_icon_back.dart';
 import 'package:invesier/core/components/custom_primary_button.dart';
 import 'package:invesier/core/components/custom_title_appbar.dart';
 import 'package:invesier/core/constant/color_manger.dart';
@@ -64,17 +64,6 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
     final h = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorManger.kAppBar,
-        centerTitle: true,
-        //! CustomTitleAppBar
-        title: CustomTitleAppBar(
-          kTextTheme: kTextTheme,
-          title: 'Verify your phone number',
-        ),
-        //! CustomIconButton
-        leading: CustomIconButton(),
-      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -82,87 +71,100 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
             image: AssetImage(ImageManger.kLogIn2),
           ),
         ),
-        child: Form(
-          key: formKey,
-          child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            children: [
-              //! Enter the OTP code sent your phone number
-              RichText(
-                text: TextSpan(
-                  text:
-                      'Enter the OTP code sent your phone number \n01078653878.',
-                  style: kTextTheme.titleSmall!.copyWith(
-                    color: ColorManger.kBoulder,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              SizedBox(height: h * 0.040),
-              //! OTP Code
-              Text(
-                'OTP Code',
-                style: kTextTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              SizedBox(height: h * 0.015),
-              //! Signup Pinput Widget
-              CustomConfirmOTP(
-                onChanged: (value) {},
-                validator: (value) {
-                  if (value!.length < 6) {
-                    return 'Please enter the full 6-digit code';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: h * 0.196),
-
-              //!
-              secondsRemaining > 0
-                  ? Text(
-                    textAlign: TextAlign.center,
-                    'Resend OTP ($secondsRemaining seconds)',
-                    style: kTextTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w400,
-                    ),
-                  )
-                  : GestureDetector(
-                    onTap: reSendCode,
-                    child: Text(
-                      "Resend OTP",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.greenAccent,
-                        decoration: TextDecoration.underline,
+        child: SafeArea(
+          child: Form(
+            key: formKey,
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              children: [
+                Row(
+                  children: [
+                    //! CustomIconBack
+                    CustomIconBack(),
+                    //! CustomTitelAppBar
+                    Expanded(
+                      child: CustomTitelAppBar(
+                        kTextTheme: kTextTheme,
+                        title: "Verify your phone number",
                       ),
                     ),
-                  ),
-              SizedBox(height: h * 0.015),
-              //! Verify code
-              CustomPrimaryButton(
-                title: 'Verify code',
-                titleColor: ColorManger.kWhite,
-                gradient: LinearGradient(
-                  colors: [ColorManger.kEucalyptus, ColorManger.kTurquoiseBlue],
+                  ],
                 ),
-                horizontal: 0,
-                onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    //! Navigate to ###########
-                    context.router.replace(WelcomeRoute());
-                  }
-                },
-              ),
-              SizedBox(height: h * 0.015),
-              //! SignUp Rich Text
-              SignUpRichTextWidget(
-                termsOfUseOnTap: () {},
-                privacyPolicyOnTap: () {},
-                kTextTheme: kTextTheme,
-              ),
-            ],
+                SizedBox(height: h * 0.020),
+                //! Enter the OTP code sent your phone number
+                RichText(
+                  text: TextSpan(
+                    text:
+                        'Enter the OTP code sent your phone number \n01078653878.',
+                    style: kTextTheme.titleSmall!.copyWith(
+                      color: ColorManger.kBoulder,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                SizedBox(height: h * 0.040),
+                
+
+                //! Signup Pinput Widget
+                CustomConfirmOTP(
+                  onChanged: (value) {},
+                  validator: (value) {
+                    if (value!.length < 6) {
+                      return 'Please enter the full 6-digit code';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: h * 0.196),
+
+                //!
+                secondsRemaining > 0
+                    ? Text(
+                      textAlign: TextAlign.center,
+                      'Resend OTP ($secondsRemaining seconds)',
+                      style: kTextTheme.titleMedium!.copyWith(
+                        fontWeight: FontWeight.w400,
+                      ),
+                    )
+                    : GestureDetector(
+                      onTap: reSendCode,
+                      child: Text(
+                        "Resend OTP",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.greenAccent,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                SizedBox(height: h * 0.015),
+                //! Verify code
+                CustomPrimaryButton(
+                  title: 'Verify code',
+                  titleColor: ColorManger.kWhite,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  horizontal: 0,
+                  onTap: () {
+                    if (formKey.currentState!.validate()) {
+                      //! Navigate to ###########
+                      context.router.replace(WelcomeRoute());
+                    }
+                  },
+                ),
+                SizedBox(height: h * 0.015),
+                //! SignUp Rich Text
+                SignUpRichTextWidget(
+                  termsOfUseOnTap: () {},
+                  privacyPolicyOnTap: () {},
+                  kTextTheme: kTextTheme,
+                ),
+              ],
+            ),
           ),
         ),
       ),

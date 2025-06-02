@@ -15,6 +15,7 @@ class CustomRichText extends StatelessWidget {
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
     return RichText(
+      textAlign: TextAlign.center,
       text: TextSpan(
         children: [
           TextSpan(

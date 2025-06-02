@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomTitleAppBar extends StatelessWidget {
-  const CustomTitleAppBar({
+class CustomTitelAppBar extends StatelessWidget {
+  const CustomTitelAppBar({
     super.key,
     required this.kTextTheme,
     required this.title,

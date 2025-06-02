@@ -16,21 +16,35 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
   final pinController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Pinput(
-      length: 6,
-      controller: pinController,
-      errorPinTheme: pinTheme(
-        textColor: ColorManger.kPersianRed,
-        borderColor: ColorManger.kPersianRed,
-        backGroundColor: ColorManger.kWhite,
-      ),
-      defaultPinTheme: pinTheme(
-        textColor: ColorManger.kWhite,
-        borderColor: ColorManger.kBorder,
-        backGroundColor: ColorManger.kAppBar,
-      ),
-      onChanged: widget.onChanged,
-      validator: widget.validator,
+    final kTextTheme = Theme.of(context).textTheme;
+    final h = MediaQuery.of(context).size.height;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'OTP Code',
+          style: kTextTheme.titleSmall!.copyWith(fontWeight: FontWeight.w500),
+        ),
+        SizedBox(height: h * 0.015),
+        Center(
+          child: Pinput(
+            length: 6,
+            controller: pinController,
+            errorPinTheme: pinTheme(
+              textColor: ColorManger.kPersianRed,
+              borderColor: ColorManger.kPersianRed,
+              backGroundColor: ColorManger.kWhite,
+            ),
+            defaultPinTheme: pinTheme(
+              textColor: ColorManger.kWhite,
+              borderColor: ColorManger.kBorder,
+              backGroundColor: ColorManger.kAppBar,
+            ),
+            onChanged: widget.onChanged,
+            validator: widget.validator,
+          ),
+        ),
+      ],
     );
   }
 
