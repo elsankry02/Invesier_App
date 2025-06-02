@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_confirm_otp.dart';
-import 'package:invesier/core/components/custom_icon_back.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/components/custom_title_appbar.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/signup_confirm_otp_page/presentation/widget/signup_rich_text_widget.dart';
+import '../../../../core/components/custom_confirm_otp.dart';
+import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_primary_button.dart';
+import '../../../../core/components/custom_title_appbar.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/image_manger.dart';
+import '../../../../core/router/router.dart';
+import '../widget/signup_rich_text_widget.dart';
 
 @RoutePage()
 class SignUpConfirmOtpPage extends StatefulWidget {
@@ -33,6 +33,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
 
   void startTimer() {
     timer?.cancel();
+    secondsRemaining = 60;
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (secondsRemaining > 0) {
         setState(() {
@@ -44,7 +45,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
     });
   }
 
-  void reSendCode() {
+  void resendCode() {
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text('A new code has been sent')));
@@ -122,11 +123,10 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                         fontWeight: FontWeight.w400,
                       ),
                     )
-                    : GestureDetector(
-                      onTap: reSendCode,
+                    : TextButton(
+                      onPressed: resendCode,
                       child: Text(
-                        "Resend OTP",
-                        textAlign: TextAlign.center,
+                        "Resend",
                         style: kTextTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w400,
                         ),

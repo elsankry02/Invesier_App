@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_confirm_otp.dart';
-import 'package:invesier/core/components/custom_icon_back.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/components/custom_title_appbar.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/router/router.dart';
+import '../../../../core/components/custom_confirm_otp.dart';
+import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_primary_button.dart';
+import '../../../../core/components/custom_title_appbar.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/image_manger.dart';
+import '../../../../core/router/router.dart';
 
 @RoutePage()
 class LoginPhoneConfirmOtpPage extends StatefulWidget {
@@ -112,7 +112,6 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                   },
                 ),
                 SizedBox(height: h * 0.016),
-
                 secondsRemaining > 0
                     ?
                     //! If you didn't receive the code
@@ -124,12 +123,9 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                       ),
                     )
                     //! resendCode
-                    : GestureDetector(
-                      onTap: () {
-                        resendCode();
-                      },
+                    : TextButton(
+                      onPressed: resendCode,
                       child: Text(
-                        textAlign: TextAlign.center,
                         "Resend",
                         style: kTextTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w400,
@@ -137,6 +133,7 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                       ),
                     ),
                 SizedBox(height: h * 0.191),
+                //! Submit
                 CustomPrimaryButton(
                   titleColor: ColorManger.kWhite,
                   title: 'Submit',

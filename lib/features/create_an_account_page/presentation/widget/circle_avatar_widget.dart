@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/image_manger.dart';
 
 class CircleAvatarWidget extends StatelessWidget {
   const CircleAvatarWidget({super.key, required this.onPressed});

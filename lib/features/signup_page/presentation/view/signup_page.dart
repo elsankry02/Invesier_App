@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_button_style_enum.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/components/custom_rich_text.dart';
-import 'package:invesier/core/components/custom_social_auth_buttons.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/signup_page/presentation/widget/contact_email_widget.dart';
-import 'package:invesier/features/signup_page/presentation/widget/contact_phone_widget.dart';
+import '../../../../core/components/custom_button_style_enum.dart';
+import '../../../../core/components/custom_primary_button.dart';
+import '../../../../core/components/custom_rich_text.dart';
+import '../../../../core/components/custom_social_auth_buttons.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/image_manger.dart';
+import '../../../../core/router/router.dart';
+import '../widget/contact_email_widget.dart';
+import '../widget/contact_phone_widget.dart';
 
 enum ContactType { email, phone }
 

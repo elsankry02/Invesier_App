@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_social_button.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
+import 'custom_social_button.dart';
+import '../constant/svg_manger.dart';
 
 class CustomSocialAuthButtons extends StatelessWidget {
   const CustomSocialAuthButtons({super.key, this.onTapGoogle, this.onTapApple});

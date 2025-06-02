@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
+import '../constant/color_manger.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({

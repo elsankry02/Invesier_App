@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
-import 'package:invesier/features/onboarding_page/presentation/widget/generator_widget.dart';
-import 'package:invesier/features/onboarding_page/presentation/widget/product_display_widget.dart';
-import 'package:invesier/features/onboarding_page/presentation/widget/skip_widget.dart';
+import '../../../../core/components/custom_primary_button.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/image_manger.dart';
+import '../../../../core/router/router.dart';
+import '../../data/model/onboarding_model.dart';
+import '../widget/generator_widget.dart';
+import '../widget/product_display_widget.dart';
+import '../widget/skip_widget.dart';
 
 @RoutePage()
 class OnboardingPage extends StatefulWidget {

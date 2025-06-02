@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/features/onboarding_page/data/model/onboarding_model.dart';
+import '../../data/model/onboarding_model.dart';
 import 'package:lottie/lottie.dart';
 
 class ProductDisplayWidget extends StatelessWidget {

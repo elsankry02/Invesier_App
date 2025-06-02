@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_icon_back.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/components/custom_rich_text.dart';
-import 'package:invesier/core/components/custom_text_form_field.dart';
-import 'package:invesier/core/components/custom_title_appbar.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/create_an_account_page/presentation/widget/circle_avatar_widget.dart';
+import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_primary_button.dart';
+import '../../../../core/components/custom_rich_text.dart';
+import '../../../../core/components/custom_text_form_field.dart';
+import '../../../../core/components/custom_title_appbar.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/image_manger.dart';
+import '../../../../core/router/router.dart';
+import '../widget/circle_avatar_widget.dart';
 
 @RoutePage()
 class CreateAnAccountPage extends StatefulWidget {
@@ -51,24 +51,28 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   children: [
                     //! CustomIconBack
                     CustomIconBack(),
-                    //! CustomAppBar
                     Expanded(
-                      child: CustomTitelAppBar(
-                        kTextTheme: kTextTheme,
-                        title: 'Create an account',
+                      child: Column(
+                        children: [
+                          //! CustomAppBar
+                          CustomTitelAppBar(
+                            kTextTheme: kTextTheme,
+                            title: 'Create an account',
+                          ),
+                          SizedBox(width: h * 0.020),
+                          //! Rich Text
+                          CustomRichText(
+                            textSpanOne: 'Already have an account?',
+                            textSpanTwo: ' Log in',
+                            onTap: () {
+                              //! Navigate to Login
+                              context.router.replace(LoginRoute());
+                            },
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(width: h * 0.020),
                   ],
-                ),
-                //! Rich Text
-                CustomRichText(
-                  textSpanOne: 'Already have an account?',
-                  textSpanTwo: ' Log in',
-                  onTap: () {
-                    //! Navigate to Login
-                    context.router.replace(LoginRoute());
-                  },
                 ),
                 SizedBox(height: 16),
                 //! circle avatar

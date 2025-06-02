@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:invesier/features/create_an_account_page/presentation/view/create_an_account_page.dart';
-import 'package:invesier/features/login_email_confirm_otp_page/presentation/view/login_email_confirm_otp_page.dart';
-import 'package:invesier/features/login_page/presentation/view/login_page.dart';
-import 'package:invesier/features/login_phone_confirm_otp_page/presentation/view/login_phone_confirm_otp_page.dart';
-import 'package:invesier/features/onboarding_page/presentation/view/onboarding_page.dart';
-import 'package:invesier/features/signup_confirm_otp_page/presentation/view/signup_confirm_otp_page.dart';
-import 'package:invesier/features/signup_page/presentation/view/signup_page.dart';
-import 'package:invesier/features/welcome_page/presentation/view/welcome_page.dart';
+import '../../features/create_an_account_page/presentation/view/create_an_account_page.dart';
+import '../../features/login_email_confirm_otp_page/presentation/view/login_email_confirm_otp_page.dart';
+import '../../features/login_page/presentation/view/login_page.dart';
+import '../../features/login_phone_confirm_otp_page/presentation/view/login_phone_confirm_otp_page.dart';
+import '../../features/onboarding_page/presentation/view/onboarding_page.dart';
+import '../../features/signup_confirm_otp_page/presentation/view/signup_confirm_otp_page.dart';
+import '../../features/signup_page/presentation/view/signup_page.dart';
+import '../../features/welcome_page/presentation/view/welcome_page.dart';
 
 part 'router.gr.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/constant/color_manger.dart';
+import '../constant/color_manger.dart';
 
 class CustomSocialButton extends StatelessWidget {
   const CustomSocialButton({

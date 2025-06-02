@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/string_manger.dart';
-import 'package:invesier/core/router/router.dart';
+import 'core/constant/string_manger.dart';
+import 'core/router/router.dart';
 
 class Invesier extends StatelessWidget {
   const Invesier({super.key});
