@@ -147,11 +147,18 @@ class _SignupPageState extends State<LoginPage> {
                   titleColor: ColorManger.kWhite,
                   title: contactType == ContactType.phone ? "Log in" : "Next",
                   horizontal: 0,
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      context.router.push(LoginConfirmOtpRoute());
-                    }
-                  },
+                  onTap:
+                      contactType == ContactType.phone
+                          ? () {
+                            if (formKey.currentState!.validate()) {
+                              context.router.push(LoginPhoneConfirmOtpRoute());
+                            }
+                          }
+                          : () {
+                            if (formKey.currentState!.validate()) {
+                              context.router.push(LoginEmailConfirmOtpRoute());
+                            }
+                          },
                 ),
               ],
             ),

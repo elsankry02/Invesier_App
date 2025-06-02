@@ -27,17 +27,17 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [LoginConfirmOtpPage]
-class LoginConfirmOtpRoute extends PageRouteInfo<void> {
-  const LoginConfirmOtpRoute({List<PageRouteInfo>? children})
-    : super(LoginConfirmOtpRoute.name, initialChildren: children);
+/// [LoginEmailConfirmOtpPage]
+class LoginEmailConfirmOtpRoute extends PageRouteInfo<void> {
+  const LoginEmailConfirmOtpRoute({List<PageRouteInfo>? children})
+    : super(LoginEmailConfirmOtpRoute.name, initialChildren: children);
 
-  static const String name = 'LoginConfirmOtpRoute';
+  static const String name = 'LoginEmailConfirmOtpRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const LoginConfirmOtpPage();
+      return const LoginEmailConfirmOtpPage();
     },
   );
 }
@@ -54,6 +54,22 @@ class LoginRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const LoginPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LoginPhoneConfirmOtpPage]
+class LoginPhoneConfirmOtpRoute extends PageRouteInfo<void> {
+  const LoginPhoneConfirmOtpRoute({List<PageRouteInfo>? children})
+    : super(LoginPhoneConfirmOtpRoute.name, initialChildren: children);
+
+  static const String name = 'LoginPhoneConfirmOtpRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LoginPhoneConfirmOtpPage();
     },
   );
 }
