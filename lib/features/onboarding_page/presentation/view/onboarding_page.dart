@@ -76,12 +76,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 CustomPrimaryButton(
                   title: 'Next',
                   horizontal: 56,
-                  gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
-                  ),
                   onTap: () {
                     if (currentIndex == items(context).length - 1) {
                       context.router.push(WelcomeRoute());

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/color_manger.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({
@@ -7,9 +8,12 @@ class CustomPrimaryButton extends StatelessWidget {
     required this.title,
     required this.horizontal,
     required this.onTap,
-    this.gradient,
+
     this.border,
     this.backgroundColor,
+    this.gradient = const LinearGradient(
+      colors: [ColorManger.kEucalyptus, ColorManger.kTurquoiseBlue],
+    ),
   });
   final String title;
   final Color titleColor;

@@ -5,8 +5,8 @@ import 'package:pinput/pinput.dart';
 class CustomConfirmOTP extends StatefulWidget {
   const CustomConfirmOTP({super.key, this.validator, this.onChanged});
 
-  final String? Function(String?)? validator;
-  final Function(String)? onChanged;
+  final String? Function(String? value)? validator;
+  final Function(String value)? onChanged;
 
   @override
   State<CustomConfirmOTP> createState() => _CustomConfirmOTPState();

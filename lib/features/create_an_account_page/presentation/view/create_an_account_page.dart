@@ -121,9 +121,6 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 CustomPrimaryButton(
                   titleColor: ColorManger.kWhite,
                   title: 'Next',
-                  gradient: LinearGradient(
-                    colors: [ColorManger.kEucalyptus, ColorManger.kPrimary],
-                  ),
                   horizontal: 0,
                   //! Navigate
                   onTap: () {

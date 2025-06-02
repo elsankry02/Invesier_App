@@ -36,9 +36,6 @@ class WelcomePage extends StatelessWidget {
                 context.router.push(SignupRoute());
               },
               titleColor: ColorManger.kWhite,
-              gradient: LinearGradient(
-                colors: [ColorManger.kEucalyptus, ColorManger.kTurquoiseBlue],
-              ),
             ),
 
             SizedBox(height: h * 0.012),
@@ -46,6 +43,9 @@ class WelcomePage extends StatelessWidget {
             CustomPrimaryButton(
               title: 'Login',
               titleColor: ColorManger.kEucalyptus,
+              gradient: LinearGradient(
+                colors: [ColorManger.kAppBar, ColorManger.kAppBar],
+              ),
               border: Border.all(width: 2, color: ColorManger.kEucalyptus),
               horizontal: 56,
               onTap: () {

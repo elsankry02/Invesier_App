@@ -128,9 +128,8 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                       child: Text(
                         "Resend OTP",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.greenAccent,
-                          decoration: TextDecoration.underline,
+                        style: kTextTheme.titleMedium!.copyWith(
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ),
@@ -139,12 +138,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                 CustomPrimaryButton(
                   title: 'Verify code',
                   titleColor: ColorManger.kWhite,
-                  gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
-                  ),
+
                   horizontal: 0,
                   onTap: () {
                     if (formKey.currentState!.validate()) {
