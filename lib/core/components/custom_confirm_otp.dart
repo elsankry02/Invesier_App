@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constant/color_manger.dart';
 import 'package:pinput/pinput.dart';
+
+import '../constant/color_manger.dart';
 
 class CustomConfirmOTP extends StatefulWidget {
   const CustomConfirmOTP({super.key, this.validator, this.onChanged});
@@ -38,7 +39,7 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
             defaultPinTheme: pinTheme(
               textColor: ColorManger.kWhite,
               borderColor: ColorManger.kBorder,
-              backGroundColor: ColorManger.kAppBar,
+              backGroundColor: ColorManger.kBackGround,
             ),
             onChanged: widget.onChanged,
             validator: widget.validator,

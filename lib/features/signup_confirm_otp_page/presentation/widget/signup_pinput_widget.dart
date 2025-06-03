@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constant/color_manger.dart';
 import 'package:pinput/pinput.dart';
+
+import '../../../../core/constant/color_manger.dart';
 
 class SignupPinputWidget extends StatefulWidget {
   const SignupPinputWidget({
@@ -25,12 +26,12 @@ class _LogInPinPutWidgetState extends State<SignupPinputWidget> {
       errorPinTheme: pinTheme(
         textColor: ColorManger.kWhite,
         borderColor: ColorManger.kPersianRed,
-        backGroundColor: ColorManger.kAppBar,
+        backGroundColor: ColorManger.kBackGround,
       ),
       defaultPinTheme: pinTheme(
         textColor: ColorManger.kWhite,
         borderColor: ColorManger.kBorder,
-        backGroundColor: ColorManger.kAppBar,
+        backGroundColor: ColorManger.kBackGround,
       ),
       onChanged: widget.onChanged,
       validator: widget.validator,

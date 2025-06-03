@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'core/constant/string_manger.dart';
 import 'core/router/router.dart';
 
@@ -10,7 +11,9 @@ class Invesier extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
+      
       theme: ThemeData(
+        brightness: Brightness.dark,
         textTheme: textTheme(),
         fontFamily: StringManger.kManrope,
       ),
