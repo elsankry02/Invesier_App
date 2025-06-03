@@ -14,14 +14,14 @@ class CircleAvatarWidget extends StatefulWidget {
 }
 
 class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
-  File? imagePicker;
+  File? file;
   //! imagePickerGallery
   imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
     setState(() {
-      imagePicker = File(imageGallery!.path);
+      file = File(imageGallery!.path);
     });
   }
 
@@ -31,7 +31,7 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
       source: ImageSource.camera,
     );
     setState(() {
-      imagePicker = File(imageCamera!.path);
+      file = File(imageCamera!.path);
     });
   }
 
@@ -43,13 +43,13 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
         children: [
           ClipOval(
             child:
-                imagePicker == null
+                file == null
                     ? Image.asset(
                       height: 140,
                       width: 140,
                       ImageManger.kMintDark,
                     )
-                    : Image.file(imagePicker!),
+                    : Image.file(file!),
           ),
           Container(
             decoration: BoxDecoration(
