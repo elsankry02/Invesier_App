@@ -70,7 +70,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
               ),
               SizedBox(height: 16),
               //! circle avatar
-              CircleAvatarWidget(onPressed: () {}),
+              CircleAvatarWidget(),
               SizedBox(height: 22),
               //! Text: Username
               Text(
