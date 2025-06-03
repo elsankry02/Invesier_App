@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/image_manger.dart';
 import '../../../../core/router/router.dart';
 import '../widget/signup_rich_text_widget.dart';
 
@@ -64,97 +64,90 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
     final h = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(ImageManger.kLogIn2),
-          ),
-        ),
-        child: SafeArea(
-          child: Form(
-            key: formKey,
-            child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              children: [
-                Row(
-                  children: [
-                    //! CustomIconBack
-                    CustomIconBack(),
-                    //! CustomTitelAppBar
-                    Expanded(
-                      child: CustomTitelAppBar(
-                        kTextTheme: kTextTheme,
-                        title: "Verify your phone number",
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: h * 0.020),
-                //! Enter the OTP code sent your phone number
-                RichText(
-                  text: TextSpan(
-                    text:
-                        'Enter the OTP code sent your phone number \n01078653878.',
-                    style: kTextTheme.titleSmall!.copyWith(
-                      color: ColorManger.kBoulder,
-                      fontWeight: FontWeight.w600,
+      backgroundColor: ColorManger.kBackGround,
+      body: SafeArea(
+        child: Form(
+          key: formKey,
+          child: ListView(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            children: [
+              Row(
+                children: [
+                  //! CustomIconBack
+                  CustomIconBack(),
+                  //! CustomTitelAppBar
+                  Expanded(
+                    child: CustomTitelAppBar(
+                      kTextTheme: kTextTheme,
+                      title: "Verify your phone number",
                     ),
                   ),
+                ],
+              ),
+              SizedBox(height: h * 0.020),
+              //! Enter the OTP code sent your phone number
+              RichText(
+                text: TextSpan(
+                  text:
+                      'Enter the OTP code sent your phone number \n01078653878.',
+                  style: kTextTheme.titleSmall!.copyWith(
+                    color: ColorManger.kBoulder,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                SizedBox(height: h * 0.040),
-                //! Signup Pinput Widget
-                CustomConfirmOTP(
-                  onChanged: (value) {},
-                  validator: (value) {
-                    if (value!.length < 6) {
-                      return 'Please enter the full 6-digit code';
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(height: h * 0.196),
-                //! IF
-                secondsRemaining > 0
-                    ? Text(
-                      textAlign: TextAlign.center,
-                      'Resend OTP ($secondsRemaining seconds)',
+              ),
+              SizedBox(height: h * 0.040),
+              //! Signup Pinput Widget
+              CustomConfirmOTP(
+                onChanged: (value) {},
+                validator: (value) {
+                  if (value!.length < 6) {
+                    return 'Please enter the full 6-digit code';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: h * 0.196),
+              //! IF
+              secondsRemaining > 0
+                  ? Text(
+                    textAlign: TextAlign.center,
+                    'Resend OTP ($secondsRemaining seconds)',
+                    style: kTextTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w400,
+                    ),
+                  )
+                  : TextButton(
+                    onPressed: resendCode,
+                    child: Text(
+                      "Resend",
                       style: kTextTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
-                    )
-                    : TextButton(
-                      onPressed: resendCode,
-                      child: Text(
-                        "Resend",
-                        style: kTextTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
                     ),
-                SizedBox(height: h * 0.015),
-                //! Verify code
-                CustomPrimaryButton(
-                  title: 'Verify code',
-                  titleColor: ColorManger.kWhite,
+                  ),
+              SizedBox(height: h * 0.015),
+              //! Verify code
+              CustomPrimaryButton(
+                title: 'Verify code',
+                titleColor: ColorManger.kWhite,
 
-                  horizontal: 0,
-                  onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      //! Navigate to ###########
-                      context.router.replace(WelcomeRoute());
-                    }
-                  },
-                ),
-                SizedBox(height: h * 0.015),
-                //! SignUp Rich Text
-                SignUpRichTextWidget(
-                  termsOfUseOnTap: () {},
-                  privacyPolicyOnTap: () {},
-                  kTextTheme: kTextTheme,
-                ),
-              ],
-            ),
+                horizontal: 0,
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    //! Navigate to ###########
+                    context.router.replace(WelcomeRoute());
+                  }
+                },
+              ),
+              SizedBox(height: h * 0.015),
+              //! SignUp Rich Text
+              SignUpRichTextWidget(
+                termsOfUseOnTap: () {},
+                privacyPolicyOnTap: () {},
+                kTextTheme: kTextTheme,
+              ),
+            ],
           ),
         ),
       ),

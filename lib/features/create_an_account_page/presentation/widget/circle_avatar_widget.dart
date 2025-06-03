@@ -20,18 +20,9 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
     final imageGallery = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
+    if (imageGallery == null) return;
     setState(() {
-      file = File(imageGallery!.path);
-    });
-  }
-
-  //! imagePickerCamera
-  imageCamera() async {
-    final imageCamera = await ImagePicker().pickImage(
-      source: ImageSource.camera,
-    );
-    setState(() {
-      file = File(imageCamera!.path);
+      file = File(imageGallery.path);
     });
   }
 
@@ -45,11 +36,16 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
             child:
                 file == null
                     ? Image.asset(
+                      ImageManger.kMintDark,
                       height: 140,
                       width: 140,
-                      ImageManger.kMintDark,
                     )
-                    : Image.file(file!),
+                    : Image.file(
+                      file!,
+                      height: 140,
+                      width: 140,
+                      fit: BoxFit.cover,
+                    ),
           ),
           Container(
             decoration: BoxDecoration(
@@ -57,7 +53,7 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
               color: ColorManger.kTurquoiseBlue,
             ),
             child: IconButton(
-              onPressed: imageCamera,
+              onPressed: imageGallery,
 
               icon: Icon(color: ColorManger.kWhite, Icons.photo_camera),
             ),
