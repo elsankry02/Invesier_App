@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_icon_back.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -31,8 +32,6 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
 
   @override
   Widget build(BuildContext context) {
-    final h = MediaQuery.of(context).size.height;
-    final kTextTheme = Theme.of(context).textTheme;
     return Scaffold(
       backgroundColor: ColorManger.kBackGround,
       body: SafeArea(
@@ -49,11 +48,8 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                     child: Column(
                       children: [
                         //! CustomAppBar
-                        CustomTitelAppBar(
-                          kTextTheme: kTextTheme,
-                          title: 'Create an account',
-                        ),
-                        SizedBox(width: h * 0.020),
+                        CustomTitelAppBar(title: 'Create an account'),
+                        SizedBox(width: context.h * 0.020),
                         //! Rich Text
                         CustomRichText(
                           textSpanOne: 'Already have an account?',
@@ -75,7 +71,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
               //! Text: Username
               Text(
                 'User Name',
-                style: kTextTheme.labelLarge!.copyWith(
+                style: context.kTextTheme.labelLarge!.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -96,7 +92,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
               SizedBox(height: 22),
               Text(
                 'Full Name',
-                style: kTextTheme.labelLarge!.copyWith(
+                style: context.kTextTheme.labelLarge!.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -114,7 +110,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   return null;
                 },
               ),
-              SizedBox(height: h * 0.090),
+              SizedBox(height: context.h * 0.090),
               //! Next Button
               CustomPrimaryButton(
                 titleColor: ColorManger.kWhite,

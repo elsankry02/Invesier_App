@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../extension/extension.dart';
 import 'package:pinput/pinput.dart';
 
 import '../constant/color_manger.dart';
@@ -17,16 +18,16 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
   final pinController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
-    final h = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'OTP Code',
-          style: kTextTheme.titleSmall!.copyWith(fontWeight: FontWeight.w500),
+          style: context.kTextTheme.titleSmall!.copyWith(
+            fontWeight: FontWeight.w500,
+          ),
         ),
-        SizedBox(height: h * 0.015),
+        SizedBox(height: context.h * 0.015),
         Center(
           child: Pinput(
             length: 6,

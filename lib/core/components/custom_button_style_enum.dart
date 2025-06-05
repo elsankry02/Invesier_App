@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/extension/extension.dart';
+
 import '../constant/color_manger.dart';
 
 class CustomButtonStyleEnum extends StatelessWidget {
@@ -23,7 +25,6 @@ class CustomButtonStyleEnum extends StatelessWidget {
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
     return GestureDetector(
       //! onTap
       onTap: onTap,
@@ -47,7 +48,7 @@ class CustomButtonStyleEnum extends StatelessWidget {
           child: Text(
             //! title
             title,
-            style: kTextTheme.titleMedium!.copyWith(
+            style: context.kTextTheme.titleMedium!.copyWith(
               //! titleColor
               color: titleColor,
               fontWeight: FontWeight.w600,

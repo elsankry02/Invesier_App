@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/extension/extension.dart';
+
 import '../constant/color_manger.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
@@ -24,7 +26,6 @@ class CustomPrimaryButton extends StatelessWidget {
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
     return GestureDetector(
       //! onTap
       onTap: onTap,
@@ -44,7 +45,7 @@ class CustomPrimaryButton extends StatelessWidget {
           //! Title
           child: Text(
             title,
-            style: kTextTheme.titleMedium!.copyWith(
+            style: context.kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w600,
               //! titleColor
               color: titleColor,

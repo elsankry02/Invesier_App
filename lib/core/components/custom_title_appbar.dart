@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import '../extension/extension.dart';
 
 class CustomTitelAppBar extends StatelessWidget {
-  const CustomTitelAppBar({
-    super.key,
-    required this.kTextTheme,
-    required this.title,
-  });
+  const CustomTitelAppBar({super.key, required this.title});
 
-  final TextTheme kTextTheme;
   final String title;
 
   @override
@@ -15,7 +11,9 @@ class CustomTitelAppBar extends StatelessWidget {
     return Text(
       textAlign: TextAlign.center,
       title,
-      style: kTextTheme.headlineSmall!.copyWith(fontWeight: FontWeight.w700),
+      style: context.kTextTheme.headlineSmall!.copyWith(
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 }

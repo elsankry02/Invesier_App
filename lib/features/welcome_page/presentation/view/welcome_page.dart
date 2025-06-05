@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
@@ -14,7 +15,6 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -28,7 +28,7 @@ class WelcomePage extends StatelessWidget {
           children: [
             //! Welcome Display Widget
             WelcomeDisplayWidget(),
-            SizedBox(height: h * 0.080),
+            SizedBox(height: context.h * 0.080),
             //! Get Started
             CustomPrimaryButton(
               title: 'Get Started',
@@ -39,7 +39,7 @@ class WelcomePage extends StatelessWidget {
               titleColor: ColorManger.kWhite,
             ),
 
-            SizedBox(height: h * 0.012),
+            SizedBox(height: context.h * 0.012),
             //! Login
             CustomPrimaryButton(
               title: 'Login',
@@ -53,7 +53,7 @@ class WelcomePage extends StatelessWidget {
                 context.router.push(LoginRoute());
               },
             ),
-            SizedBox(height: h * 0.012),
+            SizedBox(height: context.h * 0.012),
             //! RichTextWidget
             CustomRichText(
               textSpanOne: 'Already have an account?',

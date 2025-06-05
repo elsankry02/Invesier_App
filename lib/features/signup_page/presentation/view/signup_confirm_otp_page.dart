@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
@@ -60,9 +61,6 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
 
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
-    final h = MediaQuery.of(context).size.height;
-
     return Scaffold(
       backgroundColor: ColorManger.kBackGround,
       body: SafeArea(
@@ -77,26 +75,23 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   CustomIconBack(),
                   //! CustomTitelAppBar
                   Expanded(
-                    child: CustomTitelAppBar(
-                      kTextTheme: kTextTheme,
-                      title: "Verify your phone number",
-                    ),
+                    child: CustomTitelAppBar(title: "Verify your phone number"),
                   ),
                 ],
               ),
-              SizedBox(height: h * 0.020),
+              SizedBox(height: context.h * 0.020),
               //! Enter the OTP code sent your phone number
               RichText(
                 text: TextSpan(
                   text:
                       'Enter the OTP code sent your phone number \n01078653878.',
-                  style: kTextTheme.titleSmall!.copyWith(
+                  style: context.kTextTheme.titleSmall!.copyWith(
                     color: ColorManger.kBoulder,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
-              SizedBox(height: h * 0.040),
+              SizedBox(height: context.h * 0.040),
               //! Signup Pinput Widget
               CustomConfirmOTP(
                 onChanged: (value) {},
@@ -107,13 +102,13 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   return null;
                 },
               ),
-              SizedBox(height: h * 0.196),
+              SizedBox(height: context.h * 0.196),
               //! IF
               secondsRemaining > 0
                   ? Text(
                     textAlign: TextAlign.center,
                     'Resend OTP ($secondsRemaining seconds)',
-                    style: kTextTheme.titleMedium!.copyWith(
+                    style: context.kTextTheme.titleMedium!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                   )
@@ -121,12 +116,12 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                     onPressed: resendCode,
                     child: Text(
                       "Resend",
-                      style: kTextTheme.titleMedium!.copyWith(
+                      style: context.kTextTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
-              SizedBox(height: h * 0.015),
+              SizedBox(height: context.h * 0.015),
               //! Verify code
               CustomPrimaryButton(
                 title: 'Verify code',
@@ -140,12 +135,11 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   }
                 },
               ),
-              SizedBox(height: h * 0.015),
+              SizedBox(height: context.h * 0.015),
               //! SignUp Rich Text
               SignUpRichTextWidget(
                 termsOfUseOnTap: () {},
                 privacyPolicyOnTap: () {},
-                kTextTheme: kTextTheme,
               ),
             ],
           ),

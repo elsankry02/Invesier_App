@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_button_style_enum.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -37,8 +38,6 @@ class _SignupPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
-    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: ColorManger.kBackGround,
       body: SafeArea(
@@ -51,7 +50,7 @@ class _SignupPageState extends State<LoginPage> {
               Text(
                 textAlign: TextAlign.center,
                 'Welcome To Invesier!',
-                style: kTextTheme.headlineSmall!.copyWith(
+                style: context.kTextTheme.headlineSmall!.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -67,7 +66,7 @@ class _SignupPageState extends State<LoginPage> {
                   },
                 ),
               ),
-              SizedBox(height: h * 0.024),
+              SizedBox(height: context.h * 0.024),
               Column(
                 children: [
                   //! Contact Type
@@ -124,10 +123,10 @@ class _SignupPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: h * 0.047),
+                  SizedBox(height: context.h * 0.047),
                   //! PageView
                   SizedBox(
-                    height: h * 0.150,
+                    height: context.h * 0.150,
                     child: PageView(
                       physics: NeverScrollableScrollPhysics(),
                       controller: pageController,
@@ -175,14 +174,14 @@ class _SignupPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              SizedBox(height: h * 0.11),
+              SizedBox(height: context.h * 0.11),
               CustomSocialAuthButtons(
                 //! onTapGoogle
                 onTapGoogle: () {},
                 //! onTapApple
                 onTapApple: () {},
               ),
-              SizedBox(height: h * 0.057),
+              SizedBox(height: context.h * 0.057),
               //! CustomPrimaryButton
               CustomPrimaryButton(
                 backgroundColor: ColorManger.kTurquoiseBlue,

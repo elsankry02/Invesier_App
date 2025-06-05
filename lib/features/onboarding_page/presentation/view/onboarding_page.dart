@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
+
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
@@ -29,7 +31,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -44,7 +45,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                SizedBox(height: h * 0.032),
+                SizedBox(height: context.h * 0.032),
                 //! Skip
                 SkipWidget(
                   skip: 'Skip',
@@ -71,7 +72,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 //! GenerateWidget
                 GeneratorWidget(currentIndex: currentIndex),
                 //
-                SizedBox(height: h * 0.060),
+                SizedBox(height: context.h * 0.060),
                 //! Conditional
                 CustomPrimaryButton(
                   title: 'Next',
@@ -89,7 +90,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   titleColor: ColorManger.kWhite,
                 ),
                 //
-                SizedBox(height: h * 0.057),
+                SizedBox(height: context.h * 0.057),
               ],
             ),
           ),

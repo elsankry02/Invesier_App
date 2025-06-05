@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
+
 import '../../../../core/components/custom_text_form_field.dart';
 
 class ContactPhoneWidget extends StatelessWidget {
@@ -16,17 +18,17 @@ class ContactPhoneWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
-    final h = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         //! Phone number
         Text(
           'Phone number',
-          style: kTextTheme.labelLarge!.copyWith(fontWeight: FontWeight.w600),
+          style: context.kTextTheme.labelLarge!.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
-        SizedBox(height: h * 0.004),
+        SizedBox(height: context.h * 0.004),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

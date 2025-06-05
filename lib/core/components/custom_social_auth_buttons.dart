@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'custom_social_button.dart';
+import '../extension/extension.dart';
+
 import '../constant/svg_manger.dart';
+import 'custom_social_button.dart';
 
 class CustomSocialAuthButtons extends StatelessWidget {
   const CustomSocialAuthButtons({super.key, this.onTapGoogle, this.onTapApple});
@@ -9,13 +11,14 @@ class CustomSocialAuthButtons extends StatelessWidget {
   final void Function()? onTapApple;
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
     return Column(
       children: [
         //! Or connect with
         Text(
           'Or connect with',
-          style: kTextTheme.labelLarge!.copyWith(fontWeight: FontWeight.w600),
+          style: context.kTextTheme.labelLarge!.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
         SizedBox(height: 15),
         Row(

@@ -1,29 +1,31 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
 
 class SignUpRichTextWidget extends StatelessWidget {
   const SignUpRichTextWidget({
     super.key,
-    required this.kTextTheme,
+
     this.termsOfUseOnTap,
     this.privacyPolicyOnTap,
   });
   final Function()? termsOfUseOnTap;
   final Function()? privacyPolicyOnTap;
-  final TextTheme kTextTheme;
 
   @override
   Widget build(BuildContext context) {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: kTextTheme.labelMedium!.copyWith(fontWeight: FontWeight.w300),
+        style: context.kTextTheme.labelMedium!.copyWith(
+          fontWeight: FontWeight.w300,
+        ),
         children: [
           TextSpan(text: 'By continuing, you agree to \n'),
           //! Terms of Use
           TextSpan(
             text: 'Terms of Use',
-            style: kTextTheme.labelMedium!.copyWith(
+            style: context.kTextTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.w500,
             ),
             recognizer: TapGestureRecognizer()..onTap = termsOfUseOnTap,
@@ -32,7 +34,7 @@ class SignUpRichTextWidget extends StatelessWidget {
           //! Privacy Policy.
           TextSpan(
             text: 'Privacy Policy.',
-            style: kTextTheme.labelMedium!.copyWith(
+            style: context.kTextTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.w500,
             ),
             recognizer: TapGestureRecognizer()..onTap = privacyPolicyOnTap,

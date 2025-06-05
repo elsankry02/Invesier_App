@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
@@ -11,18 +12,19 @@ import '../../../../core/constant/color_manger.dart';
 import '../../../../core/router/router.dart';
 
 @RoutePage()
-class LoginEmailConfirmOtpPage extends StatefulWidget {
-  const LoginEmailConfirmOtpPage({super.key});
+class LoginPhoneConfirmOtpPage extends StatefulWidget {
+  const LoginPhoneConfirmOtpPage({super.key});
 
   @override
-  State<LoginEmailConfirmOtpPage> createState() =>
-      _LoginEmailConfirmOtpPageState();
+  State<LoginPhoneConfirmOtpPage> createState() =>
+      _LoginPhoneConfirmOtpPageState();
 }
 
-class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
+class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
   final formKey = GlobalKey<FormState>();
   Timer? timer;
   int secondsRemaining = 60;
+
   @override
   void initState() {
     startTimer();
@@ -32,13 +34,13 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
   void startTimer() {
     timer?.cancel();
     secondsRemaining = 60;
-    Timer.periodic(Duration(seconds: 1), (t) {
+    timer = Timer.periodic(Duration(seconds: 1), (t) {
       if (secondsRemaining > 0) {
         setState(() {
           secondsRemaining--;
         });
       } else {
-        timer?.cancel();
+        t.cancel();
       }
     });
   }
@@ -58,8 +60,6 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
 
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
-    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: ColorManger.kBackGround,
       body: SafeArea(
@@ -74,44 +74,41 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   CustomIconBack(),
                   Expanded(
                     //! CustomAppBar
-                    child: CustomTitelAppBar(
-                      kTextTheme: kTextTheme,
-                      title: 'Confirm OTP',
-                    ),
+                    child: CustomTitelAppBar(title: 'Confirm OTP'),
                   ),
                 ],
               ),
-              SizedBox(height: h * 0.023),
+              SizedBox(height: context.h * 0.023),
               //! Enter the OTP code sent your phone and Email
               RichText(
                 text: TextSpan(
                   text:
-                      'Enter the OTP code sent your phone number \nm.hassan@gmail.com.',
-                  style: kTextTheme.titleSmall!.copyWith(
+                      'Enter the OTP code sent your phone number \n01078653878.',
+                  style: context.kTextTheme.titleSmall!.copyWith(
                     color: ColorManger.kBoulder,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
-              SizedBox(height: h * 0.040),
+              SizedBox(height: context.h * 0.040),
+              //! CustomConfirmOTP
               CustomConfirmOTP(
                 onChanged: (value) {},
                 validator: (value) {
                   if (value!.length < 6) {
-                    return "Please enter the full 6-digit code";
+                    return 'Please enter the full 6-digit code';
                   }
                   return null;
                 },
               ),
-              SizedBox(height: h * 0.016),
-
+              SizedBox(height: context.h * 0.016),
               secondsRemaining > 0
                   ?
                   //! If you didn't receive the code
                   Text(
                     textAlign: TextAlign.center,
                     "If you didn't receive the code in 00:$secondsRemaining",
-                    style: kTextTheme.titleMedium!.copyWith(
+                    style: context.kTextTheme.titleMedium!.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                   )
@@ -120,12 +117,13 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                     onPressed: resendCode,
                     child: Text(
                       "Resend",
-                      style: kTextTheme.titleMedium!.copyWith(
+                      style: context.kTextTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
-              SizedBox(height: h * 0.191),
+              SizedBox(height: context.h * 0.191),
+              //! Submit
               CustomPrimaryButton(
                 titleColor: ColorManger.kWhite,
                 title: 'Submit',
