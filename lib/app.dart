@@ -11,7 +11,7 @@ class Invesier extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
-      
+
       theme: ThemeData(
         brightness: Brightness.dark,
         textTheme: textTheme(),
@@ -21,23 +21,23 @@ class Invesier extends StatelessWidget {
   }
 
   TextTheme textTheme() {
-    final kColorWhite = TextStyle(color: Colors.white);
+    final kWhite = TextStyle(color: Colors.white);
     return TextTheme(
-      displayLarge: kColorWhite,
-      displayMedium: kColorWhite,
-      displaySmall: kColorWhite,
-      headlineLarge: kColorWhite,
-      headlineMedium: kColorWhite,
-      headlineSmall: kColorWhite,
-      bodyLarge: kColorWhite,
-      bodyMedium: kColorWhite,
-      bodySmall: kColorWhite,
-      titleLarge: kColorWhite,
-      titleMedium: kColorWhite,
-      titleSmall: kColorWhite,
-      labelLarge: kColorWhite,
-      labelMedium: kColorWhite,
-      labelSmall: kColorWhite,
+      displayLarge: kWhite,
+      displayMedium: kWhite,
+      displaySmall: kWhite,
+      headlineLarge: kWhite,
+      headlineMedium: kWhite,
+      headlineSmall: kWhite,
+      bodyLarge: kWhite,
+      bodyMedium: kWhite,
+      bodySmall: kWhite,
+      titleLarge: kWhite,
+      titleMedium: kWhite,
+      titleSmall: kWhite,
+      labelLarge: kWhite,
+      labelMedium: kWhite,
+      labelSmall: kWhite,
     );
   }
 }
