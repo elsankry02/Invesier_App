@@ -27,7 +27,7 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
             fontWeight: FontWeight.w500,
           ),
         ),
-        SizedBox(height: context.h * 0.015),
+        SizedBox(height: context.height * 0.015),
         Center(
           child: Pinput(
             length: 6,

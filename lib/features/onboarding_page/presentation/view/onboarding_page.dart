@@ -45,7 +45,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                SizedBox(height: context.h * 0.032),
+                SizedBox(height: context.height * 0.032),
                 //! Skip
                 SkipWidget(
                   skip: 'Skip',
@@ -72,7 +72,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 //! GenerateWidget
                 GeneratorWidget(currentIndex: currentIndex),
                 //
-                SizedBox(height: context.h * 0.060),
+                SizedBox(height: context.height * 0.060),
                 //! Conditional
                 CustomPrimaryButton(
                   title: 'Next',
@@ -90,7 +90,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   titleColor: ColorManger.kWhite,
                 ),
                 //
-                SizedBox(height: context.h * 0.057),
+                SizedBox(height: context.height * 0.057),
               ],
             ),
           ),

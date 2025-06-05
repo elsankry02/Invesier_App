@@ -79,7 +79,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   ),
                 ],
               ),
-              SizedBox(height: context.h * 0.020),
+              SizedBox(height: context.height * 0.020),
               //! Enter the OTP code sent your phone number
               RichText(
                 text: TextSpan(
@@ -91,7 +91,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   ),
                 ),
               ),
-              SizedBox(height: context.h * 0.040),
+              SizedBox(height: context.height * 0.040),
               //! Signup Pinput Widget
               CustomConfirmOTP(
                 onChanged: (value) {},
@@ -102,7 +102,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   return null;
                 },
               ),
-              SizedBox(height: context.h * 0.196),
+              SizedBox(height: context.height * 0.196),
               //! IF
               secondsRemaining > 0
                   ? Text(
@@ -121,7 +121,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                       ),
                     ),
                   ),
-              SizedBox(height: context.h * 0.015),
+              SizedBox(height: context.height * 0.015),
               //! Verify code
               CustomPrimaryButton(
                 title: 'Verify code',
@@ -135,7 +135,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   }
                 },
               ),
-              SizedBox(height: context.h * 0.015),
+              SizedBox(height: context.height * 0.015),
               //! SignUp Rich Text
               SignUpRichTextWidget(
                 termsOfUseOnTap: () {},

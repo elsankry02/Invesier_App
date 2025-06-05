@@ -16,7 +16,7 @@ class ProductDisplayWidget extends StatelessWidget {
         //! Svg
         Lottie.asset(item.image, fit: BoxFit.cover),
         //
-        SizedBox(height: context.h * 0.140),
+        SizedBox(height: context.height * 0.140),
         //! Titel
         Text(
           item.titel,
@@ -26,7 +26,7 @@ class ProductDisplayWidget extends StatelessWidget {
           ),
         ),
         //
-        SizedBox(height: context.h * 0.02),
+        SizedBox(height: context.height * 0.02),
         //! SubTitel
         Text(
           item.subTitel,

@@ -28,7 +28,7 @@ class WelcomePage extends StatelessWidget {
           children: [
             //! Welcome Display Widget
             WelcomeDisplayWidget(),
-            SizedBox(height: context.h * 0.080),
+            SizedBox(height: context.height * 0.080),
             //! Get Started
             CustomPrimaryButton(
               title: 'Get Started',
@@ -39,7 +39,7 @@ class WelcomePage extends StatelessWidget {
               titleColor: ColorManger.kWhite,
             ),
 
-            SizedBox(height: context.h * 0.012),
+            SizedBox(height: context.height * 0.012),
             //! Login
             CustomPrimaryButton(
               title: 'Login',
@@ -53,7 +53,7 @@ class WelcomePage extends StatelessWidget {
                 context.router.push(LoginRoute());
               },
             ),
-            SizedBox(height: context.h * 0.012),
+            SizedBox(height: context.height * 0.012),
             //! RichTextWidget
             CustomRichText(
               textSpanOne: 'Already have an account?',

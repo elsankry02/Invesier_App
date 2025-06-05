@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../data/model/onboarding_model.dart';
 
 class GeneratorWidget extends StatelessWidget {
@@ -18,8 +18,10 @@ class GeneratorWidget extends StatelessWidget {
           return Container(
             margin: EdgeInsets.only(right: 8),
             width:
-                currentIndex == index ? context.w * 0.060 : context.w * 0.012,
-            height: context.h * 0.006,
+                currentIndex == index
+                    ? context.width * 0.060
+                    : context.width * 0.012,
+            height: context.height * 0.006,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color:
@@ -32,8 +34,4 @@ class GeneratorWidget extends StatelessWidget {
       ],
     );
   }
-}
-
-extension on BuildContext {
-  get w => null;
 }

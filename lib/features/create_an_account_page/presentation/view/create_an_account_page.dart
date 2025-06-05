@@ -49,7 +49,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                       children: [
                         //! CustomAppBar
                         CustomTitelAppBar(title: 'Create an account'),
-                        SizedBox(width: context.h * 0.020),
+                        SizedBox(width: context.height * 0.020),
                         //! Rich Text
                         CustomRichText(
                           textSpanOne: 'Already have an account?',
@@ -110,7 +110,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   return null;
                 },
               ),
-              SizedBox(height: context.h * 0.090),
+              SizedBox(height: context.height * 0.090),
               //! Next Button
               CustomPrimaryButton(
                 titleColor: ColorManger.kWhite,

@@ -77,7 +77,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   ),
                 ],
               ),
-              SizedBox(height: context.h * 0.023),
+              SizedBox(height: context.height * 0.023),
               //! Enter the OTP code sent your phone and Email
               RichText(
                 text: TextSpan(
@@ -89,7 +89,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   ),
                 ),
               ),
-              SizedBox(height: context.h * 0.040),
+              SizedBox(height: context.height * 0.040),
               CustomConfirmOTP(
                 onChanged: (value) {},
                 validator: (value) {
@@ -99,7 +99,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   return null;
                 },
               ),
-              SizedBox(height: context.h * 0.016),
+              SizedBox(height: context.height * 0.016),
 
               secondsRemaining > 0
                   ?
@@ -121,7 +121,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                       ),
                     ),
                   ),
-              SizedBox(height: context.h * 0.191),
+              SizedBox(height: context.height * 0.191),
               CustomPrimaryButton(
                 titleColor: ColorManger.kWhite,
                 title: 'Submit',

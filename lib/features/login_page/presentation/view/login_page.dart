@@ -66,7 +66,7 @@ class _SignupPageState extends State<LoginPage> {
                   },
                 ),
               ),
-              SizedBox(height: context.h * 0.024),
+              SizedBox(height: context.height * 0.024),
               Column(
                 children: [
                   //! Contact Type
@@ -123,10 +123,10 @@ class _SignupPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: context.h * 0.047),
+                  SizedBox(height: context.height * 0.047),
                   //! PageView
                   SizedBox(
-                    height: context.h * 0.150,
+                    height: context.height * 0.150,
                     child: PageView(
                       physics: NeverScrollableScrollPhysics(),
                       controller: pageController,
@@ -174,14 +174,14 @@ class _SignupPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              SizedBox(height: context.h * 0.11),
+              SizedBox(height: context.height * 0.11),
               CustomSocialAuthButtons(
                 //! onTapGoogle
                 onTapGoogle: () {},
                 //! onTapApple
                 onTapApple: () {},
               ),
-              SizedBox(height: context.h * 0.057),
+              SizedBox(height: context.height * 0.057),
               //! CustomPrimaryButton
               CustomPrimaryButton(
                 backgroundColor: ColorManger.kTurquoiseBlue,

@@ -12,7 +12,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
     return ListTile(
       title: Column(
         children: [
-          SizedBox(height: context.h * 0.18),
+          SizedBox(height: context.height * 0.18),
           Lottie.asset(LottieManger.kOnboardingTwo),
 
           //! titel
@@ -23,7 +23,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(height: context.h * 0.012),
+          SizedBox(height: context.height * 0.012),
           //! SubTitel
           Text(
             'Climb the leaderboard, unlock perks, and \nearn real-world opportunities',

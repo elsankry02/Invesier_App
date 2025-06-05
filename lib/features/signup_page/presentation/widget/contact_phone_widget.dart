@@ -28,7 +28,7 @@ class ContactPhoneWidget extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        SizedBox(height: context.h * 0.004),
+        SizedBox(height: context.height * 0.004),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
