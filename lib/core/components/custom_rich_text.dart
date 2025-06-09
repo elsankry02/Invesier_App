@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../extension/extension.dart';
 
 class CustomRichText extends StatelessWidget {
   const CustomRichText({
