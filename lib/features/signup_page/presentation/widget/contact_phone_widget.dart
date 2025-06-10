@@ -29,6 +29,7 @@ class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
     showDialCode: true,
     showSearchBar: true,
     favorites: ['EG', 'SA', 'US'],
+    title: Text(''),
     filteredCountries: ['EG', 'SA', 'US'],
     countryTextStyle: TextStyle(color: ColorManger.kBackGround),
     dialCodeTextStyle: TextStyle(color: ColorManger.kBackGround),
@@ -61,7 +62,6 @@ class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
         ),
         SizedBox(height: context.height * 0.004),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             GestureDetector(
               onTap: () async {
