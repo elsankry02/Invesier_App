@@ -24,12 +24,11 @@ class ContactPhoneWidget extends StatefulWidget {
 
 class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
   CountryCode? selectedCountry;
-  final countryPickerWithParams = const FlCountryCodePicker(
+  final flCountryCodePicker = const FlCountryCodePicker(
     localize: true,
     showDialCode: true,
     showSearchBar: true,
     favorites: ['EG', 'SA', 'US'],
-    title: Text('AR'),
     filteredCountries: ['EG', 'SA', 'US'],
     countryTextStyle: TextStyle(color: ColorManger.kBackGround),
     dialCodeTextStyle: TextStyle(color: ColorManger.kBackGround),
@@ -66,7 +65,7 @@ class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
           children: [
             GestureDetector(
               onTap: () async {
-                final code = await countryPickerWithParams.showPicker(
+                final code = await flCountryCodePicker.showPicker(
                   context: context,
                 );
                 if (code != null) {
