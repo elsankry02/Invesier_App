@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import '../../features/create_an_account_page/presentation/view/create_an_account_page.dart';
+import '../../features/signup_page/presentation/view/create_an_account_page.dart';
 import '../../features/login_page/presentation/view/login_email_confirm_otp_page.dart';
 import '../../features/login_page/presentation/view/login_page.dart';
 import '../../features/login_page/presentation/view/login_phone_confirm_otp_page.dart';
