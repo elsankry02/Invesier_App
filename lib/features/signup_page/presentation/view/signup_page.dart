@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_button_style_enum.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_social_auth_buttons.dart';
 import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../widget/contact_email_widget.dart';
 import '../widget/contact_phone_widget.dart';
@@ -150,7 +150,7 @@ class _SignupPageState extends State<SignupPage> {
                             }
                           },
                         ),
-                        //! Phone Widget
+
                         ContactPhoneWidget(
                           phoneController: phoneController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
