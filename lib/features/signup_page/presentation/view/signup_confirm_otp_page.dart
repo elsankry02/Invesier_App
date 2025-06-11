@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../widget/signup_rich_text_widget.dart';
 
@@ -83,12 +83,22 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
               //! Enter the OTP code sent your phone number
               RichText(
                 text: TextSpan(
-                  text:
-                      'Enter the OTP code sent your phone number \n01078653878.',
-                  style: context.kTextTheme.titleSmall!.copyWith(
-                    color: ColorManger.kBoulder,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Enter the OTP code sent your phone number\n',
+                      style: context.kTextTheme.titleSmall!.copyWith(
+                        color: ColorManger.kBoulder,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '01204306044',
+                      style: context.kTextTheme.titleMedium!.copyWith(
+                        color: ColorManger.kBoulder,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: context.height * 0.040),

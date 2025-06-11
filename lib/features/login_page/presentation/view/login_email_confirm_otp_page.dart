@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 
 @RoutePage()
@@ -81,12 +81,22 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
               //! Enter the OTP code sent your phone and Email
               RichText(
                 text: TextSpan(
-                  text:
-                      'Enter the OTP code sent your phone number \nm.hassan@gmail.com.',
-                  style: context.kTextTheme.titleSmall!.copyWith(
-                    color: ColorManger.kBoulder,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Enter the OTP code sent your Email\n',
+                      style: context.kTextTheme.titleSmall!.copyWith(
+                        color: ColorManger.kBoulder,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'elsankry02@gmail.com',
+                      style: context.kTextTheme.titleMedium!.copyWith(
+                        color: ColorManger.kBoulder,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: context.height * 0.040),
