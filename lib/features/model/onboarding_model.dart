@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constant/lottie_manger.dart';
+import '../../core/constant/lottie_manger.dart';
 
 class OnboardingModel {
   final String image;

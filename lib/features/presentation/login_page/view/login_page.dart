@@ -8,8 +8,8 @@ import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_social_auth_buttons.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/router/router.dart';
-import '../../../signup_page/presentation/widget/contact_email_widget.dart';
-import '../../../signup_page/presentation/widget/contact_phone_widget.dart';
+import '../../signup_page/widget/contact_email_widget.dart';
+import '../../signup_page/widget/contact_phone_widget.dart';
 
 enum ContactType { email, phone }
 

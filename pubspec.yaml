@@ -30,6 +30,7 @@ environment:
 dependencies:
   auto_route: ^10.0.1
   cupertino_icons: ^1.0.8
+  dio: ^5.8.0+1
   fl_country_code_picker: ^0.1.9+1
   flutter:
     sdk: flutter

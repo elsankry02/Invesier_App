@@ -6,7 +6,7 @@ import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
 import '../../../../core/router/router.dart';
-import '../../data/model/onboarding_model.dart';
+import '../../../model/onboarding_model.dart';
 import '../widget/generator_widget.dart';
 import '../widget/product_display_widget.dart';
 import '../widget/skip_widget.dart';
