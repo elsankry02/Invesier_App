@@ -75,6 +75,22 @@ class LoginPhoneConfirmOtpRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [NavbarPage]
+class NavbarRoute extends PageRouteInfo<void> {
+  const NavbarRoute({List<PageRouteInfo>? children})
+    : super(NavbarRoute.name, initialChildren: children);
+
+  static const String name = 'NavbarRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const NavbarPage();
+    },
+  );
+}
+
+/// generated route for
 /// [OnboardingPage]
 class OnboardingRoute extends PageRouteInfo<void> {
   const OnboardingRoute({List<PageRouteInfo>? children})

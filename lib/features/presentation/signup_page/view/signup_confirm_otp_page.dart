@@ -141,7 +141,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     //! Navigate to ###########
-                    context.router.replace(WelcomeRoute());
+                    context.router.replace(NavbarRoute());
                   }
                 },
               ),
