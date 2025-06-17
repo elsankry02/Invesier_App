@@ -11,7 +11,7 @@ class LearnPage extends StatelessWidget {
       children: [
         Center(
           child: Lottie.asset(
-            'assets/lottie/coming-soon.json',
+            'assets/lottie/coming_soon.json',
             fit: BoxFit.cover,
           ),
         ),

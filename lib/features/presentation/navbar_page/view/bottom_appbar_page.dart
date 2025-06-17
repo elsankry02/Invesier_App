@@ -30,61 +30,74 @@ class _NavbarPageState extends State<NavbarPage> {
     return Scaffold(
       backgroundColor: ColorManger.kBackGround,
       body: pages.elementAt(selectedIndex),
-
-      bottomNavigationBar: BottomAppBar(
-        color: ColorManger.kBackGround,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(color: ColorManger.kBackGround),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            //! home
-            BottomAppBarItemWidget(
-              title: 'Home',
-              assetName: 'assets/svg/home.svg',
-              selectedIndex: selectedIndex,
-              index: 0,
-              onTap: () {
-                setState(() {
-                  selectedIndex = 0;
-                });
-              },
-            ),
-            //! challenges
-            BottomAppBarItemWidget(
-              title: 'Challenges',
-              assetName: 'assets/svg/challenges.svg',
-              selectedIndex: selectedIndex,
-              index: 1,
-              onTap: () {
-                setState(() {
-                  selectedIndex = 1;
-                });
-              },
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  //! home
+                  BottomAppBarItemWidget(
+                    title: 'Home',
+                    assetName: 'assets/svg/home.svg',
+                    selectedIndex: selectedIndex,
+                    index: 0,
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 0;
+                      });
+                    },
+                  ),
+                  //! challenges
+                  BottomAppBarItemWidget(
+                    title: 'Challenges',
+                    assetName: 'assets/svg/challenges.svg',
+                    selectedIndex: selectedIndex,
+                    index: 1,
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 1;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
             //! ActionButton Location Widget
             ActionButtonLocationWidget(onPressed: () {}),
-            //! Trade
-            BottomAppBarItemWidget(
-              title: 'Trade',
-              assetName: 'assets/svg/trade.svg',
-              selectedIndex: selectedIndex,
-              index: 2,
-              onTap: () {
-                setState(() {
-                  selectedIndex = 2;
-                });
-              },
-            ),
-            //! Learn
-            BottomAppBarItemWidget(
-              title: 'Learn',
-              assetName: 'assets/svg/frame.svg',
-              selectedIndex: selectedIndex,
-              index: 3,
-              onTap: () {
-                setState(() {
-                  selectedIndex = 3;
-                });
-              },
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  //! Trade
+                  BottomAppBarItemWidget(
+                    title: 'Trade',
+                    assetName: 'assets/svg/trade.svg',
+                    selectedIndex: selectedIndex,
+                    index: 2,
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 2;
+                      });
+                    },
+                  ),
+                  //! Learn
+                  BottomAppBarItemWidget(
+                    title: 'Learn',
+                    assetName: 'assets/svg/frame.svg',
+                    selectedIndex: selectedIndex,
+                    index: 3,
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = 3;
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),
