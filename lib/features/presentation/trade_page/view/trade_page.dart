@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class TradePage extends StatelessWidget {
   const TradePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: Lottie.asset(
+            'assets/lottie/coming-soon.json',
+            fit: BoxFit.cover,
+          ),
+        ),
+      ],
+    );
   }
 }

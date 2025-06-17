@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:invesier/features/presentation/navbar_page/navbar_page.dart';
+import 'package:invesier/features/presentation/navbar_page/view/bottom_appbar_page.dart';
 
 import '../../features/presentation/login_page/view/login_email_confirm_otp_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';
