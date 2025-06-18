@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/color_manger.dart';
 
 import 'core/constant/string_manger.dart';
 import 'core/router/router.dart';
@@ -21,7 +22,7 @@ class Invesier extends StatelessWidget {
   }
 
   TextTheme textTheme() {
-    final kWhite = TextStyle(color: Colors.white);
+    final kWhite = TextStyle(color: ColorManger.kWhite);
     return TextTheme(
       displayLarge: kWhite,
       displayMedium: kWhite,

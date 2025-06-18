@@ -19,7 +19,7 @@ class NavigationBarItemWidget extends StatelessWidget {
   final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
