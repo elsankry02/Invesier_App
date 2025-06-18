@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 
-class BottomAppBarItemWidget extends StatelessWidget {
-  const BottomAppBarItemWidget({
+class NavigationBarItemWidget extends StatelessWidget {
+  const NavigationBarItemWidget({
     super.key,
     required this.assetName,
     required this.title,

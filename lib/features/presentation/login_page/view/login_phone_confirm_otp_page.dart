@@ -139,9 +139,8 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                 title: 'Submit',
                 horizontal: 0,
                 onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    context.router.replace(WelcomeRoute());
-                  }
+                  context.router.replace(WelcomeRoute());
+                  if (formKey.currentState!.validate()) {}
                 },
               ),
             ],

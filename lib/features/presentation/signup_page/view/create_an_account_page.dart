@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_icon_back.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -8,6 +7,7 @@ import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_text_form_field.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../widget/circle_avatar_widget.dart';
 
@@ -118,9 +118,9 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 horizontal: 0,
                 //! Navigate
                 onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    context.router.push(SignUpConfirmOtpRoute());
-                  }
+                  context.router.push(SignUpConfirmOtpRoute());
+                  // if (formKey.currentState!.validate()) {
+                  // }
                 },
               ),
             ],

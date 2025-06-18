@@ -1,22 +1,24 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
+import 'package:invesier/core/constant/svg_manger.dart';
+import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/action_button_location_widget.dart';
+import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/navigationbar_item_widget.dart';
 import 'package:invesier/features/presentation/challenges_page/view/challenges_page.dart';
 import 'package:invesier/features/presentation/home_page/view/home_page.dart';
 import 'package:invesier/features/presentation/learn_page/view/learn_page.dart';
-import 'package:invesier/features/presentation/navbar_page/widget/action_button_location_widget.dart';
-import 'package:invesier/features/presentation/navbar_page/widget/bottom_appbar_item_widget.dart';
 import 'package:invesier/features/presentation/trade_page/view/trade_page.dart';
 
 @RoutePage()
-class NavbarPage extends StatefulWidget {
-  const NavbarPage({super.key});
+class BottomNavigationBarPage extends StatefulWidget {
+  const BottomNavigationBarPage({super.key});
 
   @override
-  State<NavbarPage> createState() => _NavbarPageState();
+  State<BottomNavigationBarPage> createState() =>
+      _BottomNavigationBarPageState();
 }
 
-class _NavbarPageState extends State<NavbarPage> {
+class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   int selectedIndex = 0;
   final List<Widget> pages = [
     HomePage(),
@@ -40,9 +42,9 @@ class _NavbarPageState extends State<NavbarPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //! home
-                  BottomAppBarItemWidget(
+                  NavigationBarItemWidget(
                     title: 'Home',
-                    assetName: 'assets/svg/home.svg',
+                    assetName: SvgManger.kHome,
                     selectedIndex: selectedIndex,
                     index: 0,
                     onTap: () {
@@ -52,9 +54,9 @@ class _NavbarPageState extends State<NavbarPage> {
                     },
                   ),
                   //! challenges
-                  BottomAppBarItemWidget(
+                  NavigationBarItemWidget(
                     title: 'Challenges',
-                    assetName: 'assets/svg/challenges.svg',
+                    assetName: SvgManger.kChallenges,
                     selectedIndex: selectedIndex,
                     index: 1,
                     onTap: () {
@@ -73,9 +75,9 @@ class _NavbarPageState extends State<NavbarPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //! Trade
-                  BottomAppBarItemWidget(
+                  NavigationBarItemWidget(
                     title: 'Trade',
-                    assetName: 'assets/svg/trade.svg',
+                    assetName: SvgManger.kTrade,
                     selectedIndex: selectedIndex,
                     index: 2,
                     onTap: () {
@@ -85,9 +87,9 @@ class _NavbarPageState extends State<NavbarPage> {
                     },
                   ),
                   //! Learn
-                  BottomAppBarItemWidget(
+                  NavigationBarItemWidget(
                     title: 'Learn',
-                    assetName: 'assets/svg/frame.svg',
+                    assetName: SvgManger.kLearn,
                     selectedIndex: selectedIndex,
                     index: 3,
                     onTap: () {

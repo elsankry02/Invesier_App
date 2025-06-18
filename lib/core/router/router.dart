@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:invesier/features/presentation/navbar_page/view/bottom_appbar_page.dart';
+import 'package:invesier/features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 
 import '../../features/presentation/login_page/view/login_email_confirm_otp_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';
@@ -26,6 +26,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: LoginEmailConfirmOtpRoute.page),
     AutoRoute(page: LoginPhoneConfirmOtpRoute.page),
     AutoRoute(page: SignUpConfirmOtpRoute.page),
-    AutoRoute(page: NavbarRoute.page),
+    AutoRoute(page: BottomNavigationBarRoute.page),
   ];
 }

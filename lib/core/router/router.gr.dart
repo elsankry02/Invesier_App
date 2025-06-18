@@ -11,6 +11,22 @@
 part of 'router.dart';
 
 /// generated route for
+/// [BottomNavigationBarPage]
+class BottomNavigationBarRoute extends PageRouteInfo<void> {
+  const BottomNavigationBarRoute({List<PageRouteInfo>? children})
+    : super(BottomNavigationBarRoute.name, initialChildren: children);
+
+  static const String name = 'BottomNavigationBarRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const BottomNavigationBarPage();
+    },
+  );
+}
+
+/// generated route for
 /// [CreateAnAccountPage]
 class CreateAnAccountRoute extends PageRouteInfo<void> {
   const CreateAnAccountRoute({List<PageRouteInfo>? children})
@@ -70,22 +86,6 @@ class LoginPhoneConfirmOtpRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const LoginPhoneConfirmOtpPage();
-    },
-  );
-}
-
-/// generated route for
-/// [NavbarPage]
-class NavbarRoute extends PageRouteInfo<void> {
-  const NavbarRoute({List<PageRouteInfo>? children})
-    : super(NavbarRoute.name, initialChildren: children);
-
-  static const String name = 'NavbarRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const NavbarPage();
     },
   );
 }

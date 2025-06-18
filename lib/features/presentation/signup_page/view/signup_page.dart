@@ -193,9 +193,8 @@ class _SignupPageState extends State<SignupPage> {
                         : "Next",
                 horizontal: 0,
                 onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    context.router.push(CreateAnAccountRoute());
-                  }
+                  context.router.push(CreateAnAccountRoute());
+                  // if (formKey.currentState!.validate()) {}
                 },
               ),
             ],

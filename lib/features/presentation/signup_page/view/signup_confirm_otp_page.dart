@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/router/router.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
@@ -9,7 +10,6 @@ import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/extension/extension.dart';
-import '../../../../core/router/router.dart';
 import '../widget/signup_rich_text_widget.dart';
 
 @RoutePage()
@@ -139,10 +139,10 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
 
                 horizontal: 0,
                 onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    //! Navigate to ###########
-                    context.router.replace(NavbarRoute());
-                  }
+                  //! Navigate to BottomNavigationBarRoute
+                  context.router.replace(BottomNavigationBarRoute());
+                  // if (formKey.currentState!.validate()) {
+                  // }
                 },
               ),
               SizedBox(height: context.height * 0.015),
