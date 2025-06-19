@@ -12,6 +12,7 @@ class ColorManger {
   static const kBackGround = Color(0xff171717);
   static const kHeavyMetal = Color(0xff222B25);
   static const kPersianRed = Color(0xffD32F2F);
+  static const kRed = Color(0xffDC4453);
   static const kOceanGreen = Color(0xff41af8b);
   static const kEucalyptus = Color(0xff6AEEC6);
   static const kTurquoiseBlue = Color(0xff248866);

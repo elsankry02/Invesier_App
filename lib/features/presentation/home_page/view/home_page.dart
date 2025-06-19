@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:invesier/features/presentation/home_page/widget/invesier_appbar_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: Lottie.asset(
-            'assets/lottie/coming_soon.json',
-            fit: BoxFit.cover,
-          ),
-        ),
-      ],
+    return SafeArea(
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: Column(children: [InvesierAppBar()])),
+        ],
+      ),
     );
   }
 }

@@ -12,4 +12,6 @@ class SvgManger {
   static const kGrowth = 'assets/svg/growth.svg';
   static const kDecline = 'assets/svg/decline.svg';
   static const kDelete = 'assets/svg/delete.svg';
+  static const kPin = 'assets/svg/pin.svg';
+  static const kPopMenu = 'assets/svg/pop_menu.svg';
 }
