@@ -135,19 +135,11 @@ class _SignupPageState extends State<SignupPage> {
                         ContactEmailWidget(
                           emailController: emailController,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
-                          //? onChanged
-                          onChanged: (value) {
-                            if (formKey.currentState != null) {
-                              setState(() {});
-                            }
-                          },
-                          //? validator
+                          //! onChanged
+                          onChanged: (value) {},
+                          //! validator
                           validator: (value) {
-                            if (value!.trim().toLowerCase() == 'a') {
-                              return null;
-                            } else {
-                              return 'Please enter a valid phone number';
-                            }
+                            return null;
                           },
                         ),
 
@@ -162,11 +154,7 @@ class _SignupPageState extends State<SignupPage> {
                           },
                           //? validator
                           validator: (value) {
-                            if (value!.trim().toLowerCase() == '1') {
-                              return null;
-                            } else {
-                              return 'Please enter a valid phone number.';
-                            }
+                            return null;
                           },
                         ),
                       ],

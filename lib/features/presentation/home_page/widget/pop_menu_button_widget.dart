@@ -10,6 +10,8 @@ class PopMenuButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
+      offset: Offset(0, 30),
+
       icon: SvgPicture.asset(SvgManger.kPopMenu),
       color: ColorManger.kHeavyMetal,
       iconColor: ColorManger.kWhite,
