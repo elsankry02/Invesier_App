@@ -9,7 +9,7 @@ class ForYouWidget extends StatelessWidget {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 10,
+      itemCount: 5,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsetsDirectional.only(bottom: 10),
