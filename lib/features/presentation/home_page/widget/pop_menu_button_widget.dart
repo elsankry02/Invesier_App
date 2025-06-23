@@ -11,7 +11,7 @@ class PopMenuButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       offset: Offset(0, 30),
-
+      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
       icon: SvgPicture.asset(SvgManger.kPopMenu),
       color: ColorManger.kHeavyMetal,
       iconColor: ColorManger.kWhite,
