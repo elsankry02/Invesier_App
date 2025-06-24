@@ -10,12 +10,13 @@ import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home_page/widget/pop_menu_button_widget.dart';
 
-class CustomPostCardWidget extends StatelessWidget {
-  const CustomPostCardWidget({super.key});
+class PostCardWidget extends StatelessWidget {
+  const PostCardWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsetsDirectional.only(bottom: 10),
       padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
@@ -29,9 +30,10 @@ class CustomPostCardWidget extends StatelessWidget {
             leading: ClipOval(
               //! image
               child: Image.asset(
+                fit: BoxFit.cover,
                 height: 30,
                 width: 30,
-                ImageManger.kExperience,
+                ImageManger.kCommentImage,
               ),
             ),
             trailing: PopMenuButtonWidget(),

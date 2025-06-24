@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/home_page/widget/custom_post_card_widget.dart';
+import 'package:invesier/features/presentation/home_page/widget/post_card_widget.dart';
 
 class PioneersWidget extends StatelessWidget {
   const PioneersWidget({super.key});
@@ -9,12 +9,9 @@ class PioneersWidget extends StatelessWidget {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 1,
+      itemCount: 3,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsetsDirectional.only(bottom: 10),
-          child: CustomPostCardWidget(),
-        );
+        return PostCardWidget();
       },
     );
   }

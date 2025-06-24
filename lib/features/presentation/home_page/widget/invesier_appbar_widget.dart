@@ -67,6 +67,7 @@ class InvesierAppBar extends StatelessWidget {
                     child: Image.asset(
                       ImageManger.kExperience,
                       fit: BoxFit.cover,
+                      width: 30,
                       height: 30,
                     ),
                   ),

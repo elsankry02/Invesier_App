@@ -14,7 +14,7 @@ class CustomMateContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsetsDirectional.symmetric(vertical: 4, horizontal: 24),
+      padding: EdgeInsetsDirectional.symmetric(vertical: 4, horizontal: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: backGroundColor,

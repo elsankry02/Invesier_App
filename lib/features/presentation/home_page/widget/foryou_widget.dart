@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/home_page/widget/custom_post_card_widget.dart';
+import 'package:invesier/features/presentation/home_page/widget/post_card_widget.dart';
 
 class ForYouWidget extends StatelessWidget {
   const ForYouWidget({super.key});
@@ -13,7 +13,7 @@ class ForYouWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsetsDirectional.only(bottom: 10),
-          child: CustomPostCardWidget(),
+          child: PostCardWidget(),
         );
       },
     );
