@@ -14,4 +14,5 @@ class SvgManger {
   static const kDelete = 'assets/svg/delete.svg';
   static const kPin = 'assets/svg/pin.svg';
   static const kPopMenu = 'assets/svg/pop_menu.svg';
+  static const kReply = 'assets/svg/reply.svg';
 }

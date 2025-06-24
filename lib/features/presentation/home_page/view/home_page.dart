@@ -24,53 +24,58 @@ class _HomePageState extends State<HomePage> {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Column(
-              children: [
-                InvesierAppBar(),
-                SizedBox(height: context.height * 0.010),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      child: EnumItem(
-                        title: 'For You',
+            child: Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: Column(
+                children: [
+                  InvesierAppBar(),
+                  SizedBox(height: context.height * 0.010),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        child: EnumItem(
+                          title: 'For You',
+                          titleColor:
+                              enumView == EnumView.foryou
+                                  ? ColorManger.kCodGray
+                                  : ColorManger.kWhite,
+                          backGroundColor:
+                              enumView == EnumView.foryou
+                                  ? ColorManger.kOceanGreen
+                                  : ColorManger.kBackGround,
+                          onTap: () {
+                            setState(() {
+                              enumView = EnumView.foryou;
+                            });
+                          },
+                        ),
+                      ),
+                      SizedBox(width: context.width * 0.010),
+                      EnumItem(
+                        title: 'Pioneers',
                         titleColor:
-                            enumView == EnumView.foryou
-                                ? ColorManger.kCodGray
+                            enumView == EnumView.pioneers
+                                ? ColorManger.kTertiary
                                 : ColorManger.kWhite,
                         backGroundColor:
-                            enumView == EnumView.foryou
+                            enumView == EnumView.pioneers
                                 ? ColorManger.kOceanGreen
                                 : ColorManger.kBackGround,
                         onTap: () {
                           setState(() {
-                            enumView = EnumView.foryou;
+                            enumView = EnumView.pioneers;
                           });
                         },
                       ),
-                    ),
-                    SizedBox(width: context.width * 0.010),
-                    EnumItem(
-                      title: 'Pioneers',
-                      titleColor:
-                          enumView == EnumView.pioneers
-                              ? ColorManger.kTertiary
-                              : ColorManger.kWhite,
-                      backGroundColor:
-                          enumView == EnumView.pioneers
-                              ? ColorManger.kOceanGreen
-                              : ColorManger.kBackGround,
-                      onTap: () {
-                        setState(() {
-                          enumView = EnumView.pioneers;
-                        });
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(height: context.height * 0.010),
-                enumView == EnumView.foryou ? ForYouWidget() : PioneersWidget(),
-              ],
+                    ],
+                  ),
+                  SizedBox(height: context.height * 0.010),
+                  enumView == EnumView.foryou
+                      ? ForYouWidget()
+                      : PioneersWidget(),
+                ],
+              ),
             ),
           ),
         ],

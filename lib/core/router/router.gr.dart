@@ -27,6 +27,22 @@ class BottomNavigationBarRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [CommentPage]
+class CommentRoute extends PageRouteInfo<void> {
+  const CommentRoute({List<PageRouteInfo>? children})
+    : super(CommentRoute.name, initialChildren: children);
+
+  static const String name = 'CommentRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CommentPage();
+    },
+  );
+}
+
+/// generated route for
 /// [CreateAnAccountPage]
 class CreateAnAccountRoute extends PageRouteInfo<void> {
   const CreateAnAccountRoute({List<PageRouteInfo>? children})
