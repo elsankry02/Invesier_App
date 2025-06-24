@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home_page/widget/post_card_widget.dart';
 
 class ForYouWidget extends StatelessWidget {
@@ -13,7 +15,12 @@ class ForYouWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsetsDirectional.only(bottom: 10),
-          child: PostCardWidget(),
+          //! PostCardWidget
+          child: PostCardWidget(
+            onTap: () {
+              context.router.push(CommentRoute());
+            },
+          ),
         );
       },
     );

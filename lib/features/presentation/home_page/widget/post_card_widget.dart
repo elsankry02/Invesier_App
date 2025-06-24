@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/components/custom_mate_container.dart';
@@ -7,12 +6,11 @@ import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/core/constant/svg_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home_page/widget/pop_menu_button_widget.dart';
 
 class PostCardWidget extends StatelessWidget {
-  const PostCardWidget({super.key});
-
+  const PostCardWidget({super.key, required this.onTap});
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -106,9 +104,7 @@ class PostCardWidget extends StatelessWidget {
                 title: '160K',
                 titleColor: ColorManger.kBoulder,
                 borderColor: ColorManger.kBoulder,
-                onTap: () {
-                  context.router.push(CommentRoute());
-                },
+                onTap: onTap,
               ),
               //! Sharing
               GestureDetector(
