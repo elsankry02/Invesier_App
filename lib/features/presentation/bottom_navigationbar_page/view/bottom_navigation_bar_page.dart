@@ -31,8 +31,16 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManger.kBackGround,
-      body: pages.elementAt(selectedIndex),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [ColorManger.k1, ColorManger.k2],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: pages.elementAt(selectedIndex),
+      ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: ColorManger.kBackGround),
         child: Row(
