@@ -33,13 +33,26 @@ class InvesierAppBar extends StatelessWidget {
                     alignment: Alignment.topRight,
                     children: [
                       Icon(Icons.notifications_none_rounded),
-                      Container(
-                        height: 8,
-                        width: 8,
-                        decoration: const BoxDecoration(
-                          color: ColorManger.kPersianRed,
-                          shape: BoxShape.circle,
-                        ),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            height: 10,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: ColorManger.kWhite,
+                            ),
+                          ),
+                          Container(
+                            height: 8,
+                            width: 8,
+                            decoration: BoxDecoration(
+                              color: ColorManger.kPersianRed,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
