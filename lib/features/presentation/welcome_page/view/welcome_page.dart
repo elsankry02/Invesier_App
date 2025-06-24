@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../widget/welcome_display_widget.dart';
 
@@ -45,7 +45,9 @@ class WelcomePage extends StatelessWidget {
               title: 'Login',
               titleColor: ColorManger.kEucalyptus,
               gradient: LinearGradient(
-                colors: [ColorManger.kBackGround, ColorManger.kBackGround],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [ColorManger.k2, ColorManger.k1],
               ),
               border: Border.all(width: 2, color: ColorManger.kEucalyptus),
               horizontal: 56,

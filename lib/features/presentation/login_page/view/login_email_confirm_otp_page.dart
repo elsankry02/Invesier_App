@@ -60,88 +60,96 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManger.kBackGround,
-      body: SafeArea(
-        child: Form(
-          key: formKey,
-          child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            children: [
-              Row(
-                children: [
-                  //! CustomIconBack
-                  CustomIconBack(),
-                  Expanded(
-                    //! CustomAppBar
-                    child: CustomTitelAppBar(title: 'Confirm OTP'),
-                  ),
-                ],
-              ),
-              SizedBox(height: context.height * 0.023),
-              //! Enter the OTP code sent your phone and Email
-              RichText(
-                text: TextSpan(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [ColorManger.k2, ColorManger.k1],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          ),
+        ),
+        child: SafeArea(
+          child: Form(
+            key: formKey,
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              children: [
+                Row(
                   children: [
-                    TextSpan(
-                      text: 'Enter the OTP code sent your Email\n',
-                      style: context.kTextTheme.titleSmall!.copyWith(
-                        color: ColorManger.kBoulder,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    TextSpan(
-                      text: 'elsankry02@gmail.com',
-                      style: context.kTextTheme.titleMedium!.copyWith(
-                        color: ColorManger.kBoulder,
-                        fontWeight: FontWeight.w900,
-                      ),
+                    //! CustomIconBack
+                    CustomIconBack(),
+                    Expanded(
+                      //! CustomAppBar
+                      child: CustomTitelAppBar(title: 'Confirm OTP'),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: context.height * 0.040),
-              CustomConfirmOTP(
-                onChanged: (value) {},
-                validator: (value) {
-                  if (value!.length < 6) {
-                    return "Please enter the full 6-digit code";
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: context.height * 0.016),
+                SizedBox(height: context.height * 0.023),
+                //! Enter the OTP code sent your phone and Email
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Enter the OTP code sent your Email\n',
+                        style: context.kTextTheme.titleSmall!.copyWith(
+                          color: ColorManger.kBoulder,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'elsankry02@gmail.com',
+                        style: context.kTextTheme.titleMedium!.copyWith(
+                          color: ColorManger.kBoulder,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: context.height * 0.040),
+                CustomConfirmOTP(
+                  onChanged: (value) {},
+                  validator: (value) {
+                    if (value!.length < 6) {
+                      return "Please enter the full 6-digit code";
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: context.height * 0.016),
 
-              secondsRemaining > 0
-                  ?
-                  //! If you didn't receive the code
-                  Text(
-                    textAlign: TextAlign.center,
-                    "If you didn't receive the code in 00:$secondsRemaining",
-                    style: context.kTextTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w400,
-                    ),
-                  )
-                  //! resendCode
-                  : TextButton(
-                    onPressed: resendCode,
-                    child: Text(
-                      "Resend",
+                secondsRemaining > 0
+                    ?
+                    //! If you didn't receive the code
+                    Text(
+                      textAlign: TextAlign.center,
+                      "If you didn't receive the code in 00:$secondsRemaining",
                       style: context.kTextTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
+                    )
+                    //! resendCode
+                    : TextButton(
+                      onPressed: resendCode,
+                      child: Text(
+                        "Resend",
+                        style: context.kTextTheme.titleMedium!.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ),
-                  ),
-              SizedBox(height: context.height * 0.191),
-              CustomPrimaryButton(
-                titleColor: ColorManger.kWhite,
-                title: 'Submit',
-                horizontal: 0,
-                onTap: () {
-                  context.router.replace(WelcomeRoute());
-                  if (formKey.currentState!.validate()) {}
-                },
-              ),
-            ],
+                SizedBox(height: context.height * 0.191),
+                CustomPrimaryButton(
+                  titleColor: ColorManger.kWhite,
+                  title: 'Submit',
+                  horizontal: 0,
+                  onTap: () {
+                    context.router.replace(WelcomeRoute());
+                    if (formKey.currentState!.validate()) {}
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
