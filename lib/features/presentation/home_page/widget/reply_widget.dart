@@ -8,8 +8,8 @@ import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/presentation/home_page/widget/pop_menu_button_widget.dart';
 
 class ReplyWidget extends StatelessWidget {
-  const ReplyWidget({super.key});
-
+  const ReplyWidget({super.key, required this.onTap});
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +24,7 @@ class ReplyWidget extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13),
-              color: ColorManger.kHeavyMetal,
+              color: ColorManger.kCodGray,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +113,7 @@ class ReplyWidget extends StatelessWidget {
                       title: 'Rplay',
                       titleColor: ColorManger.kBoulder,
                       borderColor: ColorManger.kBoulder,
-                      onTap: () {},
+                      onTap: onTap,
                     ),
                   ],
                 ),

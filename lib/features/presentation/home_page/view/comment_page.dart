@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/features/presentation/home_page/widget/add_comment_widget.dart';
 import 'package:invesier/features/presentation/home_page/widget/post_card_widget.dart';
 import 'package:invesier/features/presentation/home_page/widget/reply_widget.dart';
 
@@ -23,15 +24,49 @@ class CommentPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              //! PostCardWidget
-              PostCardWidget(onTap: () {}),
+              //! Post Card Widget
+              PostCardWidget(
+                onTap: () {
+                  showModalBottomSheet(
+                    isDismissible: false,
+                    context: context,
+                    builder: (context) {
+                      //! Add Comment
+                      return AddCommentWidget(
+                        title: 'Add Comment',
+                        hintText: 'Share your comment',
+                        titleButton: 'Comment',
+                        imageOnPressed: () {},
+                        videoOnPressed: () {},
+                      );
+                    },
+                  );
+                },
+              ),
               SizedBox(height: context.height * 0.012),
               Expanded(
                 child: ListView.builder(
-                  itemCount: 3,
+                  itemCount: 1,
                   itemBuilder: (context, index) {
                     //! ReplyWidget
-                    return ReplyWidget();
+                    return ReplyWidget(
+                      onTap: () {
+                        showModalBottomSheet(
+                          isDismissible: false,
+                          context: context,
+                          builder: (context) {
+                            //! Add Comment
+                            return AddCommentWidget(
+                              title: 'Reply',
+                              hintText: 'Type your reply',
+                              titleButton: 'Reply',
+                              imageOnPressed: () {},
+                              videoOnPressed: () {},
+                            );
+                          },
+                        );
+                      },
+                    );
                   },
                 ),
               ),

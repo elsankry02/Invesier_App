@@ -11,16 +11,12 @@ class ForYouWidget extends StatelessWidget {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 5,
+      itemCount: 1,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsetsDirectional.only(bottom: 10),
-          //! PostCardWidget
-          child: PostCardWidget(
-            onTap: () {
-              context.router.push(CommentRoute());
-            },
-          ),
+        return PostCardWidget(
+          onTap: () {
+            context.router.push(CommentRoute());
+          },
         );
       },
     );
