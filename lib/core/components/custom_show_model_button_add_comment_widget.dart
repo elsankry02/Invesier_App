@@ -1,36 +1,66 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:invesier/core/components/custom_button_widget.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/svg_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 
-class AddCommentWidget extends StatefulWidget {
-  const AddCommentWidget({
+class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
+  const CustomShowModelButtonAddCommentWidget({
     super.key,
     required this.title,
-    required this.imageOnPressed,
-    required this.videoOnPressed,
+
     required this.hintText,
     required this.titleButton,
+    required this.vertical,
+    required this.radius,
   });
   final String title;
   final String hintText;
   final String titleButton;
-  final Function() imageOnPressed;
-  final Function() videoOnPressed;
+
+  final double vertical;
+  final double radius;
   @override
-  State<AddCommentWidget> createState() => _AddCommentWidgetState();
+  State<CustomShowModelButtonAddCommentWidget> createState() =>
+      _CustomShowModelButtonAddCommentWidgetState();
 }
 
-class _AddCommentWidgetState extends State<AddCommentWidget> {
+class _CustomShowModelButtonAddCommentWidgetState
+    extends State<CustomShowModelButtonAddCommentWidget> {
+  File? file;
   final commentController = TextEditingController();
   @override
   void dispose() {
     commentController.dispose();
     super.dispose();
+  }
+
+  imageGallery() async {
+    final imageGallery = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    if (imageGallery == null) return;
+
+    setState(() {
+      file = File(imageGallery.path);
+    });
+  }
+
+  imagecamera() async {
+    final imagecamera = await ImagePicker().pickImage(
+      source: ImageSource.camera,
+    );
+    if (imagecamera == null) return;
+
+    setState(() {
+      file = File(imagecamera.path);
+    });
   }
 
   @override
@@ -45,7 +75,7 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
           topRight: Radius.circular(28),
         ),
       ),
-      child: Column(
+      child: ListView(
         children: [
           SvgPicture.asset(SvgManger.kArrow),
           SizedBox(height: context.height * 0.004),
@@ -84,23 +114,38 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
               border: OutlineInputBorder(borderSide: BorderSide.none),
             ),
           ),
-          SizedBox(height: context.height * 0.023),
+          SizedBox(height: context.height * 0.012),
+          //!  Image
+          SizedBox(
+            child:
+                file == null
+                    ? null
+                    : ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.file(file!, fit: BoxFit.cover),
+                    ),
+          ),
+          SizedBox(height: context.height * 0.012),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
-                  //!
+                  //! imageGallery
                   IconButton(
-                    onPressed: widget.imageOnPressed,
+                    onPressed: () {
+                      imageGallery();
+                    },
                     icon: Icon(
                       FontAwesomeIcons.image,
                       color: ColorManger.kOceanGreen,
                     ),
                   ),
-                  //!
+                  //! imagecamera
                   IconButton(
-                    onPressed: widget.videoOnPressed,
+                    onPressed: () {
+                      imagecamera();
+                    },
                     icon: Icon(
                       FontAwesomeIcons.video,
                       color: ColorManger.kOceanGreen,
@@ -108,9 +153,16 @@ class _AddCommentWidgetState extends State<AddCommentWidget> {
                   ),
                 ],
               ),
-              CustomButtonWidget(title: widget.titleButton, onTap: () {}),
+              //!
+              CustomButtonWidget(
+                title: widget.titleButton,
+                onTap: () {},
+                vertical: widget.vertical,
+                radius: widget.radius,
+              ),
             ],
           ),
+          SizedBox(height: context.height * 0.012),
         ],
       ),
     );

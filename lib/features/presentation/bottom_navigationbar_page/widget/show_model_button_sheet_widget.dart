@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/button_sheet_text_widget.dart';
+import 'package:invesier/core/components/custom_show_model_button_add_comment_widget.dart';
 
 class ShowModelButtonSheetWidget extends StatelessWidget {
   const ShowModelButtonSheetWidget({super.key});
@@ -31,20 +32,36 @@ class ShowModelButtonSheetWidget extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: context.height * 0.024),
             //! Post
-            ButtonSheetTextWidget(title: 'Post', onTap: () {}),
+            ButtonSheetTextWidget(
+              title: 'Post',
+              onTap: () {
+                showModalBottomSheet(
+                  isDismissible: false,
+                  context: context,
+                  builder: (context) {
+                    return CustomShowModelButtonAddCommentWidget(
+                      title: 'Add Post',
+
+                      hintText: 'We post money related content.....',
+                      titleButton: 'Post now',
+                      vertical: 12,
+                      radius: 16,
+                    );
+                  },
+                );
+              },
+            ),
             SizedBox(height: 10),
             Divider(thickness: 2),
             SizedBox(height: 10),
             //! Live
             ButtonSheetTextWidget(title: 'Live', onTap: () {}),
-            SizedBox(height: context.height * 0.050),
           ],
         ),
       ),
