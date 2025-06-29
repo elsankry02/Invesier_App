@@ -35,7 +35,7 @@ class ProfilePage extends StatelessWidget {
                         child: Image.asset(
                           width: 35,
                           height: 35,
-                          ImageManger.kExperience,
+                          ImageManger.kBoyFour,
                         ),
                       ),
                       Stack(

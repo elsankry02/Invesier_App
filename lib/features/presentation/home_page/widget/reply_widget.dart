@@ -34,7 +34,7 @@ class ReplyWidget extends StatelessWidget {
                   leading: ClipOval(
                     //! image
                     child: Image.asset(
-                      ImageManger.kReplyImage,
+                      ImageManger.kBoyTwo,
                       height: 30,
                       width: 30,
                       fit: BoxFit.cover,

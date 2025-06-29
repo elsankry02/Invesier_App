@@ -31,7 +31,7 @@ class PostCardWidget extends StatelessWidget {
                 fit: BoxFit.cover,
                 height: 30,
                 width: 30,
-                ImageManger.kCommentImage,
+                ImageManger.kBoyThree,
               ),
             ),
             trailing: PopMenuButtonWidget(),

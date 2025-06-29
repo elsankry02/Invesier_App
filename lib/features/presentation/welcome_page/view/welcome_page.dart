@@ -21,7 +21,7 @@ class WelcomePage extends StatelessWidget {
           //! BackGroundImage
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(ImageManger.kLogIn),
+            image: AssetImage(ImageManger.kOnBoarding),
           ),
         ),
         child: Column(

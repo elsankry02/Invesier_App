@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
+import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../model/onboarding_model.dart';
 import '../widget/generator_widget.dart';
@@ -37,7 +37,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           //! BackGroundImage
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(ImageManger.kLogIn),
+            image: AssetImage(ImageManger.kOnBoarding),
           ),
         ),
         child: SafeArea(

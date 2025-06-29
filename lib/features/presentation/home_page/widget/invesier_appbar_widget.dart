@@ -65,7 +65,7 @@ class InvesierAppBar extends StatelessWidget {
                   },
                   child: ClipOval(
                     child: Image.asset(
-                      ImageManger.kExperience,
+                      ImageManger.kBoyFour,
                       fit: BoxFit.cover,
                       width: 30,
                       height: 30,
