@@ -1,8 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/button_sheet_text_widget.dart';
-import 'package:invesier/core/components/custom_show_model_button_add_comment_widget.dart';
 
 class ShowModelButtonSheetWidget extends StatelessWidget {
   const ShowModelButtonSheetWidget({super.key});
@@ -41,20 +42,7 @@ class ShowModelButtonSheetWidget extends StatelessWidget {
             ButtonSheetTextWidget(
               title: 'Post',
               onTap: () {
-                showModalBottomSheet(
-                  isDismissible: false,
-                  context: context,
-                  builder: (context) {
-                    return CustomShowModelButtonAddCommentWidget(
-                      title: 'Add Post',
-
-                      hintText: 'We post money related content.....',
-                      titleButton: 'Post now',
-                      vertical: 12,
-                      radius: 16,
-                    );
-                  },
-                );
+                context.pushRoute(PostRoute());
               },
             ),
             SizedBox(height: 10),

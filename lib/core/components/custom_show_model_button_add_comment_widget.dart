@@ -14,7 +14,6 @@ class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
   const CustomShowModelButtonAddCommentWidget({
     super.key,
     required this.title,
-
     required this.hintText,
     required this.titleButton,
     required this.vertical,
@@ -23,7 +22,6 @@ class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
   final String title;
   final String hintText;
   final String titleButton;
-
   final double vertical;
   final double radius;
   @override

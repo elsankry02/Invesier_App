@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/action_button_location_widget.dart';
 import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/navigationbar_item_widget.dart';
+import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/show_model_button_sheet_widget.dart';
 import 'package:invesier/features/presentation/challenges_page/view/challenges_page.dart';
 import 'package:invesier/features/presentation/home_page/view/home_page.dart';
 import 'package:invesier/features/presentation/learn_page/view/learn_page.dart';
@@ -79,8 +79,12 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
             ),
             ActionButtonLocationWidget(
               onPressed: () {
-                //! Navigate Post Page
-                context.pushRoute(PostRoute());
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return ShowModelButtonSheetWidget();
+                  },
+                );
               },
             ),
             Expanded(
