@@ -73,95 +73,69 @@ class _CustomShowModelButtonAddCommentWidgetState
           topRight: Radius.circular(28),
         ),
       ),
-      child: ListView(
-        children: [
-          SvgPicture.asset(SvgManger.kArrow),
-          SizedBox(height: context.height * 0.004),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              //! titel
-              Text(
-                widget.title,
-                style: context.kTextTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              //! icon
-              IconButton(
-                onPressed: () {
-                  context.router.maybePop();
-                },
-                icon: Icon(FontAwesomeIcons.xmark),
-              ),
-            ],
-          ),
-          SizedBox(height: context.height * 0.012),
-          //! TextFormField
-          TextFormField(
-            cursorColor: ColorManger.kWhite,
-            controller: commentController,
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.zero,
-              hintText: widget.hintText,
-              hintStyle: TextStyle(
-                color: ColorManger.kGray,
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
-              border: OutlineInputBorder(borderSide: BorderSide.none),
-            ),
-          ),
-          SizedBox(height: context.height * 0.012),
-          //!  Image
-          SizedBox(
-            child:
-                file == null
-                    ? null
-                    : ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.file(file!, fit: BoxFit.cover),
-                    ),
-          ),
-          SizedBox(height: context.height * 0.012),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+              //! kArrow
+              SvgPicture.asset(SvgManger.kArrow),
+              SizedBox(height: context.height * 0.004),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  //! imageGallery
-                  IconButton(
-                    onPressed: () {
-                      imageGallery();
-                    },
-                    icon: Icon(
-                      FontAwesomeIcons.image,
-                      color: ColorManger.kOceanGreen,
+                  //! titel
+                  Text(
+                    widget.title,
+                    style: context.kTextTheme.titleSmall!.copyWith(
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  //! imagecamera
+                  //! icon
                   IconButton(
                     onPressed: () {
-                      imagecamera();
+                      context.router.maybePop();
                     },
-                    icon: Icon(
-                      FontAwesomeIcons.video,
-                      color: ColorManger.kOceanGreen,
-                    ),
+                    icon: Icon(FontAwesomeIcons.xmark),
                   ),
                 ],
               ),
-              //!
-              CustomButtonWidget(
-                title: widget.titleButton,
-                onTap: () {},
-                vertical: widget.vertical,
-                radius: widget.radius,
+              //! TextFormField
+              TextFormField(
+                cursorColor: ColorManger.kWhite,
+                controller: commentController,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.zero,
+                  hintText: widget.hintText,
+                  hintStyle: TextStyle(
+                    color: ColorManger.kGray,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  border: OutlineInputBorder(borderSide: BorderSide.none),
+                ),
               ),
+
+              SizedBox(height: context.height * 0.012),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  //! titleButton
+                  CustomButtonWidget(
+                    title: widget.titleButton,
+                    onTap: () {},
+                    vertical: widget.vertical,
+                    radius: widget.radius,
+                  ),
+                ],
+              ),
+              SizedBox(height: context.height * 0.012),
             ],
           ),
-          SizedBox(height: context.height * 0.012),
-        ],
+        ),
       ),
     );
   }
