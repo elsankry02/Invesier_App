@@ -61,7 +61,7 @@ class InvesierAppBar extends StatelessWidget {
                 GestureDetector(
                   //! Navigate
                   onTap: () {
-                    context.router.push(ProfileRoute());
+                    context.router.push(SideMenuRoute());
                   },
                   child: ClipOval(
                     child: Image.asset(

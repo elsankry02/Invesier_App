@@ -123,6 +123,22 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PersonalProfilePage]
+class PersonalProfileRoute extends PageRouteInfo<void> {
+  const PersonalProfileRoute({List<PageRouteInfo>? children})
+    : super(PersonalProfileRoute.name, initialChildren: children);
+
+  static const String name = 'PersonalProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const PersonalProfilePage();
+    },
+  );
+}
+
+/// generated route for
 /// [PostPage]
 class PostRoute extends PageRouteInfo<void> {
   const PostRoute({List<PageRouteInfo>? children})
@@ -139,17 +155,17 @@ class PostRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ProfilePage]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute({List<PageRouteInfo>? children})
-    : super(ProfileRoute.name, initialChildren: children);
+/// [SideMenuPage]
+class SideMenuRoute extends PageRouteInfo<void> {
+  const SideMenuRoute({List<PageRouteInfo>? children})
+    : super(SideMenuRoute.name, initialChildren: children);
 
-  static const String name = 'ProfileRoute';
+  static const String name = 'SideMenuRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ProfilePage();
+      return const SideMenuPage();
     },
   );
 }
@@ -182,6 +198,22 @@ class SignupRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const SignupPage();
+    },
+  );
+}
+
+/// generated route for
+/// [UserProfilePage]
+class UserProfileRoute extends PageRouteInfo<void> {
+  const UserProfileRoute({List<PageRouteInfo>? children})
+    : super(UserProfileRoute.name, initialChildren: children);
+
+  static const String name = 'UserProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UserProfilePage();
     },
   );
 }

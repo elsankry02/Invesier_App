@@ -1,12 +1,13 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/core/router/router.dart';
 
 @RoutePage()
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class SideMenuPage extends StatelessWidget {
+  const SideMenuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class ProfilePage extends StatelessWidget {
                         child: Image.asset(
                           width: 35,
                           height: 35,
+                          fit: BoxFit.cover,
                           ImageManger.kBoyFour,
                         ),
                       ),
@@ -75,7 +77,13 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                profileText(context, onTap: () {}, title: 'View profile'),
+                profileText(
+                  context,
+                  onTap: () {
+                    context.router.push(PersonalProfileRoute());
+                  },
+                  title: 'View profile',
+                ),
                 profileText(context, onTap: () {}, title: 'Settings'),
                 profileText(context, onTap: () {}, title: 'Log out'),
               ],
