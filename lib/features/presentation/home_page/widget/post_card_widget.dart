@@ -9,8 +9,8 @@ import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/presentation/home_page/widget/pop_menu_button_widget.dart';
 
 class PostCardWidget extends StatelessWidget {
-  const PostCardWidget({super.key, required this.onTap});
-  final Function() onTap;
+  const PostCardWidget({super.key, this.onTap});
+  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
