@@ -26,7 +26,7 @@ class CommentPage extends StatelessWidget {
             children: [
               //! Post Card Widget
               PostCardWidget(
-                onTap: () {
+                commentOnTap: () {
                   showModalBottomSheet(
                     isDismissible: false,
                     context: context,

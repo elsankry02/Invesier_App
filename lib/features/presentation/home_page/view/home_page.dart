@@ -4,7 +4,7 @@ import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/presentation/home_page/widget/enum_item.dart';
 import 'package:invesier/features/presentation/home_page/widget/foryou_widget.dart';
 import 'package:invesier/features/presentation/home_page/widget/invesier_appbar_widget.dart';
-import 'package:invesier/features/presentation/home_page/widget/pioneers_widget.dart';
+import 'package:invesier/features/presentation/home_page/widget/pioneers_enum_widget.dart';
 
 enum EnumView { foryou, pioneers }
 
@@ -72,8 +72,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(height: context.height * 0.010),
                   enumView == EnumView.foryou
-                      ? ForYouWidget()
-                      : PioneersWidget(),
+                      ? ForYouEnumWidget()
+                      : PioneersEnumWidget(),
                 ],
               ),
             ),

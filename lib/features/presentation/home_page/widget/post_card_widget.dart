@@ -9,8 +9,9 @@ import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/presentation/home_page/widget/pop_menu_button_widget.dart';
 
 class PostCardWidget extends StatelessWidget {
-  const PostCardWidget({super.key, this.onTap});
-  final Function()? onTap;
+  const PostCardWidget({super.key, this.commentOnTap, this.imageOnTap});
+  final Function()? commentOnTap;
+  final Function()? imageOnTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,11 +28,14 @@ class PostCardWidget extends StatelessWidget {
             contentPadding: EdgeInsets.all(0),
             leading: ClipOval(
               //! image
-              child: Image.asset(
-                fit: BoxFit.cover,
-                height: 30,
-                width: 30,
-                ImageManger.kBoyThree,
+              child: GestureDetector(
+                onTap: imageOnTap,
+                child: Image.asset(
+                  fit: BoxFit.cover,
+                  height: 30,
+                  width: 30,
+                  ImageManger.kBoyThree,
+                ),
               ),
             ),
             trailing: PopMenuButtonWidget(),
@@ -104,7 +108,7 @@ class PostCardWidget extends StatelessWidget {
                 title: '160K',
                 titleColor: ColorManger.kBoulder,
                 borderColor: ColorManger.kBoulder,
-                onTap: onTap,
+                onTap: commentOnTap,
               ),
               //! Sharing
               GestureDetector(

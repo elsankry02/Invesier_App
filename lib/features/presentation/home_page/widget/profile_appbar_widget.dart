@@ -12,7 +12,7 @@ class ProfileAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsetsDirectional.only(end: 26),
       child: ListTile(
         contentPadding: EdgeInsets.zero,
         leading: Row(

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home_page/widget/post_card_widget.dart';
 
-class PioneersWidget extends StatelessWidget {
-  const PioneersWidget({super.key});
+class PioneersEnumWidget extends StatelessWidget {
+  const PioneersEnumWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,12 @@ class PioneersWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         //! PostCardWidget
         return PostCardWidget(
-          onTap: () {
+          imageOnTap: () {
+            // UserProfileRoute
+            context.router.push(UserProfileRoute());
+          },
+          commentOnTap: () {
+            // CommentRoute
             context.router.push(CommentRoute());
           },
         );
