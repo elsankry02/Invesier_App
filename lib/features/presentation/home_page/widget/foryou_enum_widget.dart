@@ -11,7 +11,7 @@ class ForYouEnumWidget extends StatelessWidget {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 1,
+      itemCount: 5,
       itemBuilder: (context, index) {
         return PostCardWidget(
           imageOnTap: () {
