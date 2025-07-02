@@ -12,71 +12,67 @@ class UserAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsDirectional.only(end: 22),
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        leading: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-              onPressed: () {
-                context.router.maybePop();
-              },
-              //! Icon
-              icon: Icon(Icons.arrow_back_ios_new, color: ColorManger.kWhite),
+    return ListTile(
+      leading: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            onPressed: () {
+              context.router.maybePop();
+            },
+            //! Icon
+            icon: Icon(Icons.arrow_back_ios_new, color: ColorManger.kWhite),
+          ),
+          ClipOval(
+            // Image
+            child: Image.asset(
+              ImageManger.kGirlOne,
+              width: 60,
+              height: 60,
+              fit: BoxFit.cover,
             ),
-            ClipOval(
-              // Image
-              child: Image.asset(
-                ImageManger.kGirlOne,
-                width: 60,
-                height: 60,
-                fit: BoxFit.cover,
+          ),
+        ],
+      ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              // title
+              Text(
+                'Alex Johnson',
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-          ],
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                // title
-                Text(
-                  'Alex Johnson',
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
+              // subTitle
+              Text(
+                '@johnson_a',
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  color: ColorManger.kGray,
+                  fontWeight: FontWeight.w400,
                 ),
-                // subTitle
-                Text(
-                  '@johnson_a',
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    color: ColorManger.kGray,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: context.height * 0.008),
-              ],
-            ),
-            // User Pop Menu
-            UserPopMenuWidget(),
-          ],
-        ),
-        subtitle: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // Posts
-            FollowingNumberWidget(title: 'Posts', number: '84'),
-            DividerWidget(),
-            // Fans
-            FollowingNumberWidget(title: 'Fans', number: '358'),
-            DividerWidget(),
-            // Pioneers
-            FollowingNumberWidget(title: 'Pioneers', number: '172'),
-          ],
-        ),
+              ),
+              SizedBox(height: context.height * 0.008),
+            ],
+          ),
+          // User Pop Menu
+          UserPopMenuWidget(),
+        ],
+      ),
+      subtitle: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Posts
+          FollowingNumberWidget(title: 'Posts', number: '84'),
+          DividerWidget(),
+          // Fans
+          FollowingNumberWidget(title: 'Fans', number: '358'),
+          DividerWidget(),
+          // Pioneers
+          FollowingNumberWidget(title: 'Pioneers', number: '172'),
+        ],
       ),
     );
   }
