@@ -37,7 +37,7 @@ class UserProfilePage extends StatelessWidget {
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 5,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 return PostCardWidget(
                   imageOnTap: () {
