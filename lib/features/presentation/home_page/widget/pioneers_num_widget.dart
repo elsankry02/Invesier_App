@@ -13,7 +13,7 @@ class PioneersEnumWidget extends StatelessWidget {
       shrinkWrap: true,
       itemCount: 3,
       itemBuilder: (context, index) {
-        //! PostCardWidget
+        // PostCardWidget
         return PostCardWidget(
           imageOnTap: () {
             // UserProfileRoute

@@ -33,25 +33,25 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      GestureDetector(
-                        child: EnumItem(
-                          title: 'For You',
-                          titleColor:
-                              enumView == EnumView.foryou
-                                  ? ColorManger.kCodGray
-                                  : ColorManger.kWhite,
-                          backGroundColor:
-                              enumView == EnumView.foryou
-                                  ? ColorManger.kOceanGreen
-                                  : ColorManger.kBackGround,
-                          onTap: () {
-                            setState(() {
-                              enumView = EnumView.foryou;
-                            });
-                          },
-                        ),
+                      // For You
+                      EnumItem(
+                        title: 'For You',
+                        titleColor:
+                            enumView == EnumView.foryou
+                                ? ColorManger.kCodGray
+                                : ColorManger.kWhite,
+                        backGroundColor:
+                            enumView == EnumView.foryou
+                                ? ColorManger.kOceanGreen
+                                : ColorManger.kBackGround,
+                        onTap: () {
+                          setState(() {
+                            enumView = EnumView.foryou;
+                          });
+                        },
                       ),
                       SizedBox(width: context.width * 0.010),
+                      // Pioneers
                       EnumItem(
                         title: 'Pioneers',
                         titleColor:
@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(height: context.height * 0.010),
+                  // enumView
                   enumView == EnumView.foryou
                       ? ForYouEnumWidget()
                       : PioneersEnumWidget(),
