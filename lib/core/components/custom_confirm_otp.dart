@@ -33,8 +33,8 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
             length: 6,
             controller: pinController,
             errorPinTheme: pinTheme(
-              textColor: ColorManger.kPersianRed,
-              borderColor: ColorManger.kPersianRed,
+              textColor: ColorManger.kRedTwo,
+              borderColor: ColorManger.kRedTwo,
               backGroundColor: ColorManger.kWhite,
             ),
             defaultPinTheme: pinTheme(

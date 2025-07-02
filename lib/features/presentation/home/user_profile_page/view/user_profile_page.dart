@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home_page/widget/chase_or_posts_container_widget.dart';
-import 'package:invesier/features/presentation/home_page/widget/post_card_widget.dart';
-import 'package:invesier/features/presentation/home_page/widget/profile_appbar_widget.dart';
+import 'package:invesier/features/presentation/home/home_page/widget/chase_or_posts_container_widget.dart';
+import 'package:invesier/features/presentation/home/home_page/widget/post_card_widget.dart';
+import 'package:invesier/features/presentation/home/user_profile_page/widget/user_appbar_widget.dart';
 
 @RoutePage()
-class PersonalProfilePage extends StatelessWidget {
-  const PersonalProfilePage({super.key});
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +24,26 @@ class PersonalProfilePage extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            ProfileAppBarWidget(),
+            UserAppBarWidget(),
             SizedBox(height: context.height * 0.021),
-            //! ChaseOrPostsContainer
-            ChaseOrPostsContainerWidget(title: 'My Posts'),
+            // Chase Or Posts Container Widget
+            ChaseOrPostsContainerWidget(
+              title: 'Chase',
+              backGroundColor: ColorManger.kTurquoiseBlue,
+            ),
+
             SizedBox(height: context.height * 0.021),
-            //! builder
+            // ListView builder
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 3,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 return PostCardWidget(
+                  imageOnTap: () {
+                    // UserProfileRoute
+                    context.router.push(UserProfileRoute());
+                  },
                   commentOnTap: () {
                     // CommentRoute
                     context.router.push(CommentRoute());

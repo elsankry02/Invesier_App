@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 
 class CustomButtonWidget extends StatelessWidget {
@@ -9,26 +8,32 @@ class CustomButtonWidget extends StatelessWidget {
     this.onTap,
     required this.vertical,
     required this.radius,
+    required this.backGroundColor,
+    required this.titleColor,
+    required this.horizontal,
   });
   final String title;
   final Function()? onTap;
-  final double vertical;
-  final double radius;
+  final double vertical, horizontal, radius;
+  final Color backGroundColor, titleColor;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        
-        padding: EdgeInsets.symmetric(vertical: vertical, horizontal: 20),
+        padding: EdgeInsets.symmetric(
+          vertical: vertical,
+          horizontal: horizontal,
+        ),
         decoration: BoxDecoration(
-          color: ColorManger.kOceanGreen,
+          color: backGroundColor,
           borderRadius: BorderRadius.circular(radius),
         ),
         child: Text(
           title,
           style: context.kTextTheme.labelMedium!.copyWith(
-            color: ColorManger.kBackGround,
+            color: titleColor,
             fontWeight: FontWeight.w600,
           ),
         ),

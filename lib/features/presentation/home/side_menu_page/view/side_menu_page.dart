@@ -4,6 +4,7 @@ import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/presentation/home/side_menu_page/widget/side_menu_title_widget.dart';
 
 @RoutePage()
 class SideMenuPage extends StatelessWidget {
@@ -77,39 +78,16 @@ class SideMenuPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                profileText(
-                  context,
+                SideMenuTitleWidget(
+                  title: 'View profile',
                   onTap: () {
                     context.router.push(PersonalProfileRoute());
                   },
-                  title: 'View profile',
                 ),
-                profileText(context, onTap: () {}, title: 'Settings'),
-                profileText(context, onTap: () {}, title: 'Log out'),
+                SideMenuTitleWidget(onTap: () {}, title: 'Settings'),
+                SideMenuTitleWidget(onTap: () {}, title: 'Log out'),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  InkWell profileText(
-    BuildContext context, {
-    required String title,
-    Function()? onTap,
-  }) {
-    return InkWell(
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 12),
-        child: Text(
-          title,
-          style: context.kTextTheme.labelMedium!.copyWith(
-            fontWeight: FontWeight.w400,
           ),
         ),
       ),

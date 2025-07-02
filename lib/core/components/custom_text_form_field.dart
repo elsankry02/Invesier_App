@@ -34,9 +34,9 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
         focusedBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
         focusedErrorBorder: outlineInputBorder(
-          borderColor: ColorManger.kPersianRed,
+          borderColor: ColorManger.kRedTwo,
         ),
-        errorBorder: outlineInputBorder(borderColor: ColorManger.kPersianRed),
+        errorBorder: outlineInputBorder(borderColor: ColorManger.kRedTwo),
       ),
     );
   }

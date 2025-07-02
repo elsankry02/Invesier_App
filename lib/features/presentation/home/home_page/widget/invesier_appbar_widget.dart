@@ -48,7 +48,7 @@ class InvesierAppBar extends StatelessWidget {
                             height: 8,
                             width: 8,
                             decoration: BoxDecoration(
-                              color: ColorManger.kPersianRed,
+                              color: ColorManger.kRedTwo,
                               borderRadius: BorderRadius.circular(5),
                             ),
                           ),

@@ -25,7 +25,7 @@ class _LogInPinPutWidgetState extends State<SignupPinputWidget> {
       controller: widget.controller,
       errorPinTheme: pinTheme(
         textColor: ColorManger.kWhite,
-        borderColor: ColorManger.kPersianRed,
+        borderColor: ColorManger.kRedTwo,
         backGroundColor: ColorManger.kBackGround,
       ),
       defaultPinTheme: pinTheme(

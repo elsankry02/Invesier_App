@@ -94,9 +94,12 @@ class _CustomShowModelButtonAddCommentWidgetState
                 //! titleButton
                 CustomButtonWidget(
                   title: widget.titleButton,
-                  onTap: () {},
+                  titleColor: ColorManger.kBackGround,
+                  backGroundColor: ColorManger.kOceanGreen,
                   vertical: widget.vertical,
+                  horizontal: 20,
                   radius: widget.radius,
+                  onTap: () {},
                 ),
               ],
             ),

@@ -6,7 +6,7 @@ import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/
 import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/navigationbar_item_widget.dart';
 import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/show_model_button_sheet_widget.dart';
 import 'package:invesier/features/presentation/challenges_page/view/challenges_page.dart';
-import 'package:invesier/features/presentation/home_page/view/home_page.dart';
+import 'package:invesier/features/presentation/home/home_page/view/home_page.dart';
 import 'package:invesier/features/presentation/learn_page/view/learn_page.dart';
 import 'package:invesier/features/presentation/trade_page/view/trade_page.dart';
 

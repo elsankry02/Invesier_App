@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:invesier/features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
-import 'package:invesier/features/presentation/home_page/view/comment_page.dart';
-import 'package:invesier/features/presentation/home_page/view/personal_profile_page.dart';
-import 'package:invesier/features/presentation/home_page/view/post_page.dart';
-import 'package:invesier/features/presentation/home_page/view/side_menu_page.dart';
-import 'package:invesier/features/presentation/home_page/view/user_profile_page.dart';
+import 'package:invesier/features/presentation/home/home_page/view/comment_page.dart';
+import 'package:invesier/features/presentation/home/home_page/view/post_page.dart';
+import 'package:invesier/features/presentation/home/side_menu_page/view/side_menu_page.dart';
+import 'package:invesier/features/presentation/home/personal_profile_page/view/personal_profile_page.dart';
+import 'package:invesier/features/presentation/home/user_profile_page/view/user_profile_page.dart';
 
 import '../../features/presentation/login_page/view/login_email_confirm_otp_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';

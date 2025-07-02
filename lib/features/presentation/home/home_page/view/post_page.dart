@@ -147,9 +147,12 @@ class _PostPageState extends State<PostPage> {
                   //! Post now
                   CustomButtonWidget(
                     title: 'Post now',
-                    onTap: () {},
+                    titleColor: ColorManger.kBackGround,
+                    backGroundColor: ColorManger.kOceanGreen,
+                    horizontal: 20,
                     vertical: 12,
                     radius: 16,
+                    onTap: () {},
                   ),
                 ],
               ),
