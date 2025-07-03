@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/constant/color_manger.dart';
+import 'package:invesier/core/constant/svg_manger.dart';
 
 class HomeFollowTextFormFieldWidget extends StatelessWidget {
   const HomeFollowTextFormFieldWidget({super.key, this.searchController});
@@ -11,7 +13,9 @@ class HomeFollowTextFormFieldWidget extends StatelessWidget {
       controller: searchController,
       decoration: InputDecoration(
         // prefixIcon
-        prefixIcon: Icon(Icons.search, color: ColorManger.kDarkenText),
+        prefixIcon: UnconstrainedBox(
+          child: SvgPicture.asset(SvgManger.kSearch),
+        ),
         // Search
         hintText: 'Search',
         hintStyle: TextStyle(fontSize: 17, color: ColorManger.kDarkenText),
