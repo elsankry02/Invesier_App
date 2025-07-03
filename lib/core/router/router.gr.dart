@@ -59,6 +59,22 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [HomeFollowPage]
+class HomeFollowRoute extends PageRouteInfo<void> {
+  const HomeFollowRoute({List<PageRouteInfo>? children})
+    : super(HomeFollowRoute.name, initialChildren: children);
+
+  static const String name = 'HomeFollowRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HomeFollowPage();
+    },
+  );
+}
+
+/// generated route for
 /// [LoginEmailConfirmOtpPage]
 class LoginEmailConfirmOtpRoute extends PageRouteInfo<void> {
   const LoginEmailConfirmOtpRoute({List<PageRouteInfo>? children})

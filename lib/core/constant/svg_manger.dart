@@ -16,4 +16,5 @@ class SvgManger {
   static const kPopMenu = 'assets/svg/pop_menu.svg';
   static const kReply = 'assets/svg/reply.svg';
   static const kArrow = 'assets/svg/arrow.svg';
+  static const kSearch = 'assets/svg/search_icon.svg';
 }

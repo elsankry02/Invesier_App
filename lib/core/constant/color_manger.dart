@@ -19,4 +19,5 @@ class ColorManger {
   static const kOceanGreen = Color(0xff41af8b);
   static const kEucalyptus = Color(0xff6AEEC6);
   static const kTurquoiseBlue = Color(0xff248866);
+  static const kDarkenText = Color(0xff687684);
 }

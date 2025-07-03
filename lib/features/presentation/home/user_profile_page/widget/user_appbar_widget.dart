@@ -66,10 +66,12 @@ class UserAppBarWidget extends StatelessWidget {
         children: [
           // Posts
           FollowingNumberWidget(title: 'Posts', number: '84'),
-          DividerWidget(),
+          // DividerWidget
+          DividerWidget(height: context.height * 0.030, width: 1.5),
           // Fans
           FollowingNumberWidget(title: 'Fans', number: '358'),
-          DividerWidget(),
+          // DividerWidget
+          DividerWidget(height: context.height * 0.030, width: 1.5),
           // Pioneers
           FollowingNumberWidget(title: 'Pioneers', number: '172'),
         ],
