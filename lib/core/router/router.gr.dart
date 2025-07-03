@@ -60,18 +60,49 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [HomeFollowPage]
-class HomeFollowRoute extends PageRouteInfo<void> {
-  const HomeFollowRoute({List<PageRouteInfo>? children})
-    : super(HomeFollowRoute.name, initialChildren: children);
+class HomeFollowRoute extends PageRouteInfo<HomeFollowRouteArgs> {
+  HomeFollowRoute({
+    Key? key,
+    required HomeFollowEnum initialTab,
+    List<PageRouteInfo>? children,
+  }) : super(
+         HomeFollowRoute.name,
+         args: HomeFollowRouteArgs(key: key, initialTab: initialTab),
+         initialChildren: children,
+       );
 
   static const String name = 'HomeFollowRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const HomeFollowPage();
+      final args = data.argsAs<HomeFollowRouteArgs>();
+      return HomeFollowPage(key: args.key, initialTab: args.initialTab);
     },
   );
+}
+
+class HomeFollowRouteArgs {
+  const HomeFollowRouteArgs({this.key, required this.initialTab});
+
+  final Key? key;
+
+  final HomeFollowEnum initialTab;
+
+  @override
+  String toString() {
+    return 'HomeFollowRouteArgs{key: $key, initialTab: $initialTab}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! HomeFollowRouteArgs) return false;
+    return key == other.key && initialTab == other.initialTab;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ initialTab.hashCode;
 }
 
 /// generated route for

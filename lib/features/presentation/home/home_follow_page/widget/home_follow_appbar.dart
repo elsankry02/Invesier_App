@@ -18,7 +18,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
             onPressed: () {
               context.router.maybePop();
             },
-            //! Icon
+            // Icon
             icon: Icon(Icons.arrow_back_ios_new, color: ColorManger.kWhite),
           ),
           ClipOval(

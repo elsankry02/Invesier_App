@@ -4,6 +4,7 @@ import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/presentation/home/home_follow_page/view/home_follow_page.dart';
 import 'package:invesier/features/presentation/home/home_page/widget/divider_widget.dart';
 import 'package:invesier/features/presentation/home/home_page/widget/following_number_widget.dart';
 
@@ -67,7 +68,9 @@ class PersonalAppBarWidget extends StatelessWidget {
             title: 'Fans',
             number: '358',
             onTap: () {
-              context.router.push(HomeFollowRoute());
+              context.router.push(
+                HomeFollowRoute(initialTab: HomeFollowEnum.fans),
+              );
             },
           ),
           // DividerWidget
@@ -77,7 +80,9 @@ class PersonalAppBarWidget extends StatelessWidget {
             title: 'Pioneers',
             number: '172',
             onTap: () {
-              context.router.push(HomeFollowRoute());
+              context.router.push(
+                HomeFollowRoute(initialTab: HomeFollowEnum.pioneers),
+              );
             },
           ),
         ],

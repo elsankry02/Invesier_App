@@ -12,6 +12,7 @@ class HomeFollowTextFormFieldWidget extends StatelessWidget {
       cursorColor: ColorManger.kDarkenText,
       controller: searchController,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.zero,
         // prefixIcon
         prefixIcon: UnconstrainedBox(
           child: SvgPicture.asset(SvgManger.kSearch),

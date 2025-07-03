@@ -13,8 +13,8 @@ enum HomeFollowEnum { fans, pioneers }
 
 @RoutePage()
 class HomeFollowPage extends StatefulWidget {
-  const HomeFollowPage({super.key});
-
+  const HomeFollowPage({super.key, required this.initialTab});
+  final HomeFollowEnum initialTab;
   @override
   State<HomeFollowPage> createState() => _HomeFollowPageState();
 }
@@ -22,6 +22,13 @@ class HomeFollowPage extends StatefulWidget {
 class _HomeFollowPageState extends State<HomeFollowPage> {
   HomeFollowEnum homeFollowEnum = HomeFollowEnum.fans;
   final searchController = TextEditingController();
+
+  @override
+  void initState() {
+    homeFollowEnum = widget.initialTab;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

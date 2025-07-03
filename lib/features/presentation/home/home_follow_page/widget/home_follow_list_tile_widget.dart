@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/model/home_follow_model.dart';
 
 class HomeFollowListTileWidget extends StatelessWidget {
@@ -17,6 +18,7 @@ class HomeFollowListTileWidget extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       leading: ClipOval(
+        // image
         child: Image.asset(
           items.image,
           height: 30,
@@ -24,15 +26,33 @@ class HomeFollowListTileWidget extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      title: Text(items.title),
-      subtitle: Text(items.subTitle),
+      // title
+      title: Text(
+        items.title,
+        style: context.kTextTheme.titleSmall!.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      // subTitle
+      subtitle: Text(
+        items.subTitle,
+        style: context.kTextTheme.titleSmall!.copyWith(
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      // trailing
       trailing: Container(
         padding: EdgeInsets.symmetric(horizontal: 28, vertical: 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(31),
           border: Border.all(color: broderColor),
         ),
-        child: Text(title),
+        child: Text(
+          title,
+          style: context.kTextTheme.bodySmall!.copyWith(
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
     );
   }

@@ -40,10 +40,6 @@ class UserProfilePage extends StatelessWidget {
               itemCount: 2,
               itemBuilder: (context, index) {
                 return PostCardWidget(
-                  imageOnTap: () {
-                    // UserProfileRoute
-                    context.router.push(UserProfileRoute());
-                  },
                   commentOnTap: () {
                     // CommentRoute
                     context.router.push(CommentRoute());
