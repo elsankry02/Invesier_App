@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../core/extension/extension.dart';
 import '../../../model/onboarding_model.dart';
 
 class ProductDisplayWidget extends StatelessWidget {
@@ -15,7 +15,7 @@ class ProductDisplayWidget extends StatelessWidget {
       children: [
         //! Svg
         Lottie.asset(item.image, fit: BoxFit.cover),
-        SizedBox(height: context.height * 0.140),
+        SizedBox(height: context.height * 0.100),
         //! Titel
         Text(
           item.titel,
@@ -24,7 +24,7 @@ class ProductDisplayWidget extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        SizedBox(height: context.height * 0.02),
+        SizedBox(height: context.height * 0.020),
         //! SubTitel
         Text(
           item.subTitel,

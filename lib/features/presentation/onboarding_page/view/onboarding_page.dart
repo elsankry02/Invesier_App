@@ -45,7 +45,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                SizedBox(height: context.height * 0.032),
+                SizedBox(height: context.height * 0.020),
                 //! Skip
                 SkipWidget(
                   skip: 'Skip',
