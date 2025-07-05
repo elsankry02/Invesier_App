@@ -2,11 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
+import 'package:invesier/core/constant/svg_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home/home_follow_page/view/home_follow_page.dart';
 import 'package:invesier/features/presentation/home/home_page/widget/divider_widget.dart';
 import 'package:invesier/features/presentation/home/home_page/widget/following_number_widget.dart';
+import 'package:invesier/features/presentation/home/user_profile_page/widget/user_alertdialog_widget.dart';
 import 'package:invesier/features/presentation/home/user_profile_page/widget/user_pop_menu_widget.dart';
 
 class UserAppBarWidget extends StatelessWidget {
@@ -60,7 +62,21 @@ class UserAppBarWidget extends StatelessWidget {
             ],
           ),
           // User Pop Menu
-          UserPopMenuWidget(),
+          UserPopMenuWidget(
+            icon: SvgManger.kblockVictor,
+            title: 'Block user',
+            onTap: () {
+              showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (context) {
+                  return UserAlertDialogWidget(
+                    title: 'Are you sure you want to block this \naccount?',
+                  );
+                },
+              );
+            },
+          ),
         ],
       ),
       subtitle: Row(

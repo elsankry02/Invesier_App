@@ -53,7 +53,7 @@ class _SignupPageState extends State<LoginPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 24),
               children: [
-                //! Create an account
+                // Create an account
                 Text(
                   textAlign: TextAlign.center,
                   'Welcome To Invesier!',
@@ -62,13 +62,13 @@ class _SignupPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 4),
-                //! Rich Text
+                // Rich Text
                 Center(
                   child: CustomRichText(
                     textSpanOne: "Don't have an account?",
                     textSpanTwo: ' Create an account ',
                     onTap: () {
-                      //! Navigate to SignupRoute
+                      // Navigate to SignupRoute
                       context.router.replace(SignupRoute());
                     },
                   ),
@@ -76,11 +76,11 @@ class _SignupPageState extends State<LoginPage> {
                 SizedBox(height: context.height * 0.024),
                 Column(
                   children: [
-                    //! Contact Type
+                    // Contact Type
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        //! CustomButton Email
+                        // CustomButton Email
                         CustomButtonStyleEnum(
                           title: 'Email',
                           topLeft: 26,
@@ -104,7 +104,7 @@ class _SignupPageState extends State<LoginPage> {
                             });
                           },
                         ),
-                        //! CustomButton Phone
+                        // CustomButton Phone
                         CustomButtonStyleEnum(
                           title: 'Phone',
                           topRight: 26,
@@ -131,14 +131,14 @@ class _SignupPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(height: context.height * 0.047),
-                    //! PageView
+                    // PageView
                     SizedBox(
                       height: context.height * 0.150,
                       child: PageView(
                         physics: NeverScrollableScrollPhysics(),
                         controller: pageController,
                         children: [
-                          //! Email Widget
+                          // Email Widget
                           ContactEmailWidget(
                             emailController: emailController,
                             autovalidateMode:
@@ -158,7 +158,7 @@ class _SignupPageState extends State<LoginPage> {
                               }
                             },
                           ),
-                          //! Phone Widget
+                          // Phone Widget
                           ContactPhoneWidget(
                             phoneController: phoneController,
                             autovalidateMode:
@@ -185,13 +185,13 @@ class _SignupPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: context.height * 0.11),
                 CustomSocialAuthButtons(
-                  //! onTapGoogle
+                  // onTapGoogle
                   onTapGoogle: () {},
-                  //! onTapApple
+                  // onTapApple
                   onTapApple: () {},
                 ),
                 SizedBox(height: context.height * 0.057),
-                //! CustomPrimaryButton
+                // CustomPrimaryButton
                 CustomPrimaryButton(
                   backgroundColor: ColorManger.kTurquoiseBlue,
                   titleColor: ColorManger.kWhite,
@@ -201,11 +201,9 @@ class _SignupPageState extends State<LoginPage> {
                       contactType == ContactType.phone
                           ? () {
                             context.router.push(LoginPhoneConfirmOtpRoute());
-                            if (formKey.currentState!.validate()) {}
                           }
                           : () {
                             context.router.push(LoginEmailConfirmOtpRoute());
-                            if (formKey.currentState!.validate()) {}
                           },
                 ),
               ],

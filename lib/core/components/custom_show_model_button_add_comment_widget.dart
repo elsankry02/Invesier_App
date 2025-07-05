@@ -96,6 +96,7 @@ class _CustomShowModelButtonAddCommentWidgetState
                   title: widget.titleButton,
                   titleColor: ColorManger.kBackGround,
                   backGroundColor: ColorManger.kOceanGreen,
+                  borderColor: ColorManger.kOceanGreen,
                   vertical: widget.vertical,
                   horizontal: 20,
                   radius: widget.radius,

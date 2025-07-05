@@ -6,12 +6,17 @@ import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/image_manger.dart';
 import 'package:invesier/core/constant/svg_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/pop_menu_button_widget.dart';
 
 class PostCardWidget extends StatelessWidget {
-  const PostCardWidget({super.key, this.commentOnTap, this.imageOnTap});
+  const PostCardWidget({
+    super.key,
+    this.commentOnTap,
+    this.imageOnTap,
+    this.trailing,
+  });
   final Function()? commentOnTap;
   final Function()? imageOnTap;
+  final Widget? trailing;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +43,8 @@ class PostCardWidget extends StatelessWidget {
                 ),
               ),
             ),
-            trailing: PopMenuButtonWidget(),
+            // User Pop Menu
+            trailing: trailing,
             title: Row(
               children: [
                 Column(

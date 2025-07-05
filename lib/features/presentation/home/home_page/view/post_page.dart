@@ -149,6 +149,7 @@ class _PostPageState extends State<PostPage> {
                     title: 'Post now',
                     titleColor: ColorManger.kBackGround,
                     backGroundColor: ColorManger.kOceanGreen,
+                    borderColor: ColorManger.kOceanGreen,
                     horizontal: 20,
                     vertical: 12,
                     radius: 16,

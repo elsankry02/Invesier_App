@@ -3,11 +3,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/constant/svg_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/user_profile_page/widget/user_alertdialog_widget.dart';
 
 class UserPopMenuWidget extends StatelessWidget {
-  const UserPopMenuWidget({super.key});
+  const UserPopMenuWidget({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.onTap,
+  });
 
+  final String title, icon;
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
@@ -19,22 +25,16 @@ class UserPopMenuWidget extends StatelessWidget {
       itemBuilder: (context) {
         return [
           PopupMenuItem(
-            onTap: () {
-              showDialog(
-                barrierDismissible: false,
-                context: context,
-                builder: (context) {
-                  return UserAlertDialogWidget();
-                },
-              );
-            },
+            onTap: onTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.block),
+                // icon
+                SvgPicture.asset(icon),
                 SizedBox(width: 7),
+                // title
                 Text(
-                  'Block user',
+                  title,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),

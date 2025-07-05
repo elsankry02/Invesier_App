@@ -4,6 +4,7 @@ import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home/home_page/widget/chase_or_posts_container_widget.dart';
+import 'package:invesier/features/presentation/home/home_page/widget/pop_menu_button_widget.dart';
 import 'package:invesier/features/presentation/home/home_page/widget/post_card_widget.dart';
 import 'package:invesier/features/presentation/home/user_profile_page/widget/user_appbar_widget.dart';
 
@@ -40,6 +41,8 @@ class UserProfilePage extends StatelessWidget {
               itemCount: 2,
               itemBuilder: (context, index) {
                 return PostCardWidget(
+                  trailing: PopMenuButtonWidget(),
+
                   commentOnTap: () {
                     // CommentRoute
                     context.router.push(CommentRoute());

@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/components/custom_button_widget.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/features/presentation/home/home_page/widget/report_reason_dialog.dart';
 
-class UserAlertDialogWidget extends StatelessWidget {
-  const UserAlertDialogWidget({super.key, required this.title});
-  final String title;
+class ForYouDialogWidget extends StatelessWidget {
+  const ForYouDialogWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: ColorManger.kCodGray,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Align(
             alignment: Alignment.centerRight,
-            // close back
             child: IconButton(
               onPressed: () {
                 context.router.maybePop();
@@ -24,9 +23,8 @@ class UserAlertDialogWidget extends StatelessWidget {
               icon: Icon(Icons.close, color: ColorManger.kWhite, size: 20),
             ),
           ),
-          SizedBox(height: context.height * 0.014),
           Text(
-            title,
+            'Report this post and block the account',
             style: context.kTextTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -36,31 +34,32 @@ class UserAlertDialogWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomButtonWidget(
-                title: 'No',
+                title: 'Cancel',
                 titleColor: ColorManger.kWhite,
-                backGroundColor: ColorManger.kBackGround,
-                borderColor: ColorManger.kBackGround,
-                vertical: 6,
-                horizontal: 34,
+                backGroundColor: ColorManger.kBoulder,
+                borderColor: ColorManger.kBoulder,
+                horizontal: 36,
+                vertical: 4,
                 radius: 31,
                 onTap: () {
                   context.router.maybePop();
                 },
               ),
               CustomButtonWidget(
-                title: 'Yes, block',
+                title: 'Report',
                 titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
-                vertical: 6,
-                horizontal: 27.5,
+                horizontal: 36,
+                vertical: 4,
                 radius: 31,
                 onTap: () {
-                  context.router.maybePop();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('User has been blocked successfully'),
-                    ),
+                  showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (context) {
+                      return ReportReasonDialog();
+                    },
                   );
                 },
               ),

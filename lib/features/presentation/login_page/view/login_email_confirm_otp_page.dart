@@ -76,16 +76,16 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
               children: [
                 Row(
                   children: [
-                    //! CustomIconBack
+                    // CustomIconBack
                     CustomIconBack(),
                     Expanded(
-                      //! CustomAppBar
+                      // CustomAppBar
                       child: CustomTitelAppBar(title: 'Confirm OTP'),
                     ),
                   ],
                 ),
                 SizedBox(height: context.height * 0.023),
-                //! Enter the OTP code sent your phone and Email
+                // Enter the OTP code sent your phone and Email
                 RichText(
                   text: TextSpan(
                     children: [
@@ -110,9 +110,6 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                 CustomConfirmOTP(
                   onChanged: (value) {},
                   validator: (value) {
-                    if (value!.length < 6) {
-                      return "Please enter the full 6-digit code";
-                    }
                     return null;
                   },
                 ),
@@ -144,8 +141,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   title: 'Submit',
                   horizontal: 0,
                   onTap: () {
-                    context.router.replace(WelcomeRoute());
-                    if (formKey.currentState!.validate()) {}
+                    context.router.replace(BottomNavigationBarRoute());
                   },
                 ),
               ],
