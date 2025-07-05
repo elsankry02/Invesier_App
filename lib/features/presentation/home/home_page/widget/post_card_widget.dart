@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/custom_mate_container.dart';
-import 'package:invesier/core/components/custom_trend_box.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../core/components/custom_mate_container.dart';
+import '../../../../../core/components/custom_trend_box.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/extension/extension.dart';
 
 class PostCardWidget extends StatelessWidget {
   const PostCardWidget({

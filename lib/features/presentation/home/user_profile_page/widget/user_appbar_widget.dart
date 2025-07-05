@@ -1,15 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/view/home_follow_page.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/divider_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/following_number_widget.dart';
-import 'package:invesier/features/presentation/home/user_profile_page/widget/user_alertdialog_widget.dart';
-import 'package:invesier/features/presentation/home/user_profile_page/widget/user_pop_menu_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../../../../../core/router/router.dart';
+import '../../home_follow_page/view/home_follow_page.dart';
+import '../../home_page/widget/divider_widget.dart';
+import '../../home_page/widget/following_number_widget.dart';
+import 'user_alertdialog_widget.dart';
+import 'user_pop_menu_widget.dart';
 
 class UserAppBarWidget extends StatelessWidget {
   const UserAppBarWidget({super.key});

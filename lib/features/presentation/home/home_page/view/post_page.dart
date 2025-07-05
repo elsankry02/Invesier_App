@@ -4,9 +4,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:invesier/core/components/custom_button_widget.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../core/components/custom_button_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
 
 @RoutePage()
 class PostPage extends StatefulWidget {

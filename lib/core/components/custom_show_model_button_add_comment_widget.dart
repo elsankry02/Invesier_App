@@ -2,10 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:invesier/core/components/custom_button_widget.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import 'custom_button_widget.dart';
+import '../constant/color_manger.dart';
+import '../constant/svg_manger.dart';
+import '../extension/extension.dart';
 
 class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
   const CustomShowModelButtonAddCommentWidget({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../extension/extension.dart';
 
 class CustomTrendBox extends StatelessWidget {
   const CustomTrendBox({

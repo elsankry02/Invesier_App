@@ -1,4 +1,4 @@
-import 'package:invesier/core/constant/image_manger.dart';
+import '../../core/constant/image_manger.dart';
 
 class HomeFollowModel {
   final String title, subTitle, image;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
 
+import 'core/constant/color_manger.dart';
 import 'core/constant/string_manger.dart';
 import 'core/router/router.dart';
 

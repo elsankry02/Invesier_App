@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/model/home_follow_model.dart';
+import '../../../../../core/extension/extension.dart';
+import '../../../../model/home_follow_model.dart';
 
 class HomeFollowListTileWidget extends StatelessWidget {
   const HomeFollowListTileWidget({

@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/button_sheet_text_widget.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
+import '../../../../core/router/router.dart';
+import 'button_sheet_text_widget.dart';
 
 class ShowModelButtonSheetWidget extends StatelessWidget {
   const ShowModelButtonSheetWidget({super.key});

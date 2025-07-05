@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/fans_widget.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/home_follow_appbar.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/home_follow_rich_text_widget.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/home_follow_textformfield_widget.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/pioneers_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/divider_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../widget/fans_widget.dart';
+import '../widget/home_follow_appbar.dart';
+import '../widget/home_follow_rich_text_widget.dart';
+import '../widget/home_follow_textformfield_widget.dart';
+import '../widget/pioneers_widget.dart';
+import '../../home_page/widget/divider_widget.dart';
 
 enum HomeFollowEnum { fans, pioneers }
 

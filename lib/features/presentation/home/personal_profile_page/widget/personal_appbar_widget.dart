@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/view/home_follow_page.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/divider_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/following_number_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../../../../../core/router/router.dart';
+import '../../home_follow_page/view/home_follow_page.dart';
+import '../../home_page/widget/divider_widget.dart';
+import '../../home_page/widget/following_number_widget.dart';
 
 class PersonalAppBarWidget extends StatelessWidget {
   const PersonalAppBarWidget({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/features/model/home_follow_model.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/home_follow_list_tile_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../model/home_follow_model.dart';
+import 'home_follow_list_tile_widget.dart';
 
 class PioneersWidget extends StatelessWidget {
   const PioneersWidget({super.key});

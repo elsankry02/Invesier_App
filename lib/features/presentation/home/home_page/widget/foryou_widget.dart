@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/foryou_dialog_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/post_card_widget.dart';
-import 'package:invesier/features/presentation/home/user_profile_page/widget/user_pop_menu_widget.dart';
+import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/router/router.dart';
+import 'foryou_dialog_widget.dart';
+import 'post_card_widget.dart';
+import '../../user_profile_page/widget/user_pop_menu_widget.dart';
 
 class ForYouWidget extends StatelessWidget {
   const ForYouWidget({super.key});

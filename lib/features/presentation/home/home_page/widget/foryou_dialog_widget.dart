@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_button_widget.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/report_reason_dialog.dart';
+import '../../../../../core/components/custom_button_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import 'report_reason_dialog.dart';
 
 class ForYouDialogWidget extends StatelessWidget {
   const ForYouDialogWidget({super.key});

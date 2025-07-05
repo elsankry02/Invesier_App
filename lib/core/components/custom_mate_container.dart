@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../constant/color_manger.dart';
+import '../extension/extension.dart';
 
 class CustomMateContainer extends StatelessWidget {
   const CustomMateContainer({

@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/extension/extension.dart';
 
 class HomeFollowAppBarWidget extends StatelessWidget {
   const HomeFollowAppBarWidget({super.key});

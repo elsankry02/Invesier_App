@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/chase_or_posts_container_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/pop_menu_button_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/post_card_widget.dart';
-import 'package:invesier/features/presentation/home/user_profile_page/widget/user_appbar_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../../../../../core/router/router.dart';
+import '../../home_page/widget/chase_or_posts_container_widget.dart';
+import '../../home_page/widget/pop_menu_button_widget.dart';
+import '../../home_page/widget/post_card_widget.dart';
+import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
 class UserProfilePage extends StatelessWidget {

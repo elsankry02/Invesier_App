@@ -1,7 +1,7 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_text_form_field.dart';
 

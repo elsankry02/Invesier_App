@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_mate_container.dart';
-import 'package:invesier/core/components/custom_trend_box.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/pop_menu_button_widget.dart';
+import '../../../../../core/components/custom_mate_container.dart';
+import '../../../../../core/components/custom_trend_box.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import 'pop_menu_button_widget.dart';
 
 class ReplyWidget extends StatelessWidget {
   const ReplyWidget({super.key, required this.onTap});

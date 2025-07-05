@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../core/extension/extension.dart';
 
 class ChaseOrPostsContainerWidget extends StatelessWidget {
   const ChaseOrPostsContainerWidget({

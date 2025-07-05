@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/svg_manger.dart';
-import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/action_button_location_widget.dart';
-import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/navigationbar_item_widget.dart';
-import 'package:invesier/features/presentation/bottom_navigationbar_page/widget/show_model_button_sheet_widget.dart';
-import 'package:invesier/features/presentation/challenges_page/view/challenges_page.dart';
-import 'package:invesier/features/presentation/home/home_page/view/home_page.dart';
-import 'package:invesier/features/presentation/learn_page/view/learn_page.dart';
-import 'package:invesier/features/presentation/trade_page/view/trade_page.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/svg_manger.dart';
+import '../widget/action_button_location_widget.dart';
+import '../widget/navigationbar_item_widget.dart';
+import '../widget/show_model_button_sheet_widget.dart';
+import '../../challenges_page/view/challenges_page.dart';
+import '../../home/home_page/view/home_page.dart';
+import '../../learn_page/view/learn_page.dart';
+import '../../trade_page/view/trade_page.dart';
 
 @RoutePage()
 class BottomNavigationBarPage extends StatefulWidget {

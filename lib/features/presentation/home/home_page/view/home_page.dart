@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/enum_item.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/foryou_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/invesier_appbar_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/pioneers_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../widget/enum_item.dart';
+import '../widget/foryou_widget.dart';
+import '../widget/invesier_appbar_widget.dart';
+import '../widget/pioneers_widget.dart';
 
 enum EnumView { foryou, pioneers }
 

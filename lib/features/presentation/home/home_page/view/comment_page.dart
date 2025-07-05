@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_show_model_button_add_comment_widget.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/post_card_widget.dart';
-import 'package:invesier/features/presentation/home/home_page/widget/reply_widget.dart';
+import '../../../../../core/components/custom_show_model_button_add_comment_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../widget/post_card_widget.dart';
+import '../widget/reply_widget.dart';
 
 @RoutePage()
 class CommentPage extends StatelessWidget {
