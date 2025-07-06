@@ -10,4 +10,6 @@ class ImageManger {
   static const kGirlTwo = 'assets/image/girl_two.png';
   static const kGirlThree = 'assets/image/girl_three.png';
   static const kGirlFour = 'assets/image/girl_four.png';
+  static const k1 = 'assets/image/k1.png';
+  static const k2 = 'assets/image/k2.png';
 }
