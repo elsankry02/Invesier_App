@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../model/home_follow_model.dart';
-import 'home_follow_list_tile_widget.dart';
+import '../../../../../core/components/custom_list_tile_widget.dart';
 
 class FansWidget extends StatelessWidget {
   const FansWidget({super.key});
@@ -12,7 +12,7 @@ class FansWidget extends StatelessWidget {
       child: ListView.builder(
         itemCount: homeFollowModel.length,
         itemBuilder: (context, index) {
-          return HomeFollowListTileWidget(
+          return CustomListTileWidget(
             items: homeFollowModel[index],
             broderColor: ColorManger.kSecondary,
             title: 'Fan',

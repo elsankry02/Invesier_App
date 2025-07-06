@@ -4,7 +4,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../../../core/components/custom_button_widget.dart';
+import '../../../../../core/components/custom_primary_button.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -145,14 +146,15 @@ class _PostPageState extends State<PostPage> {
                     ],
                   ),
                   //! Post now
-                  CustomButtonWidget(
+                  CustomPrimaryButton(
                     title: 'Post now',
                     titleColor: ColorManger.kBackGround,
                     backGroundColor: ColorManger.kOceanGreen,
                     borderColor: ColorManger.kOceanGreen,
-                    horizontal: 20,
-                    vertical: 12,
+                    paddingHorizontal: 20,
+                    paddingVertical: 12,
                     radius: 16,
+                    marginHorizontal: 0,
                     onTap: () {},
                   ),
                 ],

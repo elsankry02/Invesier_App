@@ -33,7 +33,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
   void startTimer() {
     timer?.cancel();
     secondsRemaining = 60;
-    Timer.periodic(Duration(seconds: 1), (t) {
+    timer = Timer.periodic(Duration(seconds: 1), (t) {
       if (secondsRemaining > 0) {
         setState(() {
           secondsRemaining--;
@@ -139,10 +139,21 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                 CustomPrimaryButton(
                   titleColor: ColorManger.kWhite,
                   title: 'Submit',
-                  horizontal: 0,
+
                   onTap: () {
                     context.router.replace(BottomNavigationBarRoute());
                   },
+                  radius: 60,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  paddingVertical: 13,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
                 ),
               ],
             ),

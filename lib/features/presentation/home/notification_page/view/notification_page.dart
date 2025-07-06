@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/notification_page/widget/notification_appbar_widget.dart';
-import 'package:invesier/features/presentation/home/notification_page/widget/notification_started_following_you_widget.dart';
-import 'package:invesier/features/presentation/home/notification_page/widget/notification_upvoted_your_post_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../widget/notification_appbar_widget.dart';
+import '../widget/notification_started_following_you_widget.dart';
+import '../widget/notification_upvoted_your_post_widget.dart';
 
 @RoutePage()
 class NotificationPage extends StatelessWidget {

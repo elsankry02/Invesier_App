@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/extension/extension.dart';
 
 class SkipWidget extends StatelessWidget {

@@ -76,7 +76,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 //! Conditional
                 CustomPrimaryButton(
                   title: 'Next',
-                  horizontal: 56,
+
                   onTap: () {
                     if (currentIndex == items(context).length - 1) {
                       context.router.push(WelcomeRoute());
@@ -88,6 +88,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     );
                   },
                   titleColor: ColorManger.kWhite,
+                  radius: 60,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  paddingVertical: 13,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
                 ),
                 //
                 SizedBox(height: context.height * 0.057),

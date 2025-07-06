@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_button_widget.dart';
+import '../../../../../core/components/custom_primary_button.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -35,25 +36,28 @@ class UserAlertDialogWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'No',
                 titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kBackGround,
                 borderColor: ColorManger.kBackGround,
-                vertical: 6,
-                horizontal: 34,
+
                 radius: 31,
                 onTap: () {
                   context.router.maybePop();
                 },
+                paddingVertical: 6,
+                marginHorizontal: 0,
+                paddingHorizontal: 34,
               ),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Yes, block',
+                marginHorizontal: 0,
                 titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
-                vertical: 6,
-                horizontal: 27.5,
+                paddingVertical: 6,
+                paddingHorizontal: 27.5,
                 radius: 31,
                 onTap: () {
                   context.router.maybePop();

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_button_widget.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../core/components/custom_primary_button.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/extension/extension.dart';
 
 class NotificationStartedFollowingYouWidget extends StatelessWidget {
   const NotificationStartedFollowingYouWidget({super.key});
@@ -51,14 +51,15 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
               ],
             ),
             // Chase Custom Button Widget
-            CustomButtonWidget(
+            CustomPrimaryButton(
               title: 'Chase',
               titleColor: ColorManger.kWhite,
               backGroundColor: ColorManger.kTurquoiseBlue,
               borderColor: ColorManger.kTurquoiseBlue,
               radius: 31,
-              vertical: 4,
-              horizontal: 20,
+              paddingVertical: 4,
+              paddingHorizontal: 20,
+              marginHorizontal: 0,
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_button_widget.dart';
+import '../../../../../core/components/custom_primary_button.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import 'report_reason_dialog.dart';
@@ -33,25 +34,27 @@ class ForYouDialogWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Cancel',
                 titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kBoulder,
                 borderColor: ColorManger.kBoulder,
-                horizontal: 36,
-                vertical: 4,
+                paddingHorizontal: 36,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   context.router.maybePop();
                 },
               ),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Report',
                 titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
-                horizontal: 36,
-                vertical: 4,
+                paddingHorizontal: 36,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   showDialog(

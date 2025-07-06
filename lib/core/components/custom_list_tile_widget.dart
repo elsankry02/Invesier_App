@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/extension/extension.dart';
-import '../../../../model/home_follow_model.dart';
 
-class HomeFollowListTileWidget extends StatelessWidget {
-  const HomeFollowListTileWidget({
+import '../../features/model/home_follow_model.dart';
+import '../extension/extension.dart';
+
+class CustomListTileWidget extends StatelessWidget {
+  const CustomListTileWidget({
     super.key,
     required this.items,
     required this.broderColor,

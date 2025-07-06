@@ -193,10 +193,19 @@ class _SignupPageState extends State<LoginPage> {
                 SizedBox(height: context.height * 0.057),
                 // CustomPrimaryButton
                 CustomPrimaryButton(
-                  backgroundColor: ColorManger.kTurquoiseBlue,
-                  titleColor: ColorManger.kWhite,
                   title: contactType == ContactType.phone ? "Log in" : "Next",
-                  horizontal: 0,
+                  titleColor: ColorManger.kWhite,
+                  radius: 60,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  paddingVertical: 13,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
                   onTap:
                       contactType == ContactType.phone
                           ? () {

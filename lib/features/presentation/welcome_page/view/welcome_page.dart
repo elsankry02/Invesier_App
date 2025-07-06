@@ -32,11 +32,18 @@ class WelcomePage extends StatelessWidget {
             //! Get Started
             CustomPrimaryButton(
               title: 'Get Started',
-              horizontal: 56,
+              titleColor: ColorManger.kWhite,
+              gradient: LinearGradient(
+                colors: [ColorManger.kEucalyptus, ColorManger.kTurquoiseBlue],
+              ),
+              borderColor: ColorManger.kTurquoiseBlue,
+              radius: 60,
+              paddingVertical: 14,
+              marginHorizontal: 43,
+              paddingHorizontal: 130,
               onTap: () {
                 context.router.push(SignupRoute());
               },
-              titleColor: ColorManger.kWhite,
             ),
 
             SizedBox(height: context.height * 0.012),
@@ -44,13 +51,11 @@ class WelcomePage extends StatelessWidget {
             CustomPrimaryButton(
               title: 'Login',
               titleColor: ColorManger.kEucalyptus,
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [ColorManger.k2, ColorManger.k1],
-              ),
-              border: Border.all(width: 2, color: ColorManger.kEucalyptus),
-              horizontal: 56,
+              borderColor: ColorManger.kEucalyptus,
+              radius: 60,
+              paddingVertical: 14,
+              marginHorizontal: 43,
+              paddingHorizontal: 130,
               onTap: () {
                 context.router.push(LoginRoute());
               },

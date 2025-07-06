@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_button_widget.dart';
+import '../../../../../core/components/custom_primary_button.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../user_profile_page/widget/user_alertdialog_widget.dart';
@@ -50,7 +51,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 ],
               ),
               SizedBox(height: context.height * 0.012),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Spam',
                 backGroundColor:
                     isSelectedOne == true
@@ -64,8 +65,9 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedOne == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                horizontal: 101,
-                vertical: 4,
+                paddingHorizontal: 101,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   setState(() {
@@ -74,7 +76,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Scam',
                 backGroundColor:
                     isSelectedTwo == true
@@ -88,8 +90,9 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedTwo == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                horizontal: 101,
-                vertical: 4,
+                paddingHorizontal: 101,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   setState(() {
@@ -98,7 +101,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Illegal',
                 backGroundColor:
                     isSelectedThree == true
@@ -112,8 +115,9 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedThree == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                horizontal: 100,
-                vertical: 4,
+                paddingHorizontal: 100,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   setState(() {
@@ -122,7 +126,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Violence',
                 backGroundColor:
                     isSelectedFour == true
@@ -136,8 +140,9 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedFour == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                horizontal: 92.5,
-                vertical: 4,
+                paddingHorizontal: 92.5,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   setState(() {
@@ -146,7 +151,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Hate speech',
                 backGroundColor:
                     isSelectedFive == true
@@ -160,8 +165,9 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedFive == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                horizontal: 81.5,
-                vertical: 4,
+                paddingHorizontal: 81.5,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   setState(() {
@@ -170,7 +176,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Others',
                 backGroundColor:
                     isSelectedSix == true
@@ -184,8 +190,9 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedSix == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                horizontal: 97.5,
-                vertical: 4,
+                paddingHorizontal: 97.5,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   setState(() {
@@ -194,13 +201,14 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.022),
-              CustomButtonWidget(
+              CustomPrimaryButton(
                 title: 'Submit',
                 titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kTurquoiseBlue,
                 borderColor: ColorManger.kTurquoiseBlue,
-                horizontal: 101,
-                vertical: 4,
+                paddingHorizontal: 101,
+                paddingVertical: 4,
+                marginHorizontal: 0,
                 radius: 31,
                 onTap: () {
                   showDialog(

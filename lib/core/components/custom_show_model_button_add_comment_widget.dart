@@ -2,7 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'custom_button_widget.dart';
+import 'custom_primary_button.dart';
+
 import '../constant/color_manger.dart';
 import '../constant/svg_manger.dart';
 import '../extension/extension.dart';
@@ -92,13 +93,14 @@ class _CustomShowModelButtonAddCommentWidgetState
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 //! titleButton
-                CustomButtonWidget(
+                CustomPrimaryButton(
                   title: widget.titleButton,
                   titleColor: ColorManger.kBackGround,
                   backGroundColor: ColorManger.kOceanGreen,
                   borderColor: ColorManger.kOceanGreen,
-                  vertical: widget.vertical,
-                  horizontal: 20,
+                  paddingVertical: widget.vertical,
+                  paddingHorizontal: 20,
+                  marginHorizontal: 0,
                   radius: widget.radius,
                   onTap: () {},
                 ),

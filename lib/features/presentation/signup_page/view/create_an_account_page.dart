@@ -49,20 +49,20 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
               children: [
                 Row(
                   children: [
-                    //! CustomIconBack
+                    // CustomIconBack
                     CustomIconBack(),
+                    //
                     Expanded(
                       child: Column(
                         children: [
-                          //! CustomAppBar
                           CustomTitelAppBar(title: 'Create an account'),
-                          SizedBox(width: context.height * 0.020),
-                          //! Rich Text
+                          SizedBox(height: context.height * 0.004),
+                          // Rich Text
                           CustomRichText(
                             textSpanOne: 'Already have an account?',
                             textSpanTwo: ' Log in',
                             onTap: () {
-                              //! Navigate to Login
+                              // Navigate to Login
                               context.router.replace(LoginRoute());
                             },
                           ),
@@ -71,19 +71,20 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 16),
-                //! circle avatar
+
+                SizedBox(height: context.height * 0.016),
+                // circle avatar
                 CircleAvatarWidget(),
-                SizedBox(height: 22),
-                //! Text: Username
+                SizedBox(height: context.height * 0.022),
+                // Text: Username
                 Text(
                   'User Name',
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 4),
-                //! Username FormField
+                SizedBox(height: context.height * 0.004),
+                // Username FormField
                 CustomTextFormField(
                   title: 'Username',
                   controller: userNameController,
@@ -104,7 +105,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   ),
                 ),
                 SizedBox(height: 4),
-                //! Fullname FormField
+                // Fullname FormField
                 CustomTextFormField(
                   title: 'Fullname',
                   controller: fullNameController,
@@ -118,16 +119,24 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   },
                 ),
                 SizedBox(height: context.height * 0.090),
-                //! Next Button
+                // Next Button
                 CustomPrimaryButton(
-                  titleColor: ColorManger.kWhite,
                   title: 'Next',
-                  horizontal: 0,
-                  //! Navigate
+                  titleColor: ColorManger.kWhite,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  radius: 60,
+                  paddingVertical: 13,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
+                  // Navigate
                   onTap: () {
                     context.router.push(SignUpConfirmOtpRoute());
-                    // if (formKey.currentState!.validate()) {
-                    // }
                   },
                 ),
               ],

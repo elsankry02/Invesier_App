@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/router/router.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
@@ -10,6 +9,7 @@ import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/extension/extension.dart';
+import '../../../../core/router/router.dart';
 import '../widget/signup_rich_text_widget.dart';
 
 @RoutePage()
@@ -141,21 +141,27 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                       ),
                     ),
                 SizedBox(height: context.height * 0.015),
-                //! Verify code
+                // Verify code
                 CustomPrimaryButton(
                   title: 'Verify code',
                   titleColor: ColorManger.kWhite,
-
-                  horizontal: 0,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  radius: 60,
+                  paddingVertical: 13,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
                   onTap: () {
-                    //! Navigate to BottomNavigationBarRoute
                     context.router.replace(BottomNavigationBarRoute());
-                    // if (formKey.currentState!.validate()) {
-                    // }
                   },
                 ),
                 SizedBox(height: context.height * 0.015),
-                //! SignUp Rich Text
+                // SignUp Rich Text
                 SignUpRichTextWidget(
                   termsOfUseOnTap: () {},
                   privacyPolicyOnTap: () {},

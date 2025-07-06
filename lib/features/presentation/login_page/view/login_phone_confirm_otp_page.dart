@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/router/router.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_back.dart';
@@ -10,6 +9,7 @@ import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/extension/extension.dart';
+import '../../../../core/router/router.dart';
 
 @RoutePage()
 class LoginPhoneConfirmOtpPage extends StatefulWidget {
@@ -141,7 +141,17 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                 CustomPrimaryButton(
                   titleColor: ColorManger.kWhite,
                   title: 'Submit',
-                  horizontal: 0,
+                  radius: 60,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  paddingVertical: 13,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
                   onTap: () {
                     context.router.push(BottomNavigationBarRoute());
                     if (formKey.currentState!.validate()) {}
