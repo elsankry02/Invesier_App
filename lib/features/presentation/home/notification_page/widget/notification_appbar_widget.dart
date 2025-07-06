@@ -10,7 +10,7 @@ class NotificationAppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        //! icon
+        // icon
         IconButton(
           onPressed: () {
             context.router.maybePop();
@@ -20,6 +20,7 @@ class NotificationAppBarWidget extends StatelessWidget {
             color: ColorManger.kWhite,
           ),
         ),
+        // title
         Expanded(
           child: Text(
             textAlign: TextAlign.center,

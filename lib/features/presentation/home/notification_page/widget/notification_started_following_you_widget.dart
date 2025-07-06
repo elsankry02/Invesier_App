@@ -33,12 +33,14 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // title
                 Text(
                   'Charlie White',
                   style: context.kTextTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                // title two
                 Text(
                   '@charlie_w',
                   style: context.kTextTheme.titleSmall!.copyWith(
@@ -64,12 +66,14 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
         subtitle: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // started following you
             Text(
               'started following you.',
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w400,
               ),
             ),
+            // time
             Text(
               '2 hours ago',
               style: context.kTextTheme.labelMedium!.copyWith(
