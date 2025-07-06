@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
 import '../../../../../core/constant/svg_manger.dart';
@@ -25,10 +26,23 @@ class InvesierAppBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //! Search Icon GestureDetector
-                GestureDetector(onTap: () {}, child: Icon(Icons.search)),
-                //! notifications GestureDetector
                 GestureDetector(
                   onTap: () {},
+                  child: SvgPicture.asset(
+                    width: 20,
+                    height: 20,
+                    SvgManger.kSearch,
+                    colorFilter: ColorFilter.mode(
+                      ColorManger.kWhite,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+                //! notifications GestureDetector
+                GestureDetector(
+                  onTap: () {
+                    context.router.push(NotificationRoute());
+                  },
                   child: Stack(
                     alignment: Alignment.topRight,
                     children: [
