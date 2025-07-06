@@ -63,25 +63,24 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
           ],
         ),
         // subtitle
-        subtitle: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // started following you
-            Text(
-              'started following you.',
-              style: context.kTextTheme.titleMedium!.copyWith(
-                fontWeight: FontWeight.w400,
+        subtitle: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: 'started following you.   ',
+                style: context.kTextTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-            ),
-            // time
-            Text(
-              '2 hours ago',
-              style: context.kTextTheme.labelMedium!.copyWith(
-                fontWeight: FontWeight.w400,
-                color: ColorManger.kDarkenText,
+              TextSpan(
+                text: '2 hours ago',
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w400,
+                  color: ColorManger.kDarkenText,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
