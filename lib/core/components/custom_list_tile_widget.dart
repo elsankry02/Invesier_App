@@ -18,8 +18,8 @@ class CustomListTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
+      // image
       leading: ClipOval(
-        // image
         child: Image.asset(
           items.image,
           height: 30,

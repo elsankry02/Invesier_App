@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
@@ -25,6 +26,7 @@ class UserProfilePage extends StatelessWidget {
         ),
         child: ListView(
           children: [
+            // User AppBar Widget
             UserAppBarWidget(),
             SizedBox(height: context.height * 0.021),
             // Chase Or Posts Container Widget

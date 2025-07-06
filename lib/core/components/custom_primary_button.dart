@@ -49,8 +49,8 @@ class CustomPrimaryButton extends StatelessWidget {
           // Title
           child: Text(
             title,
-            style: context.kTextTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
+            style: context.kTextTheme.labelLarge!.copyWith(
+              fontWeight: FontWeight.w500,
               // titleColor
               color: titleColor,
             ),
