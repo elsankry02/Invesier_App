@@ -4,7 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
-import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -77,16 +77,16 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
               children: [
                 Row(
                   children: [
-                    //! CustomIconBack
-                    CustomIconBack(),
+                    // Custom Icon Back
+                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
                     Expanded(
-                      //! CustomAppBar
+                      // CustomAppBar
                       child: CustomTitelAppBar(title: 'Confirm OTP'),
                     ),
                   ],
                 ),
                 SizedBox(height: context.height * 0.023),
-                //! Enter the OTP code sent your phone and Email
+                // Enter the OTP code sent your phone and Email
                 RichText(
                   text: TextSpan(
                     children: [
@@ -97,6 +97,7 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
+                      // mobile numder
                       TextSpan(
                         text: '01204306044',
                         style: context.kTextTheme.titleMedium!.copyWith(
@@ -108,7 +109,7 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                   ),
                 ),
                 SizedBox(height: context.height * 0.040),
-                //! CustomConfirmOTP
+                // CustomConfirmOTP
                 CustomConfirmOTP(
                   onChanged: (value) {},
                   validator: (value) {
@@ -118,7 +119,7 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                 SizedBox(height: context.height * 0.016),
                 secondsRemaining > 0
                     ?
-                    //! If you didn't receive the code
+                    // If you didn't receive the code
                     Text(
                       textAlign: TextAlign.center,
                       "If you didn't receive the code in 00:$secondsRemaining",
@@ -126,7 +127,7 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                         fontWeight: FontWeight.w400,
                       ),
                     )
-                    //! resendCode
+                    // resendCode
                     : TextButton(
                       onPressed: resendCode,
                       child: Text(
@@ -137,11 +138,10 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                       ),
                     ),
                 SizedBox(height: context.height * 0.191),
-                //! Submit
+                // Submit
                 CustomPrimaryButton(
-                  titleColor: ColorManger.kWhite,
                   title: 'Submit',
-                  radius: 60,
+                  titleColor: ColorManger.kWhite,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -152,6 +152,7 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                   paddingVertical: 13,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  radius: 60,
                   onTap: () {
                     context.router.push(BottomNavigationBarRoute());
                     if (formKey.currentState!.validate()) {}

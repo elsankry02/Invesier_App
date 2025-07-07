@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../core/components/custom_mate_container.dart';
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
@@ -29,10 +30,13 @@ class PostCardWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // ListTile
           ListTile(
+            // contentPadding
             contentPadding: EdgeInsets.all(0),
+            // leading
             leading: ClipOval(
-              //! image
+              // image
               child: GestureDetector(
                 onTap: imageOnTap,
                 child: Image.asset(
@@ -45,19 +49,20 @@ class PostCardWidget extends StatelessWidget {
             ),
             // User Pop Menu
             trailing: trailing,
+            // title
             title: Row(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //! title
+                    // title
                     Text(
                       'Charlie White',
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    //! nk name
+                    // nk name
                     Text(
                       '@charlie_w',
                       style: context.kTextTheme.titleSmall!.copyWith(
@@ -67,12 +72,12 @@ class PostCardWidget extends StatelessWidget {
                   ],
                 ),
                 SizedBox(width: context.width * 0.025),
-                //! Custom Mate Container
+                // Custom Mate Container
                 CustomMateContainer(title: 'Mate'),
               ],
             ),
           ),
-          //! subTitle
+          // subTitle
           Text(
             'Green energy stocks are gaining traction. Investing \nin sustainable companies could be beneficial in the \nlong run.',
             style: context.kTextTheme.titleSmall!.copyWith(
@@ -80,11 +85,11 @@ class PostCardWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: context.height * 0.015),
-          //! Custom Trend Box
+          // Custom Trend Box
           Row(
             spacing: 13,
             children: [
-              //! Growth
+              // Growth
               CustomTrendBox(
                 svg: SvgManger.kGrowth,
                 title: '12k',
@@ -97,7 +102,7 @@ class PostCardWidget extends StatelessWidget {
                 },
               ),
               CustomTrendBox(
-                //! Decline
+                // Decline
                 svg: SvgManger.kDecline,
                 title: '12K',
                 titleColor: ColorManger.kRed,
@@ -109,14 +114,14 @@ class PostCardWidget extends StatelessWidget {
                 },
               ),
               CustomTrendBox(
-                //! Comment
+                // Comment
                 svg: SvgManger.kComment,
                 title: '160K',
                 titleColor: ColorManger.kBoulder,
                 borderColor: ColorManger.kBoulder,
                 onTap: commentOnTap,
               ),
-              //! Sharing
+              // Sharing
               GestureDetector(
                 child: SvgPicture.asset(SvgManger.kSharing),
                 onTap: () {

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_text_form_field.dart';
@@ -50,7 +50,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 Row(
                   children: [
                     // CustomIconBack
-                    CustomIconBack(),
+                    CustomIconButton(),
                     //
                     Expanded(
                       child: Column(

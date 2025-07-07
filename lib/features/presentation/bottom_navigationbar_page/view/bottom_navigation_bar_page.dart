@@ -1,14 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/svg_manger.dart';
-import '../widget/action_button_location_widget.dart';
-import '../widget/navigationbar_item_widget.dart';
-import '../widget/show_model_button_sheet_widget.dart';
 import '../../challenges_page/view/challenges_page.dart';
 import '../../home/home_page/view/home_page.dart';
 import '../../learn_page/view/learn_page.dart';
 import '../../trade_page/view/trade_page.dart';
+import '../widget/action_button_location_widget.dart';
+import '../widget/navigationbar_item_widget.dart';
+import '../widget/show_model_button_sheet_widget.dart';
 
 @RoutePage()
 class BottomNavigationBarPage extends StatefulWidget {
@@ -50,7 +51,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  //! home
+                  // home
                   NavigationBarItemWidget(
                     title: 'Home',
                     assetName: SvgManger.kHome,
@@ -62,7 +63,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                       });
                     },
                   ),
-                  //! challenges
+                  // challenges
                   NavigationBarItemWidget(
                     title: 'Challenges',
                     assetName: SvgManger.kChallenges,
@@ -91,7 +92,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  //! Trade
+                  // Trade
                   NavigationBarItemWidget(
                     title: 'Trade',
                     assetName: SvgManger.kTrade,
@@ -103,7 +104,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                       });
                     },
                   ),
-                  //! Learn
+                  // Learn
                   NavigationBarItemWidget(
                     title: 'Learn',
                     assetName: SvgManger.kLearn,

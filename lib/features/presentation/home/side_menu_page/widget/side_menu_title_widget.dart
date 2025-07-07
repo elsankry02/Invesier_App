@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/extension/extension.dart';
 
 class SideMenuTitleWidget extends StatelessWidget {
@@ -10,10 +11,12 @@ class SideMenuTitleWidget extends StatelessWidget {
     return InkWell(
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
+      // onTap
       onTap: onTap,
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(vertical: 12),
+        // title
         child: Text(
           title,
           style: context.kTextTheme.labelMedium!.copyWith(

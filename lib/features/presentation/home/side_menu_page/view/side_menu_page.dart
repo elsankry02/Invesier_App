@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
 import '../../../../../core/extension/extension.dart';
@@ -30,6 +31,7 @@ class SideMenuPage extends StatelessWidget {
               children: [
                 ListTile(
                   contentPadding: EdgeInsets.zero,
+                  // leading
                   leading: Stack(
                     alignment: Alignment.bottomRight,
                     children: [
@@ -64,6 +66,7 @@ class SideMenuPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // title
                   title: Text(
                     'Olivia Rhye',
                     style: context.kTextTheme.labelMedium!.copyWith(
@@ -71,6 +74,7 @@ class SideMenuPage extends StatelessWidget {
                       color: ColorManger.kGray,
                     ),
                   ),
+                  // subtitle
                   subtitle: Text(
                     'olivia@untitledui.com',
                     style: context.kTextTheme.labelMedium!.copyWith(
@@ -78,13 +82,16 @@ class SideMenuPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                // Side Menu Title Widget (View profile)
                 SideMenuTitleWidget(
                   title: 'View profile',
                   onTap: () {
                     context.router.push(PersonalProfileRoute());
                   },
                 ),
+                // Side Menu Title Widget (Settings)
                 SideMenuTitleWidget(onTap: () {}, title: 'Settings'),
+                // Side Menu Title Widget (Log out)
                 SideMenuTitleWidget(onTap: () {}, title: 'Log out'),
               ],
             ),

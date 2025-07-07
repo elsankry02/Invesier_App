@@ -9,6 +9,7 @@ class ChallengesPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        // Lottie
         Center(
           child: Lottie.asset(
             'assets/lottie/coming_soon.json',

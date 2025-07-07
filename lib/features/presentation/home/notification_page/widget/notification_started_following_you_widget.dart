@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
@@ -73,6 +74,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
+              // time
               TextSpan(
                 text: '2 hours ago',
                 style: context.kTextTheme.labelMedium!.copyWith(

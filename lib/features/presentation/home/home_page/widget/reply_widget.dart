@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/components/custom_mate_container.dart';
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
@@ -32,7 +33,7 @@ class ReplyWidget extends StatelessWidget {
                 ListTile(
                   contentPadding: EdgeInsets.all(0),
                   leading: ClipOval(
-                    //! image
+                    // image
                     child: Image.asset(
                       ImageManger.kBoyTwo,
                       height: 30,
@@ -46,14 +47,14 @@ class ReplyWidget extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          //! title
+                          // title
                           Text(
                             'Fred Blue',
                             style: context.kTextTheme.titleSmall!.copyWith(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          //! nk name
+                          // nk name
                           Text(
                             '@Blue234',
                             style: context.kTextTheme.titleSmall!.copyWith(
@@ -63,7 +64,7 @@ class ReplyWidget extends StatelessWidget {
                         ],
                       ),
                       SizedBox(width: context.width * 0.025),
-                      //! Custom Mate Container
+                      // Custom Mate Container
                       CustomMateContainer(
                         backGroundColor: ColorManger.kTurquoiseBlue,
                         title: 'Chase back',
@@ -71,7 +72,7 @@ class ReplyWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                //! subTitle
+                // subTitle
                 Text(
                   'Lorem ipsum dolor sit amet, coetur adipiscing \nelit ut aliquam, purus sit amet luctus Lorem \nipsum dolor sit amet aliquam, purus sit amet \nluctus ',
                   style: context.kTextTheme.titleSmall!.copyWith(
@@ -79,11 +80,11 @@ class ReplyWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: context.height * 0.015),
-                //! Custom Trend Box
+                // Custom Trend Box
                 Row(
                   spacing: 13,
                   children: [
-                    //! Growth
+                    // Growth
                     CustomTrendBox(
                       svg: SvgManger.kGrowth,
                       title: '12k',
@@ -96,7 +97,7 @@ class ReplyWidget extends StatelessWidget {
                       },
                     ),
                     CustomTrendBox(
-                      //! Decline
+                      // Decline
                       svg: SvgManger.kDecline,
                       title: '12K',
                       titleColor: ColorManger.kRed,
@@ -108,7 +109,7 @@ class ReplyWidget extends StatelessWidget {
                       },
                     ),
                     CustomTrendBox(
-                      //! Rplay
+                      // Rplay
                       svg: SvgManger.kReply,
                       title: 'Rplay',
                       titleColor: ColorManger.kBoulder,

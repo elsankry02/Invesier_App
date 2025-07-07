@@ -1,5 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/custom_icon_button.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -11,10 +12,7 @@ class NotificationAppBarWidget extends StatelessWidget {
     return Row(
       children: [
         // icon
-        IconButton(
-          onPressed: () {
-            context.router.maybePop();
-          },
+        CustomIconButton(
           icon: Icon(
             Icons.arrow_back_ios_new_rounded,
             color: ColorManger.kWhite,

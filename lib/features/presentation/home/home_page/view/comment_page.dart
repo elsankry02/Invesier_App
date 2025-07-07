@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../core/components/custom_show_model_button_add_comment_widget.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
@@ -24,14 +25,14 @@ class CommentPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              //! Post Card Widget
+              // Post Card Widget
               PostCardWidget(
                 commentOnTap: () {
                   showModalBottomSheet(
                     isDismissible: false,
                     context: context,
                     builder: (context) {
-                      //! Add Comment
+                      // Add Comment
                       return CustomShowModelButtonAddCommentWidget(
                         title: 'Add Comment',
                         hintText: 'Share your comment',
@@ -48,14 +49,14 @@ class CommentPage extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) {
-                    //! ReplyWidget
+                    // ReplyWidget
                     return ReplyWidget(
                       onTap: () {
                         showModalBottomSheet(
                           isDismissible: false,
                           context: context,
                           builder: (context) {
-                            //! Add Comment
+                            // Add Comment
                             return CustomShowModelButtonAddCommentWidget(
                               title: 'Reply',
                               hintText: 'Type your reply',

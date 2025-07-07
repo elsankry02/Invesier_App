@@ -13,10 +13,10 @@ class ProductDisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //! Svg
+        // Lottie
         Lottie.asset(item.image, fit: BoxFit.cover),
         SizedBox(height: context.height * 0.100),
-        //! Titel
+        // Titel
         Text(
           item.titel,
           textAlign: TextAlign.center,
@@ -25,7 +25,7 @@ class ProductDisplayWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: context.height * 0.020),
-        //! SubTitel
+        // SubTitel
         Text(
           item.subTitel,
           textAlign: TextAlign.center,

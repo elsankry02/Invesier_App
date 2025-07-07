@@ -18,14 +18,14 @@ class InvesierAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //! Logo
+          // Logo
           SvgPicture.asset(SvgManger.kInvinserLogo),
           SizedBox(
             width: context.width * 0.250,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                //! Search Icon GestureDetector
+                // Search Icon GestureDetector
                 GestureDetector(
                   onTap: () {},
                   child: SvgPicture.asset(
@@ -38,7 +38,7 @@ class InvesierAppBar extends StatelessWidget {
                     ),
                   ),
                 ),
-                //! notifications GestureDetector
+                // notifications GestureDetector
                 GestureDetector(
                   onTap: () {
                     context.router.push(NotificationRoute());
@@ -71,9 +71,9 @@ class InvesierAppBar extends StatelessWidget {
                     ],
                   ),
                 ),
-                //! Image GestureDetector
+                // Image GestureDetector
                 GestureDetector(
-                  //! Navigate
+                  // Navigate
                   onTap: () {
                     context.router.push(SideMenuRoute());
                   },

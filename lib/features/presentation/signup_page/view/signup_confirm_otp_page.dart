@@ -4,7 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
-import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -78,9 +78,9 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
               children: [
                 Row(
                   children: [
-                    //! CustomIconBack
-                    CustomIconBack(),
-                    //! CustomTitelAppBar
+                    // CustomIconBack
+                    CustomIconButton(),
+                    // CustomTitelAppBar
                     Expanded(
                       child: CustomTitelAppBar(
                         title: "Verify your phone number",
@@ -89,7 +89,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   ],
                 ),
                 SizedBox(height: context.height * 0.020),
-                //! Enter the OTP code sent your phone number
+                // Enter the OTP code sent your phone number
                 RichText(
                   text: TextSpan(
                     children: [
@@ -111,7 +111,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   ),
                 ),
                 SizedBox(height: context.height * 0.040),
-                //! Signup Pinput Widget
+                // Signup Pinput Widget
                 CustomConfirmOTP(
                   onChanged: (value) {},
                   validator: (value) {
@@ -122,7 +122,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   },
                 ),
                 SizedBox(height: context.height * 0.196),
-                //! IF
+                // IF
                 secondsRemaining > 0
                     ? Text(
                       textAlign: TextAlign.center,

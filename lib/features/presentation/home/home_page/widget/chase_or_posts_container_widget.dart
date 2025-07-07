@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/extension/extension.dart';
 
 class ChaseOrPostsContainerWidget extends StatelessWidget {
@@ -14,11 +15,12 @@ class ChaseOrPostsContainerWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 25),
       padding: EdgeInsets.symmetric(vertical: 10),
+      // backGroundColor
       decoration: BoxDecoration(
         color: backGroundColor,
         borderRadius: BorderRadius.circular(31),
       ),
-      //! title
+      // title
       child: Text(
         textAlign: TextAlign.center,
         title,

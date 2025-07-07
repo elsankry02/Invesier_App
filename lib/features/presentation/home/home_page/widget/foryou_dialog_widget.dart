@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_primary_button.dart';
+import 'package:invesier/core/components/custom_icon_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import 'report_reason_dialog.dart';
@@ -17,13 +18,12 @@ class ForYouDialogWidget extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.centerRight,
-            child: IconButton(
-              onPressed: () {
-                context.router.maybePop();
-              },
+            // Custom Icon Back
+            child: CustomIconButton(
               icon: Icon(Icons.close, color: ColorManger.kWhite, size: 20),
             ),
           ),
+          // title
           Text(
             'Report this post and block the account',
             style: context.kTextTheme.titleSmall!.copyWith(
@@ -34,6 +34,7 @@ class ForYouDialogWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Cancel
               CustomPrimaryButton(
                 title: 'Cancel',
                 titleColor: ColorManger.kWhite,
@@ -47,6 +48,7 @@ class ForYouDialogWidget extends StatelessWidget {
                   context.router.maybePop();
                 },
               ),
+              // Report
               CustomPrimaryButton(
                 title: 'Report',
                 titleColor: ColorManger.kWhite,
@@ -61,6 +63,7 @@ class ForYouDialogWidget extends StatelessWidget {
                     barrierDismissible: false,
                     context: context,
                     builder: (context) {
+                      // Report Reason Dialog
                       return ReportReasonDialog();
                     },
                   );

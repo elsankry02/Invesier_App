@@ -38,9 +38,9 @@ class WelcomePage extends StatelessWidget {
               ),
               borderColor: ColorManger.kTurquoiseBlue,
               radius: 60,
-              paddingVertical: 14,
+              paddingHorizontal: 105,
+              paddingVertical: 15,
               marginHorizontal: 43,
-              paddingHorizontal: 130,
               onTap: () {
                 context.router.push(SignupRoute());
               },
@@ -53,9 +53,9 @@ class WelcomePage extends StatelessWidget {
               titleColor: ColorManger.kEucalyptus,
               borderColor: ColorManger.kEucalyptus,
               radius: 60,
-              paddingVertical: 14,
-              marginHorizontal: 43,
               paddingHorizontal: 130,
+              paddingVertical: 15,
+              marginHorizontal: 43,
               onTap: () {
                 context.router.push(LoginRoute());
               },

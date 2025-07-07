@@ -4,7 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/components/custom_confirm_otp.dart';
-import '../../../../core/components/custom_icon_back.dart';
+import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -76,8 +76,8 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
               children: [
                 Row(
                   children: [
-                    // CustomIconBack
-                    CustomIconBack(),
+                    // Custom Icon Back
+                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
                     Expanded(
                       // CustomAppBar
                       child: CustomTitelAppBar(title: 'Confirm OTP'),
@@ -117,7 +117,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
 
                 secondsRemaining > 0
                     ?
-                    //! If you didn't receive the code
+                    // If you didn't receive the code
                     Text(
                       textAlign: TextAlign.center,
                       "If you didn't receive the code in 00:$secondsRemaining",
@@ -125,7 +125,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                         fontWeight: FontWeight.w400,
                       ),
                     )
-                    //! resendCode
+                    // resendCode
                     : TextButton(
                       onPressed: resendCode,
                       child: Text(
@@ -136,6 +136,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                       ),
                     ),
                 SizedBox(height: context.height * 0.191),
+                // Submit Button
                 CustomPrimaryButton(
                   titleColor: ColorManger.kWhite,
                   title: 'Submit',

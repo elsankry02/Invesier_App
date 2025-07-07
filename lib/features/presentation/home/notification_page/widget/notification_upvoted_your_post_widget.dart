@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
 import '../../../../../core/extension/extension.dart';
@@ -19,7 +20,6 @@ class NotificationUpvotedYourPostWidget extends StatelessWidget {
         // image
         leading: Stack(
           clipBehavior: Clip.none,
-
           children: [
             // k1
             ClipOval(

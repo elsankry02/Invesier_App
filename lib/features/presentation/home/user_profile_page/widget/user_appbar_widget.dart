@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_icon_back.dart';
 
+import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
 import '../../../../../core/constant/svg_manger.dart';
@@ -23,7 +23,7 @@ class UserAppBarWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Custom Icon Back
-          CustomIconBack(),
+          CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
           // Image
           ClipOval(
             child: Image.asset(

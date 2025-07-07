@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_icon_back.dart';
 
+import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
 import '../../../../../core/extension/extension.dart';
@@ -16,7 +16,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Custom Icon Back
-          CustomIconBack(),
+          CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
           // Image
           ClipOval(
             child: Image.asset(
@@ -28,15 +28,15 @@ class HomeFollowAppBarWidget extends StatelessWidget {
           ),
         ],
       ),
+      // title
       title: Text(
         'Alex Johnson',
         style: context.kTextTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
-      subtitle:
       // subTitle
-      Text(
+      subtitle: Text(
         '@johnson_a',
         style: context.kTextTheme.bodySmall!.copyWith(
           color: ColorManger.kGray,

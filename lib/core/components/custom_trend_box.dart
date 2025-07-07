@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../extension/extension.dart';
 
 class CustomTrendBox extends StatelessWidget {
@@ -11,14 +12,14 @@ class CustomTrendBox extends StatelessWidget {
     required this.borderColor,
     this.onTap,
   });
-  final String svg;
-  final String title;
-  final Color titleColor;
-  final Color borderColor;
+  final String title, svg;
+  final Color titleColor, borderColor;
+
   final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // onTap
       onTap: onTap,
       child: Container(
         padding: EdgeInsetsDirectional.symmetric(vertical: 5, horizontal: 17.5),
@@ -29,9 +30,9 @@ class CustomTrendBox extends StatelessWidget {
         child: Row(
           spacing: 9,
           children: [
-            //! Svg
+            // Svg
             SvgPicture.asset(svg),
-            //! title
+            // title
             Text(
               title,
               style: context.kTextTheme.labelMedium!.copyWith(

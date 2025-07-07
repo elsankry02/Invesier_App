@@ -195,7 +195,6 @@ class _SignupPageState extends State<LoginPage> {
                 CustomPrimaryButton(
                   title: contactType == ContactType.phone ? "Log in" : "Next",
                   titleColor: ColorManger.kWhite,
-                  radius: 60,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -206,6 +205,7 @@ class _SignupPageState extends State<LoginPage> {
                   paddingVertical: 13,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  radius: 60,
                   onTap:
                       contactType == ContactType.phone
                           ? () {

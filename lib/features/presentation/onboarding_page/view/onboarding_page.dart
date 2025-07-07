@@ -34,7 +34,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          //! BackGroundImage
+          // BackGroundImage
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(ImageManger.kOnBoarding),
@@ -46,7 +46,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             child: Column(
               children: [
                 SizedBox(height: context.height * 0.020),
-                //! Skip
+                // Skip
                 SkipWidget(
                   skip: 'Skip',
                   onTap: () {
@@ -54,7 +54,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   },
                 ),
                 Expanded(
-                  //!PageView
+                  //PageView
                   child: PageView.builder(
                     controller: pageController,
                     onPageChanged: (value) {
@@ -69,14 +69,25 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     },
                   ),
                 ),
-                //! GenerateWidget
+                // GenerateWidget
                 GeneratorWidget(currentIndex: currentIndex),
                 //
                 SizedBox(height: context.height * 0.060),
-                //! Conditional
+                // Custom Primary Button (Next)
                 CustomPrimaryButton(
                   title: 'Next',
-
+                  titleColor: ColorManger.kWhite,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorManger.kEucalyptus,
+                      ColorManger.kTurquoiseBlue,
+                    ],
+                  ),
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  paddingVertical: 13,
+                  radius: 60,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 0,
                   onTap: () {
                     if (currentIndex == items(context).length - 1) {
                       context.router.push(WelcomeRoute());
@@ -87,18 +98,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       curve: Curves.easeIn,
                     );
                   },
-                  titleColor: ColorManger.kWhite,
-                  radius: 60,
-                  gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
-                  ),
-                  borderColor: ColorManger.kTurquoiseBlue,
-                  paddingVertical: 13,
-                  marginHorizontal: 0,
-                  paddingHorizontal: 0,
                 ),
                 //
                 SizedBox(height: context.height * 0.057),

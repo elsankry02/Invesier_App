@@ -4,8 +4,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -70,14 +70,14 @@ class _PostPageState extends State<PostPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      //! titel
+                      // titel
                       Text(
                         "Add Post",
                         style: context.kTextTheme.titleSmall!.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      //! icon
+                      // icon
                       IconButton(
                         onPressed: () {
                           context.router.maybePop();
@@ -87,7 +87,7 @@ class _PostPageState extends State<PostPage> {
                     ],
                   ),
                   SizedBox(height: context.height * 0.012),
-                  //! TextFormField
+                  // TextFormField
                   TextFormField(
                     cursorColor: ColorManger.kWhite,
                     controller: commentController,
@@ -103,7 +103,7 @@ class _PostPageState extends State<PostPage> {
                     ),
                   ),
                   SizedBox(height: context.height * 0.012),
-                  //!  Image
+                  //  Image
                   SizedBox(
                     child:
                         file == null
@@ -123,7 +123,7 @@ class _PostPageState extends State<PostPage> {
                 children: [
                   Row(
                     children: [
-                      //! imageGallery
+                      // imageGallery
                       IconButton(
                         onPressed: () {
                           imageGallery();
@@ -133,7 +133,7 @@ class _PostPageState extends State<PostPage> {
                           color: ColorManger.kOceanGreen,
                         ),
                       ),
-                      //! imagecamera
+                      // imagecamera
                       IconButton(
                         onPressed: () {
                           imagecamera();
@@ -145,7 +145,7 @@ class _PostPageState extends State<PostPage> {
                       ),
                     ],
                   ),
-                  //! Post now
+                  // Post now
                   CustomPrimaryButton(
                     title: 'Post now',
                     titleColor: ColorManger.kBackGround,

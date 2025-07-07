@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../extension/extension.dart';
 
 import '../constant/svg_manger.dart';
+import '../extension/extension.dart';
 import 'custom_social_button.dart';
 
 class CustomSocialAuthButtons extends StatelessWidget {
@@ -13,7 +13,7 @@ class CustomSocialAuthButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //! Or connect with
+        // Or connect with
         Text(
           'Or connect with',
           style: context.kTextTheme.labelLarge!.copyWith(
@@ -24,17 +24,11 @@ class CustomSocialAuthButtons extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //! Google
-            CustomSocialButton(
-              onTapGoogle: onTapGoogle,
-              assetName: SvgManger.kGoogle,
-            ),
+            // Google
+            CustomSocialButton(onTap: onTapGoogle, title: SvgManger.kGoogle),
             SizedBox(width: 8),
-            //! Apple
-            CustomSocialButton(
-              onTapGoogle: onTapApple,
-              assetName: SvgManger.kApple,
-            ),
+            // Apple
+            CustomSocialButton(onTap: onTapApple, title: SvgManger.kApple),
           ],
         ),
       ],

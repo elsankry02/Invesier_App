@@ -14,10 +14,10 @@ class SkipWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         GestureDetector(
-          //! onTap
+          // onTap
           onTap: onTap,
+          // skip
           child: Text(
-            //! skip
             skip,
             style: context.kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w400,

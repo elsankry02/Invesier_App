@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/extension/extension.dart';
 
@@ -27,7 +28,7 @@ class NavigationBarItemWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //! SVG
+            // SVG
             SvgPicture.asset(
               assetName,
               colorFilter: ColorFilter.mode(
@@ -38,7 +39,7 @@ class NavigationBarItemWidget extends StatelessWidget {
               ),
             ),
             SizedBox(height: context.height * 0.005),
-            //! Title
+            // Title
             Text(
               title,
               style: context.kTextTheme.bodySmall!.copyWith(

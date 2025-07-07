@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../user_profile_page/widget/user_alertdialog_widget.dart';
@@ -51,6 +51,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 ],
               ),
               SizedBox(height: context.height * 0.012),
+              // Spam
               CustomPrimaryButton(
                 title: 'Spam',
                 backGroundColor:
@@ -76,6 +77,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
+              // Scam
               CustomPrimaryButton(
                 title: 'Scam',
                 backGroundColor:
@@ -101,6 +103,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
+              // Illegal
               CustomPrimaryButton(
                 title: 'Illegal',
                 backGroundColor:
@@ -126,6 +129,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
+              // Violence
               CustomPrimaryButton(
                 title: 'Violence',
                 backGroundColor:
@@ -151,6 +155,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
+              // Hate speech
               CustomPrimaryButton(
                 title: 'Hate speech',
                 backGroundColor:
@@ -176,6 +181,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.007),
+              // Others
               CustomPrimaryButton(
                 title: 'Others',
                 backGroundColor:
@@ -201,6 +207,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 },
               ),
               SizedBox(height: context.height * 0.022),
+              // Submit
               CustomPrimaryButton(
                 title: 'Submit',
                 titleColor: ColorManger.kWhite,
@@ -215,6 +222,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     barrierDismissible: false,
                     context: context,
                     builder: (context) {
+                      // User Alert Dialog Widget
                       return UserAlertDialogWidget(
                         title:
                             'Report is delivered. Do you want to \nblock this account?',

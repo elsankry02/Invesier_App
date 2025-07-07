@@ -21,6 +21,7 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // OTP Code
         Text(
           'OTP Code',
           style: context.kTextTheme.titleSmall!.copyWith(
@@ -32,18 +33,22 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
           child: Pinput(
             length: 6,
             controller: pinController,
+            // errorPinTheme
             errorPinTheme: pinTheme(
               textColor: ColorManger.kRedTwo,
               borderColor: ColorManger.kRedTwo,
               backGroundColor: ColorManger.kWhite,
             ),
+
+            // defaultPinTheme
             defaultPinTheme: pinTheme(
               textColor: ColorManger.kWhite,
               borderColor: ColorManger.kBorder,
               backGroundColor: ColorManger.kBackGround,
             ),
-
+            // onChanged
             onChanged: widget.onChanged,
+            // validator
             validator: widget.validator,
           ),
         ),
@@ -51,22 +56,21 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
     );
   }
 
-  PinTheme pinTheme({
-    required Color borderColor,
-    required Color backGroundColor,
-    required Color textColor,
-  }) {
+  PinTheme pinTheme({required Color textColor, backGroundColor, borderColor}) {
     return PinTheme(
+      margin: EdgeInsets.only(right: 5, left: 5),
       textStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,
+        // textColor
         color: textColor,
       ),
-      margin: EdgeInsets.only(right: 10),
-      height: 54,
-      width: 50,
+      height: context.height * 0.054,
+      width: context.height * 0.050,
       decoration: BoxDecoration(
+        // backGroundColor
         color: backGroundColor,
+        // borderColor
         border: Border.all(color: borderColor),
         borderRadius: BorderRadius.circular(16),
       ),

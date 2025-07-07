@@ -22,13 +22,19 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;
     return TextFormField(
+      // autovalidateMode
       autovalidateMode: autovalidateMode,
+      // validator
       validator: validator,
+      // controller
       controller: controller,
+      // onChanged
       onChanged: onChanged,
       cursorColor: ColorManger.kWhite,
+      // keyboardType
       keyboardType: keyboardType,
       decoration: InputDecoration(
+        //title
         hintText: title,
         hintStyle: kTextTheme.titleSmall,
         enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
@@ -44,6 +50,7 @@ class CustomTextFormField extends StatelessWidget {
   OutlineInputBorder outlineInputBorder({required Color borderColor}) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
+      // borderColor
       borderSide: BorderSide(color: borderColor),
     );
   }

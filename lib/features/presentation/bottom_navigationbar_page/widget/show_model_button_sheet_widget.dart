@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
@@ -17,19 +18,11 @@ class ShowModelButtonSheetWidget extends StatelessWidget {
           topRight: Radius.circular(24),
           topLeft: Radius.circular(24),
         ),
+        // gradient
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            ColorManger.kHeavyMetal,
-            ColorManger.kBackGround,
-            ColorManger.kBackGround,
-            ColorManger.kBackGround,
-            ColorManger.kBackGround,
-            ColorManger.kBackGround,
-            ColorManger.kBackGround,
-            ColorManger.kBackGround,
-          ],
+          colors: [ColorManger.kHeavyMetal, ColorManger.kBackGround],
         ),
       ),
       child: Padding(
@@ -38,7 +31,7 @@ class ShowModelButtonSheetWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            //! Post
+            // Post
             ButtonSheetTextWidget(
               title: 'Post',
               onTap: () {
@@ -46,9 +39,10 @@ class ShowModelButtonSheetWidget extends StatelessWidget {
               },
             ),
             SizedBox(height: 10),
+            // Divider
             Divider(thickness: 2),
             SizedBox(height: 10),
-            //! Live
+            // Live
             ButtonSheetTextWidget(title: 'Live', onTap: () {}),
           ],
         ),

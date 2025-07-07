@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 
 class DividerWidget extends StatelessWidget {
@@ -13,8 +14,13 @@ class DividerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // onTap
       onTap: onTap,
-      child: Container(width: width, height: height, color: ColorManger.kWhite),
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(color: ColorManger.kWhite),
+      ),
     );
   }
 }

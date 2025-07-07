@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/svg_manger.dart';
 import '../../../../../core/extension/extension.dart';
@@ -10,6 +11,7 @@ class PopMenuButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
+      // Popup Menu Button تحكم ف مكان ال
       offset: Offset(0, 35),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
       icon: SvgPicture.asset(SvgManger.kPopMenu),
@@ -23,8 +25,10 @@ class PopMenuButtonWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // svg icon
                 SvgPicture.asset(SvgManger.kPin),
                 SizedBox(width: 7),
+                // title
                 Text(
                   'Pin post',
                   style: context.kTextTheme.labelLarge!.copyWith(
@@ -46,8 +50,10 @@ class PopMenuButtonWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // svg icon
                 SvgPicture.asset(SvgManger.kDelete),
                 SizedBox(width: 7),
+                // title
                 Text(
                   'Delete post',
                   style: context.kTextTheme.labelLarge!.copyWith(

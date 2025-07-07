@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../home_page/widget/divider_widget.dart';
 import '../widget/fans_widget.dart';
 import '../widget/home_follow_appbar.dart';
 import '../widget/home_follow_rich_text_widget.dart';
 import '../widget/home_follow_textformfield_widget.dart';
 import '../widget/pioneers_widget.dart';
-import '../../home_page/widget/divider_widget.dart';
 
 enum HomeFollowEnum { fans, pioneers }
 
@@ -45,6 +46,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
+                // HomeFollowAppBarWidget
                 HomeFollowAppBarWidget(),
                 SizedBox(height: context.height * 0.009),
                 Container(
@@ -118,6 +120,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                   searchController: searchController,
                 ),
                 SizedBox(height: context.height * 0.020),
+                // homeFollowEnum > PioneersWidget > FansWidget
                 homeFollowEnum == HomeFollowEnum.pioneers
                     ? PioneersWidget()
                     : FansWidget(),

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -26,6 +26,7 @@ class UserAlertDialogWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: context.height * 0.014),
+          // title
           Text(
             title,
             style: context.kTextTheme.titleSmall!.copyWith(
@@ -36,6 +37,7 @@ class UserAlertDialogWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // Custom Primary Button No
               CustomPrimaryButton(
                 title: 'No',
                 titleColor: ColorManger.kWhite,
@@ -50,6 +52,7 @@ class UserAlertDialogWidget extends StatelessWidget {
                 marginHorizontal: 0,
                 paddingHorizontal: 34,
               ),
+              // CustomPrimaryButton Yes, block
               CustomPrimaryButton(
                 title: 'Yes, block',
                 marginHorizontal: 0,
