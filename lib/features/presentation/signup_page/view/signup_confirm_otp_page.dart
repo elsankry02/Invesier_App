@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_button.dart';
+import '../../../../core/components/custom_pinput_otp_widget.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -78,8 +78,8 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
               children: [
                 Row(
                   children: [
-                    // CustomIconBack
-                    CustomIconButton(),
+                    // Custom Icon Back
+                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
                     // CustomTitelAppBar
                     Expanded(
                       child: CustomTitelAppBar(
@@ -112,7 +112,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                 ),
                 SizedBox(height: context.height * 0.040),
                 // Signup Pinput Widget
-                CustomConfirmOTP(
+                CustomPinPutOTPWidget(
                   onChanged: (value) {},
                   validator: (value) {
                     if (value!.length < 6) {

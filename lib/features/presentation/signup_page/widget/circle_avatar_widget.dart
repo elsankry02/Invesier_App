@@ -15,7 +15,7 @@ class CircleAvatarWidget extends StatefulWidget {
 
 class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
   File? file;
-  //! imagePickerGallery
+  // imagePickerGallery
   imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
       source: ImageSource.gallery,
@@ -52,9 +52,9 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
               borderRadius: BorderRadius.circular(40),
               color: ColorManger.kTurquoiseBlue,
             ),
+            // IconButton (imageGallery)
             child: IconButton(
               onPressed: imageGallery,
-
               icon: Icon(color: ColorManger.kWhite, Icons.photo_camera),
             ),
           ),

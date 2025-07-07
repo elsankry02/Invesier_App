@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/extension/extension.dart';
 
 class SignUpRichTextWidget extends StatelessWidget {
@@ -9,8 +10,7 @@ class SignUpRichTextWidget extends StatelessWidget {
     this.termsOfUseOnTap,
     this.privacyPolicyOnTap,
   });
-  final Function()? termsOfUseOnTap;
-  final Function()? privacyPolicyOnTap;
+  final Function()? termsOfUseOnTap, privacyPolicyOnTap;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class SignUpRichTextWidget extends StatelessWidget {
         ),
         children: [
           TextSpan(text: 'By continuing, you agree to \n'),
-          //! Terms of Use
+          // Terms of Use
           TextSpan(
             text: 'Terms of Use',
             style: context.kTextTheme.labelMedium!.copyWith(
@@ -31,7 +31,7 @@ class SignUpRichTextWidget extends StatelessWidget {
             recognizer: TapGestureRecognizer()..onTap = termsOfUseOnTap,
           ),
           TextSpan(text: ' and '),
-          //! Privacy Policy.
+          // Privacy Policy.
           TextSpan(
             text: 'Privacy Policy.',
             style: context.kTextTheme.labelMedium!.copyWith(

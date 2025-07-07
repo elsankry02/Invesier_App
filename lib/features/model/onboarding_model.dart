@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+
 import '../../core/constant/lottie_manger.dart';
 
 class OnboardingModel {
-  final String image;
-  final String titel;
-  final String subTitel;
-
   OnboardingModel({
     required this.titel,
     required this.subTitel,
     required this.image,
   });
+  final String image, titel, subTitel;
 }
 
 List<OnboardingModel> items(BuildContext context) {

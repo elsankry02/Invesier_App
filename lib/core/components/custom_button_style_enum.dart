@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../extension/extension.dart';
 
 import '../constant/color_manger.dart';
+import '../extension/extension.dart';
 
 class CustomButtonStyleEnum extends StatelessWidget {
   const CustomButtonStyleEnum({
@@ -16,40 +16,36 @@ class CustomButtonStyleEnum extends StatelessWidget {
     this.bottomRight = 0,
   });
   final String title;
-  final Color color;
-  final Color titleColor;
-  final double? topLeft;
-  final double? topRight;
-  final double? bottomLeft;
-  final double? bottomRight;
+  final Color color, titleColor;
+  final double? topLeft, topRight, bottomLeft, bottomRight;
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      //! onTap
+      // onTap
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 1.5, horizontal: 52),
         decoration: BoxDecoration(
-          //! colorcolor
+          // colorcolor
           color: color,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(topRight!),
-            //! topRight
+            // topRight
             bottomLeft: Radius.circular(bottomLeft!),
-            //! bottomLeft
+            // bottomLeft
             bottomRight: Radius.circular(bottomRight!),
-            //! bottomRight
+            // bottomRight
             topLeft: Radius.circular(topLeft!),
           ),
           border: Border.all(color: ColorManger.kTurquoiseBlue),
         ),
         child: Center(
+          // title
           child: Text(
-            //! title
             title,
             style: context.kTextTheme.titleMedium!.copyWith(
-              //! titleColor
+              // titleColor
               color: titleColor,
               fontWeight: FontWeight.w600,
             ),

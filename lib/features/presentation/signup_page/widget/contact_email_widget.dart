@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_text_form_field.dart';
+import '../../../../core/extension/extension.dart';
 
 class ContactEmailWidget extends StatelessWidget {
   const ContactEmailWidget({
@@ -21,7 +21,7 @@ class ContactEmailWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //! title email
+        // title email
         Text(
           'Email',
           style: context.kTextTheme.labelLarge!.copyWith(
@@ -29,7 +29,7 @@ class ContactEmailWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: context.height * 0.004),
-        //! textFormField Email
+        // textFormField Email
         CustomTextFormField(
           autovalidateMode: autovalidateMode,
           title: 'name@gmail.com',

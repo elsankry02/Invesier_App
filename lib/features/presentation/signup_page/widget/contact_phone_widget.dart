@@ -1,9 +1,9 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/extension/extension.dart';
 
 import '../../../../core/components/custom_text_form_field.dart';
+import '../../../../core/constant/color_manger.dart';
+import '../../../../core/extension/extension.dart';
 
 class ContactPhoneWidget extends StatefulWidget {
   const ContactPhoneWidget({
@@ -53,7 +53,7 @@ class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        //! Phone number
+        // Phone number
         Text(
           'Phone number',
           style: context.kTextTheme.labelLarge!.copyWith(

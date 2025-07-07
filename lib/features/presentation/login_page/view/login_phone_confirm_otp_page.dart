@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/custom_confirm_otp.dart';
 import '../../../../core/components/custom_icon_button.dart';
+import '../../../../core/components/custom_pinput_otp_widget.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -109,8 +109,8 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                   ),
                 ),
                 SizedBox(height: context.height * 0.040),
-                // CustomConfirmOTP
-                CustomConfirmOTP(
+                // Custom PinPut OTP Widget
+                CustomPinPutOTPWidget(
                   onChanged: (value) {},
                   validator: (value) {
                     return null;

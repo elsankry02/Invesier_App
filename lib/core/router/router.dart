@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../features/presentation/home/notification_page/view/notification_page.dart';
 
 import '../../features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 import '../../features/presentation/home/home_follow_page/view/home_follow_page.dart';
 import '../../features/presentation/home/home_page/view/comment_page.dart';
 import '../../features/presentation/home/home_page/view/post_page.dart';
+import '../../features/presentation/home/notification_page/view/notification_page.dart';
 import '../../features/presentation/home/personal_profile_page/view/personal_profile_page.dart';
 import '../../features/presentation/home/side_menu_page/view/side_menu_page.dart';
 import '../../features/presentation/home/user_profile_page/view/user_profile_page.dart';

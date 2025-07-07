@@ -49,8 +49,8 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
               children: [
                 Row(
                   children: [
-                    // CustomIconBack
-                    CustomIconButton(),
+                    // Custom Icon Back
+                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
                     //
                     Expanded(
                       child: Column(

@@ -4,18 +4,23 @@ import 'package:pinput/pinput.dart';
 import '../constant/color_manger.dart';
 import '../extension/extension.dart';
 
-class CustomConfirmOTP extends StatefulWidget {
-  const CustomConfirmOTP({super.key, this.validator, this.onChanged});
+class CustomPinPutOTPWidget extends StatefulWidget {
+  const CustomPinPutOTPWidget({
+    super.key,
+    this.validator,
+    this.onChanged,
+    this.pinController,
+  });
 
   final String? Function(String? value)? validator;
   final Function(String value)? onChanged;
+  final TextEditingController? pinController;
 
   @override
-  State<CustomConfirmOTP> createState() => _CustomConfirmOTPState();
+  State<CustomPinPutOTPWidget> createState() => _CustomPinPutOTPWidgetState();
 }
 
-class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
-  final pinController = TextEditingController();
+class _CustomPinPutOTPWidgetState extends State<CustomPinPutOTPWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +37,7 @@ class _CustomConfirmOTPState extends State<CustomConfirmOTP> {
         Center(
           child: Pinput(
             length: 6,
-            controller: pinController,
+            controller: widget.pinController,
             // errorPinTheme
             errorPinTheme: pinTheme(
               textColor: ColorManger.kRedTwo,

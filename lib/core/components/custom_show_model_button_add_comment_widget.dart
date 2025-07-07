@@ -1,12 +1,12 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'custom_primary_button.dart';
+import 'custom_icon_button.dart';
 
 import '../constant/color_manger.dart';
 import '../constant/svg_manger.dart';
 import '../extension/extension.dart';
+import 'custom_primary_button.dart';
 
 class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
   const CustomShowModelButtonAddCommentWidget({
@@ -17,11 +17,9 @@ class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
     required this.vertical,
     required this.radius,
   });
-  final String title;
-  final String hintText;
-  final String titleButton;
-  final double vertical;
-  final double radius;
+  final String title, titleButton, hintText;
+  final double vertical, radius;
+
   @override
   State<CustomShowModelButtonAddCommentWidget> createState() =>
       _CustomShowModelButtonAddCommentWidgetState();
@@ -50,29 +48,24 @@ class _CustomShowModelButtonAddCommentWidgetState
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            //! kArrow
+            // kArrow
             SvgPicture.asset(SvgManger.kArrow),
             SizedBox(height: context.height * 0.004),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                //! titel
+                // titel
                 Text(
                   widget.title,
                   style: context.kTextTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                //! icon
-                IconButton(
-                  onPressed: () {
-                    context.router.maybePop();
-                  },
-                  icon: Icon(FontAwesomeIcons.xmark),
-                ),
+                // Custom Icon Back
+                CustomIconButton(icon: Icon(FontAwesomeIcons.xmark)),
               ],
             ),
-            //! TextFormField
+            // TextFormField
             TextFormField(
               cursorColor: ColorManger.kWhite,
               controller: commentController,
@@ -92,7 +85,7 @@ class _CustomShowModelButtonAddCommentWidgetState
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                //! titleButton
+                // titleButton
                 CustomPrimaryButton(
                   title: widget.titleButton,
                   titleColor: ColorManger.kBackGround,

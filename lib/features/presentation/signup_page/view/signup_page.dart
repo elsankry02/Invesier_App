@@ -104,11 +104,9 @@ class _SignupPageState extends State<SignupPage> {
                             });
                           },
                         ),
-                        //! CustomButton Phone
+                        // CustomButton Phone
                         CustomButtonStyleEnum(
                           title: 'Phone',
-                          topRight: 26,
-                          bottomRight: 26,
                           titleColor:
                               contactType == ContactType.phone
                                   ? ColorManger.kWhite
@@ -117,6 +115,8 @@ class _SignupPageState extends State<SignupPage> {
                               contactType == ContactType.phone
                                   ? ColorManger.kTurquoiseBlue
                                   : ColorManger.kCodGray,
+                          topRight: 26,
+                          bottomRight: 26,
                           onTap: () {
                             setState(() {
                               contactType = ContactType.phone;
@@ -131,26 +131,26 @@ class _SignupPageState extends State<SignupPage> {
                       ],
                     ),
                     SizedBox(height: context.height * 0.047),
-                    //! PageView
+                    // PageView
                     SizedBox(
                       height: context.height * 0.150,
                       child: PageView(
                         physics: NeverScrollableScrollPhysics(),
                         controller: pageController,
                         children: [
-                          //! Email Widget
+                          // Email Widget
                           ContactEmailWidget(
                             emailController: emailController,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
-                            //! onChanged
+                            // onChanged
                             onChanged: (value) {},
-                            //! validator
+                            // validator
                             validator: (value) {
                               return null;
                             },
                           ),
-
+                          // Contact Phone Widget
                           ContactPhoneWidget(
                             phoneController: phoneController,
                             autovalidateMode:
@@ -172,27 +172,22 @@ class _SignupPageState extends State<SignupPage> {
                   ],
                 ),
                 SizedBox(height: context.height * 0.11),
-                //! Custom Social Auth Buttons
+                // Custom Social Auth Buttons
                 CustomSocialAuthButtons(
-                  //! onTapGoogle
+                  // onTapGoogle
                   onTapGoogle: () {},
-                  //! onTapApple
+                  // onTapApple
                   onTapApple: () {},
                 ),
                 SizedBox(height: context.height * 0.057),
-                //! CustomPrimaryButton
+                // CustomPrimaryButton
                 CustomPrimaryButton(
-                  backGroundColor: ColorManger.kTurquoiseBlue,
-                  titleColor: ColorManger.kWhite,
                   title:
                       contactType == ContactType.phone
                           ? "Create an account"
                           : "Next",
-
-                  onTap: () {
-                    context.router.push(CreateAnAccountRoute());
-                  },
-                  radius: 60,
+                  titleColor: ColorManger.kWhite,
+                  backGroundColor: ColorManger.kTurquoiseBlue,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -203,6 +198,10 @@ class _SignupPageState extends State<SignupPage> {
                   paddingVertical: 13,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  radius: 60,
+                  onTap: () {
+                    context.router.push(CreateAnAccountRoute());
+                  },
                 ),
               ],
             ),

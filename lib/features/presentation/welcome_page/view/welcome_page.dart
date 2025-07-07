@@ -18,7 +18,7 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          //! BackGroundImage
+          // BackGroundImage
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(ImageManger.kOnBoarding),
@@ -26,10 +26,10 @@ class WelcomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            //! Welcome Display Widget
+            // Welcome Display Widget
             WelcomeDisplayWidget(),
             SizedBox(height: context.height * 0.080),
-            //! Get Started
+            // Get Started
             CustomPrimaryButton(
               title: 'Get Started',
               titleColor: ColorManger.kWhite,
@@ -47,7 +47,7 @@ class WelcomePage extends StatelessWidget {
             ),
 
             SizedBox(height: context.height * 0.012),
-            //! Login
+            // Login
             CustomPrimaryButton(
               title: 'Login',
               titleColor: ColorManger.kEucalyptus,
@@ -61,7 +61,7 @@ class WelcomePage extends StatelessWidget {
               },
             ),
             SizedBox(height: context.height * 0.012),
-            //! RichTextWidget
+            // RichTextWidget
             CustomRichText(
               textSpanOne: 'Already have an account?',
               textSpanTwo: ' Sign up',

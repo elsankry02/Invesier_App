@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../../core/extension/extension.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../../core/constant/lottie_manger.dart';
+import '../../../../core/extension/extension.dart';
 
 class WelcomeDisplayWidget extends StatelessWidget {
   const WelcomeDisplayWidget({super.key});
@@ -15,7 +15,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
           SizedBox(height: context.height * 0.18),
           Lottie.asset(LottieManger.kOnboardingTwo),
 
-          //! titel
+          // titel
           Text(
             'Compete for Rewards',
             textAlign: TextAlign.center,
@@ -24,7 +24,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: context.height * 0.012),
-          //! SubTitel
+          // SubTitel
           Text(
             'Climb the leaderboard, unlock perks, and \nearn real-world opportunities',
             textAlign: TextAlign.center,

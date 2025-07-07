@@ -10,8 +10,7 @@ class CustomRichText extends StatelessWidget {
     required this.textSpanTwo,
     required this.onTap,
   });
-  final String textSpanOne;
-  final String textSpanTwo;
+  final String textSpanOne, textSpanTwo;
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
@@ -19,12 +18,14 @@ class CustomRichText extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         children: [
+          // textSpanOne
           TextSpan(
             text: textSpanOne,
             style: context.kTextTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
+          // textSpanTwo
           TextSpan(
             text: textSpanTwo,
             style: context.kTextTheme.titleSmall!.copyWith(
