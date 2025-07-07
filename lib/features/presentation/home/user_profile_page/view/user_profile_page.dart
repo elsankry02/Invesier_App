@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/components/custom_primary_button.dart';
 
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../home_page/widget/chase_or_posts_container_widget.dart';
 import '../../home_page/widget/pop_menu_button_widget.dart';
 import '../../home_page/widget/post_card_widget.dart';
 import '../widget/user_appbar_widget.dart';
@@ -30,9 +30,40 @@ class UserProfilePage extends StatelessWidget {
             UserAppBarWidget(),
             SizedBox(height: context.height * 0.021),
             // Chase Or Posts Container Widget
-            ChaseOrPostsContainerWidget(
-              title: 'Chase',
-              backGroundColor: ColorManger.kTurquoiseBlue,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomPrimaryButton(
+                  title: 'Chase',
+                  titleColor: ColorManger.kWhite,
+                  borderColor: ColorManger.kTurquoiseBlue,
+                  backGroundColor: ColorManger.kTurquoiseBlue,
+                  paddingVertical: 10,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 62,
+                  radius: 31,
+                  onTap: () {
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(SnackBar(content: Text("Comming Soon")));
+                  },
+                ),
+                CustomPrimaryButton(
+                  title: 'message',
+                  titleColor: ColorManger.kTurquoiseBlue,
+                  borderColor: ColorManger.kWhite,
+                  backGroundColor: ColorManger.kWhite,
+                  paddingVertical: 10,
+                  marginHorizontal: 0,
+                  paddingHorizontal: 62,
+                  radius: 31,
+                  onTap: () {
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(SnackBar(content: Text("Comming Soon")));
+                  },
+                ),
+              ],
             ),
 
             SizedBox(height: context.height * 0.021),
