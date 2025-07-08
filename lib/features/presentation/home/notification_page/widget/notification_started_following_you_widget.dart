@@ -54,13 +54,17 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
             // Chase Custom Button Widget
             CustomPrimaryButton(
               title: 'Chase',
-              titleColor: ColorManger.kWhite,
+
               backGroundColor: ColorManger.kTurquoiseBlue,
               borderColor: ColorManger.kTurquoiseBlue,
               radius: 31,
               paddingVertical: 4,
               paddingHorizontal: 20,
               marginHorizontal: 0,
+              style: context.kTextTheme.labelMedium!.copyWith(
+                fontWeight: FontWeight.w500,
+                color: ColorManger.kWhite,
+              ),
             ),
           ],
         ),

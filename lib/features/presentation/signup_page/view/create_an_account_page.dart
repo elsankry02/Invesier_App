@@ -122,7 +122,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 // Next Button
                 CustomPrimaryButton(
                   title: 'Next',
-                  titleColor: ColorManger.kWhite,
+
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -134,6 +134,10 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   paddingVertical: 13,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  style: context.kTextTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: ColorManger.kEucalyptus,
+                  ),
                   // Navigate
                   onTap: () {
                     context.router.push(SignUpConfirmOtpRoute());

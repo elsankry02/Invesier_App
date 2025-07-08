@@ -141,7 +141,6 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                 // Submit
                 CustomPrimaryButton(
                   title: 'Submit',
-                  titleColor: ColorManger.kWhite,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -153,6 +152,10 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
                   radius: 60,
+                  style: context.kTextTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: ColorManger.kEucalyptus,
+                  ),
                   onTap: () {
                     context.router.push(BottomNavigationBarRoute());
                     if (formKey.currentState!.validate()) {}

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
@@ -35,13 +35,17 @@ class UserProfilePage extends StatelessWidget {
               children: [
                 CustomPrimaryButton(
                   title: 'Chase',
-                  titleColor: ColorManger.kWhite,
+
                   borderColor: ColorManger.kTurquoiseBlue,
                   backGroundColor: ColorManger.kTurquoiseBlue,
                   paddingVertical: 10,
                   marginHorizontal: 0,
                   paddingHorizontal: 62,
                   radius: 31,
+                  style: context.kTextTheme.labelMedium!.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: ColorManger.kWhite,
+                  ),
                   onTap: () {
                     ScaffoldMessenger.of(
                       context,
@@ -50,13 +54,17 @@ class UserProfilePage extends StatelessWidget {
                 ),
                 CustomPrimaryButton(
                   title: 'message',
-                  titleColor: ColorManger.kTurquoiseBlue,
+
                   borderColor: ColorManger.kWhite,
                   backGroundColor: ColorManger.kWhite,
                   paddingVertical: 10,
                   marginHorizontal: 0,
                   paddingHorizontal: 62,
                   radius: 31,
+                  style: context.kTextTheme.labelMedium!.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: ColorManger.kTurquoiseBlue,
+                  ),
                   onTap: () {
                     ScaffoldMessenger.of(
                       context,

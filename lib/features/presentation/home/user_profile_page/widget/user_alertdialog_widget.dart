@@ -40,11 +40,13 @@ class UserAlertDialogWidget extends StatelessWidget {
               // Custom Primary Button No
               CustomPrimaryButton(
                 title: 'No',
-                titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kBackGround,
                 borderColor: ColorManger.kBackGround,
-
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: ColorManger.kWhite,
+                ),
                 onTap: () {
                   context.router.maybePop();
                 },
@@ -56,12 +58,16 @@ class UserAlertDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'Yes, block',
                 marginHorizontal: 0,
-                titleColor: ColorManger.kWhite,
+
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
                 paddingVertical: 6,
                 paddingHorizontal: 27.5,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: ColorManger.kWhite,
+                ),
                 onTap: () {
                   context.router.maybePop();
                   ScaffoldMessenger.of(context).showSnackBar(

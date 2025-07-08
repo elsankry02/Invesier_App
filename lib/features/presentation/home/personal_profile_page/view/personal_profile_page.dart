@@ -31,12 +31,15 @@ class PersonalProfilePage extends StatelessWidget {
             // ChaseOrPostsContainer
             CustomPrimaryButton(
               title: 'My Post',
-              titleColor: ColorManger.kWhite,
               borderColor: Colors.transparent,
               paddingVertical: 10,
               marginHorizontal: 0,
               paddingHorizontal: 62,
               radius: 31,
+              style: context.kTextTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.w700,
+                color: ColorManger.kWhite,
+              ),
               onTap: () {
                 ScaffoldMessenger.of(
                   context,

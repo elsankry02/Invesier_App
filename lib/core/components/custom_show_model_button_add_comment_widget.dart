@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'custom_icon_button.dart';
 
 import '../constant/color_manger.dart';
 import '../constant/svg_manger.dart';
 import '../extension/extension.dart';
+import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
 
 class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
@@ -16,9 +16,11 @@ class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
     required this.titleButton,
     required this.vertical,
     required this.radius,
+    required this.style,
   });
   final String title, titleButton, hintText;
   final double vertical, radius;
+  final TextStyle? style;
 
   @override
   State<CustomShowModelButtonAddCommentWidget> createState() =>
@@ -88,7 +90,6 @@ class _CustomShowModelButtonAddCommentWidgetState
                 // titleButton
                 CustomPrimaryButton(
                   title: widget.titleButton,
-                  titleColor: ColorManger.kBackGround,
                   backGroundColor: ColorManger.kOceanGreen,
                   borderColor: ColorManger.kOceanGreen,
                   paddingVertical: widget.vertical,
@@ -96,6 +97,7 @@ class _CustomShowModelButtonAddCommentWidgetState
                   marginHorizontal: 0,
                   radius: widget.radius,
                   onTap: () {},
+                  style: widget.style,
                 ),
               ],
             ),

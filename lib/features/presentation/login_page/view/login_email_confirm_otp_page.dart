@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/custom_pinput_otp_widget.dart';
 import '../../../../core/components/custom_icon_button.dart';
+import '../../../../core/components/custom_pinput_otp_widget.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -138,13 +138,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                 SizedBox(height: context.height * 0.191),
                 // Submit Button
                 CustomPrimaryButton(
-                  titleColor: ColorManger.kWhite,
                   title: 'Submit',
-
-                  onTap: () {
-                    context.router.replace(BottomNavigationBarRoute());
-                  },
-                  radius: 60,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -155,6 +149,14 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   paddingVertical: 13,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  radius: 60,
+                  style: context.kTextTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: ColorManger.kEucalyptus,
+                  ),
+                  onTap: () {
+                    context.router.replace(BottomNavigationBarRoute());
+                  },
                 ),
               ],
             ),

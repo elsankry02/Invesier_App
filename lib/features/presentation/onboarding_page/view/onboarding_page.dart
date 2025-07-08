@@ -76,7 +76,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 // Custom Primary Button (Next)
                 CustomPrimaryButton(
                   title: 'Next',
-                  titleColor: ColorManger.kWhite,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -88,6 +87,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   radius: 60,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  style: context.kTextTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: ColorManger.kEucalyptus,
+                  ),
                   onTap: () {
                     if (currentIndex == items(context).length - 1) {
                       context.router.push(WelcomeRoute());

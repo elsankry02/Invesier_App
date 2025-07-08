@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../extension/extension.dart';
-
 class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({
     super.key,
@@ -10,17 +8,18 @@ class CustomPrimaryButton extends StatelessWidget {
     required this.radius,
     this.backGroundColor,
     this.gradient,
-    required this.titleColor,
+    required this.style,
     required this.borderColor,
     required this.paddingVertical,
     required this.marginHorizontal,
     required this.paddingHorizontal,
   });
   final String title;
-  final Color titleColor, borderColor;
+  final Color borderColor;
   final Color? backGroundColor;
   final double paddingVertical, paddingHorizontal, radius, marginHorizontal;
   final Gradient? gradient;
+  final TextStyle? style;
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -47,14 +46,7 @@ class CustomPrimaryButton extends StatelessWidget {
         ),
         child: Center(
           // Title
-          child: Text(
-            title,
-            style: context.kTextTheme.labelLarge!.copyWith(
-              fontWeight: FontWeight.w600,
-              // titleColor
-              color: titleColor,
-            ),
-          ),
+          child: Text(title, style: style),
         ),
       ),
     );

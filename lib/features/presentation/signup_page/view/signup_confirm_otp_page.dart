@@ -144,7 +144,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                 // Verify code
                 CustomPrimaryButton(
                   title: 'Verify code',
-                  titleColor: ColorManger.kWhite,
+
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -156,6 +156,10 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   paddingVertical: 13,
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
+                  style: context.kTextTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: ColorManger.kEucalyptus,
+                  ),
                   onTap: () {
                     context.router.replace(BottomNavigationBarRoute());
                   },

@@ -148,13 +148,17 @@ class _PostPageState extends State<PostPage> {
                   // Post now
                   CustomPrimaryButton(
                     title: 'Post now',
-                    titleColor: ColorManger.kBackGround,
+
                     backGroundColor: ColorManger.kOceanGreen,
                     borderColor: ColorManger.kOceanGreen,
                     paddingHorizontal: 20,
                     paddingVertical: 12,
                     radius: 16,
                     marginHorizontal: 0,
+                    style: context.kTextTheme.labelMedium!.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: ColorManger.kDivider,
+                    ),
                     onTap: () {},
                   ),
                 ],

@@ -186,7 +186,7 @@ class _SignupPageState extends State<SignupPage> {
                       contactType == ContactType.phone
                           ? "Create an account"
                           : "Next",
-                  titleColor: ColorManger.kWhite,
+
                   backGroundColor: ColorManger.kTurquoiseBlue,
                   gradient: LinearGradient(
                     colors: [
@@ -199,6 +199,10 @@ class _SignupPageState extends State<SignupPage> {
                   marginHorizontal: 0,
                   paddingHorizontal: 0,
                   radius: 60,
+                  style: context.kTextTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: ColorManger.kEucalyptus,
+                  ),
                   onTap: () {
                     context.router.push(CreateAnAccountRoute());
                   },

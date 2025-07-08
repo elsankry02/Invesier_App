@@ -39,6 +39,10 @@ class CommentPage extends StatelessWidget {
                         titleButton: 'Comment',
                         vertical: 5,
                         radius: 8,
+                        style: context.kTextTheme.labelMedium!.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: ColorManger.kDivider,
+                        ),
                       );
                     },
                   );
@@ -63,6 +67,10 @@ class CommentPage extends StatelessWidget {
                               titleButton: 'Reply',
                               vertical: 5,
                               radius: 8,
+                              style: context.kTextTheme.labelMedium!.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: ColorManger.kDivider,
+                              ),
                             );
                           },
                         );

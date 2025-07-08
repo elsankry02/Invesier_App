@@ -37,13 +37,17 @@ class ForYouDialogWidget extends StatelessWidget {
               // Cancel
               CustomPrimaryButton(
                 title: 'Cancel',
-                titleColor: ColorManger.kWhite,
+
                 backGroundColor: ColorManger.kBoulder,
                 borderColor: ColorManger.kBoulder,
                 paddingHorizontal: 36,
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: ColorManger.kWhite,
+                ),
                 onTap: () {
                   context.router.maybePop();
                 },
@@ -51,13 +55,17 @@ class ForYouDialogWidget extends StatelessWidget {
               // Report
               CustomPrimaryButton(
                 title: 'Report',
-                titleColor: ColorManger.kWhite,
+
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
                 paddingHorizontal: 36,
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: ColorManger.kWhite,
+                ),
                 onTap: () {
                   showDialog(
                     barrierDismissible: false,

@@ -58,10 +58,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedOne == true
                         ? ColorManger.kBoulder
                         : ColorManger.kWhite,
-                titleColor:
-                    isSelectedOne == false
-                        ? ColorManger.kBackGround
-                        : ColorManger.kWhite,
+
                 borderColor:
                     isSelectedOne == false
                         ? ColorManger.kTurquoiseBlue
@@ -70,6 +67,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color:
+                      isSelectedSix == false
+                          ? ColorManger.kBackGround
+                          : ColorManger.kWhite,
+                ),
                 onTap: () {
                   setState(() {
                     isSelectedOne = !isSelectedOne;
@@ -84,10 +88,6 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedTwo == true
                         ? ColorManger.kBoulder
                         : ColorManger.kWhite,
-                titleColor:
-                    isSelectedTwo == false
-                        ? ColorManger.kBackGround
-                        : ColorManger.kWhite,
                 borderColor:
                     isSelectedTwo == false
                         ? ColorManger.kTurquoiseBlue
@@ -96,6 +96,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color:
+                      isSelectedSix == false
+                          ? ColorManger.kBackGround
+                          : ColorManger.kWhite,
+                ),
                 onTap: () {
                   setState(() {
                     isSelectedTwo = !isSelectedTwo;
@@ -110,10 +117,6 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedThree == true
                         ? ColorManger.kBoulder
                         : ColorManger.kWhite,
-                titleColor:
-                    isSelectedThree == false
-                        ? ColorManger.kBackGround
-                        : ColorManger.kWhite,
                 borderColor:
                     isSelectedThree == false
                         ? ColorManger.kTurquoiseBlue
@@ -122,6 +125,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color:
+                      isSelectedSix == false
+                          ? ColorManger.kBackGround
+                          : ColorManger.kWhite,
+                ),
                 onTap: () {
                   setState(() {
                     isSelectedThree = !isSelectedThree;
@@ -136,10 +146,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedFour == true
                         ? ColorManger.kBoulder
                         : ColorManger.kWhite,
-                titleColor:
-                    isSelectedFour == false
-                        ? ColorManger.kBackGround
-                        : ColorManger.kWhite,
+
                 borderColor:
                     isSelectedFour == false
                         ? ColorManger.kTurquoiseBlue
@@ -148,6 +155,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color:
+                      isSelectedSix == false
+                          ? ColorManger.kBackGround
+                          : ColorManger.kWhite,
+                ),
                 onTap: () {
                   setState(() {
                     isSelectedFour = !isSelectedFour;
@@ -162,10 +176,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedFive == true
                         ? ColorManger.kBoulder
                         : ColorManger.kWhite,
-                titleColor:
-                    isSelectedFive == false
-                        ? ColorManger.kBackGround
-                        : ColorManger.kWhite,
+
                 borderColor:
                     isSelectedFive == false
                         ? ColorManger.kTurquoiseBlue
@@ -174,6 +185,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color:
+                      isSelectedSix == false
+                          ? ColorManger.kBackGround
+                          : ColorManger.kWhite,
+                ),
                 onTap: () {
                   setState(() {
                     isSelectedFive = !isSelectedFive;
@@ -188,10 +206,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedSix == true
                         ? ColorManger.kBoulder
                         : ColorManger.kWhite,
-                titleColor:
-                    isSelectedSix == false
-                        ? ColorManger.kBackGround
-                        : ColorManger.kWhite,
+
                 borderColor:
                     isSelectedSix == false
                         ? ColorManger.kTurquoiseBlue
@@ -200,6 +215,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color:
+                      isSelectedSix == false
+                          ? ColorManger.kBackGround
+                          : ColorManger.kWhite,
+                ),
                 onTap: () {
                   setState(() {
                     isSelectedSix = !isSelectedSix;
@@ -210,13 +232,16 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               // Submit
               CustomPrimaryButton(
                 title: 'Submit',
-                titleColor: ColorManger.kWhite,
                 backGroundColor: ColorManger.kTurquoiseBlue,
                 borderColor: ColorManger.kTurquoiseBlue,
                 paddingHorizontal: 101,
                 paddingVertical: 4,
                 marginHorizontal: 0,
                 radius: 31,
+                style: context.kTextTheme.labelMedium!.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: ColorManger.kWhite,
+                ),
                 onTap: () {
                   showDialog(
                     barrierDismissible: false,
