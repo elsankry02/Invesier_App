@@ -31,16 +31,15 @@ class UserProfilePage extends StatelessWidget {
             SizedBox(height: context.height * 0.021),
             // Chase Or Posts Container Widget
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CustomPrimaryButton(
                   title: 'Chase',
-
                   borderColor: ColorManger.kTurquoiseBlue,
                   backGroundColor: ColorManger.kTurquoiseBlue,
-                  paddingVertical: 10,
+                  paddingVertical: 9.5,
                   marginHorizontal: 0,
-                  paddingHorizontal: 62,
+                  paddingHorizontal: 56,
                   radius: 31,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
@@ -54,12 +53,11 @@ class UserProfilePage extends StatelessWidget {
                 ),
                 CustomPrimaryButton(
                   title: 'message',
-
                   borderColor: ColorManger.kWhite,
                   backGroundColor: ColorManger.kWhite,
-                  paddingVertical: 10,
+                  paddingVertical: 9.5,
                   marginHorizontal: 0,
-                  paddingHorizontal: 62,
+                  paddingHorizontal: 56,
                   radius: 31,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,

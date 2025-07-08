@@ -66,15 +66,18 @@ class ForYouDialogWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   color: ColorManger.kWhite,
                 ),
-                onTap: () {
-                  showDialog(
-                    barrierDismissible: false,
-                    context: context,
-                    builder: (context) {
-                      // Report Reason Dialog
-                      return ReportReasonDialog();
-                    },
-                  );
+                onTap: () async {
+                  await context.router.maybePop();
+                  if (context.mounted) {
+                    showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (context) {
+                        // Report Reason Dialog
+                        return ReportReasonDialog();
+                      },
+                    );
+                  }
                 },
               ),
             ],

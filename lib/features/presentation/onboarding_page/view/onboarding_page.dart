@@ -89,7 +89,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   paddingHorizontal: 0,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kEucalyptus,
+                    color: ColorManger.kWhite,
                   ),
                   onTap: () {
                     if (currentIndex == items(context).length - 1) {

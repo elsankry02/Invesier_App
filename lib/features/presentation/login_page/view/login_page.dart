@@ -208,7 +208,7 @@ class _SignupPageState extends State<LoginPage> {
                   radius: 60,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kEucalyptus,
+                    color: ColorManger.kWhite,
                   ),
                   onTap:
                       contactType == ContactType.phone

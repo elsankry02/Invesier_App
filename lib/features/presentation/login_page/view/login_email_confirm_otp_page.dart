@@ -152,7 +152,7 @@ class _LoginEmailConfirmOtpPageState extends State<LoginEmailConfirmOtpPage> {
                   radius: 60,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kEucalyptus,
+                    color: ColorManger.kWhite,
                   ),
                   onTap: () {
                     context.router.replace(BottomNavigationBarRoute());

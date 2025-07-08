@@ -136,7 +136,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   paddingHorizontal: 0,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kEucalyptus,
+                    color: ColorManger.kWhite,
                   ),
                   // Navigate
                   onTap: () {

@@ -70,7 +70,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedSix == false
+                      isSelectedOne == false
                           ? ColorManger.kBackGround
                           : ColorManger.kWhite,
                 ),
@@ -99,7 +99,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedSix == false
+                      isSelectedTwo == false
                           ? ColorManger.kBackGround
                           : ColorManger.kWhite,
                 ),
@@ -128,7 +128,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedSix == false
+                      isSelectedThree == false
                           ? ColorManger.kBackGround
                           : ColorManger.kWhite,
                 ),
@@ -158,7 +158,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedSix == false
+                      isSelectedFour == false
                           ? ColorManger.kBackGround
                           : ColorManger.kWhite,
                 ),
@@ -188,7 +188,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedSix == false
+                      isSelectedFive == false
                           ? ColorManger.kBackGround
                           : ColorManger.kWhite,
                 ),
@@ -242,18 +242,21 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color: ColorManger.kWhite,
                 ),
-                onTap: () {
-                  showDialog(
-                    barrierDismissible: false,
-                    context: context,
-                    builder: (context) {
-                      // User Alert Dialog Widget
-                      return UserAlertDialogWidget(
-                        title:
-                            'Report is delivered. Do you want to \nblock this account?',
-                      );
-                    },
-                  );
+                onTap: () async {
+                  await context.router.maybePop();
+                  if (context.mounted) {
+                    showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (context) {
+                        // User Alert Dialog Widget
+                        return UserAlertDialogWidget(
+                          title:
+                              'Report is delivered. Do you want to \nblock this account?',
+                        );
+                      },
+                    );
+                  }
                 },
               ),
             ],
