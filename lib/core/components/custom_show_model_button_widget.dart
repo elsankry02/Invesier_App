@@ -8,8 +8,8 @@ import '../extension/extension.dart';
 import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
 
-class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
-  const CustomShowModelButtonAddCommentWidget({
+class CustomShowModelButtonWidget extends StatefulWidget {
+  const CustomShowModelButtonWidget({
     super.key,
     required this.title,
     required this.hintText,
@@ -23,12 +23,12 @@ class CustomShowModelButtonAddCommentWidget extends StatefulWidget {
   final TextStyle? style;
 
   @override
-  State<CustomShowModelButtonAddCommentWidget> createState() =>
-      _CustomShowModelButtonAddCommentWidgetState();
+  State<CustomShowModelButtonWidget> createState() =>
+      _CustomShowModelButtonWidgetState();
 }
 
-class _CustomShowModelButtonAddCommentWidgetState
-    extends State<CustomShowModelButtonAddCommentWidget> {
+class _CustomShowModelButtonWidgetState
+    extends State<CustomShowModelButtonWidget> {
   final commentController = TextEditingController();
 
   @override

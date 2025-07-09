@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/custom_primary_button.dart';
 
-import '../../../../../core/components/custom_mate_container.dart';
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
@@ -64,10 +64,17 @@ class ReplyWidget extends StatelessWidget {
                         ],
                       ),
                       SizedBox(width: context.width * 0.025),
-                      // Custom Mate Container
-                      CustomMateContainer(
-                        backGroundColor: ColorManger.kTurquoiseBlue,
-                        title: 'Chase back',
+                      // Custom Primary Button
+                      CustomPrimaryButton(
+                        title: 'Chase Back',
+                        style: context.kTextTheme.labelMedium!.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        borderColor: ColorManger.kTurquoiseBlue,
+                        paddingVertical: 4,
+                        paddingHorizontal: 9.5,
+                        marginHorizontal: 0,
+                        radius: 31,
                       ),
                     ],
                   ),
