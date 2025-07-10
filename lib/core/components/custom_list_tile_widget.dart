@@ -9,16 +9,16 @@ class CustomListTileWidget extends StatelessWidget {
     required this.items,
     required this.broderColor,
     required this.title,
-    required this.horizontal,
-    required this.vertical,
     this.backGroundColor,
+    this.padding,
   });
 
   final HomeFollowModel items;
   final Color? backGroundColor;
   final Color broderColor;
   final String title;
-  final double horizontal, vertical;
+  final EdgeInsetsGeometry? padding;
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -48,10 +48,7 @@ class CustomListTileWidget extends StatelessWidget {
       ),
       // trailing
       trailing: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: horizontal,
-          vertical: vertical,
-        ),
+        padding: padding,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(31),
           color: backGroundColor,

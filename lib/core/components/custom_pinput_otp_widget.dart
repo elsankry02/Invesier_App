@@ -36,6 +36,7 @@ class _CustomPinPutOTPWidgetState extends State<CustomPinPutOTPWidget> {
         SizedBox(height: context.height * 0.015),
         Center(
           child: Pinput(
+            autofocus: true,
             length: 6,
             controller: widget.pinController,
             // errorPinTheme

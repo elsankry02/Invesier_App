@@ -18,8 +18,10 @@ class FansWidget extends StatelessWidget {
             items: homeFollowModel[index],
             broderColor: ColorManger.kSecondary,
             title: 'Fan',
-            horizontal: 28,
-            vertical: 4,
+            padding: EdgeInsetsDirectional.symmetric(
+              horizontal: 28,
+              vertical: 4,
+            ),
           );
         },
       ),

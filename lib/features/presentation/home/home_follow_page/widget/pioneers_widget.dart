@@ -18,8 +18,10 @@ class PioneersWidget extends StatelessWidget {
             items: homeFollowModel[index],
             broderColor: ColorManger.kTurquoiseBlue,
             title: 'Pioneer',
-            horizontal: 16,
-            vertical: 4,
+            padding: EdgeInsetsDirectional.symmetric(
+              horizontal: 16,
+              vertical: 4,
+            ),
           );
         },
       ),
