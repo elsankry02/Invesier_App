@@ -78,7 +78,12 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                 Row(
                   children: [
                     // Custom Icon Back
-                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
+                    CustomIconButton(
+                      icon: Icon(Icons.arrow_back_ios),
+                      onPressed: () {
+                        context.router.maybePop();
+                      },
+                    ),
                     Expanded(
                       // CustomAppBar
                       child: CustomTitelAppBar(title: 'Confirm OTP'),

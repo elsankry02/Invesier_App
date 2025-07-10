@@ -79,7 +79,12 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                 Row(
                   children: [
                     // Custom Icon Back
-                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
+                    CustomIconButton(
+                      icon: Icon(Icons.arrow_back_ios),
+                      onPressed: () {
+                        context.router.maybePop();
+                      },
+                    ),
                     // CustomTitelAppBar
                     Expanded(
                       child: CustomTitelAppBar(

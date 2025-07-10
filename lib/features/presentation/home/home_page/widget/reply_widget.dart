@@ -70,7 +70,8 @@ class ReplyWidget extends StatelessWidget {
                         style: context.kTextTheme.labelMedium!.copyWith(
                           fontWeight: FontWeight.w500,
                         ),
-                        borderColor: ColorManger.kTurquoiseBlue,
+                        borderColor: Colors.transparent,
+                        backGroundColor: ColorManger.kTurquoiseBlue,
                         paddingVertical: 4,
                         paddingHorizontal: 9.5,
                         marginHorizontal: 0,

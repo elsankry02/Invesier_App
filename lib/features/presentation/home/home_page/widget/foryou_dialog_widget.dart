@@ -21,6 +21,9 @@ class ForYouDialogWidget extends StatelessWidget {
             // Custom Icon Back
             child: CustomIconButton(
               icon: Icon(Icons.close, color: ColorManger.kWhite, size: 20),
+              onPressed: () {
+                context.router.maybePop();
+              },
             ),
           ),
           // title

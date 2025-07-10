@@ -50,7 +50,12 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 Row(
                   children: [
                     // Custom Icon Back
-                    CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
+                    CustomIconButton(
+                      icon: Icon(Icons.arrow_back_ios),
+                      onPressed: () {
+                        context.router.maybePop();
+                      },
+                    ),
                     //
                     Expanded(
                       child: Column(

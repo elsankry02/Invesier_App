@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
@@ -16,7 +17,12 @@ class HomeFollowAppBarWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Custom Icon Back
-          CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
+          CustomIconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              context.router.maybePop();
+            },
+          ),
           // Image
           ClipOval(
             child: Image.asset(

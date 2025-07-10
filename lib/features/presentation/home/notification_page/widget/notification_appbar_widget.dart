@@ -1,6 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_icon_button.dart';
 
+import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -17,6 +18,9 @@ class NotificationAppBarWidget extends StatelessWidget {
             Icons.arrow_back_ios_new_rounded,
             color: ColorManger.kWhite,
           ),
+          onPressed: () {
+            context.router.maybePop();
+          },
         ),
         // title
         Expanded(

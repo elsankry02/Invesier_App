@@ -23,7 +23,12 @@ class UserAppBarWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           // Custom Icon Back
-          CustomIconButton(icon: Icon(Icons.arrow_back_ios)),
+          CustomIconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              context.router.maybePop();
+            },
+          ),
           // Image
           ClipOval(
             child: Image.asset(

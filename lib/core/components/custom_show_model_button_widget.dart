@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -64,7 +65,12 @@ class _CustomShowModelButtonWidgetState
                   ),
                 ),
                 // Custom Icon Back
-                CustomIconButton(icon: Icon(FontAwesomeIcons.xmark)),
+                CustomIconButton(
+                  icon: Icon(FontAwesomeIcons.xmark),
+                  onPressed: () {
+                    context.router.maybePop();
+                  },
+                ),
               ],
             ),
             // TextFormField
