@@ -3,21 +3,22 @@ import 'package:flutter/material.dart';
 class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({
     super.key,
-    this.onTap,
     required this.title,
-    required this.radius,
-    this.backGroundColor,
-    this.gradient,
-    required this.style,
     required this.borderColor,
-    required this.paddingVertical,
-    required this.marginHorizontal,
-    required this.paddingHorizontal,
+    this.backGroundColor,
+    required this.radius,
+    this.margin,
+    this.gradient,
+    this.style,
+    this.onTap,
+    this.padding,
   });
   final String title;
   final Color borderColor;
   final Color? backGroundColor;
-  final double paddingVertical, paddingHorizontal, radius, marginHorizontal;
+  final double radius;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
   final Gradient? gradient;
   final TextStyle? style;
   final void Function()? onTap;
@@ -28,12 +29,9 @@ class CustomPrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         // margin
-        margin: EdgeInsets.symmetric(horizontal: marginHorizontal),
+        margin: margin,
         // padding
-        padding: EdgeInsets.symmetric(
-          vertical: paddingVertical,
-          horizontal: paddingHorizontal,
-        ),
+        padding: padding,
         decoration: BoxDecoration(
           // backgroundColor
           color: backGroundColor,

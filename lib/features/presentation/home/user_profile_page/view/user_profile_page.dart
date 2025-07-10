@@ -37,9 +37,10 @@ class UserProfilePage extends StatelessWidget {
                   title: 'Chase',
                   borderColor: ColorManger.kTurquoiseBlue,
                   backGroundColor: ColorManger.kTurquoiseBlue,
-                  paddingVertical: 9.5,
-                  marginHorizontal: 0,
-                  paddingHorizontal: 56,
+                  padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: 56,
+                    vertical: 9.5,
+                  ),
                   radius: 31,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
@@ -55,9 +56,10 @@ class UserProfilePage extends StatelessWidget {
                   title: 'message',
                   borderColor: ColorManger.kWhite,
                   backGroundColor: ColorManger.kWhite,
-                  paddingVertical: 9.5,
-                  marginHorizontal: 0,
-                  paddingHorizontal: 56,
+                  padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: 56,
+                    vertical: 9.5,
+                  ),
                   radius: 31,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,

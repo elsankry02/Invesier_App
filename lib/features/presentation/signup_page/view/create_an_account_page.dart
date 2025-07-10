@@ -136,9 +136,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   ),
                   borderColor: ColorManger.kTurquoiseBlue,
                   radius: 60,
-                  paddingVertical: 13,
-                  marginHorizontal: 0,
-                  paddingHorizontal: 0,
+                  padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: ColorManger.kWhite,

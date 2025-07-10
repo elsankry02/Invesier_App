@@ -63,9 +63,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedOne == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                paddingHorizontal: 101,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 101,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -92,9 +93,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedTwo == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                paddingHorizontal: 101,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 101,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -121,9 +123,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedThree == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                paddingHorizontal: 100,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 100,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -151,9 +154,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedFour == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                paddingHorizontal: 92.5,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 93,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -181,9 +185,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedFive == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                paddingHorizontal: 81.5,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 81,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -211,9 +216,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedSix == false
                         ? ColorManger.kTurquoiseBlue
                         : ColorManger.kBoulder,
-                paddingHorizontal: 97.5,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 98,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -234,9 +240,10 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Submit',
                 backGroundColor: ColorManger.kTurquoiseBlue,
                 borderColor: ColorManger.kTurquoiseBlue,
-                paddingHorizontal: 101,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 101,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,

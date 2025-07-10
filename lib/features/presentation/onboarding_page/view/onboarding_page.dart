@@ -83,10 +83,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     ],
                   ),
                   borderColor: ColorManger.kTurquoiseBlue,
-                  paddingVertical: 13,
+                  padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   radius: 60,
-                  marginHorizontal: 0,
-                  paddingHorizontal: 0,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: ColorManger.kWhite,

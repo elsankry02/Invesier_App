@@ -38,9 +38,11 @@ class WelcomePage extends StatelessWidget {
               ),
               borderColor: ColorManger.kTurquoiseBlue,
               radius: 60,
-              paddingHorizontal: 105,
-              paddingVertical: 15,
-              marginHorizontal: 43,
+              padding: EdgeInsetsDirectional.symmetric(
+                horizontal: 105,
+                vertical: 15,
+              ),
+              margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w600,
                 color: ColorManger.kWhite,
@@ -57,9 +59,11 @@ class WelcomePage extends StatelessWidget {
 
               borderColor: ColorManger.kEucalyptus,
               radius: 60,
-              paddingHorizontal: 130,
-              paddingVertical: 15,
-              marginHorizontal: 43,
+              padding: EdgeInsetsDirectional.symmetric(
+                horizontal: 130,
+                vertical: 15,
+              ),
+              margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w600,
                 color: ColorManger.kEucalyptus,

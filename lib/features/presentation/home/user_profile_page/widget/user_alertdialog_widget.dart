@@ -47,22 +47,24 @@ class UserAlertDialogWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   color: ColorManger.kWhite,
                 ),
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 34,
+                  vertical: 6,
+                ),
                 onTap: () {
                   context.router.maybePop();
                 },
-                paddingVertical: 6,
-                marginHorizontal: 0,
-                paddingHorizontal: 34,
               ),
               // CustomPrimaryButton Yes, block
               CustomPrimaryButton(
                 title: 'Yes, block',
-                marginHorizontal: 0,
 
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
-                paddingVertical: 6,
-                paddingHorizontal: 27.5,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 27.5,
+                  vertical: 6,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,

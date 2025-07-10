@@ -72,9 +72,10 @@ class ReplyWidget extends StatelessWidget {
                         ),
                         borderColor: Colors.transparent,
                         backGroundColor: ColorManger.kTurquoiseBlue,
-                        paddingVertical: 4,
-                        paddingHorizontal: 9.5,
-                        marginHorizontal: 0,
+                        padding: EdgeInsetsDirectional.symmetric(
+                          horizontal: 10,
+                          vertical: 4,
+                        ),
                         radius: 31,
                       ),
                     ],

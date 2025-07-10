@@ -40,12 +40,12 @@ class ForYouDialogWidget extends StatelessWidget {
               // Cancel
               CustomPrimaryButton(
                 title: 'Cancel',
-
                 backGroundColor: ColorManger.kBoulder,
                 borderColor: ColorManger.kBoulder,
-                paddingHorizontal: 36,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 36,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -61,9 +61,10 @@ class ForYouDialogWidget extends StatelessWidget {
 
                 backGroundColor: ColorManger.kRedTwo,
                 borderColor: ColorManger.kRedTwo,
-                paddingHorizontal: 36,
-                paddingVertical: 4,
-                marginHorizontal: 0,
+                padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 36,
+                  vertical: 4,
+                ),
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,

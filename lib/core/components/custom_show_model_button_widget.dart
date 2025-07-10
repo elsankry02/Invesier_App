@@ -98,9 +98,10 @@ class _CustomShowModelButtonWidgetState
                   title: widget.titleButton,
                   backGroundColor: ColorManger.kOceanGreen,
                   borderColor: ColorManger.kOceanGreen,
-                  paddingVertical: widget.vertical,
-                  paddingHorizontal: 20,
-                  marginHorizontal: 0,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: widget.vertical,
+                  ),
                   radius: widget.radius,
                   onTap: () {},
                   style: widget.style,

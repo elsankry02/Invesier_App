@@ -202,9 +202,7 @@ class _SignupPageState extends State<LoginPage> {
                     ],
                   ),
                   borderColor: ColorManger.kTurquoiseBlue,
-                  paddingVertical: 13,
-                  marginHorizontal: 0,
-                  paddingHorizontal: 0,
+                  padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   radius: 60,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,

@@ -9,11 +9,16 @@ class CustomListTileWidget extends StatelessWidget {
     required this.items,
     required this.broderColor,
     required this.title,
+    required this.horizontal,
+    required this.vertical,
+    this.backGroundColor,
   });
 
   final HomeFollowModel items;
+  final Color? backGroundColor;
   final Color broderColor;
   final String title;
+  final double horizontal, vertical;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -43,14 +48,18 @@ class CustomListTileWidget extends StatelessWidget {
       ),
       // trailing
       trailing: Container(
-        padding: EdgeInsets.symmetric(horizontal: 28, vertical: 4),
+        padding: EdgeInsets.symmetric(
+          horizontal: horizontal,
+          vertical: vertical,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(31),
+          color: backGroundColor,
           border: Border.all(color: broderColor),
         ),
         child: Text(
           title,
-          style: context.kTextTheme.bodySmall!.copyWith(
+          style: context.kTextTheme.labelMedium!.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),

@@ -80,9 +80,10 @@ class PostCardWidget extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                   borderColor: ColorManger.kTurquoiseBlue,
-                  paddingVertical: 4,
-                  paddingHorizontal: 23.5,
-                  marginHorizontal: 0,
+                  padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: 24,
+                    vertical: 4,
+                  ),
                 ),
               ],
             ),

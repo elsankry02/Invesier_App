@@ -32,9 +32,11 @@ class PersonalProfilePage extends StatelessWidget {
             CustomPrimaryButton(
               title: 'My Post',
               borderColor: Colors.transparent,
-              paddingVertical: 10,
-              marginHorizontal: 0,
-              paddingHorizontal: 62,
+
+              padding: EdgeInsetsDirectional.symmetric(
+                horizontal: 62,
+                vertical: 9.5,
+              ),
               radius: 31,
               style: context.kTextTheme.titleSmall!.copyWith(
                 fontWeight: FontWeight.w700,

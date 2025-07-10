@@ -58,9 +58,10 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
               backGroundColor: ColorManger.kTurquoiseBlue,
               borderColor: ColorManger.kTurquoiseBlue,
               radius: 31,
-              paddingVertical: 4,
-              paddingHorizontal: 20,
-              marginHorizontal: 0,
+              padding: EdgeInsetsDirectional.symmetric(
+                horizontal: 20,
+                vertical: 4,
+              ),
               style: context.kTextTheme.labelMedium!.copyWith(
                 fontWeight: FontWeight.w500,
                 color: ColorManger.kWhite,
