@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/presentation/home/search_page/view/search_page.dart';
 
 import '../../features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 import '../../features/presentation/home/home_follow_page/view/home_follow_page.dart';
@@ -42,5 +43,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: UserProfileRoute.page),
     AutoRoute(page: HomeFollowRoute.page),
     AutoRoute(page: NotificationRoute.page),
+    AutoRoute(page: SearchRoute.page),
   ];
 }

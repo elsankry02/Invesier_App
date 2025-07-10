@@ -25,9 +25,11 @@ class InvesierAppBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Search Icon GestureDetector
+                // Search  GestureDetector
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    context.router.push(SearchRoute());
+                  },
                   child: SvgPicture.asset(
                     width: 20,
                     height: 20,
