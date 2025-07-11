@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/components/custom_primary_button.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
@@ -107,9 +109,13 @@ class PostCardWidget extends StatelessWidget {
                 titleColor: ColorManger.kEucalyptus,
                 borderColor: ColorManger.kEucalyptus,
                 onTap: () {
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(SnackBar(content: Text('Growth')));
+                  showTopSnackBar(
+                    Overlay.of(context),
+                    CustomSnackBar.info(
+                      backgroundColor: ColorManger.kTurquoiseBlue,
+                      message: "COMING SOON",
+                    ),
+                  );
                 },
               ),
               CustomTrendBox(
@@ -119,9 +125,13 @@ class PostCardWidget extends StatelessWidget {
                 titleColor: ColorManger.kRed,
                 borderColor: ColorManger.kRed,
                 onTap: () {
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(SnackBar(content: Text('Decline')));
+                  showTopSnackBar(
+                    Overlay.of(context),
+                    CustomSnackBar.info(
+                      backgroundColor: ColorManger.kRedTwo,
+                      message: "COMING SOON",
+                    ),
+                  );
                 },
               ),
               CustomTrendBox(
@@ -136,9 +146,13 @@ class PostCardWidget extends StatelessWidget {
               GestureDetector(
                 child: SvgPicture.asset(SvgManger.kSharing),
                 onTap: () {
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(SnackBar(content: Text('Sharing')));
+                  showTopSnackBar(
+                    Overlay.of(context),
+                    CustomSnackBar.info(
+                      backgroundColor: ColorManger.kBoulder,
+                      message: "COMING SOON",
+                    ),
+                  );
                 },
               ),
             ],
