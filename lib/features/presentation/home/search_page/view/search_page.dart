@@ -29,6 +29,7 @@ class SearchPage extends StatelessWidget {
             children: [
               Row(
                 children: [
+                  // Custom IconButton
                   CustomIconButton(
                     icon: Icon(Icons.arrow_back_ios),
                     onPressed: () {
@@ -44,6 +45,7 @@ class SearchPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: context.width * 0.015),
+                  // HomeFollow TextFormField Widget
                   Expanded(child: HomeFollowTextFormFieldWidget()),
                 ],
               ),
