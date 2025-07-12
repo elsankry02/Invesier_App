@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
@@ -90,9 +92,31 @@ class SideMenuPage extends StatelessWidget {
                   },
                 ),
                 // Side Menu Title Widget (Settings)
-                SideMenuTitleWidget(onTap: () {}, title: 'Settings'),
+                SideMenuTitleWidget(
+                  onTap: () {
+                    showTopSnackBar(
+                      Overlay.of(context),
+                      CustomSnackBar.info(
+                        backgroundColor: ColorManger.kBoulder,
+                        message: "COMING SOON",
+                      ),
+                    );
+                  },
+                  title: 'Settings',
+                ),
                 // Side Menu Title Widget (Log out)
-                SideMenuTitleWidget(onTap: () {}, title: 'Log out'),
+                SideMenuTitleWidget(
+                  onTap: () {
+                    showTopSnackBar(
+                      Overlay.of(context),
+                      CustomSnackBar.info(
+                        backgroundColor: ColorManger.kBoulder,
+                        message: "COMING SOON",
+                      ),
+                    );
+                  },
+                  title: 'Log out',
+                ),
               ],
             ),
           ),

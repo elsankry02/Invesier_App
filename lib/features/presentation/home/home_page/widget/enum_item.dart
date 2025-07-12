@@ -29,7 +29,7 @@ class EnumItem extends StatelessWidget {
         child: Text(
           title,
           style: context.kTextTheme.titleSmall!.copyWith(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w900,
             // titleColor
             color: titleColor,
           ),

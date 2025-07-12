@@ -23,52 +23,51 @@ class SearchPage extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: SafeArea(
-          child: ListView(
-            padding: EdgeInsetsDirectional.symmetric(horizontal: 20),
-            children: [
-              Row(
-                children: [
-                  // Custom IconButton
-                  CustomIconButton(
-                    icon: Icon(Icons.arrow_back_ios),
-                    onPressed: () {
-                      context.router.maybePop();
-                    },
+        child: ListView(
+          children: [
+            Row(
+              children: [
+                // Custom IconButton
+                CustomIconButton(
+                  icon: Icon(Icons.arrow_back_ios, color: ColorManger.kWhite),
+                  onPressed: () {
+                    context.router.maybePop();
+                  },
+                ),
+                ClipOval(
+                  child: Image.asset(
+                    ImageManger.kBoyFour,
+                    width: 36,
+                    height: 36,
+                    fit: BoxFit.cover,
                   ),
-                  ClipOval(
-                    child: Image.asset(
-                      ImageManger.kBoyFive,
-                      width: 36,
-                      height: 36,
-                      fit: BoxFit.cover,
-                    ),
+                ),
+                SizedBox(width: context.width * 0.015),
+                // HomeFollow TextFormField Widget
+                Expanded(child: HomeFollowTextFormFieldWidget()),
+                SizedBox(width: context.width * 0.020),
+              ],
+            ),
+            SizedBox(width: context.height * 0.020),
+            ListView.builder(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 20),
+              shrinkWrap: true,
+              itemCount: homeFollowModel.length,
+              itemBuilder: (context, index) {
+                return CustomListTileWidget(
+                  // items Model
+                  items: homeFollowModel[index],
+                  broderColor: Colors.transparent,
+                  backGroundColor: ColorManger.kTurquoiseBlue,
+                  title: 'Chase',
+                  padding: EdgeInsetsDirectional.symmetric(
+                    horizontal: 16,
+                    vertical: 4,
                   ),
-                  SizedBox(width: context.width * 0.015),
-                  // HomeFollow TextFormField Widget
-                  Expanded(child: HomeFollowTextFormFieldWidget()),
-                ],
-              ),
-              SizedBox(width: context.height * 0.020),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: homeFollowModel.length,
-                itemBuilder: (context, index) {
-                  return CustomListTileWidget(
-                    // items Model
-                    items: homeFollowModel[index],
-                    broderColor: Colors.transparent,
-                    backGroundColor: ColorManger.kTurquoiseBlue,
-                    title: 'Chase',
-                    padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 16,
-                      vertical: 4,
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

@@ -18,7 +18,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
         children: [
           // Custom Icon Back
           CustomIconButton(
-            icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(Icons.arrow_back_ios, color: ColorManger.kWhite),
             onPressed: () {
               context.router.maybePop();
             },

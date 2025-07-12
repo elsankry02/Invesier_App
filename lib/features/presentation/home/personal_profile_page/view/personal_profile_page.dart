@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
@@ -32,7 +34,6 @@ class PersonalProfilePage extends StatelessWidget {
             CustomPrimaryButton(
               title: 'My Post',
               borderColor: Colors.transparent,
-
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 62,
                 vertical: 9.5,
@@ -43,9 +44,13 @@ class PersonalProfilePage extends StatelessWidget {
                 color: ColorManger.kWhite,
               ),
               onTap: () {
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text("Comming Soon")));
+                showTopSnackBar(
+                  Overlay.of(context),
+                  CustomSnackBar.info(
+                    backgroundColor: ColorManger.kSecondary,
+                    message: "COMING SOON",
+                  ),
+                );
               },
             ),
             SizedBox(height: context.height * 0.021),
