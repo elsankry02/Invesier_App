@@ -12,7 +12,6 @@ class Invesier extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
-
       theme: ThemeData(
         brightness: Brightness.dark,
         textTheme: textTheme(),
