@@ -79,7 +79,10 @@ class _LoginPhoneConfirmOtpPageState extends State<LoginPhoneConfirmOtpPage> {
                   children: [
                     // Custom Icon Back
                     CustomIconButton(
-                      icon: Icon(Icons.arrow_back_ios),
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: ColorManger.kWhite,
+                      ),
                       onPressed: () {
                         context.router.maybePop();
                       },
