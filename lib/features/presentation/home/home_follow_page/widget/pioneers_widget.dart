@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/color_manger.dart';
+import '../../../../../core/constant/color_manger.dart';
 
 import '../../../../../core/components/custom_list_tile_widget.dart';
 import '../../../../model/home_follow_model.dart';

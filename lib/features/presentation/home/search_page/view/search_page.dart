@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_icon_button.dart';
-import 'package:invesier/core/components/custom_list_tile_widget.dart';
-import 'package:invesier/core/constant/color_manger.dart';
-import 'package:invesier/core/constant/image_manger.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/model/home_follow_model.dart';
-import 'package:invesier/features/presentation/home/home_follow_page/widget/home_follow_textformfield_widget.dart';
+import '../../../../../core/components/custom_icon_button.dart';
+import '../../../../../core/components/custom_list_tile_widget.dart';
+import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/extension/extension.dart';
+import '../../../../model/home_follow_model.dart';
+import '../../home_follow_page/widget/home_follow_textformfield_widget.dart';
 
 @RoutePage()
 class SearchPage extends StatelessWidget {

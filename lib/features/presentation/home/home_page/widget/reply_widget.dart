@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
+import '../../../../../core/components/custom_primary_button.dart';
 
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
