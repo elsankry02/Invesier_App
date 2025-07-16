@@ -5,5 +5,5 @@ import 'app.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
-  runApp(ProviderScope(child: const Invesier()));
+  runApp(ProviderScope(child: const InvesierApp()));
 }

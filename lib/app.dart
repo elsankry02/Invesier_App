@@ -4,8 +4,8 @@ import 'core/constant/color_manger.dart';
 import 'core/constant/string_manger.dart';
 import 'core/router/router.dart';
 
-class Invesier extends StatelessWidget {
-  const Invesier({super.key});
+class InvesierApp extends StatelessWidget {
+  const InvesierApp({super.key});
 
   @override
   Widget build(BuildContext context) {
