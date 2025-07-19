@@ -61,52 +61,13 @@ class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
           ),
         ),
         SizedBox(height: context.height * 0.004),
-        Row(
-          children: [
-            GestureDetector(
-              onTap: () async {
-                final code = await flCountryCodePicker.showPicker(
-                  context: context,
-                );
-                if (code != null) {
-                  setState(() {
-                    selectedCountry = code;
-                  });
-                }
-                return;
-              },
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: context.height * 0.012,
-                  vertical: context.height * 0.017,
-                ),
-
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorManger.kBorder),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-                child: Row(
-                  children: [
-                    Text(countryCodeToEmoji(selectedCountry?.code ?? 'EG')),
-                    SizedBox(width: 8),
-                    Text(selectedCountry?.dialCode ?? '+20'),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(width: 5),
-            //! TextFormField Phone
-            Expanded(
-              child: CustomTextFormField(
-                onChanged: widget.onChanged,
-                autovalidateMode: widget.autovalidateMode,
-                title: '0109******',
-                controller: widget.phoneController,
-                validator: widget.validator,
-                keyboardType: TextInputType.number,
-              ),
-            ),
-          ],
+        CustomTextFormField(
+          onChanged: widget.onChanged,
+          autovalidateMode: widget.autovalidateMode,
+          title: '0109******',
+          controller: widget.phoneController,
+          validator: widget.validator,
+          keyboardType: TextInputType.number,
         ),
       ],
     );

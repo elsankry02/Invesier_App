@@ -1,5 +1,11 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/provider/post/resend_otp_provider.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../core/components/custom_button_style_enum.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -14,14 +20,14 @@ import '../../signup_page/widget/contact_phone_widget.dart';
 enum ContactType { email, phone }
 
 @RoutePage()
-class LoginPage extends StatefulWidget {
+class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _SignupPageState();
+  ConsumerState<LoginPage> createState() => _SignupPageState();
 }
 
-class _SignupPageState extends State<LoginPage> {
+class _SignupPageState extends ConsumerState<LoginPage> {
   final formKey = GlobalKey<FormState>();
   ContactType contactType = ContactType.phone;
   final emailController = TextEditingController();
@@ -38,6 +44,18 @@ class _SignupPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final state = ref.watch(resendOtpProvider);
+
+    log("state == $state");
+    final notifier = ref.read(resendOtpProvider.notifier);
+    ref.listen(resendOtpProvider, (_, state) {
+      if (state is ResendOtpFailuer) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(message: state.errMassege),
+        );
+      }
+    });
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -117,6 +135,7 @@ class _SignupPageState extends State<LoginPage> {
                               contactType == ContactType.phone
                                   ? ColorManger.kTurquoiseBlue
                                   : ColorManger.kCodGray,
+
                           onTap: () {
                             setState(() {
                               contactType = ContactType.phone;
@@ -144,10 +163,11 @@ class _SignupPageState extends State<LoginPage> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             // onChanged
-                            onChanged: (value) {
-                              if (formKey.currentState != null) {
-                                setState(() {});
-                              }
+                            onChanged: (value) async {
+                              await notifier.resendOtp(
+                                authMethod: '',
+                                email: emailController.text.trim(),
+                              );
                             },
                             // validator
                             validator: (value) {
@@ -164,10 +184,11 @@ class _SignupPageState extends State<LoginPage> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             // onChanged
-                            onChanged: (value) {
-                              if (formKey.currentState != null) {
-                                setState(() {});
-                              }
+                            onChanged: (value) async {
+                              await notifier.resendOtp(
+                                authMethod: '',
+                                phone: phoneController.text.trim(),
+                              );
                             },
                             // validator
                             validator: (value) {
@@ -194,7 +215,7 @@ class _SignupPageState extends State<LoginPage> {
                 // CustomPrimaryButton
                 CustomPrimaryButton(
                   title: contactType == ContactType.phone ? "Log in" : "Next",
-
+                  // isLoading: state is ResendOtpLoading,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -211,10 +232,14 @@ class _SignupPageState extends State<LoginPage> {
                   onTap:
                       contactType == ContactType.phone
                           ? () {
-                            context.router.push(LoginPhoneConfirmOtpRoute());
+                            if (formKey.currentState!.validate()) {
+                              context.router.push(LoginPhoneConfirmOtpRoute());
+                            }
                           }
                           : () {
-                            context.router.push(LoginEmailConfirmOtpRoute());
+                            if (formKey.currentState!.validate()) {
+                              context.router.push(LoginEmailConfirmOtpRoute());
+                            }
                           },
                 ),
               ],
