@@ -1,22 +1,21 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/color_manger.dart';
+import 'package:invesier/core/constant/image_manger.dart';
+import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/presentation/home/drawer_page/widget/drawer_title_widget.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
-import '../../../../../core/extension/extension.dart';
-import '../../../../../core/router/router.dart';
-import '../widget/side_menu_title_widget.dart';
-
 @RoutePage()
-class SideMenuPage extends StatelessWidget {
-  const SideMenuPage({super.key});
+class DrawerPage extends StatelessWidget {
+  const DrawerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Drawer(
+      child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [ColorManger.k1, ColorManger.k2],
@@ -85,14 +84,14 @@ class SideMenuPage extends StatelessWidget {
                   ),
                 ),
                 // Side Menu Title Widget (View profile)
-                SideMenuTitleWidget(
+                DrawerTitleWidget(
                   title: 'View profile',
                   onTap: () {
                     context.router.push(PersonalProfileRoute());
                   },
                 ),
                 // Side Menu Title Widget (Settings)
-                SideMenuTitleWidget(
+                DrawerTitleWidget(
                   onTap: () {
                     showTopSnackBar(
                       Overlay.of(context),
@@ -105,7 +104,7 @@ class SideMenuPage extends StatelessWidget {
                   title: 'Settings',
                 ),
                 // Side Menu Title Widget (Log out)
-                SideMenuTitleWidget(
+                DrawerTitleWidget(
                   onTap: () {
                     showTopSnackBar(
                       Overlay.of(context),

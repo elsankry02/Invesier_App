@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/presentation/home/drawer_page/view/drawer_page.dart';
 
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/svg_manger.dart';
@@ -13,25 +14,25 @@ import '../widget/show_model_button_sheet_widget.dart';
 
 @RoutePage()
 class BottomNavigationBarPage extends StatefulWidget {
-  const BottomNavigationBarPage({super.key});
-
+  const BottomNavigationBarPage({super.key, this.drawer});
+  final Widget? drawer;
   @override
   State<BottomNavigationBarPage> createState() =>
       _BottomNavigationBarPageState();
 }
 
+final scaffoldKey = GlobalKey<ScaffoldState>();
+
 class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   int selectedIndex = 0;
-  final List<Widget> pages = [
-    HomePage(),
-    ChallengesPage(),
-    TradePage(),
-    LearnPage(),
-  ];
+  List<Widget> pages = [HomePage(), ChallengesPage(), TradePage(), LearnPage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      drawer: DrawerPage(),
+
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

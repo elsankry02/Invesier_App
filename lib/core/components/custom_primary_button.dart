@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/color_manger.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({
@@ -12,6 +13,7 @@ class CustomPrimaryButton extends StatelessWidget {
     this.style,
     this.onTap,
     this.padding,
+    this.isLoading = false,
   });
   final String title;
   final Color borderColor;
@@ -21,12 +23,13 @@ class CustomPrimaryButton extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final Gradient? gradient;
   final TextStyle? style;
+  final bool isLoading;
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       // onTap
-      onTap: onTap,
+      onTap: isLoading ? null : onTap,
       child: Container(
         // margin
         margin: margin,
@@ -34,7 +37,7 @@ class CustomPrimaryButton extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           // backgroundColor
-          color: backGroundColor,
+          color: isLoading ? ColorManger.kDarkenText : backGroundColor,
           // borderColor
           border: Border.all(color: borderColor),
           // borderRadius
@@ -44,7 +47,20 @@ class CustomPrimaryButton extends StatelessWidget {
         ),
         child: Center(
           // Title
-          child: Text(title, style: style),
+          child:
+              isLoading
+                  ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: ColorManger.kPrimary,
+                      ),
+                    ),
+                  )
+                  : Text(title, style: style),
         ),
       ),
     );

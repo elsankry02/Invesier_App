@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
@@ -10,7 +11,6 @@ import '../../../../../core/router/router.dart';
 
 class InvesierAppBar extends StatelessWidget {
   const InvesierAppBar({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,7 +40,7 @@ class InvesierAppBar extends StatelessWidget {
                     ),
                   ),
                 ),
-                // notifications GestureDetector
+                // notifications
                 GestureDetector(
                   onTap: () {
                     context.router.push(NotificationRoute());
@@ -73,11 +73,10 @@ class InvesierAppBar extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Image GestureDetector
+                // Image
                 GestureDetector(
-                  // Navigate
                   onTap: () {
-                    context.router.push(SideMenuRoute());
+                    scaffoldKey.currentState!.openDrawer();
                   },
                   child: ClipOval(
                     child: Image.asset(

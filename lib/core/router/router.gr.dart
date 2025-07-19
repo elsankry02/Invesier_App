@@ -12,18 +12,52 @@ part of 'router.dart';
 
 /// generated route for
 /// [BottomNavigationBarPage]
-class BottomNavigationBarRoute extends PageRouteInfo<void> {
-  const BottomNavigationBarRoute({List<PageRouteInfo>? children})
-    : super(BottomNavigationBarRoute.name, initialChildren: children);
+class BottomNavigationBarRoute
+    extends PageRouteInfo<BottomNavigationBarRouteArgs> {
+  BottomNavigationBarRoute({
+    Key? key,
+    Widget? drawer,
+    List<PageRouteInfo>? children,
+  }) : super(
+         BottomNavigationBarRoute.name,
+         args: BottomNavigationBarRouteArgs(key: key, drawer: drawer),
+         initialChildren: children,
+       );
 
   static const String name = 'BottomNavigationBarRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const BottomNavigationBarPage();
+      final args = data.argsAs<BottomNavigationBarRouteArgs>(
+        orElse: () => const BottomNavigationBarRouteArgs(),
+      );
+      return BottomNavigationBarPage(key: args.key, drawer: args.drawer);
     },
   );
+}
+
+class BottomNavigationBarRouteArgs {
+  const BottomNavigationBarRouteArgs({this.key, this.drawer});
+
+  final Key? key;
+
+  final Widget? drawer;
+
+  @override
+  String toString() {
+    return 'BottomNavigationBarRouteArgs{key: $key, drawer: $drawer}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! BottomNavigationBarRouteArgs) return false;
+    return key == other.key && drawer == other.drawer;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ drawer.hashCode;
 }
 
 /// generated route for
@@ -54,6 +88,22 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const CreateAnAccountPage();
+    },
+  );
+}
+
+/// generated route for
+/// [DrawerPage]
+class DrawerRoute extends PageRouteInfo<void> {
+  const DrawerRoute({List<PageRouteInfo>? children})
+    : super(DrawerRoute.name, initialChildren: children);
+
+  static const String name = 'DrawerRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DrawerPage();
     },
   );
 }
@@ -229,22 +279,6 @@ class SearchRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const SearchPage();
-    },
-  );
-}
-
-/// generated route for
-/// [SideMenuPage]
-class SideMenuRoute extends PageRouteInfo<void> {
-  const SideMenuRoute({List<PageRouteInfo>? children})
-    : super(SideMenuRoute.name, initialChildren: children);
-
-  static const String name = 'SideMenuRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const SideMenuPage();
     },
   );
 }

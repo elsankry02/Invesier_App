@@ -1,23 +1,28 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:invesier/features/provider/post/creat_post_provider.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
 @RoutePage()
-class PostPage extends StatefulWidget {
+class PostPage extends ConsumerStatefulWidget {
   const PostPage({super.key});
 
   @override
-  State<PostPage> createState() => _PostPageState();
+  ConsumerState<PostPage> createState() => _PostPageState();
 }
 
-class _PostPageState extends State<PostPage> {
+class _PostPageState extends ConsumerState<PostPage> {
   File? file;
   final commentController = TextEditingController();
   @override
@@ -50,6 +55,17 @@ class _PostPageState extends State<PostPage> {
 
   @override
   Widget build(BuildContext context) {
+    final state = ref.watch(createPostProvider);
+    log("State == $state");
+    final notifier = ref.read(createPostProvider.notifier);
+    ref.listen(createPostProvider, (_, state) {
+      if (state is CreatPostFailuer) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(message: state.errMassege),
+        );
+      }
+    });
     return Scaffold(
       body: Container(
         padding: EdgeInsetsDirectional.only(top: 5, start: 20, end: 20),
@@ -145,8 +161,10 @@ class _PostPageState extends State<PostPage> {
                       ),
                     ],
                   ),
+
                   // Post now
                   CustomPrimaryButton(
+                    isLoading: state is CreatPostLoading,
                     title: 'Post now',
                     backGroundColor: ColorManger.kOceanGreen,
                     borderColor: ColorManger.kOceanGreen,
@@ -159,7 +177,12 @@ class _PostPageState extends State<PostPage> {
                       fontWeight: FontWeight.w600,
                       color: ColorManger.kDivider,
                     ),
-                    onTap: () {},
+                    onTap: () async {
+                      log("hhhhhhhhhhh=====");
+                      await notifier.createPost(
+                        content: commentController.text.trim(),
+                      );
+                    },
                   ),
                 ],
               ),

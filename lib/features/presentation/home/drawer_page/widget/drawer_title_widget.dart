@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/extension/extension.dart';
 
-class SideMenuTitleWidget extends StatelessWidget {
-  const SideMenuTitleWidget({super.key, required this.title, this.onTap});
+class DrawerTitleWidget extends StatelessWidget {
+  const DrawerTitleWidget({super.key, required this.title, this.onTap});
   final String title;
   final Function()? onTap;
   @override
