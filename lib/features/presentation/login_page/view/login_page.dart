@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -43,7 +45,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
   Future<void> logIn() async {
     final notifier = ref.read(resendOtpProvider.notifier);
     final isPhone = contactType == ContactType.phone;
-    notifier.resendOtp(
+    await notifier.resendOtp(
       authMethod: contactType.name,
       email: isPhone ? null : emailController.text.trim(),
       phone: isPhone ? phoneController.text.trim() : null,
@@ -53,9 +55,10 @@ class _SignupPageState extends ConsumerState<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(resendOtpProvider);
-    final notifier = ref.read(resendOtpProvider.notifier);
+    // final notifier = ref.read(resendOtpProvider.notifier);
     ref.listen(resendOtpProvider, (_, state) {
       if (state is ResendOtpFailuer) {
+        log("error : ${state.errMassege}");
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),
@@ -67,6 +70,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
           Overlay.of(context),
           CustomSnackBar.success(message: 'success'),
         );
+        context.router.push(CustomConfirmOtpRoute());
       }
     });
     return Scaffold(
@@ -175,37 +179,12 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                             emailController: emailController,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
-                            // onChanged
-                            onChanged: (value) {},
-                            // validator
-                            // validator: (value) {
-                            //   if (value!.trim().toLowerCase() != 'a') {
-                            //     return 'Please enter a valid phone number';
-                            //   } else {
-                            //     return null;
-                            //   }
-                            // },
                           ),
                           // Phone Widget
                           ContactPhoneWidget(
                             phoneController: phoneController,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
-                            // onChanged
-                            onChanged: (value) async {
-                              await notifier.resendOtp(
-                                authMethod: '',
-                                phone: phoneController.text.trim(),
-                              );
-                            },
-                            // validator
-                            validator: (value) {
-                              if (value!.trim().toLowerCase() != '1') {
-                                return 'Please enter a valid phone number.';
-                              } else {
-                                return null;
-                              }
-                            },
                           ),
                         ],
                       ),

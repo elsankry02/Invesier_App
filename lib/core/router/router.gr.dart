@@ -93,6 +93,80 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [CustomConfirmOtpPage]
+class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
+  CustomConfirmOtpRoute({
+    Key? key,
+    String? authMethod,
+    String? phone,
+    String? email,
+    List<PageRouteInfo>? children,
+  }) : super(
+         CustomConfirmOtpRoute.name,
+         args: CustomConfirmOtpRouteArgs(
+           key: key,
+           authMethod: authMethod,
+           phone: phone,
+           email: email,
+         ),
+         initialChildren: children,
+       );
+
+  static const String name = 'CustomConfirmOtpRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<CustomConfirmOtpRouteArgs>(
+        orElse: () => const CustomConfirmOtpRouteArgs(),
+      );
+      return CustomConfirmOtpPage(
+        key: args.key,
+        authMethod: args.authMethod,
+        phone: args.phone,
+        email: args.email,
+      );
+    },
+  );
+}
+
+class CustomConfirmOtpRouteArgs {
+  const CustomConfirmOtpRouteArgs({
+    this.key,
+    this.authMethod,
+    this.phone,
+    this.email,
+  });
+
+  final Key? key;
+
+  final String? authMethod;
+
+  final String? phone;
+
+  final String? email;
+
+  @override
+  String toString() {
+    return 'CustomConfirmOtpRouteArgs{key: $key, authMethod: $authMethod, phone: $phone, email: $email}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! CustomConfirmOtpRouteArgs) return false;
+    return key == other.key &&
+        authMethod == other.authMethod &&
+        phone == other.phone &&
+        email == other.email;
+  }
+
+  @override
+  int get hashCode =>
+      key.hashCode ^ authMethod.hashCode ^ phone.hashCode ^ email.hashCode;
+}
+
+/// generated route for
 /// [DrawerPage]
 class DrawerRoute extends PageRouteInfo<void> {
   const DrawerRoute({List<PageRouteInfo>? children})
@@ -156,22 +230,6 @@ class HomeFollowRouteArgs {
 }
 
 /// generated route for
-/// [LoginEmailConfirmOtpPage]
-class LoginEmailConfirmOtpRoute extends PageRouteInfo<void> {
-  const LoginEmailConfirmOtpRoute({List<PageRouteInfo>? children})
-    : super(LoginEmailConfirmOtpRoute.name, initialChildren: children);
-
-  static const String name = 'LoginEmailConfirmOtpRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LoginEmailConfirmOtpPage();
-    },
-  );
-}
-
-/// generated route for
 /// [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
@@ -183,22 +241,6 @@ class LoginRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const LoginPage();
-    },
-  );
-}
-
-/// generated route for
-/// [LoginPhoneConfirmOtpPage]
-class LoginPhoneConfirmOtpRoute extends PageRouteInfo<void> {
-  const LoginPhoneConfirmOtpRoute({List<PageRouteInfo>? children})
-    : super(LoginPhoneConfirmOtpRoute.name, initialChildren: children);
-
-  static const String name = 'LoginPhoneConfirmOtpRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LoginPhoneConfirmOtpPage();
     },
   );
 }
@@ -279,22 +321,6 @@ class SearchRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const SearchPage();
-    },
-  );
-}
-
-/// generated route for
-/// [SignUpConfirmOtpPage]
-class SignUpConfirmOtpRoute extends PageRouteInfo<void> {
-  const SignUpConfirmOtpRoute({List<PageRouteInfo>? children})
-    : super(SignUpConfirmOtpRoute.name, initialChildren: children);
-
-  static const String name = 'SignUpConfirmOtpRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const SignUpConfirmOtpPage();
     },
   );
 }

@@ -146,7 +146,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   ),
                   // Navigate
                   onTap: () {
-                    context.router.push(SignUpConfirmOtpRoute());
+                    context.router.push(CustomConfirmOtpRoute());
                   },
                 ),
               ],

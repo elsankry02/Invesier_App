@@ -1,5 +1,11 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/provider/post/register_provider.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../core/components/custom_button_style_enum.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -14,14 +20,14 @@ import '../widget/contact_phone_widget.dart';
 enum ContactType { email, phone }
 
 @RoutePage()
-class SignupPage extends StatefulWidget {
+class SignupPage extends ConsumerStatefulWidget {
   const SignupPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  ConsumerState<SignupPage> createState() => _SignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _SignupPageState extends ConsumerState<SignupPage> {
   final formKey = GlobalKey<FormState>();
   ContactType contactType = ContactType.phone;
   final emailController = TextEditingController();
@@ -36,8 +42,37 @@ class _SignupPageState extends State<SignupPage> {
     super.dispose();
   }
 
+  Future<void> register() async {
+    final notifier = ref.read(registerProvider.notifier);
+    final isEmail = contactType == ContactType.email;
+    log("sate == $contactType");
+    await notifier.register(
+      authMethod: contactType.name,
+      email: isEmail ? emailController.text.trim() : null,
+      phone: isEmail ? null : phoneController.text.trim(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final state = ref.watch(registerProvider);
+    // final notifier = ref.read(registerProvider.notifier);
+    ref.listen(registerProvider, (_, state) {
+      if (state is RegisterFaliuer) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(message: state.errMassege),
+        );
+        return;
+      }
+      if (state is RegisterSuccess) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.success(message: "Success"),
+        );
+        context.router.push(CreateAnAccountRoute());
+      }
+    });
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -182,11 +217,8 @@ class _SignupPageState extends State<SignupPage> {
                 SizedBox(height: context.height * 0.057),
                 // CustomPrimaryButton
                 CustomPrimaryButton(
-                  title:
-                      contactType == ContactType.phone
-                          ? "Create an account"
-                          : "Next",
-
+                  title: "Create an account",
+                  isLoading: state is RegisterLoading,
                   backGroundColor: ColorManger.kTurquoiseBlue,
                   gradient: LinearGradient(
                     colors: [
@@ -201,9 +233,7 @@ class _SignupPageState extends State<SignupPage> {
                     fontWeight: FontWeight.w600,
                     color: ColorManger.kWhite,
                   ),
-                  onTap: () {
-                    context.router.push(CreateAnAccountRoute());
-                  },
+                  onTap: register,
                 ),
               ],
             ),

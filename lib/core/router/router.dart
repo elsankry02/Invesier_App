@@ -10,14 +10,12 @@ import '../../features/presentation/home/notification_page/view/notification_pag
 import '../../features/presentation/home/personal_profile_page/view/personal_profile_page.dart';
 import '../../features/presentation/home/search_page/view/search_page.dart';
 import '../../features/presentation/home/user_profile_page/view/user_profile_page.dart';
-import '../../features/presentation/login_page/view/login_email_confirm_otp_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';
-import '../../features/presentation/login_page/view/login_phone_confirm_otp_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
 import '../../features/presentation/signup_page/view/create_an_account_page.dart';
-import '../../features/presentation/signup_page/view/signup_confirm_otp_page.dart';
 import '../../features/presentation/signup_page/view/signup_page.dart';
 import '../../features/presentation/welcome_page/view/welcome_page.dart';
+import '../components/custom_confirm_otp_page.dart';
 
 part 'router.gr.dart';
 
@@ -32,9 +30,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: WelcomeRoute.page),
     AutoRoute(page: CreateAnAccountRoute.page),
-    AutoRoute(page: LoginEmailConfirmOtpRoute.page),
-    AutoRoute(page: LoginPhoneConfirmOtpRoute.page),
-    AutoRoute(page: SignUpConfirmOtpRoute.page),
+    AutoRoute(page: CustomConfirmOtpRoute.page),
     AutoRoute(page: BottomNavigationBarRoute.page),
     AutoRoute(page: DrawerRoute.page),
     AutoRoute(page: CommentRoute.page),

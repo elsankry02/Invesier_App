@@ -3,24 +3,32 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/custom_icon_button.dart';
-import '../../../../core/components/custom_pinput_otp_widget.dart';
-import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/components/custom_title_appbar.dart';
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/extension/extension.dart';
-import '../../../../core/router/router.dart';
-import '../widget/signup_rich_text_widget.dart';
+import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
+import '../constant/color_manger.dart';
+import '../extension/extension.dart';
+import '../router/router.dart';
+import 'custom_icon_button.dart';
+import 'custom_pinput_otp_widget.dart';
+import 'custom_primary_button.dart';
+import 'custom_title_appbar.dart';
 
 @RoutePage()
-class SignUpConfirmOtpPage extends StatefulWidget {
-  const SignUpConfirmOtpPage({super.key});
+class CustomConfirmOtpPage extends StatefulWidget {
+  final String? authMethod;
+  final String? phone;
+  final String? email;
+  const CustomConfirmOtpPage({
+    super.key,
+    this.authMethod,
+    this.phone,
+    this.email,
+  });
 
   @override
-  State<SignUpConfirmOtpPage> createState() => _SignUpConfirmOtpPageState();
+  State<CustomConfirmOtpPage> createState() => _CustomConfirmOtpPageState();
 }
 
-class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
+class _CustomConfirmOtpPageState extends State<CustomConfirmOtpPage> {
   Timer? timer;
   int secondsRemaining = 60;
   final formKey = GlobalKey<FormState>();
@@ -102,7 +110,7 @@ class _SignUpConfirmOtpPageState extends State<SignUpConfirmOtpPage> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Enter the OTP code sent your phone number\n',
+                        text: 'Enter the OTP code sent your ',
                         style: context.kTextTheme.titleSmall!.copyWith(
                           color: ColorManger.kBoulder,
                           fontWeight: FontWeight.w600,
