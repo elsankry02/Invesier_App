@@ -56,7 +56,7 @@ class CustomPrimaryButton extends StatelessWidget {
                       height: 20,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
-                        color: ColorManger.kPrimary,
+                        color: ColorManger.kWhite,
                       ),
                     ),
                   )

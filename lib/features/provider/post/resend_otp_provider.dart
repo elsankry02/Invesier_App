@@ -23,9 +23,9 @@ class ResendOtpNotifier extends Notifier<ResendOtpState> {
 
   Future<void> resendOtp({
     required String authMethod,
-    String phonePrefix = '',
-    String email = '',
-    String phone = '',
+    String? phonePrefix,
+    String? email,
+    String? phone,
   }) async {
     final provider = ref.read(resendOtpServiceProvider);
     try {
@@ -38,7 +38,7 @@ class ResendOtpNotifier extends Notifier<ResendOtpState> {
       );
       state = ResendOtpSuccess();
     } on Exception catch (e) {
-      ResendOtpFailuer(errMassege: e.toString());
+      state = ResendOtpFailuer(errMassege: e.toString());
     }
   }
 }

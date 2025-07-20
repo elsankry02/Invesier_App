@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,17 +40,32 @@ class _SignupPageState extends ConsumerState<LoginPage> {
     super.dispose();
   }
 
+  Future<void> logIn() async {
+    final notifier = ref.read(resendOtpProvider.notifier);
+    final isPhone = contactType == ContactType.phone;
+    notifier.resendOtp(
+      authMethod: contactType.name,
+      email: isPhone ? null : emailController.text.trim(),
+      phone: isPhone ? phoneController.text.trim() : null,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(resendOtpProvider);
-
-    log("state == $state");
     final notifier = ref.read(resendOtpProvider.notifier);
     ref.listen(resendOtpProvider, (_, state) {
       if (state is ResendOtpFailuer) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),
+        );
+        return;
+      }
+      if (state is ResendOtpSuccess) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.success(message: 'success'),
         );
       }
     });
@@ -163,20 +176,15 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             // onChanged
-                            onChanged: (value) async {
-                              await notifier.resendOtp(
-                                authMethod: '',
-                                email: emailController.text.trim(),
-                              );
-                            },
+                            onChanged: (value) {},
                             // validator
-                            validator: (value) {
-                              if (value!.trim().toLowerCase() != 'a') {
-                                return 'Please enter a valid phone number';
-                              } else {
-                                return null;
-                              }
-                            },
+                            // validator: (value) {
+                            //   if (value!.trim().toLowerCase() != 'a') {
+                            //     return 'Please enter a valid phone number';
+                            //   } else {
+                            //     return null;
+                            //   }
+                            // },
                           ),
                           // Phone Widget
                           ContactPhoneWidget(
@@ -214,8 +222,8 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                 SizedBox(height: context.height * 0.057),
                 // CustomPrimaryButton
                 CustomPrimaryButton(
-                  title: contactType == ContactType.phone ? "Log in" : "Next",
-                  // isLoading: state is ResendOtpLoading,
+                  title: "Log in",
+                  isLoading: state is ResendOtpLoading,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -229,18 +237,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                     fontWeight: FontWeight.w600,
                     color: ColorManger.kWhite,
                   ),
-                  onTap:
-                      contactType == ContactType.phone
-                          ? () {
-                            if (formKey.currentState!.validate()) {
-                              context.router.push(LoginPhoneConfirmOtpRoute());
-                            }
-                          }
-                          : () {
-                            if (formKey.currentState!.validate()) {
-                              context.router.push(LoginEmailConfirmOtpRoute());
-                            }
-                          },
+                  onTap: logIn,
                 ),
               ],
             ),
