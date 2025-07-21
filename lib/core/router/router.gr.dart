@@ -94,76 +94,18 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [CustomConfirmOtpPage]
-class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
-  CustomConfirmOtpRoute({
-    Key? key,
-    String? authMethod,
-    String? phone,
-    String? email,
-    List<PageRouteInfo>? children,
-  }) : super(
-         CustomConfirmOtpRoute.name,
-         args: CustomConfirmOtpRouteArgs(
-           key: key,
-           authMethod: authMethod,
-           phone: phone,
-           email: email,
-         ),
-         initialChildren: children,
-       );
+class CustomConfirmOtpRoute extends PageRouteInfo<void> {
+  const CustomConfirmOtpRoute({List<PageRouteInfo>? children})
+    : super(CustomConfirmOtpRoute.name, initialChildren: children);
 
   static const String name = 'CustomConfirmOtpRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<CustomConfirmOtpRouteArgs>(
-        orElse: () => const CustomConfirmOtpRouteArgs(),
-      );
-      return CustomConfirmOtpPage(
-        key: args.key,
-        authMethod: args.authMethod,
-        phone: args.phone,
-        email: args.email,
-      );
+      return const CustomConfirmOtpPage();
     },
   );
-}
-
-class CustomConfirmOtpRouteArgs {
-  const CustomConfirmOtpRouteArgs({
-    this.key,
-    this.authMethod,
-    this.phone,
-    this.email,
-  });
-
-  final Key? key;
-
-  final String? authMethod;
-
-  final String? phone;
-
-  final String? email;
-
-  @override
-  String toString() {
-    return 'CustomConfirmOtpRouteArgs{key: $key, authMethod: $authMethod, phone: $phone, email: $email}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! CustomConfirmOtpRouteArgs) return false;
-    return key == other.key &&
-        authMethod == other.authMethod &&
-        phone == other.phone &&
-        email == other.email;
-  }
-
-  @override
-  int get hashCode =>
-      key.hashCode ^ authMethod.hashCode ^ phone.hashCode ^ email.hashCode;
 }
 
 /// generated route for

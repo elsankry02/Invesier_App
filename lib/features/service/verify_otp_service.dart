@@ -1,24 +1,24 @@
 import 'package:dio/dio.dart';
 import 'package:invesier/core/endpoints/endpoints.dart';
 
-class RegisterService {
+class VerifyOtpService {
   final Dio dio;
-  RegisterService({required this.dio});
-  Future<void> register({
+  VerifyOtpService({required this.dio});
+  Future<void> verifyOtp({
     required String authMethod,
-    String? phonePrefix,
+    required String otp,
     String? email,
     String? phone,
-    String? prefix,
+    String? phonePrefix,
   }) async {
-    await dio.post(
-      Endpoints.kRegister,
+    dio.post(
+      Endpoints.kVerifyOtp,
       data: {
         "auth_method": authMethod,
+        "otp": otp,
         if (phonePrefix != null) "phone_prefix": phonePrefix,
         if (email != null) "email": email,
         if (phone != null) "phone": phone,
-        if (prefix != null) "prefix": prefix,
       },
     );
   }

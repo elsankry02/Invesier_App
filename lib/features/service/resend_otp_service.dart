@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/core/endpoients/endpoients.dart';
+import 'package:invesier/core/endpoints/endpoints.dart';
 
-class ResendOtpServices {
+class ResendOtpService {
   final Dio dio;
 
-  ResendOtpServices({required this.dio});
+  ResendOtpService({required this.dio});
   Future<void> resendOtp({
     required String authMethod,
     String? phonePrefix,
@@ -12,7 +12,7 @@ class ResendOtpServices {
     String? phone,
   }) async {
     await dio.post(
-      Endpoients.kResendOtp,
+      Endpoints.kResendOtp,
       data: {
         "auth_method": authMethod,
         if (phonePrefix != null) "phone_prefix": phonePrefix,

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../constant/color_manger.dart';
@@ -13,22 +14,20 @@ import 'custom_primary_button.dart';
 import 'custom_title_appbar.dart';
 
 @RoutePage()
-class CustomConfirmOtpPage extends StatefulWidget {
-  final String? authMethod;
-  final String? phone;
-  final String? email;
-  const CustomConfirmOtpPage({
+class CustomConfirmOtpPage extends ConsumerStatefulWidget {
+ 
+  const CustomConfirmOtpPage(
+   {
+
     super.key,
-    this.authMethod,
-    this.phone,
-    this.email,
   });
 
   @override
-  State<CustomConfirmOtpPage> createState() => _CustomConfirmOtpPageState();
+  ConsumerState<CustomConfirmOtpPage> createState() =>
+      _CustomConfirmOtpPageState();
 }
 
-class _CustomConfirmOtpPageState extends State<CustomConfirmOtpPage> {
+class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
   Timer? timer;
   int secondsRemaining = 60;
   final formKey = GlobalKey<FormState>();
@@ -69,6 +68,23 @@ class _CustomConfirmOtpPageState extends State<CustomConfirmOtpPage> {
 
   @override
   Widget build(BuildContext context) {
+    // final state = ref.watch(verifyOtpProvider);
+    // final notifier = ref.read(verifyOtpProvider.notifier);
+    // ref.listen(verifyOtpProvider, (_, state) {
+    //   if (state is VerifyOtpFailuer) {
+    //     showTopSnackBar(
+    //       Overlay.of(context),
+    //       CustomSnackBar.error(message: state.errMassege),
+    //     );
+    //     return;
+    //   }
+    //   if (state is VerifyOtpSuccess) {
+    //     showTopSnackBar(
+    //       Overlay.of(context),
+    //       CustomSnackBar.success(message: "Success"),
+    //     );
+    //   }
+    // });
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -110,14 +126,14 @@ class _CustomConfirmOtpPageState extends State<CustomConfirmOtpPage> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Enter the OTP code sent your ',
+                        text: 'Enter the OTP code sent ',
                         style: context.kTextTheme.titleSmall!.copyWith(
                           color: ColorManger.kBoulder,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       TextSpan(
-                        text: '01204306044',
+                        text: "",
                         style: context.kTextTheme.titleMedium!.copyWith(
                           color: ColorManger.kBoulder,
                           fontWeight: FontWeight.w900,
@@ -131,9 +147,6 @@ class _CustomConfirmOtpPageState extends State<CustomConfirmOtpPage> {
                 CustomPinPutOTPWidget(
                   onChanged: (value) {},
                   validator: (value) {
-                    if (value!.length < 6) {
-                      return 'Please enter the full 6-digit code';
-                    }
                     return null;
                   },
                 ),
@@ -160,7 +173,7 @@ class _CustomConfirmOtpPageState extends State<CustomConfirmOtpPage> {
                 // Verify code
                 CustomPrimaryButton(
                   title: 'Verify code',
-
+                  // isLoading: state is VerifyOtpLoading,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,

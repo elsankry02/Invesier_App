@@ -37,7 +37,7 @@ class CustomPrimaryButton extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           // backgroundColor
-          color: isLoading ? ColorManger.kDarkenText : backGroundColor,
+          color: backGroundColor,
           // borderColor
           border: Border.all(color: borderColor),
           // borderRadius
