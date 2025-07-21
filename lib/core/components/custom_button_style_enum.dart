@@ -4,6 +4,10 @@ import '../constant/color_manger.dart';
 import '../extension/extension.dart';
 
 class CustomButtonStyleEnum extends StatelessWidget {
+  final String title;
+  final Color color, titleColor;
+  final double? topLeft, topRight, bottomLeft, bottomRight;
+  final void Function() onTap;
   const CustomButtonStyleEnum({
     super.key,
     required this.title,
@@ -15,10 +19,6 @@ class CustomButtonStyleEnum extends StatelessWidget {
     this.bottomLeft = 0,
     this.bottomRight = 0,
   });
-  final String title;
-  final Color color, titleColor;
-  final double? topLeft, topRight, bottomLeft, bottomRight;
-  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

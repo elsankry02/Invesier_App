@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/color_manger.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
+  final String title;
+  final Color borderColor;
+  final Color? backGroundColor;
+  final double radius;
+  final EdgeInsetsGeometry? margin, padding;
+  final Gradient? gradient;
+  final TextStyle? style;
+  final bool isLoading;
+  final void Function()? onTap;
   const CustomPrimaryButton({
     super.key,
     required this.title,
@@ -15,16 +24,6 @@ class CustomPrimaryButton extends StatelessWidget {
     this.padding,
     this.isLoading = false,
   });
-  final String title;
-  final Color borderColor;
-  final Color? backGroundColor;
-  final double radius;
-  final EdgeInsetsGeometry? margin;
-  final EdgeInsetsGeometry? padding;
-  final Gradient? gradient;
-  final TextStyle? style;
-  final bool isLoading;
-  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

@@ -15,12 +15,7 @@ import 'custom_title_appbar.dart';
 
 @RoutePage()
 class CustomConfirmOtpPage extends ConsumerStatefulWidget {
- 
-  const CustomConfirmOtpPage(
-   {
-
-    super.key,
-  });
+  const CustomConfirmOtpPage({super.key});
 
   @override
   ConsumerState<CustomConfirmOtpPage> createState() =>

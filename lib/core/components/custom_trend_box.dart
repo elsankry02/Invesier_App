@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import '../extension/extension.dart';
 
 class CustomTrendBox extends StatelessWidget {
+  final String title, svg;
+  final Color titleColor, borderColor;
   const CustomTrendBox({
     super.key,
     required this.svg,
@@ -12,8 +14,6 @@ class CustomTrendBox extends StatelessWidget {
     required this.borderColor,
     this.onTap,
   });
-  final String title, svg;
-  final Color titleColor, borderColor;
 
   final Function()? onTap;
   @override

@@ -5,10 +5,10 @@ import '../extension/extension.dart';
 import 'custom_social_button.dart';
 
 class CustomSocialAuthButtons extends StatelessWidget {
-  const CustomSocialAuthButtons({super.key, this.onTapGoogle, this.onTapApple});
-
   final void Function()? onTapGoogle;
   final void Function()? onTapApple;
+  const CustomSocialAuthButtons({super.key, this.onTapGoogle, this.onTapApple});
+
   @override
   Widget build(BuildContext context) {
     return Column(

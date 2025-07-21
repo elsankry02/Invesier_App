@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../extension/extension.dart';
 
 class CustomTitelAppBar extends StatelessWidget {
-  const CustomTitelAppBar({super.key, required this.title});
   final String title;
+  const CustomTitelAppBar({super.key, required this.title});
   @override
   Widget build(BuildContext context) {
     return Text(

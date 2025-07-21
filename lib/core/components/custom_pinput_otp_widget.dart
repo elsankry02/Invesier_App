@@ -5,16 +5,15 @@ import '../constant/color_manger.dart';
 import '../extension/extension.dart';
 
 class CustomPinPutOTPWidget extends StatefulWidget {
+  final String? Function(String? value)? validator;
+  final Function(String value)? onChanged;
+  final TextEditingController? pinController;
   const CustomPinPutOTPWidget({
     super.key,
     this.validator,
     this.onChanged,
     this.pinController,
   });
-
-  final String? Function(String? value)? validator;
-  final Function(String value)? onChanged;
-  final TextEditingController? pinController;
 
   @override
   State<CustomPinPutOTPWidget> createState() => _CustomPinPutOTPWidgetState();

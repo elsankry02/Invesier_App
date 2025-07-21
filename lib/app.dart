@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/endpoints.dart';
 
 import 'core/constant/color_manger.dart';
-import 'core/constant/string_manger.dart';
 import 'core/router/router.dart';
 
 class InvesierApp extends StatelessWidget {
@@ -15,7 +15,7 @@ class InvesierApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         textTheme: textTheme(),
-        fontFamily: StringManger.kManrope,
+        fontFamily: Endpoints.kManrope,
       ),
     );
   }

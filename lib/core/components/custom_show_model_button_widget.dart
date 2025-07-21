@@ -10,6 +10,9 @@ import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
 
 class CustomShowModelButtonWidget extends StatefulWidget {
+  final String title, titleButton, hintText;
+  final double vertical, radius;
+  final TextStyle? style;
   const CustomShowModelButtonWidget({
     super.key,
     required this.title,
@@ -19,9 +22,6 @@ class CustomShowModelButtonWidget extends StatefulWidget {
     required this.radius,
     required this.style,
   });
-  final String title, titleButton, hintText;
-  final double vertical, radius;
-  final TextStyle? style;
 
   @override
   State<CustomShowModelButtonWidget> createState() =>

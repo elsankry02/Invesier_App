@@ -4,6 +4,11 @@ import '../../features/model/home_follow_model.dart';
 import '../extension/extension.dart';
 
 class CustomListTileWidget extends StatelessWidget {
+  final HomeFollowModel items;
+  final Color? backGroundColor;
+  final Color broderColor;
+  final String title;
+  final EdgeInsetsGeometry? padding;
   const CustomListTileWidget({
     super.key,
     required this.items,
@@ -12,12 +17,6 @@ class CustomListTileWidget extends StatelessWidget {
     this.backGroundColor,
     this.padding,
   });
-
-  final HomeFollowModel items;
-  final Color? backGroundColor;
-  final Color broderColor;
-  final String title;
-  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {

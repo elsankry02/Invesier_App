@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import '../extension/extension.dart';
 
 class CustomRichText extends StatelessWidget {
+  final String textSpanOne, textSpanTwo;
+  final void Function() onTap;
   const CustomRichText({
     super.key,
     required this.textSpanOne,
     required this.textSpanTwo,
     required this.onTap,
   });
-  final String textSpanOne, textSpanTwo;
-  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return RichText(

@@ -81,7 +81,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 ),
 
                 SizedBox(height: context.height * 0.016),
-                // circle avatar
+                // File
                 CircleAvatarWidget(),
                 SizedBox(height: context.height * 0.022),
                 // Text: Username
@@ -96,14 +96,6 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 CustomTextFormField(
                   title: 'Username',
                   controller: userNameController,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (value) {
-                    if (value!.trim().toLowerCase() != 'a') {
-                      return 'Please enter a valid Username';
-                    }
-
-                    return null;
-                  },
                 ),
                 SizedBox(height: 22),
                 Text(
@@ -118,13 +110,6 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   title: 'Fullname',
                   controller: fullNameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (value) {},
-                  validator: (value) {
-                    if (value!.trim().toLowerCase() != 'a') {
-                      return 'Please enter a valid Fullname';
-                    }
-                    return null;
-                  },
                 ),
                 SizedBox(height: context.height * 0.090),
                 // Next Button

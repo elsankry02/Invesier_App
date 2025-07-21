@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 import '../constant/color_manger.dart';
 
 class CustomTextFormField extends StatelessWidget {
+  final String title;
+  final AutovalidateMode? autovalidateMode;
+  final TextInputType? keyboardType;
+  final TextEditingController controller;
+  final Function(String value)? onChanged;
+  final String? Function(String? value)? validator;
   const CustomTextFormField({
     super.key,
     required this.title,
@@ -12,12 +18,6 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.autovalidateMode,
   });
-  final String title;
-  final AutovalidateMode? autovalidateMode;
-  final TextInputType? keyboardType;
-  final TextEditingController controller;
-  final Function(String value)? onChanged;
-  final String? Function(String? value)? validator;
   @override
   Widget build(BuildContext context) {
     final kTextTheme = Theme.of(context).textTheme;

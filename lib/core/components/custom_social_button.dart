@@ -4,14 +4,13 @@ import 'package:flutter_svg/svg.dart';
 import '../constant/color_manger.dart';
 
 class CustomSocialButton extends StatelessWidget {
+  final void Function()? onTap;
+  final String title;
   const CustomSocialButton({
     super.key,
     required this.onTap,
     required this.title,
   });
-
-  final void Function()? onTap;
-  final String title;
 
   @override
   Widget build(BuildContext context) {
