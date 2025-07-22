@@ -8,8 +8,8 @@ import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
 class UserAlertDialogWidget extends StatelessWidget {
-  const UserAlertDialogWidget({super.key, required this.title});
   final String title;
+  const UserAlertDialogWidget({super.key, required this.title});
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

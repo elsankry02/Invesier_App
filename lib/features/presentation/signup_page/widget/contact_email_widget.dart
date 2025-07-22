@@ -4,6 +4,9 @@ import '../../../../core/components/custom_text_form_field.dart';
 import '../../../../core/extension/extension.dart';
 
 class ContactEmailWidget extends StatelessWidget {
+  final AutovalidateMode? autovalidateMode;
+  final TextEditingController emailController;
+  final String? Function(String? value)? validator;
   const ContactEmailWidget({
     super.key,
     required this.emailController,
@@ -13,9 +16,6 @@ class ContactEmailWidget extends StatelessWidget {
   });
   final Function(String)? onChanged;
 
-  final AutovalidateMode? autovalidateMode;
-  final TextEditingController emailController;
-  final String? Function(String? value)? validator;
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -5,8 +5,7 @@ import '../extension/extension.dart';
 import 'custom_social_button.dart';
 
 class CustomSocialAuthButtons extends StatelessWidget {
-  final void Function()? onTapGoogle;
-  final void Function()? onTapApple;
+  final void Function()? onTapGoogle, onTapApple;
   const CustomSocialAuthButtons({super.key, this.onTapGoogle, this.onTapApple});
 
   @override

@@ -5,8 +5,8 @@ import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/svg_manger.dart';
 
 class HomeFollowTextFormFieldWidget extends StatelessWidget {
-  const HomeFollowTextFormFieldWidget({super.key, this.searchController});
   final TextEditingController? searchController;
+  const HomeFollowTextFormFieldWidget({super.key, this.searchController});
   @override
   Widget build(BuildContext context) {
     return TextFormField(

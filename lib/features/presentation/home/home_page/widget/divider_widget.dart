@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constant/color_manger.dart';
 
 class DividerWidget extends StatelessWidget {
+  final double height, width;
+  final Function()? onTap;
   const DividerWidget({
     super.key,
     required this.height,
     required this.width,
     this.onTap,
   });
-  final double height, width;
-  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

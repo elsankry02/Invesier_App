@@ -5,6 +5,9 @@ import '../../../../core/constant/color_manger.dart';
 import '../../../../core/extension/extension.dart';
 
 class NavigationBarItemWidget extends StatelessWidget {
+  final String assetName, title;
+  final int selectedIndex, index;
+  final Function()? onTap;
   const NavigationBarItemWidget({
     super.key,
     required this.assetName,
@@ -13,11 +16,6 @@ class NavigationBarItemWidget extends StatelessWidget {
     this.onTap,
     required this.index,
   });
-  final String assetName;
-  final String title;
-  final int selectedIndex;
-  final int index;
-  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(

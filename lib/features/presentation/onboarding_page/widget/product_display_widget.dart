@@ -5,9 +5,8 @@ import '../../../../core/extension/extension.dart';
 import '../../../model/onboarding_model.dart';
 
 class ProductDisplayWidget extends StatelessWidget {
-  const ProductDisplayWidget({super.key, required this.item});
-
   final OnboardingModel item;
+  const ProductDisplayWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

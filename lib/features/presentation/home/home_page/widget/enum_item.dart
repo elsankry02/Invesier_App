@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../../core/extension/extension.dart';
 
 class EnumItem extends StatelessWidget {
+  final String title;
+  final Color backGroundColor, titleColor;
+  final Function()? onTap;
   const EnumItem({
     super.key,
     required this.title,
@@ -10,9 +13,6 @@ class EnumItem extends StatelessWidget {
     this.onTap,
     required this.titleColor,
   });
-  final String title;
-  final Color backGroundColor, titleColor;
-  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

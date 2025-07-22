@@ -14,8 +14,8 @@ enum HomeFollowEnum { fans, pioneers }
 
 @RoutePage()
 class HomeFollowPage extends StatefulWidget {
-  const HomeFollowPage({super.key, required this.initialTab});
   final HomeFollowEnum initialTab;
+  const HomeFollowPage({super.key, required this.initialTab});
   @override
   State<HomeFollowPage> createState() => _HomeFollowPageState();
 }

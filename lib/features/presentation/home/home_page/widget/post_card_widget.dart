@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
@@ -11,15 +11,15 @@ import '../../../../../core/constant/svg_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
 class PostCardWidget extends StatelessWidget {
+  final Function()? commentOnTap;
+  final Function()? imageOnTap;
+  final Widget? trailing;
   const PostCardWidget({
     super.key,
     this.commentOnTap,
     this.imageOnTap,
     this.trailing,
   });
-  final Function()? commentOnTap;
-  final Function()? imageOnTap;
-  final Widget? trailing;
   @override
   Widget build(BuildContext context) {
     return Container(

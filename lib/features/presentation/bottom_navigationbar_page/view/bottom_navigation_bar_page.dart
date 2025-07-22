@@ -14,8 +14,8 @@ import '../widget/show_model_button_sheet_widget.dart';
 
 @RoutePage()
 class BottomNavigationBarPage extends StatefulWidget {
-  const BottomNavigationBarPage({super.key, this.drawer});
   final Widget? drawer;
+  const BottomNavigationBarPage({super.key, this.drawer});
   @override
   State<BottomNavigationBarPage> createState() =>
       _BottomNavigationBarPageState();

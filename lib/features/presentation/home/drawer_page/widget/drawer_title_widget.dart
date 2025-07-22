@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../../core/extension/extension.dart';
 
 class DrawerTitleWidget extends StatelessWidget {
-  const DrawerTitleWidget({super.key, required this.title, this.onTap});
   final String title;
   final Function()? onTap;
+  const DrawerTitleWidget({super.key, required this.title, this.onTap});
   @override
   Widget build(BuildContext context) {
     return InkWell(

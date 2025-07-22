@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_trend_box.dart';
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';
@@ -9,8 +9,8 @@ import '../../../../../core/extension/extension.dart';
 import 'pop_menu_button_widget.dart';
 
 class ReplyWidget extends StatelessWidget {
-  const ReplyWidget({super.key, required this.onTap});
   final Function() onTap;
+  const ReplyWidget({super.key, required this.onTap});
   @override
   Widget build(BuildContext context) {
     return Padding(

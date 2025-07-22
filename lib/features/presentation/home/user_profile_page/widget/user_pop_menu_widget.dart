@@ -6,15 +6,14 @@ import '../../../../../core/constant/svg_manger.dart';
 import '../../../../../core/extension/extension.dart';
 
 class UserPopMenuWidget extends StatelessWidget {
+  final String title, icon;
+  final Function() onTap;
   const UserPopMenuWidget({
     super.key,
     required this.icon,
     required this.title,
     required this.onTap,
   });
-
-  final String title, icon;
-  final Function() onTap;
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(

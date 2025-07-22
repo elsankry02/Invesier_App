@@ -5,9 +5,8 @@ import '../../../../core/extension/extension.dart';
 import '../../../model/onboarding_model.dart';
 
 class GeneratorWidget extends StatelessWidget {
-  const GeneratorWidget({super.key, required this.currentIndex});
-
   final int currentIndex;
+  const GeneratorWidget({super.key, required this.currentIndex});
 
   @override
   Widget build(BuildContext context) {

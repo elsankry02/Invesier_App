@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/extension/extension.dart';
 
 class FollowingNumberWidget extends StatelessWidget {
+  final String title, number;
+  final Function()? onTap;
   const FollowingNumberWidget({
     super.key,
     required this.title,
     required this.number,
     this.onTap,
   });
-  final String title, number;
-  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
