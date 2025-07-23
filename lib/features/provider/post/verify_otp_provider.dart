@@ -31,13 +31,14 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
     final provider = ref.read(verifyOtpServiceProvider);
     try {
       state = VerifyOtpLoading();
-      provider.verifyOtp(
+      await provider.verifyOtp(
         authMethod: authMethod,
         otp: otp,
         email: email,
         phone: phone,
         phonePrefix: phonePrefix,
       );
+      state = VerifyOtpSuccess();
     } on Exception catch (e) {
       state = VerifyOtpFailuer(errMassege: e.toString());
     }

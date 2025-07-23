@@ -4,4 +4,5 @@ class Endpoints {
   static const kResendOtp = "/auth/resend-otp";
   static const kRegister = "/auth/register";
   static const kVerifyOtp = "/auth/verify-otp";
+  static const kCompleteProfile = "/auth/complete-profile";
 }

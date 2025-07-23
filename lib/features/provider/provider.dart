@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/env.dart';
+import 'package:invesier/features/service/complete_profile_service.dart';
 import 'package:invesier/features/service/create_post_services.dart';
 import 'package:invesier/features/service/register_service.dart';
 import 'package:invesier/features/service/resend_otp_service.dart';
@@ -32,4 +33,8 @@ final registerServiceProvider = Provider<RegisterService>((ref) {
 // RegisterService
 final verifyOtpServiceProvider = Provider<VerifyOtpService>((ref) {
   return VerifyOtpService(dio: ref.read(dioProvider));
+});
+// CompleteProfileService
+final completeProfileServiceProvider = Provider<CompleteProfileService>((ref) {
+  return CompleteProfileService(dio: ref.read(dioProvider));
 });
