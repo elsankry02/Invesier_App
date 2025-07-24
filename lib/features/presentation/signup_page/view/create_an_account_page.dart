@@ -14,7 +14,6 @@ import '../widget/circle_avatar_widget.dart';
 @RoutePage()
 class CreateAnAccountPage extends StatefulWidget {
   const CreateAnAccountPage({super.key});
-
   @override
   State<CreateAnAccountPage> createState() => _CreateAnAccountPageState();
 }
