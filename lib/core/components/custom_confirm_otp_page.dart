@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/enum_manger.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/provider/post/verify_otp_provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
@@ -96,8 +97,9 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
       if (state is VerifyOtpSuccess) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.success(message: "Success"),
+          CustomSnackBar.success(message: "Authentication successful"),
         );
+        context.router.push(BottomNavigationBarRoute());
       }
     });
     return Scaffold(
@@ -188,7 +190,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                 // Verify code
                 CustomPrimaryButton(
                   title: 'Verify code',
-                  // isLoading: state is VerifyOtpLoading,
+                  isLoading: state is VerifyOtpLoading,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,

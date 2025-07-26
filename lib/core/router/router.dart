@@ -1,8 +1,7 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/enum_manger.dart';
-import 'package:invesier/features/presentation/signup_page/view/signup_page.dart' hide ContactType;
+import 'package:invesier/features/presentation/signup_page/view/signup_page.dart';
 
 import '../../features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 import '../../features/presentation/home/drawer_page/view/drawer_page.dart';
