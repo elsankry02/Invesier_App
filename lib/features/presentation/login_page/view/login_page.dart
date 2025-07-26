@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -45,6 +43,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
     final notifier = ref.read(resendOtpProvider.notifier);
     final isPhone = contactType == ContactType.phone;
     await notifier.resendOtp(
+      phonePrefix: "+20",
       authMethod: contactType.name,
       email: isPhone ? null : emailController.text.trim(),
       phone: isPhone ? phoneController.text.trim() : null,
@@ -56,8 +55,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
     final state = ref.watch(resendOtpProvider);
     // final notifier = ref.read(resendOtpProvider.notifier);
     ref.listen(resendOtpProvider, (_, state) {
-      if (state is ResendOtpFailuer) {
-        log("error : ${state.errMassege}");
+      if (state is ResendOtpFailure) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),
@@ -67,7 +65,10 @@ class _SignupPageState extends ConsumerState<LoginPage> {
       if (state is ResendOtpSuccess) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.success(message: 'success'),
+          CustomSnackBar.success(
+            backgroundColor: ColorManger.kGray,
+            message: "OTP sent successfully. Please verify to continue.",
+          ),
         );
         context.router.push(
           CustomConfirmOtpRoute(

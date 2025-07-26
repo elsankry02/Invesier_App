@@ -59,7 +59,7 @@ class _PostPageState extends ConsumerState<PostPage> {
     log("State == $state");
     final notifier = ref.read(createPostProvider.notifier);
     ref.listen(createPostProvider, (_, state) {
-      if (state is CreatPostFailuer) {
+      if (state is CreatPostFailure) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),

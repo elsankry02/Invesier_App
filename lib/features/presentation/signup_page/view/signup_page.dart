@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -44,8 +42,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
   Future<void> register() async {
     final notifier = ref.read(registerNewUserProvider.notifier);
     final isEmail = contactType == ContactType.email;
-    log("sate == $contactType");
     await notifier.registerNewUser(
+      phonePrefix: "+20",
       authMethod: contactType.name,
       email: isEmail ? emailController.text.trim() : null,
       phone: isEmail ? null : phoneController.text.trim(),
@@ -57,7 +55,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     final state = ref.watch(registerNewUserProvider);
     // final notifier = ref.read(registerProvider.notifier);
     ref.listen(registerNewUserProvider, (_, state) {
-      if (state is RegisterNewUserFaliuer) {
+      if (state is RegisterNewUserFailure) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),
@@ -67,7 +65,10 @@ class _SignupPageState extends ConsumerState<SignupPage> {
       if (state is RegisterNewUserSuccess) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.success(message: "Success"),
+          CustomSnackBar.success(
+            backgroundColor: ColorManger.kBoulder,
+            message: "OTP sent successfully. Please verify to continue.",
+          ),
         );
         context.router.push(CreateAnAccountRoute());
       }

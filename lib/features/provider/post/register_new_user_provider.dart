@@ -9,10 +9,10 @@ class RegisterNewUserSuccess extends RegisterNewUserState {}
 
 class RegisterNewUserLoading extends RegisterNewUserState {}
 
-class RegisterNewUserFaliuer extends RegisterNewUserState {
+class RegisterNewUserFailure extends RegisterNewUserState {
   final String errMassege;
 
-  RegisterNewUserFaliuer({required this.errMassege});
+  RegisterNewUserFailure({required this.errMassege});
 }
 
 class RegisterNotifier extends Notifier<RegisterNewUserState> {
@@ -23,6 +23,7 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
 
   Future<void> registerNewUser({
     required String authMethod,
+    String? phonePrefix,
     String? email,
     String? phone,
   }) async {
@@ -31,12 +32,13 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
       state = RegisterNewUserLoading();
       await provider.registerNewUser(
         authMethod: authMethod,
+        phonePrefix: phonePrefix,
         phone: phone,
         email: email,
       );
       state = RegisterNewUserSuccess();
     } on Exception catch (e) {
-      state = RegisterNewUserFaliuer(errMassege: e.toString());
+      state = RegisterNewUserFailure(errMassege: e.toString());
     }
   }
 }

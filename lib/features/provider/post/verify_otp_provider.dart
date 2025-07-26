@@ -9,10 +9,10 @@ class VerifyOtpSuccess extends VerifyOtpState {}
 
 class VerifyOtpLoading extends VerifyOtpState {}
 
-class VerifyOtpFailuer extends VerifyOtpState {
+class VerifyOtpFailure extends VerifyOtpState {
   final String errMassege;
 
-  VerifyOtpFailuer({required this.errMassege});
+  VerifyOtpFailure({required this.errMassege});
 }
 
 class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
@@ -23,7 +23,7 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
 
   Future<void> verifyOtp({
     required String authMethod,
-    required String otp,
+    String? otp,
     String? email,
     String? phone,
     String? phonePrefix,
@@ -40,7 +40,7 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
       );
       state = VerifyOtpSuccess();
     } on Exception catch (e) {
-      state = VerifyOtpFailuer(errMassege: e.toString());
+      state = VerifyOtpFailure(errMassege: e.toString());
     }
   }
 }

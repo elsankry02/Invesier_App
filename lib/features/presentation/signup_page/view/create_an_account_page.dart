@@ -85,7 +85,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 SizedBox(height: context.height * 0.022),
                 // Text: Username
                 Text(
-                  'User Name',
+                  'Name',
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -93,12 +93,15 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 SizedBox(height: context.height * 0.004),
                 // Username FormField
                 CustomTextFormField(
-                  title: 'Username',
+                  title: 'name',
+                  hintStyle: context.kTextTheme.titleSmall!.copyWith(
+                    color: ColorManger.kGray,
+                  ),
                   controller: userNameController,
                 ),
                 SizedBox(height: 22),
                 Text(
-                  'Full Name',
+                  'User Name',
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -106,7 +109,10 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 SizedBox(height: 4),
                 // Fullname FormField
                 CustomTextFormField(
-                  title: 'Fullname',
+                  title: 'username',
+                  hintStyle: context.kTextTheme.titleSmall!.copyWith(
+                    color: ColorManger.kGray,
+                  ),
                   controller: fullNameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
@@ -114,7 +120,6 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                 // Next Button
                 CustomPrimaryButton(
                   title: 'Next',
-
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,

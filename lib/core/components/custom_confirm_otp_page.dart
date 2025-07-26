@@ -59,14 +59,19 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
   }
 
   void resendCode() {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('A new code has been sent')));
+    showTopSnackBar(
+      Overlay.of(context),
+      CustomSnackBar.success(
+        backgroundColor: ColorManger.kDarkenText,
+        message: "A new code has been sent",
+      ),
+    );
     startTimer();
   }
 
   @override
   void dispose() {
+    pinController.dispose();
     timer?.cancel();
     super.dispose();
   }
@@ -76,7 +81,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
     final isEmail = widget.contactType == ContactType.email;
     await notifier.verifyOtp(
       authMethod: widget.contactType.name,
-      otp: "",
+      otp: pinController.text,
       email: isEmail ? widget.emailController.text : null,
       phone: isEmail ? null : widget.phoneController.text,
     );
@@ -87,7 +92,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
     // final notifier = ref.read(verifyOtpProvider.notifier);
     final state = ref.watch(verifyOtpProvider);
     ref.listen(verifyOtpProvider, (_, state) {
-      if (state is VerifyOtpFailuer) {
+      if (state is VerifyOtpFailure) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),
@@ -150,7 +155,10 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                         ),
                       ),
                       TextSpan(
-                        text: widget.contactType.name,
+                        text:
+                            widget.contactType == ContactType.email
+                                ? widget.emailController.text
+                                : widget.phoneController.text,
                         style: context.kTextTheme.titleMedium!.copyWith(
                           color: ColorManger.kBoulder,
                           fontWeight: FontWeight.w900,
@@ -162,7 +170,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                 SizedBox(height: context.height * 0.040),
                 // Signup Pinput Widget
                 CustomPinPutOTPWidget(
-                  onChanged: (value) {},
+                  pinController: pinController,
                   validator: (value) {
                     return null;
                   },

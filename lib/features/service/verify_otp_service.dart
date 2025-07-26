@@ -6,16 +6,16 @@ class VerifyOtpService {
   VerifyOtpService({required this.dio});
   Future<void> verifyOtp({
     required String authMethod,
-    required String otp,
+    String? otp,
     String? email,
     String? phone,
     String? phonePrefix,
   }) async {
-    dio.post(
+    await dio.post(
       Endpoints.kVerifyOtp,
       data: {
         "auth_method": authMethod,
-        "otp": otp,
+        if (phonePrefix != null) "otp": otp,
         if (phonePrefix != null) "phone_prefix": phonePrefix,
         if (email != null) "email": email,
         if (phone != null) "phone": phone,

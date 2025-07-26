@@ -9,10 +9,10 @@ class CreatPostSuccess extends CreatPostState {}
 
 class CreatPostLoading extends CreatPostState {}
 
-class CreatPostFailuer extends CreatPostState {
+class CreatPostFailure extends CreatPostState {
   final String errMassege;
 
-  CreatPostFailuer({required this.errMassege});
+  CreatPostFailure({required this.errMassege});
 }
 
 class CreatePostNotifier extends Notifier<CreatPostState> {
@@ -28,7 +28,7 @@ class CreatePostNotifier extends Notifier<CreatPostState> {
       await provider.createPost(content: content);
       state = CreatPostSuccess();
     } on Exception catch (e) {
-      state = CreatPostFailuer(errMassege: e.toString());
+      state = CreatPostFailure(errMassege: e.toString());
     }
   }
 }

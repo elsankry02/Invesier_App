@@ -6,6 +6,7 @@ class CustomTextFormField extends StatelessWidget {
   final String title;
   final AutovalidateMode? autovalidateMode;
   final TextInputType? keyboardType;
+  final TextStyle? hintStyle;
   final TextEditingController controller;
   final Function(String value)? onChanged;
   final String? Function(String? value)? validator;
@@ -17,10 +18,10 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.onChanged,
     this.autovalidateMode,
+    this.hintStyle,
   });
   @override
   Widget build(BuildContext context) {
-    final kTextTheme = Theme.of(context).textTheme;
     return TextFormField(
       // autovalidateMode
       autovalidateMode: autovalidateMode,
@@ -36,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         //title
         hintText: title,
-        hintStyle: kTextTheme.titleSmall,
+        hintStyle: hintStyle,
         enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
         focusedBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
         focusedErrorBorder: outlineInputBorder(
