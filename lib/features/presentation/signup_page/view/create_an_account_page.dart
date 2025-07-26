@@ -129,9 +129,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                     color: ColorManger.kWhite,
                   ),
                   // Navigate
-                  onTap: () {
-                    context.router.push(CustomConfirmOtpRoute());
-                  },
+                  onTap: () {},
                 ),
               ],
             ),

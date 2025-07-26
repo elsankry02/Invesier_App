@@ -3,7 +3,8 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/provider/post/register_provider.dart';
+import 'package:invesier/core/constant/enum_manger.dart';
+import 'package:invesier/features/provider/post/register_new_user_provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -16,8 +17,6 @@ import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../widget/contact_email_widget.dart';
 import '../widget/contact_phone_widget.dart';
-
-enum ContactType { email, phone }
 
 @RoutePage()
 class SignupPage extends ConsumerStatefulWidget {
@@ -43,10 +42,10 @@ class _SignupPageState extends ConsumerState<SignupPage> {
   }
 
   Future<void> register() async {
-    final notifier = ref.read(registerProvider.notifier);
+    final notifier = ref.read(registerNewUserProvider.notifier);
     final isEmail = contactType == ContactType.email;
     log("sate == $contactType");
-    await notifier.register(
+    await notifier.registerNewUser(
       authMethod: contactType.name,
       email: isEmail ? emailController.text.trim() : null,
       phone: isEmail ? null : phoneController.text.trim(),
@@ -55,17 +54,17 @@ class _SignupPageState extends ConsumerState<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(registerProvider);
+    final state = ref.watch(registerNewUserProvider);
     // final notifier = ref.read(registerProvider.notifier);
-    ref.listen(registerProvider, (_, state) {
-      if (state is RegisterFaliuer) {
+    ref.listen(registerNewUserProvider, (_, state) {
+      if (state is RegisterNewUserFaliuer) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMassege),
         );
         return;
       }
-      if (state is RegisterSuccess) {
+      if (state is RegisterNewUserSuccess) {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.success(message: "Success"),
@@ -218,7 +217,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 // CustomPrimaryButton
                 CustomPrimaryButton(
                   title: "Create an account",
-                  isLoading: state is RegisterLoading,
+                  isLoading: state is RegisterNewUserLoading,
                   backGroundColor: ColorManger.kTurquoiseBlue,
                   gradient: LinearGradient(
                     colors: [

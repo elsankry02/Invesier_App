@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:invesier/core/constant/endpoints.dart';
 
-class RegisterService {
+class RegisterNewUserService {
   final Dio dio;
-  RegisterService({required this.dio});
-  Future<void> register({
+  RegisterNewUserService({required this.dio});
+  Future<void> registerNewUser({
     required String authMethod,
     String? phonePrefix,
     String? email,

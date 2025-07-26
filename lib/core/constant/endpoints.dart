@@ -5,4 +5,5 @@ class Endpoints {
   static const kRegister = "/auth/register";
   static const kVerifyOtp = "/auth/verify-otp";
   static const kCompleteProfile = "/auth/complete-profile";
+  static const kUserNameAvailable = "/auth/is-username-available";
 }

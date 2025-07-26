@@ -3,11 +3,14 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/enum_manger.dart';
+import 'package:invesier/features/provider/post/verify_otp_provider.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../constant/color_manger.dart';
 import '../extension/extension.dart';
-import '../router/router.dart';
 import 'custom_icon_button.dart';
 import 'custom_pinput_otp_widget.dart';
 import 'custom_primary_button.dart';
@@ -15,8 +18,14 @@ import 'custom_title_appbar.dart';
 
 @RoutePage()
 class CustomConfirmOtpPage extends ConsumerStatefulWidget {
-  const CustomConfirmOtpPage({super.key});
-
+  final TextEditingController phoneController, emailController;
+  final ContactType contactType;
+  const CustomConfirmOtpPage(
+    this.phoneController,
+    this.emailController,
+    this.contactType, {
+    super.key,
+  });
   @override
   ConsumerState<CustomConfirmOtpPage> createState() =>
       _CustomConfirmOtpPageState();
@@ -61,25 +70,36 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
     super.dispose();
   }
 
+  Future<void> verifyOtp() async {
+    final notifier = ref.read(verifyOtpProvider.notifier);
+    final isEmail = widget.contactType == ContactType.email;
+    await notifier.verifyOtp(
+      authMethod: widget.contactType.name,
+      otp: "",
+      email: isEmail ? widget.emailController.text : null,
+      phone: isEmail ? null : widget.phoneController.text,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    // final state = ref.watch(verifyOtpProvider);
     // final notifier = ref.read(verifyOtpProvider.notifier);
-    // ref.listen(verifyOtpProvider, (_, state) {
-    //   if (state is VerifyOtpFailuer) {
-    //     showTopSnackBar(
-    //       Overlay.of(context),
-    //       CustomSnackBar.error(message: state.errMassege),
-    //     );
-    //     return;
-    //   }
-    //   if (state is VerifyOtpSuccess) {
-    //     showTopSnackBar(
-    //       Overlay.of(context),
-    //       CustomSnackBar.success(message: "Success"),
-    //     );
-    //   }
-    // });
+    final state = ref.watch(verifyOtpProvider);
+    ref.listen(verifyOtpProvider, (_, state) {
+      if (state is VerifyOtpFailuer) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(message: state.errMassege),
+        );
+        return;
+      }
+      if (state is VerifyOtpSuccess) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.success(message: "Success"),
+        );
+      }
+    });
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -128,7 +148,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                         ),
                       ),
                       TextSpan(
-                        text: "",
+                        text: widget.contactType.name,
                         style: context.kTextTheme.titleMedium!.copyWith(
                           color: ColorManger.kBoulder,
                           fontWeight: FontWeight.w900,
@@ -182,9 +202,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                     fontWeight: FontWeight.w600,
                     color: ColorManger.kWhite,
                   ),
-                  onTap: () {
-                    context.router.replace(BottomNavigationBarRoute());
-                  },
+                  onTap: verifyOtp,
                 ),
                 SizedBox(height: context.height * 0.015),
                 // SignUp Rich Text
