@@ -34,15 +34,12 @@ class _SplashPageState extends ConsumerState<SplashPage> {
       final isRegister =
           ref.read(prefsProvider).getBool(CustomStrings.skiplogin) ?? false;
 
-      if (isSaved) {
+      if (isRegister) {
+        context.router.replace(BottomNavigationBarRoute());
+      } else if (isSaved) {
         context.router.replace(WelcomeRoute());
       } else {
         context.router.replace(OnboardingRoute());
-      }
-      if (isRegister) {
-        context.router.replace(BottomNavigationBarRoute());
-      } else {
-        context.router.replace(WelcomeRoute());
       }
     });
   }

@@ -1,15 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/constant/strings.dart';
-import '../../../provider/provider.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
+import '../../../../core/constant/strings.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../model/onboarding_model.dart';
+import '../../../provider/provider.dart';
 import '../widget/generator_widget.dart';
 import '../widget/product_display_widget.dart';
 import '../widget/skip_widget.dart';
@@ -94,10 +94,10 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   ),
                   onTap: () async {
                     if (currentIndex == items(context).length - 1) {
-                      context.router.push(WelcomeRoute());
                       await ref
                           .read(prefsProvider)
                           .setBool(CustomStrings.skipOnboarding, true);
+                      context.router.push(WelcomeRoute());
                     }
                     pageController.animateToPage(
                       ++currentIndex,
