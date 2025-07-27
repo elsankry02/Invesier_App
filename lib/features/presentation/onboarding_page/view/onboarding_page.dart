@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/strings.dart';
+import 'package:invesier/features/provider/provider.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/color_manger.dart';
@@ -12,14 +15,14 @@ import '../widget/product_display_widget.dart';
 import '../widget/skip_widget.dart';
 
 @RoutePage()
-class OnboardingPage extends StatefulWidget {
+class OnboardingPage extends ConsumerStatefulWidget {
   const OnboardingPage({super.key});
 
   @override
-  State<OnboardingPage> createState() => _OnboardingPageState();
+  ConsumerState<OnboardingPage> createState() => _OnboardingPageState();
 }
 
-class _OnboardingPageState extends State<OnboardingPage> {
+class _OnboardingPageState extends ConsumerState<OnboardingPage> {
   final pageController = PageController(initialPage: 0);
   int currentIndex = 0;
 
@@ -89,9 +92,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     fontWeight: FontWeight.w600,
                     color: ColorManger.kWhite,
                   ),
-                  onTap: () {
+                  onTap: () async {
                     if (currentIndex == items(context).length - 1) {
                       context.router.push(WelcomeRoute());
+                      await ref
+                          .read(prefsProvider)
+                          .setBool(CustomStrings.skipOnboarding, true);
                     }
                     pageController.animateToPage(
                       ++currentIndex,

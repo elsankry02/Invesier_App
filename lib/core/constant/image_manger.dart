@@ -12,4 +12,5 @@ class ImageManger {
   static const kGirlFour = 'assets/image/girl_four.png';
   static const kGirlThree = 'assets/image/girl_three.png';
   static const kOnBoarding = 'assets/image/onboarding.png';
+  static const kLogo = 'assets/image/invesier.png';
 }

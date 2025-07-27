@@ -7,6 +7,7 @@ import 'package:invesier/features/service/create_post_services.dart';
 import 'package:invesier/features/service/register_new_user_service.dart';
 import 'package:invesier/features/service/resend_otp_service.dart';
 import 'package:invesier/features/service/verify_otp_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   return Dio(
@@ -44,3 +45,6 @@ final checkUserNameAvailabilityServiceProvider =
     Provider<CheckUserNameAvailabilityService>((ref) {
       return CheckUserNameAvailabilityService(dio: ref.read(dioProvider));
     });
+final prefsProvider = Provider<SharedPreferences>((ref) {
+  throw UnimplementedError();
+});

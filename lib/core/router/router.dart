@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/constant/enum_manger.dart';
 import 'package:invesier/features/presentation/signup_page/view/signup_page.dart';
+import 'package:invesier/features/presentation/splash_page/view/splash_page.dart';
 
 import '../../features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 import '../../features/presentation/home/drawer_page/view/drawer_page.dart';
@@ -26,7 +27,8 @@ final router = AppRouter();
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: OnboardingRoute.page, initial: true),
+    AutoRoute(page: SplashRoute.page, initial: true),
+    AutoRoute(page: OnboardingRoute.page),
     AutoRoute(page: SignupRoute.page),
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: WelcomeRoute.page),
