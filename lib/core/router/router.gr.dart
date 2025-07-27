@@ -78,18 +78,77 @@ class CommentRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [CreateAnAccountPage]
-class CreateAnAccountRoute extends PageRouteInfo<void> {
-  const CreateAnAccountRoute({List<PageRouteInfo>? children})
-    : super(CreateAnAccountRoute.name, initialChildren: children);
+class CreateAnAccountRoute extends PageRouteInfo<CreateAnAccountRouteArgs> {
+  CreateAnAccountRoute({
+    required ContactType contactType,
+    required TextEditingController emailController,
+    required TextEditingController phoneController,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         CreateAnAccountRoute.name,
+         args: CreateAnAccountRouteArgs(
+           contactType: contactType,
+           emailController: emailController,
+           phoneController: phoneController,
+           key: key,
+         ),
+         initialChildren: children,
+       );
 
   static const String name = 'CreateAnAccountRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const CreateAnAccountPage();
+      final args = data.argsAs<CreateAnAccountRouteArgs>();
+      return CreateAnAccountPage(
+        args.contactType,
+        args.emailController,
+        args.phoneController,
+        key: args.key,
+      );
     },
   );
+}
+
+class CreateAnAccountRouteArgs {
+  const CreateAnAccountRouteArgs({
+    required this.contactType,
+    required this.emailController,
+    required this.phoneController,
+    this.key,
+  });
+
+  final ContactType contactType;
+
+  final TextEditingController emailController;
+
+  final TextEditingController phoneController;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CreateAnAccountRouteArgs{contactType: $contactType, emailController: $emailController, phoneController: $phoneController, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! CreateAnAccountRouteArgs) return false;
+    return contactType == other.contactType &&
+        emailController == other.emailController &&
+        phoneController == other.phoneController &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode =>
+      contactType.hashCode ^
+      emailController.hashCode ^
+      phoneController.hashCode ^
+      key.hashCode;
 }
 
 /// generated route for

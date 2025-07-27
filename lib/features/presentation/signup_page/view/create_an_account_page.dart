@@ -1,5 +1,13 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:invesier/core/constant/enum_manger.dart';
+import 'package:invesier/features/provider/post/complete_profile_provider.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -12,25 +20,88 @@ import '../../../../core/router/router.dart';
 import '../widget/circle_avatar_widget.dart';
 
 @RoutePage()
-class CreateAnAccountPage extends StatefulWidget {
-  const CreateAnAccountPage({super.key});
+class CreateAnAccountPage extends ConsumerStatefulWidget {
+  final ContactType contactType;
+  final TextEditingController phoneController, emailController;
+  const CreateAnAccountPage(
+    this.contactType,
+    this.emailController,
+    this.phoneController, {
+    super.key,
+  });
   @override
-  State<CreateAnAccountPage> createState() => _CreateAnAccountPageState();
+  ConsumerState<CreateAnAccountPage> createState() =>
+      _CreateAnAccountPageState();
 }
 
-class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
+class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
   final formKey = GlobalKey<FormState>();
-  final userNameController = TextEditingController();
-  final fullNameController = TextEditingController();
+  File? avatarFile;
+  final nameController = TextEditingController();
+  final usernameController = TextEditingController();
   @override
   void dispose() {
-    userNameController.dispose();
-    fullNameController.dispose();
+    nameController.dispose();
+    usernameController.dispose();
     super.dispose();
+  }
+
+  // imagePickerGallery
+  imageGallery() async {
+    final imageGallery = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+    if (imageGallery == null) return;
+    setState(() {
+      avatarFile = File(imageGallery.path); // ✅ تخزين الصورة هنا
+    });
+  }
+
+  Future<void> completeProfile() async {
+    if (avatarFile == null) {
+      showTopSnackBar(
+        Overlay.of(context),
+        CustomSnackBar.error(message: "Please choose an avatar image"),
+      );
+      return;
+    }
+    final notifier = ref.read(completeProfileProvider.notifier);
+    await notifier.completeProfile(
+      name: nameController.text.trim(),
+      userName: usernameController.text.trim(),
+      avatar: avatarFile!.path,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    final state = ref.watch(completeProfileProvider);
+    // final notifier = ref.read(completeProfileProvider.notifier);
+    ref.listen(completeProfileProvider, (_, state) {
+      if (state is CompleteProfileFailure) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(message: state.errMassege),
+        );
+        return;
+      }
+      if (state is CompleteProfileSuccess) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.success(
+            backgroundColor: ColorManger.kGray,
+            message: "OTP sent successfully. Please verify to continue.",
+          ),
+        );
+        context.router.push(
+          CustomConfirmOtpRoute(
+            contactType: widget.contactType,
+            emailController: widget.emailController,
+            phoneController: widget.phoneController,
+          ),
+        );
+      }
+    });
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -81,7 +152,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
 
                 SizedBox(height: context.height * 0.016),
                 // File
-                CircleAvatarWidget(),
+                CircleAvatarWidget(file: avatarFile, onPressed: imageGallery),
                 SizedBox(height: context.height * 0.022),
                 // Text: Username
                 Text(
@@ -97,7 +168,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: ColorManger.kGray,
                   ),
-                  controller: userNameController,
+                  controller: nameController,
                 ),
                 SizedBox(height: 22),
                 Text(
@@ -113,13 +184,14 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: ColorManger.kGray,
                   ),
-                  controller: fullNameController,
+                  controller: usernameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
                 SizedBox(height: context.height * 0.090),
                 // Next Button
                 CustomPrimaryButton(
                   title: 'Next',
+                  isLoading: state is CompleteProfileLoading,
                   gradient: LinearGradient(
                     colors: [
                       ColorManger.kEucalyptus,
@@ -134,7 +206,7 @@ class _CreateAnAccountPageState extends State<CreateAnAccountPage> {
                     color: ColorManger.kWhite,
                   ),
                   // Navigate
-                  onTap: () {},
+                  onTap: completeProfile,
                 ),
               ],
             ),

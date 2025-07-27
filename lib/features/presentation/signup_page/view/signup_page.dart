@@ -19,7 +19,6 @@ import '../widget/contact_phone_widget.dart';
 @RoutePage()
 class SignupPage extends ConsumerStatefulWidget {
   const SignupPage({super.key});
-
   @override
   ConsumerState<SignupPage> createState() => _SignupPageState();
 }
@@ -70,7 +69,13 @@ class _SignupPageState extends ConsumerState<SignupPage> {
             message: "OTP sent successfully. Please verify to continue.",
           ),
         );
-        context.router.push(CreateAnAccountRoute());
+        context.router.push(
+          CreateAnAccountRoute(
+            contactType: contactType,
+            emailController: emailController,
+            phoneController: phoneController,
+          ),
+        );
       }
     });
     return Scaffold(

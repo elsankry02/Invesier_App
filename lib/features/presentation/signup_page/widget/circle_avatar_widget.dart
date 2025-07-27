@@ -1,30 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
 
-class CircleAvatarWidget extends StatefulWidget {
-  const CircleAvatarWidget({super.key});
-
-  @override
-  State<CircleAvatarWidget> createState() => _CircleAvatarWidgetState();
-}
-
-class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
-  File? file;
-  // imagePickerGallery
-  imageGallery() async {
-    final imageGallery = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
-    );
-    if (imageGallery == null) return;
-    setState(() {
-      file = File(imageGallery.path);
-    });
-  }
+class CircleAvatarWidget extends StatelessWidget {
+  final File? file;
+  final void Function()? onPressed;
+  const CircleAvatarWidget({super.key, this.file, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +38,7 @@ class _CircleAvatarWidgetState extends State<CircleAvatarWidget> {
             ),
             // IconButton (imageGallery)
             child: IconButton(
-              onPressed: imageGallery,
+              onPressed: onPressed,
               icon: Icon(color: ColorManger.kWhite, Icons.photo_camera),
             ),
           ),
