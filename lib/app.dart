@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/endpoints.dart';
+import 'core/constant/endpoints.dart';
 
 import 'core/constant/color_manger.dart';
 import 'core/router/router.dart';

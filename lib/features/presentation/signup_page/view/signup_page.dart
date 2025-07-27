@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/enum_manger.dart';
-import 'package:invesier/features/provider/post/register_new_user_provider.dart';
+import '../../../../core/constant/enum_manger.dart';
+import '../../../provider/post/register_new_user_provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 

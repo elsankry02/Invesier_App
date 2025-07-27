@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/strings.dart';
-import 'package:invesier/features/provider/provider.dart';
+import '../../../../core/constant/strings.dart';
+import '../../../provider/provider.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/color_manger.dart';

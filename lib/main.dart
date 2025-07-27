@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/boot.dart';
+import 'boot.dart';
 
 import 'app.dart';
 

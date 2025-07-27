@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/home/drawer_page/view/drawer_page.dart';
+import '../../home/drawer_page/view/drawer_page.dart';
 
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/svg_manger.dart';

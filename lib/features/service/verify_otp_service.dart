@@ -1,12 +1,13 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/core/constant/endpoints.dart';
+
+import '../../core/constant/endpoints.dart';
 
 class VerifyOtpService {
   final Dio dio;
   VerifyOtpService({required this.dio});
   Future<void> verifyOtp({
     required String authMethod,
-    String? otp,
+    required String otp,
     String? email,
     String? phone,
     String? phonePrefix,
@@ -15,7 +16,7 @@ class VerifyOtpService {
       Endpoints.kVerifyOtp,
       data: {
         "auth_method": authMethod,
-        if (phonePrefix != null) "otp": otp,
+        "otp": otp,
         if (phonePrefix != null) "phone_prefix": phonePrefix,
         if (email != null) "email": email,
         if (phone != null) "phone": phone,

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
+import '../../../bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 
 import '../../../../../core/constant/color_manger.dart';
 import '../../../../../core/constant/image_manger.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/provider/provider.dart';
+
+import '../provider.dart';
 
 class VerifyOtpState {}
 
@@ -23,7 +24,7 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
 
   Future<void> verifyOtp({
     required String authMethod,
-    String? otp,
+    required String otp,
     String? email,
     String? phone,
     String? phonePrefix,

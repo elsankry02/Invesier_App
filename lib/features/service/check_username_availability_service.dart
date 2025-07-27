@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/core/constant/endpoints.dart';
+import '../../core/constant/endpoints.dart';
 
 class CheckUserNameAvailabilityService {
   final Dio dio;

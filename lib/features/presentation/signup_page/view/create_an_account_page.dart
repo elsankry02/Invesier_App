@@ -1,11 +1,10 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:invesier/core/constant/enum_manger.dart';
-import 'package:invesier/features/provider/post/complete_profile_provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -15,8 +14,10 @@ import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_text_form_field.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/enum_manger.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
+import '../../../provider/post/complete_profile_provider.dart';
 import '../widget/circle_avatar_widget.dart';
 
 @RoutePage()
@@ -49,11 +50,11 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
   // imagePickerGallery
   imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
+      source: ImageSource.camera,
     );
     if (imageGallery == null) return;
     setState(() {
-      avatarFile = File(imageGallery.path); // ✅ تخزين الصورة هنا
+      avatarFile = File(imageGallery.path);
     });
   }
 
@@ -66,6 +67,8 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
       return;
     }
     final notifier = ref.read(completeProfileProvider.notifier);
+    log(nameController.text);
+    log(usernameController.text);
     await notifier.completeProfile(
       name: nameController.text.trim(),
       userName: usernameController.text.trim(),
