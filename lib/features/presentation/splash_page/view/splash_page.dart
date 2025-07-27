@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../core/constant/color_manger.dart';
 import '../../../../core/constant/image_manger.dart';
 import '../../../../core/constant/strings.dart';
@@ -25,13 +26,23 @@ class _SplashPageState extends ConsumerState<SplashPage> {
 
   splashFunc() {
     Future.delayed(Duration(seconds: 3), () {
+      // isSaved
       final isSaved =
           ref.read(prefsProvider).getBool(CustomStrings.skipOnboarding) ??
           false;
+      // isRegister
+      final isRegister =
+          ref.read(prefsProvider).getBool(CustomStrings.skiplogin) ?? false;
+
       if (isSaved) {
         context.router.replace(WelcomeRoute());
       } else {
         context.router.replace(OnboardingRoute());
+      }
+      if (isRegister) {
+        context.router.replace(BottomNavigationBarRoute());
+      } else {
+        context.router.replace(WelcomeRoute());
       }
     });
   }

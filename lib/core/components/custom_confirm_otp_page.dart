@@ -4,6 +4,8 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/strings.dart';
+import 'package:invesier/features/provider/provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -92,7 +94,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
   Widget build(BuildContext context) {
     // final notifier = ref.read(verifyOtpProvider.notifier);
     final state = ref.watch(verifyOtpProvider);
-    ref.listen(verifyOtpProvider, (_, state) {
+    ref.listen(verifyOtpProvider, (_, state) async {
       if (state is VerifyOtpFailure) {
         showTopSnackBar(
           Overlay.of(context),
@@ -106,7 +108,8 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
           Overlay.of(context),
           CustomSnackBar.success(message: "Authentication successful"),
         );
-        context.router.push(BottomNavigationBarRoute());
+        await ref.read(prefsProvider).setBool(CustomStrings.skiplogin, true);
+        context.router.replace(BottomNavigationBarRoute());
       }
     });
     return Scaffold(
