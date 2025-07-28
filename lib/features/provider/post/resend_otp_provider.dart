@@ -45,7 +45,5 @@ class ResendOtpNotifier extends Notifier<ResendOtpState> {
 }
 
 final resendOtpProvider = NotifierProvider<ResendOtpNotifier, ResendOtpState>(
-  () {
-    return ResendOtpNotifier();
-  },
+  ResendOtpNotifier.new,
 );

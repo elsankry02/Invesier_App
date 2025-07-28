@@ -35,7 +35,5 @@ class CreatePostNotifier extends Notifier<CreatPostState> {
 }
 
 final createPostProvider = NotifierProvider<CreatePostNotifier, CreatPostState>(
-  () {
-    return CreatePostNotifier();
-  },
+  CreatePostNotifier.new,
 );

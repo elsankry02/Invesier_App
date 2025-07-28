@@ -6,4 +6,5 @@ class Endpoints {
   static const kCompleteProfile = "/auth/complete-profile";
   static const kUserNameAvailable = "/auth/is-username-available";
   static const kFcmRegister = "/fcm/register";
+  static const kUnregister = "/fcm/unregister";
 }

@@ -40,7 +40,7 @@ class StoreTheFcmTokenForTheAuthenticatedUserNotifier
         deviceType: deviceType,
       );
       state = StoreTheFcmTokenForTheAuthenticatedUserSuccess();
-    } catch (e) {
+    } on Exception catch (e) {
       state = StoreTheFcmTokenForTheAuthenticatedUserFailure(
         errMessage: e.toString(),
       );

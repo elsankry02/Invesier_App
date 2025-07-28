@@ -1,12 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/service/remove_an_fcm_token_from_the_database_service.dart';
 import 'package:invesier/features/service/store_the_fcm_token_for_the_authenticated_user_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../env.dart';
 import '../service/check_username_availability_service.dart';
 import '../service/complete_profile_service.dart';
-import '../service/create_post_services.dart';
+import '../service/create_post_service.dart';
 import '../service/register_new_user_service.dart';
 import '../service/resend_otp_service.dart';
 import '../service/verify_otp_service.dart';
@@ -23,8 +24,8 @@ final dioProvider = Provider<Dio>((ref) {
   );
 });
 // Create Post Services
-final postServiceProvider = Provider<CreatePostServices>((ref) {
-  return CreatePostServices(dio: ref.read(dioProvider));
+final postServiceProvider = Provider<CreatePostService>((ref) {
+  return CreatePostService(dio: ref.read(dioProvider));
 });
 // Resend Otp Services
 final resendOtpServiceProvider = Provider<ResendOtpService>((ref) {
@@ -53,6 +54,11 @@ final storeTheFcmTokenForTheAuthenticatedUserServiceProvider =
       return StoreTheFcmTokenForTheAuthenticatedUserService(
         dio: ref.read(dioProvider),
       );
+    });
+// Remove An Fcm Token From The Database Service
+final removeAnFcmTokenFromTheDatabaseServiceProvider =
+    Provider<RemoveAnFcmTokenFromTheDatabaseService>((ref) {
+      return RemoveAnFcmTokenFromTheDatabaseService(dio: ref.read(dioProvider));
     });
 // prefs Provider
 final prefsProvider = Provider<SharedPreferences>((ref) {
