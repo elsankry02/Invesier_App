@@ -57,7 +57,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
       if (state is RegisterNewUserFailure) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.error(message: state.errMassege),
+          CustomSnackBar.error(message: state.errMessage),
         );
         return;
       }

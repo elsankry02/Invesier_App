@@ -11,9 +11,9 @@ class RegisterNewUserSuccess extends RegisterNewUserState {}
 class RegisterNewUserLoading extends RegisterNewUserState {}
 
 class RegisterNewUserFailure extends RegisterNewUserState {
-  final String errMassege;
+  final String errMessage;
 
-  RegisterNewUserFailure({required this.errMassege});
+  RegisterNewUserFailure({required this.errMessage});
 }
 
 class RegisterNotifier extends Notifier<RegisterNewUserState> {
@@ -39,7 +39,7 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
       );
       state = RegisterNewUserSuccess();
     } on Exception catch (e) {
-      state = RegisterNewUserFailure(errMassege: e.toString());
+      state = RegisterNewUserFailure(errMessage: e.toString());
     }
   }
 }

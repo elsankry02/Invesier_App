@@ -11,9 +11,9 @@ class CompleteProfileSuccess extends CompleteProfileState {}
 class CompleteProfileLoading extends CompleteProfileState {}
 
 class CompleteProfileFailure extends CompleteProfileState {
-  final String errMassege;
+  final String errMessage;
 
-  CompleteProfileFailure({required this.errMassege});
+  CompleteProfileFailure({required this.errMessage});
 }
 
 class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
@@ -39,7 +39,7 @@ class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
       );
       state = CompleteProfileSuccess();
     } on Exception catch (e) {
-      state = CompleteProfileFailure(errMassege: e.toString());
+      state = CompleteProfileFailure(errMessage: e.toString());
     }
   }
 }

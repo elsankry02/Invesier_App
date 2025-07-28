@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/service/store_the_fcm_token_for_the_authenticated_user_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../env.dart';
@@ -46,6 +47,14 @@ final checkUserNameAvailabilityServiceProvider =
     Provider<CheckUserNameAvailabilityService>((ref) {
       return CheckUserNameAvailabilityService(dio: ref.read(dioProvider));
     });
+// store The Fcm Token For The Authenticated User Service Provider
+final storeTheFcmTokenForTheAuthenticatedUserServiceProvider =
+    Provider<StoreTheFcmTokenForTheAuthenticatedUserService>((ref) {
+      return StoreTheFcmTokenForTheAuthenticatedUserService(
+        dio: ref.read(dioProvider),
+      );
+    });
+// prefs Provider
 final prefsProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError();
 });

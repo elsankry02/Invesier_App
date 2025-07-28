@@ -11,9 +11,9 @@ class CheckUserNameAvailabilityLoading extends CheckUserNameAvailabilityState {}
 class CheckUserNameAvailabilitySuccess extends CheckUserNameAvailabilityState {}
 
 class CheckUserNameAvailabilityFailure extends CheckUserNameAvailabilityState {
-  final String errMassege;
+  final String errMessage;
 
-  CheckUserNameAvailabilityFailure({required this.errMassege});
+  CheckUserNameAvailabilityFailure({required this.errMessage});
 }
 
 class CheckUserNameAvailabilityNotifier
@@ -30,7 +30,7 @@ class CheckUserNameAvailabilityNotifier
       await provider.checkUsernameAvailability(username: username);
       CheckUserNameAvailabilitySuccess();
     } on Exception catch (e) {
-      CheckUserNameAvailabilityFailure(errMassege: e.toString());
+      CheckUserNameAvailabilityFailure(errMessage: e.toString());
     }
   }
 }

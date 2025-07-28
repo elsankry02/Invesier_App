@@ -9,9 +9,9 @@ class ResendOtpInitial extends ResendOtpState {}
 class ResendOtpSuccess extends ResendOtpState {}
 
 class ResendOtpFailure extends ResendOtpState {
-  final String errMassege;
+  final String errMessage;
 
-  ResendOtpFailure({required this.errMassege});
+  ResendOtpFailure({required this.errMessage});
 }
 
 class ResendOtpLoading extends ResendOtpState {}
@@ -39,7 +39,7 @@ class ResendOtpNotifier extends Notifier<ResendOtpState> {
       );
       state = ResendOtpSuccess();
     } on Exception catch (e) {
-      state = ResendOtpFailure(errMassege: e.toString());
+      state = ResendOtpFailure(errMessage: e.toString());
     }
   }
 }

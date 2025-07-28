@@ -11,9 +11,9 @@ class VerifyOtpSuccess extends VerifyOtpState {}
 class VerifyOtpLoading extends VerifyOtpState {}
 
 class VerifyOtpFailure extends VerifyOtpState {
-  final String errMassege;
+  final String errMessage;
 
-  VerifyOtpFailure({required this.errMassege});
+  VerifyOtpFailure({required this.errMessage});
 }
 
 class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
@@ -41,7 +41,7 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
       );
       state = VerifyOtpSuccess();
     } on Exception catch (e) {
-      state = VerifyOtpFailure(errMassege: e.toString());
+      state = VerifyOtpFailure(errMessage: e.toString());
     }
   }
 }

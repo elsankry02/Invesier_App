@@ -96,9 +96,9 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
       if (state is VerifyOtpFailure) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.error(message: state.errMassege),
+          CustomSnackBar.error(message: state.errMessage),
         );
-        log(state.errMassege);
+        log(state.errMessage);
         return;
       }
       if (state is VerifyOtpSuccess) {

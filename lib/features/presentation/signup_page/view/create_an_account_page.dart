@@ -84,7 +84,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
       if (state is CompleteProfileFailure) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.error(message: state.errMassege),
+          CustomSnackBar.error(message: state.errMessage),
         );
         return;
       }

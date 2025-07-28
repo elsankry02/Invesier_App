@@ -62,7 +62,7 @@ class _PostPageState extends ConsumerState<PostPage> {
       if (state is CreatPostFailure) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.error(message: state.errMassege),
+          CustomSnackBar.error(message: state.errMessage),
         );
       }
     });
