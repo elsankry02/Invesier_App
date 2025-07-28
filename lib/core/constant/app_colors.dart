@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ColorManger {
-  static const k1 = Color(0xff222B25);
-  static const k2 = Color(0xff141916);
+class AppColors {
+  static const kOne = Color(0xff222B25);
+  static const kTwo = Color(0xff141916);
   static const kRed = Color(0xffDC4453);
   static const kGray = Color(0xff818181);
   static const kWhite = Color(0xffFFFFFF);

@@ -1,4 +1,4 @@
-abstract class LottieManger {
+abstract class AppLotties {
   static const kNoData = 'assets/lottie/no_data.json';
   static const kComingSoon = 'assets/lottie/coming_soon.json';
   static const kOnboardingOne = 'assets/lottie/onboarding_one.json';

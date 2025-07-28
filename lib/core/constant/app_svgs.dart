@@ -1,4 +1,4 @@
-class SvgManger {
+class AppSvgs {
   static const kInvinserLogo = 'assets/svg/invinser_logo.svg';
   static const kblockVictor = 'assets/svg/block_victor.svg';
   static const kChallenges = 'assets/svg/challenges.svg';
