@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 
 class DividerWidget extends StatelessWidget {
   final double height, width;
@@ -19,7 +19,7 @@ class DividerWidget extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(color: ColorManger.kWhite),
+        decoration: BoxDecoration(color: AppColors.kWhite),
       ),
     );
   }

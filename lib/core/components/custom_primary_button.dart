@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constant/color_manger.dart';
+import '../constant/app_colors.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String title;
@@ -55,7 +55,7 @@ class CustomPrimaryButton extends StatelessWidget {
                       height: 20,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
-                        color: ColorManger.kWhite,
+                        color: AppColors.kWhite,
                       ),
                     ),
                   )

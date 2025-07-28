@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_svgs.dart';
 
 class HomeFollowTextFormFieldWidget extends StatelessWidget {
   final TextEditingController? searchController;
@@ -10,21 +10,19 @@ class HomeFollowTextFormFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: ColorManger.kDarkenText,
+      cursorColor: AppColors.kDarkenText,
       controller: searchController,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.zero,
         // prefixIcon
-        prefixIcon: UnconstrainedBox(
-          child: SvgPicture.asset(SvgManger.kSearch),
-        ),
+        prefixIcon: UnconstrainedBox(child: SvgPicture.asset(AppSvgs.kSearch)),
         // Search
         hintText: 'Search',
-        hintStyle: TextStyle(fontSize: 17, color: ColorManger.kDarkenText),
+        hintStyle: TextStyle(fontSize: 17, color: AppColors.kDarkenText),
         filled: true,
-        fillColor: ColorManger.kHeavyMetal,
-        enabledBorder: outlineInputBorder(borderColor: ColorManger.kHeavyMetal),
-        focusedBorder: outlineInputBorder(borderColor: ColorManger.kHeavyMetal),
+        fillColor: AppColors.kHeavyMetal,
+        enabledBorder: outlineInputBorder(borderColor: AppColors.kHeavyMetal),
+        focusedBorder: outlineInputBorder(borderColor: AppColors.kHeavyMetal),
       ),
     );
   }

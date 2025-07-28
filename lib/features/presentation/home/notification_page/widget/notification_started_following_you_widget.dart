@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 
 class NotificationStartedFollowingYouWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
-        color: ColorManger.k1,
+        color: AppColors.kOne,
         borderRadius: BorderRadiusDirectional.circular(13),
       ),
       child: ListTile(
@@ -21,7 +21,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
         // image
         leading: ClipOval(
           child: Image.asset(
-            ImageManger.kBoyThree,
+            AppImages.kBoyThree,
             height: 45,
             width: 45,
             fit: BoxFit.cover,
@@ -46,7 +46,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
                   '@charlie_w',
                   style: context.kTextTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w400,
-                    color: ColorManger.kDarkenText,
+                    color: AppColors.kDarkenText,
                   ),
                 ),
               ],
@@ -55,8 +55,8 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
             CustomPrimaryButton(
               title: 'Chase',
 
-              backGroundColor: ColorManger.kTurquoiseBlue,
-              borderColor: ColorManger.kTurquoiseBlue,
+              backGroundColor: AppColors.kTurquoiseBlue,
+              borderColor: AppColors.kTurquoiseBlue,
               radius: 31,
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 20,
@@ -64,7 +64,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
               ),
               style: context.kTextTheme.labelMedium!.copyWith(
                 fontWeight: FontWeight.w500,
-                color: ColorManger.kWhite,
+                color: AppColors.kWhite,
               ),
             ),
           ],
@@ -84,7 +84,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
                 text: '2 hours ago',
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w400,
-                  color: ColorManger.kDarkenText,
+                  color: AppColors.kDarkenText,
                 ),
               ),
             ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/app_colors.dart';
 
 class ActionButtonLocationWidget extends StatelessWidget {
   final Function()? onPressed;
@@ -9,7 +9,7 @@ class ActionButtonLocationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorManger.kOceanGreen,
+        color: AppColors.kOceanGreen,
         borderRadius: BorderRadius.circular(30),
       ),
       child: IconButton(onPressed: onPressed, icon: Icon(Icons.add, size: 35)),

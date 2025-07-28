@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/image_manger.dart';
-import '../../../../core/constant/strings.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_images.dart';
+import '../../../../core/constant/app_strings.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../model/onboarding_model.dart';
@@ -40,7 +40,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
           // BackGroundImage
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(ImageManger.kOnBoarding),
+            image: AssetImage(AppImages.kOnBoarding),
           ),
         ),
         child: SafeArea(
@@ -80,23 +80,20 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                 CustomPrimaryButton(
                   title: 'Next',
                   gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
+                    colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: ColorManger.kTurquoiseBlue,
+                  borderColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   radius: 60,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kWhite,
+                    color: AppColors.kWhite,
                   ),
                   onTap: () async {
                     if (currentIndex == items(context).length - 1) {
                       await ref
                           .read(prefsProvider)
-                          .setBool(CustomStrings.skipOnboarding, true);
+                          .setBool(AppStrings.skipOnboarding, true);
                       context.router.push(WelcomeRoute());
                     }
                     pageController.animateToPage(

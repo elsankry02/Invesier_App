@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
-import '../constant/color_manger.dart';
+import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 
-class CustomPinPutOTPWidget extends StatefulWidget {
+class CustomPinPutWidget extends StatefulWidget {
   final String? Function(String? value)? validator;
   final Function(String value)? onChanged;
-  final TextEditingController? pinController;
-  const CustomPinPutOTPWidget({
+  final TextEditingController? pinPutController;
+  const CustomPinPutWidget({
     super.key,
     this.validator,
     this.onChanged,
-    this.pinController,
+    this.pinPutController,
   });
 
   @override
-  State<CustomPinPutOTPWidget> createState() => _CustomPinPutOTPWidgetState();
+  State<CustomPinPutWidget> createState() => _CustomPinPutWidgetState();
 }
 
-class _CustomPinPutOTPWidgetState extends State<CustomPinPutOTPWidget> {
+class _CustomPinPutWidgetState extends State<CustomPinPutWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,19 +37,19 @@ class _CustomPinPutOTPWidgetState extends State<CustomPinPutOTPWidget> {
           child: Pinput(
             autofocus: true,
             length: 6,
-            controller: widget.pinController,
+            controller: widget.pinPutController,
             // errorPinTheme
             errorPinTheme: pinTheme(
-              textColor: ColorManger.kRedTwo,
-              borderColor: ColorManger.kRedTwo,
-              backGroundColor: ColorManger.kWhite,
+              textColor: AppColors.kRedTwo,
+              borderColor: AppColors.kRedTwo,
+              backGroundColor: AppColors.kWhite,
             ),
 
             // defaultPinTheme
             defaultPinTheme: pinTheme(
-              textColor: ColorManger.kWhite,
-              borderColor: ColorManger.kBorder,
-              backGroundColor: ColorManger.kBackGround,
+              textColor: AppColors.kWhite,
+              borderColor: AppColors.kBorder,
+              backGroundColor: AppColors.kBackGround,
             ),
             // onChanged
             onChanged: widget.onChanged,

@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../home_follow_page/view/home_follow_page.dart';
@@ -32,7 +32,7 @@ class UserAppBarWidget extends StatelessWidget {
           // Image
           ClipOval(
             child: Image.asset(
-              ImageManger.kGirlOne,
+              AppImages.kGirlOne,
               width: 60,
               height: 60,
               fit: BoxFit.cover,
@@ -56,7 +56,7 @@ class UserAppBarWidget extends StatelessWidget {
               Text(
                 '@johnson_a',
                 style: context.kTextTheme.labelMedium!.copyWith(
-                  color: ColorManger.kGray,
+                  color: AppColors.kGray,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -65,7 +65,7 @@ class UserAppBarWidget extends StatelessWidget {
           ),
           // User Pop Menu
           UserPopMenuWidget(
-            icon: SvgManger.kblockVictor,
+            icon: AppSvgs.kblockVictor,
             title: 'Block user',
             onTap: () {
               showDialog(

@@ -1,4 +1,4 @@
-import '../../core/constant/image_manger.dart';
+import '../../core/constant/app_images.dart';
 
 class HomeFollowModel {
   final String title, subTitle, image;
@@ -14,36 +14,36 @@ List<HomeFollowModel> homeFollowModel = [
   HomeFollowModel(
     title: 'Charlie White',
     subTitle: '@charlie_w',
-    image: ImageManger.kBoyThree,
+    image: AppImages.kBoyThree,
   ),
   HomeFollowModel(
     title: 'Layla hani',
     subTitle: '@layla_Hai',
-    image: ImageManger.kGirlOne,
+    image: AppImages.kGirlOne,
   ),
   HomeFollowModel(
     title: 'Joe _22',
     subTitle: '@Joee',
-    image: ImageManger.kBoyTwo,
+    image: AppImages.kBoyTwo,
   ),
   HomeFollowModel(
     title: 'Mayar Magdy',
     subTitle: '@Mayarr55',
-    image: ImageManger.kGirlFour,
+    image: AppImages.kGirlFour,
   ),
   HomeFollowModel(
     title: 'Jamil ali',
     subTitle: '@j_ali',
-    image: ImageManger.kBoyOne,
+    image: AppImages.kBoyOne,
   ),
   HomeFollowModel(
     title: 'jessi maged',
     subTitle: '@Jess',
-    image: ImageManger.kGirlTwo,
+    image: AppImages.kGirlTwo,
   ),
   HomeFollowModel(
     title: 'Haneen ahmed',
     subTitle: '@Haneen_1',
-    image: ImageManger.kGirlThree,
+    image: AppImages.kGirlThree,
   ),
 ];

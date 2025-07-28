@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 
 class HomeFollowAppBarWidget extends StatelessWidget {
@@ -18,7 +18,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
         children: [
           // Custom Icon Back
           CustomIconButton(
-            icon: Icon(Icons.arrow_back_ios, color: ColorManger.kWhite),
+            icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
             onPressed: () {
               context.router.maybePop();
             },
@@ -26,7 +26,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
           // Image
           ClipOval(
             child: Image.asset(
-              ImageManger.kBoyFour,
+              AppImages.kBoyFour,
               width: 25,
               height: 25,
               fit: BoxFit.cover,
@@ -45,7 +45,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
       subtitle: Text(
         '@johnson_a',
         style: context.kTextTheme.bodySmall!.copyWith(
-          color: ColorManger.kGray,
+          color: AppColors.kGray,
           fontWeight: FontWeight.w400,
         ),
       ),

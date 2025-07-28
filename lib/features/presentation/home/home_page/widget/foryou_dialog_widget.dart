@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import 'report_reason_dialog.dart';
 
@@ -20,7 +20,7 @@ class ForYouDialogWidget extends StatelessWidget {
             alignment: Alignment.centerRight,
             // Custom Icon Back
             child: CustomIconButton(
-              icon: Icon(Icons.close, color: ColorManger.kWhite, size: 20),
+              icon: Icon(Icons.close, color: AppColors.kWhite, size: 20),
               onPressed: () {
                 context.router.maybePop();
               },
@@ -40,8 +40,8 @@ class ForYouDialogWidget extends StatelessWidget {
               // Cancel
               CustomPrimaryButton(
                 title: 'Cancel',
-                backGroundColor: ColorManger.kBoulder,
-                borderColor: ColorManger.kBoulder,
+                backGroundColor: AppColors.kBoulder,
+                borderColor: AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 36,
                   vertical: 4,
@@ -49,7 +49,7 @@ class ForYouDialogWidget extends StatelessWidget {
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: ColorManger.kWhite,
+                  color: AppColors.kWhite,
                 ),
                 onTap: () {
                   context.router.maybePop();
@@ -59,8 +59,8 @@ class ForYouDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'Report',
 
-                backGroundColor: ColorManger.kRedTwo,
-                borderColor: ColorManger.kRedTwo,
+                backGroundColor: AppColors.kRedTwo,
+                borderColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 36,
                   vertical: 4,
@@ -68,7 +68,7 @@ class ForYouDialogWidget extends StatelessWidget {
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: ColorManger.kWhite,
+                  color: AppColors.kWhite,
                 ),
                 onTap: () async {
                   await context.router.maybePop();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant/svg_manger.dart';
+import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
 import 'custom_social_button.dart';
 
@@ -24,10 +24,10 @@ class CustomSocialAuthButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Google
-            CustomSocialButton(onTap: onTapGoogle, title: SvgManger.kGoogle),
+            CustomSocialButton(onTap: onTapGoogle, title: AppSvgs.kGoogle),
             SizedBox(width: 8),
             // Apple
-            CustomSocialButton(onTap: onTapApple, title: SvgManger.kApple),
+            CustomSocialButton(onTap: onTapApple, title: AppSvgs.kApple),
           ],
         ),
       ],

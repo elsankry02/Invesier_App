@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
 
 class NavigationBarItemWidget extends StatelessWidget {
@@ -31,8 +31,8 @@ class NavigationBarItemWidget extends StatelessWidget {
               assetName,
               colorFilter: ColorFilter.mode(
                 selectedIndex == index
-                    ? ColorManger.kOceanGreen
-                    : ColorManger.kWhite,
+                    ? AppColors.kOceanGreen
+                    : AppColors.kWhite,
                 BlendMode.srcIn,
               ),
             ),
@@ -42,9 +42,7 @@ class NavigationBarItemWidget extends StatelessWidget {
               title,
               style: context.kTextTheme.bodySmall!.copyWith(
                 color:
-                    selectedIndex == index
-                        ? ColorManger.kWhite
-                        : ColorManger.kGray,
+                    selectedIndex == index ? AppColors.kWhite : AppColors.kGray,
               ),
             ),
           ],

@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/image_manger.dart';
-import '../../../../core/constant/strings.dart';
+import '../../../../core/constant/app_images.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_strings.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../provider/provider.dart';
@@ -20,23 +20,15 @@ class SplashPage extends ConsumerStatefulWidget {
 class _SplashPageState extends ConsumerState<SplashPage> {
   @override
   void initState() {
-    splashFunc();
+    splash();
     super.initState();
   }
 
-  splashFunc() {
+  splash() {
     Future.delayed(Duration(seconds: 3), () {
-      // isSaved
       final isSaved =
-          ref.read(prefsProvider).getBool(CustomStrings.skipOnboarding) ??
-          false;
-      // isRegister
-      final isRegister =
-          ref.read(prefsProvider).getBool(CustomStrings.skiplogin) ?? false;
-
-      if (isRegister) {
-        context.router.replace(BottomNavigationBarRoute());
-      } else if (isSaved) {
+          ref.read(prefsProvider).getBool(AppStrings.skipOnboarding) ?? false;
+      if (isSaved) {
         context.router.replace(WelcomeRoute());
       } else {
         context.router.replace(OnboardingRoute());
@@ -47,13 +39,13 @@ class _SplashPageState extends ConsumerState<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManger.kBackGround,
+      backgroundColor: AppColors.kBackGround,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Image.asset(
-              ImageManger.kLogo,
+              AppImages.kLogo,
               width: context.width * 0.6,
               height: context.height * 0.2,
             ),

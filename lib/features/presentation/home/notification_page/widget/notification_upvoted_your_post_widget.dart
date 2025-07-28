@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 
 class NotificationUpvotedYourPostWidget extends StatelessWidget {
@@ -12,7 +12,7 @@ class NotificationUpvotedYourPostWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
-        color: ColorManger.k1,
+        color: AppColors.kOne,
         borderRadius: BorderRadiusDirectional.circular(13),
       ),
       child: ListTile(
@@ -24,7 +24,7 @@ class NotificationUpvotedYourPostWidget extends StatelessWidget {
             // k1
             ClipOval(
               child: Image.asset(
-                ImageManger.k1,
+                AppImages.k1,
                 height: 45,
                 width: 45,
                 fit: BoxFit.cover,
@@ -37,11 +37,11 @@ class NotificationUpvotedYourPostWidget extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  border: Border.all(color: ColorManger.k1),
+                  border: Border.all(color: AppColors.kOne),
                 ),
                 child: ClipOval(
                   child: Image.asset(
-                    ImageManger.k2,
+                    AppImages.k2,
                     height: 45,
                     width: 45,
                     fit: BoxFit.cover,
@@ -73,7 +73,7 @@ class NotificationUpvotedYourPostWidget extends StatelessWidget {
                   text: '23 hours ago',
                   style: context.kTextTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w400,
-                    color: ColorManger.kDarkenText,
+                    color: AppColors.kDarkenText,
                   ),
                 ),
               ],

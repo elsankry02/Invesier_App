@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../home/drawer_page/view/drawer_page.dart';
 
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/svg_manger.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_svgs.dart';
 import '../../challenges_page/view/challenges_page.dart';
 import '../../home/home_page/view/home_page.dart';
 import '../../learn_page/view/learn_page.dart';
@@ -36,7 +36,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -44,7 +44,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
         child: pages.elementAt(selectedIndex),
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: ColorManger.kBackGround),
+        decoration: BoxDecoration(color: AppColors.kBackGround),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -55,7 +55,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                   // home
                   NavigationBarItemWidget(
                     title: 'Home',
-                    assetName: SvgManger.kHome,
+                    assetName: AppSvgs.kHome,
                     selectedIndex: selectedIndex,
                     index: 0,
                     onTap: () {
@@ -67,7 +67,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                   // challenges
                   NavigationBarItemWidget(
                     title: 'Challenges',
-                    assetName: SvgManger.kChallenges,
+                    assetName: AppSvgs.kChallenges,
                     selectedIndex: selectedIndex,
                     index: 1,
                     onTap: () {
@@ -96,7 +96,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                   // Trade
                   NavigationBarItemWidget(
                     title: 'Trade',
-                    assetName: SvgManger.kTrade,
+                    assetName: AppSvgs.kTrade,
                     selectedIndex: selectedIndex,
                     index: 2,
                     onTap: () {
@@ -108,7 +108,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                   // Learn
                   NavigationBarItemWidget(
                     title: 'Learn',
-                    assetName: SvgManger.kLearn,
+                    assetName: AppSvgs.kLearn,
                     selectedIndex: selectedIndex,
                     index: 3,
                     onTap: () {

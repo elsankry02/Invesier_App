@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../model/onboarding_model.dart';
 
@@ -28,8 +28,8 @@ class GeneratorWidget extends StatelessWidget {
               // color
               color:
                   currentIndex == index
-                      ? ColorManger.kEucalyptus
-                      : ColorManger.kWhite,
+                      ? AppColors.kEucalyptus
+                      : AppColors.kWhite,
             ),
           );
         }),

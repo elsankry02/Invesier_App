@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../widget/drawer_title_widget.dart';
@@ -18,7 +18,7 @@ class DrawerPage extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -41,7 +41,7 @@ class DrawerPage extends StatelessWidget {
                           width: 35,
                           height: 35,
                           fit: BoxFit.cover,
-                          ImageManger.kBoyFour,
+                          AppImages.kBoyFour,
                         ),
                       ),
                       Stack(
@@ -52,7 +52,7 @@ class DrawerPage extends StatelessWidget {
                             width: 12,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
-                              color: ColorManger.kWhite,
+                              color: AppColors.kWhite,
                             ),
                           ),
                           Container(
@@ -60,7 +60,7 @@ class DrawerPage extends StatelessWidget {
                             width: 10,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              color: ColorManger.kOceanGreen,
+                              color: AppColors.kOceanGreen,
                             ),
                           ),
                         ],
@@ -72,7 +72,7 @@ class DrawerPage extends StatelessWidget {
                     'Olivia Rhye',
                     style: context.kTextTheme.labelMedium!.copyWith(
                       fontWeight: FontWeight.w500,
-                      color: ColorManger.kGray,
+                      color: AppColors.kGray,
                     ),
                   ),
                   // subtitle
@@ -96,7 +96,7 @@ class DrawerPage extends StatelessWidget {
                     showTopSnackBar(
                       Overlay.of(context),
                       CustomSnackBar.info(
-                        backgroundColor: ColorManger.kBoulder,
+                        backgroundColor: AppColors.kBoulder,
                         message: "COMING SOON",
                       ),
                     );
@@ -109,7 +109,7 @@ class DrawerPage extends StatelessWidget {
                     showTopSnackBar(
                       Overlay.of(context),
                       CustomSnackBar.info(
-                        backgroundColor: ColorManger.kBoulder,
+                        backgroundColor: AppColors.kBoulder,
                         message: "COMING SOON",
                       ),
                     );

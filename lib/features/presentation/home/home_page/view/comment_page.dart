@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_show_model_button_widget.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../widget/post_card_widget.dart';
 import '../widget/reply_widget.dart';
@@ -17,7 +17,7 @@ class CommentPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k2, ColorManger.k1],
+            colors: [AppColors.kTwo, AppColors.kOne],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
@@ -41,7 +41,7 @@ class CommentPage extends StatelessWidget {
                         radius: 8,
                         style: context.kTextTheme.labelMedium!.copyWith(
                           fontWeight: FontWeight.w600,
-                          color: ColorManger.kDivider,
+                          color: AppColors.kDivider,
                         ),
                       );
                     },
@@ -69,7 +69,7 @@ class CommentPage extends StatelessWidget {
                               radius: 8,
                               style: context.kTextTheme.labelMedium!.copyWith(
                                 fontWeight: FontWeight.w600,
-                                color: ColorManger.kDivider,
+                                color: AppColors.kDivider,
                               ),
                             );
                           },

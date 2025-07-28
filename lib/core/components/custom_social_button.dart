@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../constant/color_manger.dart';
+import '../constant/app_colors.dart';
 
 class CustomSocialButton extends StatelessWidget {
   final void Function()? onTap;
@@ -21,7 +21,7 @@ class CustomSocialButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 11, horizontal: 40),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: ColorManger.kWhite,
+          color: AppColors.kWhite,
         ),
         // title
         child: SvgPicture.asset(title),

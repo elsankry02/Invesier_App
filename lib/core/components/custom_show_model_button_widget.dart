@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../constant/color_manger.dart';
-import '../constant/svg_manger.dart';
+import '../constant/app_colors.dart';
+import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
 import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
@@ -38,7 +38,7 @@ class _CustomShowModelButtonWidgetState
       padding: EdgeInsetsDirectional.only(top: 10, start: 20, end: 20),
       width: context.width,
       decoration: BoxDecoration(
-        color: ColorManger.kCodGray,
+        color: AppColors.kCodGray,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(28),
           topRight: Radius.circular(28),
@@ -52,7 +52,7 @@ class _CustomShowModelButtonWidgetState
           mainAxisSize: MainAxisSize.min,
           children: [
             // kArrow
-            SvgPicture.asset(SvgManger.kArrow),
+            SvgPicture.asset(AppSvgs.kArrow),
             SizedBox(height: context.height * 0.004),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,13 +75,13 @@ class _CustomShowModelButtonWidgetState
             ),
             // TextFormField
             TextFormField(
-              cursorColor: ColorManger.kWhite,
+              cursorColor: AppColors.kWhite,
               controller: commentController,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
                 hintText: widget.hintText,
                 hintStyle: TextStyle(
-                  color: ColorManger.kGray,
+                  color: AppColors.kGray,
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
@@ -96,8 +96,8 @@ class _CustomShowModelButtonWidgetState
                 // titleButton
                 CustomPrimaryButton(
                   title: widget.titleButton,
-                  backGroundColor: ColorManger.kOceanGreen,
-                  borderColor: ColorManger.kOceanGreen,
+                  backGroundColor: AppColors.kOceanGreen,
+                  borderColor: AppColors.kOceanGreen,
                   padding: EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: widget.vertical,

@@ -4,7 +4,7 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
 class UserAlertDialogWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class UserAlertDialogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: ColorManger.kCodGray,
+      backgroundColor: AppColors.kCodGray,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -24,7 +24,7 @@ class UserAlertDialogWidget extends StatelessWidget {
               onPressed: () {
                 context.router.maybePop();
               },
-              icon: Icon(Icons.close, color: ColorManger.kWhite, size: 20),
+              icon: Icon(Icons.close, color: AppColors.kWhite, size: 20),
             ),
           ),
           SizedBox(height: context.height * 0.014),
@@ -42,12 +42,12 @@ class UserAlertDialogWidget extends StatelessWidget {
               // Custom Primary Button No
               CustomPrimaryButton(
                 title: 'No',
-                backGroundColor: ColorManger.kBackGround,
-                borderColor: ColorManger.kBackGround,
+                backGroundColor: AppColors.kBackGround,
+                borderColor: AppColors.kBackGround,
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: ColorManger.kWhite,
+                  color: AppColors.kWhite,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 34,
@@ -61,8 +61,8 @@ class UserAlertDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'Yes, block',
 
-                backGroundColor: ColorManger.kRedTwo,
-                borderColor: ColorManger.kRedTwo,
+                backGroundColor: AppColors.kRedTwo,
+                borderColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 27.5,
                   vertical: 6,
@@ -70,14 +70,14 @@ class UserAlertDialogWidget extends StatelessWidget {
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: ColorManger.kWhite,
+                  color: AppColors.kWhite,
                 ),
                 onTap: () {
                   context.router.maybePop();
                   showTopSnackBar(
                     Overlay.of(context),
                     CustomSnackBar.info(
-                      backgroundColor: ColorManger.kRedTwo,
+                      backgroundColor: AppColors.kRedTwo,
                       message: "The user has been blocked successfully",
                     ),
                   );

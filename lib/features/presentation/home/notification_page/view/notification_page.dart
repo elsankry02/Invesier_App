@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../widget/notification_appbar_widget.dart';
 import '../widget/notification_started_following_you_widget.dart';
@@ -17,7 +17,7 @@ class NotificationPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

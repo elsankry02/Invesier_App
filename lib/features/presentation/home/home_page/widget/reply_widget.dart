@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_trend_box.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import 'pop_menu_button_widget.dart';
 
@@ -25,7 +25,7 @@ class ReplyWidget extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13),
-              color: ColorManger.kCodGray,
+              color: AppColors.kCodGray,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class ReplyWidget extends StatelessWidget {
                   leading: ClipOval(
                     // image
                     child: Image.asset(
-                      ImageManger.kBoyTwo,
+                      AppImages.kBoyTwo,
                       height: 30,
                       width: 30,
                       fit: BoxFit.cover,
@@ -71,7 +71,7 @@ class ReplyWidget extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                         borderColor: Colors.transparent,
-                        backGroundColor: ColorManger.kTurquoiseBlue,
+                        backGroundColor: AppColors.kTurquoiseBlue,
                         padding: EdgeInsetsDirectional.symmetric(
                           horizontal: 10,
                           vertical: 4,
@@ -95,10 +95,10 @@ class ReplyWidget extends StatelessWidget {
                   children: [
                     // Growth
                     CustomTrendBox(
-                      svg: SvgManger.kGrowth,
+                      svg: AppSvgs.kGrowth,
                       title: '12k',
-                      titleColor: ColorManger.kEucalyptus,
-                      borderColor: ColorManger.kEucalyptus,
+                      titleColor: AppColors.kEucalyptus,
+                      borderColor: AppColors.kEucalyptus,
                       onTap: () {
                         ScaffoldMessenger.of(
                           context,
@@ -107,10 +107,10 @@ class ReplyWidget extends StatelessWidget {
                     ),
                     CustomTrendBox(
                       // Decline
-                      svg: SvgManger.kDecline,
+                      svg: AppSvgs.kDecline,
                       title: '12K',
-                      titleColor: ColorManger.kRed,
-                      borderColor: ColorManger.kRed,
+                      titleColor: AppColors.kRed,
+                      borderColor: AppColors.kRed,
                       onTap: () {
                         ScaffoldMessenger.of(
                           context,
@@ -119,10 +119,10 @@ class ReplyWidget extends StatelessWidget {
                     ),
                     CustomTrendBox(
                       // Rplay
-                      svg: SvgManger.kReply,
+                      svg: AppSvgs.kReply,
                       title: 'Rplay',
-                      titleColor: ColorManger.kBoulder,
-                      borderColor: ColorManger.kBoulder,
+                      titleColor: AppColors.kBoulder,
+                      borderColor: AppColors.kBoulder,
                       onTap: onTap,
                     ),
                   ],

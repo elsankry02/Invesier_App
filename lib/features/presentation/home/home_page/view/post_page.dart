@@ -11,7 +11,7 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
 @RoutePage()
@@ -72,7 +72,7 @@ class _PostPageState extends ConsumerState<PostPage> {
         width: context.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -105,13 +105,13 @@ class _PostPageState extends ConsumerState<PostPage> {
                   SizedBox(height: context.height * 0.012),
                   // TextFormField
                   TextFormField(
-                    cursorColor: ColorManger.kWhite,
+                    cursorColor: AppColors.kWhite,
                     controller: commentController,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.zero,
                       hintText: "We post money related content.....",
                       hintStyle: TextStyle(
-                        color: ColorManger.kGray,
+                        color: AppColors.kGray,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -146,7 +146,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                         },
                         icon: Icon(
                           FontAwesomeIcons.image,
-                          color: ColorManger.kOceanGreen,
+                          color: AppColors.kOceanGreen,
                         ),
                       ),
                       // imagecamera
@@ -156,7 +156,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                         },
                         icon: Icon(
                           FontAwesomeIcons.video,
-                          color: ColorManger.kOceanGreen,
+                          color: AppColors.kOceanGreen,
                         ),
                       ),
                     ],
@@ -166,8 +166,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                   CustomPrimaryButton(
                     isLoading: state is CreatPostLoading,
                     title: 'Post now',
-                    backGroundColor: ColorManger.kOceanGreen,
-                    borderColor: ColorManger.kOceanGreen,
+                    backGroundColor: AppColors.kOceanGreen,
+                    borderColor: AppColors.kOceanGreen,
                     padding: EdgeInsetsDirectional.symmetric(
                       horizontal: 20,
                       vertical: 12,
@@ -175,7 +175,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                     radius: 16,
                     style: context.kTextTheme.labelMedium!.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: ColorManger.kDivider,
+                      color: AppColors.kDivider,
                     ),
                     onTap: () async {
                       log("hhhhhhhhhhh=====");

@@ -4,7 +4,7 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../home_page/widget/post_card_widget.dart';
@@ -20,7 +20,7 @@ class PersonalProfilePage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -41,13 +41,13 @@ class PersonalProfilePage extends StatelessWidget {
               radius: 31,
               style: context.kTextTheme.titleSmall!.copyWith(
                 fontWeight: FontWeight.w700,
-                color: ColorManger.kWhite,
+                color: AppColors.kWhite,
               ),
               onTap: () {
                 showTopSnackBar(
                   Overlay.of(context),
                   CustomSnackBar.info(
-                    backgroundColor: ColorManger.kSecondary,
+                    backgroundColor: AppColors.kSecondary,
                     message: "COMING SOON",
                   ),
                 );

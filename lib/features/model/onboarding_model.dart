@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant/lottie_manger.dart';
+import '../../core/constant/app_lotties.dart';
 
 class OnboardingModel {
   OnboardingModel({
@@ -17,19 +17,19 @@ List<OnboardingModel> items(BuildContext context) {
       titel: 'Welcome to Invesier',
       subTitel:
           'Stay connected with the latest financial \nnews, market trends, and expert insights \nto keep you informed and ahead.',
-      image: LottieManger.kOnboardingOne,
+      image: AppLotties.kOnboardingOne,
     ),
     OnboardingModel(
       titel: 'Practice with Virtual Currency',
       subTitel:
           'Gain experience through simulated \ntrading. No risks, just rewards.',
-      image: LottieManger.kOnboardingTwo,
+      image: AppLotties.kOnboardingTwo,
     ),
     OnboardingModel(
       titel: 'Join Chats & Live Streams',
       subTitel:
           'Talk to experts, join communities, and go \nlive to share your investment journey',
-      image: LottieManger.kOnboardingThree,
+      image: AppLotties.kOnboardingThree,
     ),
   ];
 }

@@ -13,8 +13,8 @@ import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_text_form_field.dart';
 import '../../../../core/components/custom_title_appbar.dart';
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/enum_manger.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../provider/post/complete_profile_provider.dart';
@@ -92,7 +92,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.success(
-            backgroundColor: ColorManger.kGray,
+            backgroundColor: AppColors.kGray,
             message: "OTP sent successfully. Please verify to continue.",
           ),
         );
@@ -109,7 +109,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k2, ColorManger.k1],
+            colors: [AppColors.kTwo, AppColors.kOne],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
@@ -124,10 +124,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
                   children: [
                     // Custom Icon Back
                     CustomIconButton(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        color: ColorManger.kWhite,
-                      ),
+                      icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
                       onPressed: () {
                         context.router.maybePop();
                       },
@@ -169,7 +166,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
                 CustomTextFormField(
                   title: 'name',
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
-                    color: ColorManger.kGray,
+                    color: AppColors.kGray,
                   ),
                   controller: nameController,
                 ),
@@ -185,7 +182,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
                 CustomTextFormField(
                   title: 'username',
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
-                    color: ColorManger.kGray,
+                    color: AppColors.kGray,
                   ),
                   controller: usernameController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -196,17 +193,14 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
                   title: 'Next',
                   isLoading: state is CompleteProfileLoading,
                   gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
+                    colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: ColorManger.kTurquoiseBlue,
+                  borderColor: AppColors.kTurquoiseBlue,
                   radius: 60,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kWhite,
+                    color: AppColors.kWhite,
                   ),
                   // Navigate
                   onTap: completeProfile,

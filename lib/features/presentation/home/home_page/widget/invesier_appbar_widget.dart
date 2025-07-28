@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 
@@ -19,7 +19,7 @@ class InvesierAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Logo
-          SvgPicture.asset(SvgManger.kInvinserLogo),
+          SvgPicture.asset(AppSvgs.kInvinserLogo),
           SizedBox(
             width: context.width * 0.250,
             child: Row(
@@ -33,9 +33,9 @@ class InvesierAppBar extends StatelessWidget {
                   child: SvgPicture.asset(
                     width: 20,
                     height: 20,
-                    SvgManger.kSearch,
+                    AppSvgs.kSearch,
                     colorFilter: ColorFilter.mode(
-                      ColorManger.kWhite,
+                      AppColors.kWhite,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -57,14 +57,14 @@ class InvesierAppBar extends StatelessWidget {
                             width: 10,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
-                              color: ColorManger.kWhite,
+                              color: AppColors.kWhite,
                             ),
                           ),
                           Container(
                             height: 8,
                             width: 8,
                             decoration: BoxDecoration(
-                              color: ColorManger.kRedTwo,
+                              color: AppColors.kRedTwo,
                               borderRadius: BorderRadius.circular(5),
                             ),
                           ),
@@ -80,7 +80,7 @@ class InvesierAppBar extends StatelessWidget {
                   },
                   child: ClipOval(
                     child: Image.asset(
-                      ImageManger.kBoyFour,
+                      AppImages.kBoyFour,
                       fit: BoxFit.cover,
                       width: 30,
                       height: 30,

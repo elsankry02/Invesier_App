@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../../core/constant/lottie_manger.dart';
+import '../../../../core/constant/app_lotties.dart';
 import '../../../../core/extension/extension.dart';
 
 class WelcomeDisplayWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
       title: Column(
         children: [
           SizedBox(height: context.height * 0.18),
-          Lottie.asset(LottieManger.kOnboardingTwo),
+          Lottie.asset(AppLotties.kOnboardingTwo),
 
           // titel
           Text(

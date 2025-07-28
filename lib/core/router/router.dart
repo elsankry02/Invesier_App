@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../constant/enum_manger.dart';
+import '../constant/app_enums.dart';
 import '../../features/presentation/signup_page/view/signup_page.dart';
 import '../../features/presentation/splash_page/view/splash_page.dart';
 

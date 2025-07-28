@@ -4,7 +4,7 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../home_page/widget/pop_menu_button_widget.dart';
@@ -21,7 +21,7 @@ class UserProfilePage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -37,8 +37,8 @@ class UserProfilePage extends StatelessWidget {
               children: [
                 CustomPrimaryButton(
                   title: 'Chase',
-                  borderColor: ColorManger.kTurquoiseBlue,
-                  backGroundColor: ColorManger.kTurquoiseBlue,
+                  borderColor: AppColors.kTurquoiseBlue,
+                  backGroundColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 56,
                     vertical: 9.5,
@@ -46,13 +46,13 @@ class UserProfilePage extends StatelessWidget {
                   radius: 31,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: ColorManger.kWhite,
+                    color: AppColors.kWhite,
                   ),
                   onTap: () {
                     showTopSnackBar(
                       Overlay.of(context),
                       CustomSnackBar.info(
-                        backgroundColor: ColorManger.kTurquoiseBlue,
+                        backgroundColor: AppColors.kTurquoiseBlue,
                         message: "COMING SOON",
                       ),
                     );
@@ -60,8 +60,8 @@ class UserProfilePage extends StatelessWidget {
                 ),
                 CustomPrimaryButton(
                   title: 'message',
-                  borderColor: ColorManger.kWhite,
-                  backGroundColor: ColorManger.kWhite,
+                  borderColor: AppColors.kWhite,
+                  backGroundColor: AppColors.kWhite,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 56,
                     vertical: 9.5,
@@ -69,13 +69,13 @@ class UserProfilePage extends StatelessWidget {
                   radius: 31,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: ColorManger.kTurquoiseBlue,
+                    color: AppColors.kTurquoiseBlue,
                   ),
                   onTap: () {
                     showTopSnackBar(
                       Overlay.of(context),
                       CustomSnackBar.info(
-                        backgroundColor: ColorManger.kHeavyMetal,
+                        backgroundColor: AppColors.kHeavyMetal,
                         message: "COMING SOON",
                       ),
                     );

@@ -2,7 +2,7 @@ import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/components/custom_text_form_field.dart';
-import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
 
 class ContactPhoneWidget extends StatefulWidget {
@@ -31,9 +31,9 @@ class _ContactPhoneWidgetState extends State<ContactPhoneWidget> {
     favorites: ['EG', 'SA', 'US'],
     title: Text(''),
     filteredCountries: ['EG', 'SA', 'US'],
-    countryTextStyle: TextStyle(color: ColorManger.kBackGround),
-    dialCodeTextStyle: TextStyle(color: ColorManger.kBackGround),
-    searchBarTextStyle: TextStyle(color: ColorManger.kBackGround),
+    countryTextStyle: TextStyle(color: AppColors.kBackGround),
+    dialCodeTextStyle: TextStyle(color: AppColors.kBackGround),
+    searchBarTextStyle: TextStyle(color: AppColors.kBackGround),
     searchBarDecoration: InputDecoration(
       focusedBorder: OutlineInputBorder(),
       enabledBorder: OutlineInputBorder(),

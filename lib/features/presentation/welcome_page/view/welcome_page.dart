@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/image_manger.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_images.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../widget/welcome_display_widget.dart';
@@ -21,7 +21,7 @@ class WelcomePage extends StatelessWidget {
           // BackGroundImage
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(ImageManger.kOnBoarding),
+            image: AssetImage(AppImages.kOnBoarding),
           ),
         ),
         child: Column(
@@ -34,9 +34,9 @@ class WelcomePage extends StatelessWidget {
               title: 'Get Started',
 
               gradient: LinearGradient(
-                colors: [ColorManger.kEucalyptus, ColorManger.kTurquoiseBlue],
+                colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
               ),
-              borderColor: ColorManger.kTurquoiseBlue,
+              borderColor: AppColors.kTurquoiseBlue,
               radius: 60,
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 105,
@@ -45,7 +45,7 @@ class WelcomePage extends StatelessWidget {
               margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w600,
-                color: ColorManger.kWhite,
+                color: AppColors.kWhite,
               ),
               onTap: () {
                 context.router.push(SignupRoute());
@@ -57,7 +57,7 @@ class WelcomePage extends StatelessWidget {
             CustomPrimaryButton(
               title: 'Login',
 
-              borderColor: ColorManger.kEucalyptus,
+              borderColor: AppColors.kEucalyptus,
               radius: 60,
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 130,
@@ -66,7 +66,7 @@ class WelcomePage extends StatelessWidget {
               margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w600,
-                color: ColorManger.kEucalyptus,
+                color: AppColors.kEucalyptus,
               ),
               onTap: () {
                 context.router.push(LoginRoute());

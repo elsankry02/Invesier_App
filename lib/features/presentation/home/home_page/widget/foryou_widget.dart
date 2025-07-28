@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/router/router.dart';
 import '../../user_profile_page/widget/user_pop_menu_widget.dart';
 import 'foryou_dialog_widget.dart';
@@ -29,7 +29,7 @@ class ForYouWidget extends StatelessWidget {
                 },
               );
             },
-            icon: SvgManger.kPin,
+            icon: AppSvgs.kPin,
             title: 'Report post',
           ),
           imageOnTap: () {

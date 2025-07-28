@@ -5,9 +5,9 @@ import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_trend_box.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 
 class PostCardWidget extends StatelessWidget {
@@ -27,7 +27,7 @@ class PostCardWidget extends StatelessWidget {
       padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
-        color: ColorManger.kHeavyMetal,
+        color: AppColors.kHeavyMetal,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class PostCardWidget extends StatelessWidget {
                   fit: BoxFit.cover,
                   height: 30,
                   width: 30,
-                  ImageManger.kBoyThree,
+                  AppImages.kBoyThree,
                 ),
               ),
             ),
@@ -81,7 +81,7 @@ class PostCardWidget extends StatelessWidget {
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
-                  borderColor: ColorManger.kTurquoiseBlue,
+                  borderColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 24,
                     vertical: 4,
@@ -104,15 +104,15 @@ class PostCardWidget extends StatelessWidget {
             children: [
               // Growth
               CustomTrendBox(
-                svg: SvgManger.kGrowth,
+                svg: AppSvgs.kGrowth,
                 title: '12k',
-                titleColor: ColorManger.kEucalyptus,
-                borderColor: ColorManger.kEucalyptus,
+                titleColor: AppColors.kEucalyptus,
+                borderColor: AppColors.kEucalyptus,
                 onTap: () {
                   showTopSnackBar(
                     Overlay.of(context),
                     CustomSnackBar.info(
-                      backgroundColor: ColorManger.kTurquoiseBlue,
+                      backgroundColor: AppColors.kTurquoiseBlue,
                       message: "COMING SOON",
                     ),
                   );
@@ -120,15 +120,15 @@ class PostCardWidget extends StatelessWidget {
               ),
               CustomTrendBox(
                 // Decline
-                svg: SvgManger.kDecline,
+                svg: AppSvgs.kDecline,
                 title: '12K',
-                titleColor: ColorManger.kRed,
-                borderColor: ColorManger.kRed,
+                titleColor: AppColors.kRed,
+                borderColor: AppColors.kRed,
                 onTap: () {
                   showTopSnackBar(
                     Overlay.of(context),
                     CustomSnackBar.info(
-                      backgroundColor: ColorManger.kRedTwo,
+                      backgroundColor: AppColors.kRedTwo,
                       message: "COMING SOON",
                     ),
                   );
@@ -136,20 +136,20 @@ class PostCardWidget extends StatelessWidget {
               ),
               CustomTrendBox(
                 // Comment
-                svg: SvgManger.kComment,
+                svg: AppSvgs.kComment,
                 title: '160K',
-                titleColor: ColorManger.kBoulder,
-                borderColor: ColorManger.kBoulder,
+                titleColor: AppColors.kBoulder,
+                borderColor: AppColors.kBoulder,
                 onTap: commentOnTap,
               ),
               // Sharing
               GestureDetector(
-                child: SvgPicture.asset(SvgManger.kSharing),
+                child: SvgPicture.asset(AppSvgs.kSharing),
                 onTap: () {
                   showTopSnackBar(
                     Overlay.of(context),
                     CustomSnackBar.info(
-                      backgroundColor: ColorManger.kBoulder,
+                      backgroundColor: AppColors.kBoulder,
                       message: "COMING SOON",
                     ),
                   );

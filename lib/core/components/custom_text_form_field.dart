@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant/color_manger.dart';
+import '../constant/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String title;
@@ -31,19 +31,17 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       // onChanged
       onChanged: onChanged,
-      cursorColor: ColorManger.kWhite,
+      cursorColor: AppColors.kWhite,
       // keyboardType
       keyboardType: keyboardType,
       decoration: InputDecoration(
         //title
         hintText: title,
         hintStyle: hintStyle,
-        enabledBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
-        focusedBorder: outlineInputBorder(borderColor: ColorManger.kBorder),
-        focusedErrorBorder: outlineInputBorder(
-          borderColor: ColorManger.kRedTwo,
-        ),
-        errorBorder: outlineInputBorder(borderColor: ColorManger.kRedTwo),
+        enabledBorder: outlineInputBorder(borderColor: AppColors.kBorder),
+        focusedBorder: outlineInputBorder(borderColor: AppColors.kBorder),
+        focusedErrorBorder: outlineInputBorder(borderColor: AppColors.kRedTwo),
+        errorBorder: outlineInputBorder(borderColor: AppColors.kRedTwo),
       ),
     );
   }

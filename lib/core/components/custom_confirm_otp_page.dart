@@ -4,19 +4,17 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/strings.dart';
-import 'package:invesier/features/provider/provider.dart';
+import 'package:invesier/core/components/custom_pinput_widget.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../../features/provider/post/verify_otp_provider.dart';
-import '../constant/color_manger.dart';
-import '../constant/enum_manger.dart';
+import '../constant/app_enums.dart';
+import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 import '../router/router.dart';
 import 'custom_icon_button.dart';
-import 'custom_pinput_otp_widget.dart';
 import 'custom_primary_button.dart';
 import 'custom_title_appbar.dart';
 
@@ -39,7 +37,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
   Timer? timer;
   int secondsRemaining = 60;
   final formKey = GlobalKey<FormState>();
-  final pinController = TextEditingController();
+  final pinPutController = TextEditingController();
 
   @override
   void initState() {
@@ -49,7 +47,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
 
   @override
   void dispose() {
-    pinController.dispose();
+    pinPutController.dispose();
     timer?.cancel();
     super.dispose();
   }
@@ -72,7 +70,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
     showTopSnackBar(
       Overlay.of(context),
       CustomSnackBar.success(
-        backgroundColor: ColorManger.kDarkenText,
+        backgroundColor: AppColors.kDarkenText,
         message: "A new code has been sent",
       ),
     );
@@ -84,7 +82,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
     final isEmail = widget.contactType == ContactType.email;
     await notifier.verifyOtp(
       authMethod: widget.contactType.name,
-      otp: pinController.text,
+      otp: pinPutController.text,
       email: isEmail ? widget.emailController.text : null,
       phone: isEmail ? null : widget.phoneController.text,
     );
@@ -94,7 +92,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
   Widget build(BuildContext context) {
     // final notifier = ref.read(verifyOtpProvider.notifier);
     final state = ref.watch(verifyOtpProvider);
-    ref.listen(verifyOtpProvider, (_, state) async {
+    ref.listen(verifyOtpProvider, (_, state) {
       if (state is VerifyOtpFailure) {
         showTopSnackBar(
           Overlay.of(context),
@@ -108,7 +106,6 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
           Overlay.of(context),
           CustomSnackBar.success(message: "Authentication successful"),
         );
-        await ref.read(prefsProvider).setBool(CustomStrings.skiplogin, true);
         context.router.replace(BottomNavigationBarRoute());
       }
     });
@@ -116,7 +113,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k2, ColorManger.k1],
+            colors: [AppColors.kTwo, AppColors.kOne],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
@@ -131,10 +128,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                   children: [
                     // Custom Icon Back
                     CustomIconButton(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        color: ColorManger.kWhite,
-                      ),
+                      icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
                       onPressed: () {
                         context.router.maybePop();
                       },
@@ -155,7 +149,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                       TextSpan(
                         text: 'Enter the OTP code sent ',
                         style: context.kTextTheme.titleSmall!.copyWith(
-                          color: ColorManger.kBoulder,
+                          color: AppColors.kBoulder,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -165,7 +159,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                                 ? widget.emailController.text
                                 : widget.phoneController.text,
                         style: context.kTextTheme.titleMedium!.copyWith(
-                          color: ColorManger.kBoulder,
+                          color: AppColors.kBoulder,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -174,8 +168,8 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                 ),
                 SizedBox(height: context.height * 0.040),
                 // Signup Pinput Widget
-                CustomPinPutOTPWidget(
-                  pinController: pinController,
+                CustomPinPutWidget(
+                  pinPutController: pinPutController,
                   validator: (value) {
                     return null;
                   },
@@ -205,17 +199,14 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
                   title: 'Verify code',
                   isLoading: state is VerifyOtpLoading,
                   gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
+                    colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: ColorManger.kTurquoiseBlue,
+                  borderColor: AppColors.kTurquoiseBlue,
                   radius: 60,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kWhite,
+                    color: AppColors.kWhite,
                   ),
                   onTap: verifyOtp,
                 ),

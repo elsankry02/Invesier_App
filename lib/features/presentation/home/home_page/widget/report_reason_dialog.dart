@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../user_profile_page/widget/user_alertdialog_widget.dart';
 
@@ -35,7 +35,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   onPressed: () {
                     context.router.maybePop();
                   },
-                  icon: Icon(Icons.close, color: ColorManger.kWhite, size: 20),
+                  icon: Icon(Icons.close, color: AppColors.kWhite, size: 20),
                 ),
               ),
 
@@ -56,13 +56,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Spam',
                 backGroundColor:
                     isSelectedOne == true
-                        ? ColorManger.kBoulder
-                        : ColorManger.kWhite,
+                        ? AppColors.kBoulder
+                        : AppColors.kWhite,
 
                 borderColor:
                     isSelectedOne == false
-                        ? ColorManger.kTurquoiseBlue
-                        : ColorManger.kBoulder,
+                        ? AppColors.kTurquoiseBlue
+                        : AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
                   vertical: 4,
@@ -72,8 +72,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedOne == false
-                          ? ColorManger.kBackGround
-                          : ColorManger.kWhite,
+                          ? AppColors.kBackGround
+                          : AppColors.kWhite,
                 ),
                 onTap: () {
                   setState(() {
@@ -87,12 +87,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Scam',
                 backGroundColor:
                     isSelectedTwo == true
-                        ? ColorManger.kBoulder
-                        : ColorManger.kWhite,
+                        ? AppColors.kBoulder
+                        : AppColors.kWhite,
                 borderColor:
                     isSelectedTwo == false
-                        ? ColorManger.kTurquoiseBlue
-                        : ColorManger.kBoulder,
+                        ? AppColors.kTurquoiseBlue
+                        : AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
                   vertical: 4,
@@ -102,8 +102,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedTwo == false
-                          ? ColorManger.kBackGround
-                          : ColorManger.kWhite,
+                          ? AppColors.kBackGround
+                          : AppColors.kWhite,
                 ),
                 onTap: () {
                   setState(() {
@@ -117,12 +117,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Illegal',
                 backGroundColor:
                     isSelectedThree == true
-                        ? ColorManger.kBoulder
-                        : ColorManger.kWhite,
+                        ? AppColors.kBoulder
+                        : AppColors.kWhite,
                 borderColor:
                     isSelectedThree == false
-                        ? ColorManger.kTurquoiseBlue
-                        : ColorManger.kBoulder,
+                        ? AppColors.kTurquoiseBlue
+                        : AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 100,
                   vertical: 4,
@@ -132,8 +132,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedThree == false
-                          ? ColorManger.kBackGround
-                          : ColorManger.kWhite,
+                          ? AppColors.kBackGround
+                          : AppColors.kWhite,
                 ),
                 onTap: () {
                   setState(() {
@@ -147,13 +147,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Violence',
                 backGroundColor:
                     isSelectedFour == true
-                        ? ColorManger.kBoulder
-                        : ColorManger.kWhite,
+                        ? AppColors.kBoulder
+                        : AppColors.kWhite,
 
                 borderColor:
                     isSelectedFour == false
-                        ? ColorManger.kTurquoiseBlue
-                        : ColorManger.kBoulder,
+                        ? AppColors.kTurquoiseBlue
+                        : AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 93,
                   vertical: 4,
@@ -163,8 +163,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedFour == false
-                          ? ColorManger.kBackGround
-                          : ColorManger.kWhite,
+                          ? AppColors.kBackGround
+                          : AppColors.kWhite,
                 ),
                 onTap: () {
                   setState(() {
@@ -178,13 +178,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Hate speech',
                 backGroundColor:
                     isSelectedFive == true
-                        ? ColorManger.kBoulder
-                        : ColorManger.kWhite,
+                        ? AppColors.kBoulder
+                        : AppColors.kWhite,
 
                 borderColor:
                     isSelectedFive == false
-                        ? ColorManger.kTurquoiseBlue
-                        : ColorManger.kBoulder,
+                        ? AppColors.kTurquoiseBlue
+                        : AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 81,
                   vertical: 4,
@@ -194,8 +194,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedFive == false
-                          ? ColorManger.kBackGround
-                          : ColorManger.kWhite,
+                          ? AppColors.kBackGround
+                          : AppColors.kWhite,
                 ),
                 onTap: () {
                   setState(() {
@@ -209,13 +209,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: 'Others',
                 backGroundColor:
                     isSelectedSix == true
-                        ? ColorManger.kBoulder
-                        : ColorManger.kWhite,
+                        ? AppColors.kBoulder
+                        : AppColors.kWhite,
 
                 borderColor:
                     isSelectedSix == false
-                        ? ColorManger.kTurquoiseBlue
-                        : ColorManger.kBoulder,
+                        ? AppColors.kTurquoiseBlue
+                        : AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 98,
                   vertical: 4,
@@ -225,8 +225,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedSix == false
-                          ? ColorManger.kBackGround
-                          : ColorManger.kWhite,
+                          ? AppColors.kBackGround
+                          : AppColors.kWhite,
                 ),
                 onTap: () {
                   setState(() {
@@ -238,8 +238,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               // Submit
               CustomPrimaryButton(
                 title: 'Submit',
-                backGroundColor: ColorManger.kTurquoiseBlue,
-                borderColor: ColorManger.kTurquoiseBlue,
+                backGroundColor: AppColors.kTurquoiseBlue,
+                borderColor: AppColors.kTurquoiseBlue,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
                   vertical: 4,
@@ -247,7 +247,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
-                  color: ColorManger.kWhite,
+                  color: AppColors.kWhite,
                 ),
                 onTap: () async {
                   await context.router.maybePop();

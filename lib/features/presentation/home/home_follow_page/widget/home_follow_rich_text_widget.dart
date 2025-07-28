@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
 class HomeFollowRichTextWidget extends StatelessWidget {
@@ -32,7 +32,7 @@ class HomeFollowRichTextWidget extends StatelessWidget {
               text: title,
               style: context.kTextTheme.bodySmall!.copyWith(
                 fontWeight: FontWeight.w400,
-                color: ColorManger.kGray,
+                color: AppColors.kGray,
               ),
             ),
           ],

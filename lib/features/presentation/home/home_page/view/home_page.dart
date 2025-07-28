@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/color_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../widget/enum_item.dart';
 import '../widget/foryou_widget.dart';
@@ -40,12 +40,12 @@ class _HomePageState extends State<HomePage> {
                         title: 'For You',
                         titleColor:
                             enumView == EnumView.foryou
-                                ? ColorManger.kCodGray
-                                : ColorManger.kWhite,
+                                ? AppColors.kCodGray
+                                : AppColors.kWhite,
                         backGroundColor:
                             enumView == EnumView.foryou
-                                ? ColorManger.kOceanGreen
-                                : ColorManger.kBackGround,
+                                ? AppColors.kOceanGreen
+                                : AppColors.kBackGround,
                         onTap: () {
                           setState(() {
                             enumView = EnumView.foryou;
@@ -58,12 +58,12 @@ class _HomePageState extends State<HomePage> {
                         title: 'Pioneers',
                         titleColor:
                             enumView == EnumView.pioneers
-                                ? ColorManger.kTertiary
-                                : ColorManger.kWhite,
+                                ? AppColors.kTertiary
+                                : AppColors.kWhite,
                         backGroundColor:
                             enumView == EnumView.pioneers
-                                ? ColorManger.kOceanGreen
-                                : ColorManger.kBackGround,
+                                ? AppColors.kOceanGreen
+                                : AppColors.kBackGround,
                         onTap: () {
                           setState(() {
                             enumView = EnumView.pioneers;

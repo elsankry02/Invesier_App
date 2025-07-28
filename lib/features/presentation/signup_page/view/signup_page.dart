@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/constant/enum_manger.dart';
-import '../../../provider/post/register_new_user_provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -10,9 +8,11 @@ import '../../../../core/components/custom_button_style_enum.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_social_auth_buttons.dart';
-import '../../../../core/constant/color_manger.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
+import '../../../provider/post/register_new_user_provider.dart';
 import '../widget/contact_email_widget.dart';
 import '../widget/contact_phone_widget.dart';
 
@@ -65,7 +65,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.success(
-            backgroundColor: ColorManger.kBoulder,
+            backgroundColor: AppColors.kBoulder,
             message: "OTP sent successfully. Please verify to continue.",
           ),
         );
@@ -82,7 +82,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k2, ColorManger.k1],
+            colors: [AppColors.kTwo, AppColors.kOne],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
           ),
@@ -93,7 +93,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 24),
               children: [
-                //! Create an account
+                // Create an account
                 Text(
                   textAlign: TextAlign.center,
                   'Create an account',
@@ -102,13 +102,13 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                   ),
                 ),
                 SizedBox(height: 4),
-                //! Rich Text
+                // Rich Text
                 Center(
                   child: CustomRichText(
                     textSpanOne: 'Already have an account?',
                     textSpanTwo: ' Log in',
                     onTap: () {
-                      //! Navigate to Login
+                      // Navigate to Login
                       context.router.replace(LoginRoute());
                     },
                   ),
@@ -116,23 +116,25 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 SizedBox(height: context.height * 0.024),
                 Column(
                   children: [
-                    //! Contact Type
+                    //  Type
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        //! CustomButton Email
+                        //  Email
                         CustomButtonStyleEnum(
                           title: 'Email',
-                          topLeft: 26,
-                          bottomLeft: 26,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(26),
+                            bottomLeft: Radius.circular(26),
+                          ),
                           titleColor:
                               contactType == ContactType.email
-                                  ? ColorManger.kWhite
-                                  : ColorManger.kTurquoiseBlue,
+                                  ? AppColors.kWhite
+                                  : AppColors.kTurquoiseBlue,
                           color:
                               contactType == ContactType.email
-                                  ? ColorManger.kTurquoiseBlue
-                                  : ColorManger.kBackGround,
+                                  ? AppColors.kTurquoiseBlue
+                                  : AppColors.kBackGround,
                           onTap: () {
                             setState(() {
                               contactType = ContactType.email;
@@ -144,19 +146,21 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                             });
                           },
                         ),
-                        // CustomButton Phone
+                        // Phone
                         CustomButtonStyleEnum(
                           title: 'Phone',
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(26),
+                            bottomRight: Radius.circular(26),
+                          ),
                           titleColor:
                               contactType == ContactType.phone
-                                  ? ColorManger.kWhite
-                                  : ColorManger.kTurquoiseBlue,
+                                  ? AppColors.kWhite
+                                  : AppColors.kTurquoiseBlue,
                           color:
                               contactType == ContactType.phone
-                                  ? ColorManger.kTurquoiseBlue
-                                  : ColorManger.kCodGray,
-                          topRight: 26,
-                          bottomRight: 26,
+                                  ? AppColors.kTurquoiseBlue
+                                  : AppColors.kCodGray,
                           onTap: () {
                             setState(() {
                               contactType = ContactType.phone;
@@ -224,19 +228,16 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 CustomPrimaryButton(
                   title: "Create an account",
                   isLoading: state is RegisterNewUserLoading,
-                  backGroundColor: ColorManger.kTurquoiseBlue,
+                  backGroundColor: AppColors.kTurquoiseBlue,
                   gradient: LinearGradient(
-                    colors: [
-                      ColorManger.kEucalyptus,
-                      ColorManger.kTurquoiseBlue,
-                    ],
+                    colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: ColorManger.kTurquoiseBlue,
+                  borderColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   radius: 60,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: ColorManger.kWhite,
+                    color: AppColors.kWhite,
                   ),
                   onTap: register,
                 ),

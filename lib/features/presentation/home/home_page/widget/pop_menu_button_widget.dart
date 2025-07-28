@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/svg_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 
 class PopMenuButtonWidget extends StatelessWidget {
@@ -16,9 +16,9 @@ class PopMenuButtonWidget extends StatelessWidget {
       // Popup Menu Button تحكم ف مكان ال
       offset: Offset(0, 35),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
-      icon: SvgPicture.asset(SvgManger.kPopMenu),
-      color: ColorManger.kHeavyMetal,
-      iconColor: ColorManger.kWhite,
+      icon: SvgPicture.asset(AppSvgs.kPopMenu),
+      color: AppColors.kHeavyMetal,
+      iconColor: AppColors.kWhite,
       itemBuilder: (context) {
         return [
           // Pin post
@@ -27,7 +27,7 @@ class PopMenuButtonWidget extends StatelessWidget {
               showTopSnackBar(
                 Overlay.of(context),
                 CustomSnackBar.info(
-                  backgroundColor: ColorManger.kSecondary,
+                  backgroundColor: AppColors.kSecondary,
                   message: "The post has been pinned successfully",
                 ),
               );
@@ -36,7 +36,7 @@ class PopMenuButtonWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // svg icon
-                SvgPicture.asset(SvgManger.kPin),
+                SvgPicture.asset(AppSvgs.kPin),
                 SizedBox(width: 7),
                 // title
                 Text(
@@ -52,7 +52,7 @@ class PopMenuButtonWidget extends StatelessWidget {
           const PopupMenuItem(
             height: 1,
             enabled: false,
-            child: Divider(color: ColorManger.kDivider, thickness: 1),
+            child: Divider(color: AppColors.kDivider, thickness: 1),
           ),
           // Delete post
           PopupMenuItem(
@@ -60,7 +60,7 @@ class PopMenuButtonWidget extends StatelessWidget {
               showTopSnackBar(
                 Overlay.of(context),
                 CustomSnackBar.info(
-                  backgroundColor: ColorManger.kRedTwo,
+                  backgroundColor: AppColors.kRedTwo,
                   message: "The post has been deleted",
                 ),
               );
@@ -69,13 +69,13 @@ class PopMenuButtonWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // svg icon
-                SvgPicture.asset(SvgManger.kDelete),
+                SvgPicture.asset(AppSvgs.kDelete),
                 SizedBox(width: 7),
                 // title
                 Text(
                   'Delete post',
                   style: context.kTextTheme.labelLarge!.copyWith(
-                    color: ColorManger.kRed,
+                    color: AppColors.kRed,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

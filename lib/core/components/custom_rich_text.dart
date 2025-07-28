@@ -18,14 +18,14 @@ class CustomRichText extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         children: [
-          // textSpanOne
+          // textSpan One
           TextSpan(
             text: textSpanOne,
             style: context.kTextTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
-          // textSpanTwo
+          // textSpan Two
           TextSpan(
             text: textSpanTwo,
             style: context.kTextTheme.titleSmall!.copyWith(

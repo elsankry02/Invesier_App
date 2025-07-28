@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/components/custom_list_tile_widget.dart';
-import '../../../../../core/constant/color_manger.dart';
-import '../../../../../core/constant/image_manger.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../model/home_follow_model.dart';
 import '../../home_follow_page/widget/home_follow_textformfield_widget.dart';
@@ -18,7 +18,7 @@ class SearchPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [ColorManger.k1, ColorManger.k2],
+            colors: [AppColors.kOne, AppColors.kTwo],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -29,14 +29,14 @@ class SearchPage extends StatelessWidget {
               children: [
                 // Custom IconButton
                 CustomIconButton(
-                  icon: Icon(Icons.arrow_back_ios, color: ColorManger.kWhite),
+                  icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
                   onPressed: () {
                     context.router.maybePop();
                   },
                 ),
                 ClipOval(
                   child: Image.asset(
-                    ImageManger.kBoyFour,
+                    AppImages.kBoyFour,
                     width: 36,
                     height: 36,
                     fit: BoxFit.cover,
@@ -58,7 +58,7 @@ class SearchPage extends StatelessWidget {
                   // items Model
                   items: homeFollowModel[index],
                   broderColor: Colors.transparent,
-                  backGroundColor: ColorManger.kTurquoiseBlue,
+                  backGroundColor: AppColors.kTurquoiseBlue,
                   title: 'Chase',
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 16,

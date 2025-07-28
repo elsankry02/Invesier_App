@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/color_manger.dart';
-import '../../../../core/constant/image_manger.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_images.dart';
 
 class CircleAvatarWidget extends StatelessWidget {
   final File? file;
@@ -19,11 +19,7 @@ class CircleAvatarWidget extends StatelessWidget {
           ClipOval(
             child:
                 file == null
-                    ? Image.asset(
-                      ImageManger.kMintDark,
-                      height: 140,
-                      width: 140,
-                    )
+                    ? Image.asset(AppImages.kMintDark, height: 140, width: 140)
                     : Image.file(
                       file!,
                       height: 140,
@@ -34,12 +30,12 @@ class CircleAvatarWidget extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
-              color: ColorManger.kTurquoiseBlue,
+              color: AppColors.kTurquoiseBlue,
             ),
             // IconButton (imageGallery)
             child: IconButton(
               onPressed: onPressed,
-              icon: Icon(color: ColorManger.kWhite, Icons.photo_camera),
+              icon: Icon(color: AppColors.kWhite, Icons.photo_camera),
             ),
           ),
         ],
