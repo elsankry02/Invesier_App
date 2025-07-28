@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/app_strings.dart';
 
 import 'core/constant/app_colors.dart';
+import 'core/constant/app_strings.dart';
 import 'core/router/router.dart';
 
 class InvesierApp extends StatelessWidget {

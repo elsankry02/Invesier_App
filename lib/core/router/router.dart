@@ -1,8 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../constant/app_enums.dart';
-import '../../features/presentation/signup_page/view/signup_page.dart';
-import '../../features/presentation/splash_page/view/splash_page.dart';
 
 import '../../features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 import '../../features/presentation/home/drawer_page/view/drawer_page.dart';
@@ -16,8 +13,11 @@ import '../../features/presentation/home/user_profile_page/view/user_profile_pag
 import '../../features/presentation/login_page/view/login_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
 import '../../features/presentation/signup_page/view/create_an_account_page.dart';
+import '../../features/presentation/signup_page/view/signup_page.dart';
+import '../../features/presentation/splash_page/view/splash_page.dart';
 import '../../features/presentation/welcome_page/view/welcome_page.dart';
 import '../components/custom_confirm_otp_page.dart';
+import '../constant/app_enums.dart';
 
 part 'router.gr.dart';
 

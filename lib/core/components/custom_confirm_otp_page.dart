@@ -4,17 +4,17 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_pinput_widget.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../../features/provider/post/verify_otp_provider.dart';
-import '../constant/app_enums.dart';
 import '../constant/app_colors.dart';
+import '../constant/app_enums.dart';
 import '../extension/extension.dart';
 import '../router/router.dart';
 import 'custom_icon_button.dart';
+import 'custom_pinput_widget.dart';
 import 'custom_primary_button.dart';
 import 'custom_title_appbar.dart';
 

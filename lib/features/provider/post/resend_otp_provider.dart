@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../provider.dart';
 
 abstract class ResendOtpState {}

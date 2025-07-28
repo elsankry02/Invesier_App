@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
+import '../../../bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
 
 class InvesierAppBar extends StatelessWidget {
   const InvesierAppBar({super.key});

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../home/drawer_page/view/drawer_page.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_svgs.dart';
 import '../../challenges_page/view/challenges_page.dart';
+import '../../home/drawer_page/view/drawer_page.dart';
 import '../../home/home_page/view/home_page.dart';
 import '../../learn_page/view/learn_page.dart';
 import '../../trade_page/view/trade_page.dart';
