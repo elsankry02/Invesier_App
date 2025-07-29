@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
@@ -66,8 +67,8 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
       return;
     }
     final notifier = ref.read(completeProfileProvider.notifier);
-
     await notifier.completeProfile(
+      email: widget.emailController.text.trim(),
       name: nameController.text.trim(),
       userName: usernameController.text.trim(),
       avatar: avatarFile!,
@@ -84,6 +85,7 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMessage),
         );
+        log(state.errMessage);
         return;
       }
       if (state is CompleteProfileSuccess) {

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -100,7 +99,6 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMessage),
         );
-        log(state.errMessage);
         return;
       }
       if (state is VerifyOtpSuccess) {

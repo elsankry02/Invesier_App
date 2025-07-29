@@ -12,7 +12,7 @@ class CompleteProfileService {
     required String name,
     required String userName,
     required File avatar,
-    String? email,
+    required String email,
   }) async {
     final response = await dio.post(
       Endpoints.kCompleteProfile,
@@ -20,7 +20,7 @@ class CompleteProfileService {
         "name": name,
         "username": userName,
         "avatar": await MultipartFile.fromFile(avatar.path),
-        if (email != null) "email": email,
+        "email": email,
       }),
     );
     final completeData = response.data as Map<String, dynamic>;

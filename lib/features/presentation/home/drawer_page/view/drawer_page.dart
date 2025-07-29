@@ -110,7 +110,7 @@ class DrawerPage extends ConsumerWidget {
                 // Side Menu Title Widget (Log out)
                 DrawerTitleWidget(
                   onTap: () {
-                    ref.read(prefsProvider).remove(AppStrings.kToken);
+                    ref.read(prefsProvider).remove(AppStrings.userToken);
                     context.router.replaceAll([WelcomeRoute()]);
                     showTopSnackBar(
                       Overlay.of(context),

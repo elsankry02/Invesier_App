@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,13 +31,12 @@ class _SplashPageState extends ConsumerState<SplashPage> {
     await Future.delayed(Duration(seconds: 3), () {
       final provider = ref.read(prefsProvider);
       final isSaved = provider.getBool(AppStrings.skipOnboarding) ?? false;
-      final token = provider.getString(AppStrings.kToken);
-
+      final token = provider.getString(AppStrings.userToken);
+      log("Token at splash: $token");
       if (token != null) {
         context.router.replace(BottomNavigationBarRoute());
         return;
       }
-
       if (isSaved) {
         context.router.replace(WelcomeRoute());
       } else {

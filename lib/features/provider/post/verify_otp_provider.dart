@@ -41,7 +41,7 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
         phonePrefix: phonePrefix,
       );
       final token = loginData.token;
-      await ref.read(prefsProvider).setString(AppStrings.kToken, token);
+      await ref.read(prefsProvider).setString(AppStrings.userToken, token);
       state = VerifyOtpSuccess();
     } on Exception catch (e) {
       state = VerifyOtpFailure(errMessage: e.toString());
