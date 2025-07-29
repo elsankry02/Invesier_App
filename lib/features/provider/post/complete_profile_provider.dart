@@ -1,8 +1,6 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
@@ -30,18 +28,18 @@ class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
     required String name,
     required String userName,
     required File avatar,
-   }) async {
+  }) async {
     final provider = ref.read(completeProfileServiceProvider);
     try {
       state = CompleteProfileLoading();
 
-     await provider.completeProfile(
+      await provider.completeProfile(
         name: name,
         userName: userName,
         avatar: avatar,
-       );
-  
-       state = CompleteProfileSuccess();
+      );
+
+      state = CompleteProfileSuccess();
     } on Exception catch (e) {
       state = CompleteProfileFailure(errMessage: e.toString());
     }
