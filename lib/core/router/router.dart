@@ -12,11 +12,11 @@ import '../../features/presentation/home/search_page/view/search_page.dart';
 import '../../features/presentation/home/user_profile_page/view/user_profile_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
-import '../../features/presentation/signup_page/view/create_an_account_page.dart';
+import '../../features/presentation/signup_page/view/complete_profile_page.dart';
 import '../../features/presentation/signup_page/view/signup_page.dart';
 import '../../features/presentation/splash_page/view/splash_page.dart';
 import '../../features/presentation/welcome_page/view/welcome_page.dart';
-import '../components/custom_confirm_otp_page.dart';
+import '../components/custom_verify_otp_page.dart';
 import '../constant/app_enums.dart';
 
 part 'router.gr.dart';

@@ -1,15 +1,15 @@
-class LoginModel {
+class UserModel {
   final String token;
   final User user;
   final bool registrationComplete;
 
-  LoginModel({
+  UserModel({
     required this.token,
     required this.user,
     required this.registrationComplete,
   });
 
-  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
+  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
     token: json["token"],
     user: User.fromJson(json["user"]),
     registrationComplete: json["registration_complete"],

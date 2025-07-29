@@ -30,22 +30,18 @@ class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
     required String name,
     required String userName,
     required File avatar,
-    required String email,
-  }) async {
+   }) async {
     final provider = ref.read(completeProfileServiceProvider);
     try {
       state = CompleteProfileLoading();
 
-      final completeData = await provider.completeProfile(
+     await provider.completeProfile(
         name: name,
         userName: userName,
         avatar: avatar,
-        email: email,
-      );
-      final token = completeData.token;
-      await ref.read(prefsProvider).setString(AppStrings.userToken, token);
-      log("TOKEN: $token");
-      state = CompleteProfileSuccess();
+       );
+  
+       state = CompleteProfileSuccess();
     } on Exception catch (e) {
       state = CompleteProfileFailure(errMessage: e.toString());
     }

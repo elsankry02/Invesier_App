@@ -14,28 +14,20 @@ import '../../../../core/components/custom_rich_text.dart';
 import '../../../../core/components/custom_text_form_field.dart';
 import '../../../../core/components/custom_title_appbar.dart';
 import '../../../../core/constant/app_colors.dart';
-import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../provider/post/complete_profile_provider.dart';
 import '../widget/circle_avatar_widget.dart';
 
 @RoutePage()
-class CreateAnAccountPage extends ConsumerStatefulWidget {
-  final ContactType contactType;
-  final TextEditingController phoneController, emailController;
-  const CreateAnAccountPage(
-    this.contactType,
-    this.emailController,
-    this.phoneController, {
-    super.key,
-  });
+class CompleteProfilePage extends ConsumerStatefulWidget {
+  const CompleteProfilePage({super.key});
   @override
-  ConsumerState<CreateAnAccountPage> createState() =>
+  ConsumerState<CompleteProfilePage> createState() =>
       _CreateAnAccountPageState();
 }
 
-class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
+class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   final formKey = GlobalKey<FormState>();
   File? avatarFile;
   final nameController = TextEditingController();
@@ -68,7 +60,6 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
     }
     final notifier = ref.read(completeProfileProvider.notifier);
     await notifier.completeProfile(
-      email: widget.emailController.text.trim(),
       name: nameController.text.trim(),
       userName: usernameController.text.trim(),
       avatar: avatarFile!,

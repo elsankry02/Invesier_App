@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/model/login_model.dart';
+import 'package:invesier/features/model/user_model.dart';
 
 import '../../core/constant/endpoints.dart';
 
 class VerifyOtpService {
   final Dio dio;
   VerifyOtpService({required this.dio});
-  Future<LoginModel> verifyOtp({
+  Future<UserModel> verifyOtp({
     required String authMethod,
     required String otp,
     String? email,
     String? phone,
     String? phonePrefix,
   }) async {
-  final response =   await dio.post(
+    final response = await dio.post(
       Endpoints.kVerifyOtp,
       data: {
         "auth_method": authMethod,
@@ -23,7 +23,7 @@ class VerifyOtpService {
         if (phone != null) "phone": phone,
       },
     );
-    final userData = response.data as Map<String,dynamic>;
-    return LoginModel.fromJson(userData);
+    final userData = response.data as Map<String, dynamic>;
+    return UserModel.fromJson(userData);
   }
 }

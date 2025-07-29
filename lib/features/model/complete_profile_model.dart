@@ -1,26 +1,12 @@
 class CompleteProfileModel {
-  final String token;
   final User user;
-  final bool registrationComplete;
 
-  CompleteProfileModel({
-    required this.token,
-    required this.user,
-    required this.registrationComplete,
-  });
+  CompleteProfileModel({required this.user});
 
   factory CompleteProfileModel.fromJson(Map<String, dynamic> json) =>
-      CompleteProfileModel(
-        token: json["token"],
-        user: User.fromJson(json["user"]),
-        registrationComplete: json["registration_complete"],
-      );
+      CompleteProfileModel(user: User.fromJson(json["user"]));
 
-  Map<String, dynamic> toJson() => {
-    "token": token,
-    "user": user.toJson(),
-    "registration_complete": registrationComplete,
-  };
+  Map<String, dynamic> toJson() => {"user": user.toJson()};
 }
 
 class User {

@@ -18,11 +18,11 @@ import 'custom_primary_button.dart';
 import 'custom_title_appbar.dart';
 
 @RoutePage()
-class CustomConfirmOtpPage extends ConsumerStatefulWidget {
+class CustomVerifyOtpPage extends ConsumerStatefulWidget {
   final TextEditingController phoneController, emailController;
   final bool isLogin;
   final ContactType contactType;
-  const CustomConfirmOtpPage(
+  const CustomVerifyOtpPage(
     this.phoneController,
     this.emailController,
     this.contactType, {
@@ -30,11 +30,11 @@ class CustomConfirmOtpPage extends ConsumerStatefulWidget {
     super.key,
   });
   @override
-  ConsumerState<CustomConfirmOtpPage> createState() =>
+  ConsumerState<CustomVerifyOtpPage> createState() =>
       _CustomConfirmOtpPageState();
 }
 
-class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
+class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
   Timer? timer;
   int secondsRemaining = 60;
   final formKey = GlobalKey<FormState>();
@@ -111,13 +111,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
           context.router.replace(BottomNavigationBarRoute());
           authenticationSuccessful;
         } else {
-          context.router.push(
-            CreateAnAccountRoute(
-              contactType: widget.contactType,
-              emailController: widget.emailController,
-              phoneController: widget.phoneController,
-            ),
-          );
+          context.router.push(CreateAnAccountRoute());
           authenticationSuccessful;
         }
       }
