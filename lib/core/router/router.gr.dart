@@ -158,6 +158,7 @@ class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
     required TextEditingController phoneController,
     required TextEditingController emailController,
     required ContactType contactType,
+    required bool isLogin,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
@@ -166,6 +167,7 @@ class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
            phoneController: phoneController,
            emailController: emailController,
            contactType: contactType,
+           isLogin: isLogin,
            key: key,
          ),
          initialChildren: children,
@@ -181,6 +183,7 @@ class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
         args.phoneController,
         args.emailController,
         args.contactType,
+        isLogin: args.isLogin,
         key: args.key,
       );
     },
@@ -192,6 +195,7 @@ class CustomConfirmOtpRouteArgs {
     required this.phoneController,
     required this.emailController,
     required this.contactType,
+    required this.isLogin,
     this.key,
   });
 
@@ -201,11 +205,13 @@ class CustomConfirmOtpRouteArgs {
 
   final ContactType contactType;
 
+  final bool isLogin;
+
   final Key? key;
 
   @override
   String toString() {
-    return 'CustomConfirmOtpRouteArgs{phoneController: $phoneController, emailController: $emailController, contactType: $contactType, key: $key}';
+    return 'CustomConfirmOtpRouteArgs{phoneController: $phoneController, emailController: $emailController, contactType: $contactType, isLogin: $isLogin, key: $key}';
   }
 
   @override
@@ -215,6 +221,7 @@ class CustomConfirmOtpRouteArgs {
     return phoneController == other.phoneController &&
         emailController == other.emailController &&
         contactType == other.contactType &&
+        isLogin == other.isLogin &&
         key == other.key;
   }
 
@@ -223,6 +230,7 @@ class CustomConfirmOtpRouteArgs {
       phoneController.hashCode ^
       emailController.hashCode ^
       contactType.hashCode ^
+      isLogin.hashCode ^
       key.hashCode;
 }
 

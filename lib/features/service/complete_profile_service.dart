@@ -1,24 +1,29 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:invesier/features/model/complete_profile_model.dart';
 
 import '../../core/constant/endpoints.dart';
 
 class CompleteProfileService {
   final Dio dio;
   CompleteProfileService({required this.dio});
-  Future<void> completeProfile({
+  Future<CompleteProfileModel> completeProfile({
     required String name,
     required String userName,
-    required String avatar,
+    required File avatar,
     String? email,
   }) async {
-    await dio.post(
+    final response = await dio.post(
       Endpoints.kCompleteProfile,
-      data: {
+      data: FormData.fromMap({
         "name": name,
         "username": userName,
-        "avatar": avatar,
+        "avatar": await MultipartFile.fromFile(avatar.path),
         if (email != null) "email": email,
-      },
+      }),
     );
+    final completeData = response.data as Map<String, dynamic>;
+    return CompleteProfileModel.fromJson(completeData);
   }
 }

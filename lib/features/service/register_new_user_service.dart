@@ -7,10 +7,10 @@ class RegisterNewUserService {
   RegisterNewUserService({required this.dio});
   Future<void> registerNewUser({
     required String authMethod,
+    required String prefix,
     String? phonePrefix,
     String? email,
     String? phone,
-    String? prefix,
   }) async {
     await dio.post(
       Endpoints.kRegister,
@@ -19,7 +19,7 @@ class RegisterNewUserService {
         if (phonePrefix != null) "phone_prefix": phonePrefix,
         if (email != null) "email": email,
         if (phone != null) "phone": phone,
-        if (prefix != null) "prefix": prefix,
+        "prefix": prefix,
       },
     );
   }

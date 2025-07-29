@@ -24,6 +24,7 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
 
   Future<void> registerNewUser({
     required String authMethod,
+    required String prefix,
     String? phonePrefix,
     String? email,
     String? phone,
@@ -32,6 +33,7 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
     try {
       state = RegisterNewUserLoading();
       await provider.registerNewUser(
+        prefix: prefix,
         authMethod: authMethod,
         phonePrefix: phonePrefix,
         phone: phone,

@@ -21,11 +21,13 @@ import 'custom_title_appbar.dart';
 @RoutePage()
 class CustomConfirmOtpPage extends ConsumerStatefulWidget {
   final TextEditingController phoneController, emailController;
+  final bool isLogin;
   final ContactType contactType;
   const CustomConfirmOtpPage(
     this.phoneController,
     this.emailController,
     this.contactType, {
+    required this.isLogin,
     super.key,
   });
   @override
@@ -102,11 +104,24 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomConfirmOtpPage> {
         return;
       }
       if (state is VerifyOtpSuccess) {
-        showTopSnackBar(
+        final isLogin = widget.isLogin;
+        final authenticationSuccessful = showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.success(message: "Authentication successful"),
         );
-        context.router.replace(BottomNavigationBarRoute());
+        if (isLogin == true) {
+          context.router.replace(BottomNavigationBarRoute());
+          authenticationSuccessful;
+        } else {
+          context.router.push(
+            CreateAnAccountRoute(
+              contactType: widget.contactType,
+              emailController: widget.emailController,
+              phoneController: widget.phoneController,
+            ),
+          );
+          authenticationSuccessful;
+        }
       }
     });
     return Scaffold(

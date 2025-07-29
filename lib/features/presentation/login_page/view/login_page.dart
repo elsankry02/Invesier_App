@@ -72,6 +72,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
         );
         context.router.push(
           CustomConfirmOtpRoute(
+            isLogin: true,
             contactType: contactType,
             emailController: emailController,
             phoneController: phoneController,

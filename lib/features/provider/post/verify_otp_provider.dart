@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
@@ -32,13 +33,15 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
     final provider = ref.read(verifyOtpServiceProvider);
     try {
       state = VerifyOtpLoading();
-      await provider.verifyOtp(
+      final loginData = await provider.verifyOtp(
         authMethod: authMethod,
         otp: otp,
         email: email,
         phone: phone,
         phonePrefix: phonePrefix,
       );
+      final token = loginData.token;
+      await ref.read(prefsProvider).setString(AppStrings.kToken, token);
       state = VerifyOtpSuccess();
     } on Exception catch (e) {
       state = VerifyOtpFailure(errMessage: e.toString());

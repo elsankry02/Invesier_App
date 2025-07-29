@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
+import 'package:invesier/features/provider/provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -10,11 +13,11 @@ import '../../../../../core/router/router.dart';
 import '../widget/drawer_title_widget.dart';
 
 @RoutePage()
-class DrawerPage extends StatelessWidget {
+class DrawerPage extends ConsumerWidget {
   const DrawerPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Drawer(
       child: Container(
         decoration: const BoxDecoration(
@@ -107,12 +110,11 @@ class DrawerPage extends StatelessWidget {
                 // Side Menu Title Widget (Log out)
                 DrawerTitleWidget(
                   onTap: () {
+                    ref.read(prefsProvider).remove(AppStrings.kToken);
+                    context.router.replaceAll([WelcomeRoute()]);
                     showTopSnackBar(
                       Overlay.of(context),
-                      CustomSnackBar.info(
-                        backgroundColor: AppColors.kBoulder,
-                        message: "COMING SOON",
-                      ),
+                      CustomSnackBar.success(message: "Log out"),
                     );
                   },
                   title: 'Log out',

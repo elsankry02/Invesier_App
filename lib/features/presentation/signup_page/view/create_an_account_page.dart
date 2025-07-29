@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
@@ -67,12 +66,11 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
       return;
     }
     final notifier = ref.read(completeProfileProvider.notifier);
-    log(nameController.text);
-    log(usernameController.text);
+
     await notifier.completeProfile(
       name: nameController.text.trim(),
       userName: usernameController.text.trim(),
-      avatar: avatarFile!.path,
+      avatar: avatarFile!,
     );
   }
 
@@ -91,18 +89,9 @@ class _CreateAnAccountPageState extends ConsumerState<CreateAnAccountPage> {
       if (state is CompleteProfileSuccess) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.success(
-            backgroundColor: AppColors.kGray,
-            message: "OTP sent successfully. Please verify to continue.",
-          ),
+          CustomSnackBar.success(message: "successfully"),
         );
-        context.router.push(
-          CustomConfirmOtpRoute(
-            contactType: widget.contactType,
-            emailController: widget.emailController,
-            phoneController: widget.phoneController,
-          ),
-        );
+        context.router.replace(BottomNavigationBarRoute());
       }
     });
     return Scaffold(

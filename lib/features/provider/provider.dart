@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 import 'package:invesier/features/service/remove_an_fcm_token_from_the_database_service.dart';
 import 'package:invesier/features/service/store_the_fcm_token_for_the_authenticated_user_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,12 +14,14 @@ import '../service/resend_otp_service.dart';
 import '../service/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
+  final token = ref.read(prefsProvider).getString(AppStrings.kToken);
   return Dio(
     BaseOptions(
       baseUrl: kBaseUrl,
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
+        if (token != null) "Authorization": "Bearer $token",
       },
     ),
   );

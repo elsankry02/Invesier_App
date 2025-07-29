@@ -42,7 +42,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     final notifier = ref.read(registerNewUserProvider.notifier);
     final isEmail = contactType == ContactType.email;
     await notifier.registerNewUser(
-      phonePrefix: "+20",
+      prefix: "+20",
+      phonePrefix: "+971",
       authMethod: contactType.name,
       email: isEmail ? emailController.text.trim() : null,
       phone: isEmail ? null : phoneController.text.trim(),
@@ -65,15 +66,15 @@ class _SignupPageState extends ConsumerState<SignupPage> {
         showTopSnackBar(
           Overlay.of(context),
           CustomSnackBar.success(
-            backgroundColor: AppColors.kBoulder,
             message: "OTP sent successfully. Please verify to continue.",
           ),
         );
         context.router.push(
-          CreateAnAccountRoute(
-            contactType: contactType,
-            emailController: emailController,
+          CustomConfirmOtpRoute(
+            isLogin: false,
             phoneController: phoneController,
+            emailController: emailController,
+            contactType: contactType,
           ),
         );
       }

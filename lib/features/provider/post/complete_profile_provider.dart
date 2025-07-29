@@ -1,4 +1,8 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
@@ -25,18 +29,23 @@ class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
   Future<void> completeProfile({
     required String name,
     required String userName,
-    required String avatar,
+    required File avatar,
     String? email,
   }) async {
     final provider = ref.read(completeProfileServiceProvider);
     try {
       state = CompleteProfileLoading();
-      await provider.completeProfile(
+
+      final completeData = await provider.completeProfile(
         name: name,
         userName: userName,
         avatar: avatar,
         email: email,
       );
+      final token = completeData.token;
+      await ref.read(prefsProvider).setString(AppStrings.kToken, token);
+      log("TOKEN: $token");
+
       state = CompleteProfileSuccess();
     } on Exception catch (e) {
       state = CompleteProfileFailure(errMessage: e.toString());

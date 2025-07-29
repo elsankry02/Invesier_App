@@ -17,6 +17,7 @@ class SplashPage extends ConsumerStatefulWidget {
   ConsumerState<SplashPage> createState() => _SplashPageState();
 }
 
+// "28|wrq1eF9zkN65GisrSYCGFeWWq9EiUfXP8lIvPmmIcdc49ceb"
 class _SplashPageState extends ConsumerState<SplashPage> {
   @override
   void initState() {
@@ -24,10 +25,17 @@ class _SplashPageState extends ConsumerState<SplashPage> {
     super.initState();
   }
 
-  splash() {
-    Future.delayed(Duration(seconds: 3), () {
-      final isSaved =
-          ref.read(prefsProvider).getBool(AppStrings.skipOnboarding) ?? false;
+  Future<void> splash() async {
+    await Future.delayed(Duration(seconds: 3), () {
+      final provider = ref.read(prefsProvider);
+      final isSaved = provider.getBool(AppStrings.skipOnboarding) ?? false;
+      final token = provider.getString(AppStrings.kToken);
+
+      if (token != null) {
+        context.router.replace(BottomNavigationBarRoute());
+        return;
+      }
+
       if (isSaved) {
         context.router.replace(WelcomeRoute());
       } else {
