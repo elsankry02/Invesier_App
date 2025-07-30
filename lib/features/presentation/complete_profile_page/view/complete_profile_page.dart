@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
@@ -42,6 +41,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   // imagePickerGallery
   imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
+      // TODO
       source: ImageSource.camera,
     );
     if (imageGallery == null) return;
@@ -76,13 +76,12 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
           Overlay.of(context),
           CustomSnackBar.error(message: state.errMessage),
         );
-        log(state.errMessage);
         return;
       }
       if (state is CompleteProfileSuccess) {
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.success(message: "successfully"),
+          CustomSnackBar.success(message: "Profile completed successfully"),
         );
         context.router.replace(BottomNavigationBarRoute());
       }

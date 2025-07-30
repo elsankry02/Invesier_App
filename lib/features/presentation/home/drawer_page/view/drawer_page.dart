@@ -114,7 +114,7 @@ class DrawerPage extends ConsumerWidget {
                     context.router.replaceAll([WelcomeRoute()]);
                     showTopSnackBar(
                       Overlay.of(context),
-                      CustomSnackBar.success(message: "Log out"),
+                      CustomSnackBar.success(message: "Logged out successfully"),
                     );
                   },
                   title: 'Log out',
