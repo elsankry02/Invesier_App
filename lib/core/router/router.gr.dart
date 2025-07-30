@@ -11,56 +11,6 @@
 part of 'router.dart';
 
 /// generated route for
-/// [BottomNavigationBarPage]
-class BottomNavigationBarRoute
-    extends PageRouteInfo<BottomNavigationBarRouteArgs> {
-  BottomNavigationBarRoute({
-    Key? key,
-    Widget? drawer,
-    List<PageRouteInfo>? children,
-  }) : super(
-         BottomNavigationBarRoute.name,
-         args: BottomNavigationBarRouteArgs(key: key, drawer: drawer),
-         initialChildren: children,
-       );
-
-  static const String name = 'BottomNavigationBarRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<BottomNavigationBarRouteArgs>(
-        orElse: () => const BottomNavigationBarRouteArgs(),
-      );
-      return BottomNavigationBarPage(key: args.key, drawer: args.drawer);
-    },
-  );
-}
-
-class BottomNavigationBarRouteArgs {
-  const BottomNavigationBarRouteArgs({this.key, this.drawer});
-
-  final Key? key;
-
-  final Widget? drawer;
-
-  @override
-  String toString() {
-    return 'BottomNavigationBarRouteArgs{key: $key, drawer: $drawer}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! BottomNavigationBarRouteArgs) return false;
-    return key == other.key && drawer == other.drawer;
-  }
-
-  @override
-  int get hashCode => key.hashCode ^ drawer.hashCode;
-}
-
-/// generated route for
 /// [CommentPage]
 class CommentRoute extends PageRouteInfo<void> {
   const CommentRoute({List<PageRouteInfo>? children})
@@ -78,11 +28,11 @@ class CommentRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [CompleteProfilePage]
-class CreateAnAccountRoute extends PageRouteInfo<void> {
-  const CreateAnAccountRoute({List<PageRouteInfo>? children})
-    : super(CreateAnAccountRoute.name, initialChildren: children);
+class CompleteProfileRoute extends PageRouteInfo<void> {
+  const CompleteProfileRoute({List<PageRouteInfo>? children})
+    : super(CompleteProfileRoute.name, initialChildren: children);
 
-  static const String name = 'CreateAnAccountRoute';
+  static const String name = 'CompleteProfileRoute';
 
   static PageInfo page = PageInfo(
     name,
@@ -94,8 +44,8 @@ class CreateAnAccountRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [CustomVerifyOtpPage]
-class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
-  CustomConfirmOtpRoute({
+class CustomVerifyOtpRoute extends PageRouteInfo<CustomVerifyOtpRouteArgs> {
+  CustomVerifyOtpRoute({
     required TextEditingController phoneController,
     required TextEditingController emailController,
     required ContactType contactType,
@@ -103,8 +53,8 @@ class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
-         CustomConfirmOtpRoute.name,
-         args: CustomConfirmOtpRouteArgs(
+         CustomVerifyOtpRoute.name,
+         args: CustomVerifyOtpRouteArgs(
            phoneController: phoneController,
            emailController: emailController,
            contactType: contactType,
@@ -114,12 +64,12 @@ class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
          initialChildren: children,
        );
 
-  static const String name = 'CustomConfirmOtpRoute';
+  static const String name = 'CustomVerifyOtpRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<CustomConfirmOtpRouteArgs>();
+      final args = data.argsAs<CustomVerifyOtpRouteArgs>();
       return CustomVerifyOtpPage(
         args.phoneController,
         args.emailController,
@@ -131,8 +81,8 @@ class CustomConfirmOtpRoute extends PageRouteInfo<CustomConfirmOtpRouteArgs> {
   );
 }
 
-class CustomConfirmOtpRouteArgs {
-  const CustomConfirmOtpRouteArgs({
+class CustomVerifyOtpRouteArgs {
+  const CustomVerifyOtpRouteArgs({
     required this.phoneController,
     required this.emailController,
     required this.contactType,
@@ -152,13 +102,13 @@ class CustomConfirmOtpRouteArgs {
 
   @override
   String toString() {
-    return 'CustomConfirmOtpRouteArgs{phoneController: $phoneController, emailController: $emailController, contactType: $contactType, isLogin: $isLogin, key: $key}';
+    return 'CustomVerifyOtpRouteArgs{phoneController: $phoneController, emailController: $emailController, contactType: $contactType, isLogin: $isLogin, key: $key}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    if (other is! CustomConfirmOtpRouteArgs) return false;
+    if (other is! CustomVerifyOtpRouteArgs) return false;
     return phoneController == other.phoneController &&
         emailController == other.emailController &&
         contactType == other.contactType &&
@@ -252,6 +202,52 @@ class LoginRoute extends PageRouteInfo<void> {
       return const LoginPage();
     },
   );
+}
+
+/// generated route for
+/// [MainNavigationPage]
+class MainNavigationRoute extends PageRouteInfo<MainNavigationRouteArgs> {
+  MainNavigationRoute({Key? key, Widget? drawer, List<PageRouteInfo>? children})
+    : super(
+        MainNavigationRoute.name,
+        args: MainNavigationRouteArgs(key: key, drawer: drawer),
+        initialChildren: children,
+      );
+
+  static const String name = 'MainNavigationRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<MainNavigationRouteArgs>(
+        orElse: () => const MainNavigationRouteArgs(),
+      );
+      return MainNavigationPage(key: args.key, drawer: args.drawer);
+    },
+  );
+}
+
+class MainNavigationRouteArgs {
+  const MainNavigationRouteArgs({this.key, this.drawer});
+
+  final Key? key;
+
+  final Widget? drawer;
+
+  @override
+  String toString() {
+    return 'MainNavigationRouteArgs{key: $key, drawer: $drawer}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! MainNavigationRouteArgs) return false;
+    return key == other.key && drawer == other.drawer;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ drawer.hashCode;
 }
 
 /// generated route for

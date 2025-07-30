@@ -3,10 +3,10 @@ import 'package:flutter_svg/svg.dart';
 
 import '../extension/extension.dart';
 
-class CustomTrendBox extends StatelessWidget {
+class CustomTagButton extends StatelessWidget {
   final String title, svg;
   final Color titleColor, borderColor;
-  const CustomTrendBox({
+  const CustomTagButton({
     super.key,
     required this.svg,
     required this.title,

@@ -13,17 +13,16 @@ import '../widget/navigationbar_item_widget.dart';
 import '../widget/show_model_button_sheet_widget.dart';
 
 @RoutePage()
-class BottomNavigationBarPage extends StatefulWidget {
+class MainNavigationPage extends StatefulWidget {
   final Widget? drawer;
-  const BottomNavigationBarPage({super.key, this.drawer});
+  const MainNavigationPage({super.key, this.drawer});
   @override
-  State<BottomNavigationBarPage> createState() =>
-      _BottomNavigationBarPageState();
+  State<MainNavigationPage> createState() => _MainNavigationPageState();
 }
 
 final scaffoldKey = GlobalKey<ScaffoldState>();
 
-class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
+class _MainNavigationPageState extends State<MainNavigationPage> {
   int selectedIndex = 0;
   List<Widget> pages = [HomePage(), ChallengesPage(), TradePage(), LearnPage()];
 

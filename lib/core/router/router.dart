@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/presentation/bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
+import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/home/drawer_page/view/drawer_page.dart';
 import '../../features/presentation/home/home_follow_page/view/home_follow_page.dart';
 import '../../features/presentation/home/home_page/view/comment_page.dart';
@@ -11,8 +11,8 @@ import '../../features/presentation/home/personal_profile_page/view/personal_pro
 import '../../features/presentation/home/search_page/view/search_page.dart';
 import '../../features/presentation/home/user_profile_page/view/user_profile_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';
+import '../../features/presentation/main_navigation_page/view/main_navigation_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
-import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/signup_page/view/signup_page.dart';
 import '../../features/presentation/splash_page/view/splash_page.dart';
 import '../../features/presentation/welcome_page/view/welcome_page.dart';
@@ -32,9 +32,9 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: SignupRoute.page),
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: WelcomeRoute.page),
-    AutoRoute(page: CreateAnAccountRoute.page),
-    AutoRoute(page: CustomConfirmOtpRoute.page),
-    AutoRoute(page: BottomNavigationBarRoute.page),
+    AutoRoute(page: CompleteProfileRoute.page),
+    AutoRoute(page: CustomVerifyOtpRoute.page),
+    AutoRoute(page: MainNavigationRoute.page),
     AutoRoute(page: DrawerRoute.page),
     AutoRoute(page: CommentRoute.page),
     AutoRoute(page: PostRoute.page),

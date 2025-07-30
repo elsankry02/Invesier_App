@@ -33,14 +33,14 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
     final provider = ref.read(verifyOtpServiceProvider);
     try {
       state = VerifyOtpLoading();
-      final loginData = await provider.verifyOtp(
+      final authResponse = await provider.verifyOtp(
         authMethod: authMethod,
         otp: otp,
         email: email,
         phone: phone,
         phonePrefix: phonePrefix,
       );
-      final token = loginData.token;
+      final token = authResponse.token;
       await ref.read(prefsProvider).setString(AppStrings.userToken, token);
       ref.invalidate(dioProvider);
       state = VerifyOtpSuccess();

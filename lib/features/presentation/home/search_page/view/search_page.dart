@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
-import '../../../../../core/components/custom_list_tile_widget.dart';
+import '../../../../../core/components/custom_follow_user_tile.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
@@ -55,7 +55,7 @@ class SearchPage extends StatelessWidget {
               shrinkWrap: true,
               itemCount: homeFollowModel.length,
               itemBuilder: (context, index) {
-                return CustomListTileWidget(
+                return CustomFollowUserTile(
                   // items Model
                   items: homeFollowModel[index],
                   broderColor: Colors.transparent,

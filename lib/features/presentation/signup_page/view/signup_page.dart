@@ -1,20 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/features/provider/post/register_new_user_provider.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
-import '../../../../core/components/custom_button_style_enum.dart';
+import '../../../../core/components/custom_contact_type_field.dart';
+import '../../../../core/components/custom_outlined_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/components/custom_rich_text.dart';
-import '../../../../core/components/custom_social_auth_buttons.dart';
+import '../../../../core/components/custom_social_auth_button.dart';
+import '../../../../core/components/custom_tap_richtext.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
-import '../widget/contact_email_widget.dart';
-import '../widget/contact_phone_widget.dart';
 
 @RoutePage()
 class SignupPage extends ConsumerStatefulWidget {
@@ -43,7 +41,6 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     final isEmail = contactType == ContactType.email;
     await notifier.registerNewUser(
       prefix: "+20",
-      phonePrefix: "+20",
       authMethod: contactType.name,
       email: isEmail ? emailController.text.trim() : null,
       phone: isEmail ? null : phoneController.text.trim(),
@@ -53,24 +50,19 @@ class _SignupPageState extends ConsumerState<SignupPage> {
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(registerNewUserProvider);
-    // final notifier = ref.read(registerProvider.notifier);
     ref.listen(registerNewUserProvider, (_, state) {
       if (state is RegisterNewUserFailure) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.error(message: state.errMessage),
-        );
+        showCustomErrorMessage(context, message: state.errMessage);
         return;
       }
       if (state is RegisterNewUserSuccess) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.success(
-            message: "OTP sent successfully. Please verify to continue.",
-          ),
+        showCustomSuccessMessage(
+          context,
+          message: "User registered successfully",
         );
+
         context.router.push(
-          CustomConfirmOtpRoute(
+          CustomVerifyOtpRoute(
             isLogin: false,
             phoneController: phoneController,
             emailController: emailController,
@@ -105,7 +97,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 SizedBox(height: 4),
                 // Rich Text
                 Center(
-                  child: CustomRichText(
+                  child: CustomTapRichText(
                     textSpanOne: 'Already have an account?',
                     textSpanTwo: ' Log in',
                     onTap: () {
@@ -122,7 +114,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         //  Email
-                        CustomButtonStyleEnum(
+                        CustomOutlinedButton(
                           title: 'Email',
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(26),
@@ -148,7 +140,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                           },
                         ),
                         // Phone
-                        CustomButtonStyleEnum(
+                        CustomOutlinedButton(
                           title: 'Phone',
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(26),
@@ -176,40 +168,24 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                       ],
                     ),
                     SizedBox(height: context.height * 0.047),
-                    // PageView
                     SizedBox(
                       height: context.height * 0.150,
+                      // PageView
                       child: PageView(
                         physics: NeverScrollableScrollPhysics(),
                         controller: pageController,
                         children: [
-                          // Email Widget
-                          ContactEmailWidget(
-                            emailController: emailController,
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
-                            // onChanged
-                            onChanged: (value) {},
-                            // validator
-                            validator: (value) {
-                              return null;
-                            },
+                          // Email
+                          CustomContactTypeFieldWidget(
+                            title: 'Email',
+                            hintText: 'name@gmail.com',
+                            tybeController: emailController,
                           ),
-                          // Contact Phone Widget
-                          ContactPhoneWidget(
-                            phoneController: phoneController,
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
-                            //? onChanged
-                            onChanged: (value) {
-                              if (formKey.currentState != null) {
-                                setState(() {});
-                              }
-                            },
-                            //? validator
-                            validator: (value) {
-                              return null;
-                            },
+                          // Phone Number
+                          CustomContactTypeFieldWidget(
+                            title: 'Phone number',
+                            hintText: '01204******',
+                            tybeController: phoneController,
                           ),
                         ],
                       ),
@@ -218,11 +194,13 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 ),
                 SizedBox(height: context.height * 0.11),
                 // Custom Social Auth Buttons
-                CustomSocialAuthButtons(
-                  // onTapGoogle
-                  onTapGoogle: () {},
-                  // onTapApple
-                  onTapApple: () {},
+                CustomSocialAuthButton(
+                  onLoginWithGoogle: () {
+                    showCustomErrorMessage(context, message: "COMING SOON");
+                  },
+                  onLoginWithApple: () {
+                    showCustomErrorMessage(context, message: "COMING SOON");
+                  },
                 ),
                 SizedBox(height: context.height * 0.057),
                 // CustomPrimaryButton

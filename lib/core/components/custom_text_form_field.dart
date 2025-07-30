@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constant/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final String title;
+  final String hintText;
   final AutovalidateMode? autovalidateMode;
   final TextInputType? keyboardType;
   final TextStyle? hintStyle;
@@ -12,7 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String? value)? validator;
   const CustomTextFormField({
     super.key,
-    required this.title,
+    required this.hintText,
     required this.controller,
     this.keyboardType,
     this.validator,
@@ -36,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         //title
-        hintText: title,
+        hintText: hintText,
         hintStyle: hintStyle,
         enabledBorder: outlineInputBorder(borderColor: AppColors.kBorder),
         focusedBorder: outlineInputBorder(borderColor: AppColors.kBorder),

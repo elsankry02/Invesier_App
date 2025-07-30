@@ -7,7 +7,7 @@ import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../../bottom_navigationbar_page/view/bottom_navigation_bar_page.dart';
+import '../../../main_navigation_page/view/main_navigation_page.dart';
 
 class InvesierAppBar extends StatelessWidget {
   const InvesierAppBar({super.key});

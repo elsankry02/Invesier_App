@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/components/custom_list_tile_widget.dart';
+import '../../../../../core/components/custom_follow_user_tile.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../model/home_follow_model.dart';
 
@@ -13,7 +13,7 @@ class PioneersWidget extends StatelessWidget {
       child: ListView.builder(
         itemCount: homeFollowModel.length,
         itemBuilder: (context, index) {
-          return CustomListTileWidget(
+          return CustomFollowUserTile(
             // items Model
             items: homeFollowModel[index],
             broderColor: AppColors.kTurquoiseBlue,

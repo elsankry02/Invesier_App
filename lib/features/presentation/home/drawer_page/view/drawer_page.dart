@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/core/constant/app_strings.dart';
 import 'package:invesier/features/provider/provider.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
@@ -97,13 +96,7 @@ class DrawerPage extends ConsumerWidget {
                 // Side Menu Title Widget (Settings)
                 DrawerTitleWidget(
                   onTap: () {
-                    showTopSnackBar(
-                      Overlay.of(context),
-                      CustomSnackBar.info(
-                        backgroundColor: AppColors.kBoulder,
-                        message: "COMING SOON",
-                      ),
-                    );
+                    showCustomErrorMessage(context, message: "COMING SOON");
                   },
                   title: 'Settings',
                 ),
@@ -112,12 +105,12 @@ class DrawerPage extends ConsumerWidget {
                   onTap: () {
                     ref.read(prefsProvider).remove(AppStrings.userToken);
                     context.router.replaceAll([WelcomeRoute()]);
-                    showTopSnackBar(
-                      Overlay.of(context),
-                      CustomSnackBar.success(message: "Logged out successfully"),
+                    showCustomSuccessMessage(
+                      context,
+                      message: "Logged out successfully",
                     );
                   },
-                  title: 'Log out',
+                  title: "Log out",
                 ),
               ],
             ),

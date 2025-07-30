@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,7 +17,6 @@ class SplashPage extends ConsumerStatefulWidget {
   ConsumerState<SplashPage> createState() => _SplashPageState();
 }
 
-// "28|wrq1eF9zkN65GisrSYCGFeWWq9EiUfXP8lIvPmmIcdc49ceb"
 class _SplashPageState extends ConsumerState<SplashPage> {
   @override
   void initState() {
@@ -30,11 +27,10 @@ class _SplashPageState extends ConsumerState<SplashPage> {
   Future<void> splash() async {
     await Future.delayed(Duration(seconds: 3), () {
       final provider = ref.read(prefsProvider);
-      final isSaved = provider.getBool(AppStrings.skipOnboarding) ?? false;
       final token = provider.getString(AppStrings.userToken);
-      log("Token at splash: $token");
+      final isSaved = provider.getBool(AppStrings.skipOnboarding) ?? false;
       if (token != null) {
-        context.router.replace(BottomNavigationBarRoute());
+        context.router.replace(MainNavigationRoute());
         return;
       }
       if (isSaved) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/components/custom_trend_box.dart';
+import '../../../../../core/components/custom_tag_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
@@ -94,7 +94,7 @@ class ReplyWidget extends StatelessWidget {
                   spacing: 13,
                   children: [
                     // Growth
-                    CustomTrendBox(
+                    CustomTagButton(
                       svg: AppSvgs.kGrowth,
                       title: '12k',
                       titleColor: AppColors.kEucalyptus,
@@ -105,7 +105,7 @@ class ReplyWidget extends StatelessWidget {
                         ).showSnackBar(SnackBar(content: Text('Growth')));
                       },
                     ),
-                    CustomTrendBox(
+                    CustomTagButton(
                       // Decline
                       svg: AppSvgs.kDecline,
                       title: '12K',
@@ -117,7 +117,7 @@ class ReplyWidget extends StatelessWidget {
                         ).showSnackBar(SnackBar(content: Text('Decline')));
                       },
                     ),
-                    CustomTrendBox(
+                    CustomTagButton(
                       // Rplay
                       svg: AppSvgs.kReply,
                       title: 'Rplay',

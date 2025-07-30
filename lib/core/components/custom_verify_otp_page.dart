@@ -3,19 +3,18 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/provider/post/verify_otp_provider.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../constant/app_colors.dart';
 import '../constant/app_enums.dart';
 import '../extension/extension.dart';
-import '../router/router.dart';
 import 'custom_icon_button.dart';
-import 'custom_pinput_widget.dart';
+import 'custom_otp_code_field.dart';
 import 'custom_primary_button.dart';
-import 'custom_title_appbar.dart';
+import 'custom_appbar_title.dart';
 
 @RoutePage()
 class CustomVerifyOtpPage extends ConsumerStatefulWidget {
@@ -68,13 +67,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
   }
 
   void resendCode() {
-    showTopSnackBar(
-      Overlay.of(context),
-      CustomSnackBar.success(
-        backgroundColor: AppColors.kDarkenText,
-        message: "A new code has been sent",
-      ),
-    );
+    showCustomSuccessMessage(context, message: "A new code has been sent");
     startTimer();
   }
 
@@ -95,24 +88,23 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
     final state = ref.watch(verifyOtpProvider);
     ref.listen(verifyOtpProvider, (_, state) {
       if (state is VerifyOtpFailure) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.error(message: state.errMessage),
-        );
+        showCustomErrorMessage(context, message: state.errMessage);
         return;
       }
       if (state is VerifyOtpSuccess) {
         final isLogin = widget.isLogin;
-        final authenticationSuccessful = showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.success(message: "Authentication successful"),
-        );
         if (isLogin == true) {
-          context.router.replace(BottomNavigationBarRoute());
-          authenticationSuccessful;
+          context.router.replace(MainNavigationRoute());
+          showCustomSuccessMessage(
+            context,
+            message: "OTP verified successfully",
+          );
         } else {
-          context.router.push(CreateAnAccountRoute());
-          authenticationSuccessful;
+          context.router.push(CompleteProfileRoute());
+          showCustomSuccessMessage(
+            context,
+            message: "OTP verified successfully",
+          );
         }
       }
     });
@@ -142,7 +134,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                     ),
                     // CustomTitelAppBar
                     Expanded(
-                      child: CustomTitelAppBar(
+                      child: CustomAppBarTitle(
                         title: "Verify your phone number",
                       ),
                     ),
@@ -175,7 +167,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                 ),
                 SizedBox(height: context.height * 0.040),
                 // Signup Pinput Widget
-                CustomPinPutWidget(
+                CustomOtpCodeField(
                   pinPutController: pinPutController,
                   validator: (value) {
                     return null;

@@ -1,40 +1,44 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/custom_text_form_field.dart';
-import '../../../../core/extension/extension.dart';
+import '../extension/extension.dart';
+import 'custom_text_form_field.dart';
 
-class ContactEmailWidget extends StatelessWidget {
+class CustomContactTypeFieldWidget extends StatelessWidget {
+  final Function(String value)? onChanged;
   final AutovalidateMode? autovalidateMode;
-  final TextEditingController emailController;
+  final TextEditingController tybeController;
   final String? Function(String? value)? validator;
-  const ContactEmailWidget({
+  final String title, hintText;
+  const CustomContactTypeFieldWidget({
     super.key,
-    required this.emailController,
+    required this.tybeController,
     this.validator,
     this.autovalidateMode,
     this.onChanged,
+    required this.title,
+    required this.hintText,
   });
-  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // title email
+        // Phone number
         Text(
-          'Email',
+          title,
           style: context.kTextTheme.labelLarge!.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
         SizedBox(height: context.height * 0.004),
-        // textFormField Email
         CustomTextFormField(
+          onChanged: onChanged,
           autovalidateMode: autovalidateMode,
-          title: 'name@gmail.com',
-          controller: emailController,
+          hintText: hintText,
+          controller: tybeController,
           validator: validator,
+          keyboardType: TextInputType.number,
         ),
       ],
     );

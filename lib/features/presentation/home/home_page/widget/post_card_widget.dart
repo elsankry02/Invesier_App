@@ -4,7 +4,7 @@ import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/components/custom_trend_box.dart';
+import '../../../../../core/components/custom_tag_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
@@ -103,7 +103,7 @@ class PostCardWidget extends StatelessWidget {
             spacing: 13,
             children: [
               // Growth
-              CustomTrendBox(
+              CustomTagButton(
                 svg: AppSvgs.kGrowth,
                 title: '12k',
                 titleColor: AppColors.kEucalyptus,
@@ -118,7 +118,7 @@ class PostCardWidget extends StatelessWidget {
                   );
                 },
               ),
-              CustomTrendBox(
+              CustomTagButton(
                 // Decline
                 svg: AppSvgs.kDecline,
                 title: '12K',
@@ -134,7 +134,7 @@ class PostCardWidget extends StatelessWidget {
                   );
                 },
               ),
-              CustomTrendBox(
+              CustomTagButton(
                 // Comment
                 svg: AppSvgs.kComment,
                 title: '160K',

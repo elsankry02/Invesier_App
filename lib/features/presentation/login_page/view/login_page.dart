@@ -1,20 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/features/provider/post/resend_otp_provider.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
-import '../../../../core/components/custom_button_style_enum.dart';
+import '../../../../core/components/custom_contact_type_field.dart';
+import '../../../../core/components/custom_outlined_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/components/custom_rich_text.dart';
-import '../../../../core/components/custom_social_auth_buttons.dart';
+import '../../../../core/components/custom_social_auth_button.dart';
+import '../../../../core/components/custom_tap_richtext.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
-import '../../signup_page/widget/contact_email_widget.dart';
-import '../../signup_page/widget/contact_phone_widget.dart';
 
 @RoutePage()
 class LoginPage extends ConsumerStatefulWidget {
@@ -53,25 +51,15 @@ class _SignupPageState extends ConsumerState<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(resendOtpProvider);
-    // final notifier = ref.read(resendOtpProvider.notifier);
     ref.listen(resendOtpProvider, (_, state) {
       if (state is ResendOtpFailure) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.error(message: state.errMessage),
-        );
+        showCustomErrorMessage(context, message: state.errMessage);
         return;
       }
       if (state is ResendOtpSuccess) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.success(
-            backgroundColor: AppColors.kGray,
-            message: "OTP sent successfully. Please verify to continue.",
-          ),
-        );
+        showCustomSuccessMessage(context, message: "OTP resent successfully");
         context.router.push(
-          CustomConfirmOtpRoute(
+          CustomVerifyOtpRoute(
             isLogin: true,
             contactType: contactType,
             emailController: emailController,
@@ -106,7 +94,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                 SizedBox(height: 4),
                 // Don't have an account?
                 Center(
-                  child: CustomRichText(
+                  child: CustomTapRichText(
                     textSpanOne: "Don't have an account?",
                     textSpanTwo: ' Create an account ',
                     onTap: () {
@@ -121,7 +109,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         // Email
-                        CustomButtonStyleEnum(
+                        CustomOutlinedButton(
                           title: 'Email',
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(26),
@@ -147,7 +135,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                           },
                         ),
                         // Phone
-                        CustomButtonStyleEnum(
+                        CustomOutlinedButton(
                           title: 'Phone',
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(26),
@@ -183,17 +171,17 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                         physics: NeverScrollableScrollPhysics(),
                         controller: pageController,
                         children: [
-                          // Email Widget
-                          ContactEmailWidget(
-                            emailController: emailController,
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
+                          // Email
+                          CustomContactTypeFieldWidget(
+                            title: 'Email',
+                            hintText: 'name@gmail.com',
+                            tybeController: emailController,
                           ),
-                          // Phone Widget
-                          ContactPhoneWidget(
-                            phoneController: phoneController,
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
+                          // Phone Number
+                          CustomContactTypeFieldWidget(
+                            title: 'Phone number',
+                            hintText: '01050******',
+                            tybeController: phoneController,
                           ),
                         ],
                       ),
@@ -201,11 +189,13 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                   ],
                 ),
                 SizedBox(height: context.height * 0.11),
-                CustomSocialAuthButtons(
-                  // onTapGoogle
-                  onTapGoogle: () {},
-                  // onTapApple
-                  onTapApple: () {},
+                CustomSocialAuthButton(
+                  onLoginWithGoogle: () {
+                    showCustomErrorMessage(context, message: "COMING SOON");
+                  },
+                  onLoginWithApple: () {
+                    showCustomErrorMessage(context, message: "COMING SOON");
+                  },
                 ),
                 SizedBox(height: context.height * 0.057),
                 // CustomPrimaryButton

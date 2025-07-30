@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
@@ -17,12 +15,10 @@ import '../service/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final token = ref.read(prefsProvider).getString(AppStrings.userToken);
-  log("Token from prefs: $token");
   return Dio(
     BaseOptions(
       baseUrl: kBaseUrl,
       headers: {
-        
         "Content-Type": "application/json",
         "Accept": "application/json",
         if (token != null) "Authorization": "Bearer $token",

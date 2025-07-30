@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../../features/model/home_follow_model.dart';
 import '../extension/extension.dart';
 
-class CustomListTileWidget extends StatelessWidget {
+class CustomFollowUserTile extends StatelessWidget {
   final HomeFollowModel items;
   final Color? backGroundColor;
   final Color broderColor;
   final String title;
   final EdgeInsetsGeometry? padding;
-  const CustomListTileWidget({
+  const CustomFollowUserTile({
     super.key,
     required this.items,
     required this.broderColor,

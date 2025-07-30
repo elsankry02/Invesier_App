@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 
-class CustomButtonStyleEnum extends StatelessWidget {
+class CustomOutlinedButton extends StatelessWidget {
   final String title;
   final Color color, titleColor;
   final BorderRadiusGeometry? borderRadius;
   final void Function() onTap;
-  const CustomButtonStyleEnum({
+  const CustomOutlinedButton({
     super.key,
     required this.title,
     required this.titleColor,

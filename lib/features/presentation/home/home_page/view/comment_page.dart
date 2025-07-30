@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/components/custom_show_model_button_widget.dart';
+import '../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../widget/post_card_widget.dart';
@@ -33,7 +33,7 @@ class CommentPage extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       // Add Comment
-                      return CustomShowModelButtonWidget(
+                      return CustomCommentBottomSheet(
                         title: 'Add Comment',
                         hintText: 'Share your comment',
                         titleButton: 'Comment',
@@ -61,7 +61,7 @@ class CommentPage extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             // Add Comment
-                            return CustomShowModelButtonWidget(
+                            return CustomCommentBottomSheet(
                               title: 'Reply',
                               hintText: 'Type your reply',
                               titleButton: 'Reply',

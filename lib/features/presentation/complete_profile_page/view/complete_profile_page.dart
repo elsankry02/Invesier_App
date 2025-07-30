@@ -4,14 +4,15 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/components/custom_rich_text.dart';
+import '../../../../core/components/custom_tap_richtext.dart';
 import '../../../../core/components/custom_text_form_field.dart';
-import '../../../../core/components/custom_title_appbar.dart';
+import '../../../../core/components/custom_appbar_title.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
@@ -41,7 +42,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   // imagePickerGallery
   imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
-      // TODO
+      // TODO : Gallery
       source: ImageSource.camera,
     );
     if (imageGallery == null) return;
@@ -52,10 +53,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
 
   Future<void> completeProfile() async {
     if (avatarFile == null) {
-      showTopSnackBar(
-        Overlay.of(context),
-        CustomSnackBar.error(message: "Please choose an avatar image"),
-      );
+      showCustomErrorMessage(context, message: "Please choose an avatar image");
       return;
     }
     final notifier = ref.read(completeProfileProvider.notifier);
@@ -79,11 +77,11 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
         return;
       }
       if (state is CompleteProfileSuccess) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.success(message: "Profile completed successfully"),
+        showCustomSuccessMessage(
+          context,
+          message: "Profile completed successfully",
         );
-        context.router.replace(BottomNavigationBarRoute());
+        context.router.replace(MainNavigationRoute());
       }
     });
     return Scaffold(
@@ -114,10 +112,10 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                     Expanded(
                       child: Column(
                         children: [
-                          CustomTitelAppBar(title: 'Create an account'),
+                          CustomAppBarTitle(title: 'Create an account'),
                           SizedBox(height: context.height * 0.004),
                           // Rich Text
-                          CustomRichText(
+                          CustomTapRichText(
                             textSpanOne: 'Already have an account?',
                             textSpanTwo: ' Log in',
                             onTap: () {
@@ -145,7 +143,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: context.height * 0.004),
                 // Username FormField
                 CustomTextFormField(
-                  title: 'name',
+                  hintText: 'name',
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: AppColors.kGray,
                   ),
@@ -161,7 +159,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: 4),
                 // Fullname FormField
                 CustomTextFormField(
-                  title: 'username',
+                  hintText: 'username',
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: AppColors.kGray,
                   ),

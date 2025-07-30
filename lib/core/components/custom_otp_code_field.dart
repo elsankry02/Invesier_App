@@ -4,11 +4,11 @@ import 'package:pinput/pinput.dart';
 import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 
-class CustomPinPutWidget extends StatefulWidget {
+class CustomOtpCodeField extends StatefulWidget {
   final String? Function(String? value)? validator;
   final Function(String value)? onChanged;
   final TextEditingController? pinPutController;
-  const CustomPinPutWidget({
+  const CustomOtpCodeField({
     super.key,
     this.validator,
     this.onChanged,
@@ -16,10 +16,10 @@ class CustomPinPutWidget extends StatefulWidget {
   });
 
   @override
-  State<CustomPinPutWidget> createState() => _CustomPinPutWidgetState();
+  State<CustomOtpCodeField> createState() => _CustomOtpCodeFieldState();
 }
 
-class _CustomPinPutWidgetState extends State<CustomPinPutWidget> {
+class _CustomOtpCodeFieldState extends State<CustomOtpCodeField> {
   @override
   Widget build(BuildContext context) {
     return Column(

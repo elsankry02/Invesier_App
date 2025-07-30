@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../extension/extension.dart';
 
-class CustomRichText extends StatelessWidget {
+class CustomTapRichText extends StatelessWidget {
   final String textSpanOne, textSpanTwo;
   final void Function() onTap;
-  const CustomRichText({
+  const CustomTapRichText({
     super.key,
     required this.textSpanOne,
     required this.textSpanTwo,

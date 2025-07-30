@@ -9,11 +9,11 @@ import '../extension/extension.dart';
 import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
 
-class CustomShowModelButtonWidget extends StatefulWidget {
+class CustomCommentBottomSheet extends StatefulWidget {
   final String title, titleButton, hintText;
   final double vertical, radius;
   final TextStyle? style;
-  const CustomShowModelButtonWidget({
+  const CustomCommentBottomSheet({
     super.key,
     required this.title,
     required this.hintText,
@@ -24,13 +24,17 @@ class CustomShowModelButtonWidget extends StatefulWidget {
   });
 
   @override
-  State<CustomShowModelButtonWidget> createState() =>
-      _CustomShowModelButtonWidgetState();
+  State<CustomCommentBottomSheet> createState() =>
+      _CustomCommentBottomSheetState();
 }
 
-class _CustomShowModelButtonWidgetState
-    extends State<CustomShowModelButtonWidget> {
+class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
   final commentController = TextEditingController();
+  @override
+  void dispose() {
+    commentController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
