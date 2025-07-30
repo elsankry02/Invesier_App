@@ -1,7 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
@@ -43,15 +41,6 @@ class PersonalProfilePage extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 color: AppColors.kWhite,
               ),
-              onTap: () {
-                showTopSnackBar(
-                  Overlay.of(context),
-                  CustomSnackBar.info(
-                    backgroundColor: AppColors.kSecondary,
-                    message: "COMING SOON",
-                  ),
-                );
-              },
             ),
             SizedBox(height: context.height * 0.021),
             // builder

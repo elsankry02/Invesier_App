@@ -146,7 +146,7 @@ class DrawerRoute extends PageRouteInfo<void> {
 class HomeFollowRoute extends PageRouteInfo<HomeFollowRouteArgs> {
   HomeFollowRoute({
     Key? key,
-    required HomeFollowEnum initialTab,
+    required FollowTabType initialTab,
     List<PageRouteInfo>? children,
   }) : super(
          HomeFollowRoute.name,
@@ -170,7 +170,7 @@ class HomeFollowRouteArgs {
 
   final Key? key;
 
-  final HomeFollowEnum initialTab;
+  final FollowTabType initialTab;
 
   @override
   String toString() {

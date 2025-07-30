@@ -24,7 +24,7 @@ class UserAppBarWidget extends StatelessWidget {
         children: [
           // Custom Icon Back
           CustomIconButton(
-            icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
             onPressed: () {
               context.router.maybePop();
             },
@@ -94,7 +94,7 @@ class UserAppBarWidget extends StatelessWidget {
             number: '358',
             onTap: () {
               context.router.push(
-                HomeFollowRoute(initialTab: HomeFollowEnum.fans),
+                HomeFollowRoute(initialTab: FollowTabType.fans),
               );
             },
           ),
@@ -106,7 +106,7 @@ class UserAppBarWidget extends StatelessWidget {
             number: '172',
             onTap: () {
               context.router.push(
-                HomeFollowRoute(initialTab: HomeFollowEnum.pioneers),
+                HomeFollowRoute(initialTab: FollowTabType.pioneers),
               );
             },
           ),

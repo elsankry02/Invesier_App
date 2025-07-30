@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
@@ -100,9 +101,7 @@ class ReplyWidget extends StatelessWidget {
                       titleColor: AppColors.kEucalyptus,
                       borderColor: AppColors.kEucalyptus,
                       onTap: () {
-                        ScaffoldMessenger.of(
-                          context,
-                        ).showSnackBar(SnackBar(content: Text('Growth')));
+                        showCustomErrorMessage(context, message: "COMING SOON");
                       },
                     ),
                     CustomTagButton(
@@ -112,9 +111,7 @@ class ReplyWidget extends StatelessWidget {
                       titleColor: AppColors.kRed,
                       borderColor: AppColors.kRed,
                       onTap: () {
-                        ScaffoldMessenger.of(
-                          context,
-                        ).showSnackBar(SnackBar(content: Text('Decline')));
+                        showCustomErrorMessage(context, message: "COMING SOON");
                       },
                     ),
                     CustomTagButton(

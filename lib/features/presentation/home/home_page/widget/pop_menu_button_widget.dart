@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
@@ -23,13 +22,7 @@ class PopMenuButtonWidget extends StatelessWidget {
           // Pin post
           PopupMenuItem(
             onTap: () {
-              showTopSnackBar(
-                Overlay.of(context),
-                CustomSnackBar.info(
-                  backgroundColor: AppColors.kSecondary,
-                  message: "The post has been pinned successfully",
-                ),
-              );
+              showCustomErrorMessage(context, message: "COMING SOON");
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -56,13 +49,7 @@ class PopMenuButtonWidget extends StatelessWidget {
           // Delete post
           PopupMenuItem(
             onTap: () {
-              showTopSnackBar(
-                Overlay.of(context),
-                CustomSnackBar.info(
-                  backgroundColor: AppColors.kRedTwo,
-                  message: "The post has been deleted",
-                ),
-              );
+              showCustomErrorMessage(context, message: "COMING SOON");
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

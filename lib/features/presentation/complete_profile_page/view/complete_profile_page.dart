@@ -8,11 +8,11 @@ import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
+import '../../../../core/components/custom_appbar_title.dart';
 import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
 import '../../../../core/components/custom_text_form_field.dart';
-import '../../../../core/components/custom_appbar_title.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
@@ -40,10 +40,9 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   }
 
   // imagePickerGallery
-  imageGallery() async {
+  Future<void> imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
-      // TODO : Gallery
-      source: ImageSource.camera,
+      source: ImageSource.gallery,
     );
     if (imageGallery == null) return;
     setState(() {
@@ -67,7 +66,6 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(completeProfileProvider);
-    // final notifier = ref.read(completeProfileProvider.notifier);
     ref.listen(completeProfileProvider, (_, state) {
       if (state is CompleteProfileFailure) {
         showTopSnackBar(

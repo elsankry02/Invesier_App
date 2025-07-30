@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
@@ -6,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/features/provider/post/creat_post_provider.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
@@ -24,14 +22,14 @@ class PostPage extends ConsumerStatefulWidget {
 
 class _PostPageState extends ConsumerState<PostPage> {
   File? file;
-  final commentController = TextEditingController();
+  final contentController = TextEditingController();
   @override
   void dispose() {
-    commentController.dispose();
+    contentController.dispose();
     super.dispose();
   }
 
-  imageGallery() async {
+  Future<void> gallery() async {
     final imageGallery = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
@@ -42,28 +40,35 @@ class _PostPageState extends ConsumerState<PostPage> {
     });
   }
 
-  imagecamera() async {
-    final imagecamera = await ImagePicker().pickImage(
+  Future<void> camera() async {
+    final imageCamera = await ImagePicker().pickImage(
       source: ImageSource.camera,
     );
-    if (imagecamera == null) return;
+    if (imageCamera == null) return;
 
     setState(() {
-      file = File(imagecamera.path);
+      file = File(imageCamera.path);
     });
+  }
+
+  Future<void> createPost() async {
+    if (file == null) {
+      showCustomErrorMessage(
+        context,
+        message: "Select an image from your Gallery or Camera",
+      );
+      return;
+    }
+    final notifier = ref.read(createPostProvider.notifier);
+    await notifier.createPost(content: contentController.text.trim());
   }
 
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(createPostProvider);
-    log("State == $state");
-    final notifier = ref.read(createPostProvider.notifier);
     ref.listen(createPostProvider, (_, state) {
       if (state is CreatPostFailure) {
-        showTopSnackBar(
-          Overlay.of(context),
-          CustomSnackBar.error(message: state.errMessage),
-        );
+        showCustomErrorMessage(context, message: state.errMessage);
       }
     });
     return Scaffold(
@@ -106,7 +111,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                   // TextFormField
                   TextFormField(
                     cursorColor: AppColors.kWhite,
-                    controller: commentController,
+                    controller: contentController,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.zero,
                       hintText: "We post money related content.....",
@@ -142,7 +147,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                       // imageGallery
                       IconButton(
                         onPressed: () {
-                          imageGallery();
+                          gallery();
                         },
                         icon: Icon(
                           FontAwesomeIcons.image,
@@ -152,7 +157,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                       // imagecamera
                       IconButton(
                         onPressed: () {
-                          imagecamera();
+                          camera();
                         },
                         icon: Icon(
                           FontAwesomeIcons.video,
@@ -177,12 +182,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                       fontWeight: FontWeight.w600,
                       color: AppColors.kDivider,
                     ),
-                    onTap: () async {
-                      log("hhhhhhhhhhh=====");
-                      await notifier.createPost(
-                        content: commentController.text.trim(),
-                      );
-                    },
+                    onTap: createPost,
                   ),
                 ],
               ),

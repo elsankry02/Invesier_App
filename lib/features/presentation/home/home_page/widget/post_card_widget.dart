@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
@@ -109,13 +108,7 @@ class PostCardWidget extends StatelessWidget {
                 titleColor: AppColors.kEucalyptus,
                 borderColor: AppColors.kEucalyptus,
                 onTap: () {
-                  showTopSnackBar(
-                    Overlay.of(context),
-                    CustomSnackBar.info(
-                      backgroundColor: AppColors.kTurquoiseBlue,
-                      message: "COMING SOON",
-                    ),
-                  );
+                  showCustomErrorMessage(context, message: "COMING SOON");
                 },
               ),
               CustomTagButton(
@@ -125,13 +118,7 @@ class PostCardWidget extends StatelessWidget {
                 titleColor: AppColors.kRed,
                 borderColor: AppColors.kRed,
                 onTap: () {
-                  showTopSnackBar(
-                    Overlay.of(context),
-                    CustomSnackBar.info(
-                      backgroundColor: AppColors.kRedTwo,
-                      message: "COMING SOON",
-                    ),
-                  );
+                  showCustomErrorMessage(context, message: "COMING SOON");
                 },
               ),
               CustomTagButton(
@@ -146,13 +133,7 @@ class PostCardWidget extends StatelessWidget {
               GestureDetector(
                 child: SvgPicture.asset(AppSvgs.kSharing),
                 onTap: () {
-                  showTopSnackBar(
-                    Overlay.of(context),
-                    CustomSnackBar.info(
-                      backgroundColor: AppColors.kBoulder,
-                      message: "COMING SOON",
-                    ),
-                  );
+                  showCustomErrorMessage(context, message: "COMING SOON");
                 },
               ),
             ],

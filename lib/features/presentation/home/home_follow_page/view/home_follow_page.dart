@@ -10,23 +10,23 @@ import '../widget/home_follow_rich_text_widget.dart';
 import '../widget/home_follow_textformfield_widget.dart';
 import '../widget/pioneers_widget.dart';
 
-enum HomeFollowEnum { fans, pioneers }
+enum FollowTabType { fans, pioneers }
 
 @RoutePage()
 class HomeFollowPage extends StatefulWidget {
-  final HomeFollowEnum initialTab;
+  final FollowTabType initialTab;
   const HomeFollowPage({super.key, required this.initialTab});
   @override
   State<HomeFollowPage> createState() => _HomeFollowPageState();
 }
 
 class _HomeFollowPageState extends State<HomeFollowPage> {
-  HomeFollowEnum homeFollowEnum = HomeFollowEnum.fans;
+  FollowTabType selectedTab = FollowTabType.fans;
   final searchController = TextEditingController();
 
   @override
   void initState() {
-    homeFollowEnum = widget.initialTab;
+    selectedTab = widget.initialTab;
     super.initState();
   }
 
@@ -62,17 +62,17 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                             title: 'Fans',
                             onTap: () {
                               setState(() {
-                                homeFollowEnum = HomeFollowEnum.fans;
+                                selectedTab = FollowTabType.fans;
                               });
                             },
                           ),
                           SizedBox(height: context.height * 0.004),
                           // Fans Divider
-                          homeFollowEnum == HomeFollowEnum.fans
+                          selectedTab == FollowTabType.fans
                               ? DividerWidget(
                                 onTap: () {
                                   setState(() {
-                                    homeFollowEnum = HomeFollowEnum.fans;
+                                    selectedTab = FollowTabType.fans;
                                   });
                                 },
                                 width: context.width * 0.20,
@@ -91,17 +91,17 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                             title: 'Pioneers',
                             onTap: () {
                               setState(() {
-                                homeFollowEnum = HomeFollowEnum.pioneers;
+                                selectedTab = FollowTabType.pioneers;
                               });
                             },
                           ),
                           SizedBox(height: context.height * 0.004),
                           // Pioneers Divider
-                          homeFollowEnum == HomeFollowEnum.pioneers
+                          selectedTab == FollowTabType.pioneers
                               ? DividerWidget(
                                 onTap: () {
                                   setState(() {
-                                    homeFollowEnum = HomeFollowEnum.pioneers;
+                                    selectedTab = FollowTabType.pioneers;
                                   });
                                 },
                                 width: context.width * 0.20,
@@ -121,7 +121,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                 ),
                 SizedBox(height: context.height * 0.020),
                 // homeFollowEnum > PioneersWidget > FansWidget
-                homeFollowEnum == HomeFollowEnum.pioneers
+                selectedTab == FollowTabType.pioneers
                     ? PioneersWidget()
                     : FansWidget(),
               ],

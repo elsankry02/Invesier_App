@@ -71,7 +71,7 @@ class PersonalAppBarWidget extends StatelessWidget {
             number: '358',
             onTap: () {
               context.router.push(
-                HomeFollowRoute(initialTab: HomeFollowEnum.fans),
+                HomeFollowRoute(initialTab: FollowTabType.fans),
               );
             },
           ),
@@ -83,7 +83,7 @@ class PersonalAppBarWidget extends StatelessWidget {
             number: '172',
             onTap: () {
               context.router.push(
-                HomeFollowRoute(initialTab: HomeFollowEnum.pioneers),
+                HomeFollowRoute(initialTab: FollowTabType.pioneers),
               );
             },
           ),
