@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/features/provider/provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -54,6 +55,8 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
     if (avatarFile == null) {
       showCustomErrorMessage(context, message: "Please choose an avatar image");
       return;
+    } else {
+      ref.read(prefsProvider).setString("File", avatarFile.toString());
     }
     final notifier = ref.read(completeProfileProvider.notifier);
     await notifier.completeProfile(

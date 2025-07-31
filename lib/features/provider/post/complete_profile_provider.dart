@@ -32,13 +32,7 @@ class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
     final provider = ref.read(completeProfileServiceProvider);
     try {
       state = CompleteProfileLoading();
-
-      await provider.completeProfile(
-        name: name,
-        userName: userName,
-        avatar: avatar,
-      );
-
+      provider.completeProfile(name: name, userName: userName, avatar: avatar);
       state = CompleteProfileSuccess();
     } on Exception catch (e) {
       state = CompleteProfileFailure(errMessage: e.toString());

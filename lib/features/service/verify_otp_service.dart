@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/model/user_model.dart';
+import 'package:invesier/features/model/login_model.dart';
 
 import '../../core/constant/endpoints.dart';
 
 class VerifyOtpService {
   final Dio dio;
   VerifyOtpService({required this.dio});
-  Future<UserModel> verifyOtp({
+  Future<LoginModel> verifyOtp({
     required String authMethod,
     required String otp,
     String? email,
@@ -24,6 +24,6 @@ class VerifyOtpService {
       },
     );
     final userData = response.data as Map<String, dynamic>;
-    return UserModel.fromJson(userData);
+    return LoginModel.fromJson(userData);
   }
 }

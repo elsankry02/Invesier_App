@@ -1,11 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/presentation/home/personal_profile_page/widget/personal_post_card_widget.dart';
+import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../home_page/widget/post_card_widget.dart';
 import '../widget/personal_appbar_widget.dart';
 
 @RoutePage()
@@ -47,12 +49,20 @@ class PersonalProfilePage extends StatelessWidget {
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 3,
+              itemCount: 5,
               itemBuilder: (context, index) {
-                return PostCardWidget(
-                  commentOnTap: () {
-                    // CommentRoute
-                    context.router.push(CommentRoute());
+                return Consumer(
+                  builder: (context, ref, child) {
+                    final state = ref.watch(getAuthenticatedUserProvider);
+                    return state is GetAuthenticatedUserSuccess
+                        ? PersonalPostCardWidget(
+                          commentOnTap: () {
+                            // CommentRoute
+                            context.router.push(CommentRoute());
+                          },
+                          userModel: state.userModel,
+                        )
+                        : SizedBox();
                   },
                 );
               },

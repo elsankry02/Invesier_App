@@ -11,10 +11,10 @@ import '../../features/presentation/signup_page/widget/signup_rich_text_widget.d
 import '../constant/app_colors.dart';
 import '../constant/app_enums.dart';
 import '../extension/extension.dart';
+import 'custom_appbar_title.dart';
 import 'custom_icon_button.dart';
 import 'custom_otp_code_field.dart';
 import 'custom_primary_button.dart';
-import 'custom_appbar_title.dart';
 
 @RoutePage()
 class CustomVerifyOtpPage extends ConsumerStatefulWidget {

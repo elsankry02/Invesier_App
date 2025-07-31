@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
@@ -74,18 +76,33 @@ class InvesierAppBar extends StatelessWidget {
                   ),
                 ),
                 // Image
-                GestureDetector(
-                  onTap: () {
-                    scaffoldKey.currentState!.openDrawer();
+                Consumer(
+                  builder: (context, ref, child) {
+                    final state = ref.watch(getAuthenticatedUserProvider);
+                    return GestureDetector(
+                      onTap: () {
+                        scaffoldKey.currentState!.openDrawer();
+                      },
+                      child:
+                          state is GetAuthenticatedUserSuccess
+                              ? ClipOval(
+                                child: Image.network(
+                                  state.userModel.avatarUrl,
+                                  fit: BoxFit.cover,
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              )
+                              : ClipOval(
+                                child: Image.asset(
+                                  AppImages.kBoyFour,
+                                  fit: BoxFit.cover,
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ),
+                    );
                   },
-                  child: ClipOval(
-                    child: Image.asset(
-                      AppImages.kBoyFour,
-                      fit: BoxFit.cover,
-                      width: 30,
-                      height: 30,
-                    ),
-                  ),
                 ),
               ],
             ),

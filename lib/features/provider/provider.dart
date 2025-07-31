@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
@@ -16,6 +18,7 @@ import '../service/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final token = ref.read(prefsProvider).getString(AppStrings.userToken);
+  log("✅ Token after removal: $token");
   return Dio(
     BaseOptions(
       baseUrl: kBaseUrl,

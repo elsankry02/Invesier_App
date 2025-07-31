@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
@@ -44,87 +46,99 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                // HomeFollowAppBarWidget
-                HomeFollowAppBarWidget(),
-                SizedBox(height: context.height * 0.009),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 65),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          // Fans
-                          HomeFollowRichTextWidget(
-                            number: '368  ',
-                            title: 'Fans',
-                            onTap: () {
-                              setState(() {
-                                selectedTab = FollowTabType.fans;
-                              });
-                            },
-                          ),
-                          SizedBox(height: context.height * 0.004),
-                          // Fans Divider
-                          selectedTab == FollowTabType.fans
-                              ? DividerWidget(
-                                onTap: () {
-                                  setState(() {
-                                    selectedTab = FollowTabType.fans;
-                                  });
-                                },
-                                width: context.width * 0.20,
-                                height: 1.5,
-                              )
-                              : Container(),
-                        ],
-                      ),
-                      // Center Divider
-                      DividerWidget(height: context.height * 0.015, width: 1.5),
-                      // Pioneers
-                      Column(
-                        children: [
-                          HomeFollowRichTextWidget(
-                            number: '175  ',
-                            title: 'Pioneers',
-                            onTap: () {
-                              setState(() {
-                                selectedTab = FollowTabType.pioneers;
-                              });
-                            },
-                          ),
-                          SizedBox(height: context.height * 0.004),
-                          // Pioneers Divider
-                          selectedTab == FollowTabType.pioneers
-                              ? DividerWidget(
-                                onTap: () {
-                                  setState(() {
-                                    selectedTab = FollowTabType.pioneers;
-                                  });
-                                },
-                                width: context.width * 0.20,
-                                height: 1.5,
-                              )
-                              : Container(),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+            child: Consumer(
+              builder: (context, ref, child) {
+                final state = ref.watch(getAuthenticatedUserProvider);
 
-                SizedBox(height: context.height * 0.016),
-                // TextFormFiled
-                HomeFollowTextFormFieldWidget(
-                  searchController: searchController,
-                ),
-                SizedBox(height: context.height * 0.020),
-                // homeFollowEnum > PioneersWidget > FansWidget
-                selectedTab == FollowTabType.pioneers
-                    ? PioneersWidget()
-                    : FansWidget(),
-              ],
+                return state is GetAuthenticatedUserSuccess
+                    ? Column(
+                      children: [
+                        // HomeFollowAppBarWidget
+                        HomeFollowAppBarWidget(userModel: state.userModel),
+                        SizedBox(height: context.height * 0.009),
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 65),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  // Fans
+                                  HomeFollowRichTextWidget(
+                                    number: state.userModel.fansCount,
+                                    title: '  Fans',
+                                    onTap: () {
+                                      setState(() {
+                                        selectedTab = FollowTabType.fans;
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(height: context.height * 0.004),
+                                  // Fans Divider
+                                  selectedTab == FollowTabType.fans
+                                      ? DividerWidget(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedTab = FollowTabType.fans;
+                                          });
+                                        },
+                                        width: context.width * 0.20,
+                                        height: 1.5,
+                                      )
+                                      : Container(),
+                                ],
+                              ),
+                              // Center Divider
+                              DividerWidget(
+                                height: context.height * 0.015,
+                                width: 1.5,
+                              ),
+                              // Pioneers
+                              Column(
+                                children: [
+                                  HomeFollowRichTextWidget(
+                                    number: state.userModel.pioneersCount,
+                                    title: '  Pioneers',
+                                    onTap: () {
+                                      setState(() {
+                                        selectedTab = FollowTabType.pioneers;
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(height: context.height * 0.004),
+                                  // Pioneers Divider
+                                  selectedTab == FollowTabType.pioneers
+                                      ? DividerWidget(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedTab =
+                                                FollowTabType.pioneers;
+                                          });
+                                        },
+                                        width: context.width * 0.20,
+                                        height: 1.5,
+                                      )
+                                      : Container(),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        SizedBox(height: context.height * 0.016),
+                        // TextFormFiled
+                        HomeFollowTextFormFieldWidget(
+                          searchController: searchController,
+                        ),
+                        SizedBox(height: context.height * 0.020),
+                        // homeFollowEnum > PioneersWidget > FansWidget
+                        selectedTab == FollowTabType.pioneers
+                            ? PioneersWidget()
+                            : FansWidget(),
+                      ],
+                    )
+                    : SizedBox();
+              },
             ),
           ),
         ),

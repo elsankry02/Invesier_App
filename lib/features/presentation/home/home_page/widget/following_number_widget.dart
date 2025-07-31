@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/extension/extension.dart';
 
 class FollowingNumberWidget extends StatelessWidget {
-  final String title, number;
+  final String title;
+  final int number;
   final Function()? onTap;
   const FollowingNumberWidget({
     super.key,
@@ -21,7 +22,7 @@ class FollowingNumberWidget extends StatelessWidget {
           // number
           Text(
             textAlign: TextAlign.center,
-            number,
+            "$number",
             style: context.kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w700,
             ),

@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/model/user_model.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 
 class HomeFollowAppBarWidget extends StatelessWidget {
-  const HomeFollowAppBarWidget({super.key});
-
+  final UserModel userModel;
+  const HomeFollowAppBarWidget({super.key, required this.userModel});
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -25,8 +25,8 @@ class HomeFollowAppBarWidget extends StatelessWidget {
           ),
           // Image
           ClipOval(
-            child: Image.asset(
-              AppImages.kBoyFour,
+            child: Image.network(
+              userModel.avatarUrl,
               width: 25,
               height: 25,
               fit: BoxFit.cover,
@@ -36,14 +36,14 @@ class HomeFollowAppBarWidget extends StatelessWidget {
       ),
       // title
       title: Text(
-        'Alex Johnson',
+        userModel.name,
         style: context.kTextTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
       // subTitle
       subtitle: Text(
-        '@johnson_a',
+        userModel.username,
         style: context.kTextTheme.bodySmall!.copyWith(
           color: AppColors.kGray,
           fontWeight: FontWeight.w400,

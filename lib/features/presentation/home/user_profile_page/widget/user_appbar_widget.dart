@@ -85,13 +85,13 @@ class UserAppBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Posts
-          FollowingNumberWidget(title: 'Posts', number: '84'),
+          FollowingNumberWidget(title: 'Posts', number: 2),
           // DividerWidget
           DividerWidget(height: context.height * 0.030, width: 1.5),
           // Fans
           FollowingNumberWidget(
             title: 'Fans',
-            number: '358',
+            number: 7,
             onTap: () {
               context.router.push(
                 HomeFollowRoute(initialTab: FollowTabType.fans),
@@ -103,7 +103,7 @@ class UserAppBarWidget extends StatelessWidget {
           // Pioneers
           FollowingNumberWidget(
             title: 'Pioneers',
-            number: '172',
+            number: 7,
             onTap: () {
               context.router.push(
                 HomeFollowRoute(initialTab: FollowTabType.pioneers),

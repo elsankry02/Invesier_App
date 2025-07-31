@@ -15,10 +15,9 @@ class ForYouWidget extends StatelessWidget {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 5,
+      itemCount: 1,
       itemBuilder: (context, index) {
         return PostCardWidget(
-          // list tile trailing
           trailing: UserPopMenuWidget(
             onTap: () {
               showDialog(

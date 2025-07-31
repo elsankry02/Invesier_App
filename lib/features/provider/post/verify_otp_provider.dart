@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
+import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 import '../provider.dart';
 
@@ -43,6 +44,7 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
       final token = authResponse.token;
       await ref.read(prefsProvider).setString(AppStrings.userToken, token);
       ref.invalidate(dioProvider);
+      await ref.read(getAuthenticatedUserProvider.notifier).getUser();
       state = VerifyOtpSuccess();
     } on Exception catch (e) {
       state = VerifyOtpFailure(errMessage: e.toString());

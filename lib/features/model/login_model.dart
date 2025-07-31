@@ -1,7 +1,31 @@
-class UserModel {
+class LoginModel {
+  final String token;
+  final User user;
+  final bool registrationComplete;
+
+  LoginModel({
+    required this.token,
+    required this.user,
+    required this.registrationComplete,
+  });
+
+  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
+    token: json["token"],
+    user: User.fromJson(json["user"]),
+    registrationComplete: json["registration_complete"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "token": token,
+    "user": user.toJson(),
+    "registration_complete": registrationComplete,
+  };
+}
+
+class User {
   final int id;
-  final String username;
-  final String name;
+  final dynamic username;
+  final dynamic name;
   final String avatarUrl;
   final dynamic phone;
   final String email;
@@ -18,7 +42,7 @@ class UserModel {
   final DateTime updatedAt;
   final String socialRelation;
 
-  UserModel({
+  User({
     required this.id,
     required this.username,
     required this.name,
@@ -39,7 +63,7 @@ class UserModel {
     required this.socialRelation,
   });
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+  factory User.fromJson(Map<String, dynamic> json) => User(
     id: json["id"],
     username: json["username"],
     name: json["name"],

@@ -6,8 +6,6 @@ abstract class GetAuthenticatedUserState {}
 
 class GetAuthenticatedUserInitial extends GetAuthenticatedUserState {}
 
-class GetAuthenticatedUserLoading extends GetAuthenticatedUserState {}
-
 class GetAuthenticatedUserSuccess extends GetAuthenticatedUserState {
   final UserModel userModel;
 
@@ -20,7 +18,8 @@ class GetAuthenticatedUserFaliure extends GetAuthenticatedUserState {
   GetAuthenticatedUserFaliure({required this.errMessage});
 }
 
-class GetAuthenticatedUserNotifier extends Notifier<GetAuthenticatedUserState> {
+class GetAuthenticatedUserNotifier
+    extends AutoDisposeNotifier<GetAuthenticatedUserState> {
   @override
   GetAuthenticatedUserState build() {
     return GetAuthenticatedUserInitial();
@@ -29,8 +28,6 @@ class GetAuthenticatedUserNotifier extends Notifier<GetAuthenticatedUserState> {
   Future<void> getUser() async {
     final provider = ref.read(getAuthenticatedUserServiceProvider);
     try {
-      state = GetAuthenticatedUserLoading();
-
       final userData = await provider.getUser();
       state = GetAuthenticatedUserSuccess(userModel: userData);
     } on Exception catch (e) {
@@ -39,7 +36,7 @@ class GetAuthenticatedUserNotifier extends Notifier<GetAuthenticatedUserState> {
   }
 }
 
-final getAuthenticatedUserProvider =
-    NotifierProvider<GetAuthenticatedUserNotifier, GetAuthenticatedUserState>(
-      GetAuthenticatedUserNotifier.new,
-    );
+final getAuthenticatedUserProvider = AutoDisposeNotifierProvider<
+  GetAuthenticatedUserNotifier,
+  GetAuthenticatedUserState
+>(GetAuthenticatedUserNotifier.new);
