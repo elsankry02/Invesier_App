@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
+import 'package:invesier/features/service/get_authenticated_user_service.dart';
 import 'package:invesier/features/service/remove_an_fcm_token_from_the_database_service.dart';
 import 'package:invesier/features/service/store_the_fcm_token_for_the_authenticated_user_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -62,6 +63,11 @@ final storeTheFcmTokenForTheAuthenticatedUserServiceProvider =
 final removeAnFcmTokenFromTheDatabaseServiceProvider =
     Provider<RemoveAnFcmTokenFromTheDatabaseService>((ref) {
       return RemoveAnFcmTokenFromTheDatabaseService(dio: ref.read(dioProvider));
+    });
+// Get Authenticated User Service
+final getAuthenticatedUserServiceProvider =
+    Provider<GetAuthenticatedUserService>((ref) {
+      return GetAuthenticatedUserService(dio: ref.read(dioProvider));
     });
 // prefs Provider
 final prefsProvider = Provider<SharedPreferences>((ref) {

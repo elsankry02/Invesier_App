@@ -28,7 +28,7 @@ class PersonalProfilePage extends StatelessWidget {
             // Personal AppBar Widget
             PersonalAppBarWidget(),
             SizedBox(height: context.height * 0.021),
-            // ChaseOrPostsContainer
+            // Chase Or Posts Container
             CustomPrimaryButton(
               title: 'My Post',
               borderColor: Colors.transparent,

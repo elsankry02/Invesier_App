@@ -42,7 +42,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   // imagePickerGallery
   Future<void> imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
+      source: ImageSource.camera,
     );
     if (imageGallery == null) return;
     setState(() {
