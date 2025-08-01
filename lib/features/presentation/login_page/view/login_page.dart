@@ -180,7 +180,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                           // Phone Number
                           CustomContactTypeFieldWidget(
                             title: 'Phone number',
-                            hintText: '01050******',
+                            hintText: '01204******',
                             tybeController: phoneController,
                           ),
                         ],
