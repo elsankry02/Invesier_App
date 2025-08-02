@@ -41,6 +41,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     final isEmail = contactType == ContactType.email;
     await notifier.registerNewUser(
       prefix: "+20",
+      phonePrefix: isEmail ? null : "+20",
       authMethod: contactType.name,
       email: isEmail ? emailController.text.trim() : null,
       phone: isEmail ? null : phoneController.text.trim(),
@@ -58,9 +59,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
       if (state is RegisterNewUserSuccess) {
         showCustomSuccessMessage(
           context,
-          message: "User registered successfully",
+          message: "OTP sent successfully. Please verify to continue.",
         );
-
         context.router.push(
           CustomVerifyOtpRoute(
             isLogin: false,
@@ -179,12 +179,14 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                           CustomContactTypeFieldWidget(
                             title: 'Email',
                             hintText: 'name@gmail.com',
+                            keyboardType: TextInputType.emailAddress,
                             tybeController: emailController,
                           ),
                           // Phone Number
                           CustomContactTypeFieldWidget(
                             title: 'Phone number',
                             hintText: '01204******',
+                            keyboardType: TextInputType.number,
                             tybeController: phoneController,
                           ),
                         ],

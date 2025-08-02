@@ -18,7 +18,7 @@ import '../service/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final token = ref.read(prefsProvider).getString(AppStrings.userToken);
-  log("✅ Token after removal: $token");
+  log("Token removal: $token");
   return Dio(
     BaseOptions(
       baseUrl: kBaseUrl,

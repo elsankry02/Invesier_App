@@ -1,10 +1,7 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_strings.dart';
 import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 import 'package:invesier/features/provider/provider.dart';
 
@@ -130,10 +127,6 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                     return DrawerTitleWidget(
                       onTap: () async {
                         await ref.read(prefsProvider).clear();
-                        final token = ref
-                            .read(prefsProvider)
-                            .getString(AppStrings.userToken);
-                        log("token  ; $token");
                         context.router.replaceAll([WelcomeRoute()]);
                         showCustomSuccessMessage(
                           context,

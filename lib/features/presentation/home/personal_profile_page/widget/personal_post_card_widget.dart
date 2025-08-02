@@ -24,7 +24,6 @@ class PersonalPostCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsetsDirectional.only(bottom: 10),
-      padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
         color: AppColors.kHeavyMetal,

@@ -1,4 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
@@ -41,7 +43,10 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
       );
       state = RegisterNewUserSuccess();
     } on Exception catch (e) {
-      state = RegisterNewUserFailure(errMessage: e.toString());
+      if (e is DioException) {
+        final data = e.response!.data;
+        state = RegisterNewUserFailure(errMessage: data[AppStrings.message]);
+      }
     }
   }
 }

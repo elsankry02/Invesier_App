@@ -175,12 +175,14 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                           CustomContactTypeFieldWidget(
                             title: 'Email',
                             hintText: 'name@gmail.com',
+                            keyboardType: TextInputType.emailAddress,
                             tybeController: emailController,
                           ),
                           // Phone Number
                           CustomContactTypeFieldWidget(
                             title: 'Phone number',
                             hintText: '01204******',
+                            keyboardType: TextInputType.number,
                             tybeController: phoneController,
                           ),
                         ],

@@ -7,6 +7,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
   final Function(String value)? onChanged;
   final AutovalidateMode? autovalidateMode;
   final TextEditingController tybeController;
+  final TextInputType? keyboardType;
   final String? Function(String? value)? validator;
   final String title, hintText;
   const CustomContactTypeFieldWidget({
@@ -15,6 +16,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
     this.validator,
     this.autovalidateMode,
     this.onChanged,
+    this.keyboardType,
     required this.title,
     required this.hintText,
   });
@@ -38,7 +40,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
           hintText: hintText,
           controller: tybeController,
           validator: validator,
-          keyboardType: TextInputType.number,
+          keyboardType: keyboardType,
         ),
       ],
     );

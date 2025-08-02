@@ -103,7 +103,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
           context.router.push(CompleteProfileRoute());
           showCustomSuccessMessage(
             context,
-            message: "OTP verified successfully",
+            message: "Authentication successful",
           );
         }
       }

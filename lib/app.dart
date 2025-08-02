@@ -15,7 +15,7 @@ class InvesierApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         textTheme: textTheme(),
-        fontFamily: AppStrings.kManrope,
+        fontFamily: AppStrings.manrope,
       ),
     );
   }
