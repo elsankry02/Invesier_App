@@ -44,7 +44,6 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   // imagePickerGallery
   Future<void> imageGallery() async {
     final imageGallery = await ImagePicker().pickImage(
-      // TODO later
       source: ImageSource.camera,
     );
     if (imageGallery == null) return;
@@ -60,14 +59,12 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
     } else {
       ref.read(prefsProvider).setString(AppStrings.file, avatarFile.toString());
     }
-    if (formKey.currentState!.validate()) {
-      final notifier = ref.read(completeProfileProvider.notifier);
-      await notifier.completeProfile(
-        name: nameController.text.trim(),
-        userName: usernameController.text.trim(),
-        avatar: avatarFile!,
-      );
-    }
+    final notifier = ref.read(completeProfileProvider.notifier);
+    await notifier.completeProfile(
+      name: nameController.text.trim(),
+      userName: usernameController.text.trim(),
+      avatar: avatarFile!,
+    );
   }
 
   @override
@@ -149,15 +146,6 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 // Username FormField
                 CustomTextFormField(
                   hintText: 'name',
-                  validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return 'Name cannot be empty';
-                    }
-                    if (value.trim().length < 2) {
-                      return 'Name must be at least 2 characters';
-                    }
-                    return null;
-                  },
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: AppColors.kGray,
                   ),
@@ -174,15 +162,6 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 // Fullname FormField
                 CustomTextFormField(
                   hintText: 'username',
-                  validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return 'Name cannot be empty';
-                    }
-                    if (value.trim().length < 2) {
-                      return 'Name must be at least 2 characters';
-                    }
-                    return null;
-                  },
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: AppColors.kGray,
                   ),

@@ -1,4 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
@@ -39,7 +41,10 @@ class ResendOtpNotifier extends Notifier<ResendOtpState> {
       );
       state = ResendOtpSuccess();
     } on Exception catch (e) {
-      state = ResendOtpFailure(errMessage: e.toString());
+      if (e is DioException) {
+        final data = e.response!.data;
+        state = ResendOtpFailure(errMessage: data[AppStrings.message]);
+      }
     }
   }
 }
