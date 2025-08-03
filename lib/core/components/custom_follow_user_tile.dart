@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../features/model/home_follow_model.dart';
+import '../../features/model/follow_model.dart';
 import '../extension/extension.dart';
 
 class CustomFollowUserTile extends StatelessWidget {
-  final HomeFollowModel items;
+  final FollowModel items;
   final Color? backGroundColor;
   final Color broderColor;
   final String title;

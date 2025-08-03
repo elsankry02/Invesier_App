@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_follow_user_tile.dart';
 import '../../../../../core/constant/app_colors.dart';
-import '../../../../model/home_follow_model.dart';
+import '../../../../model/follow_model.dart';
 
 class FansWidget extends StatelessWidget {
   const FansWidget({super.key});

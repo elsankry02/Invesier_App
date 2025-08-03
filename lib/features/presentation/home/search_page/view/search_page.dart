@@ -6,7 +6,7 @@ import '../../../../../core/components/custom_follow_user_tile.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../../../model/home_follow_model.dart';
+import '../../../../model/follow_model.dart';
 import '../../home_follow_page/widget/home_follow_textformfield_widget.dart';
 
 @RoutePage()
