@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/presentation/home/home_page/widget/pop_menu_button_widget.dart';
 import 'package:invesier/features/presentation/home/personal_profile_page/widget/personal_post_card_widget.dart';
 import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
@@ -56,6 +57,7 @@ class PersonalProfilePage extends StatelessWidget {
                     final state = ref.watch(getAuthenticatedUserProvider);
                     return state is GetAuthenticatedUserSuccess
                         ? PersonalPostCardWidget(
+                          trailing: PopMenuButtonWidget(),
                           commentOnTap: () {
                             // CommentRoute
                             context.router.push(CommentRoute());

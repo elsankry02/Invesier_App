@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_images.dart';
 import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
@@ -35,7 +36,7 @@ class PersonalAppBarWidget extends StatelessWidget {
                 // Image
                 ClipOval(
                   child: Image.network(
-                    state.userModel.avatarUrl,
+                    user.avatarUrl ?? AppImages.k1,
                     width: 60,
                     height: 60,
                     fit: BoxFit.cover,
@@ -48,14 +49,14 @@ class PersonalAppBarWidget extends StatelessWidget {
               children: [
                 // title
                 Text(
-                  state.userModel.name,
+                  user.name ?? "Mohamed Ebrahim",
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 // subTitle
                 Text(
-                  state.userModel.username,
+                  user.username ?? "elsankary02",
                   style: context.kTextTheme.labelMedium!.copyWith(
                     color: AppColors.kGray,
                     fontWeight: FontWeight.w400,

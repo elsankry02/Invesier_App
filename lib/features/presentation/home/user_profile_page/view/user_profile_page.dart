@@ -6,7 +6,6 @@ import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../home_page/widget/pop_menu_button_widget.dart';
 import '../../home_page/widget/post_card_widget.dart';
 import '../widget/user_appbar_widget.dart';
 
@@ -79,8 +78,6 @@ class UserProfilePage extends StatelessWidget {
               itemCount: 2,
               itemBuilder: (context, index) {
                 return PostCardWidget(
-                  trailing: PopMenuButtonWidget(),
-
                   commentOnTap: () {
                     // CommentRoute
                     context.router.push(CommentRoute());

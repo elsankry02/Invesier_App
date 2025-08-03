@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/core/constant/app_images.dart';
 import 'package:invesier/features/model/user_model.dart';
 
 import '../../../../../core/components/custom_tag_button.dart';
@@ -24,6 +25,7 @@ class PersonalPostCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsetsDirectional.only(bottom: 10),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
         color: AppColors.kHeavyMetal,
@@ -33,7 +35,6 @@ class PersonalPostCardWidget extends StatelessWidget {
         children: [
           // ListTile
           ListTile(
-            // contentPadding
             contentPadding: EdgeInsets.all(0),
             // leading
             leading: ClipOval(
@@ -44,7 +45,7 @@ class PersonalPostCardWidget extends StatelessWidget {
                   fit: BoxFit.cover,
                   height: 30,
                   width: 30,
-                  userModel.avatarUrl,
+                  userModel.avatarUrl ?? AppImages.k1,
                 ),
               ),
             ),
@@ -58,14 +59,14 @@ class PersonalPostCardWidget extends StatelessWidget {
                   children: [
                     // title
                     Text(
-                      userModel.name,
+                      userModel.name ?? "Mohamed Ebrahim",
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     // nk name
                     Text(
-                      userModel.username,
+                      userModel.username ?? "elsankary02",
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),

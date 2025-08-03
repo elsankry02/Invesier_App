@@ -79,6 +79,7 @@ class InvesierAppBar extends StatelessWidget {
                 Consumer(
                   builder: (context, ref, child) {
                     final state = ref.watch(getAuthenticatedUserProvider);
+
                     return GestureDetector(
                       onTap: () {
                         scaffoldKey.currentState!.openDrawer();
@@ -87,7 +88,7 @@ class InvesierAppBar extends StatelessWidget {
                           state is GetAuthenticatedUserSuccess
                               ? ClipOval(
                                 child: Image.network(
-                                  state.userModel.avatarUrl,
+                                  state.userModel.avatarUrl ?? AppImages.k1,
                                   fit: BoxFit.cover,
                                   width: 30,
                                   height: 30,

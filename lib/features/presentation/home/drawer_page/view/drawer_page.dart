@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/core/constant/app_images.dart';
 import 'package:invesier/core/constant/app_strings.dart';
 import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 import 'package:invesier/features/provider/provider.dart';
@@ -50,6 +51,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                   builder: (context, ref, child) {
                     final state = ref.watch(getAuthenticatedUserProvider);
                     if (state is GetAuthenticatedUserSuccess) {
+                      final user = state.userModel;
                       return ListTile(
                         contentPadding: EdgeInsets.zero,
                         // leading
@@ -61,7 +63,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                                 width: 35,
                                 height: 35,
                                 fit: BoxFit.cover,
-                                state.userModel.avatarUrl,
+                                user.avatarUrl ?? AppImages.k1,
                               ),
                             ),
                             Stack(
@@ -89,7 +91,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // title
                         title: Text(
-                          state.userModel.name,
+                          user.name ?? "Mohamed Ebrahim",
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: AppColors.kGray,
@@ -97,7 +99,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // subtitle
                         subtitle: Text(
-                          state.userModel.username,
+                          user.username ?? "elsankary02",
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                           ),

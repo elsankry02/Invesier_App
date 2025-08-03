@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_images.dart';
 import 'package:invesier/features/model/user_model.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
@@ -26,7 +27,7 @@ class HomeFollowAppBarWidget extends StatelessWidget {
           // Image
           ClipOval(
             child: Image.network(
-              userModel.avatarUrl,
+              userModel.avatarUrl ?? AppImages.k1,
               width: 25,
               height: 25,
               fit: BoxFit.cover,
@@ -36,14 +37,14 @@ class HomeFollowAppBarWidget extends StatelessWidget {
       ),
       // title
       title: Text(
-        userModel.name,
+        userModel.name ?? "Mohamed Ebrahim",
         style: context.kTextTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
       // subTitle
       subtitle: Text(
-        userModel.username,
+        userModel.username ?? "elsankary02",
         style: context.kTextTheme.bodySmall!.copyWith(
           color: AppColors.kGray,
           fontWeight: FontWeight.w400,
