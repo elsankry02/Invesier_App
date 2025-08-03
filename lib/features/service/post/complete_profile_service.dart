@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '../../core/constant/endpoints.dart';
+import '../../../core/constant/endpoints.dart';
 
 class CompleteProfileService {
   final Dio dio;

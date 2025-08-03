@@ -3,15 +3,15 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/core/constant/app_strings.dart';
-import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
-import 'package:invesier/features/provider/provider.dart';
 
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../../core/constant/app_strings.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
+import '../../../../provider/get/get_authenticated_user_provider.dart';
+import '../../../../provider/provider.dart';
 import '../widget/drawer_title_widget.dart';
 
 @RoutePage()
@@ -131,7 +131,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                   builder: (context, ref, child) {
                     return DrawerTitleWidget(
                       onTap: () async {
-                        await ref.read(prefsProvider).clear();
+                        await ref
+                            .read(prefsProvider)
+                            .remove(AppStrings.userToken);
                         final token = ref
                             .read(prefsProvider)
                             .getString(AppStrings.userToken);

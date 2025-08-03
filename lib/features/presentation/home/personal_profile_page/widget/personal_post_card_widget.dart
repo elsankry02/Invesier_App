@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/features/model/user_model.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../model/user_model.dart';
 
 import '../../../../../core/components/custom_tag_button.dart';
 import '../../../../../core/constant/app_colors.dart';

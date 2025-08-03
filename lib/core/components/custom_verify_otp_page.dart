@@ -3,18 +3,18 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/provider/post/verify_otp_provider.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
+import '../../features/provider/post/verify_otp_provider.dart';
 import '../constant/app_colors.dart';
 import '../constant/app_enums.dart';
 import '../extension/extension.dart';
+import '../router/router.dart';
 import 'custom_appbar_title.dart';
 import 'custom_icon_button.dart';
 import 'custom_otp_code_field.dart';
 import 'custom_primary_button.dart';
+import 'show_custom_top_snack_bar.dart';
 
 @RoutePage()
 class CustomVerifyOtpPage extends ConsumerStatefulWidget {
@@ -72,6 +72,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
   }
 
   Future<void> verifyOtp() async {
+    if (!formKey.currentState!.validate()) return;
     final notifier = ref.read(verifyOtpProvider.notifier);
     final isEmail = widget.contactType == ContactType.email;
     await notifier.verifyOtp(
@@ -84,7 +85,6 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final notifier = ref.read(verifyOtpProvider.notifier);
     final state = ref.watch(verifyOtpProvider);
     ref.listen(verifyOtpProvider, (_, state) {
       if (state is VerifyOtpFailure) {
@@ -170,6 +170,11 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                 CustomOtpCodeField(
                   pinPutController: pinPutController,
                   validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter the OTP";
+                    } else if (value.length < 6) {
+                      return "OTP must be 6 digits";
+                    }
                     return null;
                   },
                 ),

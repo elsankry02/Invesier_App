@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/features/model/user_model.dart';
+import '../../../../../core/constant/app_images.dart';
+import '../../../../model/user_model.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';

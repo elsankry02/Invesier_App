@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/features/provider/post/register_new_user_provider.dart';
+import '../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../provider/post/register_new_user_provider.dart';
 
 import '../../../../core/components/custom_contact_type_field.dart';
 import '../../../../core/components/custom_outlined_button.dart';
@@ -37,6 +37,9 @@ class _SignupPageState extends ConsumerState<SignupPage> {
   }
 
   Future<void> register() async {
+    if (!formKey.currentState!.validate()) {
+      return;
+    }
     final notifier = ref.read(registerNewUserProvider.notifier);
     final isEmail = contactType == ContactType.email;
     await notifier.registerNewUser(
@@ -180,6 +183,14 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                             hintText: 'name@gmail.com',
                             keyboardType: TextInputType.emailAddress,
                             tybeController: emailController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Please enter a valid Email';
+                              } else if (!value.contains('@')) {
+                                return 'Email must contain @';
+                              }
+                              return null;
+                            },
                           ),
                           // Phone Number
                           CustomContactTypeFieldWidget(
@@ -187,6 +198,14 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                             hintText: '01204******',
                             keyboardType: TextInputType.number,
                             tybeController: phoneController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Please enter a valid phone number";
+                              } else if (value.length < 11) {
+                                return 'Phone number must be at least 11 digits';
+                              }
+                              return null;
+                            },
                           ),
                         ],
                       ),

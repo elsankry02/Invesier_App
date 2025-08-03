@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
+import '../../../../provider/get/get_authenticated_user_provider.dart';
 import '../../home_follow_page/view/home_follow_page.dart';
 import '../../home_page/widget/divider_widget.dart';
 import '../../home_page/widget/following_number_widget.dart';

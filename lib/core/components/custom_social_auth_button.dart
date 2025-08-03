@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/constant/app_colors.dart';
 
+import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
 

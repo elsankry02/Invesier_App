@@ -25,6 +25,8 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       // autovalidateMode
       autovalidateMode: autovalidateMode,
+      // autofocus
+      autofocus: true,
       // validator
       validator: validator,
       // controller

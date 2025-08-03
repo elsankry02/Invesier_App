@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/core/constant/endpoints.dart';
-import 'package:invesier/features/model/user_model.dart';
+import '../../../core/constant/endpoints.dart';
+import '../../model/user_model.dart';
 
 class GetAuthenticatedUserService {
   final Dio dio;

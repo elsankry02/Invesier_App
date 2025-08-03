@@ -4,9 +4,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_strings.dart';
-import 'package:invesier/features/provider/provider.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -15,10 +12,13 @@ import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
 import '../../../../core/components/custom_text_form_field.dart';
+import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_strings.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
 import '../../../provider/post/complete_profile_provider.dart';
+import '../../../provider/provider.dart';
 import '../widget/circle_avatar_widget.dart';
 
 @RoutePage()
@@ -53,6 +53,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   }
 
   Future<void> completeProfile() async {
+    if (!formKey.currentState!.validate()) return;
     if (avatarFile == null) {
       showCustomErrorMessage(context, message: "Please choose an avatar image");
       return;
@@ -150,6 +151,14 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                     color: AppColors.kGray,
                   ),
                   controller: nameController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter a name';
+                    } else if (value.length < 4) {
+                      return 'Name must be at least 4 characters';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(height: 22),
                 Text(
@@ -166,7 +175,14 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                     color: AppColors.kGray,
                   ),
                   controller: usernameController,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter a username';
+                    } else if (value.length < 4) {
+                      return 'User Name must be at least 4 characters';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(height: context.height * 0.090),
                 // Next Button

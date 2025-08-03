@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../../core/constant/endpoints.dart';
+import '../../../core/constant/endpoints.dart';
 
 class RegisterNewUserService {
   final Dio dio;

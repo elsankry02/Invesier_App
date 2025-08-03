@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/model/login_model.dart';
+import '../../model/login_model.dart';
 
-import '../../core/constant/endpoints.dart';
+import '../../../core/constant/endpoints.dart';
 
 class VerifyOtpService {
   final Dio dio;

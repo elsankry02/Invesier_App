@@ -1,6 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/model/user_model.dart';
-import 'package:invesier/features/provider/provider.dart';
+import 'package:invesier/core/constant/app_strings.dart';
+
+import '../../model/user_model.dart';
+import '../provider.dart';
 
 abstract class GetAuthenticatedUserState {}
 
@@ -31,7 +34,12 @@ class GetAuthenticatedUserNotifier
       final userData = await provider.getUser();
       state = GetAuthenticatedUserSuccess(userModel: userData);
     } on Exception catch (e) {
-      state = GetAuthenticatedUserFaliure(errMessage: e.toString());
+      if (e is DioException) {
+        final data = e.response!.data;
+        state = GetAuthenticatedUserFaliure(
+          errMessage: data[AppStrings.message],
+        );
+      }
     }
   }
 }
