@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../service/post/logout_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constant/app_strings.dart';
@@ -11,6 +10,7 @@ import '../service/get/get_authenticated_user_service.dart';
 import '../service/post/check_username_availability_service.dart';
 import '../service/post/complete_profile_service.dart';
 import '../service/post/create_post_service.dart';
+import '../service/post/logout_service.dart';
 import '../service/post/register_new_user_service.dart';
 import '../service/post/remove_an_fcm_token_from_the_database_service.dart';
 import '../service/post/resend_otp_service.dart';
@@ -18,15 +18,15 @@ import '../service/post/store_the_fcm_token_for_the_authenticated_user_service.d
 import '../service/post/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
-  final token = ref.read(prefsProvider).getString(AppStrings.userToken);
-  log("Token removal: $token");
+  final token = ref.watch(prefsProvider).getString(AppStrings.userToken);
+  log("Token : $token");
   return Dio(
     BaseOptions(
       baseUrl: kBaseUrl,
       headers: {
+        if (token != null) "Authorization": "Bearer $token",
         "Content-Type": "application/json",
         "Accept": "application/json",
-        if (token != null) "Authorization": "Bearer $token",
       },
     ),
   );

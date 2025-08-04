@@ -3,15 +3,16 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
+import 'package:invesier/features/provider/post/logout_provider.dart';
+import 'package:invesier/features/provider/provider.dart';
 
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
-import '../../../../../core/constant/app_strings.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../../../provider/get/get_authenticated_user_provider.dart';
-import '../../../../provider/provider.dart';
 import '../widget/drawer_title_widget.dart';
 
 @RoutePage()
@@ -29,8 +30,30 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
     super.initState();
   }
 
+  Future<void> logout() async {
+    final notifier = ref.read(logoutProvider.notifier);
+    await notifier.logout();
+  }
+
   @override
   Widget build(BuildContext context) {
+    ref.listen(logoutProvider, (_, state) async {
+      if (state is LogoutFaliure) {
+        showCustomErrorMessage(context, message: state.errMessage);
+        log(state.errMessage);
+        return;
+      }
+      if (state is LogoutSuccess) {
+        await ref.read(prefsProvider).remove(AppStrings.userToken);
+        final token = ref.read(prefsProvider).getString(AppStrings.userToken);
+        log("Token : $token");
+        await context.router.replaceAll([WelcomeRoute()]);
+        return showCustomSuccessMessage(
+          context,
+          message: "Logged out successfully",
+        );
+      }
+    });
     return Drawer(
       child: Container(
         decoration: const BoxDecoration(
@@ -126,28 +149,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                   },
                   title: 'Settings',
                 ),
+
                 // Side Menu Title Widget (Log out)
-                Consumer(
-                  builder: (context, ref, child) {
-                    return DrawerTitleWidget(
-                      onTap: () async {
-                        await ref
-                            .read(prefsProvider)
-                            .remove(AppStrings.userToken);
-                        final token = ref
-                            .read(prefsProvider)
-                            .getString(AppStrings.userToken);
-                        log("Token : $token");
-                        context.router.replaceAll([WelcomeRoute()]);
-                        showCustomSuccessMessage(
-                          context,
-                          message: "Logged out successfully",
-                        );
-                      },
-                      title: "Log out",
-                    );
-                  },
-                ),
+                DrawerTitleWidget(onTap: logout, title: "Log out"),
               ],
             ),
           ),

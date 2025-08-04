@@ -29,7 +29,6 @@ class LogoutNotifier extends Notifier<LogoutState> {
     try {
       state = LogoutLoading();
       await provider.logout();
-      await ref.read(prefsProvider).remove(AppStrings.userToken);
       state = LogoutSuccess();
     } on Exception catch (e) {
       if (e is DioException) {

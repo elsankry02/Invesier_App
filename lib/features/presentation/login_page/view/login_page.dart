@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/components/show_custom_top_snack_bar.dart';
-import '../../../provider/post/resend_otp_provider.dart';
 
 import '../../../../core/components/custom_contact_type_field.dart';
 import '../../../../core/components/custom_outlined_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_social_auth_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
+import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
+import '../../../provider/post/resend_otp_provider.dart';
 
 @RoutePage()
 class LoginPage extends ConsumerStatefulWidget {
@@ -42,7 +42,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
     final notifier = ref.read(resendOtpProvider.notifier);
     final isPhone = contactType == ContactType.phone;
     await notifier.resendOtp(
-      phonePrefix: "+20",
+      phonePrefix: isPhone ? "+20" : null,
       authMethod: contactType.name,
       email: isPhone ? null : emailController.text.trim(),
       phone: isPhone ? phoneController.text.trim() : null,

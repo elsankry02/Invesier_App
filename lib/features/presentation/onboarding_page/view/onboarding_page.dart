@@ -34,6 +34,9 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isSaved = ref
+        .read(prefsProvider)
+        .setBool(AppStrings.skipOnboarding, true);
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -52,7 +55,8 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                 // Skip
                 SkipWidget(
                   skip: 'Skip',
-                  onTap: () {
+                  onTap: () async {
+                    await isSaved;
                     context.router.replace(WelcomeRoute());
                   },
                 ),
@@ -91,9 +95,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   ),
                   onTap: () async {
                     if (currentIndex == items(context).length - 1) {
-                      await ref
-                          .read(prefsProvider)
-                          .setBool(AppStrings.skipOnboarding, true);
+                      await isSaved;
                       context.router.push(WelcomeRoute());
                     }
                     pageController.animateToPage(
