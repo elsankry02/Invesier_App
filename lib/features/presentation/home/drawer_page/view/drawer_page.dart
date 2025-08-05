@@ -44,9 +44,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
         return;
       }
       if (state is LogoutSuccess) {
-        await ref.read(prefsProvider).remove(AppStrings.userToken);
         final token = ref.read(prefsProvider).getString(AppStrings.userToken);
         log("Token : $token");
+        await ref.read(prefsProvider).remove(AppStrings.userToken);
         await context.router.replaceAll([WelcomeRoute()]);
         return showCustomSuccessMessage(
           context,
