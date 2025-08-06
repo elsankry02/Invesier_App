@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../../../core/constant/app_strings.dart';
 import '../../../core/constant/endpoints.dart';
 
 class ResendOtpService {
@@ -15,10 +16,10 @@ class ResendOtpService {
     await dio.post(
       Endpoints.kResendOtp,
       data: {
-        "auth_method": authMethod,
-        if (phonePrefix != null) "phone_prefix": phonePrefix,
-        if (email != null) "email": email,
-        if (phone != null) "phone": phone,
+        AppStrings.authMethod: authMethod,
+        if (phonePrefix != null) AppStrings.phonePrefix: phonePrefix,
+        if (email != null) AppStrings.email: email,
+        if (phone != null) AppStrings.phone: phone,
       },
     );
   }

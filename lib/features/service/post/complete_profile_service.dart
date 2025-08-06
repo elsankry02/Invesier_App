@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import '../../../core/constant/app_strings.dart';
 
 import '../../../core/constant/endpoints.dart';
 
@@ -15,9 +16,9 @@ class CompleteProfileService {
     await dio.post(
       Endpoints.kCompleteProfile,
       data: FormData.fromMap({
-        "name": name,
-        "username": userName,
-        "avatar": await MultipartFile.fromFile(avatar.path),
+        AppStrings.name: name,
+        AppStrings.username: userName,
+        AppStrings.avatar: await MultipartFile.fromFile(avatar.path),
       }),
     );
   }

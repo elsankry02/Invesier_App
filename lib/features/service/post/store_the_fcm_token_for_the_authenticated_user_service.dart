@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import '../../../core/constant/app_strings.dart';
+
 import '../../../core/constant/endpoints.dart';
 
 class StoreTheFcmTokenForTheAuthenticatedUserService {
@@ -12,7 +14,10 @@ class StoreTheFcmTokenForTheAuthenticatedUserService {
   }) async {
     await dio.post(
       Endpoints.kFcmRegister,
-      data: {"token": token, if (deviceType != null) "device_type": deviceType},
+      data: {
+        AppStrings.token: token,
+        if (deviceType != null) AppStrings.devicetype: deviceType,
+      },
     );
   }
 }

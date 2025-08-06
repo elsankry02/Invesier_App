@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import '../../../core/constant/app_strings.dart';
+
 import '../../../core/constant/endpoints.dart';
 
 class RemoveAnFcmTokenFromTheDatabaseService {
@@ -6,6 +8,6 @@ class RemoveAnFcmTokenFromTheDatabaseService {
 
   RemoveAnFcmTokenFromTheDatabaseService({required this.dio});
   Future<void> removeAnFcmTokenFromTheDatabase({required String token}) async {
-    await dio.post(Endpoints.kUnregister, data: {"token": token});
+    await dio.post(Endpoints.kUnregister, data: {AppStrings.token: token});
   }
 }

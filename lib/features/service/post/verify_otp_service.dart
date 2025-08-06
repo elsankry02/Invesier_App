@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import '../../model/login_model.dart';
+import '../../../core/constant/app_strings.dart';
 
 import '../../../core/constant/endpoints.dart';
+import '../../model/login_model.dart';
 
 class VerifyOtpService {
   final Dio dio;
@@ -16,14 +17,14 @@ class VerifyOtpService {
     final response = await dio.post(
       Endpoints.kVerifyOtp,
       data: {
-        "auth_method": authMethod,
-        "otp": otp,
-        if (phonePrefix != null) "phone_prefix": phonePrefix,
-        if (email != null) "email": email,
-        if (phone != null) "phone": phone,
+        AppStrings.authMethod: authMethod,
+        AppStrings.otp: otp,
+        if (phonePrefix != null) AppStrings.phonePrefix: phonePrefix,
+        if (email != null) AppStrings.email: email,
+        if (phone != null) AppStrings.phone: phone,
       },
     );
-    final userData = response.data as Map<String, dynamic>;
-    return LoginModel.fromJson(userData);
+    final loginModel = response.data as Map<String, dynamic>;
+    return LoginModel.fromJson(loginModel);
   }
 }

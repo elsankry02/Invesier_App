@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import '../../../core/constant/app_strings.dart';
 
 import '../../../core/constant/endpoints.dart';
 
@@ -7,7 +8,7 @@ class RegisterNewUserService {
   RegisterNewUserService({required this.dio});
   Future<void> registerNewUser({
     required String authMethod,
-    required String prefix,
+    String? prefix,
     String? phonePrefix,
     String? email,
     String? phone,
@@ -15,11 +16,11 @@ class RegisterNewUserService {
     await dio.post(
       Endpoints.kRegister,
       data: {
-        "auth_method": authMethod,
-        if (phonePrefix != null) "phone_prefix": phonePrefix,
-        if (email != null) "email": email,
-        if (phone != null) "phone": phone,
-        "prefix": prefix,
+        AppStrings.authMethod: authMethod,
+        if (phonePrefix != null) AppStrings.phonePrefix: phonePrefix,
+        if (email != null) AppStrings.email: email,
+        if (phone != null) AppStrings.phone: phone,
+        if (prefix != null) AppStrings.prefix: prefix,
       },
     );
   }
