@@ -19,7 +19,6 @@ class CompleteProfileService {
         "username": userName,
         "avatar": await MultipartFile.fromFile(avatar.path),
       }),
-      options: Options(headers: {"Content-Type": "multipart/form-data"}),
     );
   }
 }
