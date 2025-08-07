@@ -6,6 +6,7 @@ import 'features/provider/provider.dart';
 
 Future<List<Override>> getOverrides() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
 
   final prefs = await SharedPreferences.getInstance();
   return [prefsProvider.overrideWithValue(prefs)];

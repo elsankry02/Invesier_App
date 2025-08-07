@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/components/show_custom_top_snack_bar.dart';
-import '../../../provider/post/register_new_user_provider.dart';
 
 import '../../../../core/components/custom_contact_type_field.dart';
 import '../../../../core/components/custom_outlined_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_social_auth_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
+import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
+import '../../../provider/post/register_new_user_provider.dart';
 
 @RoutePage()
 class SignupPage extends ConsumerStatefulWidget {
@@ -37,13 +37,12 @@ class _SignupPageState extends ConsumerState<SignupPage> {
   }
 
   Future<void> register() async {
-    if (!formKey.currentState!.validate()) {
-      return;
-    }
+    if (!formKey.currentState!.validate()) return;
     final notifier = ref.read(registerNewUserProvider.notifier);
     final isEmail = contactType == ContactType.email;
     await notifier.registerNewUser(
-      prefix: "+20",
+      prefix: isEmail ? null : "+20",
+      phonePrefix: isEmail ? null : "+20",
       authMethod: contactType.name,
       email: isEmail ? emailController.text.trim() : null,
       phone: isEmail ? null : phoneController.text.trim(),
@@ -56,6 +55,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     ref.listen(registerNewUserProvider, (_, state) {
       if (state is RegisterNewUserFailure) {
         showCustomErrorMessage(context, message: state.errMessage);
+        // log(state.errMessage);
         return;
       }
       if (state is RegisterNewUserSuccess) {

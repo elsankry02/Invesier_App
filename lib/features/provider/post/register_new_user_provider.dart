@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/constant/app_strings.dart';
 
+import '../../../core/constant/app_strings.dart';
 import '../provider.dart';
 
 class RegisterNewUserState {}
@@ -26,7 +26,7 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
 
   Future<void> registerNewUser({
     required String authMethod,
-    required String prefix,
+    String? prefix,
     String? phonePrefix,
     String? email,
     String? phone,

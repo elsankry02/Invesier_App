@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../../../core/constant/endpoints.dart';
 import '../../model/user_model.dart';
 
@@ -8,7 +9,7 @@ class GetAuthenticatedUserService {
   GetAuthenticatedUserService({required this.dio});
   Future<UserModel> getUser() async {
     final response = await dio.get(Endpoints.kUser);
-    final data = response.data as Map<String, dynamic>;
-    return UserModel.fromJson(data);
+    final userData = response.data as Map<String, dynamic>;
+    return UserModel.fromJson(userData);
   }
 }
