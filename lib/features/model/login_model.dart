@@ -1,3 +1,5 @@
+import 'package:invesier/core/constant/app_strings.dart';
+
 class LoginModel {
   final String token;
   final User user;
@@ -10,14 +12,14 @@ class LoginModel {
   });
 
   factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
-    token: json["token"],
-    user: User.fromJson(json["user"]),
+    token: json[AppStrings.token],
+    user: User.fromJson(json[AppStrings.user]),
     registrationComplete: json["registration_complete"],
   );
 
   Map<String, dynamic> toJson() => {
-    "token": token,
-    "user": user.toJson(),
+    AppStrings.token: token,
+    AppStrings.user: user.toJson(),
     "registration_complete": registrationComplete,
   };
 }

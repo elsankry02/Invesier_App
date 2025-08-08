@@ -1,6 +1,7 @@
 class AppStrings {
   static const otp = "otp";
   static const name = "name";
+  static const user = "user";
   static const file = 'File';
   static const email = "email";
   static const media = "media";
