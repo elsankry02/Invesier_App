@@ -1,20 +1,27 @@
-# invesier
+## 📊 Invesier App Overview
 
-A new Flutter project.
+The Invesier App is a Flutter-based mobile application designed to provide users with a comprehensive platform for managing their investments. With a user-friendly interface and robust features, the app allows users to track their investment portfolios, analyze market trends, and make informed financial decisions.
 
-## Getting Started
+## 🛠️ Core Technologies
 
-This project is a starting point for a Flutter application.
+**Flutter & Dart:** The app is developed using Flutter, ensuring a smooth and responsive cross-platform experience.
 
-A few resources to get you started if this is your first Flutter project:
+**MVVM Architecture:** Adopts the Model-View-ViewModel pattern to separate concerns and enhance code readability.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Riverpod:** Employs Riverpod for state management, offering a robust and testable solution.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**AutoRoute:** Utilizes AutoRoute for type-safe and declarative routing, simplifying navigation.
 
-final kTextTheme = Theme.of(context).textTheme;
-final h = MediaQuery.of(context).size.height;
-final w = MediaQuery.of(context).size.width;
+## 🔍 Key Features
+
+**User Authentication:** Supports secure sign-in and registration processes.
+
+**Portfolio Management:** Allows users to add and manage their investment assets.
+
+**Market Trends:** Displays real-time market data and trends.
+
+**Investment Analysis:** Provides tools for analyzing investment performance.
+
+**Notifications:** Keeps users informed about market changes and portfolio updates.
+
+**Dark Mode:** Offers a dark theme for better user experience in low-light conditions.
