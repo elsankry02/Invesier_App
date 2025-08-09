@@ -1,4 +1,5 @@
 class AppStrings {
+  static const id = "id";
   static const otp = "otp";
   static const name = "name";
   static const user = "user";
@@ -9,14 +10,28 @@ class AppStrings {
   static const token = "token";
   static const prefix = "prefix";
   static const avatar = "avatar";
+  static const isLive = "is_live";
   static const manrope = 'Manrope';
   static const message = 'message';
   static const content = "content";
   static const username = "username";
+  static const isExpert = "is_expert";
+  static const fansCount = "fans_count";
+  static const createdAt = "created_at";
+  static const avatarUrl = "avatar_url";
+  static const updatedAt = "updated_at";
   static const skiplogin = 'skip-login';
   static const userToken = 'USER_TOKEN';
+  static const postsCount = "posts_count";
+  static const hostStatus = "host_status";
   static const authMethod = "auth_method";
+  static const isVerified = "is_verified";
   static const devicetype = "device_type";
   static const phonePrefix = "phone_prefix";
+  static const inveesBalance = "invees_balance";
+  static const pioneersCount = "pioneers_count";
+  static const socialRelation = "social_relation";
   static const skipOnboarding = 'skip-onboarding';
+  static const isCompleteProfile = "is_complete_profile";
+  static const registrationComplete = "registration_complete";
 }
