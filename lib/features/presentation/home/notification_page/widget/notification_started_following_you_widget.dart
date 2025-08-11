@@ -57,7 +57,7 @@ class NotificationStartedFollowingYouWidget extends StatelessWidget {
 
               backGroundColor: AppColors.kTurquoiseBlue,
               border: Border.all(color: AppColors.kTurquoiseBlue),
-              radius: 31,
+              borderRadius: BorderRadius.circular(31),
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 20,
                 vertical: 4,

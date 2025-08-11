@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/components/custom_contact_type_field.dart';
-import '../../../../core/components/custom_outlined_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_social_auth_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
@@ -116,20 +115,28 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         //  Email
-                        CustomOutlinedButton(
-                          title: 'Email',
+                        CustomPrimaryButton(
+                          title: "Email",
+                          style: context.kTextTheme.titleMedium!.copyWith(
+                            color:
+                                contactType == ContactType.email
+                                    ? AppColors.kWhite
+                                    : AppColors.kTurquoiseBlue,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            vertical: 1.5,
+                            horizontal: 52,
+                          ),
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(26),
                             bottomLeft: Radius.circular(26),
                           ),
-                          titleColor:
-                              contactType == ContactType.email
-                                  ? AppColors.kWhite
-                                  : AppColors.kTurquoiseBlue,
-                          color:
+                          backGroundColor:
                               contactType == ContactType.email
                                   ? AppColors.kTurquoiseBlue
-                                  : AppColors.kBackGround,
+                                  : AppColors.kCodGray,
+                          border: Border.all(color: AppColors.kTurquoiseBlue),
                           onTap: () {
                             setState(() {
                               contactType = ContactType.email;
@@ -142,20 +149,28 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                           },
                         ),
                         // Phone
-                        CustomOutlinedButton(
-                          title: 'Phone',
+                        CustomPrimaryButton(
+                          title: "Phone",
+                          style: context.kTextTheme.titleMedium!.copyWith(
+                            color:
+                                contactType == ContactType.phone
+                                    ? AppColors.kWhite
+                                    : AppColors.kTurquoiseBlue,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            vertical: 1.5,
+                            horizontal: 52,
+                          ),
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(26),
                             bottomRight: Radius.circular(26),
                           ),
-                          titleColor:
-                              contactType == ContactType.phone
-                                  ? AppColors.kWhite
-                                  : AppColors.kTurquoiseBlue,
-                          color:
+                          backGroundColor:
                               contactType == ContactType.phone
                                   ? AppColors.kTurquoiseBlue
                                   : AppColors.kCodGray,
+                          border: Border.all(color: AppColors.kTurquoiseBlue),
                           onTap: () {
                             setState(() {
                               contactType = ContactType.phone;
@@ -231,9 +246,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
-                  radius: 60,
+                  borderRadius: BorderRadius.circular(60),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,

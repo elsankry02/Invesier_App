@@ -76,7 +76,7 @@ class PostCardWidget extends StatelessWidget {
                 // Custom Primary Button
                 CustomPrimaryButton(
                   title: 'Mate',
-                  radius: 31,
+                  borderRadius: BorderRadius.circular(31),
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
                   ),

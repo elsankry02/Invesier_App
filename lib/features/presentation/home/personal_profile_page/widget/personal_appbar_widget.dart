@@ -1,7 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/components/custom_button_sheet_widget.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/core/constant/app_svgs.dart';
 
+import '../../../../../core/components/custom_divider_widget.dart';
+import '../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
@@ -9,8 +15,6 @@ import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../../../provider/get/get_authenticated_user_provider.dart';
 import '../../home_follow_page/view/home_follow_page.dart';
-import '../../home_page/widget/divider_widget.dart';
-import '../../home_page/widget/following_number_widget.dart';
 
 class PersonalAppBarWidget extends StatelessWidget {
   const PersonalAppBarWidget({super.key});
@@ -23,12 +27,20 @@ class PersonalAppBarWidget extends StatelessWidget {
         if (state is GetAuthenticatedUserSuccess) {
           final user = state.userModel;
           return ListTile(
+            contentPadding: EdgeInsets.only(
+              top: context.height * 0.025,
+              left: context.height * 0.010,
+              right: context.height * 0.030,
+            ),
             leading: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Custom Icon Back
                 CustomIconButton(
-                  icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
+                  icon: Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: AppColors.kWhite,
+                  ),
                   onPressed: () {
                     context.router.maybePop();
                   },
@@ -44,36 +56,72 @@ class PersonalAppBarWidget extends StatelessWidget {
                 ),
               ],
             ),
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // title
-                Text(
-                  user.name ?? "Mohamed Ebrahim",
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // title
+                    Text(
+                      user.name ?? "Mohamed Ebrahim",
+                      style: context.kTextTheme.labelMedium!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    // subTitle
+                    Text(
+                      user.username ?? "elsankary02",
+                      style: context.kTextTheme.labelMedium!.copyWith(
+                        color: AppColors.kGray,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: context.height * 0.008),
+                  ],
                 ),
-                // subTitle
-                Text(
-                  user.username ?? "elsankary02",
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    color: AppColors.kGray,
-                    fontWeight: FontWeight.w400,
-                  ),
+                CustomIconButton(
+                  icon: SvgPicture.asset(AppSvgs.kPopMenu),
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return CustomButtonSheetWidget(
+                          firstTitle: 'Wallet',
+                          firstIcon: Icons.account_balance_wallet_outlined,
+                          onFirstTap: () {
+                            showCustomErrorMessage(
+                              context,
+                              message: "COMING SOON",
+                            );
+                          },
+                          secondTitle: 'Settings',
+                          secondIcon: Icons.settings_outlined,
+                          onSecondTap: () {
+                            showCustomErrorMessage(
+                              context,
+                              message: "COMING SOON",
+                            );
+                          },
+                        );
+                      },
+                    );
+                  },
                 ),
-                SizedBox(height: context.height * 0.008),
               ],
             ),
             subtitle: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Posts
-                FollowingNumberWidget(title: 'Posts', number: user.postsCount),
+                CustomFollowersNumberWidget(
+                  title: 'Posts',
+                  number: user.postsCount,
+                ),
                 // DividerWidget
-                DividerWidget(height: context.height * 0.030, width: 1.5),
+                CustomDividerWidget(height: context.height * 0.030, width: 1.5),
                 // Fans
-                FollowingNumberWidget(
+                CustomFollowersNumberWidget(
                   number: state.userModel.fansCount,
                   title: 'Fans',
                   onTap: () {
@@ -83,9 +131,9 @@ class PersonalAppBarWidget extends StatelessWidget {
                   },
                 ),
                 // DividerWidget
-                DividerWidget(height: context.height * 0.030, width: 1.5),
+                CustomDividerWidget(height: context.height * 0.030, width: 1.5),
                 // Pioneers
-                FollowingNumberWidget(
+                CustomFollowersNumberWidget(
                   number: user.pioneersCount,
                   title: 'Pioneers',
                   onTap: () {

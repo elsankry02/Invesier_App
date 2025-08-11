@@ -6,8 +6,8 @@ class CustomPrimaryButton extends StatelessWidget {
   final String title;
   final BoxBorder? border;
   final Color? backGroundColor;
-  final double radius;
   final EdgeInsetsGeometry? margin, padding;
+  final BorderRadiusGeometry? borderRadius;
   final Gradient? gradient;
   final TextStyle? style;
   final bool isLoading;
@@ -16,13 +16,14 @@ class CustomPrimaryButton extends StatelessWidget {
     super.key,
     required this.title,
     this.backGroundColor,
-    required this.radius,
     this.margin,
     this.gradient,
     this.style,
     this.onTap,
     this.padding,
-    this.isLoading = false, this.border,
+    this.isLoading = false,
+    this.border,
+    this.borderRadius,
   });
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class CustomPrimaryButton extends StatelessWidget {
           // borderColor
           border: border,
           // borderRadius
-          borderRadius: BorderRadius.circular(radius),
+          borderRadius: borderRadius,
           // gradient
           gradient: gradient,
         ),

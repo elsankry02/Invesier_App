@@ -9,7 +9,7 @@ import '../../../../../core/components/custom_divider_widget.dart';
 import '../widget/fans_widget.dart';
 import '../widget/home_follow_appbar.dart';
 import '../widget/home_follow_rich_text_widget.dart';
-import '../widget/home_follow_textformfield_widget.dart';
+import '../../search_page/widget/home_follow_textformfield_widget.dart';
 import '../widget/pioneers_widget.dart';
 
 enum FollowTabType { fans, pioneers }

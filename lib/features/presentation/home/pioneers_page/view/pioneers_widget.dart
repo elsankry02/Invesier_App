@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/core/constant/app_svgs.dart';
 
 import '../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../core/router/router.dart';
@@ -21,9 +22,11 @@ class PioneersWidget extends StatelessWidget {
           // trailing
           trailing: CustomPopMenuWidget(
             firstTitle: "Pin post",
-            secondTitle: "Delete post",
+            firstSvg: AppSvgs.kPin,
             onFirstTap:
                 () => showCustomErrorMessage(context, message: "Pin action"),
+            secondTitle: "Delete post",
+            secondSvg: AppSvgs.kDelete,
             onSecondTap:
                 () => showCustomErrorMessage(context, message: "Delete action"),
           ),

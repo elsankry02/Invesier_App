@@ -45,7 +45,7 @@ class ForYouDialogWidget extends StatelessWidget {
                   horizontal: 36,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
@@ -63,7 +63,7 @@ class ForYouDialogWidget extends StatelessWidget {
                   horizontal: 36,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,

@@ -69,7 +69,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 101,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
@@ -101,7 +101,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 101,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
@@ -133,7 +133,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 100,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
@@ -166,7 +166,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 93,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
@@ -199,7 +199,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 81,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
@@ -233,7 +233,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 98,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color:
@@ -256,7 +256,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   horizontal: 101,
                   vertical: 4,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,

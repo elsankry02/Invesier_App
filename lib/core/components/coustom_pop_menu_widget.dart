@@ -6,17 +6,20 @@ import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
 
 class CustomPopMenuWidget extends StatelessWidget {
-  final String firstTitle;
-  final String secondTitle;
+  final String firstTitle, secondTitle, firstSvg, secondSvg;
+
   final void Function()? onFirstTap;
   final void Function()? onSecondTap;
 
   const CustomPopMenuWidget({
     super.key,
+
+    this.onFirstTap,
+    this.onSecondTap,
     required this.firstTitle,
     required this.secondTitle,
-    required this.onFirstTap,
-    required this.onSecondTap,
+    required this.firstSvg,
+    required this.secondSvg,
   });
 
   @override
@@ -35,7 +38,7 @@ class CustomPopMenuWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(AppSvgs.kPin),
+                SvgPicture.asset(firstSvg),
                 const SizedBox(width: 7),
                 Text(
                   firstTitle,
@@ -58,7 +61,7 @@ class CustomPopMenuWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(AppSvgs.kDelete),
+                SvgPicture.asset(secondSvg),
                 const SizedBox(width: 7),
                 Text(
                   secondTitle,

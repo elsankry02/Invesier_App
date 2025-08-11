@@ -30,6 +30,7 @@ class NotificationPage extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
+                      SizedBox(height: context.height * 0.025),
                       // Notification AppBar
                       NotificationAppBarWidget(),
                       SizedBox(height: context.height * 0.016),

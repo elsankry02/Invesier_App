@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                           horizontal: 26,
                           vertical: 8,
                         ),
-                        radius: 18,
+                        borderRadius: BorderRadius.circular(18),
                         onTap: () {
                           setState(() {
                             enumView = EnumView.foryou;
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                           horizontal: 26,
                           vertical: 8,
                         ),
-                        radius: 18,
+                        borderRadius: BorderRadius.circular(18),
                         onTap: () {
                           setState(() {
                             enumView = EnumView.pioneers;

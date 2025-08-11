@@ -40,7 +40,7 @@ class UserProfilePage extends StatelessWidget {
                     horizontal: 56,
                     vertical: 9.5,
                   ),
-                  radius: 31,
+                  borderRadius: BorderRadius.circular(31),
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
                     color: AppColors.kWhite,
@@ -56,7 +56,7 @@ class UserProfilePage extends StatelessWidget {
                     horizontal: 56,
                     vertical: 9.5,
                   ),
-                  radius: 31,
+                  borderRadius: BorderRadius.circular(31),
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
                     color: AppColors.kTurquoiseBlue,

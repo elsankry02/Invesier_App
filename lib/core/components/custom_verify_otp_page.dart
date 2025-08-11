@@ -206,7 +206,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
                   border: Border.all(color: AppColors.kTurquoiseBlue),
-                  radius: 60,
+                  borderRadius: BorderRadius.circular(60),
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,

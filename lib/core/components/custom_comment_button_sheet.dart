@@ -106,7 +106,7 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
                     horizontal: 20,
                     vertical: widget.vertical,
                   ),
-                  radius: widget.radius,
+                  borderRadius: BorderRadius.circular(widget.radius),
                   onTap: () {},
                   style: widget.style,
                 ),

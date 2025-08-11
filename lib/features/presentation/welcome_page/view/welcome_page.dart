@@ -36,7 +36,7 @@ class WelcomePage extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
               ),
-              radius: 60,
+              borderRadius: BorderRadius.circular(60),
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 105,
                 vertical: 15,
@@ -56,7 +56,7 @@ class WelcomePage extends StatelessWidget {
             CustomPrimaryButton(
               title: 'Login',
               border: BoxBorder.all(color: AppColors.kEucalyptus),
-              radius: 60,
+              borderRadius: BorderRadius.circular(60),
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 130,
                 vertical: 15,

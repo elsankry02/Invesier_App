@@ -177,7 +177,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                       horizontal: 20,
                       vertical: 12,
                     ),
-                    radius: 16,
+                    borderRadius: BorderRadius.circular(16),
                     style: context.kTextTheme.labelMedium!.copyWith(
                       fontWeight: FontWeight.w600,
                       color: AppColors.kDivider,

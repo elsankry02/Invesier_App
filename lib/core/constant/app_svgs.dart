@@ -18,4 +18,6 @@ class AppSvgs {
   static const kLogo = 'assets/svg/Logo.svg';
   static const kHome = 'assets/svg/home.svg';
   static const kPin = 'assets/svg/pin.svg';
+  static const kWallet = 'assets/svg/wallet.svg';
+  static const kSetting = 'assets/svg/setting.svg';
 }

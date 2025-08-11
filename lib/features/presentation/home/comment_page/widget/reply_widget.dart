@@ -43,6 +43,8 @@ class ReplyWidget extends StatelessWidget {
                     ),
                   ),
                   trailing: CustomPopMenuWidget(
+                    firstSvg: AppSvgs.kPin,
+                    secondSvg: AppSvgs.kDelete,
                     firstTitle: "Pin post",
                     secondTitle: "Delete post",
                     onFirstTap:
@@ -89,7 +91,7 @@ class ReplyWidget extends StatelessWidget {
                           horizontal: 10,
                           vertical: 4,
                         ),
-                        radius: 31,
+                        borderRadius: BorderRadius.circular(31),
                       ),
                     ],
                   ),

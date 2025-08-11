@@ -41,7 +41,7 @@ class UserAlertDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'No',
                 backGroundColor: AppColors.kBackGround,
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
@@ -61,7 +61,7 @@ class UserAlertDialogWidget extends StatelessWidget {
                   horizontal: 27.5,
                   vertical: 6,
                 ),
-                radius: 31,
+                borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
