@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
@@ -35,7 +35,6 @@ class UserProfilePage extends StatelessWidget {
               children: [
                 CustomPrimaryButton(
                   title: 'Chase',
-                  borderColor: AppColors.kTurquoiseBlue,
                   backGroundColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 56,
@@ -52,7 +51,6 @@ class UserProfilePage extends StatelessWidget {
                 ),
                 CustomPrimaryButton(
                   title: 'message',
-                  borderColor: AppColors.kWhite,
                   backGroundColor: AppColors.kWhite,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 56,

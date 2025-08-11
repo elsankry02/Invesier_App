@@ -192,7 +192,6 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: AppColors.kTurquoiseBlue,
                   radius: 60,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   style: context.kTextTheme.titleMedium!.copyWith(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
@@ -34,7 +34,7 @@ class PostCardWidget extends StatelessWidget {
           // ListTile
           ListTile(
             // contentPadding
-            contentPadding: EdgeInsets.all(0),
+            contentPadding: EdgeInsets.zero,
             // leading
             leading: ClipOval(
               // image
@@ -80,7 +80,7 @@ class PostCardWidget extends StatelessWidget {
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
-                  borderColor: AppColors.kTurquoiseBlue,
+                  border: Border.all(color: AppColors.kTurquoiseBlue),
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 24,
                     vertical: 4,

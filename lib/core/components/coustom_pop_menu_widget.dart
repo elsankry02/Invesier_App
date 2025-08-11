@@ -1,38 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 
-import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/constant/app_svgs.dart';
-import '../../../../../core/extension/extension.dart';
+import '../constant/app_colors.dart';
+import '../constant/app_svgs.dart';
+import '../extension/extension.dart';
 
-class PopMenuButtonWidget extends StatelessWidget {
-  const PopMenuButtonWidget({super.key});
+class CustomPopMenuWidget extends StatelessWidget {
+  final String firstTitle;
+  final String secondTitle;
+  final void Function()? onFirstTap;
+  final void Function()? onSecondTap;
+
+  const CustomPopMenuWidget({
+    super.key,
+    required this.firstTitle,
+    required this.secondTitle,
+    required this.onFirstTap,
+    required this.onSecondTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      offset: Offset(0, 35),
+      offset: const Offset(0, 35),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
       icon: SvgPicture.asset(AppSvgs.kPopMenu),
       color: AppColors.kHeavyMetal,
       iconColor: AppColors.kWhite,
       itemBuilder: (context) {
         return [
-          // Pin post
+          // First item
           PopupMenuItem(
-            onTap: () {
-              showCustomErrorMessage(context, message: "COMING SOON");
-            },
+            onTap: onFirstTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // svg icon
                 SvgPicture.asset(AppSvgs.kPin),
-                SizedBox(width: 7),
-                // title
+                const SizedBox(width: 7),
                 Text(
-                  'Pin post',
+                  firstTitle,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -46,20 +52,16 @@ class PopMenuButtonWidget extends StatelessWidget {
             enabled: false,
             child: Divider(color: AppColors.kDivider, thickness: 1),
           ),
-          // Delete post
+          // Second item
           PopupMenuItem(
-            onTap: () {
-              showCustomErrorMessage(context, message: "COMING SOON");
-            },
+            onTap: onSecondTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // svg icon
                 SvgPicture.asset(AppSvgs.kDelete),
-                SizedBox(width: 7),
-                // title
+                const SizedBox(width: 7),
                 Text(
-                  'Delete post',
+                  secondTitle,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     color: AppColors.kRed,
                     fontWeight: FontWeight.w600,

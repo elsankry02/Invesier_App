@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 
+import '../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../core/router/router.dart';
-import 'pop_menu_button_widget.dart';
-import 'post_card_widget.dart';
+import '../../home_page/widget/post_card_widget.dart';
 
 class PioneersWidget extends StatelessWidget {
   const PioneersWidget({super.key});
@@ -18,7 +19,14 @@ class PioneersWidget extends StatelessWidget {
         // PostCardWidget
         return PostCardWidget(
           // trailing
-          trailing: PopMenuButtonWidget(),
+          trailing: CustomPopMenuWidget(
+            firstTitle: "Pin post",
+            secondTitle: "Delete post",
+            onFirstTap:
+                () => showCustomErrorMessage(context, message: "Pin action"),
+            onSecondTap:
+                () => showCustomErrorMessage(context, message: "Delete action"),
+          ),
           imageOnTap: () {
             // UserProfileRoute
             context.router.push(UserProfileRoute());

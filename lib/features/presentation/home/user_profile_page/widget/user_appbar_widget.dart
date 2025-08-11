@@ -8,8 +8,8 @@ import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../home_follow_page/view/home_follow_page.dart';
-import '../../home_page/widget/divider_widget.dart';
-import '../../home_page/widget/following_number_widget.dart';
+import '../../../../../core/components/custom_divider_widget.dart';
+import '../../../../../core/components/custom_followers_number_widget.dart';
 import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
 
@@ -19,12 +19,20 @@ class UserAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.only(
+        top: context.height * 0.025,
+        left: context.height * 0.010,
+        right: context.height * 0.030,
+      ),
       leading: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           // Custom Icon Back
           CustomIconButton(
-            icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
+            icon: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: AppColors.kWhite,
+            ),
             onPressed: () {
               context.router.maybePop();
             },
@@ -85,11 +93,11 @@ class UserAppBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Posts
-          FollowingNumberWidget(title: 'Posts', number: 2),
+          CustomFollowersNumberWidget(title: 'Posts', number: 2),
           // DividerWidget
-          DividerWidget(height: context.height * 0.030, width: 1.5),
+          CustomDividerWidget(height: context.height * 0.030, width: 1.5),
           // Fans
-          FollowingNumberWidget(
+          CustomFollowersNumberWidget(
             title: 'Fans',
             number: 7,
             onTap: () {
@@ -99,9 +107,9 @@ class UserAppBarWidget extends StatelessWidget {
             },
           ),
           // DividerWidget
-          DividerWidget(height: context.height * 0.030, width: 1.5),
+          CustomDividerWidget(height: context.height * 0.030, width: 1.5),
           // Pioneers
-          FollowingNumberWidget(
+          CustomFollowersNumberWidget(
             title: 'Pioneers',
             number: 7,
             onTap: () {

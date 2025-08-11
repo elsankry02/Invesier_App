@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 
+import '../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
-import 'pop_menu_button_widget.dart';
 
 class ReplyWidget extends StatelessWidget {
   final Function() onTap;
@@ -42,7 +42,20 @@ class ReplyWidget extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  trailing: PopMenuButtonWidget(),
+                  trailing: CustomPopMenuWidget(
+                    firstTitle: "Pin post",
+                    secondTitle: "Delete post",
+                    onFirstTap:
+                        () => showCustomErrorMessage(
+                          context,
+                          message: "Pin action",
+                        ),
+                    onSecondTap:
+                        () => showCustomErrorMessage(
+                          context,
+                          message: "Delete action",
+                        ),
+                  ),
                   title: Row(
                     children: [
                       Column(
@@ -71,7 +84,6 @@ class ReplyWidget extends StatelessWidget {
                         style: context.kTextTheme.labelMedium!.copyWith(
                           fontWeight: FontWeight.w500,
                         ),
-                        borderColor: Colors.transparent,
                         backGroundColor: AppColors.kTurquoiseBlue,
                         padding: EdgeInsetsDirectional.symmetric(
                           horizontal: 10,

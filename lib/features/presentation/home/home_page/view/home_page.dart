@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/custom_primary_button.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../widget/enum_item.dart';
-import '../widget/foryou_widget.dart';
+import '../../foryou_page/view/foryou_widget.dart';
+import '../../pioneers_page/view/pioneers_widget.dart';
 import '../widget/invesier_appbar_widget.dart';
-import '../widget/pioneers_widget.dart';
 
 enum EnumView { foryou, pioneers }
 
@@ -36,34 +36,50 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // For You
-                      EnumItem(
+                      CustomPrimaryButton(
                         title: 'For You',
-                        titleColor:
-                            enumView == EnumView.foryou
-                                ? AppColors.kCodGray
-                                : AppColors.kWhite,
+                        style: context.kTextTheme.titleSmall!.copyWith(
+                          fontWeight: FontWeight.w900,
+                          color:
+                              enumView == EnumView.foryou
+                                  ? AppColors.kCodGray
+                                  : AppColors.kWhite,
+                        ),
                         backGroundColor:
                             enumView == EnumView.foryou
                                 ? AppColors.kOceanGreen
                                 : AppColors.kBackGround,
+                        padding: EdgeInsetsDirectional.symmetric(
+                          horizontal: 26,
+                          vertical: 8,
+                        ),
+                        radius: 18,
                         onTap: () {
                           setState(() {
                             enumView = EnumView.foryou;
                           });
                         },
                       ),
-                      SizedBox(width: context.width * 0.010),
+                      SizedBox(width: context.width * 0.025),
                       // Pioneers
-                      EnumItem(
+                      CustomPrimaryButton(
                         title: 'Pioneers',
-                        titleColor:
-                            enumView == EnumView.pioneers
-                                ? AppColors.kTertiary
-                                : AppColors.kWhite,
+                        style: context.kTextTheme.titleSmall!.copyWith(
+                          fontWeight: FontWeight.w900,
+                          color:
+                              enumView == EnumView.pioneers
+                                  ? AppColors.kTertiary
+                                  : AppColors.kWhite,
+                        ),
                         backGroundColor:
                             enumView == EnumView.pioneers
                                 ? AppColors.kOceanGreen
                                 : AppColors.kBackGround,
+                        padding: EdgeInsetsDirectional.symmetric(
+                          horizontal: 26,
+                          vertical: 8,
+                        ),
+                        radius: 18,
                         onTap: () {
                           setState(() {
                             enumView = EnumView.pioneers;

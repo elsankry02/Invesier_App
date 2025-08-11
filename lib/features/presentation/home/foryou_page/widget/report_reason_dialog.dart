@@ -59,10 +59,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                         ? AppColors.kBoulder
                         : AppColors.kWhite,
 
-                borderColor:
-                    isSelectedOne == false
-                        ? AppColors.kTurquoiseBlue
-                        : AppColors.kBoulder,
+                border: BoxBorder.all(
+                  color:
+                      isSelectedOne == false
+                          ? AppColors.kTurquoiseBlue
+                          : AppColors.kBoulder,
+                ),
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
                   vertical: 4,
@@ -89,10 +91,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedTwo == true
                         ? AppColors.kBoulder
                         : AppColors.kWhite,
-                borderColor:
-                    isSelectedTwo == false
-                        ? AppColors.kTurquoiseBlue
-                        : AppColors.kBoulder,
+                border: BoxBorder.all(
+                  color:
+                      isSelectedTwo == false
+                          ? AppColors.kTurquoiseBlue
+                          : AppColors.kBoulder,
+                ),
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
                   vertical: 4,
@@ -119,10 +123,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                     isSelectedThree == true
                         ? AppColors.kBoulder
                         : AppColors.kWhite,
-                borderColor:
-                    isSelectedThree == false
-                        ? AppColors.kTurquoiseBlue
-                        : AppColors.kBoulder,
+                border: BoxBorder.all(
+                  color:
+                      isSelectedThree == false
+                          ? AppColors.kTurquoiseBlue
+                          : AppColors.kBoulder,
+                ),
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 100,
                   vertical: 4,
@@ -150,10 +156,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                         ? AppColors.kBoulder
                         : AppColors.kWhite,
 
-                borderColor:
-                    isSelectedFour == false
-                        ? AppColors.kTurquoiseBlue
-                        : AppColors.kBoulder,
+                border: BoxBorder.all(
+                  color:
+                      isSelectedFour == false
+                          ? AppColors.kTurquoiseBlue
+                          : AppColors.kBoulder,
+                ),
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 93,
                   vertical: 4,
@@ -181,10 +189,12 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                         ? AppColors.kBoulder
                         : AppColors.kWhite,
 
-                borderColor:
-                    isSelectedFive == false
-                        ? AppColors.kTurquoiseBlue
-                        : AppColors.kBoulder,
+                border: BoxBorder.all(
+                  color:
+                      isSelectedFive == false
+                          ? AppColors.kTurquoiseBlue
+                          : AppColors.kBoulder,
+                ),
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 81,
                   vertical: 4,
@@ -212,10 +222,13 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                         ? AppColors.kBoulder
                         : AppColors.kWhite,
 
-                borderColor:
-                    isSelectedSix == false
-                        ? AppColors.kTurquoiseBlue
-                        : AppColors.kBoulder,
+                border: BoxBorder.all(
+                  color:
+                      isSelectedSix == false
+                          ? AppColors.kTurquoiseBlue
+                          : AppColors.kBoulder,
+                ),
+
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 98,
                   vertical: 4,
@@ -239,7 +252,6 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               CustomPrimaryButton(
                 title: 'Submit',
                 backGroundColor: AppColors.kTurquoiseBlue,
-                borderColor: AppColors.kTurquoiseBlue,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
                   vertical: 4,

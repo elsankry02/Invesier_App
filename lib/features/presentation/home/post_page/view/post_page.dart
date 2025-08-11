@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
-import '../../../../provider/post/creat_post_provider.dart';
+import 'package:invesier/core/components/custom_icon_button.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../provider/post/creat_post_provider.dart';
 
 @RoutePage()
 class PostPage extends ConsumerStatefulWidget {
@@ -99,11 +100,11 @@ class _PostPageState extends ConsumerState<PostPage> {
                         ),
                       ),
                       // icon
-                      IconButton(
+                      CustomIconButton(
+                        icon: Icon(FontAwesomeIcons.xmark),
                         onPressed: () {
                           context.router.maybePop();
                         },
-                        icon: Icon(FontAwesomeIcons.xmark),
                       ),
                     ],
                   ),
@@ -145,7 +146,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                   Row(
                     children: [
                       // imageGallery
-                      IconButton(
+                      CustomIconButton(
                         onPressed: () {
                           gallery();
                         },
@@ -155,7 +156,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                         ),
                       ),
                       // imagecamera
-                      IconButton(
+                      CustomIconButton(
                         onPressed: () {
                           camera();
                         },
@@ -172,7 +173,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                     isLoading: state is CreatPostLoading,
                     title: 'Post now',
                     backGroundColor: AppColors.kOceanGreen,
-                    borderColor: AppColors.kOceanGreen,
                     padding: EdgeInsetsDirectional.symmetric(
                       horizontal: 20,
                       vertical: 12,

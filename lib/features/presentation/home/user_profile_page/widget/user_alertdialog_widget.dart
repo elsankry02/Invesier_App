@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -41,7 +41,6 @@ class UserAlertDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'No',
                 backGroundColor: AppColors.kBackGround,
-                borderColor: AppColors.kBackGround,
                 radius: 31,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w500,
@@ -58,7 +57,6 @@ class UserAlertDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'Yes, block',
                 backGroundColor: AppColors.kRedTwo,
-                borderColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 27.5,
                   vertical: 6,

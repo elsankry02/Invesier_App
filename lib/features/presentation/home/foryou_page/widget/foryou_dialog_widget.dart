@@ -41,7 +41,6 @@ class ForYouDialogWidget extends StatelessWidget {
               CustomPrimaryButton(
                 title: 'Cancel',
                 backGroundColor: AppColors.kBoulder,
-                borderColor: AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 36,
                   vertical: 4,
@@ -60,7 +59,6 @@ class ForYouDialogWidget extends StatelessWidget {
                 title: 'Report',
 
                 backGroundColor: AppColors.kRedTwo,
-                borderColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 36,
                   vertical: 4,
@@ -77,7 +75,6 @@ class ForYouDialogWidget extends StatelessWidget {
                       barrierDismissible: false,
                       context: context,
                       builder: (context) {
-                        // Report Reason Dialog
                         return ReportReasonDialog();
                       },
                     );

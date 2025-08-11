@@ -205,7 +205,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: AppColors.kTurquoiseBlue,
+                  border: Border.all(color: AppColors.kTurquoiseBlue),
                   radius: 60,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   style: context.kTextTheme.titleMedium!.copyWith(

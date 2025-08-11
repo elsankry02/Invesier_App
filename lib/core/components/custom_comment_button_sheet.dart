@@ -101,7 +101,7 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
                 CustomPrimaryButton(
                   title: widget.titleButton,
                   backGroundColor: AppColors.kOceanGreen,
-                  borderColor: AppColors.kOceanGreen,
+                  border: Border.all(color: AppColors.kOceanGreen),
                   padding: EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: widget.vertical,

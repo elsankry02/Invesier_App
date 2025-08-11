@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/constant/app_colors.dart';
+import '../constant/app_colors.dart';
 
-class DividerWidget extends StatelessWidget {
+class CustomDividerWidget extends StatelessWidget {
   final double height, width;
   final Function()? onTap;
-  const DividerWidget({
+  const CustomDividerWidget({
     super.key,
     required this.height,
     required this.width,

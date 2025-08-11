@@ -4,7 +4,7 @@ import '../constant/app_colors.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String title;
-  final Color borderColor;
+  final BoxBorder? border;
   final Color? backGroundColor;
   final double radius;
   final EdgeInsetsGeometry? margin, padding;
@@ -15,7 +15,6 @@ class CustomPrimaryButton extends StatelessWidget {
   const CustomPrimaryButton({
     super.key,
     required this.title,
-    required this.borderColor,
     this.backGroundColor,
     required this.radius,
     this.margin,
@@ -23,7 +22,7 @@ class CustomPrimaryButton extends StatelessWidget {
     this.style,
     this.onTap,
     this.padding,
-    this.isLoading = false,
+    this.isLoading = false, this.border,
   });
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class CustomPrimaryButton extends StatelessWidget {
           // backgroundColor
           color: backGroundColor,
           // borderColor
-          border: Border.all(color: borderColor),
+          border: border,
           // borderRadius
           borderRadius: BorderRadius.circular(radius),
           // gradient

@@ -5,7 +5,7 @@ import '../../../../provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../home_page/widget/divider_widget.dart';
+import '../../../../../core/components/custom_divider_widget.dart';
 import '../widget/fans_widget.dart';
 import '../widget/home_follow_appbar.dart';
 import '../widget/home_follow_rich_text_widget.dart';
@@ -76,7 +76,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                                   SizedBox(height: context.height * 0.004),
                                   // Fans Divider
                                   selectedTab == FollowTabType.fans
-                                      ? DividerWidget(
+                                      ? CustomDividerWidget(
                                         onTap: () {
                                           setState(() {
                                             selectedTab = FollowTabType.fans;
@@ -89,7 +89,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                                 ],
                               ),
                               // Center Divider
-                              DividerWidget(
+                              CustomDividerWidget(
                                 height: context.height * 0.015,
                                 width: 1.5,
                               ),
@@ -108,7 +108,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                                   SizedBox(height: context.height * 0.004),
                                   // Pioneers Divider
                                   selectedTab == FollowTabType.pioneers
-                                      ? DividerWidget(
+                                      ? CustomDividerWidget(
                                         onTap: () {
                                           setState(() {
                                             selectedTab =

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/extension/extension.dart';
+import '../extension/extension.dart';
 
-class FollowingNumberWidget extends StatelessWidget {
+class CustomFollowersNumberWidget extends StatelessWidget {
   final String title;
   final int number;
   final Function()? onTap;
-  const FollowingNumberWidget({
+  const CustomFollowersNumberWidget({
     super.key,
     required this.title,
     required this.number,

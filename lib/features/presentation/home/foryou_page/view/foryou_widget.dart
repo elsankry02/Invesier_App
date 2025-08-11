@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/router/router.dart';
+import '../../home_page/widget/post_card_widget.dart';
 import '../../user_profile_page/widget/user_pop_menu_widget.dart';
-import 'foryou_dialog_widget.dart';
-import 'post_card_widget.dart';
+import '../widget/foryou_dialog_widget.dart';
 
 class ForYouWidget extends StatelessWidget {
   const ForYouWidget({super.key});
@@ -28,7 +28,7 @@ class ForYouWidget extends StatelessWidget {
                 },
               );
             },
-            icon: AppSvgs.kPin,
+            icon: AppSvgs.kblockVictor,
             title: 'Report post',
           ),
           imageOnTap: () {

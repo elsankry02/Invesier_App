@@ -86,7 +86,6 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  borderColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   radius: 60,
                   style: context.kTextTheme.titleMedium!.copyWith(

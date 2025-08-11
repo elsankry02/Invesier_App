@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../provider/get/get_authenticated_user_provider.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
+import '../../../../provider/get/get_authenticated_user_provider.dart';
 import '../../../main_navigation_page/view/main_navigation_page.dart';
 
 class InvesierAppBar extends StatelessWidget {
@@ -79,7 +79,6 @@ class InvesierAppBar extends StatelessWidget {
                 Consumer(
                   builder: (context, ref, child) {
                     final state = ref.watch(getAuthenticatedUserProvider);
-
                     return GestureDetector(
                       onTap: () {
                         scaffoldKey.currentState!.openDrawer();
