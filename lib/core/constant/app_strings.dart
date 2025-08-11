@@ -7,6 +7,7 @@ class AppStrings {
   static const email = "email";
   static const media = "media";
   static const phone = "phone";
+  static const accept = "Accept";
   static const token = "token";
   static const prefix = "prefix";
   static const avatar = "avatar";
@@ -27,7 +28,9 @@ class AppStrings {
   static const authMethod = "auth_method";
   static const isVerified = "is_verified";
   static const devicetype = "device_type";
+  static const contentType = "Content-Type";
   static const phonePrefix = "phone_prefix";
+  static const authorization = "Authorization";
   static const inveesBalance = "invees_balance";
   static const pioneersCount = "pioneers_count";
   static const socialRelation = "social_relation";

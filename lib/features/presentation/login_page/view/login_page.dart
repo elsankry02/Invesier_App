@@ -82,7 +82,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
           child: Form(
             key: formKey,
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
               children: [
                 // Welcome To Invesier!
                 Text(
