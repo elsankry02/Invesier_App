@@ -1,45 +1,15 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-
-import '../../../../../core/components/coustom_pop_menu_widget.dart';
-import '../../../../../core/router/router.dart';
-import '../../home_page/widget/post_card_widget.dart';
+import 'package:invesier/core/components/custom_no_posts_widget.dart';
 
 class PioneersWidget extends StatelessWidget {
   const PioneersWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 3,
-      itemBuilder: (context, index) {
-        // PostCardWidget
-        return PostCardWidget(
-          // trailing
-          trailing: CustomPopMenuWidget(
-            firstTitle: "Pin post",
-            firstSvg: AppSvgs.kPin,
-            onFirstTap:
-                () => showCustomErrorMessage(context, message: "Pin action"),
-            secondTitle: "Delete post",
-            secondSvg: AppSvgs.kDelete,
-            onSecondTap:
-                () => showCustomErrorMessage(context, message: "Delete action"),
-          ),
-          imageOnTap: () {
-            // UserProfileRoute
-            context.router.push(UserProfileRoute());
-          },
-          commentOnTap: () {
-            // CommentRoute
-            context.router.push(CommentRoute());
-          },
-        );
-      },
+      children: const [CustomNoPostsWidget()],
     );
   }
 }

@@ -10,8 +10,8 @@ class CustomAppBarTitle extends StatelessWidget {
     return Text(
       textAlign: TextAlign.center,
       title,
-      style: context.kTextTheme.headlineSmall!.copyWith(
-        fontWeight: FontWeight.w700,
+      style: context.kTextTheme.titleLarge!.copyWith(
+        fontWeight: FontWeight.w600,
       ),
     );
   }

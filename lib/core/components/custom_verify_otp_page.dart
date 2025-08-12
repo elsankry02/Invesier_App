@@ -123,19 +123,22 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 20),
               children: [
-                Row(
+                Stack(
+                  alignment: Alignment.center,
                   children: [
-                    // Custom Icon Back
-                    CustomIconButton(
-                      icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
-                      onPressed: () {
-                        context.router.maybePop();
-                      },
-                    ),
                     // CustomTitelAppBar
-                    Expanded(
-                      child: CustomAppBarTitle(
-                        title: "Verify your phone number",
+                    CustomAppBarTitle(title: "Verify your phone number"),
+                    // Custom Icon Back
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: CustomIconButton(
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          color: AppColors.kWhite,
+                        ),
+                        onPressed: () {
+                          context.router.maybePop();
+                        },
                       ),
                     ),
                   ],

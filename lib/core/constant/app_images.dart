@@ -1,6 +1,7 @@
 class AppImages {
   static const k1 = 'assets/image/k1.png';
   static const k2 = 'assets/image/k2.png';
+  static const kVector = 'assets/image/Vector.png';
   static const kBoyOne = 'assets/image/boy_one.png';
   static const kBoyTwo = 'assets/image/boy_two.png';
   static const kBoyThree = 'assets/image/boy_three.png';

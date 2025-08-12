@@ -10,23 +10,28 @@ class NotificationAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Stack(
+      alignment: Alignment.center,
       children: [
-        // icon
-        CustomIconButton(
-          icon: Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.kWhite),
-          onPressed: () {
-            context.router.maybePop();
-          },
-        ),
         // title
-        Expanded(
-          child: Text(
-            textAlign: TextAlign.center,
-            'Notification',
-            style: context.kTextTheme.titleLarge!.copyWith(
-              fontWeight: FontWeight.w600,
+        Text(
+          textAlign: TextAlign.center,
+          'Notification',
+          style: context.kTextTheme.titleLarge!.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        // icon
+        Align(
+          alignment: Alignment.centerLeft,
+          child: CustomIconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: AppColors.kWhite,
             ),
+            onPressed: () {
+              context.router.maybePop();
+            },
           ),
         ),
       ],

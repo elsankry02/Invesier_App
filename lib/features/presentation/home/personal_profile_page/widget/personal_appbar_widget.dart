@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/components/custom_button_sheet_widget.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
 
 import '../../../../../core/components/custom_divider_widget.dart';
@@ -89,20 +88,11 @@ class PersonalAppBarWidget extends StatelessWidget {
                         return CustomButtonSheetWidget(
                           firstTitle: 'Wallet',
                           firstIcon: Icons.account_balance_wallet_outlined,
-                          onFirstTap: () {
-                            showCustomErrorMessage(
-                              context,
-                              message: "COMING SOON",
-                            );
-                          },
+                          onFirstTap: () => context.router.push(WalletRoute()),
                           secondTitle: 'Settings',
                           secondIcon: Icons.settings_outlined,
-                          onSecondTap: () {
-                            showCustomErrorMessage(
-                              context,
-                              message: "COMING SOON",
-                            );
-                          },
+                          onSecondTap:
+                              () => context.router.push(SettingsRoute()),
                         );
                       },
                     );

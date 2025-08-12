@@ -331,6 +331,22 @@ class SearchRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [SettingsPage]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute({List<PageRouteInfo>? children})
+    : super(SettingsRoute.name, initialChildren: children);
+
+  static const String name = 'SettingsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SettingsPage();
+    },
+  );
+}
+
+/// generated route for
 /// [SignupPage]
 class SignupRoute extends PageRouteInfo<void> {
   const SignupRoute({List<PageRouteInfo>? children})
@@ -374,6 +390,22 @@ class UserProfileRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const UserProfilePage();
+    },
+  );
+}
+
+/// generated route for
+/// [WalletPage]
+class WalletRoute extends PageRouteInfo<void> {
+  const WalletRoute({List<PageRouteInfo>? children})
+    : super(WalletRoute.name, initialChildren: children);
+
+  static const String name = 'WalletRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const WalletPage();
     },
   );
 }

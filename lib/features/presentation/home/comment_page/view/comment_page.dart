@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../home_page/widget/post_card_widget.dart';
+import '../../home_page/widget/social_post_card.dart';
 import '../widget/reply_widget.dart';
 
 @RoutePage()
