@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/app_lotties.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../constant/app_lotties.dart';
+import '../extension/extension.dart';
 import 'package:lottie/lottie.dart';
 
 class CustomNoPostsWidget extends StatelessWidget {

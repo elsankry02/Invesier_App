@@ -10,6 +10,7 @@ class AppSvgs {
   static const kDecline = 'assets/svg/decline.svg';
   static const kDelete = 'assets/svg/delete.svg';
   static const kGrowth = 'assets/svg/growth.svg';
+  static const kInvesier = 'assets/svg/invesier.svg';
   static const kApple = 'assets/svg/vector.svg';
   static const kTrade = 'assets/svg/trade.svg';
   static const kLearn = 'assets/svg/frame.svg';

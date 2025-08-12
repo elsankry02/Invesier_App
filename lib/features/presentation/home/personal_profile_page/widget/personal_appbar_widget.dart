@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/custom_button_sheet_widget.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
+import '../../../../../core/components/custom_button_sheet_widget.dart';
+import '../../../../../core/constant/app_svgs.dart';
 
 import '../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../core/components/custom_followers_number_widget.dart';
@@ -88,7 +88,10 @@ class PersonalAppBarWidget extends StatelessWidget {
                         return CustomButtonSheetWidget(
                           firstTitle: 'Wallet',
                           firstIcon: Icons.account_balance_wallet_outlined,
-                          onFirstTap: () => context.router.push(WalletRoute()),
+                          onFirstTap: () {
+                            context.router.maybePop();
+                            context.router.push(WalletRoute());
+                          },
                           secondTitle: 'Settings',
                           secondIcon: Icons.settings_outlined,
                           onSecondTap:

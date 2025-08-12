@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:invesier/core/components/custom_icon_button.dart';
+import '../../../../../core/components/custom_icon_button.dart';
+import '../widget/post_app_bar_widget.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
@@ -89,25 +90,7 @@ class _PostPageState extends ConsumerState<PostPage> {
               child: ListView(
                 children: [
                   SizedBox(height: context.height * 0.004),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // titel
-                      Text(
-                        "Add Post",
-                        style: context.kTextTheme.titleSmall!.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      // icon
-                      CustomIconButton(
-                        icon: Icon(FontAwesomeIcons.xmark),
-                        onPressed: () {
-                          context.router.maybePop();
-                        },
-                      ),
-                    ],
-                  ),
+                  PostAppBarWidget(),
                   SizedBox(height: context.height * 0.012),
                   // TextFormField
                   TextFormField(

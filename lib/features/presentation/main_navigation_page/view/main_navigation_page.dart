@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/router/router.dart';
+import '../widget/post_live_bottom_sheet_widget.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_svgs.dart';
@@ -12,7 +11,6 @@ import '../../learn_page/view/learn_page.dart';
 import '../../trade_page/view/trade_page.dart';
 import '../widget/action_button_location_widget.dart';
 import '../widget/navigationbar_item_widget.dart';
-import '../../../../core/components/custom_button_sheet_widget.dart';
 
 @RoutePage()
 class MainNavigationPage extends StatefulWidget {
@@ -85,16 +83,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                 showModalBottomSheet(
                   context: context,
                   builder: (context) {
-                    return CustomButtonSheetWidget(
-                      firstTitle: "Post",
-                      secondTitle: "Live",
-                      onFirstTap: () => context.pushRoute(PostRoute()),
-                      onSecondTap:
-                          () => showCustomErrorMessage(
-                            context,
-                            message: "COMING SOON",
-                          ),
-                    );
+                    return PostLiveBottomSheetWidget();
                   },
                 );
               },

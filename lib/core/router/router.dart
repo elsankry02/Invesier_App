@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/home/settings_page/view/settings_page.dart';
-import 'package:invesier/features/presentation/home/wallet_page/view/wallet_page.dart';
+import '../../features/presentation/home/recent_transactions_page/view/recent_transactions_page.dart';
+import '../../features/presentation/home/settings_page/view/settings_page.dart';
+import '../../features/presentation/home/wallet_page/view/wallet_page.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/home/comment_page/view/comment_page.dart';
@@ -43,6 +44,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: WalletRoute.page),
     AutoRoute(page: SettingsRoute.page),
     AutoRoute(page: PersonalProfileRoute.page),
+    AutoRoute(page: RecentTransactionsRoute.page),
     AutoRoute(page: UserProfileRoute.page),
     AutoRoute(page: HomeFollowRoute.page),
     AutoRoute(page: NotificationRoute.page),

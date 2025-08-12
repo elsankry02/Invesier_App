@@ -20,4 +20,6 @@ class AppColors {
   static const kEucalyptus = Color(0xff6AEEC6);
   static const kDarkenText = Color(0xff687684);
   static const kTurquoiseBlue = Color(0xff248866);
+  static const kNum = Color(0xff4CAF50);
+  static const kInvee = Color(0xffE8C6C6);
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_no_posts_widget.dart';
+import '../../../../../core/components/custom_no_posts_widget.dart';
 
 class ForYouWidget extends StatelessWidget {
   const ForYouWidget({super.key});

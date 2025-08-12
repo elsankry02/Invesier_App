@@ -315,6 +315,22 @@ class PostRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [RecentTransactionsPage]
+class RecentTransactionsRoute extends PageRouteInfo<void> {
+  const RecentTransactionsRoute({List<PageRouteInfo>? children})
+    : super(RecentTransactionsRoute.name, initialChildren: children);
+
+  static const String name = 'RecentTransactionsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RecentTransactionsPage();
+    },
+  );
+}
+
+/// generated route for
 /// [SearchPage]
 class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute({List<PageRouteInfo>? children})

@@ -1,4 +1,4 @@
-import 'package:invesier/core/constant/app_strings.dart';
+import '../../core/constant/app_strings.dart';
 
 class LoginModel {
   final String token;
