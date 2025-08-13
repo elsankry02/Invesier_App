@@ -16,6 +16,9 @@ class AppSvgs {
   static const kLearn = 'assets/svg/frame.svg';
   static const kReply = 'assets/svg/reply.svg';
   static const kArrow = 'assets/svg/arrow.svg';
+  static const kSent = 'assets/svg/sent.svg';
+  static const kSentGold = 'assets/svg/sent_gold.svg';
+  static const kSentBlue = 'assets/svg/sent_blue.svg';
   static const kLogo = 'assets/svg/Logo.svg';
   static const kHome = 'assets/svg/home.svg';
   static const kPin = 'assets/svg/pin.svg';

@@ -1,8 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../features/presentation/home/recent_transactions_page/view/recent_transactions_page.dart';
-import '../../features/presentation/home/settings_page/view/settings_page.dart';
-import '../../features/presentation/home/wallet_page/view/wallet_page.dart';
+import 'package:invesier/features/presentation/home/recent_transactions_page/view/recent_transactions_page.dart';
+import 'package:invesier/features/presentation/home/transactions_history_page/view/transactions_history_page.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/home/comment_page/view/comment_page.dart';
@@ -12,7 +11,9 @@ import '../../features/presentation/home/notification_page/view/notification_pag
 import '../../features/presentation/home/personal_profile_page/view/personal_profile_page.dart';
 import '../../features/presentation/home/post_page/view/post_page.dart';
 import '../../features/presentation/home/search_page/view/search_page.dart';
+import '../../features/presentation/home/settings_page/view/settings_page.dart';
 import '../../features/presentation/home/user_profile_page/view/user_profile_page.dart';
+import '../../features/presentation/home/wallet_page/view/wallet_page.dart';
 import '../../features/presentation/login_page/view/login_page.dart';
 import '../../features/presentation/main_navigation_page/view/main_navigation_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
@@ -44,6 +45,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: WalletRoute.page),
     AutoRoute(page: SettingsRoute.page),
     AutoRoute(page: PersonalProfileRoute.page),
+    AutoRoute(page: TransactionsHistoryRoute.page),
     AutoRoute(page: RecentTransactionsRoute.page),
     AutoRoute(page: UserProfileRoute.page),
     AutoRoute(page: HomeFollowRoute.page),

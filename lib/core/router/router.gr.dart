@@ -395,6 +395,22 @@ class SplashRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [TransactionsHistoryPage]
+class TransactionsHistoryRoute extends PageRouteInfo<void> {
+  const TransactionsHistoryRoute({List<PageRouteInfo>? children})
+    : super(TransactionsHistoryRoute.name, initialChildren: children);
+
+  static const String name = 'TransactionsHistoryRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const TransactionsHistoryPage();
+    },
+  );
+}
+
+/// generated route for
 /// [UserProfilePage]
 class UserProfileRoute extends PageRouteInfo<void> {
   const UserProfileRoute({List<PageRouteInfo>? children})

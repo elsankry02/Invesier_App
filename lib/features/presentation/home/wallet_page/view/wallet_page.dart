@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_svgs.dart';
+
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
@@ -39,6 +41,7 @@ class WalletPage extends StatelessWidget {
                 backGroundColor: AppColors.kNum,
                 padding: EdgeInsets.symmetric(vertical: 10),
                 borderRadius: BorderRadius.circular(10),
+                onTap: () => context.router.push(TransactionsHistoryRoute()),
               ),
               SizedBox(height: context.height * 0.024),
               Row(
@@ -60,13 +63,12 @@ class WalletPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: context.height * 0.013),
-              ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return RechargeTransactionTileWidget();
-                },
+              RechargeTransactionTileWidget(
+                leading: AppSvgs.kSent,
+                title: "Recharge",
+                subtitle: "10 - 11 - 2002",
+                trailing: "150.000.000",
+                color: AppColors.kNum,
               ),
             ],
           ),

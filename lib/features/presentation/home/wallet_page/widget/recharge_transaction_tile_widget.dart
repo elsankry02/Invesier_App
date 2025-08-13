@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
 class RechargeTransactionTileWidget extends StatelessWidget {
-  const RechargeTransactionTileWidget({super.key});
-
+  final String leading, title, subtitle, trailing;
+  final Color? color;
+  const RechargeTransactionTileWidget({
+    super.key,
+    required this.leading,
+    required this.title,
+    required this.subtitle,
+    required this.trailing,
+    this.color,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,24 +24,24 @@ class RechargeTransactionTileWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
-        leading: SvgPicture.asset("assets/svg/sent.svg"),
+        leading: SvgPicture.asset(leading),
         title: Text(
-          "Recharge",
+          title,
           style: context.kTextTheme.labelMedium!.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
         subtitle: Text(
-          "10 - 11 - 2002",
+          subtitle,
           style: context.kTextTheme.labelSmall!.copyWith(
             color: AppColors.kBoulder,
             fontWeight: FontWeight.w400,
           ),
         ),
         trailing: Text(
-          "150,000,000",
+          trailing,
           style: context.kTextTheme.labelMedium!.copyWith(
-            color: AppColors.kNum,
+            color: color,
             fontWeight: FontWeight.w600,
           ),
         ),
