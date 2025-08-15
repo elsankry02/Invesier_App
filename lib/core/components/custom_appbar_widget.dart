@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/components/custom_icon_button.dart';
-import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/extension/extension.dart';
+import '../constant/app_colors.dart';
+import '../extension/extension.dart';
+import 'custom_icon_button.dart';
 
-class NotificationAppBarWidget extends StatelessWidget {
-  const NotificationAppBarWidget({super.key});
+class CustomAppBarWidget extends StatelessWidget {
+  final String title;
+  const CustomAppBarWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class NotificationAppBarWidget extends StatelessWidget {
         // title
         Text(
           textAlign: TextAlign.center,
-          'Notification',
+          title,
           style: context.kTextTheme.titleLarge!.copyWith(
             fontWeight: FontWeight.w600,
           ),

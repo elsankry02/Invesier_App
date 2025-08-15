@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../widget/notification_appbar_widget.dart';
 import '../widget/notification_started_following_you_widget.dart';
 import '../widget/notification_upvoted_your_post_widget.dart';
 
@@ -32,7 +32,7 @@ class NotificationPage extends StatelessWidget {
                     children: [
                       SizedBox(height: context.height * 0.025),
                       // Notification AppBar
-                      NotificationAppBarWidget(),
+                      CustomAppBarWidget(title: 'Notification'),
                       SizedBox(height: context.height * 0.016),
                       // Notification Started Following You
                       NotificationStartedFollowingYouWidget(),

@@ -331,6 +331,22 @@ class RecentTransactionsRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [RechargePage]
+class RechargeRoute extends PageRouteInfo<void> {
+  const RechargeRoute({List<PageRouteInfo>? children})
+    : super(RechargeRoute.name, initialChildren: children);
+
+  static const String name = 'RechargeRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RechargePage();
+    },
+  );
+}
+
+/// generated route for
 /// [SearchPage]
 class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute({List<PageRouteInfo>? children})

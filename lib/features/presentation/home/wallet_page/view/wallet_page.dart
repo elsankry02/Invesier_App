@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/custom_appbar_widget.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
@@ -7,7 +8,6 @@ import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../widget/recharge_transaction_tile_widget.dart';
-import '../widget/wallet_appbar_widget.dart';
 import '../widget/wallet_info_card_widget.dart';
 
 @RoutePage()
@@ -29,7 +29,7 @@ class WalletPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(top: 20, left: 16, right: 16),
             children: [
-              WalletAppBarWidget(),
+              CustomAppBarWidget(title: "Wallet"),
               SizedBox(height: context.height * 0.022),
               WalletInfoCardWidget(),
               SizedBox(height: context.height * 0.024),

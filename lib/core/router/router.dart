@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/features/presentation/home/recent_transactions_page/view/recent_transactions_page.dart';
+import 'package:invesier/features/presentation/home/recharge_page/view/recharge_page.dart';
 import 'package:invesier/features/presentation/home/transactions_history_page/view/transactions_history_page.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
