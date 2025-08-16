@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+
 import '../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../../../../core/router/router.dart';
 import '../../wallet_page/widget/recharge_transaction_tile_widget.dart';
 
 @RoutePage()
@@ -50,7 +51,11 @@ class RecentTransactionsPage extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kOceanGreen),
-                    onTap: () => context.router.push(RechargeRoute()),
+                    onTap:
+                        () => showCustomErrorMessage(
+                          context,
+                          message: "COMING SOON",
+                        ),
                   ),
                   CustomPrimaryButton(
                     title: "Date",
@@ -63,7 +68,11 @@ class RecentTransactionsPage extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kOceanGreen),
-                    onTap: () {},
+                    onTap:
+                        () => showCustomErrorMessage(
+                          context,
+                          message: "COMING SOON",
+                        ),
                   ),
                   CustomPrimaryButton(
                     title: "Invees",
@@ -76,7 +85,11 @@ class RecentTransactionsPage extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kOceanGreen),
-                    onTap: () {},
+                    onTap:
+                        () => showCustomErrorMessage(
+                          context,
+                          message: "COMING SOON",
+                        ),
                   ),
                 ],
               ),

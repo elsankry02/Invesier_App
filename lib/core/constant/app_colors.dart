@@ -7,6 +7,7 @@ class AppColors {
   static const kGray = Color(0xff818181);
   static const kWhite = Color(0xffFFFFFF);
   static const kRedTwo = Color(0xffD32F2F);
+  static const kRedThree = Color(0xffFF5D51);
   static const kBorder = Color(0xffD0D2D8);
   static const kDivider = Color(0xff2F2F2F);
   static const kCodGray = Color(0xff1E1E1E);

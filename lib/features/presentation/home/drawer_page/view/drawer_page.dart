@@ -133,18 +133,12 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                     return SizedBox();
                   },
                 ),
-                // Side Menu Title Widget (View profile)
                 DrawerTitleWidget(
                   title: 'View profile',
-                  onTap: () {
-                    context.router.push(PersonalProfileRoute());
-                  },
+                  onTap: () => context.router.push(PersonalProfileRoute()),
                 ),
-                // Side Menu Title Widget (Settings)
                 DrawerTitleWidget(
-                  onTap: () {
-                    showCustomErrorMessage(context, message: "COMING SOON");
-                  },
+                  onTap: () => context.router.push(SettingsRoute()),
                   title: 'Settings',
                 ),
 

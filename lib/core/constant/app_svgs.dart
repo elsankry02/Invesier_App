@@ -24,4 +24,6 @@ class AppSvgs {
   static const kPin = 'assets/svg/pin.svg';
   static const kWallet = 'assets/svg/wallet.svg';
   static const kSetting = 'assets/svg/setting.svg';
+  static const kRepoIconCarrier = 'assets/svg/repo_icon_carrier.svg';
+  static const kShieldChecklist = 'assets/svg/shield_checklist.svg';
 }
