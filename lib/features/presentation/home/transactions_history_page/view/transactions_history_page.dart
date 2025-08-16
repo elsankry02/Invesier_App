@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_appbar_widget.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/wallet_page/widget/recharge_transaction_tile_widget.dart';
+import '../../../../../core/components/custom_appbar_widget.dart';
+import '../../../../../core/components/custom_primary_button.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/constant/app_svgs.dart';
+import '../../../../../core/extension/extension.dart';
+import '../../wallet_page/widget/recharge_transaction_tile_widget.dart';
 
 @RoutePage()
 class TransactionsHistoryPage extends StatelessWidget {
