@@ -5,9 +5,9 @@ import 'package:invesier/core/components/custom_appbar_widget.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
 import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/presentation/home/settings_page/widget/settings_item_widget.dart';
+import 'package:invesier/features/presentation/home/setting/settings_page/widget/settings_item_widget.dart';
 
-import '../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_colors.dart';
 
 @RoutePage()
 class SettingsPage extends StatelessWidget {

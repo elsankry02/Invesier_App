@@ -331,6 +331,22 @@ class RecentTransactionsRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [RejectedPage]
+class RejectedRoute extends PageRouteInfo<void> {
+  const RejectedRoute({List<PageRouteInfo>? children})
+    : super(RejectedRoute.name, initialChildren: children);
+
+  static const String name = 'RejectedRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const RejectedPage();
+    },
+  );
+}
+
+/// generated route for
 /// [SearchPage]
 class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute({List<PageRouteInfo>? children})
@@ -411,6 +427,22 @@ class TransactionsHistoryRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [UnderReveiwPage]
+class UnderReveiwRoute extends PageRouteInfo<void> {
+  const UnderReveiwRoute({List<PageRouteInfo>? children})
+    : super(UnderReveiwRoute.name, initialChildren: children);
+
+  static const String name = 'UnderReveiwRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UnderReveiwPage();
+    },
+  );
+}
+
+/// generated route for
 /// [UserProfilePage]
 class UserProfileRoute extends PageRouteInfo<void> {
   const UserProfileRoute({List<PageRouteInfo>? children})
@@ -422,6 +454,22 @@ class UserProfileRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const UserProfilePage();
+    },
+  );
+}
+
+/// generated route for
+/// [VerificationRequestPage]
+class VerificationRequestRoute extends PageRouteInfo<void> {
+  const VerificationRequestRoute({List<PageRouteInfo>? children})
+    : super(VerificationRequestRoute.name, initialChildren: children);
+
+  static const String name = 'VerificationRequestRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const VerificationRequestPage();
     },
   );
 }
@@ -454,6 +502,22 @@ class WelcomeRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const WelcomePage();
+    },
+  );
+}
+
+/// generated route for
+/// [YouAreVerifiedPage]
+class YouAreVerifiedRoute extends PageRouteInfo<void> {
+  const YouAreVerifiedRoute({List<PageRouteInfo>? children})
+    : super(YouAreVerifiedRoute.name, initialChildren: children);
+
+  static const String name = 'YouAreVerifiedRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const YouAreVerifiedPage();
     },
   );
 }
