@@ -1,10 +1,11 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:invesier/core/components/custom_appbar_widget.dart';
 import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
 import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/presentation/home/setting/settings_page/widget/settings_item_widget.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
@@ -33,7 +34,13 @@ class SettingsPage extends StatelessWidget {
               SettingsItemWidget(
                 leading: SvgPicture.asset(AppSvgs.kShieldChecklist),
                 title: "verification request",
-                subtitle: Text("Remove ads, enjoy Invesier as you wish"),
+                subtitle: Text(
+                  "Remove ads, enjoy Invesier as you wish",
+                  style: context.kTextTheme.labelMedium!.copyWith(
+                    color: AppColors.kBoulder,
+                  ),
+                ),
+                onTap: () => context.router.push(VerificationRequestRoute()),
               ),
               SettingsItemWidget(
                 leading: SvgPicture.asset(AppSvgs.kRepoIconCarrier),

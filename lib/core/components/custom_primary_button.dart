@@ -60,7 +60,7 @@ class CustomPrimaryButton extends StatelessWidget {
                       ),
                     ),
                   )
-                  : Text(title, style: style),
+                  : Text(title, textAlign: TextAlign.center, style: style),
         ),
       ),
     );

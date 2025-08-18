@@ -13,7 +13,7 @@ class AppSvgs {
   static const kInvesier = 'assets/svg/invesier.svg';
   static const kApple = 'assets/svg/vector.svg';
   static const kTrade = 'assets/svg/trade.svg';
-  static const kLearn = 'assets/svg/frame.svg';
+  static const kLearn = 'assets/svg/learn.svg';
   static const kReply = 'assets/svg/reply.svg';
   static const kArrow = 'assets/svg/arrow.svg';
   static const kSent = 'assets/svg/sent.svg';
@@ -26,4 +26,7 @@ class AppSvgs {
   static const kSetting = 'assets/svg/setting.svg';
   static const kRepoIconCarrier = 'assets/svg/repo_icon_carrier.svg';
   static const kShieldChecklist = 'assets/svg/shield_checklist.svg';
+  static const kEmail = 'assets/svg/email.svg';
+  static const kPrsonal = 'assets/svg/personal.svg';
+  static const kPhone = 'assets/svg/phone.svg';
 }

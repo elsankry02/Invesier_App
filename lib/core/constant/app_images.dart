@@ -9,13 +9,17 @@ class AppImages {
   static const kBoyFive = 'assets/image/boy_five.png';
   static const kGirlOne = 'assets/image/girl_one.png';
   static const kGirlTwo = 'assets/image/girl_two.png';
-  static const kVerified = 'assets/image/verified.png';
   static const kGirlFour = 'assets/image/girl_four.png';
+  static const kVerified = 'assets/image/verified.png';
   static const kMintDark = 'assets/image/Mint_Dark.png';
   static const kBoyThree = 'assets/image/boy_three.png';
   static const kGirlThree = 'assets/image/girl_three.png';
   static const kOnBoarding = 'assets/image/onboarding.png';
   static const kNotApproved = 'assets/image/not_approved.png';
   static const kVerification = 'assets/image/verification.png';
-  static const kVerificationRequest = 'assets/image/verification_request.png';
+  static const kProgressBarOne = 'assets/image/progress_bar_one.png';
+  static const kProgressBarTwo = 'assets/image/progress_bar_two.png';
+  static const kProgressBarThree = 'assets/image/progress_bar_three.png';
+  static const kProgressBarFour = 'assets/image/progress_bar_four.png';
+  static const kLoadingFiles = 'assets/image/loading_files.png';
 }
