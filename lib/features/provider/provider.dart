@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/service/delete/delete_account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constant/app_strings.dart';
@@ -76,6 +77,10 @@ final getAuthenticatedUserServiceProvider =
 // logout Service Provider
 final logoutServiceProvider = Provider<LogoutService>((ref) {
   return LogoutService(dio: ref.read(dioProvider));
+});
+// DeleteAccountService
+final deleteAccountServiceProvider = Provider<DeleteAccountService>((ref) {
+  return DeleteAccountService(dio: ref.read(dioProvider));
 });
 // prefs Provider
 final prefsProvider = Provider<SharedPreferences>((ref) {

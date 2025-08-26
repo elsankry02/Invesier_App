@@ -128,7 +128,7 @@ class _VerificationRequestPageState
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
-                  onTap: () => context.router.push(UnderReveiwRoute()),
+                  onTap: () => context.router.replace(UnderReveiwRoute()),
                 ),
               ],
             ),

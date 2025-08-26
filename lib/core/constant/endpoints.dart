@@ -9,4 +9,5 @@ class Endpoints {
   static const kUnregister = "/fcm/unregister";
   static const kLogout = "/auth/logout";
   static const kUser = "/user";
+  static const kDeleteAccount = "/user";
 }

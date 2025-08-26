@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../core/constant/app_strings.dart';
 
+import '../../../core/constant/app_strings.dart';
 import '../../model/user_model.dart';
 import '../provider.dart';
 
@@ -35,9 +35,9 @@ class GetAuthenticatedUserNotifier
       state = GetAuthenticatedUserSuccess(userModel: userData);
     } on Exception catch (e) {
       if (e is DioException) {
-        final data = e.response!.data;
+        final message = e.response!.data;
         state = GetAuthenticatedUserFaliure(
-          errMessage: data[AppStrings.message],
+          errMessage: message[AppStrings.message],
         );
       }
     }
