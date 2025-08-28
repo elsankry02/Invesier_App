@@ -35,8 +35,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         showCustomErrorMessage(context, message: state.errorMessage);
         return;
       } else if (state is DeleteAccountSuccess) {
-        await ref.read(prefsProvider).remove(AppStrings.userToken);
         await context.router.replaceAll([WelcomeRoute()]);
+        await ref.read(prefsProvider).remove(AppStrings.userToken);
         showCustomSuccessMessage(
           context,
           message: "Account deleted successfully",
@@ -98,22 +98,35 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 onTap:
                     () => showDialog(
                       context: context,
+                      barrierDismissible: false,
                       builder:
                           (context) => AlertDialog(
+                            backgroundColor: AppColors.kBackGround,
                             title: Text("Confirm"),
                             content: Text(
                               "Are you sure you want to delete your account?",
+                              style: context.kTextTheme.labelMedium!.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                             actions: [
                               TextButton(
                                 onPressed: () => context.router.maybePop(),
-                                child: Text("Cancel"),
+                                child: Text(
+                                  "Cancel",
+                                  style: context.kTextTheme.labelMedium!
+                                      .copyWith(fontWeight: FontWeight.w500),
+                                ),
                               ),
                               TextButton(
                                 onPressed: () => deleteAccount(),
                                 child: Text(
                                   "Delete",
-                                  style: TextStyle(color: Colors.red),
+                                  style: context.kTextTheme.labelMedium!
+                                      .copyWith(
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.kRedTwo,
+                                      ),
                                 ),
                               ),
                             ],

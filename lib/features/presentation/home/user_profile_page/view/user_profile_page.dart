@@ -26,10 +26,8 @@ class UserProfilePage extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            // User AppBar Widget
             UserAppBarWidget(),
             SizedBox(height: context.height * 0.021),
-            // Chase Or Posts Container Widget
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -67,9 +65,7 @@ class UserProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(height: context.height * 0.021),
-            // ListView builder
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -77,7 +73,6 @@ class UserProfilePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return PostCardWidget(
                   commentOnTap: () {
-                    // CommentRoute
                     context.router.push(CommentRoute());
                   },
                 );

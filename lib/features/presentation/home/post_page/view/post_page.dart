@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../../../core/components/custom_icon_button.dart';
-import '../widget/post_app_bar_widget.dart';
 
+import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../provider/post/creat_post_provider.dart';
+import '../widget/post_app_bar_widget.dart';
 
 @RoutePage()
 class PostPage extends ConsumerStatefulWidget {
@@ -36,7 +36,6 @@ class _PostPageState extends ConsumerState<PostPage> {
       source: ImageSource.gallery,
     );
     if (imageGallery == null) return;
-
     setState(() {
       file = File(imageGallery.path);
     });
@@ -47,7 +46,6 @@ class _PostPageState extends ConsumerState<PostPage> {
       source: ImageSource.camera,
     );
     if (imageCamera == null) return;
-
     setState(() {
       file = File(imageCamera.path);
     });
@@ -75,7 +73,7 @@ class _PostPageState extends ConsumerState<PostPage> {
     });
     return Scaffold(
       body: Container(
-        padding: EdgeInsetsDirectional.only(top: 5, start: 20, end: 20),
+        padding: EdgeInsetsDirectional.only(top: 5, start: 15, end: 15),
         width: context.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -92,7 +90,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                   SizedBox(height: context.height * 0.004),
                   PostAppBarWidget(),
                   SizedBox(height: context.height * 0.012),
-                  // TextFormField
                   TextFormField(
                     cursorColor: AppColors.kWhite,
                     controller: contentController,
@@ -108,14 +105,18 @@ class _PostPageState extends ConsumerState<PostPage> {
                     ),
                   ),
                   SizedBox(height: context.height * 0.012),
-                  //  Image
                   SizedBox(
                     child:
                         file == null
                             ? null
                             : ClipRRect(
                               borderRadius: BorderRadius.circular(8),
-                              child: Image.file(file!, fit: BoxFit.cover),
+                              child: Image.file(
+                                file!,
+                                fit: BoxFit.cover,
+                                height: 200,
+                                width: 200,
+                              ),
                             ),
                   ),
                 ],
@@ -128,7 +129,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                 children: [
                   Row(
                     children: [
-                      // imageGallery
                       CustomIconButton(
                         onPressed: () {
                           gallery();
@@ -138,7 +138,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                           color: AppColors.kOceanGreen,
                         ),
                       ),
-                      // imagecamera
                       CustomIconButton(
                         onPressed: () {
                           camera();
@@ -150,8 +149,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                       ),
                     ],
                   ),
-
-                  // Post now
                   CustomPrimaryButton(
                     isLoading: state is CreatPostLoading,
                     title: 'Post now',

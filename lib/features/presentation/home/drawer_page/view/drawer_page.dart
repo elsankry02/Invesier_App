@@ -44,8 +44,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
         return;
       }
       if (state is LogoutSuccess) {
-        await ref.read(prefsProvider).remove(AppStrings.userToken);
         await context.router.replaceAll([WelcomeRoute()]);
+        await ref.read(prefsProvider).remove(AppStrings.userToken);
         return showCustomSuccessMessage(
           context,
           message: "Logged out successfully",
@@ -112,7 +112,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // title
                         title: Text(
-                          user.name ?? "Mohamed Ebrahim",
+                          user.name ?? "Mohamed Ibrahim",
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: AppColors.kGray,
@@ -120,7 +120,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // subtitle
                         subtitle: Text(
-                          user.username ?? "elsankary02",
+                          user.username ?? "elsankry02",
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                           ),
@@ -141,9 +141,46 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                   onTap: () => context.router.push(SettingsRoute()),
                   title: 'Settings',
                 ),
-
-                // Side Menu Title Widget (Log out)
-                DrawerTitleWidget(onTap: logout, title: "Log out"),
+                DrawerTitleWidget(
+                  onTap:
+                      () => showDialog(
+                        barrierDismissible: false,
+                        context: context,
+                        builder:
+                            (context) => AlertDialog(
+                              backgroundColor: AppColors.kBackGround,
+                              title: Text("Confirm"),
+                              content: Text(
+                                "Are you sure you want to logout?",
+                                style: context.kTextTheme.labelMedium!.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => context.router.maybePop(),
+                                  child: Text(
+                                    "Cancel",
+                                    style: context.kTextTheme.labelMedium!
+                                        .copyWith(fontWeight: FontWeight.w500),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () => logout(),
+                                  child: Text(
+                                    "Logout",
+                                    style: context.kTextTheme.labelMedium!
+                                        .copyWith(
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.kRedTwo,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                      ),
+                  title: "Log out",
+                ),
               ],
             ),
           ),
