@@ -87,7 +87,7 @@ class InvesierAppBar extends StatelessWidget {
                           state is GetAuthenticatedUserSuccess
                               ? ClipOval(
                                 child: Image.network(
-                                  state.userModel.avatarUrl ?? AppImages.k1,
+                                  state.userModel.avatarUrl,
                                   fit: BoxFit.cover,
                                   width: 30,
                                   height: 30,

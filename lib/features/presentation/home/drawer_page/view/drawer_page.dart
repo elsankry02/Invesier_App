@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_strings.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
@@ -44,8 +43,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
         return;
       }
       if (state is LogoutSuccess) {
-        await context.router.replaceAll([WelcomeRoute()]);
         await ref.read(prefsProvider).remove(AppStrings.userToken);
+        await context.router.replaceAll([WelcomeRoute()]);
         return showCustomSuccessMessage(
           context,
           message: "Logged out successfully",
@@ -84,7 +83,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                                 width: 35,
                                 height: 35,
                                 fit: BoxFit.cover,
-                                user.avatarUrl ?? AppImages.k1,
+                                user.avatarUrl,
                               ),
                             ),
                             Stack(
@@ -112,7 +111,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // title
                         title: Text(
-                          user.name ?? "Mohamed Ibrahim",
+                          user.name,
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w500,
                             color: AppColors.kGray,
@@ -120,7 +119,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // subtitle
                         subtitle: Text(
-                          user.username ?? "elsankry02",
+                          user.username,
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                           ),
@@ -130,7 +129,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                     if (state is GetAuthenticatedUserFaliure) {
                       return Text(state.errMessage);
                     }
-                    return SizedBox();
+                    return Center(child: CircularProgressIndicator());
                   },
                 ),
                 DrawerTitleWidget(

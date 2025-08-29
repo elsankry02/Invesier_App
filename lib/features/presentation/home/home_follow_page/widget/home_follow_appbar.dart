@@ -1,11 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/constant/app_images.dart';
-import '../../../../model/user_model.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../model/user_model.dart';
 
 class HomeFollowAppBarWidget extends StatelessWidget {
   final UserModel userModel;
@@ -17,17 +16,15 @@ class HomeFollowAppBarWidget extends StatelessWidget {
       leading: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Custom Icon Back
           CustomIconButton(
             icon: Icon(Icons.arrow_back_ios, color: AppColors.kWhite),
             onPressed: () {
               context.router.maybePop();
             },
           ),
-          // Image
           ClipOval(
             child: Image.network(
-              userModel.avatarUrl ?? AppImages.k1,
+              userModel.avatarUrl,
               width: 25,
               height: 25,
               fit: BoxFit.cover,
@@ -35,16 +32,14 @@ class HomeFollowAppBarWidget extends StatelessWidget {
           ),
         ],
       ),
-      // title
       title: Text(
-        userModel.name ?? "Mohamed Ebrahim",
+        userModel.name,
         style: context.kTextTheme.bodySmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
-      // subTitle
       subtitle: Text(
-        userModel.username ?? "elsankary02",
+        userModel.username,
         style: context.kTextTheme.bodySmall!.copyWith(
           color: AppColors.kGray,
           fontWeight: FontWeight.w400,

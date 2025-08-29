@@ -35,8 +35,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         showCustomErrorMessage(context, message: state.errorMessage);
         return;
       } else if (state is DeleteAccountSuccess) {
-        await context.router.replaceAll([WelcomeRoute()]);
         await ref.read(prefsProvider).remove(AppStrings.userToken);
+        await context.router.replaceAll([WelcomeRoute()]);
         showCustomSuccessMessage(
           context,
           message: "Account deleted successfully",

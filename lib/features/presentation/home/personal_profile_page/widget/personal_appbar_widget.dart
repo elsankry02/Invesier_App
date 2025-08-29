@@ -2,14 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../core/components/custom_button_sheet_widget.dart';
-import '../../../../../core/constant/app_svgs.dart';
 
+import '../../../../../core/components/custom_button_sheet_widget.dart';
 import '../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/constant/app_images.dart';
+import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../../../provider/get/get_authenticated_user_provider.dart';
@@ -47,7 +46,7 @@ class PersonalAppBarWidget extends StatelessWidget {
                 // Image
                 ClipOval(
                   child: Image.network(
-                    user.avatarUrl ?? AppImages.k1,
+                    user.avatarUrl,
                     width: 60,
                     height: 60,
                     fit: BoxFit.cover,
@@ -63,14 +62,14 @@ class PersonalAppBarWidget extends StatelessWidget {
                   children: [
                     // title
                     Text(
-                      user.name ?? "Mohamed Ebrahim",
+                      user.name,
                       style: context.kTextTheme.labelMedium!.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     // subTitle
                     Text(
-                      user.username ?? "elsankary02",
+                      user.username,
                       style: context.kTextTheme.labelMedium!.copyWith(
                         color: AppColors.kGray,
                         fontWeight: FontWeight.w400,

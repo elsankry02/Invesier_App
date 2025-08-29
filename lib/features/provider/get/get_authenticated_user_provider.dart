@@ -9,6 +9,8 @@ abstract class GetAuthenticatedUserState {}
 
 class GetAuthenticatedUserInitial extends GetAuthenticatedUserState {}
 
+class GetAuthenticatedUserLoading extends GetAuthenticatedUserState {}
+
 class GetAuthenticatedUserSuccess extends GetAuthenticatedUserState {
   final UserModel userModel;
 

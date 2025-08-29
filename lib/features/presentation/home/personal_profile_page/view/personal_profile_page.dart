@@ -24,10 +24,8 @@ class PersonalProfilePage extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            // Personal AppBar Widget
             PersonalAppBarWidget(),
             SizedBox(height: context.height * 0.021),
-            // Chase Or Posts Container
             CustomPrimaryButton(
               title: 'My Post',
               padding: EdgeInsetsDirectional.symmetric(
@@ -41,7 +39,6 @@ class PersonalProfilePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: context.height * 0.021),
-            // builder
             CustomNoPostsWidget(),
           ],
         ),

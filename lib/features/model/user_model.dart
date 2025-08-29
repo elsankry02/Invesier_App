@@ -2,9 +2,9 @@ import '../../core/constant/app_strings.dart';
 
 class UserModel {
   final int id;
-  final String? username;
-  final String? name;
-  final String? avatarUrl;
+  final String username;
+  final String name;
+  final String avatarUrl;
   final dynamic phone;
   final String email;
   final dynamic inveesBalance;

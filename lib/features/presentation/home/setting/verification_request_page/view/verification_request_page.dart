@@ -65,7 +65,7 @@ class _VerificationRequestPageState
                 SizedBox(height: context.height * 0.024),
                 IconLabelTile(
                   svg: AppSvgs.kPrsonal,
-                  title: state.userModel.name ?? "Mohamed elsankey",
+                  title: state.userModel.name,
                 ),
                 IconLabelTile(
                   svg: AppSvgs.kEmail,

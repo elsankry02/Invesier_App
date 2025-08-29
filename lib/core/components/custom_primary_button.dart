@@ -28,25 +28,17 @@ class CustomPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap
       onTap: isLoading ? null : onTap,
       child: Container(
-        // margin
         margin: margin,
-        // padding
         padding: padding,
         decoration: BoxDecoration(
-          // backgroundColor
           color: backGroundColor,
-          // borderColor
           border: border,
-          // borderRadius
           borderRadius: borderRadius,
-          // gradient
           gradient: gradient,
         ),
         child: Center(
-          // Title
           child:
               isLoading
                   ? Padding(
