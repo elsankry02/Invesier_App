@@ -62,10 +62,10 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 15,
+              spacing: 8,
               children: [
                 Consumer(
                   builder: (context, ref, child) {
@@ -129,7 +129,11 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                     if (state is GetAuthenticatedUserFaliure) {
                       return Text(state.errMessage);
                     }
-                    return Center(child: CircularProgressIndicator());
+                    return Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.kDarkenText,
+                      ),
+                    );
                   },
                 ),
                 DrawerTitleWidget(
