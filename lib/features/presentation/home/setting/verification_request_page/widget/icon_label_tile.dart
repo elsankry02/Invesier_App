@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/extension/extension.dart';
 
 class IconLabelTile extends StatelessWidget {
   final String svg, title;

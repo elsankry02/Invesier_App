@@ -2,16 +2,16 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:invesier/core/components/custom_appbar_widget.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_strings.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/setting/settings_page/widget/setting_language_dialog.dart';
-import 'package:invesier/features/presentation/home/setting/settings_page/widget/settings_item_widget.dart';
-import 'package:invesier/features/provider/delete/delete_account_provider.dart';
-import 'package:invesier/features/provider/provider.dart';
+import '../../../../../../core/components/custom_appbar_widget.dart';
+import '../../../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../../../core/constant/app_strings.dart';
+import '../../../../../../core/constant/app_svgs.dart';
+import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
+import '../widget/setting_language_dialog.dart';
+import '../widget/settings_item_widget.dart';
+import '../../../../../provider/delete/delete_account_provider.dart';
+import '../../../../../provider/provider.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 

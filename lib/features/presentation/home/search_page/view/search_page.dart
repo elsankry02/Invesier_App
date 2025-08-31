@@ -1,12 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/custom_no_posts_widget.dart';
 
-import '../../../../../core/components/custom_follow_user_tile.dart';
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../../../model/follow_model.dart';
 import '../widget/home_follow_textformfield_widget.dart';
 
 @RoutePage()
@@ -55,24 +54,7 @@ class SearchPage extends StatelessWidget {
                 ],
               ),
               SizedBox(width: context.height * 0.020),
-              ListView.builder(
-                padding: EdgeInsetsDirectional.symmetric(horizontal: 20),
-                shrinkWrap: true,
-                itemCount: homeFollowModel.length,
-                itemBuilder: (context, index) {
-                  return CustomFollowUserTile(
-                    // items Model
-                    items: homeFollowModel[index],
-                    broderColor: Colors.transparent,
-                    backGroundColor: AppColors.kTurquoiseBlue,
-                    title: 'Chase',
-                    padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 16,
-                      vertical: 4,
-                    ),
-                  );
-                },
-              ),
+              Center(child: CustomNoPostsWidget()),
             ],
           ),
         ),

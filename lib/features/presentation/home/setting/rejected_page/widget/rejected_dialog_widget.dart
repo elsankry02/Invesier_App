@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_icon_button.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
+import '../../../../../../core/components/custom_icon_button.dart';
+import '../../../../../../core/components/custom_primary_button.dart';
+import '../../../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
 
 class RejectedDialogWidget extends StatelessWidget {
   const RejectedDialogWidget({super.key});

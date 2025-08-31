@@ -141,7 +141,7 @@ class PersonalAppBarWidget extends StatelessWidget {
         if (state is GetAuthenticatedUserFaliure) {
           return Text(state.errMessage);
         }
-        return SizedBox();
+        return CircularProgressIndicator(color: AppColors.kGray);
       },
     );
   }

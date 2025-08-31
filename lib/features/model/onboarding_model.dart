@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/extension/extension.dart';
 
 import '../../core/constant/app_lotties.dart';
 
@@ -12,23 +13,25 @@ class OnboardingModel {
 }
 
 List<OnboardingModel> items(BuildContext context) {
+  final local = context.kAppLocalizations;
   return [
     OnboardingModel(
-      titel: 'Welcome to Invesier',
+      titel: local.welcometoinvesier,
       subTitel:
-          'Stay connected with the latest financial \nnews, market trends, and expert insights \nto keep you informed and ahead.',
+          local
+              .stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead,
       image: AppLotties.kOnboardingOne,
     ),
     OnboardingModel(
-      titel: 'Practice with Virtual Currency',
-      subTitel:
-          'Gain experience through simulated \ntrading. No risks, just rewards.',
+      titel: local.practicewithvirtualcurrency,
+      subTitel: local.gainexperiencethroughsimulatedtradingnorisksjustrewards,
       image: AppLotties.kOnboardingTwo,
     ),
     OnboardingModel(
-      titel: 'Join Chats & Live Streams',
+      titel: local.joinchatslivestreams,
       subTitel:
-          'Talk to experts, join communities, and go \nlive to share your investment journey',
+          local
+              .talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney,
       image: AppLotties.kOnboardingThree,
     ),
   ];

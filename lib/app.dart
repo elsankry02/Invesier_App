@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/provider/provider.dart';
 
 import 'core/constant/app_colors.dart';
 import 'core/constant/app_strings.dart';
 import 'core/router/router.dart';
+import 'features/provider/provider.dart';
 import 'l10n/app_localizations.dart';
 
 class InvesierApp extends ConsumerWidget {

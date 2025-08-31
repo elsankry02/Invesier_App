@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_enums.dart';
-import 'package:invesier/features/service/delete/delete_account_service.dart';
+import '../../core/constant/app_enums.dart';
+import '../service/delete/delete_account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constant/app_strings.dart';

@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/setting/under_reveiw_page/widget/verification_success_widget.dart';
+import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/router/router.dart';
+import '../widget/verification_success_widget.dart';
 
 @RoutePage()
 class UnderReveiwPage extends StatelessWidget {

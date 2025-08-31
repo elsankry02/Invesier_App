@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_no_posts_widget.dart';
 
+import '../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
@@ -39,7 +39,7 @@ class PersonalProfilePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: context.height * 0.021),
-             CustomNoPostsWidget(),
+            CustomNoPostsWidget(),
           ],
         ),
       ),

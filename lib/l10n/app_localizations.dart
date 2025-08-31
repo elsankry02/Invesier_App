@@ -100,6 +100,534 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'App language'**
   String get applanguage;
+
+  /// No description provided for @welcometoinvesier.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Invesier'**
+  String get welcometoinvesier;
+
+  /// No description provided for @stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay connected with the latest financial news, \nmarket trends, and expert insights to keep you \ninformed and ahead.'**
+  String get stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead;
+
+  /// No description provided for @practicewithvirtualcurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice with Virtual \nCurrency'**
+  String get practicewithvirtualcurrency;
+
+  /// No description provided for @gainexperiencethroughsimulatedtradingnorisksjustrewards.
+  ///
+  /// In en, this message translates to:
+  /// **'Gain experience through simulated \ntrading. No risks, just rewards.'**
+  String get gainexperiencethroughsimulatedtradingnorisksjustrewards;
+
+  /// No description provided for @joinchatslivestreams.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Chats & \nLive Streams'**
+  String get joinchatslivestreams;
+
+  /// No description provided for @talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney.
+  ///
+  /// In en, this message translates to:
+  /// **'Talk to experts, join communities, and go \nlive to share your investment journey'**
+  String get talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @competeforrewards.
+  ///
+  /// In en, this message translates to:
+  /// **'Compete for Rewards'**
+  String get competeforrewards;
+
+  /// No description provided for @climbtheleaderboardunlockperksandearnrealworldopportunities.
+  ///
+  /// In en, this message translates to:
+  /// **'Climb the leaderboard, unlock perks, and \nearn real-world opportunities'**
+  String get climbtheleaderboardunlockperksandearnrealworldopportunities;
+
+  /// No description provided for @getstarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getstarted;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @alreadyhaveanaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyhaveanaccount;
+
+  /// No description provided for @signup.
+  ///
+  /// In en, this message translates to:
+  /// **' Sign up'**
+  String get signup;
+
+  /// No description provided for @otpsentsuccessfullypleaseverifytocontinue.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP sent successfully. Please verify to continue.'**
+  String get otpsentsuccessfullypleaseverifytocontinue;
+
+  /// No description provided for @createanaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get createanaccount;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
+  /// No description provided for @phonenumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number'**
+  String get phonenumber;
+
+  /// No description provided for @orconnectwith.
+  ///
+  /// In en, this message translates to:
+  /// **'Or connect with'**
+  String get orconnectwith;
+
+  /// No description provided for @verifyyourphonenumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify your phone number'**
+  String get verifyyourphonenumber;
+
+  /// No description provided for @anewcodehasbeensent.
+  ///
+  /// In en, this message translates to:
+  /// **'A new code has been sent'**
+  String get anewcodehasbeensent;
+
+  /// No description provided for @otpverifiedsuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP verified successfully'**
+  String get otpverifiedsuccessfully;
+
+  /// No description provided for @authenticationsuccessful.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication successful'**
+  String get authenticationsuccessful;
+
+  /// No description provided for @entertheotpcodesent.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the OTP code sent '**
+  String get entertheotpcodesent;
+
+  /// No description provided for @pleaseentertheotp.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the OTP'**
+  String get pleaseentertheotp;
+
+  /// No description provided for @otpmustbe6digits.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP must be 6 digits'**
+  String get otpmustbe6digits;
+
+  /// No description provided for @resendotpseconds.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend OTP (seconds)'**
+  String get resendotpseconds;
+
+  /// No description provided for @resend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend'**
+  String get resend;
+
+  /// No description provided for @verifycode.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify code'**
+  String get verifycode;
+
+  /// No description provided for @bycontinuingyouagreeto.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to \n'**
+  String get bycontinuingyouagreeto;
+
+  /// No description provided for @termsofuse.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsofuse;
+
+  /// No description provided for @and.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get and;
+
+  /// No description provided for @privacypolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy.'**
+  String get privacypolicy;
+
+  /// No description provided for @pleaseenteravalidemail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid Email'**
+  String get pleaseenteravalidemail;
+
+  /// No description provided for @emailmustcontainat.
+  ///
+  /// In en, this message translates to:
+  /// **'Email must contain @'**
+  String get emailmustcontainat;
+
+  /// No description provided for @pleaseenteravalidphonenumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid phone number'**
+  String get pleaseenteravalidphonenumber;
+
+  /// No description provided for @phonenumbermustbeatleast11digits.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number must be at least 11 digits'**
+  String get phonenumbermustbeatleast11digits;
+
+  /// No description provided for @comingsoon.
+  ///
+  /// In en, this message translates to:
+  /// **'COMING SOON'**
+  String get comingsoon;
+
+  /// No description provided for @welcometoinvesierexclamtionmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome To Invesier!'**
+  String get welcometoinvesierexclamtionmark;
+
+  /// No description provided for @donthaveanaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get donthaveanaccount;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @trade.
+  ///
+  /// In en, this message translates to:
+  /// **'Trade'**
+  String get trade;
+
+  /// No description provided for @challenges.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenges'**
+  String get challenges;
+
+  /// No description provided for @learn.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn'**
+  String get learn;
+
+  /// No description provided for @pleasechooseanavatarimage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please choose an avatar image'**
+  String get pleasechooseanavatarimage;
+
+  /// No description provided for @pleaseenteraname.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a name'**
+  String get pleaseenteraname;
+
+  /// No description provided for @namemustbeatleast4characters.
+  ///
+  /// In en, this message translates to:
+  /// **'Name must be at least 4 characters'**
+  String get namemustbeatleast4characters;
+
+  /// No description provided for @profilecompletedsuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile completed successfully'**
+  String get profilecompletedsuccessfully;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @username.
+  ///
+  /// In en, this message translates to:
+  /// **'User Name'**
+  String get username;
+
+  /// No description provided for @addcomment.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Comment'**
+  String get addcomment;
+
+  /// No description provided for @shareyourcomment.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your comment'**
+  String get shareyourcomment;
+
+  /// No description provided for @comment.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment'**
+  String get comment;
+
+  /// No description provided for @reply.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply'**
+  String get reply;
+
+  /// No description provided for @typeyourreply.
+  ///
+  /// In en, this message translates to:
+  /// **'Type your reply'**
+  String get typeyourreply;
+
+  /// No description provided for @pinpost.
+  ///
+  /// In en, this message translates to:
+  /// **'Pin post'**
+  String get pinpost;
+
+  /// No description provided for @deletepost.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete post'**
+  String get deletepost;
+
+  /// No description provided for @pinaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Pin action'**
+  String get pinaction;
+
+  /// No description provided for @deleteaction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete action'**
+  String get deleteaction;
+
+  /// No description provided for @chaseback.
+  ///
+  /// In en, this message translates to:
+  /// **'Chase Back'**
+  String get chaseback;
+
+  /// No description provided for @viewprofile.
+  ///
+  /// In en, this message translates to:
+  /// **'View profile'**
+  String get viewprofile;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @areyousureyouwanttologout.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to logout?'**
+  String get areyousureyouwanttologout;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// No description provided for @reportthispostandblocktheaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Report this post and block the account'**
+  String get reportthispostandblocktheaccount;
+
+  /// No description provided for @report.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get report;
+
+  /// No description provided for @reportisdelivereddoyouwanttoblockthisaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Report is delivered. Do you want to \nblock this account?'**
+  String get reportisdelivereddoyouwanttoblockthisaccount;
+
+  /// No description provided for @pioneers.
+  ///
+  /// In en, this message translates to:
+  /// **'  Pioneers'**
+  String get pioneers;
+
+  /// No description provided for @fans.
+  ///
+  /// In en, this message translates to:
+  /// **'  Fans'**
+  String get fans;
+
+  /// No description provided for @foryou.
+  ///
+  /// In en, this message translates to:
+  /// **'For You'**
+  String get foryou;
+
+  /// No description provided for @nopoststodisplay.
+  ///
+  /// In en, this message translates to:
+  /// **'No posts to display'**
+  String get nopoststodisplay;
+
+  /// No description provided for @notification.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification'**
+  String get notification;
+
+  /// No description provided for @mypost.
+  ///
+  /// In en, this message translates to:
+  /// **'My Post'**
+  String get mypost;
+
+  /// No description provided for @wallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet'**
+  String get wallet;
+
+  /// No description provided for @posts.
+  ///
+  /// In en, this message translates to:
+  /// **'Posts'**
+  String get posts;
+
+  /// No description provided for @selectanimagefromyourgalleryorcamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Select an image from your Gallery or Camera'**
+  String get selectanimagefromyourgalleryorcamera;
+
+  /// No description provided for @wepostmoneyrelatedcontent.
+  ///
+  /// In en, this message translates to:
+  /// **'We post money related content.....'**
+  String get wepostmoneyrelatedcontent;
+
+  /// No description provided for @postnow.
+  ///
+  /// In en, this message translates to:
+  /// **'Post now'**
+  String get postnow;
+
+  /// No description provided for @addpost.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Post'**
+  String get addpost;
+
+  /// No description provided for @recenttransactions.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent transactions'**
+  String get recenttransactions;
+
+  /// No description provided for @filterby.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by'**
+  String get filterby;
+
+  /// No description provided for @price.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get price;
+
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// No description provided for @invees.
+  ///
+  /// In en, this message translates to:
+  /// **'Invees'**
+  String get invees;
+
+  /// No description provided for @recharge.
+  ///
+  /// In en, this message translates to:
+  /// **'Recharge'**
+  String get recharge;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

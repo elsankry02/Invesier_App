@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/core/constant/app_enums.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/features/provider/provider.dart';
+import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_enums.dart';
+import '../../../../../../core/extension/extension.dart';
+import '../../../../../provider/provider.dart';
 
 class SettingLanguageDialog extends ConsumerWidget {
   const SettingLanguageDialog({super.key});

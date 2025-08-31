@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/home/setting/personal_details_page/view/personal_details_page.dart';
-import 'package:invesier/features/presentation/home/setting/rejected_page/view/rejected_page.dart';
-import 'package:invesier/features/presentation/home/setting/under_reveiw_page/view/under_reveiw_page.dart';
-import 'package:invesier/features/presentation/home/setting/verification_request_page/view/verification_request_page.dart';
-import 'package:invesier/features/presentation/home/setting/you_are_verified_page/view/you_are_verified_page.dart';
+import '../../features/presentation/home/setting/personal_details_page/view/personal_details_page.dart';
+import '../../features/presentation/home/setting/rejected_page/view/rejected_page.dart';
+import '../../features/presentation/home/setting/under_reveiw_page/view/under_reveiw_page.dart';
+import '../../features/presentation/home/setting/verification_request_page/view/verification_request_page.dart';
+import '../../features/presentation/home/setting/you_are_verified_page/view/you_are_verified_page.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/home/comment_page/view/comment_page.dart';

@@ -32,7 +32,6 @@ class CircleAvatarWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(40),
               color: AppColors.kTurquoiseBlue,
             ),
-            // IconButton (imageGallery)
             child: IconButton(
               onPressed: onPressed,
               icon: Icon(color: AppColors.kWhite, Icons.photo_camera),
