@@ -36,6 +36,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     ref.listen(logoutProvider, (_, state) async {
       if (state is LogoutFaliure) {
         showCustomErrorMessage(context, message: state.errMessage);
@@ -45,10 +46,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
       if (state is LogoutSuccess) {
         await ref.read(prefsProvider).remove(AppStrings.userToken);
         await context.router.replaceAll([WelcomeRoute()]);
-        return showCustomSuccessMessage(
-          context,
-          message: "Logged out successfully",
-        );
+        return showCustomSuccessMessage(context, message: local.logoutsuccess);
       }
     });
     return Drawer(
@@ -137,12 +135,12 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                   },
                 ),
                 DrawerTitleWidget(
-                  title: 'View profile',
+                  title: local.viewprofile,
                   onTap: () => context.router.push(PersonalProfileRoute()),
                 ),
                 DrawerTitleWidget(
                   onTap: () => context.router.push(SettingsRoute()),
-                  title: 'Settings',
+                  title: local.settings,
                 ),
                 DrawerTitleWidget(
                   onTap:
@@ -152,9 +150,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         builder:
                             (context) => AlertDialog(
                               backgroundColor: AppColors.kBackGround,
-                              title: Text("Confirm"),
+                              title: Text(local.confirm),
                               content: Text(
-                                "Are you sure you want to logout?",
+                                local.areyousureyouwanttologout,
                                 style: context.kTextTheme.labelMedium!.copyWith(
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -163,7 +161,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                                 TextButton(
                                   onPressed: () => context.router.maybePop(),
                                   child: Text(
-                                    "Cancel",
+                                    local.cancel,
                                     style: context.kTextTheme.labelMedium!
                                         .copyWith(fontWeight: FontWeight.w500),
                                   ),
@@ -171,7 +169,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                                 TextButton(
                                   onPressed: () => logout(),
                                   child: Text(
-                                    "Logout",
+                                    local.logout,
                                     style: context.kTextTheme.labelMedium!
                                         .copyWith(
                                           fontWeight: FontWeight.w500,
@@ -182,7 +180,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                               ],
                             ),
                       ),
-                  title: "Log out",
+                  title: local.logout,
                 ),
               ],
             ),

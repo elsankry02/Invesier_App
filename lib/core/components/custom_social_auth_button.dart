@@ -15,11 +15,12 @@ class CustomSocialAuthButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Column(
       children: [
         // Or connect with
         Text(
-          'Or connect with',
+          local.orconnectwith,
           style: context.kTextTheme.labelLarge!.copyWith(
             fontWeight: FontWeight.w600,
           ),

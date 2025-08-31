@@ -2,18 +2,18 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_strings.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
-import '../widget/setting_language_dialog.dart';
-import '../widget/settings_item_widget.dart';
 import '../../../../../provider/delete/delete_account_provider.dart';
 import '../../../../../provider/provider.dart';
-
-import '../../../../../../core/constant/app_colors.dart';
+import '../widget/setting_language_dialog.dart';
+import '../widget/settings_item_widget.dart';
 
 @RoutePage()
 class SettingsPage extends ConsumerStatefulWidget {
@@ -31,6 +31,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     ref.listen(deleteAccountProvider, (_, state) async {
       if (state is DeleteAccountFailure) {
         showCustomErrorMessage(context, message: state.errorMessage);
@@ -40,7 +41,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
         await context.router.replaceAll([WelcomeRoute()]);
         showCustomSuccessMessage(
           context,
-          message: "Account deleted successfully",
+          message: local.accountdeletedsuccessfully,
         );
       }
     });
@@ -57,13 +58,13 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
           child: ListView(
             padding: EdgeInsets.all(20),
             children: [
-              CustomAppBarWidget(title: "Settings"),
+              CustomAppBarWidget(title: local.settings),
               SizedBox(height: context.height * 0.035),
               SettingsItemWidget(
                 leading: SvgPicture.asset(AppSvgs.kShieldChecklist),
-                title: "verification request",
+                title: local.verificationrequest,
                 subtitle: Text(
-                  "Remove ads, enjoy Invesier as you wish",
+                  local.removeadsenjoyinvesierasyouwish,
                   style: context.kTextTheme.labelMedium!.copyWith(
                     color: AppColors.kBoulder,
                   ),
@@ -72,14 +73,16 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               ),
               SettingsItemWidget(
                 leading: SvgPicture.asset(AppSvgs.kRepoIconCarrier),
-                title: "Personal details",
+                title: local.personaldetails,
                 onTap:
-                    () =>
-                        showCustomErrorMessage(context, message: 'COMING SOON'),
+                    () => showCustomErrorMessage(
+                      context,
+                      message: local.comingsoon,
+                    ),
               ),
               SettingsItemWidget(
-                leading: Icon(Icons.language),
-                title: "App language",
+                leading: Icon(Icons.language, color: AppColors.kWhite),
+                title: local.applanguage,
                 onTap:
                     () => showDialog(
                       barrierDismissible: false,
@@ -95,10 +98,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   width: 24,
                   height: 24,
                 ),
-                title: "Blockers list",
+                title: local.blockerslist,
                 onTap:
-                    () =>
-                        showCustomErrorMessage(context, message: 'COMING SOON'),
+                    () => showCustomErrorMessage(
+                      context,
+                      message: local.comingsoon,
+                    ),
               ),
               SettingsItemWidget(
                 leading: SvgPicture.asset(
@@ -106,7 +111,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   width: 24,
                   height: 24,
                 ),
-                title: "Delete account",
+                title: local.deleteaccount,
                 color: AppColors.kRedThree,
                 onTap:
                     () => showDialog(
@@ -115,9 +120,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       builder:
                           (context) => AlertDialog(
                             backgroundColor: AppColors.kBackGround,
-                            title: Text("Confirm"),
+                            title: Text(local.confirm),
                             content: Text(
-                              "Are you sure you want to delete your account?",
+                              local.areyousureyouwanttodeleteyouraccount,
                               style: context.kTextTheme.labelMedium!.copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
@@ -126,7 +131,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               TextButton(
                                 onPressed: () => context.router.maybePop(),
                                 child: Text(
-                                  "Cancel",
+                                  local.cancel,
                                   style: context.kTextTheme.labelMedium!
                                       .copyWith(fontWeight: FontWeight.w500),
                                 ),
@@ -134,7 +139,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               TextButton(
                                 onPressed: () => deleteAccount(),
                                 child: Text(
-                                  "Delete",
+                                  local.delete,
                                   style: context.kTextTheme.labelMedium!
                                       .copyWith(
                                         fontWeight: FontWeight.w500,

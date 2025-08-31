@@ -15,6 +15,7 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -28,10 +29,10 @@ class WelcomePage extends StatelessWidget {
           children: [
             // Welcome Display Widget
             WelcomeDisplayWidget(),
-            SizedBox(height: context.height * 0.080),
+            SizedBox(height: context.height * 0.050),
             // Get Started
             CustomPrimaryButton(
-              title: 'Get Started',
+              title: local.getstarted,
 
               gradient: LinearGradient(
                 colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
@@ -54,11 +55,11 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: context.height * 0.012),
             // Login
             CustomPrimaryButton(
-              title: 'Login',
+              title: local.login,
               border: BoxBorder.all(color: AppColors.kEucalyptus),
               borderRadius: BorderRadius.circular(60),
               padding: EdgeInsetsDirectional.symmetric(
-                horizontal: 130,
+                horizontal: 100,
                 vertical: 15,
               ),
               margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
@@ -73,8 +74,8 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: context.height * 0.012),
             // RichTextWidget
             CustomTapRichText(
-              textSpanOne: 'Already have an account?',
-              textSpanTwo: ' Sign up',
+              textSpanOne: local.donthaveanaccount,
+              textSpanTwo: local.signup,
               onTap: () {
                 context.router.push(SignupRoute());
               },

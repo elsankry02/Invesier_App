@@ -34,6 +34,8 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
+
     final isSaved = ref
         .read(prefsProvider)
         .setBool(AppStrings.skipOnboarding, true);
@@ -54,7 +56,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                 SizedBox(height: context.height * 0.020),
                 // Skip
                 SkipWidget(
-                  skip: 'Skip',
+                  skip: local.skip,
                   onTap: () async {
                     await isSaved;
                     context.router.replace(WelcomeRoute());
@@ -82,7 +84,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                 SizedBox(height: context.height * 0.060),
                 // Custom Primary Button (Next)
                 CustomPrimaryButton(
-                  title: 'Next',
+                  title: local.next,
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),

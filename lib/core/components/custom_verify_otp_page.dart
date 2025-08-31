@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'custom_appbar_title.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../../features/provider/post/verify_otp_provider.dart';
@@ -11,6 +10,7 @@ import '../constant/app_colors.dart';
 import '../constant/app_enums.dart';
 import '../extension/extension.dart';
 import '../router/router.dart';
+import 'custom_appbar_title.dart';
 import 'custom_icon_button.dart';
 import 'custom_otp_code_field.dart';
 import 'custom_primary_button.dart';
@@ -67,7 +67,10 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
   }
 
   void resendCode() {
-    showCustomSuccessMessage(context, message: "A new code has been sent");
+    showCustomSuccessMessage(
+      context,
+      message: context.kAppLocalizations.anewcodehasbeensent,
+    );
     startTimer();
   }
 
@@ -85,6 +88,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     final state = ref.watch(verifyOtpProvider);
     ref.listen(verifyOtpProvider, (_, state) {
       if (state is VerifyOtpFailure) {
@@ -97,13 +101,13 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
           context.router.replace(MainNavigationRoute());
           showCustomSuccessMessage(
             context,
-            message: "OTP verified successfully",
+            message: local.otpverifiedsuccessfully,
           );
         } else {
           context.router.push(CompleteProfileRoute());
           showCustomSuccessMessage(
             context,
-            message: "Authentication successful",
+            message: local.authenticationsuccessful,
           );
         }
       }
@@ -124,13 +128,13 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               children: [
                 Stack(
-                  alignment: Alignment.center,
+                  alignment: AlignmentDirectional.center,
                   children: [
                     // CustomTitelAppBar
-                    CustomAppBarTitle(title: "Verify your phone number"),
+                    CustomAppBarTitle(title: local.verifyyourphonenumber),
                     // Custom Icon Back
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: AlignmentDirectional.centerStart,
                       child: CustomIconButton(
                         icon: Icon(
                           Icons.arrow_back_ios,
@@ -149,7 +153,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: 'Enter the OTP code sent ',
+                        text: local.entertheotpcodesent,
                         style: context.kTextTheme.titleSmall!.copyWith(
                           color: AppColors.kBoulder,
                           fontWeight: FontWeight.w600,
@@ -174,9 +178,9 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                   pinPutController: pinPutController,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "Please enter the OTP";
+                      return local.pleaseentertheotp;
                     } else if (value.length < 6) {
-                      return "OTP must be 6 digits";
+                      return local.otpmustbedigits;
                     }
                     return null;
                   },
@@ -186,7 +190,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                 secondsRemaining > 0
                     ? Text(
                       textAlign: TextAlign.center,
-                      'Resend OTP ($secondsRemaining seconds)',
+                      '${local.resendotpseconds} $secondsRemaining )',
                       style: context.kTextTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
@@ -194,7 +198,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                     : TextButton(
                       onPressed: resendCode,
                       child: Text(
-                        "Resend",
+                        local.resend,
                         style: context.kTextTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w400,
                         ),
@@ -203,7 +207,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                 SizedBox(height: context.height * 0.015),
                 // Verify code
                 CustomPrimaryButton(
-                  title: 'Verify code',
+                  title: local.verifycode,
                   isLoading: state is VerifyOtpLoading,
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../widget/post_live_bottom_sheet_widget.dart';
+import 'package:invesier/core/extension/extension.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_svgs.dart';
@@ -11,6 +11,7 @@ import '../../learn_page/view/learn_page.dart';
 import '../../trade_page/view/trade_page.dart';
 import '../widget/action_button_location_widget.dart';
 import '../widget/navigationbar_item_widget.dart';
+import '../widget/post_live_bottom_sheet_widget.dart';
 
 @RoutePage()
 class MainNavigationPage extends StatefulWidget {
@@ -28,6 +29,8 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
+
     return Scaffold(
       key: scaffoldKey,
       drawer: DrawerPage(),
@@ -53,7 +56,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                 children: [
                   // home
                   NavigationBarItemWidget(
-                    title: 'Home',
+                    title: local.home,
                     assetName: AppSvgs.kHome,
                     selectedIndex: selectedIndex,
                     index: 0,
@@ -65,7 +68,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                   ),
                   // challenges
                   NavigationBarItemWidget(
-                    title: 'Challenges',
+                    title: local.challenges,
                     assetName: AppSvgs.kChallenges,
                     selectedIndex: selectedIndex,
                     index: 1,
@@ -94,7 +97,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                 children: [
                   // Trade
                   NavigationBarItemWidget(
-                    title: 'Trade',
+                    title: local.trade,
                     assetName: AppSvgs.kTrade,
                     selectedIndex: selectedIndex,
                     index: 2,
@@ -106,7 +109,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                   ),
                   // Learn
                   NavigationBarItemWidget(
-                    title: 'Learn',
+                    title: local.learn,
                     assetName: AppSvgs.kLearn,
                     selectedIndex: selectedIndex,
                     index: 3,

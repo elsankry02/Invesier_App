@@ -26,6 +26,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
 
   Future<void> splash() async {
     await Future.delayed(Duration(seconds: 3), () {
+      ref.read(prefsProvider).getString("isSavedLocal");
       final provider = ref.read(prefsProvider);
       final token = provider.getString(AppStrings.userToken);
       final isSaved = provider.getBool(AppStrings.skipOnboarding) ?? false;

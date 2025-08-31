@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/components/show_custom_top_snack_bar.dart';
@@ -12,6 +13,7 @@ class RejectedDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -24,7 +26,7 @@ class RejectedDialogWidget extends StatelessWidget {
             ),
           ),
           Text(
-            "Request attempt notice",
+            local.requestattemptnotice,
             style: context.kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -32,7 +34,7 @@ class RejectedDialogWidget extends StatelessWidget {
           SizedBox(height: context.height * 0.016),
           Text(
             textAlign: TextAlign.center,
-            "You can send 3 requests per month. This will use one. Continue?",
+            local.youcansendrequestspermonththiswilluseonecontinue,
             style: context.kTextTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.w400,
             ),
@@ -42,7 +44,7 @@ class RejectedDialogWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomPrimaryButton(
-                title: "Cancel",
+                title: local.cancel,
                 backGroundColor: AppColors.kGray,
                 borderRadius: BorderRadius.circular(31),
                 padding: EdgeInsets.symmetric(
@@ -55,7 +57,7 @@ class RejectedDialogWidget extends StatelessWidget {
                 onTap: () => context.router.maybePop(),
               ),
               CustomPrimaryButton(
-                title: "Continue",
+                title: local.shouldContinue,
                 backGroundColor: AppColors.kTurquoiseBlue,
                 borderRadius: BorderRadius.circular(31),
                 padding: EdgeInsets.symmetric(
@@ -67,7 +69,10 @@ class RejectedDialogWidget extends StatelessWidget {
                 ),
                 onTap: () {
                   context.router.maybePop();
-                  showCustomSuccessMessage(context, message: "Request Success");
+                  showCustomSuccessMessage(
+                    context,
+                    message: local.requestsuccess,
+                  );
                   context.router.replace(YouAreVerifiedRoute());
                 },
               ),

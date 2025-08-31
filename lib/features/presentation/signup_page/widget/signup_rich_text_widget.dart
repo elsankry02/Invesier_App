@@ -14,6 +14,8 @@ class SignUpRichTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
+
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -21,19 +23,19 @@ class SignUpRichTextWidget extends StatelessWidget {
           fontWeight: FontWeight.w300,
         ),
         children: [
-          TextSpan(text: 'By continuing, you agree to \n'),
+          TextSpan(text: local.bycontinuingyouagreeto),
           // Terms of Use
           TextSpan(
-            text: 'Terms of Use',
+            text: local.termsofuse,
             style: context.kTextTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.w500,
             ),
             recognizer: TapGestureRecognizer()..onTap = termsOfUseOnTap,
           ),
-          TextSpan(text: ' and '),
+          TextSpan(text: local.and),
           // Privacy Policy.
           TextSpan(
-            text: 'Privacy Policy.',
+            text: local.privacypolicy,
             style: context.kTextTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.w500,
             ),

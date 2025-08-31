@@ -95,12 +95,6 @@ abstract class AppLocalizations {
     Locale('en')
   ];
 
-  /// No description provided for @applanguage.
-  ///
-  /// In en, this message translates to:
-  /// **'App language'**
-  String get applanguage;
-
   /// No description provided for @welcometoinvesier.
   ///
   /// In en, this message translates to:
@@ -194,7 +188,7 @@ abstract class AppLocalizations {
   /// No description provided for @createanaccount.
   ///
   /// In en, this message translates to:
-  /// **'Create an account'**
+  /// **' Create an account '**
   String get createanaccount;
 
   /// No description provided for @email.
@@ -202,6 +196,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Email'**
   String get email;
+
+  /// No description provided for @primaryemail.
+  ///
+  /// In en, this message translates to:
+  /// **'ُEmail'**
+  String get primaryemail;
 
   /// No description provided for @phone.
   ///
@@ -257,16 +257,16 @@ abstract class AppLocalizations {
   /// **'Please enter the OTP'**
   String get pleaseentertheotp;
 
-  /// No description provided for @otpmustbe6digits.
+  /// No description provided for @otpmustbedigits.
   ///
   /// In en, this message translates to:
   /// **'OTP must be 6 digits'**
-  String get otpmustbe6digits;
+  String get otpmustbedigits;
 
   /// No description provided for @resendotpseconds.
   ///
   /// In en, this message translates to:
-  /// **'Resend OTP (seconds)'**
+  /// **'Resend OTP (seconds'**
   String get resendotpseconds;
 
   /// No description provided for @resend.
@@ -323,11 +323,11 @@ abstract class AppLocalizations {
   /// **'Please enter a valid phone number'**
   String get pleaseenteravalidphonenumber;
 
-  /// No description provided for @phonenumbermustbeatleast11digits.
+  /// No description provided for @phonenumbermustbeatleastdigits.
   ///
   /// In en, this message translates to:
   /// **'Phone number must be at least 11 digits'**
-  String get phonenumbermustbeatleast11digits;
+  String get phonenumbermustbeatleastdigits;
 
   /// No description provided for @comingsoon.
   ///
@@ -383,11 +383,11 @@ abstract class AppLocalizations {
   /// **'Please enter a name'**
   String get pleaseenteraname;
 
-  /// No description provided for @namemustbeatleast4characters.
+  /// No description provided for @namemustbeatleastcharacters.
   ///
   /// In en, this message translates to:
   /// **'Name must be at least 4 characters'**
-  String get namemustbeatleast4characters;
+  String get namemustbeatleastcharacters;
 
   /// No description provided for @profilecompletedsuccessfully.
   ///
@@ -479,23 +479,11 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get settings;
 
-  /// No description provided for @confirm.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm'**
-  String get confirm;
-
   /// No description provided for @areyousureyouwanttologout.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to logout?'**
   String get areyousureyouwanttologout;
-
-  /// No description provided for @cancel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancel;
 
   /// No description provided for @logout.
   ///
@@ -628,6 +616,258 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recharge'**
   String get recharge;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @transactionshistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Transactions History'**
+  String get transactionshistory;
+
+  /// No description provided for @type.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get type;
+
+  /// No description provided for @chase.
+  ///
+  /// In en, this message translates to:
+  /// **'Chase'**
+  String get chase;
+
+  /// No description provided for @yesblock.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, block'**
+  String get yesblock;
+
+  /// No description provided for @message.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get message;
+
+  /// No description provided for @blockuser.
+  ///
+  /// In en, this message translates to:
+  /// **'Block user'**
+  String get blockuser;
+
+  /// No description provided for @areyousureyouwanttoblockthisaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to block this \naccount?'**
+  String get areyousureyouwanttoblockthisaccount;
+
+  /// No description provided for @requestnotapproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Request not approved !'**
+  String get requestnotapproved;
+
+  /// No description provided for @thiscouldbeduetomissingorincorrectinformation.
+  ///
+  /// In en, this message translates to:
+  /// **'This could be due to missing or incorrect information.\nYou still You can send 2 more requests this month.'**
+  String get thiscouldbeduetomissingorincorrectinformation;
+
+  /// No description provided for @sendnewrequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Send new Request'**
+  String get sendnewrequest;
+
+  /// No description provided for @requestattemptnotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Request attempt notice'**
+  String get requestattemptnotice;
+
+  /// No description provided for @youcansendrequestspermonththiswilluseonecontinue.
+  ///
+  /// In en, this message translates to:
+  /// **'You can send 3 requests per month. This will use one. Continue?'**
+  String get youcansendrequestspermonththiswilluseonecontinue;
+
+  /// No description provided for @shouldContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get shouldContinue;
+
+  /// No description provided for @requestsuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Success'**
+  String get requestsuccess;
+
+  /// No description provided for @accountdeletedsuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deleted successfully'**
+  String get accountdeletedsuccessfully;
+
+  /// No description provided for @removeadsenjoyinvesierasyouwish.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove ads, enjoy Invesier as you wish'**
+  String get removeadsenjoyinvesierasyouwish;
+
+  /// No description provided for @personaldetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal details'**
+  String get personaldetails;
+
+  /// No description provided for @applanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'App language'**
+  String get applanguage;
+
+  /// No description provided for @blockerslist.
+  ///
+  /// In en, this message translates to:
+  /// **'Blockers list'**
+  String get blockerslist;
+
+  /// No description provided for @deleteaccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get deleteaccount;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @areyousureyouwanttodeleteyouraccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete your account?'**
+  String get areyousureyouwanttodeleteyouraccount;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @yourverificationrequesthassent.
+  ///
+  /// In en, this message translates to:
+  /// **'Your verification request has been \nsent successfully !'**
+  String get yourverificationrequesthassent;
+
+  /// No description provided for @wewillletyouknowwhenyourverificationrequesthasbeenreviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'We will let you know when your verification \nrequest has been reviewed'**
+  String get wewillletyouknowwhenyourverificationrequesthasbeenreviewed;
+
+  /// No description provided for @finance.
+  ///
+  /// In en, this message translates to:
+  /// **'Finance'**
+  String get finance;
+
+  /// No description provided for @jobtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Job title'**
+  String get jobtitle;
+
+  /// No description provided for @companyname.
+  ///
+  /// In en, this message translates to:
+  /// **'Company name'**
+  String get companyname;
+
+  /// No description provided for @bankelahly.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank elahly'**
+  String get bankelahly;
+
+  /// No description provided for @sociallinks.
+  ///
+  /// In en, this message translates to:
+  /// **'Social Links'**
+  String get sociallinks;
+
+  /// No description provided for @uploadidpassport.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload ID / Passport'**
+  String get uploadidpassport;
+
+  /// No description provided for @taptouploadfront.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to upload (Front)'**
+  String get taptouploadfront;
+
+  /// No description provided for @sendrequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Request'**
+  String get sendrequest;
+
+  /// No description provided for @youreverified.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re verified !'**
+  String get youreverified;
+
+  /// No description provided for @yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Your request has been approved. You can now enjoy our premium feature'**
+  String get yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature;
+
+  /// No description provided for @backtohomepage.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to home page'**
+  String get backtohomepage;
+
+  /// No description provided for @logoutsuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Logged out successfully'**
+  String get logoutsuccess;
+
+  /// No description provided for @verificationrequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification request'**
+  String get verificationrequest;
+
+  /// No description provided for @taptouploadback.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to upload (Back)'**
+  String get taptouploadback;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

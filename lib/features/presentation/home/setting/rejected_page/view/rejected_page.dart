@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../widget/rejected_dialog_widget.dart';
 import '../../under_reveiw_page/widget/verification_success_widget.dart';
+import '../widget/rejected_dialog_widget.dart';
 
 @RoutePage()
 class RejectedPage extends StatelessWidget {
@@ -13,6 +14,7 @@ class RejectedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -27,15 +29,14 @@ class RejectedPage extends StatelessWidget {
             padding: EdgeInsets.all(20),
             children: [
               VerificationSuccessWidget(
-                title: "Request not approved !",
-                subTitle:
-                    "This could be due to missing or incorrect information.\nYou still You can send 2 more requests this month.",
+                title: local.requestnotapproved,
+                subTitle: local.thiscouldbeduetomissingorincorrectinformation,
                 imageOne: AppImages.kProgressBarThree,
                 imageTwo: AppImages.kNotApproved,
               ),
               SizedBox(height: context.height * 0.110),
               CustomPrimaryButton(
-                title: "Send new Request",
+                title: local.sendnewrequest,
                 backGroundColor: AppColors.kTurquoiseBlue,
                 borderRadius: BorderRadius.circular(31),
                 padding: EdgeInsets.symmetric(

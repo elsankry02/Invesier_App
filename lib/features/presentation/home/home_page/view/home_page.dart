@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/components/custom_primary_button.dart';
 
+import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../foryou_page/view/foryou_widget.dart';
@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return SafeArea(
       child: CustomScrollView(
         slivers: [
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       // For You
                       CustomPrimaryButton(
-                        title: 'For You',
+                        title: local.foryou,
                         style: context.kTextTheme.titleSmall!.copyWith(
                           fontWeight: FontWeight.w900,
                           color:
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(width: context.width * 0.025),
                       // Pioneers
                       CustomPrimaryButton(
-                        title: 'Pioneers',
+                        title: local.pioneers,
                         style: context.kTextTheme.titleSmall!.copyWith(
                           fontWeight: FontWeight.w900,
                           color:

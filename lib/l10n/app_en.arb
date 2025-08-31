@@ -15,8 +15,9 @@
 "alreadyhaveanaccount": "Already have an account?",
 "signup": " Sign up",
 "otpsentsuccessfullypleaseverifytocontinue": "OTP sent successfully. Please verify to continue.",
-"createanaccount": "Create an account",
+"createanaccount": " Create an account ",
 "email": "Email",
+"primaryemail":"ُEmail",
 "phone": "Phone",
 "phonenumber": "Phone number",
 "orconnectwith": "Or connect with",
@@ -26,8 +27,8 @@
 "authenticationsuccessful": "Authentication successful",
 "entertheotpcodesent": "Enter the OTP code sent ",
 "pleaseentertheotp": "Please enter the OTP",
-"otpmustbe6digits": "OTP must be 6 digits",
-"resendotpseconds": "Resend OTP (seconds)",
+"otpmustbedigits": "OTP must be 6 digits",
+"resendotpseconds": "Resend OTP (seconds",
 "resend": "Resend",
 "verifycode": "Verify code",
 "bycontinuingyouagreeto": "By continuing, you agree to \n",
@@ -37,7 +38,7 @@
 "pleaseenteravalidemail": "Please enter a valid Email",
 "emailmustcontainat": "Email must contain @",
 "pleaseenteravalidphonenumber": "Please enter a valid phone number",
-"phonenumbermustbeatleast11digits": "Phone number must be at least 11 digits",
+"phonenumbermustbeatleastdigits": "Phone number must be at least 11 digits",
 "comingsoon": "COMING SOON",
 "welcometoinvesierexclamtionmark": "Welcome To Invesier!",
 "donthaveanaccount": "Don't have an account?",
@@ -47,7 +48,7 @@
 "learn": "Learn",
 "pleasechooseanavatarimage": "Please choose an avatar image",
 "pleaseenteraname": "Please enter a name",
-"namemustbeatleast4characters": "Name must be at least 4 characters",
+"namemustbeatleastcharacters": "Name must be at least 4 characters",
 "profilecompletedsuccessfully": "Profile completed successfully",
 "name": "Name",
 "username": "User Name",
@@ -98,11 +99,11 @@
 "thiscouldbeduetomissingorincorrectinformation": "This could be due to missing or incorrect information.\nYou still You can send 2 more requests this month.",
 "sendnewrequest": "Send new Request",
 "requestattemptnotice": "Request attempt notice",
-"youcansend3requestspermonththiswilluseonecontinue": "You can send 3 requests per month. This will use one. Continue?",
-"continue": "Continue",
+"youcansendrequestspermonththiswilluseonecontinue": "You can send 3 requests per month. This will use one. Continue?",
+"shouldContinue": "Continue",
 "requestsuccess": "Request Success",
 "accountdeletedsuccessfully": "Account deleted successfully",
-"removeadsenjoyinvesieras youwish": "Remove ads, enjoy Invesier as you wish",
+"removeadsenjoyinvesierasyouwish": "Remove ads, enjoy Invesier as you wish",
 "personaldetails": "Personal details",
 "applanguage": "App language",
 "blockerslist": "Blockers list",
@@ -124,11 +125,10 @@
 "sendrequest": "Send Request",
 "youreverified": "You're verified !",
 "yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature": "Your request has been approved. You can now enjoy our premium feature",
-"backtohomepage": "Back to home page"
-
-
-
-
+"backtohomepage": "Back to home page",
+"logoutsuccess": "Logged out successfully",
+"verificationrequest": "Verification request",
+"taptouploadback": "Tap to upload (Back)"
 
 
 

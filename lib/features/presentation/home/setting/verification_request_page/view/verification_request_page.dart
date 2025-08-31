@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_appbar_widget.dart';
-import '../../../../../../core/components/custom_primary_button.dart';
-import '../../../../../../core/components/show_custom_top_snack_bar.dart';
-import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/constant/app_images.dart';
-import '../../../../../../core/constant/app_svgs.dart';
-import '../../../../../../core/extension/extension.dart';
-import '../../../../../../core/router/router.dart';
-import '../widget/icon_label_tile.dart';
-import '../widget/labeled_text_field.dart';
-import '../widget/upload_button_field.dart';
-import '../../../../../provider/get/get_authenticated_user_provider.dart';
+import 'package:invesier/core/components/custom_appbar_widget.dart';
+import 'package:invesier/core/components/custom_primary_button.dart';
+import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
+import 'package:invesier/core/constant/app_colors.dart';
+import 'package:invesier/core/constant/app_images.dart';
+import 'package:invesier/core/constant/app_svgs.dart';
+import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/presentation/home/setting/verification_request_page/widget/icon_label_tile.dart';
+import 'package:invesier/features/presentation/home/setting/verification_request_page/widget/labeled_text_field.dart';
+import 'package:invesier/features/presentation/home/setting/verification_request_page/widget/upload_button_field.dart';
+import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
 
 @RoutePage()
 class VerificationRequestPage extends ConsumerStatefulWidget {
@@ -38,6 +38,7 @@ class _VerificationRequestPageState
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     final state = ref.watch(getAuthenticatedUserProvider);
     if (state is GetAuthenticatedUserSuccess) {
       return Scaffold(
@@ -53,7 +54,7 @@ class _VerificationRequestPageState
             child: ListView(
               padding: EdgeInsets.all(12),
               children: [
-                CustomAppBarWidget(title: "verification request"),
+                CustomAppBarWidget(title: local.verificationrequest),
                 SizedBox(height: context.height * 0.035),
                 Image.asset(
                   AppImages.kVerification,
@@ -76,49 +77,49 @@ class _VerificationRequestPageState
                   title: state.userModel.phone ?? "01204******",
                 ),
                 LabeledTextField(
-                  joptile: "Jop title",
-                  hintText: "Finance",
+                  joptile: local.jobtitle,
+                  hintText: local.finance,
                   controller: jopTitleController,
                 ),
                 SizedBox(height: context.height * 0.016),
                 LabeledTextField(
-                  joptile: "Company name",
-                  hintText: "Bank elahly",
+                  joptile: local.companyname,
+                  hintText: local.bankelahly,
                   controller: companyNameController,
                 ),
                 SizedBox(height: context.height * 0.016),
                 LabeledTextField(
-                  joptile: "Social Links",
+                  joptile: local.sociallinks,
                   hintText: "elsankry02.tiktok.net",
                   controller: socialLinksController,
                 ),
                 SizedBox(height: context.height * 0.024),
                 Text(
-                  "Upload ID / Passport",
+                  local.uploadidpassport,
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: context.height * 0.004),
                 UploadButtonField(
-                  title: "Tap to upload (Front)",
+                  title: local.taptouploadfront,
                   onTap:
                       () => showCustomErrorMessage(
                         context,
-                        message: "COMING SOON",
+                        message: local.comingsoon,
                       ),
                 ),
                 UploadButtonField(
-                  title: "Tap to upload (Back)",
+                  title: local.taptouploadback,
                   onTap:
                       () => showCustomErrorMessage(
                         context,
-                        message: "COMING SOON",
+                        message: local.comingsoon,
                       ),
                 ),
                 SizedBox(height: context.height * 0.058),
                 CustomPrimaryButton(
-                  title: "Send Request",
+                  title: local.sendrequest,
                   backGroundColor: AppColors.kTurquoiseBlue,
                   borderRadius: BorderRadius.circular(31),
                   padding: EdgeInsets.symmetric(

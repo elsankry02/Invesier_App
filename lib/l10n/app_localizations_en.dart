@@ -9,9 +9,6 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get applanguage => 'App language';
-
-  @override
   String get welcometoinvesier => 'Welcome to Invesier';
 
   @override
@@ -57,10 +54,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get otpsentsuccessfullypleaseverifytocontinue => 'OTP sent successfully. Please verify to continue.';
 
   @override
-  String get createanaccount => 'Create an account';
+  String get createanaccount => ' Create an account ';
 
   @override
   String get email => 'Email';
+
+  @override
+  String get primaryemail => 'ُEmail';
 
   @override
   String get phone => 'Phone';
@@ -90,10 +90,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseentertheotp => 'Please enter the OTP';
 
   @override
-  String get otpmustbe6digits => 'OTP must be 6 digits';
+  String get otpmustbedigits => 'OTP must be 6 digits';
 
   @override
-  String get resendotpseconds => 'Resend OTP (seconds)';
+  String get resendotpseconds => 'Resend OTP (seconds';
 
   @override
   String get resend => 'Resend';
@@ -123,7 +123,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseenteravalidphonenumber => 'Please enter a valid phone number';
 
   @override
-  String get phonenumbermustbeatleast11digits => 'Phone number must be at least 11 digits';
+  String get phonenumbermustbeatleastdigits => 'Phone number must be at least 11 digits';
 
   @override
   String get comingsoon => 'COMING SOON';
@@ -153,7 +153,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pleaseenteraname => 'Please enter a name';
 
   @override
-  String get namemustbeatleast4characters => 'Name must be at least 4 characters';
+  String get namemustbeatleastcharacters => 'Name must be at least 4 characters';
 
   @override
   String get profilecompletedsuccessfully => 'Profile completed successfully';
@@ -201,13 +201,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings => 'Settings';
 
   @override
-  String get confirm => 'Confirm';
-
-  @override
   String get areyousureyouwanttologout => 'Are you sure you want to logout?';
-
-  @override
-  String get cancel => 'Cancel';
 
   @override
   String get logout => 'Logout';
@@ -274,4 +268,130 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get recharge => 'Recharge';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get transactionshistory => 'Transactions History';
+
+  @override
+  String get type => 'Type';
+
+  @override
+  String get chase => 'Chase';
+
+  @override
+  String get yesblock => 'Yes, block';
+
+  @override
+  String get message => 'Message';
+
+  @override
+  String get blockuser => 'Block user';
+
+  @override
+  String get areyousureyouwanttoblockthisaccount => 'Are you sure you want to block this \naccount?';
+
+  @override
+  String get requestnotapproved => 'Request not approved !';
+
+  @override
+  String get thiscouldbeduetomissingorincorrectinformation => 'This could be due to missing or incorrect information.\nYou still You can send 2 more requests this month.';
+
+  @override
+  String get sendnewrequest => 'Send new Request';
+
+  @override
+  String get requestattemptnotice => 'Request attempt notice';
+
+  @override
+  String get youcansendrequestspermonththiswilluseonecontinue => 'You can send 3 requests per month. This will use one. Continue?';
+
+  @override
+  String get shouldContinue => 'Continue';
+
+  @override
+  String get requestsuccess => 'Request Success';
+
+  @override
+  String get accountdeletedsuccessfully => 'Account deleted successfully';
+
+  @override
+  String get removeadsenjoyinvesierasyouwish => 'Remove ads, enjoy Invesier as you wish';
+
+  @override
+  String get personaldetails => 'Personal details';
+
+  @override
+  String get applanguage => 'App language';
+
+  @override
+  String get blockerslist => 'Blockers list';
+
+  @override
+  String get deleteaccount => 'Delete account';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get areyousureyouwanttodeleteyouraccount => 'Are you sure you want to delete your account?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get yourverificationrequesthassent => 'Your verification request has been \nsent successfully !';
+
+  @override
+  String get wewillletyouknowwhenyourverificationrequesthasbeenreviewed => 'We will let you know when your verification \nrequest has been reviewed';
+
+  @override
+  String get finance => 'Finance';
+
+  @override
+  String get jobtitle => 'Job title';
+
+  @override
+  String get companyname => 'Company name';
+
+  @override
+  String get bankelahly => 'Bank elahly';
+
+  @override
+  String get sociallinks => 'Social Links';
+
+  @override
+  String get uploadidpassport => 'Upload ID / Passport';
+
+  @override
+  String get taptouploadfront => 'Tap to upload (Front)';
+
+  @override
+  String get sendrequest => 'Send Request';
+
+  @override
+  String get youreverified => 'You\'re verified !';
+
+  @override
+  String get yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature => 'Your request has been approved. You can now enjoy our premium feature';
+
+  @override
+  String get backtohomepage => 'Back to home page';
+
+  @override
+  String get logoutsuccess => 'Logged out successfully';
+
+  @override
+  String get verificationrequest => 'Verification request';
+
+  @override
+  String get taptouploadback => 'Tap to upload (Back)';
 }

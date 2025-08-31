@@ -9,6 +9,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return ListTile(
       title: Column(
         children: [
@@ -17,7 +18,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
 
           // titel
           Text(
-            'Compete for Rewards',
+            local.competeforrewards,
             textAlign: TextAlign.center,
             style: context.kTextTheme.headlineMedium!.copyWith(
               fontWeight: FontWeight.w700,
@@ -26,7 +27,7 @@ class WelcomeDisplayWidget extends StatelessWidget {
           SizedBox(height: context.height * 0.012),
           // SubTitel
           Text(
-            'Climb the leaderboard, unlock perks, and \nearn real-world opportunities',
+            local.climbtheleaderboardunlockperksandearnrealworldopportunities,
             textAlign: TextAlign.center,
             style: context.kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w400,

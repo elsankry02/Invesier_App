@@ -9,269 +9,389 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get applanguage => 'لغات التطبيق';
+  String get welcometoinvesier => 'مرحبًا بك في Invesier';
 
   @override
-  String get welcometoinvesier => 'Welcome to Invesier';
+  String get stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead => 'ابقَ على اطلاع بأحدث الأخبار المالية واتجاهات السوق ورؤى الخبراء لتبقى مطلعًا ومتفوقًا.';
 
   @override
-  String get stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead => 'Stay connected with the latest financial news, \nmarket trends, and expert insights to keep you \ninformed and ahead.';
+  String get practicewithvirtualcurrency => 'تدرب بالعملة الافتراضية';
 
   @override
-  String get practicewithvirtualcurrency => 'Practice with Virtual \nCurrency';
+  String get gainexperiencethroughsimulatedtradingnorisksjustrewards => 'اكتسب الخبرة من خلال التداول المحاكي. لا مخاطر، فقط مكافآت.';
 
   @override
-  String get gainexperiencethroughsimulatedtradingnorisksjustrewards => 'Gain experience through simulated \ntrading. No risks, just rewards.';
+  String get joinchatslivestreams => 'انضم إلى الدردشات والبث المباشر';
 
   @override
-  String get joinchatslivestreams => 'Join Chats & \nLive Streams';
+  String get talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney => 'تحدث إلى الخبراء، انضم إلى المجتمعات، واذهب مباشرة لمشاركة رحلتك الاستثمارية';
 
   @override
-  String get talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney => 'Talk to experts, join communities, and go \nlive to share your investment journey';
+  String get skip => 'تخطي';
 
   @override
-  String get skip => 'Skip';
+  String get next => 'التالي';
 
   @override
-  String get next => 'Next';
+  String get competeforrewards => 'تنافس للحصول على مكافآت';
 
   @override
-  String get competeforrewards => 'Compete for Rewards';
+  String get climbtheleaderboardunlockperksandearnrealworldopportunities => 'تسلق لوحة المتصدرين، افتح الامتيازات، واكسب فرصًا حقيقية';
 
   @override
-  String get climbtheleaderboardunlockperksandearnrealworldopportunities => 'Climb the leaderboard, unlock perks, and \nearn real-world opportunities';
+  String get getstarted => 'ابدأ';
 
   @override
-  String get getstarted => 'Get Started';
+  String get login => 'تسجيل الدخول';
 
   @override
-  String get login => 'Login';
+  String get alreadyhaveanaccount => 'هل لديك حساب بالفعل؟ ';
 
   @override
-  String get alreadyhaveanaccount => 'Already have an account?';
+  String get signup => ' التسجيل';
 
   @override
-  String get signup => ' Sign up';
+  String get otpsentsuccessfullypleaseverifytocontinue => 'تم إرسال OTP بنجاح. يرجى التحقق للمتابعة.';
 
   @override
-  String get otpsentsuccessfullypleaseverifytocontinue => 'OTP sent successfully. Please verify to continue.';
+  String get createanaccount => ' إنشاء حساب ';
 
   @override
-  String get createanaccount => 'Create an account';
+  String get email => 'البريد';
 
   @override
-  String get email => 'Email';
+  String get primaryemail => 'البريد الإلكتروني';
 
   @override
-  String get phone => 'Phone';
+  String get phone => 'الهاتف';
 
   @override
-  String get phonenumber => 'Phone number';
+  String get phonenumber => 'رقم الهاتف';
 
   @override
-  String get orconnectwith => 'Or connect with';
+  String get orconnectwith => 'أو اتصل بـ';
 
   @override
-  String get verifyyourphonenumber => 'Verify your phone number';
+  String get verifyyourphonenumber => 'تحقق من رقم هاتفك';
 
   @override
-  String get anewcodehasbeensent => 'A new code has been sent';
+  String get anewcodehasbeensent => 'تم إرسال رمز جديد';
 
   @override
-  String get otpverifiedsuccessfully => 'OTP verified successfully';
+  String get otpverifiedsuccessfully => 'تم التحقق من OTP بنجاح';
 
   @override
-  String get authenticationsuccessful => 'Authentication successful';
+  String get authenticationsuccessful => 'مصادقة ناجحة';
 
   @override
-  String get entertheotpcodesent => 'Enter the OTP code sent ';
+  String get entertheotpcodesent => 'أدخل رمز OTP المرسل';
 
   @override
-  String get pleaseentertheotp => 'Please enter the OTP';
+  String get pleaseentertheotp => 'الرجاء إدخال OTP';
 
   @override
-  String get otpmustbe6digits => 'OTP must be 6 digits';
+  String get otpmustbedigits => 'يجب أن يتكون OTP من 6 أرقام';
 
   @override
-  String get resendotpseconds => 'Resend OTP (seconds)';
+  String get resendotpseconds => 'إعادة إرسال OTP (ثواني';
 
   @override
-  String get resend => 'Resend';
+  String get resend => 'إعادة الإرسال';
 
   @override
-  String get verifycode => 'Verify code';
+  String get verifycode => 'تحقق من الرمز';
 
   @override
-  String get bycontinuingyouagreeto => 'By continuing, you agree to \n';
+  String get bycontinuingyouagreeto => 'باستمرارك، فإنك توافق على ';
 
   @override
-  String get termsofuse => 'Terms of Use';
+  String get termsofuse => 'شروط الاستخدام';
 
   @override
-  String get and => ' and ';
+  String get and => ' و ';
 
   @override
-  String get privacypolicy => 'Privacy Policy.';
+  String get privacypolicy => 'سياسة الخصوصية.';
 
   @override
-  String get pleaseenteravalidemail => 'Please enter a valid Email';
+  String get pleaseenteravalidemail => 'الرجاء إدخال بريد إلكتروني صالح';
 
   @override
-  String get emailmustcontainat => 'Email must contain @';
+  String get emailmustcontainat => 'يجب أن يحتوي البريد الإلكتروني على @';
 
   @override
-  String get pleaseenteravalidphonenumber => 'Please enter a valid phone number';
+  String get pleaseenteravalidphonenumber => 'الرجاء إدخال رقم هاتف صالح';
 
   @override
-  String get phonenumbermustbeatleast11digits => 'Phone number must be at least 11 digits';
+  String get phonenumbermustbeatleastdigits => 'يجب أن يتكون رقم الهاتف من 11 رقمًا على الأقل';
 
   @override
-  String get comingsoon => 'COMING SOON';
+  String get comingsoon => 'قريباً';
 
   @override
-  String get welcometoinvesierexclamtionmark => 'Welcome To Invesier!';
+  String get welcometoinvesierexclamtionmark => 'مرحباً بك في Invesier!';
 
   @override
-  String get donthaveanaccount => 'Don\'t have an account?';
+  String get donthaveanaccount => 'ليس لديك حساب؟';
 
   @override
-  String get home => 'Home';
+  String get home => 'الرئيسية';
 
   @override
-  String get trade => 'Trade';
+  String get trade => 'تداول';
 
   @override
-  String get challenges => 'Challenges';
+  String get challenges => 'تحديات';
 
   @override
-  String get learn => 'Learn';
+  String get learn => 'تعلم';
 
   @override
-  String get pleasechooseanavatarimage => 'Please choose an avatar image';
+  String get pleasechooseanavatarimage => 'الرجاء اختيار صورة رمزية';
 
   @override
-  String get pleaseenteraname => 'Please enter a name';
+  String get pleaseenteraname => 'الرجاء إدخال اسم';
 
   @override
-  String get namemustbeatleast4characters => 'Name must be at least 4 characters';
+  String get namemustbeatleastcharacters => 'يجب أن يتكون الاسم من 4 أحرف على الأقل';
 
   @override
-  String get profilecompletedsuccessfully => 'Profile completed successfully';
+  String get profilecompletedsuccessfully => 'اكتمل الملف الشخصي بنجاح';
 
   @override
-  String get name => 'Name';
+  String get name => 'الاسم';
 
   @override
-  String get username => 'User Name';
+  String get username => 'اسم المستخدم';
 
   @override
-  String get addcomment => 'Add Comment';
+  String get addcomment => 'إضافة تعليق';
 
   @override
-  String get shareyourcomment => 'Share your comment';
+  String get shareyourcomment => 'شارك تعليقك';
 
   @override
-  String get comment => 'Comment';
+  String get comment => 'تعليق';
 
   @override
-  String get reply => 'Reply';
+  String get reply => 'رد';
 
   @override
-  String get typeyourreply => 'Type your reply';
+  String get typeyourreply => 'اكتب ردك';
 
   @override
-  String get pinpost => 'Pin post';
+  String get pinpost => 'تثبيت المنشور';
 
   @override
-  String get deletepost => 'Delete post';
+  String get deletepost => 'حذف المنشور';
 
   @override
-  String get pinaction => 'Pin action';
+  String get pinaction => 'إجراء التثبيت';
 
   @override
-  String get deleteaction => 'Delete action';
+  String get deleteaction => 'إجراء الحذف';
 
   @override
-  String get chaseback => 'Chase Back';
+  String get chaseback => 'مطاردة';
 
   @override
-  String get viewprofile => 'View profile';
+  String get viewprofile => 'عرض الملف الشخصي';
 
   @override
-  String get settings => 'Settings';
+  String get settings => 'الإعدادات';
 
   @override
-  String get confirm => 'Confirm';
+  String get areyousureyouwanttologout => 'هل أنت متأكد أنك تريد تسجيل الخروج؟';
 
   @override
-  String get areyousureyouwanttologout => 'Are you sure you want to logout?';
+  String get logout => 'تسجيل الخروج';
 
   @override
-  String get cancel => 'Cancel';
+  String get reportthispostandblocktheaccount => 'الإبلاغ عن هذا المنشور وحظر الحساب';
 
   @override
-  String get logout => 'Logout';
+  String get report => 'إبلاغ';
 
   @override
-  String get reportthispostandblocktheaccount => 'Report this post and block the account';
+  String get reportisdelivereddoyouwanttoblockthisaccount => 'تم تسليم البلاغ. هل تريد حظر هذا الحساب؟';
 
   @override
-  String get report => 'Report';
+  String get pioneers => ' الرواد';
 
   @override
-  String get reportisdelivereddoyouwanttoblockthisaccount => 'Report is delivered. Do you want to \nblock this account?';
+  String get fans => ' المعجبون';
 
   @override
-  String get pioneers => '  Pioneers';
+  String get foryou => 'لك';
 
   @override
-  String get fans => '  Fans';
+  String get nopoststodisplay => 'لا توجد منشورات لعرضها';
 
   @override
-  String get foryou => 'For You';
+  String get notification => 'الإشعارات';
 
   @override
-  String get nopoststodisplay => 'No posts to display';
+  String get mypost => 'منشوراتي';
 
   @override
-  String get notification => 'Notification';
+  String get wallet => 'المحفظة';
 
   @override
-  String get mypost => 'My Post';
+  String get posts => 'المنشورات';
 
   @override
-  String get wallet => 'Wallet';
+  String get selectanimagefromyourgalleryorcamera => 'اختر صورة من معرض الصور أو الكاميرا';
 
   @override
-  String get posts => 'Posts';
+  String get wepostmoneyrelatedcontent => 'ننشر محتوى متعلقًا بالمال.....';
 
   @override
-  String get selectanimagefromyourgalleryorcamera => 'Select an image from your Gallery or Camera';
+  String get postnow => 'انشر الآن';
 
   @override
-  String get wepostmoneyrelatedcontent => 'We post money related content.....';
+  String get addpost => 'إضافة منشور';
 
   @override
-  String get postnow => 'Post now';
+  String get recenttransactions => 'المعاملات الأخيرة';
 
   @override
-  String get addpost => 'Add Post';
+  String get filterby => 'تصفية حسب';
 
   @override
-  String get recenttransactions => 'Recent transactions';
+  String get price => 'السعر';
 
   @override
-  String get filterby => 'Filter by';
+  String get date => 'التاريخ';
 
   @override
-  String get price => 'Price';
+  String get invees => 'إنفيس';
 
   @override
-  String get date => 'Date';
+  String get recharge => 'إعادة شحن';
 
   @override
-  String get invees => 'Invees';
+  String get search => 'بحث';
 
   @override
-  String get recharge => 'Recharge';
+  String get transactionshistory => 'سجل المعاملات';
+
+  @override
+  String get type => 'النوع';
+
+  @override
+  String get chase => 'مطاردة';
+
+  @override
+  String get yesblock => 'نعم، حظر';
+
+  @override
+  String get message => 'رسالة';
+
+  @override
+  String get blockuser => 'حظر المستخدم';
+
+  @override
+  String get areyousureyouwanttoblockthisaccount => 'هل أنت متأكد أنك تريد حظر هذا الحساب؟';
+
+  @override
+  String get requestnotapproved => 'لم تتم الموافقة على الطلب!';
+
+  @override
+  String get thiscouldbeduetomissingorincorrectinformation => 'قد يكون هذا بسبب معلومات مفقودة أو غير صحيحة. لا يزال بإمكانك إرسال طلبين آخرين هذا الشهر.';
+
+  @override
+  String get sendnewrequest => 'إرسال طلب جديد';
+
+  @override
+  String get requestattemptnotice => 'إشعار محاولة الطلب';
+
+  @override
+  String get youcansendrequestspermonththiswilluseonecontinue => 'يمكنك إرسال 3 طلبات شهريًا. سيستخدم هذا واحدًا. هل تريد المتابعة؟';
+
+  @override
+  String get shouldContinue => 'متابعة';
+
+  @override
+  String get requestsuccess => 'نجاح الطلب';
+
+  @override
+  String get accountdeletedsuccessfully => 'تم حذف الحساب بنجاح';
+
+  @override
+  String get removeadsenjoyinvesierasyouwish => 'إزالة الإعلانات، استمتع بـ Invesier كما يحلو لك';
+
+  @override
+  String get personaldetails => 'التفاصيل الشخصية';
+
+  @override
+  String get applanguage => 'لغة التطبيق';
+
+  @override
+  String get blockerslist => 'قائمة المحظورين';
+
+  @override
+  String get deleteaccount => 'حذف الحساب';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get areyousureyouwanttodeleteyouraccount => 'هل أنت متأكد أنك تريد حذف حسابك؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get close => 'إغلاق';
+
+  @override
+  String get yourverificationrequesthassent => 'تم إرسال طلب التحقق الخاص بك بنجاح!';
+
+  @override
+  String get wewillletyouknowwhenyourverificationrequesthasbeenreviewed => 'سنخبرك عندما تتم مراجعة طلب التحقق الخاص بك';
+
+  @override
+  String get finance => 'المالية';
+
+  @override
+  String get jobtitle => 'المسمى الوظيفي';
+
+  @override
+  String get companyname => 'اسم الشركة';
+
+  @override
+  String get bankelahly => 'البنك الأهلي';
+
+  @override
+  String get sociallinks => 'الروابط الاجتماعية';
+
+  @override
+  String get uploadidpassport => 'تحميل الهوية / جواز السفر';
+
+  @override
+  String get taptouploadfront => 'انقر للتحميل (الأمام)';
+
+  @override
+  String get sendrequest => 'إرسال الطلب';
+
+  @override
+  String get youreverified => 'لقد تم التحقق منك!';
+
+  @override
+  String get yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature => 'تمت الموافقة على طلبك. يمكنك الآن الاستمتاع بميزتنا المميزة';
+
+  @override
+  String get backtohomepage => 'العودة إلى الصفحة الرئيسية';
+
+  @override
+  String get logoutsuccess => 'تم تسجيل الخروج بنجاح';
+
+  @override
+  String get verificationrequest => 'طلب التحقق';
+
+  @override
+  String get taptouploadback => 'اضغط للرفع (الخلف)';
 }

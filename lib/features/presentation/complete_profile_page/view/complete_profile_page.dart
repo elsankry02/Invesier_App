@@ -55,7 +55,10 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   Future<void> completeProfile() async {
     if (!formKey.currentState!.validate()) return;
     if (avatarFile == null) {
-      showCustomErrorMessage(context, message: "Please choose an avatar image");
+      showCustomErrorMessage(
+        context,
+        message: context.kAppLocalizations.pleasechooseanavatarimage,
+      );
       return;
     } else {
       ref.read(prefsProvider).setString(AppStrings.file, avatarFile.toString());
@@ -70,6 +73,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     final state = ref.watch(completeProfileProvider);
     ref.listen(completeProfileProvider, (_, state) {
       if (state is CompleteProfileFailure) {
@@ -82,7 +86,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
       if (state is CompleteProfileSuccess) {
         showCustomSuccessMessage(
           context,
-          message: "Profile completed successfully",
+          message: local.profilecompletedsuccessfully,
         );
         context.router.replace(MainNavigationRoute());
       }
@@ -115,12 +119,12 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                     Expanded(
                       child: Column(
                         children: [
-                          CustomAppBarTitle(title: 'Create an account'),
+                          CustomAppBarTitle(title: local.createanaccount),
                           SizedBox(height: context.height * 0.004),
                           // Rich Text
                           CustomTapRichText(
-                            textSpanOne: 'Already have an account?',
-                            textSpanTwo: ' Log in',
+                            textSpanOne: local.alreadyhaveanaccount,
+                            textSpanTwo: local.login,
                             onTap: () {
                               // Navigate to Login
                               context.router.replace(LoginRoute());
@@ -138,7 +142,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: context.height * 0.022),
                 // Text: Username
                 Text(
-                  'Name',
+                  local.name,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -153,16 +157,16 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                   controller: nameController,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter a name';
+                      return local.pleaseenteraname;
                     } else if (value.length < 4) {
-                      return 'Name must be at least 4 characters';
+                      return local.namemustbeatleastcharacters;
                     }
                     return null;
                   },
                 ),
                 SizedBox(height: 22),
                 Text(
-                  'User Name',
+                  local.username,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -177,9 +181,9 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                   controller: usernameController,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter a username';
+                      return local.addcomment;
                     } else if (value.length < 4) {
-                      return 'User Name must be at least 4 characters';
+                      return local.namemustbeatleastcharacters;
                     }
                     return null;
                   },
@@ -187,7 +191,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: context.height * 0.090),
                 // Next Button
                 CustomPrimaryButton(
-                  title: 'Next',
+                  title: local.next,
                   isLoading: state is CompleteProfileLoading,
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import '../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../widget/notification_started_following_you_widget.dart';
-import '../widget/notification_upvoted_your_post_widget.dart';
 
 @RoutePage()
 class NotificationPage extends StatelessWidget {
@@ -13,6 +11,7 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -32,14 +31,7 @@ class NotificationPage extends StatelessWidget {
                     children: [
                       SizedBox(height: context.height * 0.025),
                       // Notification AppBar
-                      CustomAppBarWidget(title: 'Notification'),
-                      SizedBox(height: context.height * 0.016),
-                      // Notification Started Following You
-                      NotificationStartedFollowingYouWidget(),
-                      SizedBox(height: context.height * 0.006),
-                      // Notification Upvoted Your Post Widget
-                      NotificationUpvotedYourPostWidget(),
-                      SizedBox(height: context.height * 0.006),
+                      CustomAppBarWidget(title: local.notification),
                     ],
                   ),
                 ),

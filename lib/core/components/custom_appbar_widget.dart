@@ -12,7 +12,7 @@ class CustomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.center,
+      alignment: AlignmentDirectional.center,
       children: [
         // title
         Text(
@@ -24,7 +24,7 @@ class CustomAppBarWidget extends StatelessWidget {
         ),
         // icon
         Align(
-          alignment: Alignment.centerLeft,
+          alignment: AlignmentDirectional.centerStart,
           child: CustomIconButton(
             icon: Icon(
               Icons.arrow_back_ios_new_rounded,

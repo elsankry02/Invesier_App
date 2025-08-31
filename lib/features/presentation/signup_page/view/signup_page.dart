@@ -50,6 +50,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
+
     final state = ref.watch(registerNewUserProvider);
     ref.listen(registerNewUserProvider, (_, state) {
       if (state is RegisterNewUserFailure) {
@@ -60,7 +62,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
       if (state is RegisterNewUserSuccess) {
         showCustomSuccessMessage(
           context,
-          message: "OTP sent successfully. Please verify to continue.",
+          message: local.otpsentsuccessfullypleaseverifytocontinue,
         );
         context.router.push(
           CustomVerifyOtpRoute(
@@ -90,7 +92,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 // Create an account
                 Text(
                   textAlign: TextAlign.center,
-                  'Create an account',
+                  local.createanaccount,
                   style: context.kTextTheme.headlineSmall!.copyWith(
                     fontWeight: FontWeight.w700,
                   ),
@@ -99,8 +101,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 // Rich Text
                 Center(
                   child: CustomTapRichText(
-                    textSpanOne: 'Already have an account?',
-                    textSpanTwo: ' Log in',
+                    textSpanOne: local.alreadyhaveanaccount,
+                    textSpanTwo: local.login,
                     onTap: () {
                       // Navigate to Login
                       context.router.replace(LoginRoute());
@@ -116,7 +118,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                       children: [
                         //  Email
                         CustomPrimaryButton(
-                          title: "Email",
+                          title: local.email,
                           style: context.kTextTheme.titleMedium!.copyWith(
                             color:
                                 contactType == ContactType.email
@@ -125,12 +127,12 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                             fontWeight: FontWeight.w600,
                           ),
                           padding: EdgeInsets.symmetric(
-                            vertical: 1.5,
+                            vertical: 1,
                             horizontal: 52,
                           ),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(26),
-                            bottomLeft: Radius.circular(26),
+                          borderRadius: BorderRadiusDirectional.only(
+                            topStart: Radius.circular(26),
+                            bottomStart: Radius.circular(26),
                           ),
                           backGroundColor:
                               contactType == ContactType.email
@@ -150,7 +152,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                         ),
                         // Phone
                         CustomPrimaryButton(
-                          title: "Phone",
+                          title: local.phone,
                           style: context.kTextTheme.titleMedium!.copyWith(
                             color:
                                 contactType == ContactType.phone
@@ -162,9 +164,9 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                             vertical: 1.5,
                             horizontal: 52,
                           ),
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(26),
-                            bottomRight: Radius.circular(26),
+                          borderRadius: BorderRadiusDirectional.only(
+                            topEnd: Radius.circular(26),
+                            bottomEnd: Radius.circular(26),
                           ),
                           backGroundColor:
                               contactType == ContactType.phone
@@ -194,30 +196,30 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                         children: [
                           // Email
                           CustomContactTypeFieldWidget(
-                            title: 'Email',
+                            title: local.primaryemail,
                             hintText: 'name@gmail.com',
                             keyboardType: TextInputType.emailAddress,
                             tybeController: emailController,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Please enter a valid Email';
+                                return local.pleaseenteravalidemail;
                               } else if (!value.contains('@')) {
-                                return 'Email must contain @';
+                                return local.emailmustcontainat;
                               }
                               return null;
                             },
                           ),
                           // Phone Number
                           CustomContactTypeFieldWidget(
-                            title: 'Phone number',
-                            hintText: '01204******',
+                            title: local.phonenumber,
+                            hintText: "01204******",
                             keyboardType: TextInputType.number,
                             tybeController: phoneController,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return "Please enter a valid phone number";
+                                return local.pleaseenteravalidphonenumber;
                               } else if (value.length < 11) {
-                                return 'Phone number must be at least 11 digits';
+                                return local.phonenumbermustbeatleastdigits;
                               }
                               return null;
                             },
@@ -231,16 +233,16 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 // Custom Social Auth Buttons
                 CustomSocialAuthButton(
                   onLoginWithGoogle: () {
-                    showCustomErrorMessage(context, message: "COMING SOON");
+                    showCustomErrorMessage(context, message: local.comingsoon);
                   },
                   onLoginWithApple: () {
-                    showCustomErrorMessage(context, message: "COMING SOON");
+                    showCustomErrorMessage(context, message: local.comingsoon);
                   },
                 ),
                 SizedBox(height: context.height * 0.057),
                 // CustomPrimaryButton
                 CustomPrimaryButton(
-                  title: "Create an account",
+                  title: local.createanaccount,
                   isLoading: state is RegisterNewUserLoading,
                   backGroundColor: AppColors.kTurquoiseBlue,
                   gradient: LinearGradient(

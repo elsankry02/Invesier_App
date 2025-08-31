@@ -13,6 +13,7 @@ class CommentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -34,9 +35,9 @@ class CommentPage extends StatelessWidget {
                     builder: (context) {
                       // Add Comment
                       return CustomCommentBottomSheet(
-                        title: 'Add Comment',
-                        hintText: 'Share your comment',
-                        titleButton: 'Comment',
+                        title: local.addcomment,
+                        hintText: local.shareyourcomment,
+                        titleButton: local.comment,
                         vertical: 5,
                         radius: 8,
                         style: context.kTextTheme.labelMedium!.copyWith(
@@ -62,9 +63,9 @@ class CommentPage extends StatelessWidget {
                           builder: (context) {
                             // Add Comment
                             return CustomCommentBottomSheet(
-                              title: 'Reply',
-                              hintText: 'Type your reply',
-                              titleButton: 'Reply',
+                              title: local.reply,
+                              hintText: local.typeyourreply,
+                              titleButton: local.reply,
                               vertical: 5,
                               radius: 8,
                               style: context.kTextTheme.labelMedium!.copyWith(
