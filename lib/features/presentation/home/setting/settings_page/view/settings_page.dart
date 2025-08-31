@@ -8,6 +8,7 @@ import 'package:invesier/core/constant/app_strings.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
 import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/presentation/home/setting/settings_page/widget/setting_language_dialog.dart';
 import 'package:invesier/features/presentation/home/setting/settings_page/widget/settings_item_widget.dart';
 import 'package:invesier/features/provider/delete/delete_account_provider.dart';
 import 'package:invesier/features/provider/provider.dart';
@@ -75,6 +76,18 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 onTap:
                     () =>
                         showCustomErrorMessage(context, message: 'COMING SOON'),
+              ),
+              SettingsItemWidget(
+                leading: Icon(Icons.language),
+                title: "App language",
+                onTap:
+                    () => showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (context) {
+                        return SettingLanguageDialog();
+                      },
+                    ),
               ),
               SettingsItemWidget(
                 leading: SvgPicture.asset(

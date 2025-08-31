@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_enums.dart';
 import 'package:invesier/features/service/delete/delete_account_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -85,4 +86,8 @@ final deleteAccountServiceProvider = Provider<DeleteAccountService>((ref) {
 // prefs Provider
 final prefsProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError();
+});
+// languageProvider
+final languageProvider = StateProvider<Language>((ref) {
+  return Language.english;
 });

@@ -39,7 +39,7 @@ class PersonalProfilePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: context.height * 0.021),
-            CustomNoPostsWidget(),
+             CustomNoPostsWidget(),
           ],
         ),
       ),
