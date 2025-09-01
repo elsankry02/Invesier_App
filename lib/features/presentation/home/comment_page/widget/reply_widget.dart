@@ -14,6 +14,7 @@ class ReplyWidget extends StatelessWidget {
   const ReplyWidget({super.key, required this.onTap});
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Padding(
       padding: const EdgeInsets.only(right: 20, left: 20, bottom: 10),
       child: Column(
@@ -45,17 +46,17 @@ class ReplyWidget extends StatelessWidget {
                   trailing: CustomPopMenuWidget(
                     firstSvg: AppSvgs.kPin,
                     secondSvg: AppSvgs.kDelete,
-                    firstTitle: "Pin post",
-                    secondTitle: "Delete post",
+                    firstTitle: local.pinpost,
+                    secondTitle: local.deletepost,
                     onFirstTap:
                         () => showCustomErrorMessage(
                           context,
-                          message: "Pin action",
+                          message: local.pinaction,
                         ),
                     onSecondTap:
                         () => showCustomErrorMessage(
                           context,
-                          message: "Delete action",
+                          message: local.deleteaction,
                         ),
                   ),
                   title: Row(
@@ -82,7 +83,7 @@ class ReplyWidget extends StatelessWidget {
                       SizedBox(width: context.width * 0.025),
                       // Custom Primary Button
                       CustomPrimaryButton(
-                        title: 'Chase Back',
+                        title: local.chaseback,
                         style: context.kTextTheme.labelMedium!.copyWith(
                           fontWeight: FontWeight.w500,
                         ),
@@ -115,7 +116,10 @@ class ReplyWidget extends StatelessWidget {
                       titleColor: AppColors.kEucalyptus,
                       borderColor: AppColors.kEucalyptus,
                       onTap: () {
-                        showCustomErrorMessage(context, message: "COMING SOON");
+                        showCustomErrorMessage(
+                          context,
+                          message: local.comingsoon,
+                        );
                       },
                     ),
                     CustomTagButton(
@@ -125,13 +129,16 @@ class ReplyWidget extends StatelessWidget {
                       titleColor: AppColors.kRed,
                       borderColor: AppColors.kRed,
                       onTap: () {
-                        showCustomErrorMessage(context, message: "COMING SOON");
+                        showCustomErrorMessage(
+                          context,
+                          message: local.comingsoon,
+                        );
                       },
                     ),
                     CustomTagButton(
                       // Rplay
                       svg: AppSvgs.kReply,
-                      title: 'Rplay',
+                      title: local.reply,
                       titleColor: AppColors.kBoulder,
                       borderColor: AppColors.kBoulder,
                       onTap: onTap,

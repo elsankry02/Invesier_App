@@ -22,6 +22,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
   bool isSelectedSix = true;
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -43,7 +44,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Report reasons',
+                    local.reportreasons,
                     style: context.kTextTheme.titleSmall!.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -53,7 +54,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.012),
               // Spam
               CustomPrimaryButton(
-                title: 'Spam',
+                title: local.spam,
                 backGroundColor:
                     isSelectedOne == true
                         ? AppColors.kBoulder
@@ -86,7 +87,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.007),
               // Scam
               CustomPrimaryButton(
-                title: 'Scam',
+                title: local.scam,
                 backGroundColor:
                     isSelectedTwo == true
                         ? AppColors.kBoulder
@@ -118,7 +119,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.007),
               // Illegal
               CustomPrimaryButton(
-                title: 'Illegal',
+                title: local.illegal,
                 backGroundColor:
                     isSelectedThree == true
                         ? AppColors.kBoulder
@@ -150,7 +151,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.007),
               // Violence
               CustomPrimaryButton(
-                title: 'Violence',
+                title: local.violence,
                 backGroundColor:
                     isSelectedFour == true
                         ? AppColors.kBoulder
@@ -183,7 +184,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.007),
               // Hate speech
               CustomPrimaryButton(
-                title: 'Hate speech',
+                title: local.hatespeech,
                 backGroundColor:
                     isSelectedFive == true
                         ? AppColors.kBoulder
@@ -216,7 +217,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.007),
               // Others
               CustomPrimaryButton(
-                title: 'Others',
+                title: local.others,
                 backGroundColor:
                     isSelectedSix == true
                         ? AppColors.kBoulder
@@ -250,7 +251,7 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
               SizedBox(height: context.height * 0.022),
               // Submit
               CustomPrimaryButton(
-                title: 'Submit',
+                title: local.submit,
                 backGroundColor: AppColors.kTurquoiseBlue,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 101,
@@ -271,7 +272,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                         // User Alert Dialog Widget
                         return UserAlertDialogWidget(
                           title:
-                              'Report is delivered. Do you want to \nblock this account?',
+                              local
+                                  .reportisdelivereddoyouwanttoblockthisaccount,
                         );
                       },
                     );

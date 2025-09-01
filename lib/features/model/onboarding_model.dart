@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../core/extension/extension.dart';
 
 import '../../core/constant/app_lotties.dart';
+import '../../core/extension/extension.dart';
 
 class OnboardingModel {
   OnboardingModel({

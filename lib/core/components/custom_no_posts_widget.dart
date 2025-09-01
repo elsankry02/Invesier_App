@@ -5,17 +5,17 @@ import '../constant/app_lotties.dart';
 import '../extension/extension.dart';
 
 class CustomNoPostsWidget extends StatelessWidget {
-  const CustomNoPostsWidget({super.key});
+  final String title;
+  const CustomNoPostsWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
-    final local = context.kAppLocalizations;
     return Column(
       children: [
         Lottie.asset(AppLotties.kNoItem),
         Text(
           textAlign: TextAlign.center,
-          local.nopoststodisplay,
+          title,
           style: context.kTextTheme.titleMedium!.copyWith(
             fontWeight: FontWeight.w700,
           ),

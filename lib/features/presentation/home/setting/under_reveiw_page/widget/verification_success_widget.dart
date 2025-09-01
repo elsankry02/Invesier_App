@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -18,9 +19,10 @@ class VerificationSuccessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Column(
       children: [
-        CustomAppBarWidget(title: "verification request"),
+        CustomAppBarWidget(title: local.verificationrequest),
         SizedBox(height: context.height * 0.035),
         Image.asset(imageOne),
         SizedBox(height: context.height * 0.043),

@@ -11,6 +11,7 @@ class UserAlertDialogWidget extends StatelessWidget {
   const UserAlertDialogWidget({super.key, required this.title});
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return AlertDialog(
       backgroundColor: AppColors.kCodGray,
       content: Column(
@@ -39,7 +40,7 @@ class UserAlertDialogWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CustomPrimaryButton(
-                title: 'No',
+                title: local.no,
                 backGroundColor: AppColors.kBackGround,
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -55,7 +56,7 @@ class UserAlertDialogWidget extends StatelessWidget {
                 },
               ),
               CustomPrimaryButton(
-                title: 'Yes, block',
+                title: local.yesBlock,
                 backGroundColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 27.5,
@@ -68,7 +69,7 @@ class UserAlertDialogWidget extends StatelessWidget {
                 ),
                 onTap: () {
                   context.router.maybePop();
-                  showCustomErrorMessage(context, message: "COMING SOON");
+                  showCustomErrorMessage(context, message: local.comingsoon);
                 },
               ),
             ],

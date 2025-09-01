@@ -150,7 +150,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: context.height * 0.004),
                 // Username FormField
                 CustomTextFormField(
-                  hintText: 'name',
+                  hintText: local.namemin,
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: AppColors.kGray,
                   ),
@@ -174,7 +174,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: 4),
                 // Fullname FormField
                 CustomTextFormField(
-                  hintText: 'username',
+                  hintText: local.usernamemin,
                   hintStyle: context.kTextTheme.titleSmall!.copyWith(
                     color: AppColors.kGray,
                   ),

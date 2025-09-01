@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../../provider/localization_provider.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
@@ -12,40 +13,52 @@ class SettingLanguageDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final local = context.kAppLocalizations;
     final lang = ref.watch(languageProvider);
     return AlertDialog(
       backgroundColor: AppColors.kOne,
       title: Text(context.kAppLocalizations.applanguage),
-      content: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(Icons.language),
-          PopupMenuButton<Language>(
-            offset: Offset(20, 20),
-            onSelected: (value) {
-              ref.read(languageProvider.notifier).update((state) => value);
-              context.router.maybePop();
-            },
-            itemBuilder: (context) {
-              return List.generate(Language.values.length, (index) {
-                final value = Language.values[index];
-                return PopupMenuItem(
-                  value: value,
-                  child: Row(
-                    spacing: 5,
-                    children: [Text(value.name), Text(value.flag)],
-                  ),
-                );
-              });
-            },
-            child: Text("${lang.name} ${lang.flag}"),
+      content: PopupMenuButton<Language>(
+        offset: Offset(20, 20),
+        onSelected: (value) async {
+          final isSelected = ref
+              .read(languageProvider.notifier)
+              .update((state) => value);
+          await ref.read(localizationProvider.notifier).changeLocale(value);
+          context.router.maybePop();
+          if (value == isSelected) return;
+        },
+        itemBuilder: (context) {
+          return List.generate(Language.values.length, (index) {
+            final value = Language.values[index];
+            return PopupMenuItem(
+              value: value,
+              child: Center(child: Text(value.name)),
+            );
+          });
+        },
+        child: ListTile(
+          title: Text(
+            "${lang.name} ${lang.flag}",
+            style: context.kTextTheme.titleSmall!.copyWith(
+              color: AppColors.kWhite,
+            ),
           ),
-        ],
+          trailing: Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: AppColors.kWhite,
+          ),
+        ),
       ),
       actions: [
         TextButton(
           onPressed: () => context.router.maybePop(),
-          child: const Text("Close"),
+          child: Text(
+            local.close,
+            style: context.kTextTheme.titleSmall!.copyWith(
+              color: AppColors.kRedTwo,
+            ),
+          ),
         ),
       ],
     );

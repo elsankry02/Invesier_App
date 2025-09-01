@@ -13,6 +13,7 @@ class PersonalProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -27,7 +28,7 @@ class PersonalProfilePage extends StatelessWidget {
             PersonalAppBarWidget(),
             SizedBox(height: context.height * 0.021),
             CustomPrimaryButton(
-              title: 'My Post',
+              title: local.mypost,
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 62,
                 vertical: 9.5,
@@ -39,7 +40,7 @@ class PersonalProfilePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: context.height * 0.021),
-            CustomNoPostsWidget(),
+            CustomNoPostsWidget(title: local.nopoststodisplay),
           ],
         ),
       ),

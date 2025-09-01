@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 
 import '../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../core/components/custom_primary_button.dart';
+import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
@@ -15,6 +15,7 @@ class RecentTransactionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -28,10 +29,10 @@ class RecentTransactionsPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(left: 16, right: 16, top: 20),
             children: [
-              CustomAppBarWidget(title: "Recent transactions"),
+              CustomAppBarWidget(title: local.recenttransactions),
               SizedBox(height: context.height * 0.035),
               Text(
-                "Filter by",
+                local.filterby,
                 style: context.kTextTheme.labelLarge!.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -41,7 +42,7 @@ class RecentTransactionsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomPrimaryButton(
-                    title: "Price",
+                    title: local.price,
                     style: context.kTextTheme.labelLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -54,11 +55,11 @@ class RecentTransactionsPage extends StatelessWidget {
                     onTap:
                         () => showCustomErrorMessage(
                           context,
-                          message: "COMING SOON",
+                          message: local.comingsoon,
                         ),
                   ),
                   CustomPrimaryButton(
-                    title: "Date",
+                    title: local.date,
                     style: context.kTextTheme.labelLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -71,11 +72,11 @@ class RecentTransactionsPage extends StatelessWidget {
                     onTap:
                         () => showCustomErrorMessage(
                           context,
-                          message: "COMING SOON",
+                          message: local.comingsoon,
                         ),
                   ),
                   CustomPrimaryButton(
-                    title: "Invees",
+                    title: local.invees,
                     style: context.kTextTheme.labelLarge!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -88,7 +89,7 @@ class RecentTransactionsPage extends StatelessWidget {
                     onTap:
                         () => showCustomErrorMessage(
                           context,
-                          message: "COMING SOON",
+                          message: local.comingsoon,
                         ),
                   ),
                 ],
@@ -96,14 +97,14 @@ class RecentTransactionsPage extends StatelessWidget {
               SizedBox(height: context.height * 0.016),
               RechargeTransactionTileWidget(
                 leading: AppSvgs.kSentBlue,
-                title: "Recharge",
+                title: local.recharge,
                 subtitle: "10 - 11 - 2002",
                 trailing: "150.000.000",
                 color: AppColors.kDodgerBlue,
               ),
               RechargeTransactionTileWidget(
                 leading: AppSvgs.kSent,
-                title: "Recharge",
+                title: local.recharge,
                 subtitle: "10 - 11 - 2002",
                 trailing: "150.000.000",
                 color: AppColors.kNum,
@@ -111,7 +112,7 @@ class RecentTransactionsPage extends StatelessWidget {
 
               RechargeTransactionTileWidget(
                 leading: AppSvgs.kSentGold,
-                title: "Recharge",
+                title: local.recharge,
                 subtitle: "10 - 11 - 2002",
                 trailing: "150.000.000",
                 color: AppColors.kMySin,

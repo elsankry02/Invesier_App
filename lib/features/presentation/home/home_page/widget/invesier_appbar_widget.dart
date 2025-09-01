@@ -16,7 +16,7 @@ class InvesierAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(start: 20, end: 15),
+      padding: EdgeInsets.only(left: 20, right: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_appbar_widget.dart';
-import 'package:invesier/core/components/custom_primary_button.dart';
-import 'package:invesier/core/components/show_custom_top_snack_bar.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/presentation/home/setting/verification_request_page/widget/icon_label_tile.dart';
-import 'package:invesier/features/presentation/home/setting/verification_request_page/widget/labeled_text_field.dart';
-import 'package:invesier/features/presentation/home/setting/verification_request_page/widget/upload_button_field.dart';
-import 'package:invesier/features/provider/get/get_authenticated_user_provider.dart';
+import '../../../../../../core/components/custom_appbar_widget.dart';
+import '../../../../../../core/components/custom_primary_button.dart';
+import '../../../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
+import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
+import '../widget/icon_label_tile.dart';
+import '../widget/labeled_text_field.dart';
+import '../widget/upload_button_field.dart';
+import '../../../../../provider/get/get_authenticated_user_provider.dart';
 
 @RoutePage()
 class VerificationRequestPage extends ConsumerStatefulWidget {

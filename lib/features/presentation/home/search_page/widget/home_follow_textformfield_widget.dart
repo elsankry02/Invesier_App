@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/extension/extension.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
@@ -9,6 +10,7 @@ class HomeFollowTextFormFieldWidget extends StatelessWidget {
   const HomeFollowTextFormFieldWidget({super.key, this.searchController});
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return TextFormField(
       cursorColor: AppColors.kDarkenText,
       controller: searchController,
@@ -17,7 +19,7 @@ class HomeFollowTextFormFieldWidget extends StatelessWidget {
         // prefixIcon
         prefixIcon: UnconstrainedBox(child: SvgPicture.asset(AppSvgs.kSearch)),
         // Search
-        hintText: 'Search',
+        hintText: local.search,
         hintStyle: TextStyle(fontSize: 17, color: AppColors.kDarkenText),
         filled: true,
         fillColor: AppColors.kHeavyMetal,

@@ -21,6 +21,7 @@ class PostCardWidget extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Container(
       margin: const EdgeInsetsDirectional.only(bottom: 10),
       padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 12),
@@ -75,7 +76,7 @@ class PostCardWidget extends StatelessWidget {
                 SizedBox(width: context.width * 0.025),
                 // Custom Primary Button
                 CustomPrimaryButton(
-                  title: 'Mate',
+                  title: local.mate,
                   borderRadius: BorderRadius.circular(31),
                   style: context.kTextTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.w500,
@@ -108,7 +109,7 @@ class PostCardWidget extends StatelessWidget {
                 titleColor: AppColors.kEucalyptus,
                 borderColor: AppColors.kEucalyptus,
                 onTap: () {
-                  showCustomErrorMessage(context, message: "COMING SOON");
+                  showCustomErrorMessage(context, message: local.comingsoon);
                 },
               ),
               CustomTagButton(
@@ -118,7 +119,7 @@ class PostCardWidget extends StatelessWidget {
                 titleColor: AppColors.kRed,
                 borderColor: AppColors.kRed,
                 onTap: () {
-                  showCustomErrorMessage(context, message: "COMING SOON");
+                  showCustomErrorMessage(context, message: local.comingsoon);
                 },
               ),
               CustomTagButton(
@@ -133,7 +134,7 @@ class PostCardWidget extends StatelessWidget {
               GestureDetector(
                 child: SvgPicture.asset(AppSvgs.kSharing),
                 onTap: () {
-                  showCustomErrorMessage(context, message: "COMING SOON");
+                  showCustomErrorMessage(context, message: local.comingsoon);
                 },
               ),
             ],

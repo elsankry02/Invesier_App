@@ -55,7 +55,7 @@ class _PostPageState extends ConsumerState<PostPage> {
     if (file == null) {
       showCustomErrorMessage(
         context,
-        message: "Select an image from your Gallery or Camera",
+        message: context.kAppLocalizations.selectanimagefromyourgalleryorcamera,
       );
       return;
     }
@@ -65,6 +65,7 @@ class _PostPageState extends ConsumerState<PostPage> {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     final state = ref.watch(createPostProvider);
     ref.listen(createPostProvider, (_, state) {
       if (state is CreatPostFailure) {
@@ -95,7 +96,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                     controller: contentController,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.zero,
-                      hintText: "We post money related content.....",
+                      hintText: local.wepostmoneyrelatedcontent,
                       hintStyle: TextStyle(
                         color: AppColors.kGray,
                         fontSize: 14,
@@ -151,7 +152,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                   ),
                   CustomPrimaryButton(
                     isLoading: state is CreatPostLoading,
-                    title: 'Post now',
+                    title: local.postnow,
                     backGroundColor: AppColors.kOceanGreen,
                     padding: EdgeInsetsDirectional.symmetric(
                       horizontal: 20,

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_appbar_widget.dart';
+import '../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -32,6 +33,8 @@ class NotificationPage extends StatelessWidget {
                       SizedBox(height: context.height * 0.025),
                       // Notification AppBar
                       CustomAppBarWidget(title: local.notification),
+                      SizedBox(height: context.height * 0.025),
+                      CustomNoPostsWidget(title: local.nonotificationsyet),
                     ],
                   ),
                 ),

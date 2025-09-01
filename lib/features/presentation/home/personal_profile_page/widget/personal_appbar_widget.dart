@@ -19,16 +19,17 @@ class PersonalAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Consumer(
       builder: (context, ref, child) {
         final state = ref.watch(getAuthenticatedUserProvider);
         if (state is GetAuthenticatedUserSuccess) {
           final user = state.userModel;
           return ListTile(
-            contentPadding: EdgeInsets.only(
+            contentPadding: EdgeInsetsDirectional.only(
               top: context.height * 0.025,
-              left: context.height * 0.010,
-              right: context.height * 0.030,
+              start: context.height * 0.010,
+              end: context.height * 0.030,
             ),
             leading: Row(
               mainAxisSize: MainAxisSize.min,
@@ -85,13 +86,13 @@ class PersonalAppBarWidget extends StatelessWidget {
                       context: context,
                       builder: (context) {
                         return CustomButtonSheetWidget(
-                          firstTitle: 'Wallet',
+                          firstTitle: local.wallet,
                           firstIcon: Icons.account_balance_wallet_outlined,
                           onFirstTap: () {
                             context.router.maybePop();
                             context.router.push(WalletRoute());
                           },
-                          secondTitle: 'Settings',
+                          secondTitle: local.settings,
                           secondIcon: Icons.settings_outlined,
                           onSecondTap:
                               () => context.router.push(SettingsRoute()),
@@ -107,7 +108,7 @@ class PersonalAppBarWidget extends StatelessWidget {
               children: [
                 // Posts
                 CustomFollowersNumberWidget(
-                  title: 'Posts',
+                  title: local.posts,
                   number: user.postsCount,
                 ),
                 // DividerWidget
@@ -115,7 +116,7 @@ class PersonalAppBarWidget extends StatelessWidget {
                 // Fans
                 CustomFollowersNumberWidget(
                   number: state.userModel.fansCount,
-                  title: 'Fans',
+                  title: local.fans,
                   onTap: () {
                     context.router.push(
                       HomeFollowRoute(initialTab: FollowTabType.fans),
@@ -127,7 +128,7 @@ class PersonalAppBarWidget extends StatelessWidget {
                 // Pioneers
                 CustomFollowersNumberWidget(
                   number: user.pioneersCount,
-                  title: 'Pioneers',
+                  title: local.pioneers,
                   onTap: () {
                     context.router.push(
                       HomeFollowRoute(initialTab: FollowTabType.pioneers),

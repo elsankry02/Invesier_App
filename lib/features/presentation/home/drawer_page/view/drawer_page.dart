@@ -12,6 +12,7 @@ import '../../../../../core/router/router.dart';
 import '../../../../provider/get/get_authenticated_user_provider.dart';
 import '../../../../provider/post/logout_provider.dart';
 import '../../../../provider/provider.dart';
+import '../widget/drawer_dialog_logout_widget.dart';
 import '../widget/drawer_title_widget.dart';
 
 @RoutePage()
@@ -148,37 +149,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         barrierDismissible: false,
                         context: context,
                         builder:
-                            (context) => AlertDialog(
-                              backgroundColor: AppColors.kBackGround,
-                              title: Text(local.confirm),
-                              content: Text(
-                                local.areyousureyouwanttologout,
-                                style: context.kTextTheme.labelMedium!.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () => context.router.maybePop(),
-                                  child: Text(
-                                    local.cancel,
-                                    style: context.kTextTheme.labelMedium!
-                                        .copyWith(fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                                TextButton(
-                                  onPressed: () => logout(),
-                                  child: Text(
-                                    local.logout,
-                                    style: context.kTextTheme.labelMedium!
-                                        .copyWith(
-                                          fontWeight: FontWeight.w500,
-                                          color: AppColors.kRedTwo,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                            (context) =>
+                                DrawerDialogLogOutWidget(onPressed: logout),
                       ),
                   title: local.logout,
                 ),

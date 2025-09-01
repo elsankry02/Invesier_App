@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/extension/extension.dart';
+
 import '../../../../../core/components/custom_no_posts_widget.dart';
 
 class PioneersWidget extends StatelessWidget {
@@ -6,10 +8,11 @@ class PioneersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return ListView(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      children: const [CustomNoPostsWidget()],
+      children: [CustomNoPostsWidget(title: local.nopoststodisplay)],
     );
   }
 }

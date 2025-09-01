@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/custom_no_posts_widget.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
@@ -54,7 +53,6 @@ class SearchPage extends StatelessWidget {
                 ],
               ),
               SizedBox(width: context.height * 0.020),
-              Center(child: CustomNoPostsWidget()),
             ],
           ),
         ),

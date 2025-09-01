@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import '../../../core/constant/app_strings.dart';
 
+import '../../../core/constant/app_strings.dart';
 import '../../../core/constant/endpoints.dart';
 
 class CompleteProfileService {

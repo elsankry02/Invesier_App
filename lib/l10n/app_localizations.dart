@@ -404,7 +404,7 @@ abstract class AppLocalizations {
   /// No description provided for @username.
   ///
   /// In en, this message translates to:
-  /// **'User Name'**
+  /// **'UserName'**
   String get username;
 
   /// No description provided for @addcomment.
@@ -704,7 +704,7 @@ abstract class AppLocalizations {
   /// No description provided for @requestsuccess.
   ///
   /// In en, this message translates to:
-  /// **'Request Success'**
+  /// **'Request successful'**
   String get requestsuccess;
 
   /// No description provided for @accountdeletedsuccessfully.
@@ -868,6 +868,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap to upload (Back)'**
   String get taptouploadback;
+
+  /// No description provided for @nonotificationsyet.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications yet'**
+  String get nonotificationsyet;
+
+  /// No description provided for @deposit.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit'**
+  String get deposit;
+
+  /// No description provided for @viewall.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get viewall;
+
+  /// No description provided for @otpcode.
+  ///
+  /// In en, this message translates to:
+  /// **'OTP Code'**
+  String get otpcode;
+
+  /// No description provided for @usernamemin.
+  ///
+  /// In en, this message translates to:
+  /// **'username'**
+  String get usernamemin;
+
+  /// No description provided for @namemin.
+  ///
+  /// In en, this message translates to:
+  /// **'name'**
+  String get namemin;
+
+  /// No description provided for @reportreasons.
+  ///
+  /// In en, this message translates to:
+  /// **'Report reasons'**
+  String get reportreasons;
+
+  /// No description provided for @spam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spam'**
+  String get spam;
+
+  /// No description provided for @scam.
+  ///
+  /// In en, this message translates to:
+  /// **'Scam'**
+  String get scam;
+
+  /// No description provided for @illegal.
+  ///
+  /// In en, this message translates to:
+  /// **'Illegal'**
+  String get illegal;
+
+  /// No description provided for @violence.
+  ///
+  /// In en, this message translates to:
+  /// **'Violence'**
+  String get violence;
+
+  /// No description provided for @hatespeech.
+  ///
+  /// In en, this message translates to:
+  /// **'Hate speech'**
+  String get hatespeech;
+
+  /// No description provided for @others.
+  ///
+  /// In en, this message translates to:
+  /// **'Others'**
+  String get others;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @reportdelivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Report is delivered. Do you want to \nblock this account?'**
+  String get reportdelivered;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// No description provided for @yesBlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, block'**
+  String get yesBlock;
+
+  /// No description provided for @mate.
+  ///
+  /// In en, this message translates to:
+  /// **'Mate'**
+  String get mate;
+
+  /// No description provided for @post.
+  ///
+  /// In en, this message translates to:
+  /// **'Post'**
+  String get post;
+
+  /// No description provided for @live.
+  ///
+  /// In en, this message translates to:
+  /// **'Live'**
+  String get live;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

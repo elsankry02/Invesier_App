@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/constant/app_colors.dart';
 import 'core/constant/app_strings.dart';
 import 'core/router/router.dart';
-import 'features/provider/provider.dart';
+import 'features/provider/localization_provider.dart';
 import 'l10n/app_localizations.dart';
 
 class InvesierApp extends ConsumerWidget {
@@ -12,11 +12,17 @@ class InvesierApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = ref.watch(languageProvider);
+    final localizationState = ref.watch(localizationProvider);
+
+    Locale currentLocale = const Locale('ar');
+
+    if (localizationState is LocalizationSuccess) {
+      currentLocale = localizationState.locale;
+    }
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
-      locale: Locale(lang.code),
+      locale: currentLocale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(

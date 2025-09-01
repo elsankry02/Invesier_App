@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
@@ -10,6 +11,7 @@ class WalletInfoCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       decoration: BoxDecoration(
@@ -26,7 +28,7 @@ class WalletInfoCardWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Wallet",
+                local.wallet,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w700,
                   color: AppColors.kOceanGreen,
@@ -49,7 +51,7 @@ class WalletInfoCardWidget extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: "invee",
+                      text: local.invees,
                       style: context.kTextTheme.labelSmall!.copyWith(
                         fontWeight: FontWeight.w300,
                         color: AppColors.kInvee,

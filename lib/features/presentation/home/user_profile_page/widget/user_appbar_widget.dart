@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/components/custom_divider_widget.dart';
+import '../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
@@ -8,8 +10,6 @@ import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
 import '../../home_follow_page/view/home_follow_page.dart';
-import '../../../../../core/components/custom_divider_widget.dart';
-import '../../../../../core/components/custom_followers_number_widget.dart';
 import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
 
@@ -18,6 +18,7 @@ class UserAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return ListTile(
       contentPadding: EdgeInsets.only(
         top: context.height * 0.025,
@@ -74,14 +75,14 @@ class UserAppBarWidget extends StatelessWidget {
           // User Pop Menu
           UserPopMenuWidget(
             icon: AppSvgs.kblockVictor,
-            title: 'Block user',
+            title: local.blockuser,
             onTap: () {
               showDialog(
                 barrierDismissible: false,
                 context: context,
                 builder: (context) {
                   return UserAlertDialogWidget(
-                    title: 'Are you sure you want to block this \naccount?',
+                    title: local.areyousureyouwanttoblockthisaccount,
                   );
                 },
               );
@@ -93,12 +94,12 @@ class UserAppBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Posts
-          CustomFollowersNumberWidget(title: 'Posts', number: 2),
+          CustomFollowersNumberWidget(title: local.posts, number: 2),
           // DividerWidget
           CustomDividerWidget(height: context.height * 0.030, width: 1.5),
           // Fans
           CustomFollowersNumberWidget(
-            title: 'Fans',
+            title: local.fans,
             number: 7,
             onTap: () {
               context.router.push(
@@ -110,7 +111,7 @@ class UserAppBarWidget extends StatelessWidget {
           CustomDividerWidget(height: context.height * 0.030, width: 1.5),
           // Pioneers
           CustomFollowersNumberWidget(
-            title: 'Pioneers',
+            title: local.pioneers,
             number: 7,
             onTap: () {
               context.router.push(

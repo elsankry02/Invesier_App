@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
@@ -13,6 +14,7 @@ class YouAreVerifiedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -27,15 +29,16 @@ class YouAreVerifiedPage extends StatelessWidget {
             padding: EdgeInsets.all(20),
             children: [
               VerificationSuccessWidget(
-                title: "You're verified !",
+                title: local.youreverified,
                 subTitle:
-                    "Your request has been approved. You can now enjoy our premium feature",
+                    local
+                        .yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature,
                 imageOne: AppImages.kProgressBarFour,
                 imageTwo: AppImages.kVerified,
               ),
               SizedBox(height: context.height * 0.114),
               CustomPrimaryButton(
-                title: "Back to home page",
+                title: local.backtohomepage,
                 backGroundColor: AppColors.kTurquoiseBlue,
                 borderRadius: BorderRadius.circular(31),
                 padding: EdgeInsets.symmetric(

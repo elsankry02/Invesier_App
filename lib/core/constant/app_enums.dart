@@ -2,7 +2,7 @@ enum ContactType { email, phone }
 
 enum Language {
   english(name: "English ", flag: "🇺🇸", code: "en"),
-  arabic(name: "Arabic", flag: "🇸🇦", code: "ar");
+  arabic(name: "العربية", flag: "🇸🇦", code: "ar");
 
   const Language({required this.name, required this.flag, required this.code});
 

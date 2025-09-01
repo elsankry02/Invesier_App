@@ -12,6 +12,7 @@ class ForYouDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -28,7 +29,7 @@ class ForYouDialogWidget extends StatelessWidget {
           ),
           // title
           Text(
-            'Report this post and block the account',
+            local.reportthispostandblocktheaccount,
             style: context.kTextTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -39,7 +40,7 @@ class ForYouDialogWidget extends StatelessWidget {
             children: [
               // Cancel
               CustomPrimaryButton(
-                title: 'Cancel',
+                title: local.cancel,
                 backGroundColor: AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: 36,
@@ -56,7 +57,7 @@ class ForYouDialogWidget extends StatelessWidget {
               ),
               // Report
               CustomPrimaryButton(
-                title: 'Report',
+                title: local.report,
 
                 backGroundColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(

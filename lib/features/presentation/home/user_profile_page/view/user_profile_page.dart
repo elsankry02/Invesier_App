@@ -15,6 +15,7 @@ class UserProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -32,7 +33,7 @@ class UserProfilePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CustomPrimaryButton(
-                  title: 'Chase',
+                  title: local.chase,
                   backGroundColor: AppColors.kTurquoiseBlue,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 56,
@@ -44,11 +45,11 @@ class UserProfilePage extends StatelessWidget {
                     color: AppColors.kWhite,
                   ),
                   onTap: () {
-                    showCustomErrorMessage(context, message: "COMING SOON");
+                    showCustomErrorMessage(context, message: local.comingsoon);
                   },
                 ),
                 CustomPrimaryButton(
-                  title: 'message',
+                  title: local.message,
                   backGroundColor: AppColors.kWhite,
                   padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 56,
@@ -60,7 +61,7 @@ class UserProfilePage extends StatelessWidget {
                     color: AppColors.kTurquoiseBlue,
                   ),
                   onTap: () {
-                    showCustomErrorMessage(context, message: "COMING SOON");
+                    showCustomErrorMessage(context, message: local.comingsoon);
                   },
                 ),
               ],

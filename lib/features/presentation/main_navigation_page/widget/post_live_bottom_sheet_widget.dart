@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
@@ -11,6 +12,7 @@ class PostLiveBottomSheetWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Container(
       width: context.width,
       decoration: BoxDecoration(
@@ -31,7 +33,7 @@ class PostLiveBottomSheetWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             BottomSheetButtonWidget(
-              title: "Post",
+              title: local.post,
               onTap: () {
                 context.router.maybePop();
                 context.router.push(PostRoute());
@@ -39,9 +41,12 @@ class PostLiveBottomSheetWidget extends StatelessWidget {
             ),
             const Divider(thickness: 2),
             BottomSheetButtonWidget(
-              title: "Live",
+              title: local.live,
               onTap:
-                  () => showCustomErrorMessage(context, message: "COMING SOON"),
+                  () => showCustomErrorMessage(
+                    context,
+                    message: local.comingsoon,
+                  ),
             ),
           ],
         ),

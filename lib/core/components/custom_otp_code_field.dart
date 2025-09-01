@@ -17,12 +17,13 @@ class CustomOtpCodeField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final local = context.kAppLocalizations;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // OTP Code
         Text(
-          'OTP Code',
+          local.otpcode,
           style: context.kTextTheme.titleSmall!.copyWith(
             fontWeight: FontWeight.w500,
           ),
