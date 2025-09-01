@@ -12,6 +12,8 @@ The Invesier App is a Flutter-based mobile application designed to provide users
 
 **AutoRoute:** Utilizes AutoRoute for type-safe and declarative routing, simplifying navigation.
 
+**Localization:** Integrates multi-language support to deliver a tailored user experience across different regions.
+
 ## 🔍 Key Features
 
 **User Authentication:** Supports secure sign-in and registration processes.
