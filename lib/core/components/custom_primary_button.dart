@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/extension/extension.dart';
 
 import '../constant/app_colors.dart';
 
@@ -42,10 +43,12 @@ class CustomPrimaryButton extends StatelessWidget {
           child:
               isLoading
                   ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.width * 0.020,
+                    ),
                     child: SizedBox(
-                      width: 20,
-                      height: 20,
+                      width: context.height * 0.020,
+                      height: context.height * 0.020,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
                         color: AppColors.kWhite,

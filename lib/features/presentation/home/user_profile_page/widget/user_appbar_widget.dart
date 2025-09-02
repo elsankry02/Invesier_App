@@ -42,8 +42,8 @@ class UserAppBarWidget extends StatelessWidget {
           ClipOval(
             child: Image.asset(
               AppImages.kGirlOne,
-              width: 60,
-              height: 60,
+              width: context.height * 0.060,
+              height: context.height * 0.060,
               fit: BoxFit.cover,
             ),
           ),
@@ -96,7 +96,10 @@ class UserAppBarWidget extends StatelessWidget {
           // Posts
           CustomFollowersNumberWidget(title: local.posts, number: 2),
           // DividerWidget
-          CustomDividerWidget(height: context.height * 0.030, width: 1.5),
+          CustomDividerWidget(
+            height: context.height * 0.030,
+            width: context.height * 0.001,
+          ),
           // Fans
           CustomFollowersNumberWidget(
             title: local.fans,
@@ -108,7 +111,10 @@ class UserAppBarWidget extends StatelessWidget {
             },
           ),
           // DividerWidget
-          CustomDividerWidget(height: context.height * 0.030, width: 1.5),
+          CustomDividerWidget(
+            height: context.height * 0.030,
+            width: context.height * 0.001,
+          ),
           // Pioneers
           CustomFollowersNumberWidget(
             title: local.pioneers,

@@ -30,8 +30,8 @@ class PersonalProfilePage extends StatelessWidget {
             CustomPrimaryButton(
               title: local.mypost,
               padding: EdgeInsetsDirectional.symmetric(
-                horizontal: 62,
-                vertical: 9.5,
+                horizontal: context.height * 0.062,
+                vertical: context.height * 0.010,
               ),
               borderRadius: BorderRadius.circular(31),
               style: context.kTextTheme.titleSmall!.copyWith(

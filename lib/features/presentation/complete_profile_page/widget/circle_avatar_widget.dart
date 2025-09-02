@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:invesier/core/extension/extension.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_images.dart';
@@ -19,11 +20,15 @@ class CircleAvatarWidget extends StatelessWidget {
           ClipOval(
             child:
                 file == null
-                    ? Image.asset(AppImages.kMintDark, height: 140, width: 140)
+                    ? Image.asset(
+                      AppImages.kMintDark,
+                      height: context.height * 0.140,
+                      width: context.height * 0.140,
+                    )
                     : Image.file(
                       file!,
-                      height: 140,
-                      width: 140,
+                      height: context.height * 0.140,
+                      width: context.height * 0.140,
                       fit: BoxFit.cover,
                     ),
           ),

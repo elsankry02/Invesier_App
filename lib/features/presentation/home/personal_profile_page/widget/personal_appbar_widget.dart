@@ -48,8 +48,8 @@ class PersonalAppBarWidget extends StatelessWidget {
                 ClipOval(
                   child: Image.network(
                     user.avatarUrl,
-                    width: 60,
-                    height: 60,
+                    width: context.height * 0.060,
+                    height: context.height * 0.060,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -112,7 +112,10 @@ class PersonalAppBarWidget extends StatelessWidget {
                   number: user.postsCount,
                 ),
                 // DividerWidget
-                CustomDividerWidget(height: context.height * 0.030, width: 1.5),
+                CustomDividerWidget(
+                  height: context.height * 0.030,
+                  width: context.height * 0.001,
+                ),
                 // Fans
                 CustomFollowersNumberWidget(
                   number: state.userModel.fansCount,
@@ -124,7 +127,10 @@ class PersonalAppBarWidget extends StatelessWidget {
                   },
                 ),
                 // DividerWidget
-                CustomDividerWidget(height: context.height * 0.030, width: 1.5),
+                CustomDividerWidget(
+                  height: context.height * 0.030,
+                  width: context.height * 0.001,
+                ),
                 // Pioneers
                 CustomFollowersNumberWidget(
                   number: user.pioneersCount,

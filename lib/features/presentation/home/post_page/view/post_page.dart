@@ -74,7 +74,11 @@ class _PostPageState extends ConsumerState<PostPage> {
     });
     return Scaffold(
       body: Container(
-        padding: EdgeInsetsDirectional.only(top: 5, start: 15, end: 15),
+        padding: EdgeInsetsDirectional.only(
+          top: context.height * 0.005,
+          start: context.height * 0.015,
+          end: context.height * 0.015,
+        ),
         width: context.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -115,8 +119,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                               child: Image.file(
                                 file!,
                                 fit: BoxFit.cover,
-                                height: 200,
-                                width: 200,
+                                height: context.height * 0.200,
+                                width: context.height * 0.200,
                               ),
                             ),
                   ),
@@ -124,7 +128,7 @@ class _PostPageState extends ConsumerState<PostPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 12),
+              padding: EdgeInsets.only(bottom: context.height * 0.012),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -155,8 +159,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                     title: local.postnow,
                     backGroundColor: AppColors.kOceanGreen,
                     padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 20,
-                      vertical: 12,
+                      horizontal: context.height * 0.020,
+                      vertical: context.height * 0.012,
                     ),
                     borderRadius: BorderRadius.circular(16),
                     style: context.kTextTheme.labelMedium!.copyWith(

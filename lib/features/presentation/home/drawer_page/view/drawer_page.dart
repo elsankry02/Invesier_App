@@ -61,7 +61,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: EdgeInsets.symmetric(horizontal: context.height * 0.010),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8,
@@ -79,8 +79,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                           children: [
                             ClipOval(
                               child: Image.network(
-                                width: 35,
-                                height: 35,
+                                width: context.height * 0.035,
+                                height: context.height * 0.035,
                                 fit: BoxFit.cover,
                                 user.avatarUrl,
                               ),
@@ -97,8 +97,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                                   ),
                                 ),
                                 Container(
-                                  height: 10,
-                                  width: 10,
+                                  height: context.height * 0.010,
+                                  width: context.height * 0.010,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(5),
                                     color: AppColors.kOceanGreen,

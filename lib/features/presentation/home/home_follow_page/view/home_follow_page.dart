@@ -46,7 +46,7 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
             child: Consumer(
               builder: (context, ref, child) {
                 final state = ref.watch(getAuthenticatedUserProvider);
@@ -58,7 +58,9 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                         HomeFollowAppBarWidget(userModel: state.userModel),
                         SizedBox(height: context.height * 0.009),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 65),
+                          margin: EdgeInsets.symmetric(
+                            horizontal: context.height * 0.065,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

@@ -2,16 +2,16 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/components/custom_contact_type_field.dart';
-import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/components/custom_social_auth_button.dart';
-import '../../../../core/components/custom_tap_richtext.dart';
-import '../../../../core/components/show_custom_top_snack_bar.dart';
-import '../../../../core/constant/app_colors.dart';
-import '../../../../core/constant/app_enums.dart';
-import '../../../../core/extension/extension.dart';
-import '../../../../core/router/router.dart';
-import '../../../provider/post/resend_otp_provider.dart';
+import '../../../core/components/custom_contact_type_field.dart';
+import '../../../core/components/custom_primary_button.dart';
+import '../../../core/components/custom_social_auth_button.dart';
+import '../../../core/components/custom_tap_richtext.dart';
+import '../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../core/constant/app_colors.dart';
+import '../../../core/constant/app_enums.dart';
+import '../../../core/extension/extension.dart';
+import '../../../core/router/router.dart';
+import '../../provider/post/resend_otp_provider.dart';
 
 @RoutePage()
 class LoginPage extends ConsumerStatefulWidget {
@@ -85,7 +85,10 @@ class _SignupPageState extends ConsumerState<LoginPage> {
           child: Form(
             key: formKey,
             child: ListView(
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+              padding: EdgeInsets.symmetric(
+                vertical: context.height * 0.024,
+                horizontal: context.height * 0.024,
+              ),
               children: [
                 // Welcome To Invesier!
                 Text(
@@ -95,7 +98,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: context.height * 0.004),
                 // Don't have an account?
                 Center(
                   child: CustomTapRichText(
@@ -123,8 +126,8 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                             fontWeight: FontWeight.w600,
                           ),
                           padding: EdgeInsets.symmetric(
-                            vertical: 1.5,
-                            horizontal: 52,
+                            vertical: context.height * 0.001,
+                            horizontal: context.height * 0.052,
                           ),
                           borderRadius: BorderRadiusDirectional.only(
                             topStart: Radius.circular(26),
@@ -157,8 +160,8 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                             fontWeight: FontWeight.w600,
                           ),
                           padding: EdgeInsets.symmetric(
-                            vertical: 1.5,
-                            horizontal: 52,
+                            vertical: context.height * 0.001,
+                            horizontal: context.height * 0.052,
                           ),
                           borderRadius: BorderRadiusDirectional.only(
                             topEnd: Radius.circular(26),
@@ -242,7 +245,9 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                   gradient: LinearGradient(
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
-                  padding: EdgeInsetsDirectional.symmetric(vertical: 13),
+                  padding: EdgeInsetsDirectional.symmetric(
+                    vertical: context.height * 0.013,
+                  ),
                   borderRadius: BorderRadius.circular(60),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,

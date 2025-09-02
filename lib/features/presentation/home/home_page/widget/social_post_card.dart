@@ -23,8 +23,11 @@ class PostCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return Container(
-      margin: const EdgeInsetsDirectional.only(bottom: 10),
-      padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 12),
+      margin: EdgeInsetsDirectional.only(bottom: context.height * 0.010),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: context.height * 0.020,
+        vertical: context.height * 0.012,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(13),
         color: AppColors.kHeavyMetal,
@@ -43,8 +46,8 @@ class PostCardWidget extends StatelessWidget {
                 onTap: imageOnTap,
                 child: Image.asset(
                   fit: BoxFit.cover,
-                  height: 30,
-                  width: 30,
+                  height: context.height * 0.030,
+                  width: context.height * 0.030,
                   AppImages.kBoyThree,
                 ),
               ),
@@ -83,8 +86,8 @@ class PostCardWidget extends StatelessWidget {
                   ),
                   border: Border.all(color: AppColors.kTurquoiseBlue),
                   padding: EdgeInsetsDirectional.symmetric(
-                    horizontal: 24,
-                    vertical: 4,
+                    horizontal: context.height * 0.024,
+                    vertical: context.height * 0.004,
                   ),
                 ),
               ],
@@ -100,7 +103,7 @@ class PostCardWidget extends StatelessWidget {
           SizedBox(height: context.height * 0.015),
           // Custom Trend Box
           Row(
-            spacing: 13,
+            spacing: context.height * 0.013,
             children: [
               // Growth
               CustomTagButton(

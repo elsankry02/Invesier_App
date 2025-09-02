@@ -38,7 +38,7 @@ class CommentPage extends StatelessWidget {
                         title: local.addcomment,
                         hintText: local.shareyourcomment,
                         titleButton: local.comment,
-                        vertical: 5,
+                        vertical: context.height * 0.005,
                         radius: 8,
                         style: context.kTextTheme.labelMedium!.copyWith(
                           fontWeight: FontWeight.w600,
@@ -66,7 +66,7 @@ class CommentPage extends StatelessWidget {
                               title: local.reply,
                               hintText: local.typeyourreply,
                               titleButton: local.reply,
-                              vertical: 5,
+                              vertical: context.height * 0.005,
                               radius: 8,
                               style: context.kTextTheme.labelMedium!.copyWith(
                                 fontWeight: FontWeight.w600,

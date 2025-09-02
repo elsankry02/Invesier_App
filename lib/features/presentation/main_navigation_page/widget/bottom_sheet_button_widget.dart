@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/extension/extension.dart';
 
 class BottomSheetButtonWidget extends StatelessWidget {
@@ -11,7 +12,7 @@ class BottomSheetButtonWidget extends StatelessWidget {
       // onTap
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: context.height * 0.010),
         width: context.width,
         decoration: BoxDecoration(),
         child: Row(

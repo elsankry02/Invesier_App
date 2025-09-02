@@ -16,14 +16,18 @@ class ReplyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return Padding(
-      padding: const EdgeInsets.only(right: 20, left: 20, bottom: 10),
+      padding: EdgeInsets.only(
+        right: context.height * 0.020,
+        left: context.height * 0.020,
+        bottom: context.height * 0.010,
+      ),
       child: Column(
         spacing: 16,
         children: [
           Container(
             padding: EdgeInsetsDirectional.symmetric(
-              horizontal: 20,
-              vertical: 12,
+              horizontal: context.height * 0.020,
+              vertical: context.height * 0.012,
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(13),
@@ -33,13 +37,13 @@ class ReplyWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ListTile(
-                  contentPadding: EdgeInsets.all(0),
+                  contentPadding: EdgeInsets.zero,
                   leading: ClipOval(
                     // image
                     child: Image.asset(
                       AppImages.kBoyTwo,
-                      height: 30,
-                      width: 30,
+                      height: context.height * 0.030,
+                      width: context.height * 0.030,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -89,8 +93,8 @@ class ReplyWidget extends StatelessWidget {
                         ),
                         backGroundColor: AppColors.kTurquoiseBlue,
                         padding: EdgeInsetsDirectional.symmetric(
-                          horizontal: 10,
-                          vertical: 4,
+                          horizontal: 0.010,
+                          vertical: 0.004,
                         ),
                         borderRadius: BorderRadius.circular(31),
                       ),

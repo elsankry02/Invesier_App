@@ -24,7 +24,7 @@ class SearchPage extends StatelessWidget {
         ),
         child: SafeArea(
           child: ListView(
-            padding: EdgeInsets.only(top: 25),
+            padding: EdgeInsets.only(top: context.height * 0.025),
             children: [
               Row(
                 children: [
@@ -41,8 +41,8 @@ class SearchPage extends StatelessWidget {
                   ClipOval(
                     child: Image.asset(
                       AppImages.kBoyFour,
-                      width: 36,
-                      height: 36,
+                      width: context.height * 0.036,
+                      height: context.height * 0.036,
                       fit: BoxFit.cover,
                     ),
                   ),

@@ -48,8 +48,8 @@ class UserAlertDialogWidget extends StatelessWidget {
                   color: AppColors.kWhite,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 34,
-                  vertical: 6,
+                  horizontal: context.height * 0.034,
+                  vertical: context.height * 0.006,
                 ),
                 onTap: () {
                   context.router.maybePop();
@@ -59,8 +59,8 @@ class UserAlertDialogWidget extends StatelessWidget {
                 title: local.yesBlock,
                 backGroundColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 27.5,
-                  vertical: 6,
+                  horizontal: context.height * 0.027,
+                  vertical: context.height * 0.006,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(

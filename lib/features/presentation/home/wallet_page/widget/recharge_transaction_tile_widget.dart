@@ -18,7 +18,7 @@ class RechargeTransactionTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 13),
+      margin: EdgeInsets.only(bottom: context.height * 0.013),
       decoration: BoxDecoration(
         color: AppColors.kOne,
         borderRadius: BorderRadius.circular(10),

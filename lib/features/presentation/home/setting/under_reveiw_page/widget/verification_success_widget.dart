@@ -26,7 +26,11 @@ class VerificationSuccessWidget extends StatelessWidget {
         SizedBox(height: context.height * 0.035),
         Image.asset(imageOne),
         SizedBox(height: context.height * 0.043),
-        Image.asset(imageTwo, height: 100, width: 100),
+        Image.asset(
+          imageTwo,
+          height: context.height * 0.100,
+          width: context.height * 0.100,
+        ),
         SizedBox(height: context.height * 0.034),
         Text(
           textAlign: TextAlign.center,

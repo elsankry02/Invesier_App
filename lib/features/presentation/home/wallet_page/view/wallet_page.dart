@@ -28,7 +28,11 @@ class WalletPage extends StatelessWidget {
         ),
         child: SafeArea(
           child: ListView(
-            padding: EdgeInsets.only(top: 20, left: 16, right: 16),
+            padding: EdgeInsets.only(
+              top: context.height * 0.020,
+              left: context.height * 0.016,
+              right: context.height * 0.016,
+            ),
             children: [
               CustomAppBarWidget(title: local.wallet),
               SizedBox(height: context.height * 0.022),
@@ -40,7 +44,7 @@ class WalletPage extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
                 backGroundColor: AppColors.kNum,
-                padding: EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.symmetric(vertical: context.height * 0.010),
                 borderRadius: BorderRadius.circular(10),
                 onTap: () => context.router.push(TransactionsHistoryRoute()),
               ),

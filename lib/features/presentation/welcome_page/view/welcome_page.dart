@@ -25,7 +25,8 @@ class WelcomePage extends StatelessWidget {
             image: AssetImage(AppImages.kOnBoarding),
           ),
         ),
-        child: Column(
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
             // Welcome Display Widget
             WelcomeDisplayWidget(),
@@ -39,10 +40,12 @@ class WelcomePage extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(60),
               padding: EdgeInsetsDirectional.symmetric(
-                horizontal: 105,
-                vertical: 15,
+                horizontal: context.width * 0.105,
+                vertical: context.height * 0.015,
               ),
-              margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
+              margin: EdgeInsetsDirectional.symmetric(
+                horizontal: context.height * 0.043,
+              ),
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w600,
                 color: AppColors.kWhite,
@@ -59,10 +62,12 @@ class WelcomePage extends StatelessWidget {
               border: BoxBorder.all(color: AppColors.kEucalyptus),
               borderRadius: BorderRadius.circular(60),
               padding: EdgeInsetsDirectional.symmetric(
-                horizontal: 100,
-                vertical: 15,
+                horizontal: context.width * 0.100,
+                vertical: context.height * 0.015,
               ),
-              margin: EdgeInsetsDirectional.symmetric(horizontal: 43),
+              margin: EdgeInsetsDirectional.symmetric(
+                horizontal: context.height * 0.043,
+              ),
               style: context.kTextTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.w600,
                 color: AppColors.kEucalyptus,
@@ -79,7 +84,7 @@ class WelcomePage extends StatelessWidget {
               onTap: () {
                 context.router.push(SignupRoute());
               },
-            ),
+            ), 
           ],
         ),
       ),

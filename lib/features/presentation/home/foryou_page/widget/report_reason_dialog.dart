@@ -67,8 +67,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                           : AppColors.kBoulder,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 101,
-                  vertical: 4,
+                  horizontal: context.height * 0.101,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -99,8 +99,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                           : AppColors.kBoulder,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 101,
-                  vertical: 4,
+                  horizontal: context.height * 0.101,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -131,8 +131,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                           : AppColors.kBoulder,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 100,
-                  vertical: 4,
+                  horizontal: context.height * 0.100,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -164,8 +164,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                           : AppColors.kBoulder,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 93,
-                  vertical: 4,
+                  horizontal: context.height * 0.093,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -197,8 +197,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                           : AppColors.kBoulder,
                 ),
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 81,
-                  vertical: 4,
+                  horizontal: context.height * 0.081,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -231,8 +231,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 ),
 
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 98,
-                  vertical: 4,
+                  horizontal: context.height * 0.098,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -254,8 +254,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 title: local.submit,
                 backGroundColor: AppColors.kTurquoiseBlue,
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 101,
-                  vertical: 4,
+                  horizontal: context.height * 0.101,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(

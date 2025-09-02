@@ -32,7 +32,7 @@ class UserPopMenuWidget extends StatelessWidget {
               children: [
                 // icon
                 SvgPicture.asset(icon),
-                SizedBox(width: 7),
+                SizedBox(width: context.height * 0.007),
                 // title
                 Text(
                   title,

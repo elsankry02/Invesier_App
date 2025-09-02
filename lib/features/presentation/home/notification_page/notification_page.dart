@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/components/custom_appbar_widget.dart';
-import '../../../../../core/components/custom_no_posts_widget.dart';
-import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/extension/extension.dart';
+import '../../../../core/components/custom_appbar_widget.dart';
+import '../../../../core/components/custom_no_posts_widget.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/extension/extension.dart';
 
 @RoutePage()
 class NotificationPage extends StatelessWidget {
@@ -24,7 +24,7 @@ class NotificationPage extends StatelessWidget {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(

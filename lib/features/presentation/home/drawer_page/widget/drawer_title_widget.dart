@@ -15,7 +15,7 @@ class DrawerTitleWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.symmetric(vertical: context.height * 0.008),
         // title
         child: Text(
           title,

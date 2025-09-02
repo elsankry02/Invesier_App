@@ -16,7 +16,10 @@ class InvesierAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, right: 15),
+      padding: EdgeInsets.only(
+        left: context.height * 0.020,
+        right: context.height * 0.015,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -33,8 +36,8 @@ class InvesierAppBar extends StatelessWidget {
                     context.router.push(SearchRoute());
                   },
                   child: SvgPicture.asset(
-                    width: 20,
-                    height: 20,
+                    width: context.height * 0.020,
+                    height: context.height * 0.020,
                     AppSvgs.kSearch,
                     colorFilter: ColorFilter.mode(
                       AppColors.kWhite,
@@ -55,16 +58,16 @@ class InvesierAppBar extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [
                           Container(
-                            height: 10,
-                            width: 10,
+                            height: context.height * 0.010,
+                            width: context.height * 0.010,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(6),
                               color: AppColors.kWhite,
                             ),
                           ),
                           Container(
-                            height: 8,
-                            width: 8,
+                            height: context.height * 0.008,
+                            width: context.height * 0.008,
                             decoration: BoxDecoration(
                               color: AppColors.kRedTwo,
                               borderRadius: BorderRadius.circular(5),
@@ -89,16 +92,16 @@ class InvesierAppBar extends StatelessWidget {
                                 child: Image.network(
                                   state.userModel.avatarUrl,
                                   fit: BoxFit.cover,
-                                  width: 30,
-                                  height: 30,
+                                  width: context.height * 0.030,
+                                  height: context.height * 0.030,
                                 ),
                               )
                               : ClipOval(
                                 child: Image.asset(
                                   AppImages.kBoyFour,
                                   fit: BoxFit.cover,
-                                  width: 30,
-                                  height: 30,
+                                  width: context.height * 0.030,
+                                  height: context.height * 0.030,
                                 ),
                               ),
                     );

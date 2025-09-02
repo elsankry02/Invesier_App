@@ -4,7 +4,7 @@ import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../foryou_page/view/foryou_widget.dart';
-import '../../pioneers_page/view/pioneers_widget.dart';
+import '../../pioneers_page/pioneers_widget.dart';
 import '../widget/invesier_appbar_widget.dart';
 
 enum EnumView { foryou, pioneers }
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(top: 15),
+              padding: EdgeInsets.only(top: context.height * 0.015),
               child: Column(
                 children: [
                   // AppBar
@@ -51,8 +51,8 @@ class _HomePageState extends State<HomePage> {
                                 ? AppColors.kOceanGreen
                                 : AppColors.kBackGround,
                         padding: EdgeInsetsDirectional.symmetric(
-                          horizontal: 26,
-                          vertical: 8,
+                          horizontal: context.height * 0.026,
+                          vertical: context.height * 0.008,
                         ),
                         borderRadius: BorderRadius.circular(18),
                         onTap: () {
@@ -77,8 +77,8 @@ class _HomePageState extends State<HomePage> {
                                 ? AppColors.kOceanGreen
                                 : AppColors.kBackGround,
                         padding: EdgeInsetsDirectional.symmetric(
-                          horizontal: 26,
-                          vertical: 8,
+                          horizontal: context.height * 0.026,
+                          vertical: context.height * 0.008,
                         ),
                         borderRadius: BorderRadius.circular(18),
                         onTap: () {

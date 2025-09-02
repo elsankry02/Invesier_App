@@ -4,11 +4,11 @@ import '../../../../core/extension/extension.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_svgs.dart';
-import '../../challenges_page/view/challenges_page.dart';
+import '../../challenges_page/challenges_page.dart';
 import '../../home/drawer_page/view/drawer_page.dart';
 import '../../home/home_page/view/home_page.dart';
-import '../../learn_page/view/learn_page.dart';
-import '../../trade_page/view/trade_page.dart';
+import '../../learn_page/learn_page.dart';
+import '../../trade_page/trade_page.dart';
 import '../widget/action_button_location_widget.dart';
 import '../widget/navigationbar_item_widget.dart';
 import '../widget/post_live_bottom_sheet_widget.dart';

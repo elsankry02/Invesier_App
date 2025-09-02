@@ -104,7 +104,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
           child: Form(
             key: formKey,
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
               children: [
                 Row(
                   children: [
@@ -164,14 +164,14 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 22),
+                SizedBox(height: context.height * 0.022),
                 Text(
                   local.username,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: context.height * 0.004),
                 // Fullname FormField
                 CustomTextFormField(
                   hintText: local.usernamemin,
@@ -197,7 +197,9 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                     colors: [AppColors.kEucalyptus, AppColors.kTurquoiseBlue],
                   ),
                   borderRadius: BorderRadius.circular(60),
-                  padding: EdgeInsetsDirectional.symmetric(vertical: 13),
+                  padding: EdgeInsetsDirectional.symmetric(
+                    vertical: context.height * 0.013,
+                  ),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,

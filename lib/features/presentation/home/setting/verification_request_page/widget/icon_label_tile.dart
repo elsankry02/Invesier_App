@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 
@@ -10,7 +11,7 @@ class IconLabelTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: EdgeInsets.only(bottom: context.height * 0.016),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppColors.kHeavyMetal,

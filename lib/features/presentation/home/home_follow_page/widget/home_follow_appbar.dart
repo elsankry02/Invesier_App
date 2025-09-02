@@ -25,8 +25,8 @@ class HomeFollowAppBarWidget extends StatelessWidget {
           ClipOval(
             child: Image.network(
               userModel.avatarUrl,
-              width: 25,
-              height: 25,
+              width: context.height * 0.025,
+              height: context.height * 0.025,
               fit: BoxFit.cover,
             ),
           ),

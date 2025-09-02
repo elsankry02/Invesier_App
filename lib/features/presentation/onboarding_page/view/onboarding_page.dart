@@ -50,7 +50,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
             child: Column(
               children: [
                 SizedBox(height: context.height * 0.020),

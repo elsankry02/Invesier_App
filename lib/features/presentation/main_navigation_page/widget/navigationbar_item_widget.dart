@@ -21,7 +21,10 @@ class NavigationBarItemWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        margin: EdgeInsets.symmetric(
+          horizontal: 15,
+          vertical: context.height * 0.010,
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,

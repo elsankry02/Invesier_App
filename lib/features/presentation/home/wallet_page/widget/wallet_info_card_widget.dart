@@ -13,7 +13,10 @@ class WalletInfoCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+      padding: EdgeInsets.symmetric(
+        horizontal: context.height * 0.016,
+        vertical: context.height * 0.020,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(

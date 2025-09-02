@@ -87,7 +87,10 @@ class _SignupPageState extends ConsumerState<SignupPage> {
           child: Form(
             key: formKey,
             child: ListView(
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
+              padding: EdgeInsets.symmetric(
+                vertical: context.height * 0.024,
+                horizontal: context.height * 0.024,
+              ),
               children: [
                 // Create an account
                 Text(
@@ -97,7 +100,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: context.height * 0.004),
                 // Rich Text
                 Center(
                   child: CustomTapRichText(

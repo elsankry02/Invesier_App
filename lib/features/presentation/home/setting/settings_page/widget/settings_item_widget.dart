@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 
@@ -23,8 +24,11 @@ class SettingsItemWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 33, vertical: 8),
-        margin: EdgeInsets.only(bottom: 8),
+        padding: EdgeInsets.symmetric(
+          horizontal: context.height * 0.033,
+          vertical: context.height * 0.008,
+        ),
+        margin: EdgeInsets.only(bottom: context.height * 0.008),
         decoration: BoxDecoration(
           color: AppColors.kHeavyMetal,
           borderRadius: BorderRadius.circular(11),

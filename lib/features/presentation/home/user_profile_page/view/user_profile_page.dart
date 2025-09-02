@@ -52,8 +52,8 @@ class UserProfilePage extends StatelessWidget {
                   title: local.message,
                   backGroundColor: AppColors.kWhite,
                   padding: EdgeInsetsDirectional.symmetric(
-                    horizontal: 56,
-                    vertical: 9.5,
+                    horizontal: context.height * 0.056,
+                    vertical: context.height * 0.010,
                   ),
                   borderRadius: BorderRadius.circular(31),
                   style: context.kTextTheme.labelMedium!.copyWith(

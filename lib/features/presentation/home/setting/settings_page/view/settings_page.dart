@@ -95,8 +95,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               SettingsItemWidget(
                 leading: SvgPicture.asset(
                   AppSvgs.kblockVictor,
-                  width: 24,
-                  height: 24,
+                  width: context.height * 0.024,
+                  height: context.height * 0.024,
                 ),
                 title: local.blockerslist,
                 onTap:
@@ -108,8 +108,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               SettingsItemWidget(
                 leading: SvgPicture.asset(
                   AppSvgs.kDelete,
-                  width: 24,
-                  height: 24,
+                  width: context.height * 0.024,
+                  height: context.height * 0.024,
                 ),
                 title: local.deleteaccount,
                 color: AppColors.kRedThree,

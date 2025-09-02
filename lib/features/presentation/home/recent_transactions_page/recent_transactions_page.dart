@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/components/custom_appbar_widget.dart';
-import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
-import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/constant/app_svgs.dart';
-import '../../../../../core/extension/extension.dart';
-import '../../wallet_page/widget/recharge_transaction_tile_widget.dart';
+import '../../../../core/components/custom_appbar_widget.dart';
+import '../../../../core/components/custom_primary_button.dart';
+import '../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../core/constant/app_colors.dart';
+import '../../../../core/constant/app_svgs.dart';
+import '../../../../core/extension/extension.dart';
+import '../wallet_page/widget/recharge_transaction_tile_widget.dart';
 
 @RoutePage()
 class RecentTransactionsPage extends StatelessWidget {
@@ -27,7 +27,11 @@ class RecentTransactionsPage extends StatelessWidget {
         ),
         child: SafeArea(
           child: ListView(
-            padding: EdgeInsets.only(left: 16, right: 16, top: 20),
+            padding: EdgeInsets.only(
+              left: context.height * 0.016,
+              right: context.height * 0.016,
+              top: context.height * 0.020,
+            ),
             children: [
               CustomAppBarWidget(title: local.recenttransactions),
               SizedBox(height: context.height * 0.035),
@@ -47,7 +51,7 @@ class RecentTransactionsPage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     padding: EdgeInsets.symmetric(
-                      vertical: 8,
+                      vertical: context.height * 0.008,
                       horizontal: context.height * 0.043,
                     ),
                     borderRadius: BorderRadius.circular(10),
@@ -64,7 +68,7 @@ class RecentTransactionsPage extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     padding: EdgeInsets.symmetric(
-                      vertical: 8,
+                      vertical: context.height * 0.008,
                       horizontal: context.height * 0.043,
                     ),
                     borderRadius: BorderRadius.circular(10),

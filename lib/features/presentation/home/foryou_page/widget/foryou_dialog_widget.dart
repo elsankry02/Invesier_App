@@ -43,8 +43,8 @@ class ForYouDialogWidget extends StatelessWidget {
                 title: local.cancel,
                 backGroundColor: AppColors.kBoulder,
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 36,
-                  vertical: 4,
+                  horizontal: context.height * 0.036,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
@@ -61,8 +61,8 @@ class ForYouDialogWidget extends StatelessWidget {
 
                 backGroundColor: AppColors.kRedTwo,
                 padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 36,
-                  vertical: 4,
+                  horizontal: context.height * 0.036,
+                  vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
                 style: context.kTextTheme.labelMedium!.copyWith(
