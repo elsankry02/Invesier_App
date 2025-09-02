@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/service/get/get_posts_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/constant/app_enums.dart';
@@ -90,4 +91,8 @@ final prefsProvider = Provider<SharedPreferences>((ref) {
 // languageProvider
 final languageProvider = StateProvider<Language>((ref) {
   return Language.english;
+});
+// get Posts Service Provider
+final getPostsServiceProvider = Provider<GetPostsService>((ref) {
+  return GetPostsService(dio: ref.read(dioProvider));
 });

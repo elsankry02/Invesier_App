@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/constant/app_enums.dart'; // فيه enum Language
-import 'provider.dart'; // فيه prefsProvider
+import '../../core/constant/app_enums.dart';
+import 'provider.dart';
 
-// ------------------ States ------------------
 abstract class LocalizationState {}
 
 class LocalizationInitial extends LocalizationState {}
@@ -20,13 +19,13 @@ class LocalizationNotifier extends Notifier<LocalizationState> {
     return LocalizationInitial();
   }
 
-  Future<void> loadLocale() async {
+  Future<void> getString() async {
     final prefs = ref.read(prefsProvider);
     final code = prefs.getString('app_locale') ?? 'en';
     state = LocalizationSuccess(locale: Locale(code));
   }
 
-  Future<void> changeLocale(Language language) async {
+  Future<void> setString(Language language) async {
     final prefs = ref.read(prefsProvider);
     await prefs.setString('app_locale', language.code);
     state = LocalizationSuccess(locale: Locale(language.code));

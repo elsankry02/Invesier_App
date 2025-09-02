@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../provider/localization_provider.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../provider/localization_provider.dart';
 import '../../../../../provider/provider.dart';
 
 class SettingLanguageDialog extends ConsumerWidget {
@@ -24,7 +24,7 @@ class SettingLanguageDialog extends ConsumerWidget {
           final isSelected = ref
               .read(languageProvider.notifier)
               .update((state) => value);
-          await ref.read(localizationProvider.notifier).changeLocale(value);
+          await ref.read(localizationProvider.notifier).setString(value);
           context.router.maybePop();
           if (value == isSelected) return;
         },

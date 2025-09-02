@@ -10,4 +10,5 @@ class Endpoints {
   static const kLogout = "/auth/logout";
   static const kUser = "/user";
   static const kDeleteAccount = "/user";
+  static const kGetPosts = "/social/posts";
 }
