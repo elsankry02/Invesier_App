@@ -22,13 +22,16 @@ class CustomTagButton extends StatelessWidget {
       // onTap
       onTap: onTap,
       child: Container(
-        padding: EdgeInsetsDirectional.symmetric(vertical: 5, horizontal: 17.5),
+        padding: EdgeInsetsDirectional.symmetric(
+          vertical: context.height * 0.005,
+          horizontal: context.height * 0.018,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           border: Border.all(color: borderColor),
         ),
         child: Row(
-          spacing: 9,
+          spacing: context.height * 0.009,
           children: [
             // Svg
             SvgPicture.asset(svg),

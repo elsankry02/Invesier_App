@@ -64,7 +64,10 @@ class CustomOtpCodeField extends StatelessWidget {
     required BuildContext context,
   }) {
     return PinTheme(
-      margin: EdgeInsets.only(right: 5, left: 5),
+      margin: EdgeInsets.only(
+        right: context.height * 0.005,
+        left: context.height * 0.005,
+      ),
       textStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w500,

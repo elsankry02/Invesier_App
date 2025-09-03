@@ -125,7 +125,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
           child: Form(
             key: formKey,
             child: ListView(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
               children: [
                 Stack(
                   alignment: AlignmentDirectional.center,
@@ -214,7 +214,9 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                   ),
                   border: Border.all(color: AppColors.kTurquoiseBlue),
                   borderRadius: BorderRadius.circular(60),
-                  padding: EdgeInsetsDirectional.symmetric(vertical: 13),
+                  padding: EdgeInsetsDirectional.symmetric(
+                    vertical: context.height * 0.013,
+                  ),
                   style: context.kTextTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,

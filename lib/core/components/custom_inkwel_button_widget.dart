@@ -18,11 +18,11 @@ class CustomInkwelButtonWidget extends StatelessWidget {
       // onTap
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: context.height * 0.010),
         width: context.width,
         decoration: BoxDecoration(),
         child: Row(
-          spacing: 10,
+          spacing: context.height * 0.010,
           children: [
             Icon(icon),
 

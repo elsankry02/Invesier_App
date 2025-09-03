@@ -25,7 +25,7 @@ class CustomSocialAuthButton extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: context.height * 0.015),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,7 +34,7 @@ class CustomSocialAuthButton extends StatelessWidget {
               onTap: onLoginWithGoogle,
               assetName: AppSvgs.kGoogle,
             ),
-            SizedBox(width: 8),
+            SizedBox(width: context.height * 0.008),
             // Apple
             customSocialIconButton(
               onTap: onLoginWithApple,

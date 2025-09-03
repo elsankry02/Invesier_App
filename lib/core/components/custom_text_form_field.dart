@@ -23,21 +23,14 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // autovalidateMode
       autovalidateMode: autovalidateMode,
-      // autofocus
       autofocus: true,
-      // validator
       validator: validator,
-      // controller
       controller: controller,
-      // onChanged
       onChanged: onChanged,
       cursorColor: AppColors.kWhite,
-      // keyboardType
       keyboardType: keyboardType,
       decoration: InputDecoration(
-        //title
         hintText: hintText,
         hintStyle: hintStyle,
         enabledBorder: outlineInputBorder(borderColor: AppColors.kBorder),

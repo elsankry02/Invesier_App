@@ -39,7 +39,7 @@ class CustomPopMenuWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(firstSvg),
-                const SizedBox(width: 7),
+                SizedBox(width: context.height * 0.007),
                 Text(
                   firstTitle,
                   style: context.kTextTheme.labelLarge!.copyWith(
@@ -50,10 +50,13 @@ class CustomPopMenuWidget extends StatelessWidget {
             ),
           ),
           // Divider
-          const PopupMenuItem(
+          PopupMenuItem(
             height: 1,
             enabled: false,
-            child: Divider(color: AppColors.kDivider, thickness: 1),
+            child: Divider(
+              color: AppColors.kDivider,
+              thickness: context.height * 0.001,
+            ),
           ),
           // Second item
           PopupMenuItem(
@@ -62,7 +65,7 @@ class CustomPopMenuWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(secondSvg),
-                const SizedBox(width: 7),
+                SizedBox(width: context.height * 0.007),
                 Text(
                   secondTitle,
                   style: context.kTextTheme.labelLarge!.copyWith(

@@ -39,7 +39,11 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsetsDirectional.only(top: 10, start: 20, end: 20),
+      padding: EdgeInsetsDirectional.only(
+        top: context.height * 0.010,
+        start: context.height * 0.020,
+        end: context.height * 0.020,
+      ),
       width: context.width,
       decoration: BoxDecoration(
         color: AppColors.kCodGray,
@@ -103,7 +107,7 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
                   backGroundColor: AppColors.kOceanGreen,
                   border: Border.all(color: AppColors.kOceanGreen),
                   padding: EdgeInsets.symmetric(
-                    horizontal: 20,
+                    horizontal: context.height * 0.020,
                     vertical: widget.vertical,
                   ),
                   borderRadius: BorderRadius.circular(widget.radius),
