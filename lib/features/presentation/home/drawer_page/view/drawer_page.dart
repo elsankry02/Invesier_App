@@ -89,8 +89,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                               alignment: Alignment.center,
                               children: [
                                 Container(
-                                  height: 12,
-                                  width: 12,
+                                  height: context.height * 0.012,
+                                  width: context.height * 0.012,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(6),
                                     color: AppColors.kWhite,

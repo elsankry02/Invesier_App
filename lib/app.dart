@@ -1,28 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'features/provider/localization_provider.dart';
 
 import 'core/constant/app_colors.dart';
 import 'core/constant/app_strings.dart';
 import 'core/router/router.dart';
-import 'features/provider/localization_provider.dart';
 import 'l10n/app_localizations.dart';
 
-class InvesierApp extends ConsumerWidget {
+class InvesierApp extends ConsumerStatefulWidget {
   const InvesierApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final localizationState = ref.watch(localizationProvider);
+  ConsumerState<InvesierApp> createState() => _InvesierAppState();
+}
 
-    Locale currentLocale = const Locale('ar');
-
-    if (localizationState is LocalizationSuccess) {
-      currentLocale = localizationState.locale;
+class _InvesierAppState extends ConsumerState<InvesierApp> {
+  @override
+  Widget build(BuildContext context) {
+    final state = ref.watch(localizationProvider);
+    if (state is LocalizationSuccess) {
+      return MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: router.config(),
+        locale: Locale(state.selectLang),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          textTheme: textTheme(),
+          fontFamily: AppStrings.manrope,
+        ),
+      );
     }
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
-      locale: currentLocale,
+      locale: Locale("en"),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(

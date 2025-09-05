@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'provider.dart';
 
 import '../../core/constant/app_enums.dart';
-import 'provider.dart';
 
 abstract class LocalizationState {}
 
 class LocalizationInitial extends LocalizationState {}
 
 class LocalizationSuccess extends LocalizationState {
-  final Locale locale;
-  LocalizationSuccess({required this.locale});
+  final String selectLang;
+
+  LocalizationSuccess({required this.selectLang});
 }
 
 class LocalizationNotifier extends Notifier<LocalizationState> {
@@ -19,16 +19,23 @@ class LocalizationNotifier extends Notifier<LocalizationState> {
     return LocalizationInitial();
   }
 
-  Future<void> getString() async {
-    final prefs = ref.read(prefsProvider);
-    final code = prefs.getString('app_locale') ?? 'en';
-    state = LocalizationSuccess(locale: Locale(code));
-  }
-
-  Future<void> setString(Language language) async {
-    final prefs = ref.read(prefsProvider);
-    await prefs.setString('app_locale', language.code);
-    state = LocalizationSuccess(locale: Locale(language.code));
+  localiztation(Localization localization) {
+    switch (localization) {
+      case Localization.initial:
+        if (ref.read(prefsProvider).getString("lang") != null) {
+          if (ref.read(prefsProvider).getString("lang") == "en") {
+            state = LocalizationSuccess(selectLang: "en");
+          } else {
+            state = LocalizationSuccess(selectLang: "ar");
+          }
+        }
+      case Localization.english:
+        ref.read(prefsProvider).setString("lang", "en");
+        state = LocalizationSuccess(selectLang: "en");
+      case Localization.arabic:
+        ref.read(prefsProvider).setString("lang", "ar");
+        state = LocalizationSuccess(selectLang: "ar");
+    }
   }
 }
 

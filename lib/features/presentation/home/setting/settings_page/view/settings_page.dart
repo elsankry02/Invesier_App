@@ -12,7 +12,7 @@ import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../provider/delete/delete_account_provider.dart';
 import '../../../../../provider/provider.dart';
-import '../widget/setting_language_dialog.dart';
+import '../widget/setting_change_language.dart';
 import '../widget/settings_item_widget.dart';
 
 @RoutePage()
@@ -84,11 +84,11 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 leading: Icon(Icons.language, color: AppColors.kWhite),
                 title: local.applanguage,
                 onTap:
-                    () => showDialog(
-                      barrierDismissible: false,
+                    () => showModalBottomSheet(
+                      backgroundColor: AppColors.kHeavyMetal,
                       context: context,
                       builder: (context) {
-                        return SettingLanguageDialog();
+                        return SettingChangeLanguage();
                       },
                     ),
               ),
@@ -119,7 +119,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       barrierDismissible: false,
                       builder:
                           (context) => AlertDialog(
-                            backgroundColor: AppColors.kBackGround,
+                            backgroundColor: AppColors.kHeavyMetal,
                             title: Text(local.confirm),
                             content: Text(
                               local.areyousureyouwanttodeleteyouraccount,

@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/model/get_posts_model.dart';
-import 'package:invesier/features/provider/provider.dart';
+import '../../model/get_posts_model.dart';
+import '../provider.dart';
 
 abstract class GetPostsState {}
 

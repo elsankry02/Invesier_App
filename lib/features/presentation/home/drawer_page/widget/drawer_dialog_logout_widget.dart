@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 
@@ -11,7 +12,7 @@ class DrawerDialogLogOutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return AlertDialog(
-      backgroundColor: AppColors.kBackGround,
+      backgroundColor: AppColors.kHeavyMetal,
       title: Text(local.confirm),
       content: Text(
         local.areyousureyouwanttologout,

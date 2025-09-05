@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/core/extension/extension.dart';
 
 import '../constant/app_colors.dart';
+import '../extension/extension.dart';
 
 class CustomPrimaryButton extends StatelessWidget {
   final String title;

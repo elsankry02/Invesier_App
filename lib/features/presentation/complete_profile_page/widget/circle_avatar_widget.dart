@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../core/extension/extension.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_images.dart';
