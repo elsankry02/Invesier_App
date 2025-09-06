@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../model/get_posts_model.dart';
 import '../provider.dart';
 
@@ -9,7 +10,7 @@ class GetPostsinital extends GetPostsState {}
 class GetPostsLoading extends GetPostsState {}
 
 class GetPostsSuccess extends GetPostsState {
-  final GetPostsModel getPostsModel;
+  final List<GetPostsModel> getPostsModel;
 
   GetPostsSuccess({required this.getPostsModel});
 }
