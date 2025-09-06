@@ -10,7 +10,7 @@ class GetPostsinital extends GetPostsState {}
 class GetPostsLoading extends GetPostsState {}
 
 class GetPostsSuccess extends GetPostsState {
-  final GetPostsModel getPostsModel;
+  final List<Datum> getPostsModel;
 
   GetPostsSuccess({required this.getPostsModel});
 }

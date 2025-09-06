@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/model/get_posts_model.dart';
 
 import '../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../core/constant/app_colors.dart';
@@ -9,7 +10,8 @@ import '../widget/reply_widget.dart';
 
 @RoutePage()
 class CommentPage extends StatelessWidget {
-  const CommentPage({super.key});
+  final Datum getPosts;
+  const CommentPage({super.key, required this.getPosts});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class CommentPage extends StatelessWidget {
             children: [
               // Post Card Widget
               SocialPostCardWidget(
-                 
+                getPosts: getPosts,
                 commentOnTap: () {
                   showModalBottomSheet(
                     isDismissible: false,

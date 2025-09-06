@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_enums.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/constant/app_colors.dart';
@@ -6,8 +7,6 @@ import '../../../../../core/extension/extension.dart';
 import '../../foryou_page/view/foryou_widget.dart';
 import '../../pioneers_page/pioneers_widget.dart';
 import '../widget/invesier_appbar_widget.dart';
-
-enum EnumView { foryou, pioneers }
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

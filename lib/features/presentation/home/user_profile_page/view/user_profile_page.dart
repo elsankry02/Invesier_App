@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/model/get_posts_model.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
@@ -11,7 +12,8 @@ import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
 class UserProfilePage extends StatelessWidget {
-  const UserProfilePage({super.key});
+  final Datum getPosts;
+  const UserProfilePage({super.key, required this.getPosts});
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +76,9 @@ class UserProfilePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return SocialPostCardWidget(
                   commentOnTap: () {
-                    context.router.push(CommentRoute());
+                    context.router.push(CommentRoute(getPosts: getPosts));
                   },
+                  getPosts: getPosts,
                 );
               },
             ),

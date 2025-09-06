@@ -12,18 +12,49 @@ part of 'router.dart';
 
 /// generated route for
 /// [CommentPage]
-class CommentRoute extends PageRouteInfo<void> {
-  const CommentRoute({List<PageRouteInfo>? children})
-    : super(CommentRoute.name, initialChildren: children);
+class CommentRoute extends PageRouteInfo<CommentRouteArgs> {
+  CommentRoute({
+    Key? key,
+    required Datum getPosts,
+    List<PageRouteInfo>? children,
+  }) : super(
+         CommentRoute.name,
+         args: CommentRouteArgs(key: key, getPosts: getPosts),
+         initialChildren: children,
+       );
 
   static const String name = 'CommentRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const CommentPage();
+      final args = data.argsAs<CommentRouteArgs>();
+      return CommentPage(key: args.key, getPosts: args.getPosts);
     },
   );
+}
+
+class CommentRouteArgs {
+  const CommentRouteArgs({this.key, required this.getPosts});
+
+  final Key? key;
+
+  final Datum getPosts;
+
+  @override
+  String toString() {
+    return 'CommentRouteArgs{key: $key, getPosts: $getPosts}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! CommentRouteArgs) return false;
+    return key == other.key && getPosts == other.getPosts;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ getPosts.hashCode;
 }
 
 /// generated route for
@@ -460,18 +491,49 @@ class UnderReveiwRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [UserProfilePage]
-class UserProfileRoute extends PageRouteInfo<void> {
-  const UserProfileRoute({List<PageRouteInfo>? children})
-    : super(UserProfileRoute.name, initialChildren: children);
+class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
+  UserProfileRoute({
+    Key? key,
+    required Datum getPosts,
+    List<PageRouteInfo>? children,
+  }) : super(
+         UserProfileRoute.name,
+         args: UserProfileRouteArgs(key: key, getPosts: getPosts),
+         initialChildren: children,
+       );
 
   static const String name = 'UserProfileRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const UserProfilePage();
+      final args = data.argsAs<UserProfileRouteArgs>();
+      return UserProfilePage(key: args.key, getPosts: args.getPosts);
     },
   );
+}
+
+class UserProfileRouteArgs {
+  const UserProfileRouteArgs({this.key, required this.getPosts});
+
+  final Key? key;
+
+  final Datum getPosts;
+
+  @override
+  String toString() {
+    return 'UserProfileRouteArgs{key: $key, getPosts: $getPosts}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! UserProfileRouteArgs) return false;
+    return key == other.key && getPosts == other.getPosts;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ getPosts.hashCode;
 }
 
 /// generated route for

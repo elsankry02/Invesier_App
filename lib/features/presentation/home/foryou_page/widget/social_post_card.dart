@@ -10,7 +10,7 @@ import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 
 class SocialPostCardWidget extends StatelessWidget {
-  final Datum? post;
+  final Datum getPosts;
   final Function()? commentOnTap;
   final Function()? imageOnTap;
   final Widget? trailing;
@@ -19,7 +19,7 @@ class SocialPostCardWidget extends StatelessWidget {
     this.commentOnTap,
     this.imageOnTap,
     this.trailing,
-    this.post,
+    required this.getPosts,
   });
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class SocialPostCardWidget extends StatelessWidget {
                   fit: BoxFit.cover,
                   height: context.height * 0.030,
                   width: context.height * 0.030,
-                  post!.user.avatarUrl,
+                  getPosts.user.avatarUrl,
                 ),
               ),
             ),
@@ -64,14 +64,14 @@ class SocialPostCardWidget extends StatelessWidget {
                   children: [
                     // title
                     Text(
-                      post!.user.name,
+                      getPosts.user.name,
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     // nk name
                     Text(
-                      post!.user.username,
+                      getPosts.user.username,
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
@@ -97,7 +97,7 @@ class SocialPostCardWidget extends StatelessWidget {
           ),
           // subTitle
           Text(
-            post!.content,
+            getPosts.content,
             style: context.kTextTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w500,
             ),
@@ -110,7 +110,7 @@ class SocialPostCardWidget extends StatelessWidget {
               // Growth
               CustomTagButton(
                 svg: AppSvgs.kGrowth,
-                title: post!.upvotesCount.toString(),
+                title: getPosts.upvotesCount.toString(),
                 titleColor: AppColors.kEucalyptus,
                 borderColor: AppColors.kEucalyptus,
                 onTap: () {
@@ -120,7 +120,7 @@ class SocialPostCardWidget extends StatelessWidget {
               CustomTagButton(
                 // Decline
                 svg: AppSvgs.kDecline,
-                title: post!.downvotesCount.toString(),
+                title: getPosts.downvotesCount.toString(),
                 titleColor: AppColors.kRed,
                 borderColor: AppColors.kRed,
                 onTap: () {
@@ -130,7 +130,7 @@ class SocialPostCardWidget extends StatelessWidget {
               CustomTagButton(
                 // Comment
                 svg: AppSvgs.kComment,
-                title: post!.commentsCount.toString(),
+                title: getPosts.commentsCount.toString(),
                 titleColor: AppColors.kBoulder,
                 borderColor: AppColors.kBoulder,
                 onTap: commentOnTap,

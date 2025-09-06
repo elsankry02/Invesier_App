@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 
 import '../../../core/constant/endpoints.dart';
@@ -9,13 +7,13 @@ class GetPostsService {
   final Dio dio;
 
   GetPostsService({required this.dio});
-  Future<GetPostsModel> getPosts({int perPage = 16}) async {
+  Future<List<Datum>> getPosts({int perPage = 16}) async {
     final response = await dio.get(
       Endpoints.kGetPosts,
       queryParameters: {"per_page": perPage},
     );
     final data = response.data as Map<String, dynamic>;
-    log(data.toString());
-    return GetPostsModel.fromJson(data);
+    final result = data["data"] as List<dynamic>;
+    return result.map((e) => Datum.fromJson(e)).toList();
   }
 }

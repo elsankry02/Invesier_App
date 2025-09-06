@@ -27,10 +27,10 @@ class _ForYouWidgetState extends ConsumerState<ForYouWidget> {
       return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: state.getPostsModel.data.length,
+        itemCount: state.getPostsModel.length,
         itemBuilder: (context, index) {
-          final post = state.getPostsModel.data[index];
-          return SocialPostCardWidget(post: post);
+          final post = state.getPostsModel[index];
+          return SocialPostCardWidget(getPosts: post);
         },
       );
     }
