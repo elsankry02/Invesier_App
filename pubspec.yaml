@@ -51,7 +51,13 @@ dependencies:
 dev_dependencies:
   auto_route_generator: ^10.0.1
   build_runner: ^2.4.15
+  flutter_launcher_icons: ^0.14.4
   custom_lint: ^0.7.5
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/image/invesier_logo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -22,4 +22,5 @@ class AppImages {
   static const kProgressBarThree = 'assets/image/progress_bar_three.png';
   static const kProgressBarFour = 'assets/image/progress_bar_four.png';
   static const kLoadingFiles = 'assets/image/loading_files.png';
+  static const kInvesierLogo = 'assets/image/Invesier_logo.png';
 }
