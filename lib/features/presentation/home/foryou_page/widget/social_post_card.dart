@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/features/model/get_posts_model.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
-import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 
-class PostCardWidget extends StatelessWidget {
+class SocialPostCardWidget extends StatelessWidget {
+  final Datum? post;
   final Function()? commentOnTap;
   final Function()? imageOnTap;
   final Widget? trailing;
-  const PostCardWidget({
+  const SocialPostCardWidget({
     super.key,
     this.commentOnTap,
     this.imageOnTap,
     this.trailing,
+    this.post,
   });
   @override
   Widget build(BuildContext context) {
@@ -44,11 +46,11 @@ class PostCardWidget extends StatelessWidget {
               // image
               child: GestureDetector(
                 onTap: imageOnTap,
-                child: Image.asset(
+                child: Image.network(
                   fit: BoxFit.cover,
                   height: context.height * 0.030,
                   width: context.height * 0.030,
-                  AppImages.kBoyThree,
+                  post!.user.avatarUrl,
                 ),
               ),
             ),
@@ -62,14 +64,14 @@ class PostCardWidget extends StatelessWidget {
                   children: [
                     // title
                     Text(
-                      'Charlie White',
+                      post!.user.name,
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     // nk name
                     Text(
-                      '@charlie_w',
+                      post!.user.username,
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w400,
                       ),
@@ -95,7 +97,7 @@ class PostCardWidget extends StatelessWidget {
           ),
           // subTitle
           Text(
-            'Green energy stocks are gaining traction. Investing \nin sustainable companies could be beneficial in the \nlong run.',
+            post!.content,
             style: context.kTextTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w500,
             ),
@@ -108,7 +110,7 @@ class PostCardWidget extends StatelessWidget {
               // Growth
               CustomTagButton(
                 svg: AppSvgs.kGrowth,
-                title: '12k',
+                title: post!.upvotesCount.toString(),
                 titleColor: AppColors.kEucalyptus,
                 borderColor: AppColors.kEucalyptus,
                 onTap: () {
@@ -118,7 +120,7 @@ class PostCardWidget extends StatelessWidget {
               CustomTagButton(
                 // Decline
                 svg: AppSvgs.kDecline,
-                title: '12K',
+                title: post!.downvotesCount.toString(),
                 titleColor: AppColors.kRed,
                 borderColor: AppColors.kRed,
                 onTap: () {
@@ -128,7 +130,7 @@ class PostCardWidget extends StatelessWidget {
               CustomTagButton(
                 // Comment
                 svg: AppSvgs.kComment,
-                title: '160K',
+                title: post!.commentsCount.toString(),
                 titleColor: AppColors.kBoulder,
                 borderColor: AppColors.kBoulder,
                 onTap: commentOnTap,

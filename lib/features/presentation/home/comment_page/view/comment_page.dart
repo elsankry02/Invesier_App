@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../home_page/widget/social_post_card.dart';
+import '../../foryou_page/widget/social_post_card.dart';
 import '../widget/reply_widget.dart';
 
 @RoutePage()
@@ -27,7 +27,8 @@ class CommentPage extends StatelessWidget {
           child: Column(
             children: [
               // Post Card Widget
-              PostCardWidget(
+              SocialPostCardWidget(
+                 
                 commentOnTap: () {
                   showModalBottomSheet(
                     isDismissible: false,

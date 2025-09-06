@@ -10,7 +10,7 @@ class GetPostsinital extends GetPostsState {}
 class GetPostsLoading extends GetPostsState {}
 
 class GetPostsSuccess extends GetPostsState {
-  final List<GetPostsModel> getPostsModel;
+  final GetPostsModel getPostsModel;
 
   GetPostsSuccess({required this.getPostsModel});
 }
@@ -31,7 +31,6 @@ class GetPostsNotifier extends Notifier<GetPostsState> {
     final provider = ref.read(getPostsServiceProvider);
     try {
       state = GetPostsLoading();
-
       final posts = await provider.getPosts();
       state = GetPostsSuccess(getPostsModel: posts);
     } on Exception catch (e) {
@@ -39,3 +38,7 @@ class GetPostsNotifier extends Notifier<GetPostsState> {
     }
   }
 }
+
+final getPostsProvider = NotifierProvider<GetPostsNotifier, GetPostsState>(
+  GetPostsNotifier.new,
+);

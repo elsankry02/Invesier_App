@@ -6,7 +6,7 @@ import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../home_page/widget/social_post_card.dart';
+import '../../foryou_page/widget/social_post_card.dart';
 import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
@@ -72,7 +72,7 @@ class UserProfilePage extends StatelessWidget {
               shrinkWrap: true,
               itemCount: 2,
               itemBuilder: (context, index) {
-                return PostCardWidget(
+                return SocialPostCardWidget(
                   commentOnTap: () {
                     context.router.push(CommentRoute());
                   },

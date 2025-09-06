@@ -26,7 +26,9 @@ class DrawerPage extends ConsumerStatefulWidget {
 class _DrawerPageState extends ConsumerState<DrawerPage> {
   @override
   void initState() {
-    ref.read(getAuthenticatedUserProvider.notifier).getUser();
+    Future.microtask(() {
+      ref.read(getAuthenticatedUserProvider.notifier).getUser();
+    });
     super.initState();
   }
 
