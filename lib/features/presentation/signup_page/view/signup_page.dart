@@ -11,7 +11,7 @@ import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
-import '../../../provider/post/register_new_user_provider.dart';
+import '../../../data/provider/post/register_new_user_provider.dart';
 
 @RoutePage()
 class SignupPage extends ConsumerStatefulWidget {

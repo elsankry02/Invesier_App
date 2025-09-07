@@ -11,7 +11,7 @@ import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../../../provider/get/get_authenticated_user_provider.dart';
+import '../../../../data/provider/get/get_authenticated_user_provider.dart';
 import '../../home_follow_page/view/home_follow_page.dart';
 
 class PersonalAppBarWidget extends StatelessWidget {

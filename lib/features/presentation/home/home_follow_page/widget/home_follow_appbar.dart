@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../../../model/user_model.dart';
+import '../../../../data/model/user_model.dart';
 
 class HomeFollowAppBarWidget extends StatelessWidget {
   final UserModel userModel;

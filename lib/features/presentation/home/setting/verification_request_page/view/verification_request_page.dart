@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/components/show_custom_top_snack_bar.dart';
@@ -9,10 +10,10 @@ import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
+import '../../../../../data/provider/get/get_authenticated_user_provider.dart';
 import '../widget/icon_label_tile.dart';
 import '../widget/labeled_text_field.dart';
 import '../widget/upload_button_field.dart';
-import '../../../../../provider/get/get_authenticated_user_provider.dart';
 
 @RoutePage()
 class VerificationRequestPage extends ConsumerStatefulWidget {

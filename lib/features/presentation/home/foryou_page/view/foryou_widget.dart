@@ -2,9 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../../core/constant/app_colors.dart';
+import '../../../../data/provider/get/get_posts_provider.dart';
 import '../widget/social_post_card.dart';
-import '../../../../provider/get/get_posts_provider.dart';
 
 class ForYouWidget extends ConsumerStatefulWidget {
   const ForYouWidget({super.key});
@@ -27,9 +28,9 @@ class _ForYouWidgetState extends ConsumerState<ForYouWidget> {
       return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: state.getPostsModel.length,
+        itemCount: state.data.length,
         itemBuilder: (context, index) {
-          final post = state.getPostsModel[index];
+          final post = state.data[index];
           return SocialPostCardWidget(getPosts: post);
         },
       );

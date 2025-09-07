@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../model/get_posts_model.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
@@ -8,6 +7,7 @@ import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../data/model/get_posts_model.dart';
 
 class SocialPostCardWidget extends StatelessWidget {
   final Datum getPosts;

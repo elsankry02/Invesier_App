@@ -9,9 +9,9 @@ import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_strings.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../../../provider/get/get_authenticated_user_provider.dart';
-import '../../../../provider/post/logout_provider.dart';
-import '../../../../provider/provider.dart';
+import '../../../../data/provider/get/get_authenticated_user_provider.dart';
+import '../../../../data/provider/post/logout_provider.dart';
+import '../../../../data/provider/provider.dart';
 import '../widget/drawer_dialog_logout_widget.dart';
 import '../widget/drawer_title_widget.dart';
 

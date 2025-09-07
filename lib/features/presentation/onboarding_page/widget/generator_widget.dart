@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
-import '../../../model/onboarding_model.dart';
+import '../../../data/model/onboarding_model.dart';
 
 class GeneratorWidget extends StatelessWidget {
   final int currentIndex;

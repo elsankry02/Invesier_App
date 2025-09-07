@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../router/router.dart';
 
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
-import '../../features/provider/post/verify_otp_provider.dart';
+import '../../features/data/provider/post/verify_otp_provider.dart';
 import '../constant/app_colors.dart';
 import '../constant/app_enums.dart';
 import '../extension/extension.dart';

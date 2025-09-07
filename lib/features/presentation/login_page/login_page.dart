@@ -11,7 +11,7 @@ import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_enums.dart';
 import '../../../core/extension/extension.dart';
 import '../../../core/router/router.dart';
-import '../../provider/post/resend_otp_provider.dart';
+import '../../data/provider/post/resend_otp_provider.dart';
 
 @RoutePage()
 class LoginPage extends ConsumerStatefulWidget {

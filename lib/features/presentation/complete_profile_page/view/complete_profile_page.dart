@@ -17,8 +17,8 @@ import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_strings.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/router/router.dart';
-import '../../../provider/post/complete_profile_provider.dart';
-import '../../../provider/provider.dart';
+import '../../../data/provider/post/complete_profile_provider.dart';
+import '../../../data/provider/provider.dart';
 import '../widget/circle_avatar_widget.dart';
 
 @RoutePage()

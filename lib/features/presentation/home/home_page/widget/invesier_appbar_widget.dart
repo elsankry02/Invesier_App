@@ -8,7 +8,7 @@ import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
 import '../../../../../core/router/router.dart';
-import '../../../../provider/get/get_authenticated_user_provider.dart';
+import '../../../../data/provider/get/get_authenticated_user_provider.dart';
 import '../../../main_navigation_page/view/main_navigation_page.dart';
 
 class InvesierAppBar extends StatelessWidget {

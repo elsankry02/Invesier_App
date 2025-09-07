@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../core/extension/extension.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
+import '../../../../../core/extension/extension.dart';
 
 class HomeFollowTextFormFieldWidget extends StatelessWidget {
   final TextEditingController? searchController;

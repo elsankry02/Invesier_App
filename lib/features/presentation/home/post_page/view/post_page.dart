@@ -11,7 +11,7 @@ import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
-import '../../../../provider/post/creat_post_provider.dart';
+import '../../../../data/provider/post/creat_post_provider.dart';
 import '../widget/post_app_bar_widget.dart';
 
 @RoutePage()
