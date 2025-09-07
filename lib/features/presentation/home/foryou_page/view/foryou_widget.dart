@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_colors.dart';
-import 'package:invesier/features/presentation/home/foryou_page/widget/social_post_card.dart';
-import 'package:invesier/features/provider/get/get_posts_provider.dart';
+import '../../../../../core/constant/app_colors.dart';
+import '../widget/social_post_card.dart';
+import '../../../../provider/get/get_posts_provider.dart';
 
 class ForYouWidget extends ConsumerStatefulWidget {
   const ForYouWidget({super.key});

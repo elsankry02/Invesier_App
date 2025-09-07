@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/model/get_posts_model.dart';
+import '../../../../model/get_posts_model.dart';
 
 import '../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../core/constant/app_colors.dart';

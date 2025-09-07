@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/model/get_posts_model.dart';
+import '../../features/model/get_posts_model.dart';
 import '../../features/presentation/home/setting/personal_details_page/view/personal_details_page.dart';
 import '../../features/presentation/home/setting/rejected_page/view/rejected_page.dart';
 import '../../features/presentation/home/setting/under_reveiw_page/view/under_reveiw_page.dart';

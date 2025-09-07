@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/model/get_posts_model.dart';
+import '../../../../model/get_posts_model.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/show_custom_top_snack_bar.dart';
