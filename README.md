@@ -1,7 +1,6 @@
 # Invesier App 💹
 
 ![Image](![Untitled Project](https://github.com/user-attachments/assets/6500d471-e656-4e3d-8dab-85a4f061ab19)
-)
 
 
 ## 📊 Invesier App Overview
