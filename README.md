@@ -1,7 +1,6 @@
 ## Invesier App Overview 📊
 
-![Image](![WhatsApp Image 2025-09-08 at 14 30 42_99af018c](https://github.com/user-attachments/assets/19f2f4a4-bd9b-433d-86f1-f6ff01628b66)
-)
+![Image](https://github.com/user-attachments/assets/19f2f4a4-bd9b-433d-86f1-f6ff01628b66)
 
 
 # Invesier App
