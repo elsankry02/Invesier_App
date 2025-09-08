@@ -1,3 +1,9 @@
+# Invesier App 💹
+
+![Image](![Untitled Project](https://github.com/user-attachments/assets/6500d471-e656-4e3d-8dab-85a4f061ab19)
+)
+
+
 ## 📊 Invesier App Overview
 
 The Invesier App is a Flutter-based mobile application designed to provide users with a comprehensive platform for managing their investments. With a user-friendly interface and robust features, the app allows users to track their investment portfolios, analyze market trends, and make informed financial decisions.
