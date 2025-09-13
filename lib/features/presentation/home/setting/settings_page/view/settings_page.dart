@@ -4,11 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../../core/components/custom_appbar_widget.dart';
-import '../../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_strings.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/provider/delete/delete_account_provider.dart';
 import '../../../../../data/provider/provider.dart';
@@ -34,15 +34,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
     final local = context.kAppLocalizations;
     ref.listen(deleteAccountProvider, (_, state) async {
       if (state is DeleteAccountFailure) {
-        showCustomErrorMessage(context, message: state.errorMessage);
+        ErrorMessage(context, message: state.errorMessage);
         return;
       } else if (state is DeleteAccountSuccess) {
         await ref.read(prefsProvider).remove(AppStrings.userToken);
         await context.router.replaceAll([WelcomeRoute()]);
-        showCustomSuccessMessage(
-          context,
-          message: local.accountdeletedsuccessfully,
-        );
+        SuccessMessage(context, message: local.accountdeletedsuccessfully);
       }
     });
     return Scaffold(
@@ -74,11 +71,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               SettingsItemWidget(
                 leading: SvgPicture.asset(AppSvgs.kRepoIconCarrier),
                 title: local.personaldetails,
-                onTap:
-                    () => showCustomErrorMessage(
-                      context,
-                      message: local.comingsoon,
-                    ),
+                onTap: () => ErrorMessage(context, message: local.comingsoon),
               ),
               SettingsItemWidget(
                 leading: Icon(Icons.language, color: AppColors.kWhite),
@@ -99,11 +92,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   height: context.height * 0.024,
                 ),
                 title: local.blockerslist,
-                onTap:
-                    () => showCustomErrorMessage(
-                      context,
-                      message: local.comingsoon,
-                    ),
+                onTap: () => ErrorMessage(context, message: local.comingsoon),
               ),
               SettingsItemWidget(
                 leading: SvgPicture.asset(

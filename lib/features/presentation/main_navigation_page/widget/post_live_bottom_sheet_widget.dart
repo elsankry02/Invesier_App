@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/extension/extension.dart';
+import '../../../../core/func/show_top_snack_bar.dart';
 import '../../../../core/router/router.dart';
 import 'bottom_sheet_button_widget.dart';
 
@@ -45,11 +45,7 @@ class PostLiveBottomSheetWidget extends StatelessWidget {
             const Divider(thickness: 2),
             BottomSheetButtonWidget(
               title: local.live,
-              onTap:
-                  () => showCustomErrorMessage(
-                    context,
-                    message: local.comingsoon,
-                  ),
+              onTap: () => ErrorMessage(context, message: local.comingsoon),
             ),
           ],
         ),

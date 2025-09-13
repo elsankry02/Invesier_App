@@ -4,11 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
-import '../../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/provider/get/get_authenticated_user_provider.dart';
 import '../widget/icon_label_tile.dart';
@@ -104,19 +104,11 @@ class _VerificationRequestPageState
                 SizedBox(height: context.height * 0.004),
                 UploadButtonField(
                   title: local.taptouploadfront,
-                  onTap:
-                      () => showCustomErrorMessage(
-                        context,
-                        message: local.comingsoon,
-                      ),
+                  onTap: () => ErrorMessage(context, message: local.comingsoon),
                 ),
                 UploadButtonField(
                   title: local.taptouploadback,
-                  onTap:
-                      () => showCustomErrorMessage(
-                        context,
-                        message: local.comingsoon,
-                      ),
+                  onTap: () => ErrorMessage(context, message: local.comingsoon),
                 ),
                 SizedBox(height: context.height * 0.058),
                 CustomPrimaryButton(

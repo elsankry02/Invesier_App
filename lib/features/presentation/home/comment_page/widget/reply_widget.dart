@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../../core/func/show_top_snack_bar.dart';
 
 class ReplyWidget extends StatelessWidget {
   final Function() onTap;
@@ -53,15 +53,10 @@ class ReplyWidget extends StatelessWidget {
                     firstTitle: local.pinpost,
                     secondTitle: local.deletepost,
                     onFirstTap:
-                        () => showCustomErrorMessage(
-                          context,
-                          message: local.pinaction,
-                        ),
+                        () => ErrorMessage(context, message: local.pinaction),
                     onSecondTap:
-                        () => showCustomErrorMessage(
-                          context,
-                          message: local.deleteaction,
-                        ),
+                        () =>
+                            ErrorMessage(context, message: local.deleteaction),
                   ),
                   title: Row(
                     children: [
@@ -120,10 +115,7 @@ class ReplyWidget extends StatelessWidget {
                       titleColor: AppColors.kEucalyptus,
                       borderColor: AppColors.kEucalyptus,
                       onTap: () {
-                        showCustomErrorMessage(
-                          context,
-                          message: local.comingsoon,
-                        );
+                        ErrorMessage(context, message: local.comingsoon);
                       },
                     ),
                     CustomTagButton(
@@ -133,10 +125,7 @@ class ReplyWidget extends StatelessWidget {
                       titleColor: AppColors.kRed,
                       borderColor: AppColors.kRed,
                       onTap: () {
-                        showCustomErrorMessage(
-                          context,
-                          message: local.comingsoon,
-                        );
+                        ErrorMessage(context, message: local.comingsoon);
                       },
                     ),
                     CustomTagButton(

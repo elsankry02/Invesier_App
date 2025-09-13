@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
-import '../../../../../../core/components/show_custom_top_snack_bar.dart';
+import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
@@ -69,10 +69,7 @@ class RejectedDialogWidget extends StatelessWidget {
                 ),
                 onTap: () {
                   context.router.maybePop();
-                  showCustomSuccessMessage(
-                    context,
-                    message: local.requestsuccess,
-                  );
+                  SuccessMessage(context, message: local.requestsuccess);
                   context.router.replace(YouAreVerifiedRoute());
                 },
               ),

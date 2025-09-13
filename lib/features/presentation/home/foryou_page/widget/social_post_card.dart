@@ -3,10 +3,10 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
 import '../../../../../core/components/custom_tag_button.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_svgs.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../data/model/get_posts_model.dart';
 
 class SocialPostCardWidget extends StatelessWidget {
@@ -114,7 +114,7 @@ class SocialPostCardWidget extends StatelessWidget {
                 titleColor: AppColors.kEucalyptus,
                 borderColor: AppColors.kEucalyptus,
                 onTap: () {
-                  showCustomErrorMessage(context, message: local.comingsoon);
+                  ErrorMessage(context, message: local.comingsoon);
                 },
               ),
               CustomTagButton(
@@ -124,7 +124,7 @@ class SocialPostCardWidget extends StatelessWidget {
                 titleColor: AppColors.kRed,
                 borderColor: AppColors.kRed,
                 onTap: () {
-                  showCustomErrorMessage(context, message: local.comingsoon);
+                  ErrorMessage(context, message: local.comingsoon);
                 },
               ),
               CustomTagButton(
@@ -139,7 +139,7 @@ class SocialPostCardWidget extends StatelessWidget {
               GestureDetector(
                 child: SvgPicture.asset(AppSvgs.kSharing),
                 onTap: () {
-                  showCustomErrorMessage(context, message: local.comingsoon);
+                  ErrorMessage(context, message: local.comingsoon);
                 },
               ),
             ],

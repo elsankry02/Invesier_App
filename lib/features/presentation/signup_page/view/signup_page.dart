@@ -6,10 +6,10 @@ import '../../../../core/components/custom_contact_type_field.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_social_auth_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
-import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
+import '../../../../core/func/show_top_snack_bar.dart';
 import '../../../../core/router/router.dart';
 import '../../../data/provider/post/register_new_user_provider.dart';
 
@@ -55,12 +55,12 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     final state = ref.watch(registerNewUserProvider);
     ref.listen(registerNewUserProvider, (_, state) {
       if (state is RegisterNewUserFailure) {
-        showCustomErrorMessage(context, message: state.errMessage);
+        ErrorMessage(context, message: state.errMessage);
         // log(state.errMessage);
         return;
       }
       if (state is RegisterNewUserSuccess) {
-        showCustomSuccessMessage(
+        SuccessMessage(
           context,
           message: local.otpsentsuccessfullypleaseverifytocontinue,
         );
@@ -236,10 +236,10 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 // Custom Social Auth Buttons
                 CustomSocialAuthButton(
                   onLoginWithGoogle: () {
-                    showCustomErrorMessage(context, message: local.comingsoon);
+                    ErrorMessage(context, message: local.comingsoon);
                   },
                   onLoginWithApple: () {
-                    showCustomErrorMessage(context, message: local.comingsoon);
+                    ErrorMessage(context, message: local.comingsoon);
                   },
                 ),
                 SizedBox(height: context.height * 0.057),

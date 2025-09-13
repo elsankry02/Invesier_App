@@ -12,10 +12,10 @@ import '../../../../core/components/custom_icon_button.dart';
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
 import '../../../../core/components/custom_text_form_field.dart';
-import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_strings.dart';
 import '../../../../core/extension/extension.dart';
+import '../../../../core/func/show_top_snack_bar.dart';
 import '../../../../core/router/router.dart';
 import '../../../data/provider/post/complete_profile_provider.dart';
 import '../../../data/provider/provider.dart';
@@ -55,7 +55,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
   Future<void> completeProfile() async {
     if (!formKey.currentState!.validate()) return;
     if (avatarFile == null) {
-      showCustomErrorMessage(
+      ErrorMessage(
         context,
         message: context.kAppLocalizations.pleasechooseanavatarimage,
       );
@@ -84,10 +84,7 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
         return;
       }
       if (state is CompleteProfileSuccess) {
-        showCustomSuccessMessage(
-          context,
-          message: local.profilecompletedsuccessfully,
-        );
+        SuccessMessage(context, message: local.profilecompletedsuccessfully);
         context.router.replace(MainNavigationRoute());
       }
     });

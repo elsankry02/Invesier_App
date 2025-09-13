@@ -8,9 +8,9 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../../../core/components/custom_icon_button.dart';
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../data/provider/post/creat_post_provider.dart';
 import '../widget/post_app_bar_widget.dart';
 
@@ -53,7 +53,7 @@ class _PostPageState extends ConsumerState<PostPage> {
 
   Future<void> createPost() async {
     if (file == null) {
-      showCustomErrorMessage(
+      ErrorMessage(
         context,
         message: context.kAppLocalizations.selectanimagefromyourgalleryorcamera,
       );
@@ -69,7 +69,7 @@ class _PostPageState extends ConsumerState<PostPage> {
     final state = ref.watch(createPostProvider);
     ref.listen(createPostProvider, (_, state) {
       if (state is CreatPostFailure) {
-        showCustomErrorMessage(context, message: state.errMessage);
+        ErrorMessage(context, message: state.errMessage);
       }
     });
     return Scaffold(

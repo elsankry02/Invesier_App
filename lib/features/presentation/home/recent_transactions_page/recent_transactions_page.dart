@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/components/custom_appbar_widget.dart';
 import '../../../../core/components/custom_primary_button.dart';
-import '../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_svgs.dart';
 import '../../../../core/extension/extension.dart';
+import '../../../../core/func/show_top_snack_bar.dart';
 import '../wallet_page/widget/recharge_transaction_tile_widget.dart';
 
 @RoutePage()
@@ -57,10 +57,7 @@ class RecentTransactionsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kOceanGreen),
                     onTap:
-                        () => showCustomErrorMessage(
-                          context,
-                          message: local.comingsoon,
-                        ),
+                        () => ErrorMessage(context, message: local.comingsoon),
                   ),
                   CustomPrimaryButton(
                     title: local.date,
@@ -74,10 +71,7 @@ class RecentTransactionsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kOceanGreen),
                     onTap:
-                        () => showCustomErrorMessage(
-                          context,
-                          message: local.comingsoon,
-                        ),
+                        () => ErrorMessage(context, message: local.comingsoon),
                   ),
                   CustomPrimaryButton(
                     title: local.invees,
@@ -91,10 +85,7 @@ class RecentTransactionsPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kOceanGreen),
                     onTap:
-                        () => showCustomErrorMessage(
-                          context,
-                          message: local.comingsoon,
-                        ),
+                        () => ErrorMessage(context, message: local.comingsoon),
                   ),
                 ],
               ),

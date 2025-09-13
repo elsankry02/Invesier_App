@@ -4,10 +4,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/constant/app_strings.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../core/router/router.dart';
 import '../../../../data/provider/get/get_authenticated_user_provider.dart';
 import '../../../../data/provider/post/logout_provider.dart';
@@ -42,14 +42,14 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
     final local = context.kAppLocalizations;
     ref.listen(logoutProvider, (_, state) async {
       if (state is LogoutFaliure) {
-        showCustomErrorMessage(context, message: state.errMessage);
+        ErrorMessage(context, message: state.errMessage);
         log(state.errMessage);
         return;
       }
       if (state is LogoutSuccess) {
         await ref.read(prefsProvider).remove(AppStrings.userToken);
         await context.router.replaceAll([WelcomeRoute()]);
-        return showCustomSuccessMessage(context, message: local.logoutsuccess);
+        return SuccessMessage(context, message: local.logoutsuccess);
       }
     });
     return Drawer(

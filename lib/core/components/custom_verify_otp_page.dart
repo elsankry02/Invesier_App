@@ -3,18 +3,18 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../router/router.dart';
 
-import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../../features/data/provider/post/verify_otp_provider.dart';
+import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../constant/app_colors.dart';
 import '../constant/app_enums.dart';
 import '../extension/extension.dart';
+import '../func/show_top_snack_bar.dart';
+import '../router/router.dart';
 import 'custom_appbar_title.dart';
 import 'custom_icon_button.dart';
 import 'custom_otp_code_field.dart';
 import 'custom_primary_button.dart';
-import 'show_custom_top_snack_bar.dart';
 
 @RoutePage()
 class CustomVerifyOtpPage extends ConsumerStatefulWidget {
@@ -67,7 +67,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
   }
 
   void resendCode() {
-    showCustomSuccessMessage(
+    SuccessMessage(
       context,
       message: context.kAppLocalizations.anewcodehasbeensent,
     );
@@ -92,23 +92,17 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
     final state = ref.watch(verifyOtpProvider);
     ref.listen(verifyOtpProvider, (_, state) {
       if (state is VerifyOtpFailure) {
-        showCustomErrorMessage(context, message: state.errMessage);
+        ErrorMessage(context, message: state.errMessage);
         return;
       }
       if (state is VerifyOtpSuccess) {
         final isLogin = widget.isLogin;
         if (isLogin == true) {
           context.router.replace(MainNavigationRoute());
-          showCustomSuccessMessage(
-            context,
-            message: local.otpverifiedsuccessfully,
-          );
+          SuccessMessage(context, message: local.otpverifiedsuccessfully);
         } else {
           context.router.push(CompleteProfileRoute());
-          showCustomSuccessMessage(
-            context,
-            message: local.authenticationsuccessful,
-          );
+          SuccessMessage(context, message: local.authenticationsuccessful);
         }
       }
     });

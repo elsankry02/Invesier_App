@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/components/custom_primary_button.dart';
-import '../../../../../core/components/show_custom_top_snack_bar.dart';
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
+import '../../../../../core/func/show_top_snack_bar.dart';
 
 class UserAlertDialogWidget extends StatelessWidget {
   final String title;
@@ -69,7 +69,7 @@ class UserAlertDialogWidget extends StatelessWidget {
                 ),
                 onTap: () {
                   context.router.maybePop();
-                  showCustomErrorMessage(context, message: local.comingsoon);
+                  ErrorMessage(context, message: local.comingsoon);
                 },
               ),
             ],
