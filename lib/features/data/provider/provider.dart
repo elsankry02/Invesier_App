@@ -24,7 +24,7 @@ final dioProvider = Provider<Dio>((ref) {
   log("Token : $token");
   return Dio(
     BaseOptions(
-      baseUrl: kBaseUrl,
+      baseUrl: baseUrl,
       headers: {
         if (token != null) AppStrings.authorization: "Bearer $token",
         AppStrings.contentType: "application/json",
