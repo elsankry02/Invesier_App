@@ -51,7 +51,6 @@ class CustomSocialAuthButton extends StatelessWidget {
     required String assetName,
   }) {
     return GestureDetector(
-      // onTapGoogle
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 11, horizontal: 40),
@@ -59,7 +58,6 @@ class CustomSocialAuthButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           color: AppColors.kWhite,
         ),
-        // title
         child: SvgPicture.asset(assetName),
       ),
     );

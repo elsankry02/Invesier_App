@@ -11,7 +11,7 @@ class AppSvgs {
   static const kDelete = 'assets/svg/delete.svg';
   static const kGrowth = 'assets/svg/growth.svg';
   static const kInvesier = 'assets/svg/invesier.svg';
-  static const kApple = 'assets/svg/vector.svg';
+  static const kApple = 'assets/svg/apple.svg';
   static const kTrade = 'assets/svg/trade.svg';
   static const kLearn = 'assets/svg/learn.svg';
   static const kReply = 'assets/svg/reply.svg';
