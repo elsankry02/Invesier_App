@@ -10,8 +10,8 @@ import '../../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../../core/extension/extension.dart';
 import '../../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../../core/router/router.dart';
-import '../../../../../../data/provider/delete/delete_account_provider.dart';
-import '../../../../../../data/provider/provider.dart';
+import '../../../../../../data/providers/delete/delete_account_provider.dart';
+import '../../../../../../data/providers/provider.dart';
 import '../widget/setting_change_language.dart';
 import '../widget/settings_item_widget.dart';
 

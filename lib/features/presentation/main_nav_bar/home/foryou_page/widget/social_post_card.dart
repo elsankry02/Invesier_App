@@ -7,7 +7,7 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../data/model/get_posts_model.dart';
+import '../../../../../data/models/get_posts_model.dart';
 
 class SocialPostCardWidget extends StatelessWidget {
   final Datum getPosts;

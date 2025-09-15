@@ -3,21 +3,22 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/env.dart';
+import 'package:invesier/features/data/services/get/get_user_profile_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
-import '../service/delete/delete_account_service.dart';
-import '../service/get/get_authenticated_user_service.dart';
-import '../service/get/get_posts_service.dart';
-import '../service/post/check_username_availability_service.dart';
-import '../service/post/complete_profile_service.dart';
-import '../service/post/create_post_service.dart';
-import '../service/post/logout_service.dart';
-import '../service/post/register_new_user_service.dart';
-import '../service/post/remove_an_fcm_token_from_the_database_service.dart';
-import '../service/post/resend_otp_service.dart';
-import '../service/post/store_the_fcm_token_for_the_authenticated_user_service.dart';
-import '../service/post/verify_otp_service.dart';
+import '../services/delete/delete_account_service.dart';
+import '../services/get/get_authenticated_user_service.dart';
+import '../services/get/get_posts_service.dart';
+import '../services/post/check_username_availability_service.dart';
+import '../services/post/complete_profile_service.dart';
+import '../services/post/create_post_service.dart';
+import '../services/post/logout_service.dart';
+import '../services/post/register_new_user_service.dart';
+import '../services/post/remove_an_fcm_token_from_the_database_service.dart';
+import '../services/post/resend_otp_service.dart';
+import '../services/post/store_the_fcm_token_for_the_authenticated_user_service.dart';
+import '../services/post/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final token = ref.watch(prefsProvider).getString(AppStrings.userToken);
@@ -90,4 +91,8 @@ final prefsProvider = Provider<SharedPreferences>((ref) {
 // get Posts Service Provider
 final getPostsServiceProvider = Provider<GetPostsService>((ref) {
   return GetPostsService(dio: ref.read(dioProvider));
+});
+// get User Profile Service Provider
+final getUserProfileServiceProvider = Provider<GetUserProfileService>((ref) {
+  return GetUserProfileService(dio: ref.read(dioProvider));
 });

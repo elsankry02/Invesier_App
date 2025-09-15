@@ -7,7 +7,7 @@ import '../../../core/constant/app_images.dart';
 import '../../../core/constant/app_strings.dart';
 import '../../../core/extension/extension.dart';
 import '../../../core/router/router.dart';
-import '../../data/provider/provider.dart';
+import '../../data/providers/provider.dart';
 
 @RoutePage()
 class SplashPage extends ConsumerStatefulWidget {

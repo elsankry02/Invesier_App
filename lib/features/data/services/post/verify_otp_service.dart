@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 import '../../../../core/constant/app_strings.dart';
 import '../../../../core/constant/endpoints.dart';
-import '../../model/login_model.dart';
+import '../../models/login_model.dart';
 
 class VerifyOtpService {
   final Dio dio;

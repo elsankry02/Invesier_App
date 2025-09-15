@@ -7,11 +7,17 @@ import '../../../../../../core/extension/extension.dart';
 
 class HomeFollowTextFormFieldWidget extends StatelessWidget {
   final TextEditingController? searchController;
-  const HomeFollowTextFormFieldWidget({super.key, this.searchController});
+  final void Function(String value)? onFieldSubmitted;
+  const HomeFollowTextFormFieldWidget({
+    super.key,
+    this.searchController,
+    this.onFieldSubmitted,
+  });
   @override
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return TextFormField(
+      onFieldSubmitted: onFieldSubmitted,
       cursorColor: AppColors.kDarkenText,
       controller: searchController,
       decoration: InputDecoration(

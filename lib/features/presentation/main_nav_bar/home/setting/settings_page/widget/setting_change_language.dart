@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../../core/constant/app_enums.dart';
 import '../../../../../../../core/extension/extension.dart';
-import '../../../../../../data/provider/localization_provider.dart';
-import '../../../../../../data/provider/provider.dart';
+import '../../../../../../data/providers/localization_provider.dart';
+import '../../../../../../data/providers/provider.dart';
 
 class SettingChangeLanguage extends ConsumerStatefulWidget {
   const SettingChangeLanguage({super.key});

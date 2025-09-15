@@ -10,7 +10,7 @@ import '../../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../../core/extension/extension.dart';
 import '../../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../../core/router/router.dart';
-import '../../../../../../data/provider/get/get_authenticated_user_provider.dart';
+import '../../../../../../data/providers/get/get_authenticated_user_provider.dart';
 import '../widget/icon_label_tile.dart';
 import '../widget/labeled_text_field.dart';
 import '../widget/upload_button_field.dart';

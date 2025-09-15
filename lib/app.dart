@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/constant/app_colors.dart';
 import 'core/constant/app_strings.dart';
 import 'core/router/router.dart';
-import 'features/data/provider/localization_provider.dart';
+import 'features/data/providers/localization_provider.dart';
 import 'l10n/app_localizations.dart';
 
 class InvesierApp extends ConsumerStatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 import '../../../../core/constant/endpoints.dart';
-import '../../model/get_posts_model.dart';
+import '../../models/get_posts_model.dart';
 
 class GetPostsService {
   final Dio dio;

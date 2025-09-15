@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 import '../../../../core/constant/endpoints.dart';
-import '../../model/user_model.dart';
+import '../../models/user_model.dart';
 
 class GetAuthenticatedUserService {
   final Dio dio;

@@ -1,6 +1,8 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 
-import '../../model/get_posts_model.dart';
+import '../../models/get_posts_model.dart';
 import '../provider.dart';
 
 abstract class GetPostsState {}
@@ -34,7 +36,10 @@ class GetPostsNotifier extends Notifier<GetPostsState> {
       final posts = await provider.getPosts();
       state = GetPostsSuccess(data: posts);
     } on Exception catch (e) {
-      state = GetPostsFailure(errMessage: e.toString());
+      if (e is DioException) {
+        final errMessage = e.response!.data;
+        state = GetPostsFailure(errMessage: errMessage[AppStrings.message]);
+      }
     }
   }
 }

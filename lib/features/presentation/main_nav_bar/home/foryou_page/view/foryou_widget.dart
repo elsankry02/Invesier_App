@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../data/provider/get/get_posts_provider.dart';
+import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../widget/social_post_card.dart';
 
 class ForYouWidget extends ConsumerStatefulWidget {

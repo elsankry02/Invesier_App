@@ -11,7 +11,7 @@ import '../../../../core/constant/app_enums.dart';
 import '../../../../core/extension/extension.dart';
 import '../../../../core/func/show_top_snack_bar.dart';
 import '../../../../core/router/router.dart';
-import '../../../data/provider/post/register_new_user_provider.dart';
+import '../../../data/providers/post/register_new_user_provider.dart';
 
 @RoutePage()
 class SignupPage extends ConsumerStatefulWidget {
