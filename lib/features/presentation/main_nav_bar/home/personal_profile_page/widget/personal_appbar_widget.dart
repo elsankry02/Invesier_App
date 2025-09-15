@@ -12,7 +12,7 @@ import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
-import '../../home_follow_page/view/home_follow_page.dart';
+import '../../followers_page/view/followers_page.dart';
 
 class PersonalAppBarWidget extends StatelessWidget {
   const PersonalAppBarWidget({super.key});

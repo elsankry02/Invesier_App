@@ -1,16 +1,27 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_no_posts_widget.dart';
+import 'package:invesier/core/func/show_top_snack_bar.dart';
+import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/search_page/widget/search_tile_widget.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../widget/home_follow_textformfield_widget.dart';
 
 @RoutePage()
-class SearchPage extends StatelessWidget {
+class SearchPage extends ConsumerStatefulWidget {
   const SearchPage({super.key});
 
+  @override
+  ConsumerState<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends ConsumerState<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,21 +49,37 @@ class SearchPage extends StatelessWidget {
                       context.router.maybePop();
                     },
                   ),
-                  ClipOval(
-                    child: Image.asset(
-                      AppImages.kBoyFour,
-                      width: context.height * 0.036,
-                      height: context.height * 0.036,
-                      fit: BoxFit.cover,
+                  // HomeFollow TextFormField Widget
+                  Expanded(
+                    child: HomeFollowTextFormFieldWidget(
+                      onFieldSubmitted: (value) {
+                        log(value.toString());
+                        ref
+                            .read(getUserProfileProvider.notifier)
+                            .getUserProfile(username: value.trim());
+                      },
                     ),
                   ),
-                  SizedBox(width: context.width * 0.015),
-                  // HomeFollow TextFormField Widget
-                  Expanded(child: HomeFollowTextFormFieldWidget()),
-                  SizedBox(width: context.width * 0.020),
                 ],
               ),
-              SizedBox(width: context.height * 0.020),
+              SizedBox(height: context.height * 0.020),
+              Consumer(
+                builder: (context, ref, child) {
+                  final state = ref.watch(getUserProfileProvider);
+                  if (state is GetUserProfileSuccess) {
+                    return SearchTileWidget(
+                      getUserProfileModel: state.userData,
+                    );
+                  } else if (state is GetUserProfileFailure) {
+                    return ErrorMessage(context, message: state.errMessage);
+                  } else if (state is GetUserProfileLoading) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                  return CustomNoPostsWidget(
+                    title: context.kAppLocalizations.nopoststodisplay,
+                  );
+                },
+              ),
             ],
           ),
         ),

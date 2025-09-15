@@ -1,16 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/followers_page/view/followers_pioneers_page.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
-import '../../pioneers_page/pioneers_widget.dart';
 import '../../search_page/widget/home_follow_textformfield_widget.dart';
-import '../widget/fans_widget.dart';
 import '../widget/home_follow_appbar.dart';
 import '../widget/home_follow_rich_text_widget.dart';
+import 'followers_fans_page.dart';
 
 enum FollowTabType { fans, pioneers }
 
@@ -50,7 +50,6 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
             child: Consumer(
               builder: (context, ref, child) {
                 final state = ref.watch(getAuthenticatedUserProvider);
-
                 return state is GetAuthenticatedUserSuccess
                     ? Column(
                       children: [
@@ -136,8 +135,8 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                         SizedBox(height: context.height * 0.020),
                         // homeFollowEnum > PioneersWidget > FansWidget
                         selectedTab == FollowTabType.pioneers
-                            ? PioneersWidget()
-                            : FansWidget(),
+                            ? FollowersPioneersPage()
+                            : FollowersFansPage(),
                       ],
                     )
                     : SizedBox();

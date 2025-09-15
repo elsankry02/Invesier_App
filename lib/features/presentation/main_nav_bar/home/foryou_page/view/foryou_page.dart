@@ -7,14 +7,14 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../widget/social_post_card.dart';
 
-class ForYouWidget extends ConsumerStatefulWidget {
-  const ForYouWidget({super.key});
+class ForYouPage extends ConsumerStatefulWidget {
+  const ForYouPage({super.key});
 
   @override
-  ConsumerState<ForYouWidget> createState() => _ForYouWidgetState();
+  ConsumerState<ForYouPage> createState() => _ForYouWidgetState();
 }
 
-class _ForYouWidgetState extends ConsumerState<ForYouWidget> {
+class _ForYouWidgetState extends ConsumerState<ForYouPage> {
   @override
   void initState() {
     Future.microtask(() => ref.read(getPostsProvider.notifier).getPosts());

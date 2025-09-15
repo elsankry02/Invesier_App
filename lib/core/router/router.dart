@@ -10,7 +10,7 @@ import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_p
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/comment_page/view/comment_page.dart';
 import '../../features/presentation/main_nav_bar/home/drawer_page/view/drawer_page.dart';
-import '../../features/presentation/main_nav_bar/home/home_follow_page/view/home_follow_page.dart';
+import '../../features/presentation/main_nav_bar/home/followers_page/view/followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/notification_page/notification_page.dart';
 import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/post_page/view/post_page.dart';

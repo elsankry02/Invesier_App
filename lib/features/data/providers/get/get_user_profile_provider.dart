@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
+import 'package:invesier/features/data/models/get_user_profile_model.dart';
 import 'package:invesier/features/data/providers/provider.dart';
 
 abstract class GetUserProfileState {}
@@ -15,7 +16,11 @@ class GetUserProfileFailure extends GetUserProfileState {
   GetUserProfileFailure({required this.errMessage});
 }
 
-class GetUserProfileSuccess extends GetUserProfileState {}
+class GetUserProfileSuccess extends GetUserProfileState {
+  final GetUserProfileModel userData;
+
+  GetUserProfileSuccess({required this.userData});
+}
 
 class GetUserProfileNotifier extends Notifier<GetUserProfileState> {
   @override
@@ -27,8 +32,8 @@ class GetUserProfileNotifier extends Notifier<GetUserProfileState> {
     final provider = ref.read(getUserProfileServiceProvider);
     try {
       state = GetUserProfileLoading();
-      await provider.getUserProfile(username: username);
-      state = GetUserProfileSuccess();
+      final data = await provider.getUserProfile(username: username);
+      state = GetUserProfileSuccess(userData: data);
     } on Exception catch (e) {
       if (e is DioException) {
         final errMessage = e.response!.data;

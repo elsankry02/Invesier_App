@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../core/extension/extension.dart';
 
-class PioneersWidget extends StatelessWidget {
-  const PioneersWidget({super.key});
+class PioneersPage extends StatelessWidget {
+  const PioneersPage({super.key});
 
   @override
   Widget build(BuildContext context) {

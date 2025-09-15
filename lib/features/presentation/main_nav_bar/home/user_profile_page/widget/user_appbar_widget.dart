@@ -9,7 +9,7 @@ import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
-import '../../home_follow_page/view/home_follow_page.dart';
+import '../../followers_page/view/followers_page.dart';
 import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
 
