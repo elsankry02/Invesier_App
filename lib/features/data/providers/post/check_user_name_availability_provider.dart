@@ -25,12 +25,12 @@ class CheckUserNameAvailabilityNotifier
 
   Future<void> checkUserNameAvailability({required String username}) async {
     final provider = ref.read(checkUserNameAvailabilityServiceProvider);
+    state = CheckUserNameAvailabilityLoading();
     try {
-      CheckUserNameAvailabilityLoading();
       await provider.checkUsernameAvailability(username: username);
-      CheckUserNameAvailabilitySuccess();
+      state = CheckUserNameAvailabilitySuccess();
     } on Exception catch (e) {
-      CheckUserNameAvailabilityFailure(errMessage: e.toString());
+      state = CheckUserNameAvailabilityFailure(errMessage: e.toString());
     }
   }
 }

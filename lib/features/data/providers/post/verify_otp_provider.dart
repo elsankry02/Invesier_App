@@ -32,8 +32,8 @@ class VerifyOtpNotifier extends Notifier<VerifyOtpState> {
     String? phonePrefix,
   }) async {
     final provider = ref.read(verifyOtpServiceProvider);
+    state = VerifyOtpLoading();
     try {
-      state = VerifyOtpLoading();
       final authResponse = await provider.verifyOtp(
         authMethod: authMethod,
         otp: otp,

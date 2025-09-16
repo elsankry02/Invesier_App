@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/data/models/get_user_profile_model.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -13,7 +14,12 @@ import '../widget/user_appbar_widget.dart';
 @RoutePage()
 class UserProfilePage extends StatelessWidget {
   final Datum getPosts;
-  const UserProfilePage({super.key, required this.getPosts});
+  final GetUserProfileModel getUserProfileModel;
+  const UserProfilePage({
+    super.key,
+    required this.getPosts,
+    required this.getUserProfileModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +35,7 @@ class UserProfilePage extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            UserAppBarWidget(),
+            UserAppBarWidget(getUserProfileModel: getUserProfileModel),
             SizedBox(height: context.height * 0.021),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

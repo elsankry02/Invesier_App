@@ -32,8 +32,8 @@ class RegisterNotifier extends Notifier<RegisterNewUserState> {
     String? phone,
   }) async {
     final provider = ref.read(registerNewUserServiceProvider);
+    state = RegisterNewUserLoading();
     try {
-      state = RegisterNewUserLoading();
       await provider.registerNewUser(
         prefix: prefix,
         authMethod: authMethod,

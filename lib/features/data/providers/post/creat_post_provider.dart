@@ -24,8 +24,8 @@ class CreatePostNotifier extends Notifier<CreatPostState> {
 
   Future<void> createPost({required String content}) async {
     final provider = ref.read(postServiceProvider);
+    state = CreatPostLoading();
     try {
-      state = CreatPostLoading();
       await provider.createPost(content: content);
       state = CreatPostSuccess();
     } on Exception catch (e) {

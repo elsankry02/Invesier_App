@@ -82,6 +82,7 @@ class InvesierAppBar extends StatelessWidget {
                 Consumer(
                   builder: (context, ref, child) {
                     final state = ref.watch(getAuthenticatedUserProvider);
+
                     return GestureDetector(
                       onTap: () {
                         scaffoldKey.currentState!.openDrawer();

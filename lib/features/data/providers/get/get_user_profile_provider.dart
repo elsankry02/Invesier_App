@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
@@ -17,9 +19,9 @@ class GetUserProfileFailure extends GetUserProfileState {
 }
 
 class GetUserProfileSuccess extends GetUserProfileState {
-  final GetUserProfileModel userData;
+  final GetUserProfileModel getUserProfileModel;
 
-  GetUserProfileSuccess({required this.userData});
+  GetUserProfileSuccess({required this.getUserProfileModel});
 }
 
 class GetUserProfileNotifier extends Notifier<GetUserProfileState> {
@@ -28,12 +30,17 @@ class GetUserProfileNotifier extends Notifier<GetUserProfileState> {
     return GetUserProfileintial();
   }
 
+  Timer? debounce;
+
   Future<void> getUserProfile({required String username}) async {
     final provider = ref.read(getUserProfileServiceProvider);
+    state = GetUserProfileLoading();
     try {
-      state = GetUserProfileLoading();
-      final data = await provider.getUserProfile(username: username);
-      state = GetUserProfileSuccess(userData: data);
+      if (debounce?.isActive ?? false) debounce!.cancel();
+      debounce = Timer(Duration(milliseconds: 500), () async {
+        final data = await provider.getUserProfile(username: username);
+        state = GetUserProfileSuccess(getUserProfileModel: data);
+      });
     } on Exception catch (e) {
       if (e is DioException) {
         final errMessage = e.response!.data;

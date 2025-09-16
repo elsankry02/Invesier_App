@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../core/constant/app_strings.dart';
 import '../provider.dart';
 
@@ -25,8 +26,8 @@ class DeleteAccountNotifier extends Notifier<DeleteAccountState> {
 
   Future<void> deleteAccount() async {
     final provider = ref.read(deleteAccountServiceProvider);
+    state = DeleteAccountLoading();
     try {
-      state = DeleteAccountLoading();
       await provider.deleteAccount();
       state = DeleteAccountSuccess();
     } on Exception catch (e) {

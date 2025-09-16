@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_strings.dart';
@@ -94,7 +95,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                                   height: context.height * 0.012,
                                   width: context.height * 0.012,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
+                                    borderRadius: BorderRadius.circular(
+                                      context.height * 0.006,
+                                    ),
                                     color: AppColors.kWhite,
                                   ),
                                 ),
@@ -130,11 +133,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                     if (state is GetAuthenticatedUserFaliure) {
                       return Text(state.errMessage);
                     }
-                    return Center(
-                      child: CircularProgressIndicator(
-                        color: AppColors.kDarkenText,
-                      ),
-                    );
+                    return CustomCircularProgressIndicator();
                   },
                 ),
                 DrawerTitleWidget(

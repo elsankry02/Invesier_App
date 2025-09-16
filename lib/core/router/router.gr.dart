@@ -495,10 +495,15 @@ class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
   UserProfileRoute({
     Key? key,
     required Datum getPosts,
+    required GetUserProfileModel getUserProfileModel,
     List<PageRouteInfo>? children,
   }) : super(
          UserProfileRoute.name,
-         args: UserProfileRouteArgs(key: key, getPosts: getPosts),
+         args: UserProfileRouteArgs(
+           key: key,
+           getPosts: getPosts,
+           getUserProfileModel: getUserProfileModel,
+         ),
          initialChildren: children,
        );
 
@@ -508,32 +513,45 @@ class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<UserProfileRouteArgs>();
-      return UserProfilePage(key: args.key, getPosts: args.getPosts);
+      return UserProfilePage(
+        key: args.key,
+        getPosts: args.getPosts,
+        getUserProfileModel: args.getUserProfileModel,
+      );
     },
   );
 }
 
 class UserProfileRouteArgs {
-  const UserProfileRouteArgs({this.key, required this.getPosts});
+  const UserProfileRouteArgs({
+    this.key,
+    required this.getPosts,
+    required this.getUserProfileModel,
+  });
 
   final Key? key;
 
   final Datum getPosts;
 
+  final GetUserProfileModel getUserProfileModel;
+
   @override
   String toString() {
-    return 'UserProfileRouteArgs{key: $key, getPosts: $getPosts}';
+    return 'UserProfileRouteArgs{key: $key, getPosts: $getPosts, getUserProfileModel: $getUserProfileModel}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is! UserProfileRouteArgs) return false;
-    return key == other.key && getPosts == other.getPosts;
+    return key == other.key &&
+        getPosts == other.getPosts &&
+        getUserProfileModel == other.getUserProfileModel;
   }
 
   @override
-  int get hashCode => key.hashCode ^ getPosts.hashCode;
+  int get hashCode =>
+      key.hashCode ^ getPosts.hashCode ^ getUserProfileModel.hashCode;
 }
 
 /// generated route for

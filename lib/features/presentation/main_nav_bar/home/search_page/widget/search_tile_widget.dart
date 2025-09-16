@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_colors.dart';
+import 'package:invesier/core/extension/extension.dart';
 import 'package:invesier/features/data/models/get_user_profile_model.dart';
 
 class SearchTileWidget extends StatelessWidget {
@@ -16,17 +18,43 @@ class SearchTileWidget extends StatelessWidget {
       onTap: onTap,
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(20),
-        child: Image.network(getUserProfileModel.avatarUrl),
+        child: Image.network(
+          height: context.height * 0.040,
+          width: context.height * 0.040,
+          fit: BoxFit.cover,
+          getUserProfileModel.avatarUrl,
+        ),
       ),
       title: Text(
         getUserProfileModel.name,
-        style: TextStyle(color: Colors.white),
+        style: context.kTextTheme.titleSmall!.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
       ),
       subtitle: Text(
-        getUserProfileModel.email,
-        style: TextStyle(color: Colors.grey),
+        getUserProfileModel.username,
+        style: context.kTextTheme.titleSmall!.copyWith(
+          color: AppColors.kDarkenText,
+          fontWeight: FontWeight.w400,
+        ),
       ),
-      trailing: Container(child: const Text("Chase")),
+      trailing: Container(
+        padding: EdgeInsets.symmetric(
+          vertical: context.height * 0.004,
+          horizontal: context.height * 0.020,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(context.height * 0.031),
+          color: AppColors.kPrimary,
+        ),
+        child: Text(
+          "Chase",
+          style: context.kTextTheme.labelMedium!.copyWith(
+            color: AppColors.kWhite,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
     );
   }
 }

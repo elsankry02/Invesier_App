@@ -1,10 +1,10 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_no_posts_widget.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
 import 'package:invesier/core/func/show_top_snack_bar.dart';
+import 'package:invesier/core/router/router.dart';
+import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
 import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
 import 'package:invesier/features/presentation/main_nav_bar/home/search_page/widget/search_tile_widget.dart';
 
@@ -22,6 +22,13 @@ class SearchPage extends ConsumerStatefulWidget {
 }
 
 class _SearchPageState extends ConsumerState<SearchPage> {
+  final searchController = TextEditingController();
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,11 +59,13 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   // HomeFollow TextFormField Widget
                   Expanded(
                     child: HomeFollowTextFormFieldWidget(
-                      onFieldSubmitted: (value) {
-                        log(value.toString());
-                        ref
-                            .read(getUserProfileProvider.notifier)
-                            .getUserProfile(username: value.trim());
+                      searchController: searchController,
+                      onChanged: (value) {
+                        if (value.isNotEmpty) {
+                          ref
+                              .read(getUserProfileProvider.notifier)
+                              .getUserProfile(username: value.trim());
+                        }
                       },
                     ),
                   ),
@@ -66,18 +75,26 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               Consumer(
                 builder: (context, ref, child) {
                   final state = ref.watch(getUserProfileProvider);
-                  if (state is GetUserProfileSuccess) {
-                    return SearchTileWidget(
-                      getUserProfileModel: state.userData,
-                    );
+                  final posts = ref.watch(getPostsProvider);
+                  if (state is GetUserProfileLoading) {
+                    return CustomCircularProgressIndicator();
                   } else if (state is GetUserProfileFailure) {
                     return ErrorMessage(context, message: state.errMessage);
-                  } else if (state is GetUserProfileLoading) {
-                    return Center(child: CircularProgressIndicator());
+                  } else if (state is GetUserProfileSuccess &&
+                      posts is GetPostsSuccess) {
+                    return SearchTileWidget(
+                      onTap: () {
+                        context.router.push(
+                          UserProfileRoute(
+                            getPosts: posts.data.first,
+                            getUserProfileModel: state.getUserProfileModel,
+                          ),
+                        );
+                      },
+                      getUserProfileModel: state.getUserProfileModel,
+                    );
                   }
-                  return CustomNoPostsWidget(
-                    title: context.kAppLocalizations.nopoststodisplay,
-                  );
+                  return SizedBox();
                 },
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../provider.dart';
 
 abstract class StoreTheFcmTokenForTheAuthenticatedUserState {}
@@ -33,8 +34,8 @@ class StoreTheFcmTokenForTheAuthenticatedUserNotifier
     final provider = ref.read(
       storeTheFcmTokenForTheAuthenticatedUserServiceProvider,
     );
+    state = StoreTheFcmTokenForTheAuthenticatedUserLoading();
     try {
-      state = StoreTheFcmTokenForTheAuthenticatedUserLoading();
       await provider.storeTheFcmTokenForTheAuthenticatedUser(
         token: token,
         deviceType: deviceType,

@@ -30,8 +30,8 @@ class CompleteProfileNotifier extends Notifier<CompleteProfileState> {
     required File avatar,
   }) async {
     final provider = ref.read(completeProfileServiceProvider);
+    state = CompleteProfileLoading();
     try {
-      state = CompleteProfileLoading();
       provider.completeProfile(name: name, userName: userName, avatar: avatar);
       state = CompleteProfileSuccess();
     } on Exception catch (e) {

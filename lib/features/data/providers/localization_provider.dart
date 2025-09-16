@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'provider.dart';
 
 import '../../../core/constant/app_enums.dart';
+import 'provider.dart';
 
 abstract class LocalizationState {}
 

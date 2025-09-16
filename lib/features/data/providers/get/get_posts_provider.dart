@@ -31,8 +31,8 @@ class GetPostsNotifier extends Notifier<GetPostsState> {
 
   Future<void> getPosts() async {
     final provider = ref.read(getPostsServiceProvider);
+    state = GetPostsLoading();
     try {
-      state = GetPostsLoading();
       final posts = await provider.getPosts();
       state = GetPostsSuccess(data: posts);
     } on Exception catch (e) {

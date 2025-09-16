@@ -32,8 +32,8 @@ class GetAuthenticatedUserNotifier
 
   Future<void> getUser() async {
     final provider = ref.read(getAuthenticatedUserServiceProvider);
+    state = GetAuthenticatedUserLoading();
     try {
-      state = GetAuthenticatedUserLoading();
       final userData = await provider.getUser();
       state = GetAuthenticatedUserSuccess(userModel: userData);
     } on Exception catch (e) {

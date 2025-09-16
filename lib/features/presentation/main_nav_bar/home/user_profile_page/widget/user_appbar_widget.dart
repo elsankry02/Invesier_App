@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/features/data/models/get_user_profile_model.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
@@ -14,7 +14,8 @@ import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
 
 class UserAppBarWidget extends StatelessWidget {
-  const UserAppBarWidget({super.key});
+  final GetUserProfileModel getUserProfileModel;
+  const UserAppBarWidget({super.key, required this.getUserProfileModel});
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +41,8 @@ class UserAppBarWidget extends StatelessWidget {
           ),
           // Image
           ClipOval(
-            child: Image.asset(
-              AppImages.kGirlOne,
+            child: Image.network(
+              getUserProfileModel.avatarUrl,
               width: context.height * 0.060,
               height: context.height * 0.060,
               fit: BoxFit.cover,
@@ -56,14 +57,14 @@ class UserAppBarWidget extends StatelessWidget {
             children: [
               // title
               Text(
-                'Alex Johnson',
+                getUserProfileModel.name,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
               // subTitle
               Text(
-                '@johnson_a',
+                getUserProfileModel.username,
                 style: context.kTextTheme.labelMedium!.copyWith(
                   color: AppColors.kGray,
                   fontWeight: FontWeight.w400,

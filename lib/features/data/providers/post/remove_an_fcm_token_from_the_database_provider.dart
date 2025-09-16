@@ -29,8 +29,8 @@ class RemoveAnFcmTokenFromTheDatabaseNotifier
 
   Future<void> removeAnFcmTokenFromTheDatabase({required String token}) async {
     final provider = ref.read(removeAnFcmTokenFromTheDatabaseServiceProvider);
+    state = RemoveAnFcmTokenFromTheDatabaseLoading();
     try {
-      state = RemoveAnFcmTokenFromTheDatabaseLoading();
       await provider.removeAnFcmTokenFromTheDatabase(token: token);
       state = RemoveAnFcmTokenFromTheDatabaseSuccess();
     } on Exception catch (e) {

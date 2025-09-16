@@ -26,8 +26,8 @@ class LogoutNotifier extends Notifier<LogoutState> {
 
   Future<void> logout() async {
     final provider = ref.read(logoutServiceProvider);
+    state = LogoutLoading();
     try {
-      state = LogoutLoading();
       await provider.logout();
       state = LogoutSuccess();
     } on Exception catch (e) {

@@ -31,8 +31,8 @@ class ResendOtpNotifier extends Notifier<ResendOtpState> {
     String? phone,
   }) async {
     final provider = ref.read(resendOtpServiceProvider);
+    state = ResendOtpLoading();
     try {
-      state = ResendOtpLoading();
       await provider.resendOtp(
         authMethod: authMethod,
         phonePrefix: phonePrefix,
