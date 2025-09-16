@@ -24,7 +24,7 @@ class GetUserProfileSuccess extends GetUserProfileState {
   GetUserProfileSuccess({required this.getUserProfileModel});
 }
 
-class GetUserProfileNotifier extends Notifier<GetUserProfileState> {
+class GetUserProfileNotifier extends AutoDisposeNotifier<GetUserProfileState> {
   @override
   GetUserProfileState build() {
     return GetUserProfileintial();
@@ -53,6 +53,6 @@ class GetUserProfileNotifier extends Notifier<GetUserProfileState> {
 }
 
 final getUserProfileProvider =
-    NotifierProvider<GetUserProfileNotifier, GetUserProfileState>(
+    NotifierProvider.autoDispose<GetUserProfileNotifier, GetUserProfileState>(
       GetUserProfileNotifier.new,
     );

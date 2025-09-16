@@ -13,7 +13,7 @@ class UserAlertDialogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return AlertDialog(
-      backgroundColor: AppColors.kCodGray,
+      backgroundColor: AppColors.kHeavyMetal,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/custom_circuler_progress.dart';
 import 'package:invesier/core/func/show_top_snack_bar.dart';
 import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
 import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
 import 'package:invesier/features/presentation/main_nav_bar/home/search_page/widget/search_tile_widget.dart';
 
@@ -75,18 +74,16 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               Consumer(
                 builder: (context, ref, child) {
                   final state = ref.watch(getUserProfileProvider);
-                  final posts = ref.watch(getPostsProvider);
+
                   if (state is GetUserProfileLoading) {
                     return CustomCircularProgressIndicator();
                   } else if (state is GetUserProfileFailure) {
                     return ErrorMessage(context, message: state.errMessage);
-                  } else if (state is GetUserProfileSuccess &&
-                      posts is GetPostsSuccess) {
+                  } else if (state is GetUserProfileSuccess) {
                     return SearchTileWidget(
                       onTap: () {
                         context.router.push(
                           UserProfileRoute(
-                            getPosts: posts.data.first,
                             getUserProfileModel: state.getUserProfileModel,
                           ),
                         );

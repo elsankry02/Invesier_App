@@ -1,25 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/custom_no_posts_widget.dart';
 import 'package:invesier/features/data/models/get_user_profile_model.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../../core/router/router.dart';
-import '../../../../../data/models/get_posts_model.dart';
-import '../../foryou_page/widget/social_post_card.dart';
 import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
 class UserProfilePage extends StatelessWidget {
-  final Datum getPosts;
   final GetUserProfileModel getUserProfileModel;
-  const UserProfilePage({
-    super.key,
-    required this.getPosts,
-    required this.getUserProfileModel,
-  });
+  const UserProfilePage({super.key, required this.getUserProfileModel});
 
   @override
   Widget build(BuildContext context) {
@@ -75,18 +68,10 @@ class UserProfilePage extends StatelessWidget {
               ],
             ),
             SizedBox(height: context.height * 0.021),
-            ListView.builder(
+            ListView(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemCount: 2,
-              itemBuilder: (context, index) {
-                return SocialPostCardWidget(
-                  commentOnTap: () {
-                    context.router.push(CommentRoute(getPosts: getPosts));
-                  },
-                  getPosts: getPosts,
-                );
-              },
+              children: [CustomNoPostsWidget(title: local.nopoststodisplay)],
             ),
           ],
         ),

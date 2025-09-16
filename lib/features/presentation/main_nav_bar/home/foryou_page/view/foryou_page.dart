@@ -30,8 +30,7 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
         physics: NeverScrollableScrollPhysics(),
         itemCount: state.data.length,
         itemBuilder: (context, index) {
-          final post = state.data[index];
-          return SocialPostCardWidget(getPosts: post);
+          return SocialPostCardWidget();
         },
       );
     }

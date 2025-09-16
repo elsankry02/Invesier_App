@@ -1,14 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/features/data/models/get_user_profile_model.dart';
-import '../../features/data/models/get_posts_model.dart';
-import '../../features/presentation/main_nav_bar/home/setting/personal_details_page/view/personal_details_page.dart';
-import '../../features/presentation/main_nav_bar/home/setting/rejected_page/view/rejected_page.dart';
-import '../../features/presentation/main_nav_bar/home/setting/under_reveiw_page/view/under_reveiw_page.dart';
-import '../../features/presentation/main_nav_bar/home/setting/verification_request_page/view/verification_request_page.dart';
-import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_page/view/you_are_verified_page.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
+import '../../features/presentation/login_page/login_page.dart';
 import '../../features/presentation/main_nav_bar/home/comment_page/view/comment_page.dart';
 import '../../features/presentation/main_nav_bar/home/drawer_page/view/drawer_page.dart';
 import '../../features/presentation/main_nav_bar/home/followers_page/view/followers_page.dart';
@@ -17,11 +12,15 @@ import '../../features/presentation/main_nav_bar/home/personal_profile_page/view
 import '../../features/presentation/main_nav_bar/home/post_page/view/post_page.dart';
 import '../../features/presentation/main_nav_bar/home/recent_transactions_page/recent_transactions_page.dart';
 import '../../features/presentation/main_nav_bar/home/search_page/view/search_page.dart';
+import '../../features/presentation/main_nav_bar/home/setting/personal_details_page/view/personal_details_page.dart';
+import '../../features/presentation/main_nav_bar/home/setting/rejected_page/view/rejected_page.dart';
 import '../../features/presentation/main_nav_bar/home/setting/settings_page/view/settings_page.dart';
+import '../../features/presentation/main_nav_bar/home/setting/under_reveiw_page/view/under_reveiw_page.dart';
+import '../../features/presentation/main_nav_bar/home/setting/verification_request_page/view/verification_request_page.dart';
+import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_page/view/you_are_verified_page.dart';
 import '../../features/presentation/main_nav_bar/home/transactions_history_page/transactions_history_page.dart';
 import '../../features/presentation/main_nav_bar/home/user_profile_page/view/user_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/wallet_page/view/wallet_page.dart';
-import '../../features/presentation/login_page/login_page.dart';
 import '../../features/presentation/main_nav_bar/main_nav_bar_page/view/main_navigation_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
 import '../../features/presentation/signup_page/view/signup_page.dart';
