@@ -5,10 +5,10 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 
-class HomeFollowTextFormFieldWidget extends StatelessWidget {
+class SearchTextFormFieldWidget extends StatelessWidget {
   final TextEditingController? searchController;
   final void Function(String value)? onFieldSubmitted, onChanged;
-  const HomeFollowTextFormFieldWidget({
+  const SearchTextFormFieldWidget({
     super.key,
     this.searchController,
     this.onFieldSubmitted,

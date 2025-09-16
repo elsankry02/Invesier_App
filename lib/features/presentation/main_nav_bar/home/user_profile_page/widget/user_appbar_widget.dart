@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_enums.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/data/models/get_user_profile_model.dart';
 import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
 
@@ -10,8 +12,6 @@ import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../../../../../../core/router/router.dart';
-import '../../followers_page/view/followers_page.dart';
 import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
 
@@ -79,7 +79,6 @@ class UserAppBarWidget extends ConsumerWidget {
                 SizedBox(height: context.height * 0.008),
               ],
             ),
-
             // User Pop Menu
             UserPopMenuWidget(
               icon: AppSvgs.kblockVictor,
@@ -117,7 +116,7 @@ class UserAppBarWidget extends ConsumerWidget {
               number: getUserProfileModel.fansCount,
               onTap: () {
                 context.router.push(
-                  HomeFollowRoute(initialTab: FollowTabType.fans),
+                  UserFollowersRoute(initialTab: FollowersTabType.fans),
                 );
               },
             ),
@@ -132,7 +131,7 @@ class UserAppBarWidget extends ConsumerWidget {
               number: getUserProfileModel.pioneersCount,
               onTap: () {
                 context.router.push(
-                  HomeFollowRoute(initialTab: FollowTabType.pioneers),
+                  UserFollowersRoute(initialTab: FollowersTabType.fans),
                 );
               },
             ),

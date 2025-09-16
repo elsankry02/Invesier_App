@@ -6,9 +6,9 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/models/user_model.dart';
 
-class HomeFollowAppBarWidget extends StatelessWidget {
+class PersonalFollowersAppBarWidget extends StatelessWidget {
   final UserModel userModel;
-  const HomeFollowAppBarWidget({super.key, required this.userModel});
+  const PersonalFollowersAppBarWidget({super.key, required this.userModel});
   @override
   Widget build(BuildContext context) {
     return ListTile(

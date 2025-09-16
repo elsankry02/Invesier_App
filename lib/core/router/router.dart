@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invesier/features/data/models/get_user_profile_model.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/view/user_followers_page.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/login_page/login_page.dart';
 import '../../features/presentation/main_nav_bar/home/comment_page/view/comment_page.dart';
 import '../../features/presentation/main_nav_bar/home/drawer_page/view/drawer_page.dart';
-import '../../features/presentation/main_nav_bar/home/followers_page/view/followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/notification_page/notification_page.dart';
+import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/post_page/view/post_page.dart';
 import '../../features/presentation/main_nav_bar/home/recent_transactions_page/recent_transactions_page.dart';
@@ -55,7 +56,8 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: TransactionsHistoryRoute.page),
     AutoRoute(page: RecentTransactionsRoute.page),
     AutoRoute(page: UserProfileRoute.page),
-    AutoRoute(page: HomeFollowRoute.page),
+    AutoRoute(page: PersonalFollowersRoute.page),
+    AutoRoute(page: UserFollowersRoute.page),
     AutoRoute(page: NotificationRoute.page),
     AutoRoute(page: SearchRoute.page),
     AutoRoute(page: RejectedRoute.page),

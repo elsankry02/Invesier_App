@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class FollowersPioneersPage extends StatelessWidget {
-  const FollowersPioneersPage({super.key});
+class PersonalPioneersWidget extends StatelessWidget {
+  const PersonalPioneersWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

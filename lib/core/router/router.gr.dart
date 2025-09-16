@@ -142,53 +142,6 @@ class DrawerRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomeFollowPage]
-class HomeFollowRoute extends PageRouteInfo<HomeFollowRouteArgs> {
-  HomeFollowRoute({
-    Key? key,
-    required FollowTabType initialTab,
-    List<PageRouteInfo>? children,
-  }) : super(
-         HomeFollowRoute.name,
-         args: HomeFollowRouteArgs(key: key, initialTab: initialTab),
-         initialChildren: children,
-       );
-
-  static const String name = 'HomeFollowRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<HomeFollowRouteArgs>();
-      return HomeFollowPage(key: args.key, initialTab: args.initialTab);
-    },
-  );
-}
-
-class HomeFollowRouteArgs {
-  const HomeFollowRouteArgs({this.key, required this.initialTab});
-
-  final Key? key;
-
-  final FollowTabType initialTab;
-
-  @override
-  String toString() {
-    return 'HomeFollowRouteArgs{key: $key, initialTab: $initialTab}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! HomeFollowRouteArgs) return false;
-    return key == other.key && initialTab == other.initialTab;
-  }
-
-  @override
-  int get hashCode => key.hashCode ^ initialTab.hashCode;
-}
-
-/// generated route for
 /// [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
@@ -296,6 +249,53 @@ class PersonalDetailsRoute extends PageRouteInfo<void> {
       return const PersonalDetailsPage();
     },
   );
+}
+
+/// generated route for
+/// [PersonalFollowersPage]
+class PersonalFollowersRoute extends PageRouteInfo<PersonalFollowersRouteArgs> {
+  PersonalFollowersRoute({
+    Key? key,
+    required FollowersTabType initialTab,
+    List<PageRouteInfo>? children,
+  }) : super(
+         PersonalFollowersRoute.name,
+         args: PersonalFollowersRouteArgs(key: key, initialTab: initialTab),
+         initialChildren: children,
+       );
+
+  static const String name = 'PersonalFollowersRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PersonalFollowersRouteArgs>();
+      return PersonalFollowersPage(key: args.key, initialTab: args.initialTab);
+    },
+  );
+}
+
+class PersonalFollowersRouteArgs {
+  const PersonalFollowersRouteArgs({this.key, required this.initialTab});
+
+  final Key? key;
+
+  final FollowersTabType initialTab;
+
+  @override
+  String toString() {
+    return 'PersonalFollowersRouteArgs{key: $key, initialTab: $initialTab}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! PersonalFollowersRouteArgs) return false;
+    return key == other.key && initialTab == other.initialTab;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ initialTab.hashCode;
 }
 
 /// generated route for
@@ -456,6 +456,53 @@ class UnderReveiwRoute extends PageRouteInfo<void> {
       return const UnderReveiwPage();
     },
   );
+}
+
+/// generated route for
+/// [UserFollowersPage]
+class UserFollowersRoute extends PageRouteInfo<UserFollowersRouteArgs> {
+  UserFollowersRoute({
+    Key? key,
+    required FollowersTabType initialTab,
+    List<PageRouteInfo>? children,
+  }) : super(
+         UserFollowersRoute.name,
+         args: UserFollowersRouteArgs(key: key, initialTab: initialTab),
+         initialChildren: children,
+       );
+
+  static const String name = 'UserFollowersRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<UserFollowersRouteArgs>();
+      return UserFollowersPage(key: args.key, initialTab: args.initialTab);
+    },
+  );
+}
+
+class UserFollowersRouteArgs {
+  const UserFollowersRouteArgs({this.key, required this.initialTab});
+
+  final Key? key;
+
+  final FollowersTabType initialTab;
+
+  @override
+  String toString() {
+    return 'UserFollowersRouteArgs{key: $key, initialTab: $initialTab}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! UserFollowersRouteArgs) return false;
+    return key == other.key && initialTab == other.initialTab;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ initialTab.hashCode;
 }
 
 /// generated route for

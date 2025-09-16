@@ -1,29 +1,28 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/followers_page/view/followers_pioneers_page.dart';
+import 'package:invesier/core/components/custom_followers_number_widget.dart';
+import 'package:invesier/core/constant/app_enums.dart';
+import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_fans_widget.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_followers_appbar.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_pioneers_widget.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
-import '../../search_page/widget/home_follow_textformfield_widget.dart';
-import '../widget/home_follow_appbar.dart';
-import '../widget/home_follow_rich_text_widget.dart';
-import 'followers_fans_page.dart';
-
-enum FollowTabType { fans, pioneers }
+import '../../search_page/widget/search_text_form_field_widget.dart';
 
 @RoutePage()
-class HomeFollowPage extends StatefulWidget {
-  final FollowTabType initialTab;
-  const HomeFollowPage({super.key, required this.initialTab});
+class UserFollowersPage extends StatefulWidget {
+  final FollowersTabType initialTab;
+  const UserFollowersPage({super.key, required this.initialTab});
   @override
-  State<HomeFollowPage> createState() => _HomeFollowPageState();
+  State<UserFollowersPage> createState() => _UserFollowersPageState();
 }
 
-class _HomeFollowPageState extends State<HomeFollowPage> {
-  FollowTabType selectedTab = FollowTabType.fans;
+class _UserFollowersPageState extends State<UserFollowersPage> {
+  FollowersTabType selectedTab = FollowersTabType.fans;
   final searchController = TextEditingController();
 
   @override
@@ -49,12 +48,14 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
             padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
             child: Consumer(
               builder: (context, ref, child) {
-                final state = ref.watch(getAuthenticatedUserProvider);
-                return state is GetAuthenticatedUserSuccess
+                final state = ref.watch(getUserProfileProvider);
+                return state is GetUserProfileSuccess
                     ? Column(
                       children: [
                         // HomeFollowAppBarWidget
-                        HomeFollowAppBarWidget(userModel: state.userModel),
+                        UserFollowersAppBarWidget(
+                          getUserProfileModel: state.getUserProfileModel,
+                        ),
                         SizedBox(height: context.height * 0.009),
                         Container(
                           margin: EdgeInsets.symmetric(
@@ -66,22 +67,22 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                               Column(
                                 children: [
                                   // Fans
-                                  HomeFollowRichTextWidget(
-                                    number: state.userModel.fansCount,
+                                  CustomFollowersNumberWidget(
+                                    number: state.getUserProfileModel.fansCount,
                                     title: local.fans,
                                     onTap: () {
                                       setState(() {
-                                        selectedTab = FollowTabType.fans;
+                                        selectedTab = FollowersTabType.fans;
                                       });
                                     },
                                   ),
                                   SizedBox(height: context.height * 0.004),
                                   // Fans Divider
-                                  selectedTab == FollowTabType.fans
+                                  selectedTab == FollowersTabType.fans
                                       ? CustomDividerWidget(
                                         onTap: () {
                                           setState(() {
-                                            selectedTab = FollowTabType.fans;
+                                            selectedTab = FollowersTabType.fans;
                                           });
                                         },
                                         width: context.width * 0.20,
@@ -98,23 +99,24 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
                               // Pioneers
                               Column(
                                 children: [
-                                  HomeFollowRichTextWidget(
-                                    number: state.userModel.pioneersCount,
+                                  CustomFollowersNumberWidget(
+                                    number:
+                                        state.getUserProfileModel.pioneersCount,
                                     title: local.pioneers,
                                     onTap: () {
                                       setState(() {
-                                        selectedTab = FollowTabType.pioneers;
+                                        selectedTab = FollowersTabType.pioneers;
                                       });
                                     },
                                   ),
                                   SizedBox(height: context.height * 0.004),
                                   // Pioneers Divider
-                                  selectedTab == FollowTabType.pioneers
+                                  selectedTab == FollowersTabType.pioneers
                                       ? CustomDividerWidget(
                                         onTap: () {
                                           setState(() {
                                             selectedTab =
-                                                FollowTabType.pioneers;
+                                                FollowersTabType.pioneers;
                                           });
                                         },
                                         width: context.width * 0.20,
@@ -129,14 +131,14 @@ class _HomeFollowPageState extends State<HomeFollowPage> {
 
                         SizedBox(height: context.height * 0.016),
                         // TextFormFiled
-                        HomeFollowTextFormFieldWidget(
+                        SearchTextFormFieldWidget(
                           searchController: searchController,
                         ),
                         SizedBox(height: context.height * 0.020),
                         // homeFollowEnum > PioneersWidget > FansWidget
-                        selectedTab == FollowTabType.pioneers
-                            ? FollowersPioneersPage()
-                            : FollowersFansPage(),
+                        selectedTab == FollowersTabType.pioneers
+                            ? UserPioneersWidget()
+                            : UserFansWidget(),
                       ],
                     )
                     : SizedBox();

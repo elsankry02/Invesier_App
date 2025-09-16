@@ -10,7 +10,7 @@ import 'package:invesier/features/presentation/main_nav_bar/home/search_page/wid
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../widget/home_follow_textformfield_widget.dart';
+import '../widget/search_text_form_field_widget.dart';
 
 @RoutePage()
 class SearchPage extends ConsumerStatefulWidget {
@@ -57,7 +57,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   ),
                   // HomeFollow TextFormField Widget
                   Expanded(
-                    child: HomeFollowTextFormFieldWidget(
+                    child: SearchTextFormFieldWidget(
                       searchController: searchController,
                       onChanged: (value) {
                         if (value.isNotEmpty) {

@@ -21,8 +21,8 @@ class CustomFollowersNumberWidget extends StatelessWidget {
         children: [
           // number
           Text(
-            textAlign: TextAlign.center,
             "$number",
+            textAlign: TextAlign.center,
             style: context.kTextTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w700,
             ),
@@ -30,6 +30,7 @@ class CustomFollowersNumberWidget extends StatelessWidget {
           // title
           Text(
             title,
+            textAlign: TextAlign.center,
             style: context.kTextTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.w400,
             ),
