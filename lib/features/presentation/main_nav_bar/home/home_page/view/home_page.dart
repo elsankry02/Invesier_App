@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/pioneers_page/pioneers_page.dart';
+import '../../pioneers_page/pioneers_page.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_enums.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/data/models/get_user_profile_model.dart';
-import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
+import '../../../../../../core/constant/app_enums.dart';
+import '../../../../../../core/router/router.dart';
+import '../../../../../data/models/get_user_profile_model.dart';
+import '../../../../../data/providers/get/get_user_profile_provider.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';

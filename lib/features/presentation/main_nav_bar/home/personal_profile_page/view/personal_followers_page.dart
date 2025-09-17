@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_enums.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/personal_profile_page/widget/personal_followers_appbar_widget.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/personal_profile_page/widget/personal_pioneers_widget.dart';
+import '../../../../../../core/constant/app_enums.dart';
+import '../widget/personal_followers_appbar_widget.dart';
+import '../widget/personal_pioneers_widget.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';

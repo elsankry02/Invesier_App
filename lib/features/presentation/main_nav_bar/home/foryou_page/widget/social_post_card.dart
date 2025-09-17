@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../data/providers/get/get_posts_provider.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/components/custom_tag_button.dart';

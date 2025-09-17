@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_strings.dart';
-import 'package:invesier/features/data/models/get_user_profile_model.dart';
-import 'package:invesier/features/data/providers/provider.dart';
+import '../../../../core/constant/app_strings.dart';
+import '../../models/get_user_profile_model.dart';
+import '../provider.dart';
 
 abstract class GetUserProfileState {}
 

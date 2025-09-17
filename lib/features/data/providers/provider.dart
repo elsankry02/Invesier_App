@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/env.dart';
-import 'package:invesier/features/data/services/get/get_user_profile_service.dart';
+import '../../../env.dart';
+import '../services/get/get_user_profile_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';

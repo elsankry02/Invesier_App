@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/data/models/get_user_profile_model.dart';
+import '../../models/get_user_profile_model.dart';
 
 class GetUserProfileService {
   final Dio dio;
