@@ -1,17 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/constant/app_enums.dart';
-import '../../../../../../core/router/router.dart';
-import '../../../../../data/models/get_user_profile_model.dart';
-import '../../../../../data/providers/get/get_user_profile_provider.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
+import '../../../../../data/models/get_user_profile_model.dart';
+import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
 
@@ -131,7 +131,7 @@ class UserAppBarWidget extends ConsumerWidget {
               number: getUserProfileModel.pioneersCount,
               onTap: () {
                 context.router.push(
-                  UserFollowersRoute(initialTab: FollowersTabType.fans),
+                  UserFollowersRoute(initialTab: FollowersTabType.pioneers),
                 );
               },
             ),

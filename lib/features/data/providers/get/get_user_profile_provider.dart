@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../core/constant/app_strings.dart';
 import '../../models/get_user_profile_model.dart';
 import '../provider.dart';
@@ -34,21 +35,21 @@ class GetUserProfileNotifier extends AutoDisposeNotifier<GetUserProfileState> {
 
   Future<void> getUserProfile({required String username}) async {
     final provider = ref.read(getUserProfileServiceProvider);
-    state = GetUserProfileLoading();
-    try {
-      if (debounce?.isActive ?? false) debounce!.cancel();
-      debounce = Timer(Duration(milliseconds: 500), () async {
+    if (debounce?.isActive ?? false) debounce!.cancel();
+    debounce = Timer(Duration(milliseconds: 400), () async {
+      state = GetUserProfileLoading();
+      try {
         final data = await provider.getUserProfile(username: username);
         state = GetUserProfileSuccess(getUserProfileModel: data);
-      });
-    } on Exception catch (e) {
-      if (e is DioException) {
-        final errMessage = e.response!.data;
-        state = GetUserProfileFailure(
-          errMessage: errMessage[AppStrings.message],
-        );
+      } on Exception catch (e) {
+        if (e is DioException) {
+          final errMessage = e.response!.data;
+          state = GetUserProfileFailure(
+            errMessage: errMessage[AppStrings.message],
+          );
+        }
       }
-    }
+    });
   }
 }
 

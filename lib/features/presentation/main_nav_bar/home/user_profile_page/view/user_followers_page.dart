@@ -1,17 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
+
+import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
+import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
+import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/providers/get/get_user_profile_provider.dart';
+import '../../search_page/widget/search_text_form_field_widget.dart';
 import '../widget/user_fans_widget.dart';
 import '../widget/user_followers_appbar.dart';
 import '../widget/user_pioneers_widget.dart';
-
-import '../../../../../../core/components/custom_divider_widget.dart';
-import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/extension/extension.dart';
-import '../../search_page/widget/search_text_form_field_widget.dart';
 
 @RoutePage()
 class UserFollowersPage extends StatefulWidget {
@@ -29,6 +30,12 @@ class _UserFollowersPageState extends State<UserFollowersPage> {
   void initState() {
     selectedTab = widget.initialTab;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
   }
 
   @override
@@ -132,6 +139,13 @@ class _UserFollowersPageState extends State<UserFollowersPage> {
                         SizedBox(height: context.height * 0.016),
                         // TextFormFiled
                         SearchTextFormFieldWidget(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              ref
+                                  .read(getUserPioneersProvider.notifier)
+                                  .getUserPioneers(username: value);
+                            }
+                          },
                           searchController: searchController,
                         ),
                         SizedBox(height: context.height * 0.020),

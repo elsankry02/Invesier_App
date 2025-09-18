@@ -1,17 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/constant/app_enums.dart';
-import '../widget/personal_followers_appbar_widget.dart';
-import '../widget/personal_pioneers_widget.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
 import '../../search_page/widget/search_text_form_field_widget.dart';
 import '../widget/personal_fans_widget.dart';
+import '../widget/personal_followers_appbar_widget.dart';
+import '../widget/personal_pioneers_widget.dart';
 
 @RoutePage()
 class PersonalFollowersPage extends StatefulWidget {
@@ -29,6 +29,12 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
   void initState() {
     selectedTab = widget.initialTab;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
   }
 
   @override

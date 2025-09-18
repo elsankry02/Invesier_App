@@ -1,16 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_circuler_progress.dart';
-import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../../core/router/router.dart';
-import '../../../../../data/providers/get/get_user_profile_provider.dart';
-import '../widget/search_tile_widget.dart';
 
+import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import '../widget/search_text_form_field_widget.dart';
+import '../widget/search_tile_widget.dart';
 
 @RoutePage()
 class SearchPage extends ConsumerStatefulWidget {
@@ -78,7 +77,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                   if (state is GetUserProfileLoading) {
                     return CustomCircularProgressIndicator();
                   } else if (state is GetUserProfileFailure) {
-                    return ErrorMessage(context, message: state.errMessage);
+                    return Center(child: Text(state.errMessage));
                   } else if (state is GetUserProfileSuccess) {
                     return SearchTileWidget(
                       onTap: () {
