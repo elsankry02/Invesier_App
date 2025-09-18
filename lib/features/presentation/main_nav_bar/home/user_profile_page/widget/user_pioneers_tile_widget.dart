@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:invesier/features/data/models/get_user_pioneers_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/models/get/get_user_pioneers_model.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 
-class UserPioneersTileWidget extends StatelessWidget {
+class UserPioneersTileWidget extends ConsumerWidget {
   final void Function()? onTap;
 
   final GetUserPioneersModel getUserPioneersModel;
@@ -15,7 +16,7 @@ class UserPioneersTileWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
       onTap: onTap,
       leading: ClipRRect(

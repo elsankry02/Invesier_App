@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
+import 'package:invesier/core/extension/extension.dart';
 
-import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../widget/social_post_card.dart';
 
@@ -25,20 +24,21 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
   Widget build(BuildContext context) {
     final state = ref.watch(getPostsProvider);
     if (state is GetPostsSuccess) {
+      if (state.data.isEmpty) {
+        return Center(child: Text(context.kAppLocalizations.nopoststodisplay));
+      }
       return ListView.builder(
-        shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         itemCount: state.data.length,
         itemBuilder: (context, index) {
           return SocialPostCardWidget();
         },
       );
-    }
-    if (state is GetPostsFailure) {
-      log(state.errMessage);
+    } else if (state is GetPostsFailure) {
       return Center(child: Text(state.errMessage));
+    } else if (state is GetPostsLoading) {
+      return CustomCircularProgressIndicator();
     }
-
-    return Center(child: CircularProgressIndicator(color: AppColors.kGray));
+    return SizedBox();
   }
 }

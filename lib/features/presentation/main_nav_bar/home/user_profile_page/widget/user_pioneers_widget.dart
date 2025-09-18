@@ -25,7 +25,6 @@ class UserPioneersWidget extends ConsumerWidget {
       }
       return ListView.builder(
         itemCount: pioneersState.getUserPioneersModel.length,
-        shrinkWrap: true,
         itemBuilder: (context, index) {
           return UserPioneersTileWidget(
             onTap:

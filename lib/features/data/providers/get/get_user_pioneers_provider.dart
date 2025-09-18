@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/constant/app_strings.dart';
-import 'package:invesier/features/data/models/get_user_pioneers_model.dart';
+import 'package:invesier/features/data/models/get/get_user_pioneers_model.dart';
 import 'package:invesier/features/data/providers/provider.dart';
 
 abstract class GetUserPioneersState {}

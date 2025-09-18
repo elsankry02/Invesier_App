@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:invesier/features/data/models/get_user_pioneers_model.dart';
+import 'package:invesier/features/data/models/get/get_user_pioneers_model.dart';
 
 class GetUserPioneersService {
   final Dio dio;

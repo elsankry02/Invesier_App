@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
 import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
@@ -56,106 +57,111 @@ class _UserFollowersPageState extends State<UserFollowersPage> {
             child: Consumer(
               builder: (context, ref, child) {
                 final state = ref.watch(getUserProfileProvider);
-                return state is GetUserProfileSuccess
-                    ? Column(
-                      children: [
-                        // HomeFollowAppBarWidget
-                        UserFollowersAppBarWidget(
-                          getUserProfileModel: state.getUserProfileModel,
+                if (state is GetUserProfileSuccess) {
+                  return Column(
+                    children: [
+                      // HomeFollowAppBarWidget
+                      UserFollowersAppBarWidget(
+                        getUserProfileModel: state.getUserProfileModel,
+                      ),
+                      SizedBox(height: context.height * 0.009),
+                      Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: context.height * 0.065,
                         ),
-                        SizedBox(height: context.height * 0.009),
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                            horizontal: context.height * 0.065,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  // Fans
-                                  CustomFollowersNumberWidget(
-                                    number: state.getUserProfileModel.fansCount,
-                                    title: local.fans,
-                                    onTap: () {
-                                      setState(() {
-                                        selectedTab = FollowersTabType.fans;
-                                      });
-                                    },
-                                  ),
-                                  SizedBox(height: context.height * 0.004),
-                                  // Fans Divider
-                                  selectedTab == FollowersTabType.fans
-                                      ? CustomDividerWidget(
-                                        onTap: () {
-                                          setState(() {
-                                            selectedTab = FollowersTabType.fans;
-                                          });
-                                        },
-                                        width: context.width * 0.20,
-                                        height: 1.5,
-                                      )
-                                      : Container(),
-                                ],
-                              ),
-                              // Center Divider
-                              CustomDividerWidget(
-                                height: context.height * 0.015,
-                                width: 1.5,
-                              ),
-                              // Pioneers
-                              Column(
-                                children: [
-                                  CustomFollowersNumberWidget(
-                                    number:
-                                        state.getUserProfileModel.pioneersCount,
-                                    title: local.pioneers,
-                                    onTap: () {
-                                      setState(() {
-                                        selectedTab = FollowersTabType.pioneers;
-                                      });
-                                    },
-                                  ),
-                                  SizedBox(height: context.height * 0.004),
-                                  // Pioneers Divider
-                                  selectedTab == FollowersTabType.pioneers
-                                      ? CustomDividerWidget(
-                                        onTap: () {
-                                          setState(() {
-                                            selectedTab =
-                                                FollowersTabType.pioneers;
-                                          });
-                                        },
-                                        width: context.width * 0.20,
-                                        height: 1.5,
-                                      )
-                                      : Container(),
-                                ],
-                              ),
-                            ],
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                // Fans
+                                CustomFollowersNumberWidget(
+                                  number: state.getUserProfileModel.fansCount,
+                                  title: local.fans,
+                                  onTap: () {
+                                    setState(() {
+                                      selectedTab = FollowersTabType.fans;
+                                    });
+                                  },
+                                ),
+                                SizedBox(height: context.height * 0.004),
+                                // Fans Divider
+                                selectedTab == FollowersTabType.fans
+                                    ? CustomDividerWidget(
+                                      onTap: () {
+                                        setState(() {
+                                          selectedTab = FollowersTabType.fans;
+                                        });
+                                      },
+                                      width: context.width * 0.20,
+                                      height: 1.5,
+                                    )
+                                    : Container(),
+                              ],
+                            ),
+                            // Center Divider
+                            CustomDividerWidget(
+                              height: context.height * 0.015,
+                              width: 1.5,
+                            ),
+                            // Pioneers
+                            Column(
+                              children: [
+                                CustomFollowersNumberWidget(
+                                  number:
+                                      state.getUserProfileModel.pioneersCount,
+                                  title: local.pioneers,
+                                  onTap: () {
+                                    setState(() {
+                                      selectedTab = FollowersTabType.pioneers;
+                                    });
+                                  },
+                                ),
+                                SizedBox(height: context.height * 0.004),
+                                // Pioneers Divider
+                                selectedTab == FollowersTabType.pioneers
+                                    ? CustomDividerWidget(
+                                      onTap: () {
+                                        setState(() {
+                                          selectedTab =
+                                              FollowersTabType.pioneers;
+                                        });
+                                      },
+                                      width: context.width * 0.20,
+                                      height: 1.5,
+                                    )
+                                    : Container(),
+                              ],
+                            ),
+                          ],
                         ),
+                      ),
 
-                        SizedBox(height: context.height * 0.016),
-                        // TextFormFiled
-                        SearchTextFormFieldWidget(
-                          onChanged: (value) {
-                            if (value.isNotEmpty) {
-                              ref
-                                  .read(getUserPioneersProvider.notifier)
-                                  .getUserPioneers(username: value);
-                            }
-                          },
-                          searchController: searchController,
-                        ),
-                        SizedBox(height: context.height * 0.020),
-                        // homeFollowEnum > PioneersWidget > FansWidget
-                        selectedTab == FollowersTabType.pioneers
-                            ? UserPioneersWidget()
-                            : UserFansWidget(),
-                      ],
-                    )
-                    : SizedBox();
+                      SizedBox(height: context.height * 0.016),
+                      // TextFormFiled
+                      SearchTextFormFieldWidget(
+                        onChanged: (value) {
+                          if (value.isNotEmpty) {
+                            ref
+                                .read(getUserPioneersProvider.notifier)
+                                .getUserPioneers(username: value);
+                          }
+                        },
+                        searchController: searchController,
+                      ),
+                      SizedBox(height: context.height * 0.020),
+                      // homeFollowEnum > PioneersWidget > FansWidget
+                      selectedTab == FollowersTabType.pioneers
+                          ? UserPioneersWidget()
+                          : UserFansWidget(),
+                    ],
+                  );
+                } else if (state is GetUserProfileLoading) {
+                  return CustomCircularProgressIndicator();
+                } else if (state is GetUserProfileFailure) {
+                  return Text(state.errMessage);
+                }
+                return SizedBox();
               },
             ),
           ),
