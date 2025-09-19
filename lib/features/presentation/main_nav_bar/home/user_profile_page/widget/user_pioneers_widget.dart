@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
-import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_pioneers_tile_widget.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/get/get_user_pioneers_provider.dart';
+import '../../../../../data/providers/get/get_user_profile_provider.dart';
+import 'user_pioneers_tile_widget.dart';
 
 class UserPioneersWidget extends ConsumerWidget {
   const UserPioneersWidget({super.key});

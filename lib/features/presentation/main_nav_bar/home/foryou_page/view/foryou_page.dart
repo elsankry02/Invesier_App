@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/extension/extension.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/extension/extension.dart';
 
 import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../widget/social_post_card.dart';
