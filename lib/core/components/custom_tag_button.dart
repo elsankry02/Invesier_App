@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../constant/app_colors.dart';
 
 import '../extension/extension.dart';
 
 class CustomTagButton extends StatelessWidget {
   final String title, svg;
-  final Color titleColor, borderColor;
+  final Color titleColor;
+  final Function()? onTap;
   const CustomTagButton({
     super.key,
     required this.svg,
     required this.title,
     required this.titleColor,
-    required this.borderColor,
     this.onTap,
   });
-
-  final Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       // onTap
       onTap: onTap,
       child: Container(
         padding: EdgeInsetsDirectional.symmetric(
           vertical: context.height * 0.005,
-          horizontal: context.height * 0.018,
+          horizontal: context.height * 0.017,
         ),
         decoration: BoxDecoration(
+          border: Border.all(color: AppColors.kGray),
           borderRadius: BorderRadius.circular(25),
-          border: Border.all(color: borderColor),
         ),
         child: Row(
           spacing: context.height * 0.009,

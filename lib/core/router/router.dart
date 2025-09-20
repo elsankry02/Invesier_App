@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/presentation/main_nav_bar/challenges_page/challenges_page.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/home_page/view/home_page.dart';
-import 'package:invesier/features/presentation/main_nav_bar/learn_page/learn_page.dart';
-import 'package:invesier/features/presentation/main_nav_bar/messages_page/messages_page.dart';
+import '../../features/presentation/main_nav_bar/challenges_page/challenges_page.dart';
+import '../../features/presentation/main_nav_bar/home/home_page/view/home_page.dart';
+import '../../features/presentation/main_nav_bar/learn_page/learn_page.dart';
+import '../../features/presentation/main_nav_bar/messages_page/messages_page.dart';
 
 import '../../features/data/models/get/get_user_profile_model.dart';
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
@@ -13,7 +13,7 @@ import '../../features/presentation/main_nav_bar/home/drawer_page/view/drawer_pa
 import '../../features/presentation/main_nav_bar/home/notification_page/notification_page.dart';
 import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_profile_page.dart';
-import '../../features/presentation/main_nav_bar/home/post_page/view/post_page.dart';
+import '../../features/presentation/main_nav_bar/home/posts_page/view/posts_page.dart';
 import '../../features/presentation/main_nav_bar/home/recent_transactions_page/recent_transactions_page.dart';
 import '../../features/presentation/main_nav_bar/home/search_page/view/search_page.dart';
 import '../../features/presentation/main_nav_bar/home/setting/personal_details_page/view/personal_details_page.dart';
@@ -52,7 +52,7 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: MainNavigationRoute.page),
     AutoRoute(page: DrawerRoute.page),
     AutoRoute(page: CommentRoute.page),
-    AutoRoute(page: PostRoute.page),
+    AutoRoute(page: PostsRoute.page),
     AutoRoute(page: WalletRoute.page),
     AutoRoute(page: ChallengesRoute.page),
     AutoRoute(page: LearnRoute.page),

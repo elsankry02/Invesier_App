@@ -9,32 +9,23 @@ import '../extension/extension.dart';
 import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
 
-class CustomCommentBottomSheet extends StatefulWidget {
-  final String title, titleButton, hintText;
-  final double vertical, radius;
+class CustomCommentBottomSheet extends StatelessWidget {
+  final String title, titleButton;
+  final String? hintText;
+  final EdgeInsetsGeometry? padding;
+  final TextEditingController? commentController;
+  final BorderRadiusGeometry? borderRadius;
   final TextStyle? style;
   const CustomCommentBottomSheet({
     super.key,
     required this.title,
-    required this.hintText,
     required this.titleButton,
-    required this.vertical,
-    required this.radius,
-    required this.style,
+    this.hintText,
+    this.style,
+    this.padding,
+    this.borderRadius,
+    this.commentController,
   });
-
-  @override
-  State<CustomCommentBottomSheet> createState() =>
-      _CustomCommentBottomSheetState();
-}
-
-class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
-  final commentController = TextEditingController();
-  @override
-  void dispose() {
-    commentController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +39,8 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
       decoration: BoxDecoration(
         color: AppColors.kCodGray,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(28),
-          topRight: Radius.circular(28),
+          topLeft: Radius.circular(context.height * 0.028),
+          topRight: Radius.circular(context.height * 0.028),
         ),
       ),
       child: Padding(
@@ -67,7 +58,7 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
               children: [
                 // titel
                 Text(
-                  widget.title,
+                  title,
                   style: context.kTextTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -87,7 +78,7 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
               controller: commentController,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
-                hintText: widget.hintText,
+                hintText: hintText,
                 hintStyle: TextStyle(
                   color: AppColors.kGray,
                   fontSize: 14,
@@ -103,16 +94,13 @@ class _CustomCommentBottomSheetState extends State<CustomCommentBottomSheet> {
               children: [
                 // titleButton
                 CustomPrimaryButton(
-                  title: widget.titleButton,
+                  title: titleButton,
                   backGroundColor: AppColors.kOceanGreen,
                   border: Border.all(color: AppColors.kOceanGreen),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.height * 0.020,
-                    vertical: widget.vertical,
-                  ),
-                  borderRadius: BorderRadius.circular(widget.radius),
+                  padding: padding,
+                  borderRadius: borderRadius,
                   onTap: () {},
-                  style: widget.style,
+                  style: style,
                 ),
               ],
             ),

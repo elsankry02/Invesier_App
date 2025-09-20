@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const kOne = Color(0xff222B25);
+  static const kContanierBack = Color(0xff080A09);
   static const kTwo = Color(0xff141916);
   static const kRed = Color(0xffDC4453);
   static const kGray = Color(0xff818181);

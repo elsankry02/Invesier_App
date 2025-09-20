@@ -379,17 +379,17 @@ class PersonalProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [PostPage]
-class PostRoute extends PageRouteInfo<void> {
-  const PostRoute({List<PageRouteInfo>? children})
-    : super(PostRoute.name, initialChildren: children);
+/// [PostsPage]
+class PostsRoute extends PageRouteInfo<void> {
+  const PostsRoute({List<PageRouteInfo>? children})
+    : super(PostsRoute.name, initialChildren: children);
 
-  static const String name = 'PostRoute';
+  static const String name = 'PostsRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const PostPage();
+      return const PostsPage();
     },
   );
 }

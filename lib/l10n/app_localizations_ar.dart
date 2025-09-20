@@ -189,7 +189,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get deleteaction => 'إجراء الحذف';
 
   @override
-  String get chaseback => 'مطاردة';
+  String get chaseback => 'رد المتابعة';
 
   @override
   String get viewprofile => 'عرض الملف الشخصي';
@@ -276,7 +276,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get type => 'النوع';
 
   @override
-  String get chase => 'مطاردة';
+  String get chase => 'متابعة';
 
   @override
   String get yesblock => 'نعم، حظر';
@@ -447,7 +447,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get mate => 'صديق';
 
   @override
-  String get post => 'منشور';
+  String get post => 'المنشور';
 
   @override
   String get live => 'بث مباشر';

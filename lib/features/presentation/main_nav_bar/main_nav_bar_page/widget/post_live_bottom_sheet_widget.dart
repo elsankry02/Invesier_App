@@ -39,7 +39,7 @@ class PostLiveBottomSheetWidget extends StatelessWidget {
               title: local.post,
               onTap: () {
                 context.router.maybePop();
-                context.router.push(PostRoute());
+                context.router.push(PostsRoute());
               },
             ),
             const Divider(thickness: 2),

@@ -15,14 +15,14 @@ import '../../../../../data/providers/post/creat_post_provider.dart';
 import '../widget/post_app_bar_widget.dart';
 
 @RoutePage()
-class PostPage extends ConsumerStatefulWidget {
-  const PostPage({super.key});
+class PostsPage extends ConsumerStatefulWidget {
+  const PostsPage({super.key});
 
   @override
-  ConsumerState<PostPage> createState() => _PostPageState();
+  ConsumerState<PostsPage> createState() => _PostPageState();
 }
 
-class _PostPageState extends ConsumerState<PostPage> {
+class _PostPageState extends ConsumerState<PostsPage> {
   File? file;
   final contentController = TextEditingController();
   @override
@@ -140,7 +140,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                         },
                         icon: Icon(
                           FontAwesomeIcons.image,
-                          color: AppColors.kOceanGreen,
+                          color: AppColors.kNum,
                         ),
                       ),
                       CustomIconButton(
@@ -149,7 +149,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                         },
                         icon: Icon(
                           FontAwesomeIcons.video,
-                          color: AppColors.kOceanGreen,
+                          color: AppColors.kNum,
                         ),
                       ),
                     ],
@@ -157,7 +157,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                   CustomPrimaryButton(
                     isLoading: state is CreatPostLoading,
                     title: local.postnow,
-                    backGroundColor: AppColors.kOceanGreen,
+                    backGroundColor: AppColors.kNum,
                     padding: EdgeInsetsDirectional.symmetric(
                       horizontal: context.height * 0.020,
                       vertical: context.height * 0.012,
@@ -165,7 +165,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                     borderRadius: BorderRadius.circular(16),
                     style: context.kTextTheme.labelMedium!.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: AppColors.kDivider,
+                      color: AppColors.kBackGround,
                     ),
                     onTap: createPost,
                   ),
