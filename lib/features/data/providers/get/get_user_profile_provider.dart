@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constant/app_strings.dart';
-import '../../models/get_user_profile_model.dart';
+import '../../models/get/get_user_profile_model.dart';
 import '../provider.dart';
 
 abstract class GetUserProfileState {}

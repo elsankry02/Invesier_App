@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_no_posts_widget.dart';
+import 'package:invesier/core/extension/extension.dart';
+
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_user_pioneers_provider.dart';
@@ -21,7 +24,9 @@ class UserPioneersWidget extends ConsumerWidget {
     } else if (pioneersState is GetUserPioneersSuccess &&
         profileState is GetUserProfileSuccess) {
       if (pioneersState.getUserPioneersModel.isEmpty) {
-        return const Center(child: Text("No pioneers found"));
+        return CustomNoPostsWidget(
+          title: context.kAppLocalizations.nopioneersfound,
+        );
       }
       return ListView.builder(
         itemCount: pioneersState.getUserPioneersModel.length,

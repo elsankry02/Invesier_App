@@ -44,7 +44,6 @@
 "donthaveanaccount": "Don't have an account?",
 "home": "Home",
 "trade": "Trade",
-"challenges": "Challenges",
 "learn": "Learn",
 "pleasechooseanavatarimage": "Please choose an avatar image",
 "pleaseenteraname": "Please enter a name",
@@ -148,7 +147,10 @@
 "yesBlock": "Yes, block",
 "mate": "Mate",
 "post": "Post",
-"live": "Live"
+"live": "Live",
+"nopioneersfound": "No pioneers found",
+"challenge": "Challenge",
+"messages": "Messages"
 
 
 

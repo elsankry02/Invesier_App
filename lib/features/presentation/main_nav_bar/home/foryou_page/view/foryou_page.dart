@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_no_posts_widget.dart';
+
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/extension/extension.dart';
-
 import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../widget/social_post_card.dart';
 
@@ -25,7 +26,9 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
     final state = ref.watch(getPostsProvider);
     if (state is GetPostsSuccess) {
       if (state.data.isEmpty) {
-        return Center(child: Text(context.kAppLocalizations.nopoststodisplay));
+        return CustomNoPostsWidget(
+          title: context.kAppLocalizations.nopoststodisplay,
+        );
       }
       return ListView.builder(
         physics: NeverScrollableScrollPhysics(),

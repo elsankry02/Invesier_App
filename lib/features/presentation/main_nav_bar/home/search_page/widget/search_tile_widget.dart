@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../../../../../data/models/get_user_profile_model.dart';
+import '../../../../../data/models/get/get_user_profile_model.dart';
 
 class SearchTileWidget extends StatelessWidget {
   final void Function()? onTap;

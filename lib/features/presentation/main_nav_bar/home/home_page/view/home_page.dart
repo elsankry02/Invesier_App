@@ -1,13 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../pioneers_page/pioneers_page.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../foryou_page/view/foryou_page.dart';
+import '../../pioneers_page/pioneers_page.dart';
 import '../widget/invesier_appbar_widget.dart';
 
+@RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -47,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         backGroundColor:
                             enumView == EnumView.foryou
-                                ? AppColors.kOceanGreen
+                                ? AppColors.kNum
                                 : AppColors.kBackGround,
                         padding: EdgeInsetsDirectional.symmetric(
                           horizontal: context.height * 0.026,
@@ -73,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         backGroundColor:
                             enumView == EnumView.pioneers
-                                ? AppColors.kOceanGreen
+                                ? AppColors.kNum
                                 : AppColors.kBackGround,
                         padding: EdgeInsetsDirectional.symmetric(
                           horizontal: context.height * 0.026,

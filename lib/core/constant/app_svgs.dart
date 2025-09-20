@@ -1,7 +1,7 @@
 class AppSvgs {
   static const kInvinserLogo = 'assets/svg/invinser_logo.svg';
   static const kblockVictor = 'assets/svg/block_victor.svg';
-  static const kChallenges = 'assets/svg/challenges.svg';
+  static const kChallenge = 'assets/svg/challenge.svg';
   static const kSearch = 'assets/svg/search_icon.svg';
   static const kGoogle = 'assets/svg/google_ic.svg';
   static const kPopMenu = 'assets/svg/pop_menu.svg';
@@ -12,8 +12,8 @@ class AppSvgs {
   static const kGrowth = 'assets/svg/growth.svg';
   static const kInvesier = 'assets/svg/invesier.svg';
   static const kApple = 'assets/svg/apple.svg';
-  static const kTrade = 'assets/svg/trade.svg';
   static const kLearn = 'assets/svg/learn.svg';
+  static const kMessages = 'assets/svg/message.svg';
   static const kReply = 'assets/svg/reply.svg';
   static const kArrow = 'assets/svg/arrow.svg';
   static const kSent = 'assets/svg/sent.svg';

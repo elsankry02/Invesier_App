@@ -33,9 +33,7 @@ class NavigationBarItemWidget extends StatelessWidget {
             SvgPicture.asset(
               assetName,
               colorFilter: ColorFilter.mode(
-                selectedIndex == index
-                    ? AppColors.kOceanGreen
-                    : AppColors.kWhite,
+                selectedIndex == index ? AppColors.kNum : AppColors.kWhite,
                 BlendMode.srcIn,
               ),
             ),
@@ -43,9 +41,10 @@ class NavigationBarItemWidget extends StatelessWidget {
             // Title
             Text(
               title,
-              style: context.kTextTheme.bodySmall!.copyWith(
+              style: context.kTextTheme.labelSmall!.copyWith(
+                fontWeight: FontWeight.w400,
                 color:
-                    selectedIndex == index ? AppColors.kWhite : AppColors.kGray,
+                    selectedIndex == index ? AppColors.kNum : AppColors.kWhite,
               ),
             ),
           ],

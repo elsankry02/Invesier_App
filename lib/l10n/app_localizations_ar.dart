@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13,24 +12,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcometoinvesier => 'مرحبًا بك في Invesier';
 
   @override
-  String
-  get stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead =>
-      'ابقَ على اطلاع بأحدث الأخبار المالية واتجاهات السوق ورؤى الخبراء لتبقى مطلعًا ومتفوقًا.';
+  String get stayconnectedwiththelatestfinancialnewsmarkettrendsandexpertinsightstokeepyouinformedandahead => 'ابقَ على اطلاع بأحدث الأخبار المالية واتجاهات السوق ورؤى الخبراء لتبقى مطلعًا ومتفوقًا.';
 
   @override
   String get practicewithvirtualcurrency => 'تدرب بالعملة الافتراضية';
 
   @override
-  String get gainexperiencethroughsimulatedtradingnorisksjustrewards =>
-      'اكتسب الخبرة من خلال التداول المحاكي. لا مخاطر، فقط مكافآت.';
+  String get gainexperiencethroughsimulatedtradingnorisksjustrewards => 'اكتسب الخبرة من خلال التداول المحاكي. لا مخاطر، فقط مكافآت.';
 
   @override
   String get joinchatslivestreams => 'انضم إلى الدردشات والبث المباشر';
 
   @override
-  String
-  get talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney =>
-      'تحدث إلى الخبراء، انضم إلى المجتمعات، واذهب مباشرة لمشاركة رحلتك الاستثمارية';
+  String get talktoexpertsjoincommunitiesandgolivetoshareyourinvestmentjourney => 'تحدث إلى الخبراء، انضم إلى المجتمعات، واذهب مباشرة لمشاركة رحلتك الاستثمارية';
 
   @override
   String get skip => 'تخطي';
@@ -42,8 +36,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get competeforrewards => 'تنافس للحصول على مكافآت';
 
   @override
-  String get climbtheleaderboardunlockperksandearnrealworldopportunities =>
-      'تسلق لوحة المتصدرين، افتح الامتيازات، واكسب فرصًا حقيقية';
+  String get climbtheleaderboardunlockperksandearnrealworldopportunities => 'تسلق لوحة المتصدرين، افتح الامتيازات، واكسب فرصًا حقيقية';
 
   @override
   String get getstarted => 'ابدأ';
@@ -58,8 +51,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get signup => ' إنشاء حساب';
 
   @override
-  String get otpsentsuccessfullypleaseverifytocontinue =>
-      'تم إرسال OTP بنجاح. يرجى التحقق للمتابعة.';
+  String get otpsentsuccessfullypleaseverifytocontinue => 'تم إرسال OTP بنجاح. يرجى التحقق للمتابعة.';
 
   @override
   String get createanaccount => ' إنشاء حساب ';
@@ -131,8 +123,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pleaseenteravalidphonenumber => 'الرجاء إدخال رقم هاتف صالح';
 
   @override
-  String get phonenumbermustbeatleastdigits =>
-      'يجب أن يتكون رقم الهاتف من 11 رقمًا على الأقل';
+  String get phonenumbermustbeatleastdigits => 'يجب أن يتكون رقم الهاتف من 11 رقمًا على الأقل';
 
   @override
   String get comingsoon => 'قريباً';
@@ -150,9 +141,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get trade => 'تداول';
 
   @override
-  String get challenges => 'تحديات';
-
-  @override
   String get learn => 'تعلم';
 
   @override
@@ -162,8 +150,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pleaseenteraname => 'الرجاء إدخال اسم';
 
   @override
-  String get namemustbeatleastcharacters =>
-      'يجب أن يتكون الاسم من 4 أحرف على الأقل';
+  String get namemustbeatleastcharacters => 'يجب أن يتكون الاسم من 4 أحرف على الأقل';
 
   @override
   String get profilecompletedsuccessfully => 'اكتمل الملف الشخصي بنجاح';
@@ -217,15 +204,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get logout => 'تسجيل الخروج';
 
   @override
-  String get reportthispostandblocktheaccount =>
-      'الإبلاغ عن هذا المنشور وحظر الحساب';
+  String get reportthispostandblocktheaccount => 'الإبلاغ عن هذا المنشور وحظر الحساب';
 
   @override
   String get report => 'إبلاغ';
 
   @override
-  String get reportisdelivereddoyouwanttoblockthisaccount =>
-      'تم تسليم البلاغ. هل تريد حظر هذا الحساب؟';
+  String get reportisdelivereddoyouwanttoblockthisaccount => 'تم تسليم البلاغ. هل تريد حظر هذا الحساب؟';
 
   @override
   String get pioneers => ' الرواد';
@@ -252,8 +237,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get posts => 'المنشورات';
 
   @override
-  String get selectanimagefromyourgalleryorcamera =>
-      'اختر صورة من معرض الصور أو الكاميرا';
+  String get selectanimagefromyourgalleryorcamera => 'اختر صورة من معرض الصور أو الكاميرا';
 
   @override
   String get wepostmoneyrelatedcontent => 'ننشر محتوى متعلقًا بالمال.....';
@@ -304,15 +288,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get blockuser => 'حظر المستخدم';
 
   @override
-  String get areyousureyouwanttoblockthisaccount =>
-      'هل أنت متأكد أنك تريد حظر هذا الحساب؟';
+  String get areyousureyouwanttoblockthisaccount => 'هل أنت متأكد أنك تريد حظر هذا الحساب؟';
 
   @override
   String get requestnotapproved => 'لم تتم الموافقة على الطلب!';
 
   @override
-  String get thiscouldbeduetomissingorincorrectinformation =>
-      'قد يكون هذا بسبب معلومات مفقودة أو غير صحيحة. لا يزال بإمكانك إرسال طلبين آخرين هذا الشهر.';
+  String get thiscouldbeduetomissingorincorrectinformation => 'قد يكون هذا بسبب معلومات مفقودة أو غير صحيحة. لا يزال بإمكانك إرسال طلبين آخرين هذا الشهر.';
 
   @override
   String get sendnewrequest => 'إرسال طلب جديد';
@@ -321,8 +303,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get requestattemptnotice => 'إشعار محاولة الطلب';
 
   @override
-  String get youcansendrequestspermonththiswilluseonecontinue =>
-      'يمكنك إرسال 3 طلبات شهريًا. سيستخدم هذا واحدًا. هل تريد المتابعة؟';
+  String get youcansendrequestspermonththiswilluseonecontinue => 'يمكنك إرسال 3 طلبات شهريًا. سيستخدم هذا واحدًا. هل تريد المتابعة؟';
 
   @override
   String get shouldContinue => 'متابعة';
@@ -334,8 +315,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get accountdeletedsuccessfully => 'تم حذف الحساب بنجاح';
 
   @override
-  String get removeadsenjoyinvesierasyouwish =>
-      'أزل الإعلانات واستمتع بتجربة Invesier كما تحب';
+  String get removeadsenjoyinvesierasyouwish => 'أزل الإعلانات واستمتع بتجربة Invesier كما تحب';
 
   @override
   String get personaldetails => 'التفاصيل الشخصية';
@@ -353,8 +333,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirm => 'تأكيد';
 
   @override
-  String get areyousureyouwanttodeleteyouraccount =>
-      'هل أنت متأكد أنك تريد حذف حسابك؟';
+  String get areyousureyouwanttodeleteyouraccount => 'هل أنت متأكد أنك تريد حذف حسابك؟';
 
   @override
   String get cancel => 'إلغاء';
@@ -366,12 +345,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get close => 'إغلاق';
 
   @override
-  String get yourverificationrequesthassent =>
-      'تم إرسال طلب التحقق الخاص بك بنجاح!';
+  String get yourverificationrequesthassent => 'تم إرسال طلب التحقق الخاص بك بنجاح!';
 
   @override
-  String get wewillletyouknowwhenyourverificationrequesthasbeenreviewed =>
-      'سنخبرك عندما تتم مراجعة طلب التحقق الخاص بك';
+  String get wewillletyouknowwhenyourverificationrequesthasbeenreviewed => 'سنخبرك عندما تتم مراجعة طلب التحقق الخاص بك';
 
   @override
   String get finance => 'المالية';
@@ -401,8 +378,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get youreverified => 'لقد تم التحقق منك!';
 
   @override
-  String get yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature =>
-      'تمت الموافقة على طلبك. يمكنك الآن الاستمتاع بميزتنا المميزة';
+  String get yourrequesthasbeenapprovedyoucannowenjoyourpremiumfeature => 'تمت الموافقة على طلبك. يمكنك الآن الاستمتاع بميزتنا المميزة';
 
   @override
   String get backtohomepage => 'العودة إلى الصفحة الرئيسية';
@@ -475,4 +451,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get live => 'بث مباشر';
+
+  @override
+  String get nopioneersfound => 'لم يتم العثور على رواد';
+
+  @override
+  String get challenge => 'التحديات';
+
+  @override
+  String get messages => 'الرسائل';
 }

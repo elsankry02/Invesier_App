@@ -11,6 +11,22 @@
 part of 'router.dart';
 
 /// generated route for
+/// [ChallengesPage]
+class ChallengesRoute extends PageRouteInfo<void> {
+  const ChallengesRoute({List<PageRouteInfo>? children})
+    : super(ChallengesRoute.name, initialChildren: children);
+
+  static const String name = 'ChallengesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ChallengesPage();
+    },
+  );
+}
+
+/// generated route for
 /// [CommentPage]
 class CommentRoute extends PageRouteInfo<void> {
   const CommentRoute({List<PageRouteInfo>? children})
@@ -142,6 +158,38 @@ class DrawerRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+    : super(HomeRoute.name, initialChildren: children);
+
+  static const String name = 'HomeRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HomePage();
+    },
+  );
+}
+
+/// generated route for
+/// [LearnPage]
+class LearnRoute extends PageRouteInfo<void> {
+  const LearnRoute({List<PageRouteInfo>? children})
+    : super(LearnRoute.name, initialChildren: children);
+
+  static const String name = 'LearnRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LearnPage();
+    },
+  );
+}
+
+/// generated route for
 /// [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
@@ -201,6 +249,22 @@ class MainNavigationRouteArgs {
 
   @override
   int get hashCode => key.hashCode ^ drawer.hashCode;
+}
+
+/// generated route for
+/// [MessagesPage]
+class MessagesRoute extends PageRouteInfo<void> {
+  const MessagesRoute({List<PageRouteInfo>? children})
+    : super(MessagesRoute.name, initialChildren: children);
+
+  static const String name = 'MessagesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MessagesPage();
+    },
+  );
 }
 
 /// generated route for

@@ -359,12 +359,6 @@ abstract class AppLocalizations {
   /// **'Trade'**
   String get trade;
 
-  /// No description provided for @challenges.
-  ///
-  /// In en, this message translates to:
-  /// **'Challenges'**
-  String get challenges;
-
   /// No description provided for @learn.
   ///
   /// In en, this message translates to:
@@ -988,6 +982,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Live'**
   String get live;
+
+  /// No description provided for @nopioneersfound.
+  ///
+  /// In en, this message translates to:
+  /// **'No pioneers found'**
+  String get nopioneersfound;
+
+  /// No description provided for @challenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge'**
+  String get challenge;
+
+  /// No description provided for @messages.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get messages;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

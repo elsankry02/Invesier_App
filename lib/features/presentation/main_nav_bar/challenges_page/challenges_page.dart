@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+@RoutePage()
 class ChallengesPage extends StatelessWidget {
   const ChallengesPage({super.key});
 

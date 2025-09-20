@@ -8,7 +8,7 @@ import '../../challenges_page/challenges_page.dart';
 import '../../home/drawer_page/view/drawer_page.dart';
 import '../../home/home_page/view/home_page.dart';
 import '../../learn_page/learn_page.dart';
-import '../../trade_page/trade_page.dart';
+import '../../messages_page/messages_page.dart';
 import '../widget/action_button_location_widget.dart';
 import '../widget/navigationbar_item_widget.dart';
 import '../widget/post_live_bottom_sheet_widget.dart';
@@ -25,7 +25,12 @@ final scaffoldKey = GlobalKey<ScaffoldState>();
 
 class _MainNavigationPageState extends State<MainNavigationPage> {
   int selectedIndex = 0;
-  List<Widget> pages = [HomePage(), ChallengesPage(), TradePage(), LearnPage()];
+  List<Widget> pages = [
+    HomePage(),
+    ChallengesPage(),
+    MessagesPage(),
+    LearnPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +59,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // home
+                  // 1
                   NavigationBarItemWidget(
                     title: local.home,
                     assetName: AppSvgs.kHome,
@@ -66,10 +71,10 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                       });
                     },
                   ),
-                  // challenges
+                  // 2
                   NavigationBarItemWidget(
-                    title: local.challenges,
-                    assetName: AppSvgs.kChallenges,
+                    title: local.challenge,
+                    assetName: AppSvgs.kChallenge,
                     selectedIndex: selectedIndex,
                     index: 1,
                     onTap: () {
@@ -95,10 +100,10 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Trade
+                  // 3
                   NavigationBarItemWidget(
-                    title: local.trade,
-                    assetName: AppSvgs.kTrade,
+                    title: local.learn,
+                    assetName: AppSvgs.kLearn,
                     selectedIndex: selectedIndex,
                     index: 2,
                     onTap: () {
@@ -107,10 +112,10 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                       });
                     },
                   ),
-                  // Learn
+                  // 4
                   NavigationBarItemWidget(
-                    title: local.learn,
-                    assetName: AppSvgs.kLearn,
+                    title: local.messages,
+                    assetName: AppSvgs.kMessages,
                     selectedIndex: selectedIndex,
                     index: 3,
                     onTap: () {

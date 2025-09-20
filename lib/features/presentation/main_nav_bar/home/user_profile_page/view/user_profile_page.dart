@@ -6,7 +6,7 @@ import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../data/models/get_user_profile_model.dart';
+import '../../../../../data/models/get/get_user_profile_model.dart';
 import '../widget/user_appbar_widget.dart';
 
 @RoutePage()

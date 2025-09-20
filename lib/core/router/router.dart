@@ -1,8 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../features/data/models/get_user_profile_model.dart';
-import '../../features/presentation/main_nav_bar/home/user_profile_page/view/user_followers_page.dart';
+import 'package:invesier/features/presentation/main_nav_bar/challenges_page/challenges_page.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/home_page/view/home_page.dart';
+import 'package:invesier/features/presentation/main_nav_bar/learn_page/learn_page.dart';
+import 'package:invesier/features/presentation/main_nav_bar/messages_page/messages_page.dart';
 
+import '../../features/data/models/get/get_user_profile_model.dart';
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/login_page/login_page.dart';
 import '../../features/presentation/main_nav_bar/home/comment_page/view/comment_page.dart';
@@ -20,6 +23,7 @@ import '../../features/presentation/main_nav_bar/home/setting/under_reveiw_page/
 import '../../features/presentation/main_nav_bar/home/setting/verification_request_page/view/verification_request_page.dart';
 import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_page/view/you_are_verified_page.dart';
 import '../../features/presentation/main_nav_bar/home/transactions_history_page/transactions_history_page.dart';
+import '../../features/presentation/main_nav_bar/home/user_profile_page/view/user_followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/user_profile_page/view/user_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/wallet_page/view/wallet_page.dart';
 import '../../features/presentation/main_nav_bar/main_nav_bar_page/view/main_navigation_page.dart';
@@ -50,6 +54,10 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: CommentRoute.page),
     AutoRoute(page: PostRoute.page),
     AutoRoute(page: WalletRoute.page),
+    AutoRoute(page: ChallengesRoute.page),
+    AutoRoute(page: LearnRoute.page),
+    AutoRoute(page: MessagesRoute.page),
+    AutoRoute(page: HomeRoute.page),
     AutoRoute(page: SettingsRoute.page),
     AutoRoute(page: PersonalProfileRoute.page),
     AutoRoute(page: PersonalDetailsRoute.page),

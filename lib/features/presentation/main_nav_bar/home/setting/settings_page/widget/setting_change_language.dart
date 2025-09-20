@@ -52,7 +52,12 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
                     ? Icons.radio_button_checked
                     : Icons.radio_button_unchecked,
               ),
-              title: Text("English"),
+              title: Text(
+                "English",
+                style: context.kTextTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
             ListTile(
               onTap: () {
@@ -68,7 +73,12 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
                     ? Icons.radio_button_unchecked
                     : Icons.radio_button_checked,
               ),
-              title: Text("Arabic"),
+              title: Text(
+                "Arabic",
+                style: context.kTextTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
           ],
         ),

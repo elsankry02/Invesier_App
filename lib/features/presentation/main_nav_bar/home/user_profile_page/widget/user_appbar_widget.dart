@@ -10,7 +10,7 @@ import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
-import '../../../../../data/models/get_user_profile_model.dart';
+import '../../../../../data/models/get/get_user_profile_model.dart';
 import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import 'user_alertdialog_widget.dart';
 import 'user_pop_menu_widget.dart';
