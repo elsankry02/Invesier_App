@@ -528,10 +528,15 @@ class UserFollowersRoute extends PageRouteInfo<UserFollowersRouteArgs> {
   UserFollowersRoute({
     Key? key,
     required FollowersTabType initialTab,
+    required GetUserProfileModel getUserProfileModel,
     List<PageRouteInfo>? children,
   }) : super(
          UserFollowersRoute.name,
-         args: UserFollowersRouteArgs(key: key, initialTab: initialTab),
+         args: UserFollowersRouteArgs(
+           key: key,
+           initialTab: initialTab,
+           getUserProfileModel: getUserProfileModel,
+         ),
          initialChildren: children,
        );
 
@@ -541,32 +546,45 @@ class UserFollowersRoute extends PageRouteInfo<UserFollowersRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<UserFollowersRouteArgs>();
-      return UserFollowersPage(key: args.key, initialTab: args.initialTab);
+      return UserFollowersPage(
+        key: args.key,
+        initialTab: args.initialTab,
+        getUserProfileModel: args.getUserProfileModel,
+      );
     },
   );
 }
 
 class UserFollowersRouteArgs {
-  const UserFollowersRouteArgs({this.key, required this.initialTab});
+  const UserFollowersRouteArgs({
+    this.key,
+    required this.initialTab,
+    required this.getUserProfileModel,
+  });
 
   final Key? key;
 
   final FollowersTabType initialTab;
 
+  final GetUserProfileModel getUserProfileModel;
+
   @override
   String toString() {
-    return 'UserFollowersRouteArgs{key: $key, initialTab: $initialTab}';
+    return 'UserFollowersRouteArgs{key: $key, initialTab: $initialTab, getUserProfileModel: $getUserProfileModel}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is! UserFollowersRouteArgs) return false;
-    return key == other.key && initialTab == other.initialTab;
+    return key == other.key &&
+        initialTab == other.initialTab &&
+        getUserProfileModel == other.getUserProfileModel;
   }
 
   @override
-  int get hashCode => key.hashCode ^ initialTab.hashCode;
+  int get hashCode =>
+      key.hashCode ^ initialTab.hashCode ^ getUserProfileModel.hashCode;
 }
 
 /// generated route for
@@ -574,14 +592,11 @@ class UserFollowersRouteArgs {
 class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
   UserProfileRoute({
     Key? key,
-    required GetUserProfileModel getUserProfileModel,
+    required String userName,
     List<PageRouteInfo>? children,
   }) : super(
          UserProfileRoute.name,
-         args: UserProfileRouteArgs(
-           key: key,
-           getUserProfileModel: getUserProfileModel,
-         ),
+         args: UserProfileRouteArgs(key: key, userName: userName),
          initialChildren: children,
        );
 
@@ -591,35 +606,32 @@ class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<UserProfileRouteArgs>();
-      return UserProfilePage(
-        key: args.key,
-        getUserProfileModel: args.getUserProfileModel,
-      );
+      return UserProfilePage(key: args.key, userName: args.userName);
     },
   );
 }
 
 class UserProfileRouteArgs {
-  const UserProfileRouteArgs({this.key, required this.getUserProfileModel});
+  const UserProfileRouteArgs({this.key, required this.userName});
 
   final Key? key;
 
-  final GetUserProfileModel getUserProfileModel;
+  final String userName;
 
   @override
   String toString() {
-    return 'UserProfileRouteArgs{key: $key, getUserProfileModel: $getUserProfileModel}';
+    return 'UserProfileRouteArgs{key: $key, userName: $userName}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is! UserProfileRouteArgs) return false;
-    return key == other.key && getUserProfileModel == other.getUserProfileModel;
+    return key == other.key && userName == other.userName;
   }
 
   @override
-  int get hashCode => key.hashCode ^ getUserProfileModel.hashCode;
+  int get hashCode => key.hashCode ^ userName.hashCode;
 }
 
 /// generated route for

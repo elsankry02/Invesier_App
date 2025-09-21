@@ -33,13 +33,13 @@ class GetUserProfileNotifier extends AutoDisposeNotifier<GetUserProfileState> {
 
   Timer? debounce;
 
-  Future<void> getUserProfile({required String username}) async {
+  Future<void> getUserProfile({required String userName}) async {
     final provider = ref.read(getUserProfileServiceProvider);
     if (debounce?.isActive ?? false) debounce!.cancel();
     debounce = Timer(Duration(milliseconds: 400), () async {
       state = GetUserProfileLoading();
       try {
-        final data = await provider.getUserProfile(username: username);
+        final data = await provider.getUserProfile(username: userName);
         state = GetUserProfileSuccess(getUserProfileModel: data);
       } on Exception catch (e) {
         if (e is DioException) {

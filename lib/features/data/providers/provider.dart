@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/get/get_user_pioneers_service.dart';
+import 'package:invesier/features/data/services/get/get_list_users_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
@@ -10,6 +10,7 @@ import '../../../env.dart';
 import '../services/delete/delete_account_service.dart';
 import '../services/get/get_authenticated_user_service.dart';
 import '../services/get/get_posts_service.dart';
+import '../services/get/get_user_pioneers_service.dart';
 import '../services/get/get_user_profile_service.dart';
 import '../services/post/check_username_availability_service.dart';
 import '../services/post/complete_profile_service.dart';
@@ -100,4 +101,8 @@ final getUserProfileServiceProvider = Provider<GetUserProfileService>((ref) {
 //get User Pioneers Service Provider
 final getUserPioneersServiceProvider = Provider<GetUserPioneersService>((ref) {
   return GetUserPioneersService(dio: ref.read(dioProvider));
+});
+// get List Users Service Provider
+final getListUsersServiceProvider = Provider<GetListUsersService>((ref) {
+  return GetListUsersService(dio: ref.read(dioProvider));
 });

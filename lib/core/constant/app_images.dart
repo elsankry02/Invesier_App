@@ -23,4 +23,6 @@ class AppImages {
   static const kProgressBarFour = 'assets/image/progress_bar_four.png';
   static const kLoadingFiles = 'assets/image/loading_files.png';
   static const kInvesierLogo = 'assets/image/Invesier_logo.png';
+    static const ImageNetwork =
+      "https://firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png";
 }

@@ -150,5 +150,6 @@
 "live": "بث مباشر",
 "nopioneersfound": "لم يتم العثور على رواد",
 "challenge": "التحديات",
-"messages": "الرسائل"
+"messages": "الرسائل",
+"noresultsfound": "لا يوجد نتائج"
 }

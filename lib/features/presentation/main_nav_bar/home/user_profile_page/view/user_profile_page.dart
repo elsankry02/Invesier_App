@@ -1,18 +1,33 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
+import 'package:invesier/features/data/providers/get/get_user_profile_provider.dart';
 
 import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../data/models/get/get_user_profile_model.dart';
 import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
-class UserProfilePage extends StatelessWidget {
-  final GetUserProfileModel getUserProfileModel;
-  const UserProfilePage({super.key, required this.getUserProfileModel});
+class UserProfilePage extends ConsumerStatefulWidget {
+  final String userName;
+  const UserProfilePage({super.key, required this.userName});
+
+  @override
+  ConsumerState<UserProfilePage> createState() => _UserProfilePageState();
+}
+
+class _UserProfilePageState extends ConsumerState<UserProfilePage> {
+  @override
+  void initState() {
+    ref
+        .read(getUserProfileProvider.notifier)
+        .getUserProfile(userName: widget.userName);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +43,21 @@ class UserProfilePage extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            UserAppBarWidget(getUserProfileModel: getUserProfileModel),
+            Consumer(
+              builder: (context, ref, child) {
+                final state = ref.watch(getUserProfileProvider);
+                if (state is GetUserProfileSuccess) {
+                  return UserAppBarWidget(
+                    getUserProfileModel: state.getUserProfileModel,
+                  );
+                } else if (state is GetUserProfileFailure) {
+                  return Center(child: Text(state.errMessage));
+                } else if (state is GetUserProfileLoading) {
+                  return CustomCircularProgressIndicator();
+                }
+                return SizedBox();
+              },
+            ),
             SizedBox(height: context.height * 0.021),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

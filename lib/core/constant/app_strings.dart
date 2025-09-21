@@ -37,4 +37,5 @@ class AppStrings {
   static const skipOnboarding = 'skip-onboarding';
   static const isCompleteProfile = "is_complete_profile";
   static const registrationComplete = "registration_complete";
+
 }

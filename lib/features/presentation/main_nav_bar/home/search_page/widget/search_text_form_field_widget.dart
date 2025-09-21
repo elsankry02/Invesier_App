@@ -7,17 +7,20 @@ import '../../../../../../core/extension/extension.dart';
 
 class SearchTextFormFieldWidget extends StatelessWidget {
   final TextEditingController? searchController;
+  final bool autofocus;
   final void Function(String value)? onFieldSubmitted, onChanged;
   const SearchTextFormFieldWidget({
     super.key,
     this.searchController,
     this.onFieldSubmitted,
     this.onChanged,
+    this.autofocus = true,
   });
   @override
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return TextFormField(
+      autofocus: autofocus,
       onFieldSubmitted: onFieldSubmitted,
       onChanged: onChanged,
       cursorColor: AppColors.kDarkenText,

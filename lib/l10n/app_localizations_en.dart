@@ -460,4 +460,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get messages => 'Messages';
+
+  @override
+  String get noresultsfound => 'No results found';
 }

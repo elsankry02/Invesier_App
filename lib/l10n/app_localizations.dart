@@ -1000,6 +1000,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Messages'**
   String get messages;
+
+  /// No description provided for @noresultsfound.
+  ///
+  /// In en, this message translates to:
+  /// **'No results found'**
+  String get noresultsfound;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

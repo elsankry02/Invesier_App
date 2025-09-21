@@ -1,15 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../features/presentation/main_nav_bar/challenges_page/challenges_page.dart';
-import '../../features/presentation/main_nav_bar/home/home_page/view/home_page.dart';
-import '../../features/presentation/main_nav_bar/learn_page/learn_page.dart';
-import '../../features/presentation/main_nav_bar/messages_page/messages_page.dart';
+import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
 
-import '../../features/data/models/get/get_user_profile_model.dart';
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/login_page/login_page.dart';
+import '../../features/presentation/main_nav_bar/challenges_page/challenges_page.dart';
 import '../../features/presentation/main_nav_bar/home/comment_page/view/comment_page.dart';
 import '../../features/presentation/main_nav_bar/home/drawer_page/view/drawer_page.dart';
+import '../../features/presentation/main_nav_bar/home/home_page/view/home_page.dart';
 import '../../features/presentation/main_nav_bar/home/notification_page/notification_page.dart';
 import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/personal_profile_page/view/personal_profile_page.dart';
@@ -26,7 +24,9 @@ import '../../features/presentation/main_nav_bar/home/transactions_history_page/
 import '../../features/presentation/main_nav_bar/home/user_profile_page/view/user_followers_page.dart';
 import '../../features/presentation/main_nav_bar/home/user_profile_page/view/user_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/wallet_page/view/wallet_page.dart';
+import '../../features/presentation/main_nav_bar/learn_page/learn_page.dart';
 import '../../features/presentation/main_nav_bar/main_nav_bar_page/view/main_navigation_page.dart';
+import '../../features/presentation/main_nav_bar/messages_page/messages_page.dart';
 import '../../features/presentation/onboarding_page/view/onboarding_page.dart';
 import '../../features/presentation/signup_page/view/signup_page.dart';
 import '../../features/presentation/splash_page/splash_page.dart';

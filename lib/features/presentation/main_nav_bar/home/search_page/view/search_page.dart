@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/providers/get/get_list_users_provider.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
-import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import '../widget/search_text_form_field_widget.dart';
 import '../widget/search_tile_widget.dart';
 
@@ -39,61 +39,75 @@ class _SearchPageState extends ConsumerState<SearchPage> {
           ),
         ),
         child: SafeArea(
-          child: ListView(
+          child: Padding(
             padding: EdgeInsets.only(top: context.height * 0.025),
-            children: [
-              Row(
-                children: [
-                  // Custom IconButton
-                  CustomIconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      color: AppColors.kWhite,
-                    ),
-                    onPressed: () {
-                      context.router.maybePop();
-                    },
-                  ),
-                  // HomeFollow TextFormField Widget
-                  Expanded(
-                    child: SearchTextFormFieldWidget(
-                      searchController: searchController,
-                      onChanged: (value) {
-                        if (value.isNotEmpty) {
-                          ref
-                              .read(getUserProfileProvider.notifier)
-                              .getUserProfile(username: value.trim());
-                        }
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    // Custom IconButton
+                    CustomIconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        color: AppColors.kWhite,
+                      ),
+                      onPressed: () {
+                        context.router.maybePop();
                       },
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: context.height * 0.020),
-              Consumer(
-                builder: (context, ref, child) {
-                  final state = ref.watch(getUserProfileProvider);
-
-                  if (state is GetUserProfileLoading) {
-                    return CustomCircularProgressIndicator();
-                  } else if (state is GetUserProfileFailure) {
-                    return Center(child: Text(state.errMessage));
-                  } else if (state is GetUserProfileSuccess) {
-                    return SearchTileWidget(
-                      onTap: () {
-                        context.router.push(
-                          UserProfileRoute(
-                            getUserProfileModel: state.getUserProfileModel,
-                          ),
+                    // HomeFollow TextFormField Widget
+                    Expanded(
+                      child: SearchTextFormFieldWidget(
+                        searchController: searchController,
+                        onChanged: (value) {
+                          if (value.isNotEmpty) {
+                            ref
+                                .read(getListUsersProvider.notifier)
+                                .getListUsers(userName: value.trim());
+                          }
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: context.height * 0.020),
+                Consumer(
+                  builder: (context, ref, child) {
+                    final state = ref.watch(getListUsersProvider);
+                    if (state is GetListUsersLoading) {
+                      return CustomCircularProgressIndicator();
+                    } else if (state is GetListUsersFailure) {
+                      return Center(child: Text(state.errMessage));
+                    } else if (state is GetListUsersSuccess) {
+                      if (state.getlistUsers.isEmpty) {
+                        return Center(
+                          child: Text(context.kAppLocalizations.noresultsfound),
                         );
-                      },
-                      getUserProfileModel: state.getUserProfileModel,
-                    );
-                  }
-                  return SizedBox();
-                },
-              ),
-            ],
+                      }
+                      return Expanded(
+                        child: ListView.builder(
+                          itemCount: state.getlistUsers.length,
+                          itemBuilder: (context, index) {
+                            return SearchTileWidget(
+                              onTap: () {
+                                context.router.push(
+                                  UserProfileRoute(
+                                    userName:
+                                        state.getlistUsers[index].username,
+                                  ),
+                                );
+                              },
+                              getListUsers: state.getlistUsers[index],
+                            );
+                          },
+                        ),
+                      );
+                    }
+                    return SizedBox();
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
