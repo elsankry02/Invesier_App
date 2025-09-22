@@ -27,22 +27,6 @@ class ChallengesRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [CommentPage]
-class CommentRoute extends PageRouteInfo<void> {
-  const CommentRoute({List<PageRouteInfo>? children})
-    : super(CommentRoute.name, initialChildren: children);
-
-  static const String name = 'CommentRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const CommentPage();
-    },
-  );
-}
-
-/// generated route for
 /// [CompleteProfilePage]
 class CompleteProfileRoute extends PageRouteInfo<void> {
   const CompleteProfileRoute({List<PageRouteInfo>? children})
@@ -379,6 +363,22 @@ class PersonalProfileRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PostPage]
+class PostRoute extends PageRouteInfo<void> {
+  const PostRoute({List<PageRouteInfo>? children})
+    : super(PostRoute.name, initialChildren: children);
+
+  static const String name = 'PostRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const PostPage();
+    },
+  );
+}
+
+/// generated route for
 /// [PostsPage]
 class PostsRoute extends PageRouteInfo<void> {
   const PostsRoute({List<PageRouteInfo>? children})
@@ -593,7 +593,7 @@ class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
   UserProfileRoute({
     Key? key,
     required String username,
-    List<PageRouteInfo>? children, String? userName,
+    List<PageRouteInfo>? children,
   }) : super(
          UserProfileRoute.name,
          args: UserProfileRouteArgs(key: key, username: username),

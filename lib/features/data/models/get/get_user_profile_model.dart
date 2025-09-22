@@ -1,12 +1,12 @@
 class GetUserProfileModel {
   final int id;
-  final String username;
-  final String name;
+  final String? username;
+  final String? name;
   final String? avatarUrl;
   final dynamic phone;
-  final String email;
+  final String? email;
   final dynamic inveesBalance;
-  final String hostStatus;
+  final String? hostStatus;
   final bool isShown;
   final bool isLive;
   final int fansCount;
@@ -17,7 +17,7 @@ class GetUserProfileModel {
   final bool isExpert;
   final DateTime createdAt;
   final DateTime updatedAt;
-  final String socialRelation;
+  final String? socialRelation;
 
   GetUserProfileModel({
     required this.id,

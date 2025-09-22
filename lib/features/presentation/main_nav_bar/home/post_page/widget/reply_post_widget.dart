@@ -8,15 +8,13 @@ import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
 
-class ReplyPostWidget extends StatelessWidget {
+class ReplyPostWidget extends StatefulWidget {
   final Function()? onTap;
   final Function()? commentOnTap,
       imageOnTap,
       growthOnTap,
       declineOnTap,
       SharingOnTap;
-  final String name, userName, imagePost, avatarUrl;
-  final int upvotesCount, downvotesCount, commentsCount;
   final Widget? trailing;
   const ReplyPostWidget({
     super.key,
@@ -26,24 +24,25 @@ class ReplyPostWidget extends StatelessWidget {
     this.growthOnTap,
     this.declineOnTap,
     this.SharingOnTap,
-    required this.name,
-    required this.userName,
-    required this.imagePost,
-    required this.avatarUrl,
-    required this.upvotesCount,
-    required this.downvotesCount,
-    required this.commentsCount,
     this.trailing,
   });
+
+  @override
+  State<ReplyPostWidget> createState() => _ReplyPostWidgetState();
+}
+
+class _ReplyPostWidgetState extends State<ReplyPostWidget> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
     return Padding(
       padding: EdgeInsets.only(
-        right: context.height * 0.020,
+        bottom: context.height * 0.020,
         left: context.height * 0.020,
-        bottom: context.height * 0.010,
+        right: context.height * 0.020,
       ),
+
       child: Container(
         padding: EdgeInsetsDirectional.symmetric(
           horizontal: context.height * 0.020,
@@ -61,9 +60,9 @@ class ReplyPostWidget extends StatelessWidget {
               leading: ClipOval(
                 //TODO: Image.network soon
                 child: GestureDetector(
-                  onTap: imageOnTap,
+                  onTap: widget.imageOnTap,
                   child: Image.asset(
-                    avatarUrl,
+                    '',
                     height: context.height * 0.030,
                     width: context.height * 0.030,
                     fit: BoxFit.cover,
@@ -73,22 +72,59 @@ class ReplyPostWidget extends StatelessWidget {
               title: Row(
                 spacing: context.height * 0.020,
                 children: [
-                  Text(name),
-                  CustomPrimaryButton(
-                    title: context.kAppLocalizations.chaseback,
-                    style: context.kTextTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w500,
+                  Text(''),
+                  InkWell(
+                    onTap: () {
+                      if (isSelected == false) {
+                        SuccessMessage(
+                          context,
+                          message: context.kAppLocalizations.chaseback,
+                        );
+                        setState(() {
+                          isSelected = !isSelected;
+                        });
+                      } else {
+                        SuccessMessage(
+                          context,
+                          message: context.kAppLocalizations.chase,
+                        );
+
+                        setState(() {
+                          isSelected = !isSelected;
+                        });
+                      }
+                    },
+                    child: CustomPrimaryButton(
+                      title:
+                          isSelected == false
+                              ? context.kAppLocalizations.chase
+                              : context.kAppLocalizations.chaseback,
+                      style: context.kTextTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: context.height * 0.020,
+                        vertical: context.height * 0.004,
+                      ),
+                      borderRadius: BorderRadius.circular(
+                        context.height * 0.031,
+                      ),
+                      border: Border.all(
+                        width: 2,
+                        color:
+                            isSelected == true
+                                ? AppColors.kNum
+                                : Colors.transparent,
+                      ),
+                      backGroundColor:
+                          isSelected == true
+                              ? Colors.transparent
+                              : AppColors.kNum,
                     ),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: context.height * 0.020,
-                      vertical: context.height * 0.004,
-                    ),
-                    borderRadius: BorderRadius.circular(context.height * 0.031),
-                    border: Border.all(color: AppColors.kNum),
                   ),
                 ],
               ),
-              subtitle: Text(userName),
+              subtitle: Text(''),
               trailing: CustomPopMenuWidget(
                 firstSvg: AppSvgs.kPin,
                 secondSvg: AppSvgs.kDelete,
@@ -101,7 +137,7 @@ class ReplyPostWidget extends StatelessWidget {
               ),
             ),
             Text(
-              'Lorem ipsum dolor sit amet, coetur adipiscing \nelit ut aliquam, purus sit amet luctus Lorem \nipsum dolor sit amet aliquam, purus sit amet \nluctus ',
+              '',
               style: context.kTextTheme.titleSmall!.copyWith(
                 fontWeight: FontWeight.w500,
               ),
@@ -109,7 +145,7 @@ class ReplyPostWidget extends StatelessWidget {
             SizedBox(height: context.height * 0.013),
             ClipRRect(
               borderRadius: BorderRadius.circular(context.height * 0.018),
-              child: Image.asset(imagePost, fit: BoxFit.cover),
+              child: Image.asset('', fit: BoxFit.cover),
             ),
             SizedBox(height: context.height * 0.013),
             Row(
@@ -119,7 +155,7 @@ class ReplyPostWidget extends StatelessWidget {
                 // Growth
                 CustomTagButton(
                   svg: AppSvgs.kGrowth,
-                  title: '12k',
+                  title: '',
                   titleColor: AppColors.kEucalyptus,
                   onTap: () {
                     ErrorMessage(context, message: local.comingsoon);
@@ -128,7 +164,7 @@ class ReplyPostWidget extends StatelessWidget {
                 CustomTagButton(
                   // Decline
                   svg: AppSvgs.kDecline,
-                  title: '12K',
+                  title: '',
                   titleColor: AppColors.kRed,
                   onTap: () {
                     ErrorMessage(context, message: local.comingsoon);
@@ -139,7 +175,7 @@ class ReplyPostWidget extends StatelessWidget {
                   svg: AppSvgs.kReply,
                   title: local.reply,
                   titleColor: AppColors.kBoulder,
-                  onTap: onTap,
+                  onTap: widget.onTap,
                 ),
               ],
             ),

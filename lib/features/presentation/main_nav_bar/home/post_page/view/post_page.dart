@@ -1,19 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
+import '../../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
-import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
+import '../../../../../../core/extension/extension.dart';
 import '../widget/reply_post_widget.dart';
 
-import '../../../../../../core/components/custom_comment_button_sheet.dart';
-import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/extension/extension.dart';
-
 @RoutePage()
-class CommentPage extends StatelessWidget {
-  const CommentPage({super.key});
+class PostPage extends StatelessWidget {
+  const PostPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +32,6 @@ class CommentPage extends StatelessWidget {
             CustomAppBarWidget(title: context.kAppLocalizations.post),
             // Post Card Widget
             CustomPostWidget(
-              name: 'Mohamed Ibrahim',
-              userName: '@elsankry02',
-              postTitle:
-                  'Today I learned something new in Flutter and it feels amazing to keep growing step by step',
-              avatarUrl: AppImages.kBoyFour,
-              imagePost: AppImages.kBoyOne,
-              upvotesCount: 2311,
-              downvotesCount: 1,
-              commentsCount: 546,
               trailing: CustomPopMenuWidget(
                 firstTitle: "Pin Post",
                 secondTitle: "Delete",
@@ -62,7 +52,9 @@ class CommentPage extends StatelessWidget {
                         horizontal: context.height * 0.020,
                         vertical: context.height * 0.005,
                       ),
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(
+                        context.height * 0.008,
+                      ),
                       style: context.kTextTheme.labelMedium!.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.kDivider,
@@ -79,13 +71,6 @@ class CommentPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 // ReplyWidget
                 return ReplyPostWidget(
-                  avatarUrl: AppImages.kBoyOne,
-                  name: 'mohamed',
-                  userName: 'adham',
-                  imagePost: AppImages.kBoyFive,
-                  upvotesCount: 4444,
-                  downvotesCount: 555,
-                  commentsCount: 5687,
                   onTap: () {
                     showModalBottomSheet(
                       isDismissible: false,
@@ -100,7 +85,9 @@ class CommentPage extends StatelessWidget {
                             horizontal: context.height * 0.020,
                             vertical: context.height * 0.005,
                           ),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(
+                            context.height * 0.008,
+                          ),
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppColors.kDivider,

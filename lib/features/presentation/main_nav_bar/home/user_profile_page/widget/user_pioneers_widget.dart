@@ -40,7 +40,6 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
           title: context.kAppLocalizations.nopioneersfound,
         );
       }
-
       return Expanded(
         child: ListView.builder(
           shrinkWrap: true,

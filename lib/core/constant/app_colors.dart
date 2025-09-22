@@ -16,6 +16,7 @@ class AppColors {
   static const kMySin = Color(0xffFFA920);
   static const kPrimary = Color(0xff44A570);
   static const kBoulder = Color(0xff7b7b7b);
+  static const kBorderPost = Color(0xff4D4D4D);
   static const kTertiary = Color(0xff171B1A);
   static const kSecondary = Color(0xffB9A435);
   static const kBackGround = Color(0xff171717);

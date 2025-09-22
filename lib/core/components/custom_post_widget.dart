@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'custom_primary_button.dart';
-import 'custom_tag_button.dart';
+import 'package:invesier/core/func/show_top_snack_bar.dart';
+
 import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
+import 'custom_primary_button.dart';
+import 'custom_tag_button.dart';
 
-class CustomPostWidget extends StatelessWidget {
+class CustomPostWidget extends StatefulWidget {
   final Function()? commentOnTap,
       imageOnTap,
       growthOnTap,
       declineOnTap,
       SharingOnTap;
-  final String name, userName, postTitle, imagePost, avatarUrl;
-  final int upvotesCount, downvotesCount, commentsCount;
   final Widget? trailing;
+  final void Function()? onTap;
 
   const CustomPostWidget({
     super.key,
@@ -23,36 +24,39 @@ class CustomPostWidget extends StatelessWidget {
     this.growthOnTap,
     this.declineOnTap,
     this.trailing,
-    required this.name,
-    required this.userName,
-    required this.postTitle,
-    required this.avatarUrl,
-    required this.upvotesCount,
-    required this.downvotesCount,
-    required this.commentsCount,
     this.SharingOnTap,
-    required this.imagePost,
+    this.onTap,
   });
 
+  @override
+  State<CustomPostWidget> createState() => _CustomPostWidgetState();
+}
+
+class _CustomPostWidgetState extends State<CustomPostWidget> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: AppColors.kOne,
+        color: AppColors.kHeavyMetal,
       ),
-      padding: EdgeInsets.all(context.height * 0.020),
+      padding: EdgeInsets.only(
+        bottom: context.height * 0.020,
+        left: context.height * 0.020,
+        right: context.height * 0.020,
+      ),
       margin: EdgeInsets.only(bottom: context.height * 0.020),
       child: Column(
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
             leading: ClipOval(
-              //TODO: Image.network soon
+              //TODO:
               child: GestureDetector(
-                onTap: imageOnTap,
+                onTap: widget.imageOnTap,
                 child: Image.asset(
-                  avatarUrl,
+                  "",
                   height: context.height * 0.030,
                   width: context.height * 0.030,
                   fit: BoxFit.cover,
@@ -62,60 +66,90 @@ class CustomPostWidget extends StatelessWidget {
             title: Row(
               spacing: context.height * 0.020,
               children: [
-                Text(name),
-                CustomPrimaryButton(
-                  title: context.kAppLocalizations.chase,
-                  style: context.kTextTheme.bodySmall!.copyWith(
-                    fontWeight: FontWeight.w500,
+                Text(""),
+                InkWell(
+                  onTap: () {
+                    if (isSelected == false) {
+                      SuccessMessage(
+                        context,
+                        message: context.kAppLocalizations.chaseback,
+                      );
+                      setState(() {
+                        isSelected = !isSelected;
+                      });
+                    } else {
+                      SuccessMessage(
+                        context,
+                        message: context.kAppLocalizations.chase,
+                      );
+
+                      setState(() {
+                        isSelected = !isSelected;
+                      });
+                    }
+                  },
+                  child: CustomPrimaryButton(
+                    title:
+                        isSelected == false
+                            ? context.kAppLocalizations.chase
+                            : context.kAppLocalizations.chaseback,
+                    style: context.kTextTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.height * 0.020,
+                      vertical: context.height * 0.004,
+                    ),
+                    borderRadius: BorderRadius.circular(context.height * 0.031),
+                    border: Border.all(
+                      width: 2,
+                      color:
+                          isSelected == true
+                              ? AppColors.kNum
+                              : Colors.transparent,
+                    ),
+                    backGroundColor:
+                        isSelected == true
+                            ? Colors.transparent
+                            : AppColors.kNum,
                   ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.height * 0.020,
-                    vertical: context.height * 0.004,
-                  ),
-                  borderRadius: BorderRadius.circular(context.height * 0.031),
-                  backGroundColor: AppColors.kNum,
                 ),
               ],
             ),
-            subtitle: Text(userName),
-            trailing: trailing,
+            subtitle: Text(""),
+            trailing: widget.trailing,
           ),
-          Text(postTitle),
+          Text(""),
           SizedBox(height: context.height * 0.013),
           ClipRRect(
             borderRadius: BorderRadius.circular(context.height * 0.018),
-            child: Image.asset(imagePost, fit: BoxFit.cover),
+            child: Image.asset("", fit: BoxFit.cover),
           ),
           SizedBox(height: context.height * 0.013),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            spacing: context.height * 0.020,
             children: [
-              Row(
-                spacing: context.height * 0.020,
-                children: [
-                  CustomTagButton(
-                    svg: AppSvgs.kGrowth,
-                    onTap: growthOnTap,
-                    title: upvotesCount.toString(),
-                    titleColor: AppColors.kNum,
-                  ),
-                  CustomTagButton(
-                    svg: AppSvgs.kDecline,
-                    onTap: declineOnTap,
-                    title: downvotesCount.toString(),
-                    titleColor: AppColors.kRed,
-                  ),
-                  CustomTagButton(
-                    onTap: commentOnTap,
-                    svg: AppSvgs.kComment,
-                    title: commentsCount.toString(),
-                    titleColor: AppColors.kGray,
-                  ),
-                ],
+              CustomTagButton(
+                svg: AppSvgs.kGrowth,
+                onTap: widget.growthOnTap,
+                title: "5",
+                titleColor: AppColors.kNum,
+              ),
+              CustomTagButton(
+                svg: AppSvgs.kDecline,
+                onTap: widget.declineOnTap,
+                title: "5",
+                titleColor: AppColors.kRed,
+              ),
+              CustomTagButton(
+                onTap: widget.commentOnTap,
+                svg: AppSvgs.kComment,
+                title: "5",
+                titleColor: AppColors.kBoulder,
               ),
               GestureDetector(
                 child: SvgPicture.asset(AppSvgs.kSharing),
-                onTap: SharingOnTap,
+                onTap: widget.SharingOnTap,
               ),
             ],
           ),

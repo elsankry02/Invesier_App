@@ -10,10 +10,8 @@ class CustomPopMenuWidget extends StatelessWidget {
 
   final void Function()? onFirstTap;
   final void Function()? onSecondTap;
-
   const CustomPopMenuWidget({
     super.key,
-
     this.onFirstTap,
     this.onSecondTap,
     required this.firstTitle,
@@ -25,6 +23,7 @@ class CustomPopMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
+      padding: EdgeInsets.zero,
       offset: const Offset(0, 35),
       shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
       icon: SvgPicture.asset(AppSvgs.kPopMenu),
@@ -34,6 +33,7 @@ class CustomPopMenuWidget extends StatelessWidget {
         return [
           // First item
           PopupMenuItem(
+            padding: EdgeInsets.zero,
             onTap: onFirstTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -51,6 +51,7 @@ class CustomPopMenuWidget extends StatelessWidget {
           ),
           // Divider
           PopupMenuItem(
+            padding: EdgeInsets.zero,
             height: 1,
             enabled: false,
             child: Divider(
@@ -60,6 +61,7 @@ class CustomPopMenuWidget extends StatelessWidget {
           ),
           // Second item
           PopupMenuItem(
+            padding: EdgeInsets.zero,
             onTap: onSecondTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_no_posts_widget.dart';
-import '../../../../../../core/components/custom_post_widget.dart';
-import '../../../../../../core/constant/app_images.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/components/custom_no_posts_widget.dart';
+import '../../../../../../core/components/custom_post_widget.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/providers/get/get_posts_provider.dart';
 
@@ -35,17 +34,7 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
         physics: NeverScrollableScrollPhysics(),
         itemCount: state.data.length,
         itemBuilder: (context, index) {
-          final data = state.data[index];
-          return CustomPostWidget(
-            imagePost: AppImages.kBoyFour,
-            avatarUrl: data.user.avatarUrl,
-            name: data.user.name,
-            userName: data.user.username,
-            postTitle: data.content,
-            upvotesCount: data.upvotesCount,
-            downvotesCount: data.downvotesCount,
-            commentsCount: data.commentsCount,
-          );
+          return CustomPostWidget();
         },
       );
     } else if (state is GetPostsFailure) {

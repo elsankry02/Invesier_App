@@ -26,7 +26,7 @@ class CustomTagButton extends StatelessWidget {
           horizontal: context.height * 0.017,
         ),
         decoration: BoxDecoration(
-          border: Border.all(color: AppColors.kGray),
+          border: Border.all(color: AppColors.kBorderPost),
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(

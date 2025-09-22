@@ -48,13 +48,14 @@ class UserFollowersAppBarWidget extends StatelessWidget {
           ],
         ),
         title: Text(
-          getUserProfileModel.name,
+          getUserProfileModel.name ?? context.kAppLocalizations.name,
           style: context.kTextTheme.bodySmall!.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
         subtitle: Text(
-          "@${getUserProfileModel.username}",
+          "@${getUserProfileModel.username ?? context.kAppLocalizations.username}",
+
           style: context.kTextTheme.bodySmall!.copyWith(
             color: AppColors.kGray,
             fontWeight: FontWeight.w400,

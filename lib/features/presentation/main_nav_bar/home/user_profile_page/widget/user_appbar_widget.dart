@@ -45,7 +45,6 @@ class UserAppBarWidget extends ConsumerWidget {
               padding: EdgeInsetsDirectional.only(end: 20),
               child: ListTile(
                 contentPadding: EdgeInsetsDirectional.zero,
-
                 leading: ClipOval(
                   child: CachedNetworkImage(
                     imageUrl:
@@ -68,14 +67,15 @@ class UserAppBarWidget extends ConsumerWidget {
                       children: [
                         // title
                         Text(
-                          getUserProfileModel.name,
+                          getUserProfileModel.name ??
+                              context.kAppLocalizations.name,
                           style: context.kTextTheme.bodySmall!.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         // subTitle
                         Text(
-                          "@${getUserProfileModel.username}",
+                          "@${getUserProfileModel.username ?? context.kAppLocalizations.username}",
                           style: context.kTextTheme.bodySmall!.copyWith(
                             color: AppColors.kGray,
                             fontWeight: FontWeight.w400,

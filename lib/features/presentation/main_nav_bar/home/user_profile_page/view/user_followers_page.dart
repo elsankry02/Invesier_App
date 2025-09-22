@@ -147,7 +147,9 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                 // homeFollowEnum > PioneersWidget > FansWidget
                 selectedTab == FollowersTabType.pioneers
                     ? UserPioneersWidget(
-                      username: widget.getUserProfileModel.username,
+                      username:
+                          widget.getUserProfileModel.username ??
+                          context.kAppLocalizations.username,
                     )
                     : UserFansWidget(),
               ],
