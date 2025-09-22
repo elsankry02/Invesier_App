@@ -86,6 +86,8 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
                                   // Fans Divider
                                   selectedTab == FollowersTabType.fans
                                       ? CustomDividerWidget(
+                                        color: AppColors.kWhite,
+
                                         onTap: () {
                                           setState(() {
                                             selectedTab = FollowersTabType.fans;
@@ -99,8 +101,9 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
                               ),
                               // Center Divider
                               CustomDividerWidget(
+                                color: AppColors.kNum,
                                 height: context.height * 0.015,
-                                width: 1.5,
+                                width: 2,
                               ),
                               // Pioneers
                               Column(
@@ -118,6 +121,8 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
                                   // Pioneers Divider
                                   selectedTab == FollowersTabType.pioneers
                                       ? CustomDividerWidget(
+                                        color: AppColors.kNum,
+
                                         onTap: () {
                                           setState(() {
                                             selectedTab =
@@ -125,7 +130,7 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
                                           });
                                         },
                                         width: context.width * 0.20,
-                                        height: 1.5,
+                                        height: 2,
                                       )
                                       : Container(),
                                 ],

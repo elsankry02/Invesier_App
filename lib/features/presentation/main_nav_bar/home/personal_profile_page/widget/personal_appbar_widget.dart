@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../../core/constant/app_enums.dart';
 
 import '../../../../../../core/components/custom_button_sheet_widget.dart';
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
@@ -110,6 +110,7 @@ class PersonalAppBarWidget extends ConsumerWidget {
             ),
             // DividerWidget
             CustomDividerWidget(
+              color: AppColors.kWhite,
               height: context.height * 0.030,
               width: context.height * 0.001,
             ),
@@ -125,6 +126,7 @@ class PersonalAppBarWidget extends ConsumerWidget {
             ),
             // DividerWidget
             CustomDividerWidget(
+              color: AppColors.kWhite,
               height: context.height * 0.030,
               width: context.height * 0.001,
             ),

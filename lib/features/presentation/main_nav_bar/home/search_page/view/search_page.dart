@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/providers/get/get_list_users_provider.dart';
+import '../../../../../data/providers/get/get_list_users_provider.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_icon_button.dart';

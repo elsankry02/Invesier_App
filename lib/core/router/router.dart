@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
+import '../../features/data/models/get/get_user_profile_model.dart';
 
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
 import '../../features/presentation/login_page/login_page.dart';

@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_circuler_progress.dart';
 
+import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_strings.dart';
 import '../../../../../../core/extension/extension.dart';
@@ -123,7 +123,7 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         ),
                         // subtitle
                         subtitle: Text(
-                          user.username,
+                          user.email,
                           style: context.kTextTheme.labelMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                           ),

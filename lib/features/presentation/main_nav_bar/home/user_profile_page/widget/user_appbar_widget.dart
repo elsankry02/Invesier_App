@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../data/models/get/get_user_profile_model.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
@@ -47,8 +47,8 @@ class UserAppBarWidget extends ConsumerWidget {
           ClipOval(
             child: CachedNetworkImage(
               imageUrl: getUserProfileModel.avatarUrl ?? AppImages.ImageNetwork,
-              width: context.height * 0.060,
-              height: context.height * 0.060,
+              width: context.height * 0.068,
+              height: context.height * 0.068,
               fit: BoxFit.cover,
               errorWidget:
                   (context, url, error) =>
@@ -67,14 +67,14 @@ class UserAppBarWidget extends ConsumerWidget {
               // title
               Text(
                 getUserProfileModel.name,
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: context.kTextTheme.bodySmall!.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
               // subTitle
               Text(
                 "@${getUserProfileModel.username}",
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: context.kTextTheme.bodySmall!.copyWith(
                   color: AppColors.kGray,
                   fontWeight: FontWeight.w400,
                 ),
@@ -110,8 +110,9 @@ class UserAppBarWidget extends ConsumerWidget {
           ),
           // DividerWidget
           CustomDividerWidget(
+            color: AppColors.kWhite,
             height: context.height * 0.030,
-            width: context.height * 0.001,
+            width: context.height * 0.002,
           ),
           // Fans
           CustomFollowersNumberWidget(
@@ -128,6 +129,7 @@ class UserAppBarWidget extends ConsumerWidget {
           ),
           // DividerWidget
           CustomDividerWidget(
+            color: AppColors.kWhite,
             height: context.height * 0.030,
             width: context.height * 0.001,
           ),

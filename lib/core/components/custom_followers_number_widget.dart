@@ -1,41 +1,52 @@
 import 'package:flutter/material.dart';
+import '../constant/app_colors.dart';
 
 import '../extension/extension.dart';
 
 class CustomFollowersNumberWidget extends StatelessWidget {
   final String title;
   final int number;
+  final BoxBorder? border;
   final Function()? onTap;
   const CustomFollowersNumberWidget({
     super.key,
     required this.title,
     required this.number,
     this.onTap,
+    this.border,
   });
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       // onTap
       onTap: onTap,
-      child: Column(
-        children: [
-          // number
-          Text(
-            "$number",
-            textAlign: TextAlign.center,
-            style: context.kTextTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w700,
+      child: Container(
+        decoration: BoxDecoration(border: border),
+        padding: EdgeInsetsDirectional.only(
+          start: context.height * 0.020,
+          end: context.height * 0.020,
+          bottom: context.height * 0.010,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // number
+            Text(
+              "$number",
+              style: context.kTextTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
-          // title
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: context.kTextTheme.labelMedium!.copyWith(
-              fontWeight: FontWeight.w400,
+            // title
+            Text(
+              title,
+              style: context.kTextTheme.labelMedium!.copyWith(
+                fontWeight: FontWeight.w400,
+                color: AppColors.kGray,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

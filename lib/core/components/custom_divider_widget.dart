@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../constant/app_colors.dart';
-
 class CustomDividerWidget extends StatelessWidget {
   final double height, width;
+  final Color color;
   final Function()? onTap;
   const CustomDividerWidget({
     super.key,
     required this.height,
     required this.width,
     this.onTap,
+    required this.color,
   });
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CustomDividerWidget extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(color: AppColors.kWhite),
+        decoration: BoxDecoration(color: color),
       ),
     );
   }

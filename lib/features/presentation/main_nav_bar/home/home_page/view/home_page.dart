@@ -44,18 +44,24 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w900,
                           color:
                               enumView == EnumView.foryou
-                                  ? AppColors.kCodGray
+                                  ? AppColors.kNum
                                   : AppColors.kWhite,
                         ),
-                        backGroundColor:
-                            enumView == EnumView.foryou
-                                ? AppColors.kNum
-                                : AppColors.kBackGround,
+                        border: Border(
+                          bottom: BorderSide(
+                            width: 2,
+                            color:
+                                enumView == EnumView.foryou
+                                    ? AppColors.kNum
+                                    : Colors.transparent,
+                          ),
+                        ),
+
                         padding: EdgeInsetsDirectional.symmetric(
                           horizontal: context.height * 0.026,
                           vertical: context.height * 0.008,
                         ),
-                        borderRadius: BorderRadius.circular(18),
+
                         onTap: () {
                           setState(() {
                             enumView = EnumView.foryou;
@@ -70,18 +76,23 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w900,
                           color:
                               enumView == EnumView.pioneers
-                                  ? AppColors.kTertiary
+                                  ? AppColors.kNum
                                   : AppColors.kWhite,
                         ),
-                        backGroundColor:
-                            enumView == EnumView.pioneers
-                                ? AppColors.kNum
-                                : AppColors.kBackGround,
+                        border: Border(
+                          bottom: BorderSide(
+                            width: 2,
+                            color:
+                                enumView == EnumView.pioneers
+                                    ? AppColors.kNum
+                                    : Colors.transparent,
+                          ),
+                        ),
                         padding: EdgeInsetsDirectional.symmetric(
                           horizontal: context.height * 0.026,
                           vertical: context.height * 0.008,
                         ),
-                        borderRadius: BorderRadius.circular(18),
+
                         onTap: () {
                           setState(() {
                             enumView = EnumView.pioneers;

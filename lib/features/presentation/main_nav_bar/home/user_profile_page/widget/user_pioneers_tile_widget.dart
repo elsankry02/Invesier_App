@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/constant/app_images.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/constant/app_images.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
@@ -35,13 +35,13 @@ class UserPioneersTileWidget extends ConsumerWidget {
         ),
       ),
       title: Text(
-        getUserPioneersModel.name ?? "name",
+        getUserPioneersModel.name ?? context.kAppLocalizations.name,
         style: context.kTextTheme.titleSmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
       subtitle: Text(
-        getUserPioneersModel.username ?? "username",
+        getUserPioneersModel.username ?? context.kAppLocalizations.username,
         style: context.kTextTheme.titleSmall!.copyWith(
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,

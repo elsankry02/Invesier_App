@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/data/models/get/get_list_users_model.dart';
+import '../../models/get/get_list_users_model.dart';
 
 class GetListUsersService {
   final Dio dio;

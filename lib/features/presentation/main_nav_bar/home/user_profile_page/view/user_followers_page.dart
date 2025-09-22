@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
+import '../../../../../data/models/get/get_user_profile_model.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
@@ -76,31 +76,28 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                           CustomFollowersNumberWidget(
                             number: widget.getUserProfileModel.fansCount,
                             title: local.fans,
+                            border: Border(
+                              bottom: BorderSide(
+                                width: 1.5,
+                                color:
+                                    selectedTab == FollowersTabType.fans
+                                        ? AppColors.kWhite
+                                        : Colors.transparent,
+                              ),
+                            ),
                             onTap: () {
                               setState(() {
                                 selectedTab = FollowersTabType.fans;
                               });
                             },
                           ),
-                          SizedBox(height: context.height * 0.004),
-                          // Fans Divider
-                          selectedTab == FollowersTabType.fans
-                              ? CustomDividerWidget(
-                                onTap: () {
-                                  setState(() {
-                                    selectedTab = FollowersTabType.fans;
-                                  });
-                                },
-                                width: context.width * 0.20,
-                                height: 1.5,
-                              )
-                              : Container(),
                         ],
                       ),
                       // Center Divider
                       CustomDividerWidget(
-                        height: context.height * 0.015,
-                        width: 1.5,
+                        color: AppColors.kWhite,
+                        height: context.height * 0.020,
+                        width: 2,
                       ),
                       // Pioneers
                       Column(
@@ -108,25 +105,21 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                           CustomFollowersNumberWidget(
                             number: widget.getUserProfileModel.pioneersCount,
                             title: local.pioneers,
+                            border: Border(
+                              bottom: BorderSide(
+                                width: 1.5,
+                                color:
+                                    selectedTab == FollowersTabType.pioneers
+                                        ? AppColors.kWhite
+                                        : Colors.transparent,
+                              ),
+                            ),
                             onTap: () {
                               setState(() {
                                 selectedTab = FollowersTabType.pioneers;
                               });
                             },
                           ),
-                          SizedBox(height: context.height * 0.004),
-                          // Pioneers Divider
-                          selectedTab == FollowersTabType.pioneers
-                              ? CustomDividerWidget(
-                                onTap: () {
-                                  setState(() {
-                                    selectedTab = FollowersTabType.pioneers;
-                                  });
-                                },
-                                width: context.width * 0.20,
-                                height: 1.5,
-                              )
-                              : Container(),
                         ],
                       ),
                     ],

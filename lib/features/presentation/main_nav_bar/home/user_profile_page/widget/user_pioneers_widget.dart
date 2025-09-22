@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/components/custom_no_posts_widget.dart';
-import 'package:invesier/core/extension/extension.dart';
-import 'package:invesier/core/router/router.dart';
-import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_pioneers_tile_widget.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/components/custom_no_posts_widget.dart';
+import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/get/get_user_pioneers_provider.dart';
+import 'user_pioneers_tile_widget.dart';
 
 class UserPioneersWidget extends ConsumerStatefulWidget {
   final String username;
@@ -50,7 +50,11 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
             return UserPioneersTileWidget(
               onTap:
                   () => context.router.push(
-                    UserProfileRoute(username: pioneers.username ?? "username"),
+                    UserProfileRoute(
+                      username:
+                          pioneers.username ??
+                          context.kAppLocalizations.username,
+                    ),
                   ),
               getUserPioneersModel: pioneers,
             );
