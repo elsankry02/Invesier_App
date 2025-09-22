@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
-import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
@@ -137,13 +136,7 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                 SizedBox(height: context.height * 0.016),
                 // TextFormFiled
                 SearchTextFormFieldWidget(
-                  onChanged: (value) {
-                    if (value.isNotEmpty) {
-                      ref
-                          .read(getUserPioneersProvider.notifier)
-                          .getUserPioneers(search: value.trim());
-                    }
-                  },
+                  onChanged: (value) {},
                   autofocus: false,
                   searchController: searchController,
                 ),

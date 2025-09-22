@@ -10,7 +10,7 @@ class GetListUsersService {
     int? perPage = 10,
   }) async {
     final response = await dio.get(
-      "/social/profiles?search=$userName&per_page=$perPage",
+      "/social/profiles",
       queryParameters: {
         if (userName != null) "search": userName,
         if (perPage != null) "per_page": perPage,

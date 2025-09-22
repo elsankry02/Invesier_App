@@ -18,6 +18,16 @@ class UserPioneersWidget extends ConsumerStatefulWidget {
 
 class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
   @override
+  void initState() {
+    Future.microtask(() {
+      ref
+          .read(getUserPioneersProvider.notifier)
+          .getUserPioneers(username: widget.username);
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final state = ref.watch(getUserPioneersProvider);
     if (state is GetUserPioneersLoading) {
@@ -31,20 +41,21 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
         );
       }
 
-      return ListView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: state.getUserPioneers.length,
-        itemBuilder: (context, index) {
-          final pioneers = state.getUserPioneers[index];
-          return UserPioneersTileWidget(
-            onTap:
-                () => context.router.push(
-                  UserProfileRoute(userName: pioneers.username),
-                ),
-            getUserPioneersModel: pioneers,
-          );
-        },
+      return Expanded(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: state.getUserPioneers.length,
+          itemBuilder: (context, index) {
+            final pioneers = state.getUserPioneers[index];
+            return UserPioneersTileWidget(
+              onTap:
+                  () => context.router.push(
+                    UserProfileRoute(username: pioneers.username ?? "username"),
+                  ),
+              getUserPioneersModel: pioneers,
+            );
+          },
+        ),
       );
     }
 

@@ -9,16 +9,19 @@ class GetUserPioneersService {
 
   Future<List<GetUserPioneersModel>> getUserPioneers({
     String? search,
-    String? userName,
+    required String username,
   }) async {
     final response = await dio.get(
-      "/social/profiles/$userName/pioneers?search=$search",
+      "/social/profiles/$username/pioneers",
       queryParameters: {
-        if (userName != null) "username": userName,
+        "username": username,
         if (search != null) "search": search,
       },
     );
-    final data = response.data as List<dynamic>;
-    return data.map((e) => GetUserPioneersModel.fromJson(e)).toList();
+    final data = response.data as Map<String, dynamic>;
+    final result = data["data"] as List<dynamic>;
+    return result
+        .map((e) => GetUserPioneersModel.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 }

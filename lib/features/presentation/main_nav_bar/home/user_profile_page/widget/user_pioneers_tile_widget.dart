@@ -20,8 +20,10 @@ class UserPioneersTileWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       onTap: onTap,
       leading: ClipRRect(
+        borderRadius: BorderRadius.circular(context.height * 0.040),
         child: CachedNetworkImage(
           imageUrl: getUserPioneersModel.avatarUrl ?? AppImages.ImageNetwork,
           width: context.height * 0.040,
@@ -33,13 +35,13 @@ class UserPioneersTileWidget extends ConsumerWidget {
         ),
       ),
       title: Text(
-        getUserPioneersModel.name,
+        getUserPioneersModel.name ?? "name",
         style: context.kTextTheme.titleSmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
       subtitle: Text(
-        getUserPioneersModel.username,
+        getUserPioneersModel.username ?? "username",
         style: context.kTextTheme.titleSmall!.copyWith(
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,

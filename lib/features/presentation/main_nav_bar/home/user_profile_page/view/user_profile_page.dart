@@ -13,8 +13,8 @@ import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
 class UserProfilePage extends ConsumerStatefulWidget {
-  final String userName;
-  const UserProfilePage({super.key, required this.userName});
+  final String username;
+  const UserProfilePage({super.key, required this.username});
 
   @override
   ConsumerState<UserProfilePage> createState() => _UserProfilePageState();
@@ -25,7 +25,7 @@ class _UserProfilePageState extends ConsumerState<UserProfilePage> {
   void initState() {
     ref
         .read(getUserProfileProvider.notifier)
-        .getUserProfile(userName: widget.userName);
+        .getUserProfile(userName: widget.username);
     super.initState();
   }
 

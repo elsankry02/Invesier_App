@@ -1,12 +1,12 @@
 class GetUserPioneersModel {
   final int id;
-  final String username;
-  final String name;
+  final String? username;
+  final String? name;
   final String? avatarUrl;
   final dynamic phone;
-  final String email;
+  final String? email;
   final dynamic inveesBalance;
-  final String hostStatus;
+  final String? hostStatus;
   final bool isShown;
   final bool isLive;
   final int fansCount;
@@ -17,7 +17,7 @@ class GetUserPioneersModel {
   final bool isExpert;
   final DateTime createdAt;
   final DateTime updatedAt;
-  final String socialRelation;
+  final String? socialRelation;
 
   GetUserPioneersModel({
     required this.id,
@@ -61,7 +61,7 @@ class GetUserPioneersModel {
         isExpert: json["is_expert"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
-        socialRelation: json["social_relation"],
+        socialRelation: json["social_relation"] ?? "",
       );
 
   Map<String, dynamic> toJson() => {

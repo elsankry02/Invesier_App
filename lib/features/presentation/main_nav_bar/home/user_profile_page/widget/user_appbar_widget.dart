@@ -19,7 +19,6 @@ import 'user_pop_menu_widget.dart';
 
 class UserAppBarWidget extends ConsumerWidget {
   final GetUserProfileModel getUserProfileModel;
-
   const UserAppBarWidget({super.key, required this.getUserProfileModel});
 
   @override

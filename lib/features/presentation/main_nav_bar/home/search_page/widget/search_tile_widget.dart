@@ -35,7 +35,7 @@ class SearchTileWidget extends StatelessWidget {
         ),
       ),
       subtitle: Text(
-        getListUsers.username,
+        "@${getListUsers.username}",
         style: context.kTextTheme.titleSmall!.copyWith(
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,

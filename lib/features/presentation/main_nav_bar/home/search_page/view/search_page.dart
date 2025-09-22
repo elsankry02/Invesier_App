@@ -92,7 +92,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                               onTap: () {
                                 context.router.push(
                                   UserProfileRoute(
-                                    userName:
+                                    username:
                                         state.getlistUsers[index].username,
                                   ),
                                 );

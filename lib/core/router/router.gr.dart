@@ -592,11 +592,11 @@ class UserFollowersRouteArgs {
 class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
   UserProfileRoute({
     Key? key,
-    required String userName,
-    List<PageRouteInfo>? children,
+    required String username,
+    List<PageRouteInfo>? children, String? userName,
   }) : super(
          UserProfileRoute.name,
-         args: UserProfileRouteArgs(key: key, userName: userName),
+         args: UserProfileRouteArgs(key: key, username: username),
          initialChildren: children,
        );
 
@@ -606,32 +606,32 @@ class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<UserProfileRouteArgs>();
-      return UserProfilePage(key: args.key, userName: args.userName);
+      return UserProfilePage(key: args.key, username: args.username);
     },
   );
 }
 
 class UserProfileRouteArgs {
-  const UserProfileRouteArgs({this.key, required this.userName});
+  const UserProfileRouteArgs({this.key, required this.username});
 
   final Key? key;
 
-  final String userName;
+  final String username;
 
   @override
   String toString() {
-    return 'UserProfileRouteArgs{key: $key, userName: $userName}';
+    return 'UserProfileRouteArgs{key: $key, username: $username}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is! UserProfileRouteArgs) return false;
-    return key == other.key && userName == other.userName;
+    return key == other.key && username == other.username;
   }
 
   @override
-  int get hashCode => key.hashCode ^ userName.hashCode;
+  int get hashCode => key.hashCode ^ username.hashCode;
 }
 
 /// generated route for

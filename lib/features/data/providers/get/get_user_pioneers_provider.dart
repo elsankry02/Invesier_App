@@ -31,12 +31,15 @@ class GetUserPioneersNotifier extends Notifier<GetUserPioneersState> {
     return GetUserPioneersInitial();
   }
 
-  Future<void> getUserPioneers({String? search, String? username}) async {
+  Future<void> getUserPioneers({
+    String? search,
+    required String username,
+  }) async {
     final provider = ref.read(getUserPioneersServiceProvider);
     state = GetUserPioneersLoading();
     try {
       final getUserPioneers = await provider.getUserPioneers(
-        userName: username,
+        username: username,
         search: search,
       );
       state = GetUserPioneersSuccess(getUserPioneers: getUserPioneers);
