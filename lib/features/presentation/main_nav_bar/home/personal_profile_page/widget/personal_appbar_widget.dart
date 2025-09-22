@@ -1,15 +1,18 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/components/custom_button_sheet_widget.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
+import 'package:invesier/core/constant/app_images.dart';
+import 'package:invesier/core/constant/app_svgs.dart';
 
-import '../../../../../../core/components/custom_button_sheet_widget.dart';
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
-import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
@@ -23,14 +26,10 @@ class PersonalAppBarWidget extends ConsumerWidget {
     final state = ref.watch(getAuthenticatedUserProvider);
     if (state is GetAuthenticatedUserSuccess) {
       final user = state.userModel;
-      return ListTile(
-        contentPadding: EdgeInsetsDirectional.only(
-          top: context.height * 0.025,
-          start: context.height * 0.010,
-          end: context.height * 0.030,
-        ),
-        leading: Row(
-          mainAxisSize: MainAxisSize.min,
+      return Padding(
+        padding: EdgeInsets.only(top: context.height * 0.025),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Custom Icon Back
             CustomIconButton(
@@ -42,103 +41,133 @@ class PersonalAppBarWidget extends ConsumerWidget {
                 context.router.maybePop();
               },
             ),
-            // Image
-            ClipOval(
-              child: Image.network(
-                user.avatarUrl,
-                width: context.height * 0.060,
-                height: context.height * 0.060,
-                fit: BoxFit.cover,
+            Expanded(
+              child: Container(
+                padding: EdgeInsetsDirectional.only(end: 20),
+                child: ListTile(
+                  contentPadding: EdgeInsetsDirectional.zero,
+                  leading: ClipOval(
+                    child: CachedNetworkImage(
+                      imageUrl: user.avatarUrl,
+                      width: context.height * 0.068,
+                      height: context.height * 0.068,
+                      fit: BoxFit.cover,
+                      errorWidget:
+                          (context, url, error) =>
+                              Image.network(AppImages.ImageNetwork),
+                      placeholder:
+                          (context, url) => CustomCircularProgressIndicator(),
+                    ),
+                  ),
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // title
+                          Text(
+                            user.name,
+                            style: context.kTextTheme.labelMedium!.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          // subTitle
+                          Text(
+                            "@${user.username}",
+                            style: context.kTextTheme.labelMedium!.copyWith(
+                              color: AppColors.kGray,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      CustomIconButton(
+                        icon: SvgPicture.asset(AppSvgs.kPopMenu),
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return CustomButtonSheetWidget(
+                                firstTitle: local.wallet,
+                                firstIcon:
+                                    Icons.account_balance_wallet_outlined,
+                                onFirstTap: () {
+                                  context.router.maybePop();
+                                  context.router.push(WalletRoute());
+                                },
+                                secondTitle: local.settings,
+                                secondIcon: Icons.settings_outlined,
+                                onSecondTap:
+                                    () => context.router.push(SettingsRoute()),
+                              );
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                  subtitle: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Posts
+                      CustomFollowersNumberWidget(
+                        padding: EdgeInsetsDirectional.only(
+                          end: context.height * 0.020,
+                          bottom: context.height * 0.010,
+                        ),
+                        title: local.posts,
+                        number: user.postsCount,
+                      ),
+                      // DividerWidget
+                      CustomDividerWidget(
+                        color: AppColors.kWhite,
+                        height: context.height * 0.030,
+                        width: context.height * 0.001,
+                      ),
+                      // Fans
+                      CustomFollowersNumberWidget(
+                        padding: EdgeInsetsDirectional.only(
+                          start: context.height * 0.020,
+                          end: context.height * 0.020,
+                          bottom: context.height * 0.010,
+                        ),
+                        number: state.userModel.fansCount,
+                        title: local.fans,
+                        onTap: () {
+                          context.router.push(
+                            PersonalFollowersRoute(
+                              initialTab: FollowersTabType.fans,
+                            ),
+                          );
+                        },
+                      ),
+                      // DividerWidget
+                      CustomDividerWidget(
+                        color: AppColors.kWhite,
+                        height: context.height * 0.030,
+                        width: context.height * 0.001,
+                      ),
+                      // Pioneers
+                      CustomFollowersNumberWidget(
+                        padding: EdgeInsetsDirectional.only(
+                          start: context.height * 0.020,
+                          bottom: context.height * 0.010,
+                        ),
+                        number: user.pioneersCount,
+                        title: local.pioneers,
+                        onTap: () {
+                          context.router.push(
+                            PersonalFollowersRoute(
+                              initialTab: FollowersTabType.pioneers,
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // title
-                Text(
-                  user.name,
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                // subTitle
-                Text(
-                  user.username,
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    color: AppColors.kGray,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: context.height * 0.008),
-              ],
-            ),
-            CustomIconButton(
-              icon: SvgPicture.asset(AppSvgs.kPopMenu),
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return CustomButtonSheetWidget(
-                      firstTitle: local.wallet,
-                      firstIcon: Icons.account_balance_wallet_outlined,
-                      onFirstTap: () {
-                        context.router.maybePop();
-                        context.router.push(WalletRoute());
-                      },
-                      secondTitle: local.settings,
-                      secondIcon: Icons.settings_outlined,
-                      onSecondTap: () => context.router.push(SettingsRoute()),
-                    );
-                  },
-                );
-              },
-            ),
-          ],
-        ),
-        subtitle: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // Posts
-            CustomFollowersNumberWidget(
-              title: local.posts,
-              number: user.postsCount,
-            ),
-            // DividerWidget
-            CustomDividerWidget(
-              color: AppColors.kWhite,
-              height: context.height * 0.030,
-              width: context.height * 0.001,
-            ),
-            // Fans
-            CustomFollowersNumberWidget(
-              number: state.userModel.fansCount,
-              title: local.fans,
-              onTap: () {
-                context.router.push(
-                  PersonalFollowersRoute(initialTab: FollowersTabType.fans),
-                );
-              },
-            ),
-            // DividerWidget
-            CustomDividerWidget(
-              color: AppColors.kWhite,
-              height: context.height * 0.030,
-              width: context.height * 0.001,
-            ),
-            // Pioneers
-            CustomFollowersNumberWidget(
-              number: user.pioneersCount,
-              title: local.pioneers,
-              onTap: () {
-                context.router.push(
-                  PersonalFollowersRoute(initialTab: FollowersTabType.pioneers),
-                );
-              },
             ),
           ],
         ),

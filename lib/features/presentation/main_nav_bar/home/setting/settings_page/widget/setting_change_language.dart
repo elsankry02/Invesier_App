@@ -38,7 +38,17 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              internalAddSemanticForOnTap: false,
+              title: Text(
+                "English",
+                style: context.kTextTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              leading: Icon(
+                isSelected == "en"
+                    ? Icons.radio_button_checked
+                    : Icons.radio_button_unchecked,
+              ),
               onTap: () {
                 ref
                     .read(localizationProvider.notifier)
@@ -47,19 +57,19 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
                   isSelected = "en";
                 });
               },
-              leading: Icon(
-                isSelected == "en"
-                    ? Icons.radio_button_checked
-                    : Icons.radio_button_unchecked,
-              ),
+            ),
+            ListTile(
               title: Text(
-                "English",
+                "Arabic",
                 style: context.kTextTheme.titleMedium!.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
               ),
-            ),
-            ListTile(
+              leading: Icon(
+                isSelected == "ar"
+                    ? Icons.radio_button_checked
+                    : Icons.radio_button_unchecked,
+              ),
               onTap: () {
                 ref
                     .read(localizationProvider.notifier)
@@ -68,17 +78,6 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
                   isSelected = "ar";
                 });
               },
-              leading: Icon(
-                isSelected == "en"
-                    ? Icons.radio_button_unchecked
-                    : Icons.radio_button_checked,
-              ),
-              title: Text(
-                "Arabic",
-                style: context.kTextTheme.titleMedium!.copyWith(
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
             ),
           ],
         ),

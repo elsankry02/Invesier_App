@@ -74,6 +74,11 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
                                 children: [
                                   // Fans
                                   CustomFollowersNumberWidget(
+                                    padding: EdgeInsetsDirectional.only(
+                                      start: context.height * 0.020,
+                                      end: context.height * 0.020,
+                                      bottom: context.height * 0.010,
+                                    ),
                                     number: state.userModel.fansCount,
                                     title: local.fans,
                                     onTap: () {
@@ -109,6 +114,11 @@ class _PersonalFollowersPageState extends State<PersonalFollowersPage> {
                               Column(
                                 children: [
                                   CustomFollowersNumberWidget(
+                                    padding: EdgeInsetsDirectional.only(
+                                      start: context.height * 0.020,
+                                      end: context.height * 0.020,
+                                      bottom: context.height * 0.010,
+                                    ),
                                     number: state.userModel.pioneersCount,
                                     title: local.pioneers,
                                     onTap: () {

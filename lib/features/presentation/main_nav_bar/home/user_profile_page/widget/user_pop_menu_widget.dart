@@ -22,9 +22,11 @@ class UserPopMenuWidget extends StatelessWidget {
       icon: SvgPicture.asset(AppSvgs.kPopMenu),
       color: AppColors.kHeavyMetal,
       iconColor: AppColors.kWhite,
+
       itemBuilder: (context) {
         return [
           PopupMenuItem(
+            padding: EdgeInsets.zero,
             // onTap
             onTap: onTap,
             child: Row(

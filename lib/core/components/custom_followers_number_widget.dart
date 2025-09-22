@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import '../constant/app_colors.dart';
 
+import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 
 class CustomFollowersNumberWidget extends StatelessWidget {
   final String title;
   final int number;
   final BoxBorder? border;
+  final EdgeInsetsGeometry padding;
   final Function()? onTap;
   const CustomFollowersNumberWidget({
     super.key,
@@ -14,6 +15,7 @@ class CustomFollowersNumberWidget extends StatelessWidget {
     required this.number,
     this.onTap,
     this.border,
+    required this.padding,
   });
   @override
   Widget build(BuildContext context) {
@@ -22,11 +24,7 @@ class CustomFollowersNumberWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(border: border),
-        padding: EdgeInsetsDirectional.only(
-          start: context.height * 0.020,
-          end: context.height * 0.020,
-          bottom: context.height * 0.010,
-        ),
+        padding: padding,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

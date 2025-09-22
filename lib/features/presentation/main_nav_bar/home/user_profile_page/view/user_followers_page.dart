@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../data/models/get/get_user_profile_model.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../data/models/get/get_user_profile_model.dart';
 import '../../search_page/widget/search_text_form_field_widget.dart';
 import '../widget/user_fans_widget.dart';
 import '../widget/user_followers_appbar.dart';
@@ -74,6 +74,11 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                         children: [
                           // Fans
                           CustomFollowersNumberWidget(
+                            padding: EdgeInsetsDirectional.only(
+                              start: context.height * 0.020,
+                              end: context.height * 0.020,
+                              bottom: context.height * 0.010,
+                            ),
                             number: widget.getUserProfileModel.fansCount,
                             title: local.fans,
                             border: Border(
@@ -103,6 +108,11 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                       Column(
                         children: [
                           CustomFollowersNumberWidget(
+                            padding: EdgeInsetsDirectional.only(
+                              start: context.height * 0.020,
+                              end: context.height * 0.020,
+                              bottom: context.height * 0.010,
+                            ),
                             number: widget.getUserProfileModel.pioneersCount,
                             title: local.pioneers,
                             border: Border(
