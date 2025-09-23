@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/providers/post/resend_otp_provider.dart';
 
 import '../../features/data/providers/post/verify_otp_provider.dart';
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
@@ -37,7 +38,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
   Timer? timer;
   int secondsRemaining = 60;
   final formKey = GlobalKey<FormState>();
-  final pinPutController = TextEditingController();
+  final otpController = TextEditingController();
 
   @override
   void initState() {
@@ -47,7 +48,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
 
   @override
   void dispose() {
-    pinPutController.dispose();
+    otpController.dispose();
     timer?.cancel();
     super.dispose();
   }
@@ -66,7 +67,16 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
     });
   }
 
-  void resendCode() {
+  Future<void> resendCode() async {
+    final isEmail = widget.contactType == ContactType.email;
+    await ref
+        .read(resendOtpProvider.notifier)
+        .resendOtp(
+          phonePrefix: isEmail ? null : "+20",
+          authMethod: widget.contactType.name,
+          email: isEmail ? widget.emailController.text : null,
+          phone: isEmail ? null : widget.phoneController.text,
+        );
     SuccessMessage(
       context,
       message: context.kAppLocalizations.anewcodehasbeensent,
@@ -80,7 +90,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
     final isEmail = widget.contactType == ContactType.email;
     await notifier.verifyOtp(
       authMethod: widget.contactType.name,
-      otp: pinPutController.text,
+      otp: otpController.text,
       email: isEmail ? widget.emailController.text : null,
       phone: isEmail ? null : widget.phoneController.text,
     );
@@ -169,7 +179,25 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                 SizedBox(height: context.height * 0.040),
                 // Signup Pinput Widget
                 CustomOtpCodeField(
-                  pinPutController: pinPutController,
+                  onChanged: (value) {
+                    if (value.length == 6) {
+                      ref
+                          .read(verifyOtpProvider.notifier)
+                          .verifyOtp(
+                            authMethod: widget.contactType.name,
+                            otp: value,
+                            email:
+                                widget.contactType == ContactType.email
+                                    ? widget.emailController.text
+                                    : null,
+                            phone:
+                                widget.contactType == ContactType.phone
+                                    ? widget.phoneController.text
+                                    : null,
+                          );
+                    }
+                  },
+                  pinPutController: otpController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return local.pleaseentertheotp;

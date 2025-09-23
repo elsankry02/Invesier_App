@@ -26,6 +26,7 @@ class UserPioneersTileWidget extends ConsumerWidget {
         borderRadius: BorderRadius.circular(context.height * 0.040),
         child: CachedNetworkImage(
           imageUrl: getUserPioneersModel.avatarUrl ?? AppImages.ImageNetwork,
+
           width: context.height * 0.040,
           height: context.height * 0.040,
           fit: BoxFit.cover,

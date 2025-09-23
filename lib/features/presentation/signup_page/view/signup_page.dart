@@ -38,13 +38,13 @@ class _SignupPageState extends ConsumerState<SignupPage> {
   Future<void> register() async {
     if (!formKey.currentState!.validate()) return;
     final notifier = ref.read(registerNewUserProvider.notifier);
-    final isEmail = contactType == ContactType.email;
+    final isPhone = contactType == ContactType.phone;
     await notifier.registerNewUser(
-      prefix: isEmail ? null : "+20",
-      phonePrefix: isEmail ? null : "+20",
+      phonePrefix: isPhone ? "+20" : null,
+      prefix: isPhone ? "+20" : null,
       authMethod: contactType.name,
-      email: isEmail ? emailController.text.trim() : null,
-      phone: isEmail ? null : phoneController.text.trim(),
+      email: isPhone ? null : emailController.text.trim(),
+      phone: isPhone ? phoneController.text.trim() : null,
     );
   }
 
