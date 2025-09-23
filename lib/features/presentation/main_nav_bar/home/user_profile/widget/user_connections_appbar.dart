@@ -9,13 +9,10 @@ import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/models/get/get_user_profile_model.dart';
 
-class UserFollowersAppBarWidget extends StatelessWidget {
+class UserConnectionsAppBar extends StatelessWidget {
   final GetUserProfileModel getUserProfileModel;
 
-  const UserFollowersAppBarWidget({
-    super.key,
-    required this.getUserProfileModel,
-  });
+  const UserConnectionsAppBar({super.key, required this.getUserProfileModel});
   @override
   Widget build(BuildContext context) {
     return Container(

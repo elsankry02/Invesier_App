@@ -5,10 +5,10 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 
-class UserPopMenuWidget extends StatelessWidget {
+class OtherUserPopMenuWidget extends StatelessWidget {
   final String title, icon;
   final Function() onTap;
-  const UserPopMenuWidget({
+  const OtherUserPopMenuWidget({
     super.key,
     required this.icon,
     required this.title,

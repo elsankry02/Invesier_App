@@ -25,36 +25,41 @@ class GetUserPioneersSuccess extends GetUserPioneersState {
   GetUserPioneersSuccess({required this.getUserPioneers});
 }
 
-class GetUserPioneersNotifier extends Notifier<GetUserPioneersState> {
+class GetUserPioneersNotifier
+    extends AutoDisposeNotifier<GetUserPioneersState> {
   @override
   GetUserPioneersState build() {
     return GetUserPioneersInitial();
   }
 
+  Timer? debounce;
   Future<void> getUserPioneers({
     String? search,
     required String username,
   }) async {
-    final provider = ref.read(getUserPioneersServiceProvider);
-    state = GetUserPioneersLoading();
-    try {
-      final getUserPioneers = await provider.getUserPioneers(
-        username: username,
-        search: search,
-      );
-      state = GetUserPioneersSuccess(getUserPioneers: getUserPioneers);
-    } on Exception catch (e) {
-      if (e is DioException) {
-        final errmessage = e.response!.data;
-        state = GetUserPioneersFailure(
-          errMessage: errmessage[AppStrings.message],
+    if (debounce?.isActive ?? false) debounce!.cancel();
+    debounce = Timer(Duration(milliseconds: 500), () async {
+      final provider = ref.read(getUserPioneersServiceProvider);
+      state = GetUserPioneersLoading();
+      try {
+        final getUserPioneers = await provider.getUserPioneers(
+          username: username,
+          search: search,
         );
+        state = GetUserPioneersSuccess(getUserPioneers: getUserPioneers);
+      } on Exception catch (e) {
+        if (e is DioException) {
+          final errmessage = e.response!.data;
+          state = GetUserPioneersFailure(
+            errMessage: errmessage[AppStrings.message],
+          );
+        }
       }
-    }
+    });
   }
 }
 
 final getUserPioneersProvider =
-    NotifierProvider<GetUserPioneersNotifier, GetUserPioneersState>(
+    NotifierProvider.autoDispose<GetUserPioneersNotifier, GetUserPioneersState>(
       GetUserPioneersNotifier.new,
     );

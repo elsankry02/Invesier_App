@@ -20,11 +20,10 @@ class UserPioneersWidget extends ConsumerStatefulWidget {
 class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
   @override
   void initState() {
-    Future.microtask(() {
-      ref
-          .read(getUserPioneersProvider.notifier)
-          .getUserPioneers(username: widget.username);
-    });
+    ref
+        .read(getUserPioneersProvider.notifier)
+        .getUserPioneers(username: widget.username);
+
     super.initState();
   }
 
@@ -49,14 +48,13 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
       }
       return Expanded(
         child: ListView.builder(
-          shrinkWrap: true,
           itemCount: state.getUserPioneers.length,
           itemBuilder: (context, index) {
             final pioneers = state.getUserPioneers[index];
             return UserPioneersTileWidget(
               onTap:
                   () => context.router.push(
-                    UserProfileRoute(
+                    OtherUserProfileRoute(
                       username:
                           pioneers.username ??
                           context.kAppLocalizations.username,

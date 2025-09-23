@@ -9,26 +9,24 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../data/providers/get/get_user_profile_provider.dart';
-import '../widget/user_appbar_widget.dart';
+import '../widget/other_user_profile_appbar.dart';
 
 @RoutePage()
-class UserProfilePage extends ConsumerStatefulWidget {
+class OtherUserProfilePage extends ConsumerStatefulWidget {
   final String username;
-  const UserProfilePage({super.key, required this.username});
+  const OtherUserProfilePage({super.key, required this.username});
 
   @override
-  ConsumerState<UserProfilePage> createState() => _UserProfilePageState();
+  ConsumerState<OtherUserProfilePage> createState() => _UserProfilePageState();
 }
 
-class _UserProfilePageState extends ConsumerState<UserProfilePage> {
+class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
   @override
   void initState() {
-    Future.microtask(() {
-      ref
-          .read(getUserProfileProvider.notifier)
-          .getUserProfile(userName: widget.username);
-      super.initState();
-    });
+    ref
+        .read(getUserProfileProvider.notifier)
+        .getUserProfile(userName: widget.username);
+    super.initState();
   }
 
   @override
@@ -49,7 +47,7 @@ class _UserProfilePageState extends ConsumerState<UserProfilePage> {
               builder: (context, ref, child) {
                 final state = ref.watch(getUserProfileProvider);
                 if (state is GetUserProfileSuccess) {
-                  return UserAppBarWidget(
+                  return OtherUserProfileAppBar(
                     getUserProfileModel: state.getUserProfileModel,
                   );
                 } else if (state is GetUserProfileFailure) {

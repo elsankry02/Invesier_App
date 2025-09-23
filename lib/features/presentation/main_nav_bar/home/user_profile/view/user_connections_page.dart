@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/search_page/widget/search_text_form_field_widget.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/user_fans_widget.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/user_pioneers_widget.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
@@ -8,33 +12,42 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/models/get/get_user_profile_model.dart';
-import '../widget/user_followers_appbar.dart';
+import '../widget/user_connections_appbar.dart';
 
 @RoutePage()
-class UserFollowersPage extends ConsumerStatefulWidget {
+class UserConnectionsPage extends ConsumerStatefulWidget {
   final FollowersTabType initialTab;
   final GetUserProfileModel getUserProfileModel;
-  const UserFollowersPage({
+  final int initialPage;
+
+  const UserConnectionsPage({
     super.key,
+    required this.initialPage,
     required this.initialTab,
     required this.getUserProfileModel,
   });
   @override
-  ConsumerState<UserFollowersPage> createState() => _UserFollowersPageState();
+  ConsumerState<UserConnectionsPage> createState() =>
+      _UserConnectionsPageState();
 }
 
-class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
-  FollowersTabType selectedTab = FollowersTabType.fans;
-  final searchController = TextEditingController();
+class _UserConnectionsPageState extends ConsumerState<UserConnectionsPage> {
+  final pioneersController = TextEditingController();
+  final fansController = TextEditingController();
+  late FollowersTabType initialTab;
+  late PageController pageController;
+
   @override
   void initState() {
-    selectedTab = widget.initialTab;
+    initialTab = widget.initialTab;
+    pageController = PageController(initialPage: widget.initialPage);
     super.initState();
   }
 
   @override
   void dispose() {
-    searchController.dispose();
+    fansController.dispose();
+    pioneersController.dispose();
     super.dispose();
   }
 
@@ -56,7 +69,7 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
             child: Column(
               children: [
                 // HomeFollowAppBarWidget
-                UserFollowersAppBarWidget(
+                UserConnectionsAppBar(
                   getUserProfileModel: widget.getUserProfileModel,
                 ),
                 SizedBox(height: context.height * 0.009),
@@ -82,14 +95,19 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                               bottom: BorderSide(
                                 width: 1.5,
                                 color:
-                                    selectedTab == FollowersTabType.fans
+                                    initialTab == FollowersTabType.fans
                                         ? AppColors.kWhite
                                         : Colors.transparent,
                               ),
                             ),
                             onTap: () {
                               setState(() {
-                                selectedTab = FollowersTabType.fans;
+                                pageController.animateToPage(
+                                  0,
+                                  duration: Duration(milliseconds: 300),
+                                  curve: Curves.easeInOut,
+                                );
+                                initialTab = FollowersTabType.fans;
                               });
                             },
                           ),
@@ -116,14 +134,19 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                               bottom: BorderSide(
                                 width: 1.5,
                                 color:
-                                    selectedTab == FollowersTabType.pioneers
+                                    initialTab == FollowersTabType.pioneers
                                         ? AppColors.kWhite
                                         : Colors.transparent,
                               ),
                             ),
                             onTap: () {
                               setState(() {
-                                selectedTab = FollowersTabType.pioneers;
+                                pageController.animateToPage(
+                                  1,
+                                  duration: Duration(milliseconds: 300),
+                                  curve: Curves.easeInOut,
+                                );
+                                initialTab = FollowersTabType.pioneers;
                               });
                             },
                           ),
@@ -132,8 +155,53 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                     ],
                   ),
                 ),
-
-              
+                SizedBox(height: context.height * 0.020),
+                Expanded(
+                  child: PageView(
+                    controller: pageController,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      ListView(
+                        physics: NeverScrollableScrollPhysics(),
+                        children: [
+                          SearchTextFormFieldWidget(
+                            autofocus: false,
+                            onChanged: (value) {},
+                            searchController: fansController,
+                          ),
+                          SizedBox(height: context.height * 0.020),
+                          UserFansWidget(),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          SearchTextFormFieldWidget(
+                            autofocus: false,
+                            onChanged: (value) {
+                              if (value.isNotEmpty) {
+                                ref
+                                    .read(getUserPioneersProvider.notifier)
+                                    .getUserPioneers(
+                                      search: value.toLowerCase().trim(),
+                                      username:
+                                          widget.getUserProfileModel.username ??
+                                          context.kAppLocalizations.username,
+                                    );
+                              }
+                            },
+                            searchController: pioneersController,
+                          ),
+                          SizedBox(height: context.height * 0.020),
+                          UserPioneersWidget(
+                            username:
+                                widget.getUserProfileModel.username ??
+                                context.kAppLocalizations.username,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

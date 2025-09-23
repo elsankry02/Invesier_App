@@ -6,7 +6,7 @@ class GetUserPioneersModel {
   final dynamic phone;
   final String? email;
   final dynamic inveesBalance;
-  final String? hostStatus;
+  final String hostStatus;
   final bool isShown;
   final bool isLive;
   final int fansCount;
@@ -17,7 +17,7 @@ class GetUserPioneersModel {
   final bool isExpert;
   final DateTime createdAt;
   final DateTime updatedAt;
-  final String? socialRelation;
+  final String socialRelation;
 
   GetUserPioneersModel({
     required this.id,

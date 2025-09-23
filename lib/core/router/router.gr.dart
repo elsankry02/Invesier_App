@@ -284,6 +284,53 @@ class OnboardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OtherUserProfilePage]
+class OtherUserProfileRoute extends PageRouteInfo<OtherUserProfileRouteArgs> {
+  OtherUserProfileRoute({
+    Key? key,
+    required String username,
+    List<PageRouteInfo>? children,
+  }) : super(
+         OtherUserProfileRoute.name,
+         args: OtherUserProfileRouteArgs(key: key, username: username),
+         initialChildren: children,
+       );
+
+  static const String name = 'OtherUserProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<OtherUserProfileRouteArgs>();
+      return OtherUserProfilePage(key: args.key, username: args.username);
+    },
+  );
+}
+
+class OtherUserProfileRouteArgs {
+  const OtherUserProfileRouteArgs({this.key, required this.username});
+
+  final Key? key;
+
+  final String username;
+
+  @override
+  String toString() {
+    return 'OtherUserProfileRouteArgs{key: $key, username: $username}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! OtherUserProfileRouteArgs) return false;
+    return key == other.key && username == other.username;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ username.hashCode;
+}
+
+/// generated route for
 /// [PersonalDetailsPage]
 class PersonalDetailsRoute extends PageRouteInfo<void> {
   const PersonalDetailsRoute({List<PageRouteInfo>? children})
@@ -540,31 +587,34 @@ class UnderReveiwRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [UserFollowersPage]
-class UserFollowersRoute extends PageRouteInfo<UserFollowersRouteArgs> {
-  UserFollowersRoute({
+/// [UserConnectionsPage]
+class UserConnectionsRoute extends PageRouteInfo<UserConnectionsRouteArgs> {
+  UserConnectionsRoute({
     Key? key,
+    required int initialPage,
     required FollowersTabType initialTab,
     required GetUserProfileModel getUserProfileModel,
     List<PageRouteInfo>? children,
   }) : super(
-         UserFollowersRoute.name,
-         args: UserFollowersRouteArgs(
+         UserConnectionsRoute.name,
+         args: UserConnectionsRouteArgs(
            key: key,
+           initialPage: initialPage,
            initialTab: initialTab,
            getUserProfileModel: getUserProfileModel,
          ),
          initialChildren: children,
        );
 
-  static const String name = 'UserFollowersRoute';
+  static const String name = 'UserConnectionsRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final args = data.argsAs<UserFollowersRouteArgs>();
-      return UserFollowersPage(
+      final args = data.argsAs<UserConnectionsRouteArgs>();
+      return UserConnectionsPage(
         key: args.key,
+        initialPage: args.initialPage,
         initialTab: args.initialTab,
         getUserProfileModel: args.getUserProfileModel,
       );
@@ -572,14 +622,17 @@ class UserFollowersRoute extends PageRouteInfo<UserFollowersRouteArgs> {
   );
 }
 
-class UserFollowersRouteArgs {
-  const UserFollowersRouteArgs({
+class UserConnectionsRouteArgs {
+  const UserConnectionsRouteArgs({
     this.key,
+    required this.initialPage,
     required this.initialTab,
     required this.getUserProfileModel,
   });
 
   final Key? key;
+
+  final int initialPage;
 
   final FollowersTabType initialTab;
 
@@ -587,68 +640,25 @@ class UserFollowersRouteArgs {
 
   @override
   String toString() {
-    return 'UserFollowersRouteArgs{key: $key, initialTab: $initialTab, getUserProfileModel: $getUserProfileModel}';
+    return 'UserConnectionsRouteArgs{key: $key, initialPage: $initialPage, initialTab: $initialTab, getUserProfileModel: $getUserProfileModel}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    if (other is! UserFollowersRouteArgs) return false;
+    if (other is! UserConnectionsRouteArgs) return false;
     return key == other.key &&
+        initialPage == other.initialPage &&
         initialTab == other.initialTab &&
         getUserProfileModel == other.getUserProfileModel;
   }
 
   @override
   int get hashCode =>
-      key.hashCode ^ initialTab.hashCode ^ getUserProfileModel.hashCode;
-}
-
-/// generated route for
-/// [UserProfilePage]
-class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
-  UserProfileRoute({
-    Key? key,
-    required String username,
-    List<PageRouteInfo>? children,
-  }) : super(
-         UserProfileRoute.name,
-         args: UserProfileRouteArgs(key: key, username: username),
-         initialChildren: children,
-       );
-
-  static const String name = 'UserProfileRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      final args = data.argsAs<UserProfileRouteArgs>();
-      return UserProfilePage(key: args.key, username: args.username);
-    },
-  );
-}
-
-class UserProfileRouteArgs {
-  const UserProfileRouteArgs({this.key, required this.username});
-
-  final Key? key;
-
-  final String username;
-
-  @override
-  String toString() {
-    return 'UserProfileRouteArgs{key: $key, username: $username}';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! UserProfileRouteArgs) return false;
-    return key == other.key && username == other.username;
-  }
-
-  @override
-  int get hashCode => key.hashCode ^ username.hashCode;
+      key.hashCode ^
+      initialPage.hashCode ^
+      initialTab.hashCode ^
+      getUserProfileModel.hashCode;
 }
 
 /// generated route for

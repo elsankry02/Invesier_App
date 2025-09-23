@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../../user_profile_page/widget/user_alertdialog_widget.dart';
+import '../../user_profile/widget/user_alertdialog_widget.dart';
 
 class ReportReasonDialog extends StatefulWidget {
   const ReportReasonDialog({super.key});

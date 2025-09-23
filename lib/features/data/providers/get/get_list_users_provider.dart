@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../core/constant/app_strings.dart';
 import '../../models/get/get_list_users_model.dart';
-
 import '../provider.dart';
 
 abstract class GetListUsersState {}
@@ -34,9 +34,9 @@ class GetListUsersNotifier extends AutoDisposeNotifier<GetListUsersState> {
   Timer? debounce;
 
   Future<void> getListUsers({String? userName}) async {
-    final provider = ref.read(getListUsersServiceProvider);
     if (debounce?.isActive ?? false) debounce!.cancel();
-    debounce = Timer(Duration(milliseconds: 400), () async {
+    debounce = Timer(Duration(milliseconds: 500), () async {
+      final provider = ref.read(getListUsersServiceProvider);
       state = GetListUsersLoading();
       try {
         final getlistUsers = await provider.getListUsers(userName: userName);

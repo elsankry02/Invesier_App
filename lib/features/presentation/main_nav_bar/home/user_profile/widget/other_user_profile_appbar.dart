@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/custom_icon_button.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_alertdialog_widget.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/user_profile_page/widget/user_pop_menu_widget.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/other_user_pop_menu_widget.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/user_alertdialog_widget.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_divider_widget.dart';
@@ -17,9 +17,9 @@ import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/models/get/get_user_profile_model.dart';
 
-class UserAppBarWidget extends ConsumerWidget {
+class OtherUserProfileAppBar extends ConsumerWidget {
   final GetUserProfileModel getUserProfileModel;
-  const UserAppBarWidget({super.key, required this.getUserProfileModel});
+  const OtherUserProfileAppBar({super.key, required this.getUserProfileModel});
 
   @override
   Widget build(BuildContext context, ref) {
@@ -83,7 +83,7 @@ class UserAppBarWidget extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    UserPopMenuWidget(
+                    OtherUserPopMenuWidget(
                       icon: AppSvgs.kblockVictor,
                       title: local.blockuser,
                       onTap: () {
@@ -129,7 +129,8 @@ class UserAppBarWidget extends ConsumerWidget {
                       number: getUserProfileModel.fansCount,
                       onTap: () {
                         context.router.push(
-                          UserFollowersRoute(
+                          UserConnectionsRoute(
+                            initialPage: 0,
                             initialTab: FollowersTabType.fans,
                             getUserProfileModel: getUserProfileModel,
                           ),
@@ -152,7 +153,8 @@ class UserAppBarWidget extends ConsumerWidget {
                       number: getUserProfileModel.pioneersCount,
                       onTap: () {
                         context.router.push(
-                          UserFollowersRoute(
+                          UserConnectionsRoute(
+                            initialPage: 1,
                             initialTab: FollowersTabType.pioneers,
                             getUserProfileModel: getUserProfileModel,
                           ),

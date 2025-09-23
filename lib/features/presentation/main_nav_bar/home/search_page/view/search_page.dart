@@ -98,7 +98,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                             return SearchTileWidget(
                               onTap: () {
                                 context.router.push(
-                                  UserProfileRoute(
+                                  OtherUserProfileRoute(
                                     username:
                                         getListUser.username ??
                                         context.kAppLocalizations.username,
