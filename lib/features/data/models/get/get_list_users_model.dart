@@ -1,7 +1,7 @@
 class Datum {
   final int id;
-  final String name;
-  final String username;
+  final String? name;
+  final String? username;
   final String? email;
   final String? avatar;
   final bool isVerified;
@@ -13,8 +13,8 @@ class Datum {
     required this.id,
     required this.name,
     required this.username,
-    this.email,
-    this.avatar,
+    required this.email,
+    required this.avatar,
     required this.isVerified,
     required this.followersCount,
     required this.followingCount,

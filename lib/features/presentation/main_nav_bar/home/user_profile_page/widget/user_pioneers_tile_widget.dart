@@ -41,7 +41,7 @@ class UserPioneersTileWidget extends ConsumerWidget {
         ),
       ),
       subtitle: Text(
-        getUserPioneersModel.username ?? context.kAppLocalizations.username,
+        "@${getUserPioneersModel.username ?? context.kAppLocalizations.username}",
         style: context.kTextTheme.titleSmall!.copyWith(
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,

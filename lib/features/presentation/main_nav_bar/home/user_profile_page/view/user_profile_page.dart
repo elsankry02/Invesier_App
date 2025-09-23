@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_circuler_progress.dart';
-import '../../../../../data/providers/get/get_user_profile_provider.dart';
 
+import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
+import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import '../widget/user_appbar_widget.dart';
 
 @RoutePage()
@@ -23,10 +23,12 @@ class UserProfilePage extends ConsumerStatefulWidget {
 class _UserProfilePageState extends ConsumerState<UserProfilePage> {
   @override
   void initState() {
-    ref
-        .read(getUserProfileProvider.notifier)
-        .getUserProfile(userName: widget.username);
-    super.initState();
+    Future.microtask(() {
+      ref
+          .read(getUserProfileProvider.notifier)
+          .getUserProfile(userName: widget.username);
+      super.initState();
+    });
   }
 
   @override

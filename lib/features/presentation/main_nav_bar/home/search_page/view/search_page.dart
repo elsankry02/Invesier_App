@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../data/providers/get/get_list_users_provider.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/get/get_list_users_provider.dart';
 import '../widget/search_text_form_field_widget.dart';
 import '../widget/search_tile_widget.dart';
 
@@ -88,16 +88,18 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                         child: ListView.builder(
                           itemCount: state.getlistUsers.length,
                           itemBuilder: (context, index) {
+                            final getListUser = state.getlistUsers[index];
                             return SearchTileWidget(
                               onTap: () {
                                 context.router.push(
                                   UserProfileRoute(
                                     username:
-                                        state.getlistUsers[index].username,
+                                        getListUser.username ??
+                                        context.kAppLocalizations.username,
                                   ),
                                 );
                               },
-                              getListUsers: state.getlistUsers[index],
+                              getListUsers: getListUser,
                             );
                           },
                         ),
