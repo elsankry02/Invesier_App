@@ -151,6 +151,7 @@
 "nopioneersfound": "لم يتم العثور على رواد",
 "challenge": "التحديات",
 "messages": "الرسائل",
-"noresultsfound": "لا يوجد نتائج"
+"noresultsfound": "لا يوجد نتائج",
+"noFansFound": "لا يوجد معجبين"
 
 }

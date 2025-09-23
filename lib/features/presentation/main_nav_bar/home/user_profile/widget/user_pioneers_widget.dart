@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
-import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_user_pioneers_provider.dart';
@@ -23,7 +22,6 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
     ref
         .read(getUserPioneersProvider.notifier)
         .getUserPioneers(username: widget.username);
-
     super.initState();
   }
 
@@ -42,8 +40,12 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
       );
     } else if (state is GetUserPioneersSuccess) {
       if (state.getUserPioneers.isEmpty) {
-        return CustomNoPostsWidget(
-          title: context.kAppLocalizations.nopioneersfound,
+        return Text(
+          context.kAppLocalizations.noresultsfound,
+          textAlign: TextAlign.center,
+          style: context.kTextTheme.titleMedium!.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         );
       }
       return Expanded(

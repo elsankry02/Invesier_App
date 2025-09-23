@@ -1,20 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/models/get/get_user_fans_model.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../../../../../data/models/get/get_user_pioneers_model.dart';
 
-class UserPioneersTileWidget extends ConsumerWidget {
+class UserFansTileWidget extends ConsumerWidget {
   final void Function()? onTap;
-  final GetUserPioneersModel getUserPioneersModel;
-  const UserPioneersTileWidget({
+  final GetUserFansModel getUserFansModel;
+  const UserFansTileWidget({
     super.key,
     this.onTap,
-    required this.getUserPioneersModel,
+    required this.getUserFansModel,
   });
 
   @override
@@ -25,7 +25,7 @@ class UserPioneersTileWidget extends ConsumerWidget {
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(context.height * 0.040),
         child: CachedNetworkImage(
-          imageUrl: getUserPioneersModel.avatarUrl ?? AppImages.ImageNetwork,
+          imageUrl: getUserFansModel.avatarUrl ?? AppImages.ImageNetwork,
           width: context.height * 0.040,
           height: context.height * 0.040,
           fit: BoxFit.cover,
@@ -35,13 +35,13 @@ class UserPioneersTileWidget extends ConsumerWidget {
         ),
       ),
       title: Text(
-        getUserPioneersModel.name ?? context.kAppLocalizations.name,
+        getUserFansModel.name ?? context.kAppLocalizations.name,
         style: context.kTextTheme.titleSmall!.copyWith(
           fontWeight: FontWeight.w600,
         ),
       ),
       subtitle: Text(
-        "@${getUserPioneersModel.username ?? context.kAppLocalizations.username}",
+        "@${getUserFansModel.username ?? context.kAppLocalizations.username}",
         style: context.kTextTheme.titleSmall!.copyWith(
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,
@@ -50,14 +50,14 @@ class UserPioneersTileWidget extends ConsumerWidget {
       trailing: Container(
         padding: EdgeInsets.symmetric(
           vertical: context.height * 0.004,
-          horizontal: context.height * 0.016,
+          horizontal: context.height * 0.028,
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(context.height * 0.031),
-          border: Border.all(color: AppColors.kPrimary),
+          border: Border.all(color: AppColors.kSecondary),
         ),
         child: Text(
-          context.kAppLocalizations.pioneers,
+          context.kAppLocalizations.fans,
           style: context.kTextTheme.labelMedium!.copyWith(
             color: AppColors.kWhite,
             fontWeight: FontWeight.w500,

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/providers/get/get_user_fans_provider.dart';
 import 'package:invesier/features/data/providers/get/get_user_pioneers_provider.dart';
 import 'package:invesier/features/presentation/main_nav_bar/home/search_page/widget/search_text_form_field_widget.dart';
 import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/user_fans_widget.dart';
@@ -108,6 +109,7 @@ class _UserConnectionsPageState extends ConsumerState<UserConnectionsPage> {
                                   curve: Curves.easeInOut,
                                 );
                                 initialTab = FollowersTabType.fans;
+                                pioneersController.clear();
                               });
                             },
                           ),
@@ -147,6 +149,7 @@ class _UserConnectionsPageState extends ConsumerState<UserConnectionsPage> {
                                   curve: Curves.easeInOut,
                                 );
                                 initialTab = FollowersTabType.pioneers;
+                                fansController.clear();
                               });
                             },
                           ),
@@ -161,16 +164,30 @@ class _UserConnectionsPageState extends ConsumerState<UserConnectionsPage> {
                     controller: pageController,
                     physics: NeverScrollableScrollPhysics(),
                     children: [
-                      ListView(
-                        physics: NeverScrollableScrollPhysics(),
+                      Column(
                         children: [
                           SearchTextFormFieldWidget(
                             autofocus: false,
-                            onChanged: (value) {},
+                            onChanged: (value) {
+                              if (value.isNotEmpty) {
+                                ref
+                                    .read(getUserFansProvider.notifier)
+                                    .getUserFans(
+                                      username:
+                                          widget.getUserProfileModel.username ??
+                                          context.kAppLocalizations.username,
+                                      search: value.toLowerCase().trim(),
+                                    );
+                              }
+                            },
                             searchController: fansController,
                           ),
                           SizedBox(height: context.height * 0.020),
-                          UserFansWidget(),
+                          UserFansWidget(
+                            username:
+                                widget.getUserProfileModel.username ??
+                                context.kAppLocalizations.username,
+                          ),
                         ],
                       ),
                       Column(

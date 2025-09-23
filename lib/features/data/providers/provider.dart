@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/services/get/get_user_fans_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
@@ -98,14 +99,15 @@ final getPostsServiceProvider = Provider<GetPostsService>((ref) {
 final getUserProfileServiceProvider = Provider<GetUserProfileService>((ref) {
   return GetUserProfileService(dio: ref.read(dioProvider));
 });
-//get User Pioneers Service Provider
-final getUserPioneersServiceProvider = Provider<GetUserPioneersService>((ref) {
-  return GetUserPioneersService(dio: ref.read(dioProvider));
-});
 // get List Users Service Provider
 final getListUsersServiceProvider = Provider<GetListUsersService>((ref) {
   return GetListUsersService(dio: ref.read(dioProvider));
 });
-// final UserProfilePageProvider = Provider<UserProfilePage>((ref) {
-//   return UserProfilePage(username:  ) ;
-// });
+//get User Pioneers Service Provider
+final getUserPioneersServiceProvider = Provider<GetUserPioneersService>((ref) {
+  return GetUserPioneersService(dio: ref.read(dioProvider));
+});
+// get List Fans Service Provider
+final getUserFansServiceProvider = Provider<GetUserFansService>((ref) {
+  return GetUserFansService(dio: ref.read(dioProvider));
+});
