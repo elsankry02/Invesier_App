@@ -14,8 +14,8 @@ class CustomNoPostsWidget extends StatelessWidget {
       children: [
         Lottie.asset(AppLotties.kNoItem),
         Text(
-          textAlign: TextAlign.center,
           title,
+          textAlign: TextAlign.center,
           style: context.kTextTheme.titleMedium!.copyWith(
             fontWeight: FontWeight.w700,
           ),

@@ -137,6 +137,7 @@ class PersonalAppBarWidget extends ConsumerWidget {
                         onTap: () {
                           context.router.push(
                             PersonalFollowersRoute(
+                              initialPage: 0,
                               initialTab: FollowersTabType.fans,
                             ),
                           );
@@ -159,6 +160,7 @@ class PersonalAppBarWidget extends ConsumerWidget {
                         onTap: () {
                           context.router.push(
                             PersonalFollowersRoute(
+                              initialPage: 1,
                               initialTab: FollowersTabType.pioneers,
                             ),
                           );

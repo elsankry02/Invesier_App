@@ -305,10 +305,15 @@ class PersonalFollowersRoute extends PageRouteInfo<PersonalFollowersRouteArgs> {
   PersonalFollowersRoute({
     Key? key,
     required FollowersTabType initialTab,
+    required int initialPage,
     List<PageRouteInfo>? children,
   }) : super(
          PersonalFollowersRoute.name,
-         args: PersonalFollowersRouteArgs(key: key, initialTab: initialTab),
+         args: PersonalFollowersRouteArgs(
+           key: key,
+           initialTab: initialTab,
+           initialPage: initialPage,
+         ),
          initialChildren: children,
        );
 
@@ -318,32 +323,44 @@ class PersonalFollowersRoute extends PageRouteInfo<PersonalFollowersRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<PersonalFollowersRouteArgs>();
-      return PersonalFollowersPage(key: args.key, initialTab: args.initialTab);
+      return PersonalFollowersPage(
+        key: args.key,
+        initialTab: args.initialTab,
+        initialPage: args.initialPage,
+      );
     },
   );
 }
 
 class PersonalFollowersRouteArgs {
-  const PersonalFollowersRouteArgs({this.key, required this.initialTab});
+  const PersonalFollowersRouteArgs({
+    this.key,
+    required this.initialTab,
+    required this.initialPage,
+  });
 
   final Key? key;
 
   final FollowersTabType initialTab;
 
+  final int initialPage;
+
   @override
   String toString() {
-    return 'PersonalFollowersRouteArgs{key: $key, initialTab: $initialTab}';
+    return 'PersonalFollowersRouteArgs{key: $key, initialTab: $initialTab, initialPage: $initialPage}';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is! PersonalFollowersRouteArgs) return false;
-    return key == other.key && initialTab == other.initialTab;
+    return key == other.key &&
+        initialTab == other.initialTab &&
+        initialPage == other.initialPage;
   }
 
   @override
-  int get hashCode => key.hashCode ^ initialTab.hashCode;
+  int get hashCode => key.hashCode ^ initialTab.hashCode ^ initialPage.hashCode;
 }
 
 /// generated route for

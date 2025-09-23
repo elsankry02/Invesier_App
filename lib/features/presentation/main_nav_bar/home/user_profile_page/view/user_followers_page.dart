@@ -8,10 +8,7 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/models/get/get_user_profile_model.dart';
-import '../../search_page/widget/search_text_form_field_widget.dart';
-import '../widget/user_fans_widget.dart';
 import '../widget/user_followers_appbar.dart';
-import '../widget/user_pioneers_widget.dart';
 
 @RoutePage()
 class UserFollowersPage extends ConsumerStatefulWidget {
@@ -136,22 +133,7 @@ class _UserFollowersPageState extends ConsumerState<UserFollowersPage> {
                   ),
                 ),
 
-                SizedBox(height: context.height * 0.016),
-                // TextFormFiled
-                SearchTextFormFieldWidget(
-                  onChanged: (value) {},
-                  autofocus: false,
-                  searchController: searchController,
-                ),
-                SizedBox(height: context.height * 0.020),
-                // homeFollowEnum > PioneersWidget > FansWidget
-                selectedTab == FollowersTabType.pioneers
-                    ? UserPioneersWidget(
-                      username:
-                          widget.getUserProfileModel.username ??
-                          context.kAppLocalizations.username,
-                    )
-                    : UserFansWidget(),
+              
               ],
             ),
           ),

@@ -81,7 +81,13 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                     } else if (state is GetListUsersSuccess) {
                       if (state.getlistUsers.isEmpty) {
                         return Center(
-                          child: Text(context.kAppLocalizations.noresultsfound),
+                          child: Text(
+                            context.kAppLocalizations.noresultsfound,
+                            textAlign: TextAlign.center,
+                            style: context.kTextTheme.titleMedium!.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                         );
                       }
                       return Expanded(

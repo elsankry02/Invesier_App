@@ -53,7 +53,13 @@ class _UserProfilePageState extends ConsumerState<UserProfilePage> {
                     getUserProfileModel: state.getUserProfileModel,
                   );
                 } else if (state is GetUserProfileFailure) {
-                  return Center(child: Text(state.errMessage));
+                  return Text(
+                    state.errMessage,
+                    textAlign: TextAlign.center,
+                    style: context.kTextTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  );
                 } else if (state is GetUserProfileLoading) {
                   return CustomCircularProgressIndicator();
                 }

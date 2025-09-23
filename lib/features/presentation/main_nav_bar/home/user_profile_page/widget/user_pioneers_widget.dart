@@ -34,7 +34,13 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
     if (state is GetUserPioneersLoading) {
       return CustomCircularProgressIndicator();
     } else if (state is GetUserPioneersFailure) {
-      return Center(child: Text(state.errMessage));
+      return Text(
+        state.errMessage,
+        textAlign: TextAlign.center,
+        style: context.kTextTheme.titleMedium!.copyWith(
+          fontWeight: FontWeight.w700,
+        ),
+      );
     } else if (state is GetUserPioneersSuccess) {
       if (state.getUserPioneers.isEmpty) {
         return CustomNoPostsWidget(
