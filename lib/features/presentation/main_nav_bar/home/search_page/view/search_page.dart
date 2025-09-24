@@ -97,12 +97,13 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                             final getListUser = state.getlistUsers[index];
                             return SearchTileWidget(
                               onTap: () {
+                                final username =
+                                    getListUser.username ??
+                                    context.kAppLocalizations.username;
+                                // ref.read(usernameProvider.notifier).state =
+                                //     username;
                                 context.router.push(
-                                  OtherUserProfileRoute(
-                                    username:
-                                        getListUser.username ??
-                                        context.kAppLocalizations.username,
-                                  ),
+                                  OtherUserProfileRoute(username: username),
                                 );
                               },
                               getListUsers: getListUser,

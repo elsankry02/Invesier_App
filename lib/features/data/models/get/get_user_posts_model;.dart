@@ -77,9 +77,9 @@ class GetUserPostsModel {
 
 class User {
   final int id;
-  final String username;
-  final String name;
-  final String avatarUrl;
+  final String? username;
+  final String? name;
+  final String? avatarUrl;
   final dynamic phone;
   final String email;
   final dynamic inveesBalance;

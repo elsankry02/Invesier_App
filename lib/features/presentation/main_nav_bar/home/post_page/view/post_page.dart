@@ -63,6 +63,15 @@ class PostPage extends StatelessWidget {
                   },
                 );
               },
+              imageUrl: '',
+              name: '',
+              username: '',
+              content: '',
+              postImage: '',
+              growth: '',
+              decline: '',
+              comment: '',
+              chaseButton: '',
             ),
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),

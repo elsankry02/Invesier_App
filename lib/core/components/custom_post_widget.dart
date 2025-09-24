@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/func/show_top_snack_bar.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
+import 'package:invesier/core/constant/app_images.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
@@ -8,14 +10,26 @@ import '../extension/extension.dart';
 import 'custom_primary_button.dart';
 import 'custom_tag_button.dart';
 
-class CustomPostWidget extends StatefulWidget {
+class CustomPostWidget extends StatelessWidget {
+  final String imageUrl,
+      chaseButton,
+      name,
+      username,
+      content,
+      postImage,
+      growth,
+      decline,
+      comment;
   final Function()? commentOnTap,
+      onTapChase,
       imageOnTap,
       growthOnTap,
       declineOnTap,
       SharingOnTap;
   final Widget? trailing;
   final void Function()? onTap;
+  final Color? backGroundColor;
+  final Color borderColor;
 
   const CustomPostWidget({
     super.key,
@@ -26,14 +40,20 @@ class CustomPostWidget extends StatefulWidget {
     this.trailing,
     this.SharingOnTap,
     this.onTap,
+    required this.imageUrl,
+    this.onTapChase,
+    required this.name,
+    required this.username,
+    required this.content,
+    required this.postImage,
+    required this.growth,
+    required this.decline,
+    required this.comment,
+    this.chaseButton = "",
+    this.borderColor = Colors.transparent,
+    this.backGroundColor,
   });
 
-  @override
-  State<CustomPostWidget> createState() => _CustomPostWidgetState();
-}
-
-class _CustomPostWidgetState extends State<CustomPostWidget> {
-  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,17 +66,23 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
         left: context.height * 0.020,
         right: context.height * 0.020,
       ),
-      margin: EdgeInsets.only(bottom: context.height * 0.020),
+      margin: EdgeInsets.only(bottom: context.height * 0.010),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ListTile(
             contentPadding: EdgeInsets.zero,
             leading: ClipOval(
-              //TODO:
               child: GestureDetector(
-                onTap: widget.imageOnTap,
-                child: Image.asset(
-                  "",
+                onTap: imageOnTap,
+                // imageUrl
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
+                  placeholder:
+                      (context, url) => CustomCircularProgressIndicator(),
+                  errorWidget:
+                      (context, url, error) =>
+                          Image.network(AppImages.ImageNetwork),
                   height: context.height * 0.030,
                   width: context.height * 0.030,
                   fit: BoxFit.cover,
@@ -66,33 +92,18 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
             title: Row(
               spacing: context.height * 0.020,
               children: [
-                Text(""),
+                // name
+                Text(
+                  name,
+                  style: context.kTextTheme.titleSmall!.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.kWhite,
+                  ),
+                ),
                 InkWell(
-                  onTap: () {
-                    if (isSelected == false) {
-                      SuccessMessage(
-                        context,
-                        message: context.kAppLocalizations.chaseback,
-                      );
-                      setState(() {
-                        isSelected = !isSelected;
-                      });
-                    } else {
-                      SuccessMessage(
-                        context,
-                        message: context.kAppLocalizations.chase,
-                      );
-
-                      setState(() {
-                        isSelected = !isSelected;
-                      });
-                    }
-                  },
+                  onTap: onTapChase,
                   child: CustomPrimaryButton(
-                    title:
-                        isSelected == false
-                            ? context.kAppLocalizations.chase
-                            : context.kAppLocalizations.chaseback,
+                    title: chaseButton,
                     style: context.kTextTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -101,29 +112,39 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
                       vertical: context.height * 0.004,
                     ),
                     borderRadius: BorderRadius.circular(context.height * 0.031),
-                    border: Border.all(
-                      width: 2,
-                      color:
-                          isSelected == true
-                              ? AppColors.kNum
-                              : Colors.transparent,
-                    ),
-                    backGroundColor:
-                        isSelected == true
-                            ? Colors.transparent
-                            : AppColors.kNum,
+                    border: Border.all(width: 2, color: borderColor),
+                    backGroundColor: backGroundColor,
                   ),
                 ),
               ],
             ),
-            subtitle: Text(""),
-            trailing: widget.trailing,
+            // username
+            subtitle: Text(
+              username,
+              style: context.kTextTheme.titleSmall!.copyWith(
+                fontWeight: FontWeight.w400,
+                color: AppColors.kPostUsername,
+              ),
+            ),
+            trailing: trailing,
           ),
-          Text(""),
+          //
+          Text(
+            content,
+            style: context.kTextTheme.titleSmall!.copyWith(
+              fontWeight: FontWeight.w500,
+              color: AppColors.kWhite,
+            ),
+          ),
           SizedBox(height: context.height * 0.013),
           ClipRRect(
             borderRadius: BorderRadius.circular(context.height * 0.018),
-            child: Image.asset("", fit: BoxFit.cover),
+            child: CachedNetworkImage(
+              imageUrl: postImage,
+              placeholder: (context, url) => CustomCircularProgressIndicator(),
+              errorWidget: (context, url, error) => SizedBox(),
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(height: context.height * 0.013),
           Row(
@@ -131,25 +152,25 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
             children: [
               CustomTagButton(
                 svg: AppSvgs.kGrowth,
-                onTap: widget.growthOnTap,
-                title: "5",
+                onTap: growthOnTap,
+                title: "$growth",
                 titleColor: AppColors.kNum,
               ),
               CustomTagButton(
                 svg: AppSvgs.kDecline,
-                onTap: widget.declineOnTap,
-                title: "5",
+                onTap: declineOnTap,
+                title: "$decline",
                 titleColor: AppColors.kRed,
               ),
               CustomTagButton(
-                onTap: widget.commentOnTap,
+                onTap: commentOnTap,
                 svg: AppSvgs.kComment,
-                title: "5",
+                title: "$comment",
                 titleColor: AppColors.kBoulder,
               ),
               GestureDetector(
                 child: SvgPicture.asset(AppSvgs.kSharing),
-                onTap: widget.SharingOnTap,
+                onTap: SharingOnTap,
               ),
             ],
           ),

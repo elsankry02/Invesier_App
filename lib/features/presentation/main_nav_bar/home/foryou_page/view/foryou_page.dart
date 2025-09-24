@@ -34,7 +34,17 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
         physics: NeverScrollableScrollPhysics(),
         itemCount: state.data.length,
         itemBuilder: (context, index) {
-          return CustomPostWidget();
+          return CustomPostWidget(
+            imageUrl: '',
+            name: '',
+            username: '',
+            content: '',
+            postImage: '',
+            growth: '',
+            decline: '',
+            comment: '',
+            chaseButton: '',
+          );
         },
       );
     } else if (state is GetPostsFailure) {

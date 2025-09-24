@@ -54,14 +54,13 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
           itemBuilder: (context, index) {
             final pioneers = state.getUserPioneers[index];
             return UserPioneersTileWidget(
-              onTap:
-                  () => context.router.push(
-                    OtherUserProfileRoute(
-                      username:
-                          pioneers.username ??
-                          context.kAppLocalizations.username,
-                    ),
-                  ),
+              onTap: () {
+                final username =
+                    pioneers.username ?? context.kAppLocalizations.username;
+                // ref.read(usernameProvider.notifier).state = username;
+
+                context.router.push(OtherUserProfileRoute(username: username));
+              },
               getUserPioneersModel: pioneers,
             );
           },

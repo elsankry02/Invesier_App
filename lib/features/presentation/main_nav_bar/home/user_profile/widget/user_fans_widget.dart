@@ -44,13 +44,13 @@ class _UserFansWidgetState extends ConsumerState<UserFansWidget> {
           itemBuilder: (context, index) {
             return UserFansTileWidget(
               onTap: () {
-                context.router.push(
-                  OtherUserProfileRoute(
-                    username:
-                        state.getUserFans[index].username ??
-                        context.kAppLocalizations.username,
-                  ),
-                );
+                final username =
+                    state.getUserFans[index].username ??
+                    context.kAppLocalizations.username;
+
+                // ref.read(usernameProvider.notifier).state = username;
+
+                context.router.push(OtherUserProfileRoute(username: username));
               },
               getUserFansModel: state.getUserFans[index],
             );

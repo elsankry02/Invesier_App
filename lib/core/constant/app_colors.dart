@@ -10,6 +10,7 @@ class AppColors {
   static const kRedTwo = Color(0xffD32F2F);
   static const kRedThree = Color(0xffFF5D51);
   static const kBorder = Color(0xffD0D2D8);
+  static const kPostUsername = Color(0xffDDDDDD);
   static const kDivider = Color(0xff2F2F2F);
   static const kCodGray = Color(0xff1E1E1E);
   static const kDodgerBlue = Color(0xff20C0FF);
