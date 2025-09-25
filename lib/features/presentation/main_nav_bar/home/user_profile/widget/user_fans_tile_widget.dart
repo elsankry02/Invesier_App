@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get/get_user_fans_model.dart';
+import '../../../../../data/models/get/get_user_fans_model.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/constant/app_colors.dart';

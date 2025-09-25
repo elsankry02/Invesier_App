@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/personal_profile_page/widget/personal_fans_widget.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/personal_profile_page/widget/personal_pioneers_widget.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/search_page/widget/search_text_form_field_widget.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../widget/personal_fans_widget.dart';
+import '../widget/personal_pioneers_widget.dart';
+import '../../search_page/widget/search_text_form_field_widget.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';

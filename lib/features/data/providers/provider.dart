@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
-import 'package:invesier/features/data/services/get/get_user_fans_service.dart';
-import 'package:invesier/features/data/services/get/get_user_posts_service.dart';
+import '../models/get/get_user_profile_model.dart';
+import '../services/get/get_user_fans_service.dart';
+import '../services/get/get_user_posts_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';

@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/coustom_pop_menu_widget.dart';
-import 'package:invesier/core/components/custom_no_posts_widget.dart';
-import 'package:invesier/core/components/custom_post_widget.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/features/data/providers/get/get_user_posts_provider.dart';
+import '../../../../../../core/components/coustom_pop_menu_widget.dart';
+import '../../../../../../core/components/custom_no_posts_widget.dart';
+import '../../../../../../core/components/custom_post_widget.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
+import '../../../../../data/providers/get/get_user_posts_provider.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_primary_button.dart';

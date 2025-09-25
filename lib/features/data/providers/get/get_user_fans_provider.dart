@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get/get_user_fans_model.dart';
-import 'package:invesier/features/data/providers/provider.dart';
+import '../../models/get/get_user_fans_model.dart';
+import '../provider.dart';
 
 abstract class GetUserFansState {}
 

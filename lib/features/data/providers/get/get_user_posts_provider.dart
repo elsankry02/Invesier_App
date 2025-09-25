@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/constant/app_strings.dart';
-import 'package:invesier/features/data/models/get/get_user_posts_model;.dart';
-import 'package:invesier/features/data/providers/provider.dart';
+import '../../../../core/constant/app_strings.dart';
+import '../../models/get/get_user_posts_model;.dart';
+import '../provider.dart';
 
 abstract class GetUserPostsState {}
 

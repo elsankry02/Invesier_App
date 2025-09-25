@@ -2,10 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/custom_icon_button.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/other_user_pop_menu_widget.dart';
-import 'package:invesier/features/presentation/main_nav_bar/home/user_profile/widget/user_alertdialog_widget.dart';
+import '../../../../../../core/components/custom_icon_button.dart';
+import '../../../../../../core/constant/app_svgs.dart';
+import 'other_user_pop_menu_widget.dart';
+import 'user_alertdialog_widget.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_divider_widget.dart';

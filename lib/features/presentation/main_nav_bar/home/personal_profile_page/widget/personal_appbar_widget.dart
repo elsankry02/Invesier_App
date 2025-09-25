@@ -3,10 +3,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/custom_button_sheet_widget.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/constant/app_images.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
+import '../../../../../../core/components/custom_button_sheet_widget.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
 
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';

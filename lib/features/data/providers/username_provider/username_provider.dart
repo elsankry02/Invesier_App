@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get/get_user_profile_model.dart';
-import 'package:invesier/features/data/providers/provider.dart';
+import '../../models/get/get_user_profile_model.dart';
+import '../provider.dart';
 
 final usernameProvider = StateProvider<String>((ref) {
   return "";

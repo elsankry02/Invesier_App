@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/data/models/get/get_user_posts_model;.dart';
+import '../../models/get/get_user_posts_model;.dart';
 
 class GetUserPostsService {
   final Dio dio;

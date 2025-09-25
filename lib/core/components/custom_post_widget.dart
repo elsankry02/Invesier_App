@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/constant/app_images.dart';
+import 'custom_circuler_progress.dart';
+import '../constant/app_images.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
