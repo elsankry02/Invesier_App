@@ -463,4 +463,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noresultsfound => 'No results found';
+
+  @override
+  String get noFansFound => 'No fans found';
+
+  @override
+  String get nopioneerspoststodisplay => 'No pioneers posts';
+
+  @override
+  String get noforyoupoststodisplay => 'No For You posts';
 }

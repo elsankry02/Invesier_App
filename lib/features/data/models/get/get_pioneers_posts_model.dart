@@ -1,4 +1,4 @@
-class Datum {
+class GetPioneersPostsModel {
   final int id;
   final String content;
   final bool isPostCreator;
@@ -14,8 +14,9 @@ class Datum {
   final DateTime createdAt;
   final DateTime updatedAt;
   final User user;
+  final List<dynamic> media;
 
-  Datum({
+  GetPioneersPostsModel({
     required this.id,
     required this.content,
     required this.isPostCreator,
@@ -31,25 +32,28 @@ class Datum {
     required this.createdAt,
     required this.updatedAt,
     required this.user,
+    required this.media,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    id: json["id"],
-    content: json["content"],
-    isPostCreator: json["is_post_creator"],
-    canDelete: json["can_delete"],
-    canReport: json["can_report"],
-    canPin: json["can_pin"],
-    upvotesCount: json["upvotes_count"],
-    downvotesCount: json["downvotes_count"],
-    commentsCount: json["comments_count"],
-    hasUpvoted: json["has_upvoted"],
-    hasDownvoted: json["has_downvoted"],
-    isPinned: json["is_pinned"],
-    createdAt: DateTime.parse(json["created_at"]),
-    updatedAt: DateTime.parse(json["updated_at"]),
-    user: User.fromJson(json["user"]),
-  );
+  factory GetPioneersPostsModel.fromJson(Map<String, dynamic> json) =>
+      GetPioneersPostsModel(
+        id: json["id"],
+        content: json["content"],
+        isPostCreator: json["is_post_creator"],
+        canDelete: json["can_delete"],
+        canReport: json["can_report"],
+        canPin: json["can_pin"],
+        upvotesCount: json["upvotes_count"],
+        downvotesCount: json["downvotes_count"],
+        commentsCount: json["comments_count"],
+        hasUpvoted: json["has_upvoted"],
+        hasDownvoted: json["has_downvoted"],
+        isPinned: json["is_pinned"],
+        createdAt: DateTime.parse(json["created_at"]),
+        updatedAt: DateTime.parse(json["updated_at"]),
+        user: User.fromJson(json["user"]),
+        media: List<dynamic>.from(json["media"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
     "id": id,
@@ -67,6 +71,7 @@ class Datum {
     "created_at": createdAt.toIso8601String(),
     "updated_at": updatedAt.toIso8601String(),
     "user": user.toJson(),
+    "media": List<dynamic>.from(media.map((x) => x)),
   };
 }
 

@@ -7,7 +7,7 @@ import '../provider.dart';
 
 abstract class GetPostsState {}
 
-class GetPostsinital extends GetPostsState {}
+class GetPostsInitial extends GetPostsState {}
 
 class GetPostsLoading extends GetPostsState {}
 
@@ -26,7 +26,7 @@ class GetPostsFailure extends GetPostsState {
 class GetPostsNotifier extends Notifier<GetPostsState> {
   @override
   GetPostsState build() {
-    return GetPostsinital();
+    return GetPostsInitial();
   }
 
   Future<void> getPosts() async {

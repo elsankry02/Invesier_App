@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
-import '../../../../../../core/constant/app_images.dart';
-import '../../../../../../core/constant/app_svgs.dart';
-import '../../../../../data/providers/get/get_user_posts_provider.dart';
-
-import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
+import '../../../../../data/providers/get/get_user_posts_provider.dart';
 import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import '../widget/other_user_profile_appbar.dart';
 
@@ -76,42 +76,45 @@ class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
               },
             ),
             SizedBox(height: context.height * 0.017),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CustomPrimaryButton(
-                  title: local.chase,
-                  backGroundColor: AppColors.kTurquoiseBlue,
-                  padding: EdgeInsetsDirectional.symmetric(
-                    horizontal: 56,
-                    vertical: 9.5,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: context.height * 0.020),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomPrimaryButton(
+                    title: local.chase,
+                    backGroundColor: AppColors.kNum,
+                    padding: EdgeInsetsDirectional.symmetric(
+                      horizontal: context.height * 0.070,
+                      vertical: context.height * 0.010,
+                    ),
+                    borderRadius: BorderRadius.circular(context.height * 0.006),
+                    style: context.kTextTheme.labelMedium!.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.kWhite,
+                    ),
+                    onTap: () {
+                      ErrorMessage(context, message: local.comingsoon);
+                    },
                   ),
-                  borderRadius: BorderRadius.circular(31),
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.kWhite,
+                  CustomPrimaryButton(
+                    title: local.message,
+                    backGroundColor: AppColors.kWhite,
+                    padding: EdgeInsetsDirectional.symmetric(
+                      horizontal: context.height * 0.070,
+                      vertical: context.height * 0.010,
+                    ),
+                    borderRadius: BorderRadius.circular(context.height * 0.006),
+                    style: context.kTextTheme.labelMedium!.copyWith(
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.kTurquoiseBlue,
+                    ),
+                    onTap: () {
+                      ErrorMessage(context, message: local.comingsoon);
+                    },
                   ),
-                  onTap: () {
-                    ErrorMessage(context, message: local.comingsoon);
-                  },
-                ),
-                CustomPrimaryButton(
-                  title: local.message,
-                  backGroundColor: AppColors.kWhite,
-                  padding: EdgeInsetsDirectional.symmetric(
-                    horizontal: context.height * 0.056,
-                    vertical: context.height * 0.010,
-                  ),
-                  borderRadius: BorderRadius.circular(31),
-                  style: context.kTextTheme.labelMedium!.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.kTurquoiseBlue,
-                  ),
-                  onTap: () {
-                    ErrorMessage(context, message: local.comingsoon);
-                  },
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: context.height * 0.018),
             Consumer(
@@ -140,8 +143,8 @@ class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
                         decline: data.downvotesCount.toString(),
                         comment: data.commentsCount.toString(),
                         trailing: CustomPopMenuWidget(
-                          firstTitle: "Pin Post",
-                          secondTitle: "Delete",
+                          firstTitle: context.kAppLocalizations.pinpost,
+                          secondTitle: context.kAppLocalizations.delete,
                           firstSvg: AppSvgs.kPin,
                           secondSvg: AppSvgs.kDelete,
                         ),

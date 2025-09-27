@@ -152,6 +152,8 @@
 "challenge": "التحديات",
 "messages": "الرسائل",
 "noresultsfound": "لا يوجد نتائج",
-"noFansFound": "لا يوجد معجبين"
+"noFansFound": "لا يوجد معجبين",
+"nopioneerspoststodisplay": "لا توجد منشورات للرواد",
+"noforyoupoststodisplay": "لا توجد منشورات مقترحة"
 
 }

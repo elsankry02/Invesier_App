@@ -41,7 +41,7 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
     } else if (state is GetUserPioneersSuccess) {
       if (state.getUserPioneers.isEmpty) {
         return Text(
-          context.kAppLocalizations.noresultsfound,
+          context.kAppLocalizations.nopioneersfound,
           textAlign: TextAlign.center,
           style: context.kTextTheme.titleMedium!.copyWith(
             fontWeight: FontWeight.w700,

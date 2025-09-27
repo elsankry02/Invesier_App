@@ -2,8 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/get/get_user_fans_service.dart';
-import '../services/get/get_user_posts_service.dart';
+import 'package:invesier/features/data/services/get/get_pioneers_posts_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
@@ -12,7 +11,9 @@ import '../services/delete/delete_account_service.dart';
 import '../services/get/get_authenticated_user_service.dart';
 import '../services/get/get_list_users_service.dart';
 import '../services/get/get_posts_service.dart';
+import '../services/get/get_user_fans_service.dart';
 import '../services/get/get_user_pioneers_service.dart';
+import '../services/get/get_user_posts_service.dart';
 import '../services/get/get_user_profile_service.dart';
 import '../services/post/check_username_availability_service.dart';
 import '../services/post/complete_profile_service.dart';
@@ -38,83 +39,68 @@ final dioProvider = Provider<Dio>((ref) {
     ),
   );
 });
-// Create Post Services
 final postServiceProvider = Provider<CreatePostService>((ref) {
   return CreatePostService(dio: ref.read(dioProvider));
 });
-// Resend Otp Services
 final resendOtpServiceProvider = Provider<ResendOtpService>((ref) {
   return ResendOtpService(dio: ref.read(dioProvider));
 });
-// register New User Service Provider
 final registerNewUserServiceProvider = Provider<RegisterNewUserService>((ref) {
   return RegisterNewUserService(dio: ref.read(dioProvider));
 });
-// Register Service
 final verifyOtpServiceProvider = Provider<VerifyOtpService>((ref) {
   return VerifyOtpService(dio: ref.read(dioProvider));
 });
-// Complete Profile Service
 final completeProfileServiceProvider = Provider<CompleteProfileService>((ref) {
   return CompleteProfileService(dio: ref.read(dioProvider));
 });
-// check User Name Availability Service Provider
 final checkUserNameAvailabilityServiceProvider =
     Provider<CheckUserNameAvailabilityService>((ref) {
       return CheckUserNameAvailabilityService(dio: ref.read(dioProvider));
     });
-// store The Fcm Token For The Authenticated User Service Provider
 final storeTheFcmTokenForTheAuthenticatedUserServiceProvider =
     Provider<StoreTheFcmTokenForTheAuthenticatedUserService>((ref) {
       return StoreTheFcmTokenForTheAuthenticatedUserService(
         dio: ref.read(dioProvider),
       );
     });
-// Remove An Fcm Token From The Database Service
 final removeAnFcmTokenFromTheDatabaseServiceProvider =
     Provider<RemoveAnFcmTokenFromTheDatabaseService>((ref) {
       return RemoveAnFcmTokenFromTheDatabaseService(dio: ref.read(dioProvider));
     });
-// Get Authenticated User Service
 final getAuthenticatedUserServiceProvider =
     Provider<GetAuthenticatedUserService>((ref) {
       return GetAuthenticatedUserService(dio: ref.read(dioProvider));
     });
-// logout Service Provider
 final logoutServiceProvider = Provider<LogoutService>((ref) {
   return LogoutService(dio: ref.read(dioProvider));
 });
-// DeleteAccountService
 final deleteAccountServiceProvider = Provider<DeleteAccountService>((ref) {
   return DeleteAccountService(dio: ref.read(dioProvider));
 });
-// prefs Provider
 final prefsProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError();
 });
-// get Posts Service Provider
 final getPostsServiceProvider = Provider<GetPostsService>((ref) {
   return GetPostsService(dio: ref.read(dioProvider));
 });
-// get User Profile Service Provider
 final getUserProfileServiceProvider = Provider<GetUserProfileService>((ref) {
   return GetUserProfileService(dio: ref.read(dioProvider));
 });
-// get List Users Service Provider
 final getListUsersServiceProvider = Provider<GetListUsersService>((ref) {
   return GetListUsersService(dio: ref.read(dioProvider));
 });
-//get User Pioneers Service Provider
 final getUserPioneersServiceProvider = Provider<GetUserPioneersService>((ref) {
   return GetUserPioneersService(dio: ref.read(dioProvider));
 });
-// get List Fans Service Provider
 final getUserFansServiceProvider = Provider<GetUserFansService>((ref) {
   return GetUserFansService(dio: ref.read(dioProvider));
 });
-// get User Posts Service Provider
 final getUserPostsServiceProvider = Provider<GetUserPostsService>((ref) {
   return GetUserPostsService(dio: ref.read(dioProvider));
 });
-
-
+final getPioneersPostsServiceProvider = Provider<GetPioneersPostsService>((
+  ref,
+) {
+  return GetPioneersPostsService(dio: ref.read(dioProvider));
+});

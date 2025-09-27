@@ -9,7 +9,7 @@ import '../provider.dart';
 
 abstract class GetUserProfileState {}
 
-class GetUserProfileintial extends GetUserProfileState {}
+class GetUserProfileInitial extends GetUserProfileState {}
 
 class GetUserProfileLoading extends GetUserProfileState {}
 
@@ -28,7 +28,7 @@ class GetUserProfileSuccess extends GetUserProfileState {
 class GetUserProfileNotifier extends AutoDisposeNotifier<GetUserProfileState> {
   @override
   GetUserProfileState build() {
-    return GetUserProfileintial();
+    return GetUserProfileInitial();
   }
 
   Timer? debounce;

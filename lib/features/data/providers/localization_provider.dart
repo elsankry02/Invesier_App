@@ -28,6 +28,10 @@ class LocalizationNotifier extends Notifier<LocalizationState> {
           } else {
             state = LocalizationSuccess(selectLang: "ar");
           }
+          {
+            ref.read(prefsProvider).setString("lang", "en");
+            state = LocalizationSuccess(selectLang: "en");
+          }
         }
       case Localization.english:
         ref.read(prefsProvider).setString("lang", "en");

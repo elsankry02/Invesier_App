@@ -8,7 +8,7 @@ import '../../../../../../core/components/custom_post_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../widget/reply_post_widget.dart';
+import '../../../../../../core/components/custom_reply_post_widget.dart';
 
 @RoutePage()
 class PostPage extends StatelessWidget {
@@ -79,7 +79,7 @@ class PostPage extends StatelessWidget {
               itemCount: 1,
               itemBuilder: (context, index) {
                 // ReplyWidget
-                return ReplyPostWidget(
+                return CustomReplyPostWidget(
                   onTap: () {
                     showModalBottomSheet(
                       isDismissible: false,

@@ -11,4 +11,5 @@ class Endpoints {
   static const kUser = "/user";
   static const kDeleteAccount = "/user";
   static const kGetPosts = "/social/posts";
+  static const kGetPioneersPosts = "/social/pioneers/posts";
 }

@@ -9,7 +9,7 @@ import '../provider.dart';
 
 abstract class GetListUsersState {}
 
-class GetListUsersintial extends GetListUsersState {}
+class GetListUsersInitial extends GetListUsersState {}
 
 class GetListUsersLoading extends GetListUsersState {}
 
@@ -28,7 +28,7 @@ class GetListUsersSuccess extends GetListUsersState {
 class GetListUsersNotifier extends AutoDisposeNotifier<GetListUsersState> {
   @override
   GetListUsersState build() {
-    return GetListUsersintial();
+    return GetListUsersInitial();
   }
 
   Timer? debounce;

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/components/coustom_pop_menu_widget.dart';
-import '../../../../../../core/components/custom_primary_button.dart';
-import '../../../../../../core/components/custom_tag_button.dart';
-import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/constant/app_svgs.dart';
-import '../../../../../../core/extension/extension.dart';
-import '../../../../../../core/func/show_top_snack_bar.dart';
+import 'coustom_pop_menu_widget.dart';
+import 'custom_primary_button.dart';
+import 'custom_tag_button.dart';
+import '../constant/app_colors.dart';
+import '../constant/app_svgs.dart';
+import '../extension/extension.dart';
+import '../func/show_top_snack_bar.dart';
 
-class ReplyPostWidget extends StatefulWidget {
+class CustomReplyPostWidget extends StatefulWidget {
   final Function()? onTap;
   final Function()? commentOnTap,
       imageOnTap,
@@ -16,7 +16,7 @@ class ReplyPostWidget extends StatefulWidget {
       declineOnTap,
       SharingOnTap;
   final Widget? trailing;
-  const ReplyPostWidget({
+  const CustomReplyPostWidget({
     super.key,
     this.onTap,
     this.commentOnTap,
@@ -28,10 +28,10 @@ class ReplyPostWidget extends StatefulWidget {
   });
 
   @override
-  State<ReplyPostWidget> createState() => _ReplyPostWidgetState();
+  State<CustomReplyPostWidget> createState() => _CustomReplyPostWidgetState();
 }
 
-class _ReplyPostWidgetState extends State<ReplyPostWidget> {
+class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
   bool isSelected = false;
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ class GetPostsService {
   final Dio dio;
 
   GetPostsService({required this.dio});
-  Future<List<Datum>> getPosts({int perPage = 20}) async {
+  Future<List<Datum>> getPosts({int perPage = 10}) async {
     final response = await dio.get(
       Endpoints.kGetPosts,
       queryParameters: {"per_page": perPage},

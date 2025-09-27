@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_no_posts_widget.dart';
+import 'package:invesier/core/constant/app_images.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
+import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../data/providers/get/get_posts_provider.dart';
@@ -27,23 +28,24 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
     if (state is GetPostsSuccess) {
       if (state.data.isEmpty) {
         return CustomNoPostsWidget(
-          title: context.kAppLocalizations.nopoststodisplay,
+          title: context.kAppLocalizations.noforyoupoststodisplay,
         );
       }
       return ListView.builder(
         physics: NeverScrollableScrollPhysics(),
         itemCount: state.data.length,
         itemBuilder: (context, index) {
+          final getPosts = state.data[index];
           return CustomPostWidget(
-            imageUrl: '',
-            name: '',
-            username: '',
-            content: '',
+            imageUrl: getPosts.user.avatarUrl ?? AppImages.ImageNetwork,
+            name: getPosts.user.name,
+            username:
+                "@${getPosts.user.username ?? context.kAppLocalizations.username}",
+            content: getPosts.content,
             postImage: '',
-            growth: '',
-            decline: '',
-            comment: '',
-            chaseButton: '',
+            growth: getPosts.upvotesCount.toString(),
+            decline: getPosts.downvotesCount.toString(),
+            comment: getPosts.commentsCount.toString(),
           );
         },
       );

@@ -463,4 +463,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noresultsfound => 'لا يوجد نتائج';
+
+  @override
+  String get noFansFound => 'لا يوجد معجبين';
+
+  @override
+  String get nopioneerspoststodisplay => 'لا توجد منشورات للرواد';
+
+  @override
+  String get noforyoupoststodisplay => 'لا توجد منشورات مقترحة';
 }
