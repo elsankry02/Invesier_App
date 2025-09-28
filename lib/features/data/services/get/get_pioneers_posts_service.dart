@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/core/constant/endpoints.dart';
-import 'package:invesier/features/data/models/get/get_pioneers_posts_model.dart';
+import '../../../../core/constant/endpoints.dart';
+import '../../models/get/get_pioneers_posts_model.dart';
 
 class GetPioneersPostsService {
   final Dio dio;

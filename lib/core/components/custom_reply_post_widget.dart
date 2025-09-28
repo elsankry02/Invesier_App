@@ -60,6 +60,7 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
               leading: ClipOval(
                 //TODO: Image.network soon
                 child: GestureDetector(
+                  
                   onTap: widget.imageOnTap,
                   child: Image.asset(
                     '',

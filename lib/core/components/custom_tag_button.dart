@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../constant/app_colors.dart';
 
+import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 
 class CustomTagButton extends StatelessWidget {
