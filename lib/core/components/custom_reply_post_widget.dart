@@ -1,38 +1,60 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/components/coustom_pop_menu_widget.dart';
+import 'package:invesier/core/components/custom_circuler_progress.dart';
+import 'package:invesier/core/constant/app_images.dart';
 
-import 'coustom_pop_menu_widget.dart';
-import 'custom_primary_button.dart';
-import 'custom_tag_button.dart';
 import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
-import '../func/show_top_snack_bar.dart';
+import 'custom_primary_button.dart';
+import 'custom_tag_button.dart';
 
-class CustomReplyPostWidget extends StatefulWidget {
-  final Function()? onTap;
-  final Function()? commentOnTap,
+class CustomReplyPostWidget extends StatelessWidget {
+  final String imageUrl,
+      chaseButtonTitle,
+      name,
+      username,
+      content,
+      postImage,
+      growthNumber,
+      declineNumber,
+      comment;
+  final void Function()? commentOnTap,
+      deleteOnTap,
+      pinOnTap,
+      chaseButtonOnTap,
       imageOnTap,
       growthOnTap,
       declineOnTap,
-      SharingOnTap;
+      replyOnTap;
+  final Color? backGroundColor;
+  final Color borderColor;
   final Widget? trailing;
   const CustomReplyPostWidget({
     super.key,
-    this.onTap,
     this.commentOnTap,
     this.imageOnTap,
     this.growthOnTap,
     this.declineOnTap,
-    this.SharingOnTap,
+    this.replyOnTap,
     this.trailing,
+    required this.imageUrl,
+    this.chaseButtonTitle = "",
+    required this.name,
+    required this.username,
+    required this.content,
+    required this.postImage,
+    required this.growthNumber,
+    required this.declineNumber,
+    required this.comment,
+    this.chaseButtonOnTap,
+    this.backGroundColor,
+    this.borderColor = Colors.transparent,
+    this.deleteOnTap,
+    this.pinOnTap,
   });
 
-  @override
-  State<CustomReplyPostWidget> createState() => _CustomReplyPostWidgetState();
-}
-
-class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
-  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     final local = context.kAppLocalizations;
@@ -42,7 +64,6 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
         left: context.height * 0.020,
         right: context.height * 0.020,
       ),
-
       child: Container(
         padding: EdgeInsetsDirectional.symmetric(
           horizontal: context.height * 0.020,
@@ -58,12 +79,15 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: ClipOval(
-                //TODO: Image.network soon
                 child: GestureDetector(
-                  
-                  onTap: widget.imageOnTap,
-                  child: Image.asset(
-                    '',
+                  onTap: imageOnTap,
+                  child: CachedNetworkImage(
+                    imageUrl: imageUrl,
+                    placeholder:
+                        (context, url) => CustomCircularProgressIndicator(),
+                    errorWidget:
+                        (context, url, error) =>
+                            Image.network(AppImages.ImageNetwork),
                     height: context.height * 0.030,
                     width: context.height * 0.030,
                     fit: BoxFit.cover,
@@ -73,33 +97,11 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
               title: Row(
                 spacing: context.height * 0.020,
                 children: [
-                  Text(''),
+                  Text(name),
                   InkWell(
-                    onTap: () {
-                      if (isSelected == false) {
-                        SuccessMessage(
-                          context,
-                          message: context.kAppLocalizations.chaseback,
-                        );
-                        setState(() {
-                          isSelected = !isSelected;
-                        });
-                      } else {
-                        SuccessMessage(
-                          context,
-                          message: context.kAppLocalizations.chase,
-                        );
-
-                        setState(() {
-                          isSelected = !isSelected;
-                        });
-                      }
-                    },
+                    onTap: chaseButtonOnTap,
                     child: CustomPrimaryButton(
-                      title:
-                          isSelected == false
-                              ? context.kAppLocalizations.chase
-                              : context.kAppLocalizations.chaseback,
+                      title: chaseButtonTitle,
                       style: context.kTextTheme.bodySmall!.copyWith(
                         fontWeight: FontWeight.w500,
                       ),
@@ -110,35 +112,24 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
                       borderRadius: BorderRadius.circular(
                         context.height * 0.031,
                       ),
-                      border: Border.all(
-                        width: 2,
-                        color:
-                            isSelected == true
-                                ? AppColors.kNum
-                                : Colors.transparent,
-                      ),
-                      backGroundColor:
-                          isSelected == true
-                              ? Colors.transparent
-                              : AppColors.kNum,
+                      border: Border.all(width: 2, color: borderColor),
+                      backGroundColor: backGroundColor,
                     ),
                   ),
                 ],
               ),
-              subtitle: Text(''),
+              subtitle: Text(username),
               trailing: CustomPopMenuWidget(
-                firstSvg: AppSvgs.kPin,
-                secondSvg: AppSvgs.kDelete,
-                firstTitle: local.pinpost,
-                secondTitle: local.deletepost,
-                onFirstTap:
-                    () => ErrorMessage(context, message: local.pinaction),
-                onSecondTap:
-                    () => ErrorMessage(context, message: local.deleteaction),
+                pinSvg: AppSvgs.kPin,
+                pinTitle: local.pinpost,
+                pinOnTap: pinOnTap,
+                deleteSvg: AppSvgs.kDelete,
+                deleteTitle: local.deletepost,
+                deleteOnTap: deleteOnTap,
               ),
             ),
             Text(
-              '',
+              content,
               style: context.kTextTheme.titleSmall!.copyWith(
                 fontWeight: FontWeight.w500,
               ),
@@ -146,7 +137,13 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
             SizedBox(height: context.height * 0.013),
             ClipRRect(
               borderRadius: BorderRadius.circular(context.height * 0.018),
-              child: Image.asset('', fit: BoxFit.cover),
+              child: CachedNetworkImage(
+                imageUrl: postImage,
+                placeholder:
+                    (context, url) => CustomCircularProgressIndicator(),
+                errorWidget: (context, url, error) => SizedBox(),
+                fit: BoxFit.cover,
+              ),
             ),
             SizedBox(height: context.height * 0.013),
             Row(
@@ -156,27 +153,23 @@ class _CustomReplyPostWidgetState extends State<CustomReplyPostWidget> {
                 // Growth
                 CustomTagButton(
                   svg: AppSvgs.kGrowth,
-                  title: '',
+                  title: growthNumber,
                   titleColor: AppColors.kEucalyptus,
-                  onTap: () {
-                    ErrorMessage(context, message: local.comingsoon);
-                  },
+                  onTap: growthOnTap,
                 ),
                 CustomTagButton(
                   // Decline
                   svg: AppSvgs.kDecline,
-                  title: '',
+                  title: declineNumber,
                   titleColor: AppColors.kRed,
-                  onTap: () {
-                    ErrorMessage(context, message: local.comingsoon);
-                  },
+                  onTap: declineOnTap,
                 ),
                 CustomTagButton(
-                  // Rplay
+                  // Reply
                   svg: AppSvgs.kReply,
                   title: local.reply,
                   titleColor: AppColors.kBoulder,
-                  onTap: widget.onTap,
+                  onTap: replyOnTap,
                 ),
               ],
             ),

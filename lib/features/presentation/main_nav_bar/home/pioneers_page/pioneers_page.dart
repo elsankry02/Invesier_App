@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../core/components/custom_post_widget.dart';
@@ -44,9 +45,9 @@ class _PioneersPageState extends ConsumerState<PioneersPage> {
                 "@${data.user.username ?? context.kAppLocalizations.username}",
             content: data.content,
             postImage: '',
-            growth: data.upvotesCount.toString(),
-            decline: data.downvotesCount.toString(),
-            comment: data.commentsCount.toString(),
+            growthNumber: data.upvotesCount.toString(),
+            declineNumber: data.downvotesCount.toString(),
+            commentNumber: data.commentsCount.toString(),
           );
         },
       );

@@ -6,18 +6,18 @@ import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
 
 class CustomPopMenuWidget extends StatelessWidget {
-  final String firstTitle, secondTitle, firstSvg, secondSvg;
+  final String pinTitle, deleteTitle, pinSvg, deleteSvg;
 
-  final void Function()? onFirstTap;
-  final void Function()? onSecondTap;
+  final void Function()? pinOnTap;
+  final void Function()? deleteOnTap;
   const CustomPopMenuWidget({
     super.key,
-    this.onFirstTap,
-    this.onSecondTap,
-    required this.firstTitle,
-    required this.secondTitle,
-    required this.firstSvg,
-    required this.secondSvg,
+    this.pinOnTap,
+    this.deleteOnTap,
+    required this.pinTitle,
+    required this.deleteTitle,
+    required this.pinSvg,
+    required this.deleteSvg,
   });
 
   @override
@@ -34,14 +34,14 @@ class CustomPopMenuWidget extends StatelessWidget {
           // First item
           PopupMenuItem(
             padding: EdgeInsets.zero,
-            onTap: onFirstTap,
+            onTap: pinOnTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(firstSvg),
+                SvgPicture.asset(pinSvg),
                 SizedBox(width: context.height * 0.007),
                 Text(
-                  firstTitle,
+                  pinTitle,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -62,14 +62,14 @@ class CustomPopMenuWidget extends StatelessWidget {
           // Second item
           PopupMenuItem(
             padding: EdgeInsets.zero,
-            onTap: onSecondTap,
+            onTap: deleteOnTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(secondSvg),
+                SvgPicture.asset(deleteSvg),
                 SizedBox(width: context.height * 0.007),
                 Text(
-                  secondTitle,
+                  deleteTitle,
                   style: context.kTextTheme.labelLarge!.copyWith(
                     color: AppColors.kRed,
                     fontWeight: FontWeight.w600,

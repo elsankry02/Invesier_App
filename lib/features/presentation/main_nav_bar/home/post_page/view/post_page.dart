@@ -5,10 +5,10 @@ import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
+import '../../../../../../core/components/custom_reply_post_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
-import '../../../../../../core/components/custom_reply_post_widget.dart';
 
 @RoutePage()
 class PostPage extends StatelessWidget {
@@ -33,10 +33,10 @@ class PostPage extends StatelessWidget {
             // Post Card Widget
             CustomPostWidget(
               trailing: CustomPopMenuWidget(
-                firstTitle: "Pin Post",
-                secondTitle: "Delete",
-                firstSvg: AppSvgs.kPin,
-                secondSvg: AppSvgs.kDelete,
+                pinTitle: "Pin Post",
+                deleteTitle: "Delete",
+                pinSvg: AppSvgs.kPin,
+                deleteSvg: AppSvgs.kDelete,
               ),
               commentOnTap: () {
                 showModalBottomSheet(
@@ -68,10 +68,10 @@ class PostPage extends StatelessWidget {
               username: '',
               content: '',
               postImage: '',
-              growth: '',
-              decline: '',
-              comment: '',
-              chaseButton: '',
+              growthNumber: '',
+              declineNumber: '',
+              commentNumber: '',
+              chaseButtonTitle: '',
             ),
             ListView.builder(
               physics: NeverScrollableScrollPhysics(),
@@ -80,7 +80,15 @@ class PostPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 // ReplyWidget
                 return CustomReplyPostWidget(
-                  onTap: () {
+                  imageUrl: '',
+                  name: '',
+                  username: '',
+                  content: '',
+                  postImage: '',
+                  growthNumber: '',
+                  declineNumber: '',
+                  comment: '',
+                  replyOnTap: () {
                     showModalBottomSheet(
                       isDismissible: false,
                       context: context,

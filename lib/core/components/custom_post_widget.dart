@@ -1,33 +1,34 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'custom_circuler_progress.dart';
-import '../constant/app_images.dart';
 
 import '../constant/app_colors.dart';
+import '../constant/app_images.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
+import 'custom_circuler_progress.dart';
 import 'custom_primary_button.dart';
 import 'custom_tag_button.dart';
 
 class CustomPostWidget extends StatelessWidget {
   final String imageUrl,
-      chaseButton,
+      chaseButtonTitle,
       name,
       username,
       content,
       postImage,
-      growth,
-      decline,
-      comment;
+      growthNumber,
+      declineNumber,
+      commentNumber;
   final Function()? commentOnTap,
-      onTapChase,
+      onSecondTap,
+      onFirstTap,
+      chaseButtonOnTap,
       imageOnTap,
       growthOnTap,
       declineOnTap,
       SharingOnTap;
   final Widget? trailing;
-  final void Function()? onTap;
   final Color? backGroundColor;
   final Color borderColor;
 
@@ -39,19 +40,20 @@ class CustomPostWidget extends StatelessWidget {
     this.declineOnTap,
     this.trailing,
     this.SharingOnTap,
-    this.onTap,
     required this.imageUrl,
-    this.onTapChase,
+    this.chaseButtonOnTap,
     required this.name,
     required this.username,
     required this.content,
     required this.postImage,
-    required this.growth,
-    required this.decline,
-    required this.comment,
-    this.chaseButton = "",
+    required this.growthNumber,
+    required this.declineNumber,
+    required this.commentNumber,
+    this.chaseButtonTitle = "",
     this.borderColor = Colors.transparent,
     this.backGroundColor,
+    this.onSecondTap,
+    this.onFirstTap,
   });
 
   @override
@@ -101,9 +103,9 @@ class CustomPostWidget extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: onTapChase,
+                  onTap: chaseButtonOnTap,
                   child: CustomPrimaryButton(
-                    title: chaseButton,
+                    title: chaseButtonTitle,
                     style: context.kTextTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -153,19 +155,19 @@ class CustomPostWidget extends StatelessWidget {
               CustomTagButton(
                 svg: AppSvgs.kGrowth,
                 onTap: growthOnTap,
-                title: "$growth",
+                title: growthNumber,
                 titleColor: AppColors.kNum,
               ),
               CustomTagButton(
                 svg: AppSvgs.kDecline,
                 onTap: declineOnTap,
-                title: "$decline",
+                title: declineNumber,
                 titleColor: AppColors.kRed,
               ),
               CustomTagButton(
                 onTap: commentOnTap,
                 svg: AppSvgs.kComment,
-                title: "$comment",
+                title: commentNumber,
                 titleColor: AppColors.kBoulder,
               ),
               GestureDetector(
