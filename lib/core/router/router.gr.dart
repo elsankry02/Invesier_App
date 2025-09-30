@@ -428,18 +428,46 @@ class PersonalProfileRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [PostPage]
-class PostRoute extends PageRouteInfo<void> {
-  const PostRoute({List<PageRouteInfo>? children})
-    : super(PostRoute.name, initialChildren: children);
+class PostRoute extends PageRouteInfo<PostRouteArgs> {
+  PostRoute({required int postId, Key? key, List<PageRouteInfo>? children})
+    : super(
+        PostRoute.name,
+        args: PostRouteArgs(postId: postId, key: key),
+        initialChildren: children,
+      );
 
   static const String name = 'PostRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const PostPage();
+      final args = data.argsAs<PostRouteArgs>();
+      return PostPage(postId: args.postId, key: args.key);
     },
   );
+}
+
+class PostRouteArgs {
+  const PostRouteArgs({required this.postId, this.key});
+
+  final int postId;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'PostRouteArgs{postId: $postId, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! PostRouteArgs) return false;
+    return postId == other.postId && key == other.key;
+  }
+
+  @override
+  int get hashCode => postId.hashCode ^ key.hashCode;
 }
 
 /// generated route for

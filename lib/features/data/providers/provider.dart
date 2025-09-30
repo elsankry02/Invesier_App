@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/get/get_pioneers_posts_service.dart';
+import 'package:invesier/features/data/services/get/get_post_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
@@ -10,6 +10,7 @@ import '../../../env.dart';
 import '../services/delete/delete_account_service.dart';
 import '../services/get/get_authenticated_user_service.dart';
 import '../services/get/get_list_users_service.dart';
+import '../services/get/get_pioneers_posts_service.dart';
 import '../services/get/get_posts_service.dart';
 import '../services/get/get_user_fans_service.dart';
 import '../services/get/get_user_pioneers_service.dart';
@@ -103,4 +104,7 @@ final getPioneersPostsServiceProvider = Provider<GetPioneersPostsService>((
   ref,
 ) {
   return GetPioneersPostsService(dio: ref.read(dioProvider));
+});
+final getPostServiceProvider = Provider<GetPostService>((ref) {
+  return GetPostService(dio: ref.read(dioProvider));
 });

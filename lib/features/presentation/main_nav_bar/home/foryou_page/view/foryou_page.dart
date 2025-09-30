@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/router/router.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
@@ -46,6 +48,8 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
             growthNumber: getPosts.upvotesCount.toString(),
             declineNumber: getPosts.downvotesCount.toString(),
             commentNumber: getPosts.commentsCount.toString(),
+            commentOnTap:
+                () => context.router.push(PostRoute(postId: getPosts.id)),
           );
         },
       );

@@ -20,8 +20,7 @@ class CustomReplyPostWidget extends StatelessWidget {
       growthNumber,
       declineNumber,
       comment;
-  final void Function()? commentOnTap,
-      deleteOnTap,
+  final void Function()? deleteOnTap,
       pinOnTap,
       chaseButtonOnTap,
       imageOnTap,
@@ -33,7 +32,6 @@ class CustomReplyPostWidget extends StatelessWidget {
   final Widget? trailing;
   const CustomReplyPostWidget({
     super.key,
-    this.commentOnTap,
     this.imageOnTap,
     this.growthOnTap,
     this.declineOnTap,
