@@ -472,4 +472,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noforyoupoststodisplay => 'No For You posts';
+
+  @override
+  String get nopostcommenttodisplay => 'Everyone\'s reading, but no one\'s talking… be the first to start!';
 }

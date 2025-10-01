@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/services/get/get_list_post_comments_service.dart';
 import 'package:invesier/features/data/services/get/get_post_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -108,3 +109,8 @@ final getPioneersPostsServiceProvider = Provider<GetPioneersPostsService>((
 final getPostServiceProvider = Provider<GetPostService>((ref) {
   return GetPostService(dio: ref.read(dioProvider));
 });
+final getListPostCommentsServiceProvider = Provider<GetListPostCommentsService>(
+  (ref) {
+    return GetListPostCommentsService(dio: ref.read(dioProvider));
+  },
+);

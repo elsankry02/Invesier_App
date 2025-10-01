@@ -18,8 +18,7 @@ class CustomReplyPostWidget extends StatelessWidget {
       content,
       postImage,
       growthNumber,
-      declineNumber,
-      comment;
+      declineNumber;
   final void Function()? deleteOnTap,
       pinOnTap,
       chaseButtonOnTap,
@@ -45,7 +44,6 @@ class CustomReplyPostWidget extends StatelessWidget {
     required this.postImage,
     required this.growthNumber,
     required this.declineNumber,
-    required this.comment,
     this.chaseButtonOnTap,
     this.backGroundColor,
     this.borderColor = Colors.transparent,

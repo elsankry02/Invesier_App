@@ -1024,6 +1024,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No For You posts'**
   String get noforyoupoststodisplay;
+
+  /// No description provided for @nopostcommenttodisplay.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyone\'s reading, but no one\'s talking… be the first to start!'**
+  String get nopostcommenttodisplay;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

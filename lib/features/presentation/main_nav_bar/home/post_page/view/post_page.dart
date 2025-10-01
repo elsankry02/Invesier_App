@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/custom_circuler_progress.dart';
 import 'package:invesier/core/constant/app_images.dart';
+import 'package:invesier/features/data/providers/get/get_list_post_comments_provider.dart';
 import 'package:invesier/features/data/providers/get/get_post_provider.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
@@ -28,6 +29,9 @@ class _PostPageState extends ConsumerState<PostPage> {
   void initState() {
     Future.microtask(() {
       ref.read(getPostProvider.notifier).getPost(postId: widget.postId);
+      ref
+          .read(getListPostCommentsProvider.notifier)
+          .getListPostComments(postId: widget.postId);
     });
     super.initState();
   }
@@ -114,46 +118,72 @@ class _PostPageState extends ConsumerState<PostPage> {
                 }
               },
             ),
-            ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 1,
-              itemBuilder: (context, index) {
-                // ReplyWidget
-                return CustomReplyPostWidget(
-                  imageUrl: '',
-                  name: '',
-                  username: '',
-                  content: '',
-                  postImage: '',
-                  growthNumber: '',
-                  declineNumber: '',
-                  comment: '',
-                  replyOnTap: () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        // Add Comment
-                        return CustomCommentBottomSheet(
-                          title: local.reply,
-                          hintText: local.typeyourreply,
-                          titleButton: local.reply,
-                          padding: EdgeInsets.symmetric(
-                            horizontal: context.height * 0.020,
-                            vertical: context.height * 0.005,
-                          ),
-                          borderRadius: BorderRadius.circular(
-                            context.height * 0.008,
-                          ),
-                          style: context.kTextTheme.labelMedium!.copyWith(
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.kDivider,
-                          ),
-                        );
-                      },
+            Consumer(
+              builder: (context, ref, child) {
+                final state = ref.watch(getListPostCommentsProvider);
+                if (state is GetListPostCommentsSuccess) {
+                  if (state.getListPostComments.isEmpty) {
+                    return Text(
+                      context.kAppLocalizations.nopostcommenttodisplay,
+                      textAlign: TextAlign.center,
+                      style: context.kTextTheme.titleMedium!.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
                     );
-                  },
-                );
+                  }
+                  return ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: state.getListPostComments.length,
+                    itemBuilder: (context, index) {
+                      final data = state.getListPostComments[index];
+                      return CustomReplyPostWidget(
+                        imageUrl: "",
+                        name: "",
+                        username: "",
+                        content: data.content,
+                        postImage: '',
+                        growthNumber: data.upvotesCount.toString(),
+                        declineNumber: data.downvotesCount.toString(),
+                        replyOnTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              // Add Comment
+                              return CustomCommentBottomSheet(
+                                title: local.reply,
+                                hintText: local.typeyourreply,
+                                titleButton: local.reply,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: context.height * 0.020,
+                                  vertical: context.height * 0.005,
+                                ),
+                                borderRadius: BorderRadius.circular(
+                                  context.height * 0.008,
+                                ),
+                                style: context.kTextTheme.labelMedium!.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.kDivider,
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      );
+                    },
+                  );
+                } else if (state is GetListPostCommentsFailure) {
+                  return Text(
+                    state.errMessage,
+                    textAlign: TextAlign.center,
+                    style: context.kTextTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  );
+                } else if (state is GetListPostCommentsLoading) {
+                  return CustomCircularProgressIndicator();
+                }
+                return SizedBox();
               },
             ),
           ],

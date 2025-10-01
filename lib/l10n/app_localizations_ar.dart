@@ -472,4 +472,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noforyoupoststodisplay => 'لا توجد منشورات مقترحة';
+
+  @override
+  String get nopostcommenttodisplay => 'الكل بيقرأ، بس لسه محدش اتكلم… جرب تبدأ';
 }

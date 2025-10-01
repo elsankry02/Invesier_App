@@ -1,4 +1,4 @@
-class ListPostCommentsModel {
+class GetListPostCommentsModel {
   final dynamic id;
   final dynamic content;
   final bool isCommentCreator;
@@ -14,7 +14,7 @@ class ListPostCommentsModel {
   final dynamic commentableType;
   final bool isReply;
 
-  ListPostCommentsModel({
+  GetListPostCommentsModel({
     required this.id,
     required this.content,
     required this.isCommentCreator,
@@ -31,8 +31,8 @@ class ListPostCommentsModel {
     required this.isReply,
   });
 
-  factory ListPostCommentsModel.fromJson(Map<String, dynamic> json) =>
-      ListPostCommentsModel(
+  factory GetListPostCommentsModel.fromJson(Map<String, dynamic> json) =>
+      GetListPostCommentsModel(
         id: json["id"],
         content: json["content"],
         isCommentCreator: json["is_comment_creator"],
