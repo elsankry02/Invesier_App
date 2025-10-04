@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../models/get/get_user_profile_model.dart';
 import '../provider.dart';
 

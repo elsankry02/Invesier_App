@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get/get_list_post_comments_model.dart';
+import '../../models/get/get_list_post_comments_model.dart';
 
 import '../../../../core/constant/app_strings.dart';
 import '../provider.dart';

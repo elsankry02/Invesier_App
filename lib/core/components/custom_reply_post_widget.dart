@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/components/custom_circuler_progress.dart';
-import 'package:invesier/core/constant/app_images.dart';
 
 import '../constant/app_colors.dart';
+import '../constant/app_images.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
+import 'custom_circuler_progress.dart';
 import 'custom_primary_button.dart';
 import 'custom_tag_button.dart';
 
@@ -91,9 +91,26 @@ class CustomReplyPostWidget extends StatelessWidget {
                 ),
               ),
               title: Row(
-                spacing: context.height * 0.020,
                 children: [
-                  Text(name),
+                  Column(
+                    children: [
+                      Text(
+                        name,
+                        style: context.kTextTheme.titleSmall!.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.kWhite,
+                        ),
+                      ),
+                      Text(
+                        username,
+                        style: context.kTextTheme.titleSmall!.copyWith(
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.kPostUsername,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: context.width * 0.040),
                   InkWell(
                     onTap: chaseButtonOnTap,
                     child: CustomPrimaryButton(
@@ -114,7 +131,7 @@ class CustomReplyPostWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              subtitle: Text(username),
+
               trailing: PopupMenuButton(
                 padding: EdgeInsets.zero,
                 offset: const Offset(0, 35),
@@ -152,6 +169,7 @@ class CustomReplyPostWidget extends StatelessWidget {
               content,
               style: context.kTextTheme.titleSmall!.copyWith(
                 fontWeight: FontWeight.w500,
+                color: AppColors.kWhite,
               ),
             ),
             SizedBox(height: context.height * 0.013),
@@ -167,22 +185,26 @@ class CustomReplyPostWidget extends StatelessWidget {
             ),
             SizedBox(height: context.height * 0.013),
             Row(
-              spacing: context.height * 0.020,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Growth
-                CustomTagButton(
-                  svg: AppSvgs.kGrowth,
-                  title: growthNumber,
-                  titleColor: AppColors.kEucalyptus,
-                  onTap: growthOnTap,
-                ),
-                CustomTagButton(
-                  // Decline
-                  svg: AppSvgs.kDecline,
-                  title: declineNumber,
-                  titleColor: AppColors.kRed,
-                  onTap: declineOnTap,
+                Row(
+                  spacing: context.height * 0.020,
+                  children: [
+                    CustomTagButton(
+                      svg: AppSvgs.kGrowth,
+                      title: growthNumber,
+                      titleColor: AppColors.kNum,
+                      onTap: growthOnTap,
+                    ),
+                    CustomTagButton(
+                      // Decline
+                      svg: AppSvgs.kDecline,
+                      title: declineNumber,
+                      titleColor: AppColors.kRed,
+                      onTap: declineOnTap,
+                    ),
+                  ],
                 ),
                 CustomTagButton(
                   // Reply

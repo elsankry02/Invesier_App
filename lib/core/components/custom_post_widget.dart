@@ -92,16 +92,26 @@ class CustomPostWidget extends StatelessWidget {
               ),
             ),
             title: Row(
-              spacing: context.height * 0.020,
               children: [
-                // name
-                Text(
-                  name,
-                  style: context.kTextTheme.titleSmall!.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.kWhite,
-                  ),
+                Column(
+                  children: [
+                    Text(
+                      name,
+                      style: context.kTextTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.kWhite,
+                      ),
+                    ),
+                    Text(
+                      username,
+                      style: context.kTextTheme.titleSmall!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.kPostUsername,
+                      ),
+                    ),
+                  ],
                 ),
+                SizedBox(width: context.width * 0.040),
                 InkWell(
                   onTap: chaseButtonOnTap,
                   child: CustomPrimaryButton(
@@ -120,14 +130,7 @@ class CustomPostWidget extends StatelessWidget {
                 ),
               ],
             ),
-            // username
-            subtitle: Text(
-              username,
-              style: context.kTextTheme.titleSmall!.copyWith(
-                fontWeight: FontWeight.w400,
-                color: AppColors.kPostUsername,
-              ),
-            ),
+
             trailing: trailing,
           ),
           //
@@ -150,25 +153,30 @@ class CustomPostWidget extends StatelessWidget {
           ),
           SizedBox(height: context.height * 0.013),
           Row(
-            spacing: context.height * 0.020,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomTagButton(
-                svg: AppSvgs.kGrowth,
-                onTap: growthOnTap,
-                title: growthNumber,
-                titleColor: AppColors.kNum,
-              ),
-              CustomTagButton(
-                svg: AppSvgs.kDecline,
-                onTap: declineOnTap,
-                title: declineNumber,
-                titleColor: AppColors.kRed,
-              ),
-              CustomTagButton(
-                onTap: commentOnTap,
-                svg: AppSvgs.kComment,
-                title: commentNumber,
-                titleColor: AppColors.kBoulder,
+              Row(
+                spacing: context.height * 0.020,
+                children: [
+                  CustomTagButton(
+                    svg: AppSvgs.kGrowth,
+                    onTap: growthOnTap,
+                    title: growthNumber,
+                    titleColor: AppColors.kNum,
+                  ),
+                  CustomTagButton(
+                    svg: AppSvgs.kDecline,
+                    onTap: declineOnTap,
+                    title: declineNumber,
+                    titleColor: AppColors.kRed,
+                  ),
+                  CustomTagButton(
+                    onTap: commentOnTap,
+                    svg: AppSvgs.kComment,
+                    title: commentNumber,
+                    titleColor: AppColors.kBoulder,
+                  ),
+                ],
               ),
               GestureDetector(
                 child: SvgPicture.asset(AppSvgs.kSharing),

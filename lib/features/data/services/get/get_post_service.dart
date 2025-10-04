@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:invesier/features/data/models/get/get_post_model.dart';
+import '../../models/get/get_post_model.dart';
 
 class GetPostService {
   final Dio dio;

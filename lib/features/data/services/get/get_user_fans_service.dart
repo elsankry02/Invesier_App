@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../../models/get/get_user_fans_model.dart';
 
 class GetUserFansService {
