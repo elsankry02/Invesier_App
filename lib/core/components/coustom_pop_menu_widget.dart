@@ -49,17 +49,6 @@ class CustomPopMenuWidget extends StatelessWidget {
               ],
             ),
           ),
-          // Divider
-          PopupMenuItem(
-            padding: EdgeInsets.zero,
-            height: 1,
-            enabled: false,
-            child: Divider(
-              color: AppColors.kDivider,
-              thickness: context.height * 0.001,
-            ),
-          ),
-          // Second item
           PopupMenuItem(
             padding: EdgeInsets.zero,
             onTap: deleteOnTap,

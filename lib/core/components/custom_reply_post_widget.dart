@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:invesier/core/components/coustom_pop_menu_widget.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:invesier/core/components/custom_circuler_progress.dart';
 import 'package:invesier/core/constant/app_images.dart';
 
@@ -56,7 +56,7 @@ class CustomReplyPostWidget extends StatelessWidget {
     final local = context.kAppLocalizations;
     return Padding(
       padding: EdgeInsets.only(
-        bottom: context.height * 0.020,
+        bottom: context.height * 0.008,
         left: context.height * 0.020,
         right: context.height * 0.020,
       ),
@@ -115,13 +115,37 @@ class CustomReplyPostWidget extends StatelessWidget {
                 ],
               ),
               subtitle: Text(username),
-              trailing: CustomPopMenuWidget(
-                pinSvg: AppSvgs.kPin,
-                pinTitle: local.pinpost,
-                pinOnTap: pinOnTap,
-                deleteSvg: AppSvgs.kDelete,
-                deleteTitle: local.deletepost,
-                deleteOnTap: deleteOnTap,
+              trailing: PopupMenuButton(
+                padding: EdgeInsets.zero,
+                offset: const Offset(0, 35),
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                icon: SvgPicture.asset(AppSvgs.kPopMenu),
+                color: AppColors.kHeavyMetal,
+                iconColor: AppColors.kWhite,
+                itemBuilder: (context) {
+                  return [
+                    PopupMenuItem(
+                      padding: EdgeInsets.zero,
+                      onTap: deleteOnTap,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(AppSvgs.kDelete),
+                          SizedBox(width: context.height * 0.007),
+                          Text(
+                            context.kAppLocalizations.delete,
+                            style: context.kTextTheme.labelLarge!.copyWith(
+                              color: AppColors.kRed,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ];
+                },
               ),
             ),
             Text(

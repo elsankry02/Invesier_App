@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/custom_circuler_progress.dart';
 import 'package:invesier/core/constant/app_images.dart';
+import 'package:invesier/core/router/router.dart';
 import 'package:invesier/features/data/providers/get/get_list_post_comments_provider.dart';
 import 'package:invesier/features/data/providers/get/get_post_provider.dart';
 
@@ -63,8 +64,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                     imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                     name: data.user.name ?? context.kAppLocalizations.name,
                     username:
-                        data.user.username ??
-                        context.kAppLocalizations.username,
+                        "@${data.user.username ?? context.kAppLocalizations.username}",
                     content: data.content,
                     postImage: '',
                     growthNumber: data.upvotesCount.toString(),
@@ -138,11 +138,20 @@ class _PostPageState extends ConsumerState<PostPage> {
                     itemBuilder: (context, index) {
                       final data = state.getListPostComments[index];
                       return CustomReplyPostWidget(
-                        imageUrl: "",
-                        name: "",
-                        username: "",
+                        imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
+                        name: data.user.name ?? context.kAppLocalizations.name,
+                        username:
+                            "@${data.user.username ?? context.kAppLocalizations.username}",
                         content: data.content,
                         postImage: '',
+                        imageOnTap:
+                            () => context.router.push(
+                              OtherUserProfileRoute(
+                                username:
+                                    data.user.username ??
+                                    context.kAppLocalizations.username,
+                              ),
+                            ),
                         growthNumber: data.upvotesCount.toString(),
                         declineNumber: data.downvotesCount.toString(),
                         replyOnTap: () {

@@ -20,7 +20,7 @@ class GetListPostCommentsFailure extends GetListPostCommentsState {
 }
 
 class GetListPostCommentsSuccess extends GetListPostCommentsState {
-  final List<GetListPostCommentsModel> getListPostComments;
+  final List<Datum> getListPostComments;
 
   GetListPostCommentsSuccess({required this.getListPostComments});
 }
