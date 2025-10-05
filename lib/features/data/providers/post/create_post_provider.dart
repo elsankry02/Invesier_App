@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
@@ -22,14 +26,17 @@ class CreatePostNotifier extends Notifier<CreatPostState> {
     return CreatPostInitial();
   }
 
-  Future<void> createPost({required String content}) async {
+  Future<void> createPost({required String content, List<File>? media}) async {
     final provider = ref.read(postServiceProvider);
     state = CreatPostLoading();
     try {
-      await provider.createPost(content: content);
+      await provider.createPost(content: content, media: media);
       state = CreatPostSuccess();
     } on Exception catch (e) {
-      state = CreatPostFailure(errMessage: e.toString());
+      if (e is DioException) {
+        final message = e.response!.data;
+        state = CreatPostFailure(errMessage: message[AppStrings.message]);
+      }
     }
   }
 }

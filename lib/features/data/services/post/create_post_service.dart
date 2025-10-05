@@ -13,10 +13,17 @@ class CreatePostService {
   Future<void> createPost({required String content, List<File>? media}) async {
     await dio.post(
       Endpoints.kCreatePost,
-      data: {
+      data: FormData.fromMap({
         AppStrings.content: content,
-        if (media != null) AppStrings.media: media,
-      },
+        if (media != null)
+          AppStrings.media: await MultipartFile.fromFile(media.toString()),
+      }),
+      options: Options(
+        headers: {
+          AppStrings.contentType: "multipart/form-data",
+          AppStrings.accept: "application/json",
+        },
+      ),
     );
   }
 }

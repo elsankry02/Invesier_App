@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/router/router.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_circuler_progress.dart';
@@ -13,6 +12,7 @@ import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
+import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_user_posts_provider.dart';
 import '../../../../../data/providers/get/get_user_profile_provider.dart';
 import '../widget/other_user_profile_appbar.dart';
@@ -133,31 +133,6 @@ class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
                     itemCount: state.getUserPosts.length,
                     itemBuilder: (context, index) {
                       final data = state.getUserPosts[index];
-                      final relation = data.user.socialRelation;
-                      final chaseButtonTitle =
-                          relation == "MATE"
-                              ? "Mate"
-                              : relation == "CHASING"
-                              ? "Chase"
-                              : relation == "NONE"
-                              ? "Unchase"
-                              : "Chase back";
-                      final chaseButtonColor =
-                          relation == "MATE"
-                              ? Colors.transparent
-                              : relation == "CHASING"
-                              ? AppColors.kPrimary
-                              : relation == "NONE"
-                              ? AppColors.kSecondary
-                              : AppColors.kTurquoiseBlue;
-                      final chaseButtonBorder =
-                          relation == "MATE"
-                              ? AppColors.kPrimary
-                              : relation == "CHASING"
-                              ? AppColors.kPrimary
-                              : relation == "NONE"
-                              ? AppColors.kSecondary
-                              : AppColors.kTurquoiseBlue;
                       return CustomPostWidget(
                         imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                         name: data.user.name ?? context.kAppLocalizations.name,
@@ -165,9 +140,9 @@ class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
                             "@${data.user.username ?? context.kAppLocalizations.username}",
                         content: data.content,
                         postImage: "",
-                        chaseButtonTitle: chaseButtonTitle,
-                        backGroundColor: chaseButtonColor,
-                        borderColor: chaseButtonBorder,
+                        chaseButtonTitle: "chase",
+                        backGroundColor: AppColors.kTurquoiseBlue,
+                        borderColor: AppColors.kTurquoiseBlue,
                         chaseButtonOnTap: () {},
                         growthNumber: data.upvotesCount.toString(),
                         declineNumber: data.downvotesCount.toString(),

@@ -11,7 +11,7 @@ import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../data/providers/post/creat_post_provider.dart';
+import '../../../../../data/providers/post/create_post_provider.dart';
 import '../widget/post_app_bar_widget.dart';
 
 @RoutePage()
@@ -61,6 +61,7 @@ class _PostPageState extends ConsumerState<PostsPage> {
     }
     final notifier = ref.read(createPostProvider.notifier);
     await notifier.createPost(content: contentController.text.trim());
+    context.router.maybePop();
   }
 
   @override
@@ -70,6 +71,12 @@ class _PostPageState extends ConsumerState<PostsPage> {
     ref.listen(createPostProvider, (_, state) {
       if (state is CreatPostFailure) {
         ErrorMessage(context, message: state.errMessage);
+      } else if (state is CreatPostSuccess) {
+        SuccessMessage(
+          context,
+          message: context.kAppLocalizations.postpublishsuccessfully,
+        );
+        contentController.clear();
       }
     });
     return Scaffold(
@@ -119,8 +126,8 @@ class _PostPageState extends ConsumerState<PostsPage> {
                               child: Image.file(
                                 file!,
                                 fit: BoxFit.cover,
-                                height: context.height * 0.200,
-                                width: context.height * 0.200,
+                                height: context.height * 0.400,
+                                width: context.width * 0.200,
                               ),
                             ),
                   ),

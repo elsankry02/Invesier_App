@@ -5,3 +5,5 @@ enum EnumView { foryou, pioneers }
 enum Localization { initial, english, arabic }
 
 enum FollowersTabType { fans, pioneers }
+
+enum PostUserRelactionShip { none, chaseBack, chasing, mate, blocked }

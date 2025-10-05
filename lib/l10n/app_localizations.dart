@@ -1030,6 +1030,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Everyone\'s reading, but no one\'s talking… be the first to start!'**
   String get nopostcommenttodisplay;
+
+  /// No description provided for @postpublishsuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Post published successfully'**
+  String get postpublishsuccessfully;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

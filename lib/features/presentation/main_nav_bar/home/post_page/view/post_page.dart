@@ -1,20 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_circuler_progress.dart';
-import '../../../../../../core/constant/app_images.dart';
-import '../../../../../../core/router/router.dart';
-import '../../../../../data/providers/get/get_list_post_comments_provider.dart';
-import '../../../../../data/providers/get/get_post_provider.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
+import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_comment_button_sheet.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
 import '../../../../../../core/components/custom_reply_post_widget.dart';
 import '../../../../../../core/constant/app_colors.dart';
+import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/get/get_list_post_comments_provider.dart';
+import '../../../../../data/providers/get/get_post_provider.dart';
 
 @RoutePage()
 class PostPage extends ConsumerStatefulWidget {
@@ -60,31 +60,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                 final state = ref.watch(getPostProvider);
                 if (state is GetPostSuccess) {
                   final data = state.getPost;
-                  final relation = data.user.socialRelation;
-                  final chaseButtonTitle =
-                      relation == "MATE"
-                          ? "Mate"
-                          : relation == "CHASING"
-                          ? "Chase"
-                          : relation == "NONE"
-                          ? "Unchase"
-                          : "Chase back";
-                  final chaseButtonColor =
-                      relation == "MATE"
-                          ? Colors.transparent
-                          : relation == "CHASING"
-                          ? AppColors.kPrimary
-                          : relation == "NONE"
-                          ? AppColors.kSecondary
-                          : AppColors.kTurquoiseBlue;
-                  final chaseButtonBorder =
-                      relation == "MATE"
-                          ? AppColors.kPrimary
-                          : relation == "CHASING"
-                          ? AppColors.kPrimary
-                          : relation == "NONE"
-                          ? AppColors.kSecondary
-                          : AppColors.kTurquoiseBlue;
+
                   return CustomPostWidget(
                     imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                     name: data.user.name ?? context.kAppLocalizations.name,
@@ -92,9 +68,9 @@ class _PostPageState extends ConsumerState<PostPage> {
                         "@${data.user.username ?? context.kAppLocalizations.username}",
                     content: data.content,
                     postImage: '',
-                    chaseButtonTitle: chaseButtonTitle,
-                    backGroundColor: chaseButtonColor,
-                    borderColor: chaseButtonBorder,
+                    // chaseButtonTitle: chaseButtonTitle,
+                    // backGroundColor: chaseButtonColor,
+                    // borderColor: chaseButtonBorder,
                     chaseButtonOnTap: () {},
                     growthNumber: data.upvotesCount.toString(),
                     declineNumber: data.downvotesCount.toString(),
@@ -166,31 +142,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                     itemCount: state.getListPostComments.length,
                     itemBuilder: (context, index) {
                       final data = state.getListPostComments[index];
-                      final relation = data.user.socialRelation;
-                      final chaseButtonTitle =
-                          relation == "MATE"
-                              ? "Mate"
-                              : relation == "CHASING"
-                              ? "Chase"
-                              : relation == "NONE"
-                              ? "Unchase"
-                              : "Chase back";
-                      final chaseButtonColor =
-                          relation == "MATE"
-                              ? Colors.transparent
-                              : relation == "CHASING"
-                              ? AppColors.kPrimary
-                              : relation == "NONE"
-                              ? AppColors.kSecondary
-                              : AppColors.kTurquoiseBlue;
-                      final chaseButtonBorder =
-                          relation == "MATE"
-                              ? AppColors.kPrimary
-                              : relation == "CHASING"
-                              ? AppColors.kPrimary
-                              : relation == "NONE"
-                              ? AppColors.kSecondary
-                              : AppColors.kTurquoiseBlue;
+
                       return CustomReplyPostWidget(
                         imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                         name: data.user.name ?? context.kAppLocalizations.name,
@@ -198,9 +150,9 @@ class _PostPageState extends ConsumerState<PostPage> {
                             "@${data.user.username ?? context.kAppLocalizations.username}",
                         content: data.content,
                         postImage: '',
-                        chaseButtonTitle: chaseButtonTitle,
-                        backGroundColor: chaseButtonColor,
-                        borderColor: chaseButtonBorder,
+                        // chaseButtonTitle: chaseButtonTitle,
+                        // backGroundColor: chaseButtonColor,
+                        // borderColor: chaseButtonBorder,
                         chaseButtonOnTap: () {},
                         imageOnTap:
                             () => context.router.push(

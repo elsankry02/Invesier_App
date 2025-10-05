@@ -475,4 +475,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get nopostcommenttodisplay => 'الكل بيقرأ، بس لسه محدش اتكلم… جرب تبدأ';
+
+  @override
+  String get postpublishsuccessfully => 'تم نشر البوست بنجاح';
 }

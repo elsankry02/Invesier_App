@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_colors.dart';
 
 import '../../../../../../../core/constant/app_enums.dart';
 import '../../../../../../../core/extension/extension.dart';
@@ -45,6 +46,7 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
                 ),
               ),
               leading: Icon(
+                color: AppColors.kWhite,
                 isSelected == "en"
                     ? Icons.radio_button_checked
                     : Icons.radio_button_unchecked,
@@ -66,6 +68,7 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
                 ),
               ),
               leading: Icon(
+                color: AppColors.kWhite,
                 isSelected == "ar"
                     ? Icons.radio_button_checked
                     : Icons.radio_button_unchecked,
