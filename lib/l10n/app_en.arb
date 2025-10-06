@@ -156,7 +156,10 @@
 "nopioneerspoststodisplay": "No pioneers posts",
 "noforyoupoststodisplay": "No For You posts",
 "nopostcommenttodisplay": "Everyone's reading, but no one's talking… be the first to start!"
-,"postpublishsuccessfully": "Post published successfully"
+,"postpublishsuccessfully": "Post published successfully",
+"postdeletedsuccessfully": "Post deleted successfully",
+  "pleasewritecontentoraddimagebeforesharing": "Please write content or add an image before sharing"
+
 
 
 

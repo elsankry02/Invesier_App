@@ -1036,6 +1036,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Post published successfully'**
   String get postpublishsuccessfully;
+
+  /// No description provided for @postdeletedsuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Post deleted successfully'**
+  String get postdeletedsuccessfully;
+
+  /// No description provided for @pleasewritecontentoraddimagebeforesharing.
+  ///
+  /// In en, this message translates to:
+  /// **'Please write content or add an image before sharing'**
+  String get pleasewritecontentoraddimagebeforesharing;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

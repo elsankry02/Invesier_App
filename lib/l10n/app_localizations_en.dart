@@ -478,4 +478,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get postpublishsuccessfully => 'Post published successfully';
+
+  @override
+  String get postdeletedsuccessfully => 'Post deleted successfully';
+
+  @override
+  String get pleasewritecontentoraddimagebeforesharing => 'Please write content or add an image before sharing';
 }

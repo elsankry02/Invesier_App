@@ -156,5 +156,7 @@
 "nopioneerspoststodisplay": "لا توجد منشورات للرواد",
 "noforyoupoststodisplay": "لا توجد منشورات مقترحة",
 "nopostcommenttodisplay": "الكل بيقرأ، بس لسه محدش اتكلم… جرب تبدأ",
-"postpublishsuccessfully": "تم نشر البوست بنجاح"
+"postpublishsuccessfully": "تم نشر البوست بنجاح",
+"postdeletedsuccessfully": "تم حذف البوست بنجاح",
+ "pleasewritecontentoraddimagebeforesharing": "يرجى كتابة محتوى أو إضافة صورة قبل النشر"
 }

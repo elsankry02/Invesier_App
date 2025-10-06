@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
@@ -52,12 +53,12 @@ class _PostPageState extends ConsumerState<PostsPage> {
   }
 
   Future<void> createPost() async {
-    if (file == null) {
-      ErrorMessage(
+    if (contentController.text.trim().isEmpty && file == null) {
+      return ErrorMessage(
         context,
-        message: context.kAppLocalizations.selectanimagefromyourgalleryorcamera,
+        message:
+            context.kAppLocalizations.pleasewritecontentoraddimagebeforesharing,
       );
-      return;
     }
     final notifier = ref.read(createPostProvider.notifier);
     await notifier.createPost(content: contentController.text.trim());
@@ -76,7 +77,7 @@ class _PostPageState extends ConsumerState<PostsPage> {
           context,
           message: context.kAppLocalizations.postpublishsuccessfully,
         );
-        contentController.clear();
+        ref.read(getPostsProvider.notifier).getPosts();
       }
     });
     return Scaffold(

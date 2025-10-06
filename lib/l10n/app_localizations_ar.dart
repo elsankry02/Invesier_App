@@ -478,4 +478,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get postpublishsuccessfully => 'تم نشر البوست بنجاح';
+
+  @override
+  String get postdeletedsuccessfully => 'تم حذف البوست بنجاح';
+
+  @override
+  String get pleasewritecontentoraddimagebeforesharing => 'يرجى كتابة محتوى أو إضافة صورة قبل النشر';
 }

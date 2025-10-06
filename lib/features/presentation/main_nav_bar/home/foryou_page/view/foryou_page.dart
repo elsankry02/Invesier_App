@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:invesier/core/components/coustom_pop_menu_widget.dart';
 import 'package:invesier/core/constant/app_svgs.dart';
+import 'package:invesier/core/func/show_top_snack_bar.dart';
+import 'package:invesier/features/data/providers/delete/delete_post_provider.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
@@ -26,8 +28,25 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
     super.initState();
   }
 
+  deleteOnTap({required int id}) async {
+    ref.read(deletePostProvider.notifier).deletePost(id: id);
+  }
+
   @override
   Widget build(BuildContext context) {
+    ref.listen(deletePostProvider, (_, state) {
+      if (state is DeletePostFailure) {
+        ErrorMessage(context, message: state.errmessage);
+        return;
+      }
+      if (state is DeletePostSuccess) {
+        SuccessMessage(
+          context,
+          message: context.kAppLocalizations.postdeletedsuccessfully,
+        );
+        ref.read(getPostsProvider.notifier).getPosts();
+      }
+    });
     final state = ref.watch(getPostsProvider);
     if (state is GetPostsSuccess) {
       if (state.data.isEmpty) {
@@ -56,8 +75,8 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
             trailing: CustomPopMenuWidget(
               pinTitle: context.kAppLocalizations.pinpost,
               deleteTitle: context.kAppLocalizations.deletepost,
-              // TODO delete posts
-              deleteOnTap: () {},
+
+              deleteOnTap: () => deleteOnTap(id: getPosts.id),
               pinOnTap: () {},
               pinSvg: AppSvgs.kPin,
               deleteSvg: AppSvgs.kDelete,
