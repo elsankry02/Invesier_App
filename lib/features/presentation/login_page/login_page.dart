@@ -41,6 +41,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
     final notifier = ref.read(resendOtpProvider.notifier);
     final isPhone = contactType == ContactType.phone;
     await notifier.resendOtp(
+      //todo later
       phonePrefix: isPhone ? "+20" : null,
       authMethod: contactType.name,
       email: isPhone ? null : emailController.text.trim(),
@@ -208,8 +209,8 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                           // Phone Number
                           CustomContactTypeFieldWidget(
                             title: local.phonenumber,
-                            hintText: '01234567899',
-                            keyboardType: TextInputType.number,
+                            hintText: '+20***********',
+                            keyboardType: TextInputType.phone,
                             tybeController: phoneController,
                             validator: (value) {
                               if (value!.isEmpty) {

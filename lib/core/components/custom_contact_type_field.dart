@@ -8,6 +8,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
   final TextEditingController tybeController;
   final TextInputType? keyboardType;
+  final int? maxLength;
   final String? Function(String? value)? validator;
   final String title, hintText;
   const CustomContactTypeFieldWidget({
@@ -19,6 +20,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
     this.keyboardType,
     required this.title,
     required this.hintText,
+    this.maxLength,
   });
 
   @override
@@ -35,6 +37,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
         ),
         SizedBox(height: context.height * 0.004),
         CustomTextFormField(
+          maxLength: maxLength,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
           hintText: hintText,

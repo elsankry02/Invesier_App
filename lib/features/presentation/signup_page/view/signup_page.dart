@@ -41,7 +41,6 @@ class _SignupPageState extends ConsumerState<SignupPage> {
     final isPhone = contactType == ContactType.phone;
     await notifier.registerNewUser(
       phonePrefix: isPhone ? "+20" : null,
-      prefix: isPhone ? "+20" : null,
       authMethod: contactType.name,
       email: isPhone ? null : emailController.text.trim(),
       phone: isPhone ? phoneController.text.trim() : null,

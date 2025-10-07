@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
   final TextInputType? keyboardType;
   final TextStyle? hintStyle;
+  final int? maxLength;
   final TextEditingController controller;
   final Function(String value)? onChanged, onFieldSubmitted;
   final String? Function(String? value)? validator;
@@ -20,6 +21,7 @@ class CustomTextFormField extends StatelessWidget {
     this.autovalidateMode,
     this.hintStyle,
     this.onFieldSubmitted,
+    this.maxLength,
   });
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       controller: controller,
       onChanged: onChanged,
+      maxLength: maxLength,
       onFieldSubmitted: onFieldSubmitted,
       cursorColor: AppColors.kWhite,
       keyboardType: keyboardType,

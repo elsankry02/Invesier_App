@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../features/data/providers/post/resend_otp_provider.dart';
 
+import '../../features/data/providers/post/resend_otp_provider.dart';
 import '../../features/data/providers/post/verify_otp_provider.dart';
 import '../../features/presentation/signup_page/widget/signup_rich_text_widget.dart';
 import '../constant/app_colors.dart';
@@ -89,6 +89,7 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
     final notifier = ref.read(verifyOtpProvider.notifier);
     final isEmail = widget.contactType == ContactType.email;
     await notifier.verifyOtp(
+      phonePrefix: isEmail ? null : "+20",
       authMethod: widget.contactType.name,
       otp: otpController.text,
       email: isEmail ? widget.emailController.text : null,

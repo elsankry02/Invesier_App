@@ -60,7 +60,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                 final state = ref.watch(getPostProvider);
                 if (state is GetPostSuccess) {
                   final data = state.getPost;
-
                   return CustomPostWidget(
                     imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                     name: data.user.name ?? context.kAppLocalizations.name,
@@ -68,10 +67,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                         "@${data.user.username ?? context.kAppLocalizations.username}",
                     content: data.content,
                     postImage: '',
-                    // chaseButtonTitle: chaseButtonTitle,
-                    // backGroundColor: chaseButtonColor,
-                    // borderColor: chaseButtonBorder,
-                    chaseButtonOnTap: () {},
                     growthNumber: data.upvotesCount.toString(),
                     declineNumber: data.downvotesCount.toString(),
                     commentNumber: data.commentsCount.toString(),
