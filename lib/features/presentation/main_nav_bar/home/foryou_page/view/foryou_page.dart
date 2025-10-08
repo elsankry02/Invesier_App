@@ -28,8 +28,8 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
     super.initState();
   }
 
-  deleteOnTap({required int id}) async {
-    ref.read(deletePostProvider.notifier).deletePost(id: id);
+  Future<void> deleteOnTap({required int id}) async {
+    await ref.read(deletePostProvider.notifier).deletePost(id: id);
   }
 
   @override

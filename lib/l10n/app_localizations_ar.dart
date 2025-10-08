@@ -484,4 +484,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get pleasewritecontentoraddimagebeforesharing => 'يرجى كتابة محتوى أو إضافة صورة قبل النشر';
+
+  @override
+  String get pleasewritecomment => 'من فضلك اكتب تعليق قبل الإرسال';
+
+  @override
+  String get commentpublishsuccessfully => 'تم نشر التعليق بنجاح';
 }

@@ -158,5 +158,7 @@
 "nopostcommenttodisplay": "الكل بيقرأ، بس لسه محدش اتكلم… جرب تبدأ",
 "postpublishsuccessfully": "تم نشر البوست بنجاح",
 "postdeletedsuccessfully": "تم حذف البوست بنجاح",
- "pleasewritecontentoraddimagebeforesharing": "يرجى كتابة محتوى أو إضافة صورة قبل النشر"
+"pleasewritecontentoraddimagebeforesharing": "يرجى كتابة محتوى أو إضافة صورة قبل النشر",
+"pleasewritecomment": "من فضلك اكتب تعليق قبل الإرسال",
+"commentpublishsuccessfully": "تم نشر التعليق بنجاح"
 }

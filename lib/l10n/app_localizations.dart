@@ -1048,6 +1048,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please write content or add an image before sharing'**
   String get pleasewritecontentoraddimagebeforesharing;
+
+  /// No description provided for @pleasewritecomment.
+  ///
+  /// In en, this message translates to:
+  /// **'Please write a comment before submitting'**
+  String get pleasewritecomment;
+
+  /// No description provided for @commentpublishsuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment published successfully'**
+  String get commentpublishsuccessfully;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

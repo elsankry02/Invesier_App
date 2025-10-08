@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/func/show_top_snack_bar.dart';
+import 'package:invesier/features/data/providers/delete/delete_comment.dart';
+import 'package:invesier/features/data/providers/delete/delete_post_provider.dart';
+import 'package:invesier/features/data/providers/post/create_post_comment_provider.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
@@ -26,6 +30,8 @@ class PostPage extends ConsumerStatefulWidget {
 }
 
 class _PostPageState extends ConsumerState<PostPage> {
+  final commentController = TextEditingController();
+
   @override
   void initState() {
     Future.microtask(() {
@@ -35,6 +41,40 @@ class _PostPageState extends ConsumerState<PostPage> {
           .getListPostComments(postId: widget.postId);
     });
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    commentController.dispose();
+    super.dispose();
+  }
+
+  Future<void> createPostComment() async {
+    if (commentController.text.trim().isEmpty) {
+      ErrorMessage(
+        context,
+        message: context.kAppLocalizations.pleasewritecomment,
+      );
+      return;
+    }
+    final notifier = ref.read(createPostCommnetProvider.notifier);
+    await notifier.createPostComment(
+      content: commentController.text.trim(),
+      postId: widget.postId,
+    );
+    commentController.clear();
+  }
+
+  Future<void> deleteCommentOnTap({required int id}) async {
+    await ref.read(deleteCommentProvider.notifier).deleteComment(id: id);
+    await ref
+        .read(getListPostCommentsProvider.notifier)
+        .getListPostComments(postId: widget.postId);
+  }
+
+  Future<void> deletePostOnTap({required int id}) async {
+    await ref.read(deletePostProvider.notifier).deletePost(id: id);
+    context.router.maybePop();
   }
 
   @override
@@ -76,7 +116,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                       pinOnTap: () {},
                       deleteTitle: context.kAppLocalizations.delete,
                       deleteSvg: AppSvgs.kDelete,
-                      deleteOnTap: () {},
+                      deleteOnTap: () => deletePostOnTap(id: data.id),
                     ),
                     commentOnTap: () {
                       showModalBottomSheet(
@@ -84,21 +124,56 @@ class _PostPageState extends ConsumerState<PostPage> {
                         context: context,
                         builder: (context) {
                           // Add Comment
-                          return CustomCommentBottomSheet(
-                            title: local.addcomment,
-                            hintText: local.shareyourcomment,
-                            titleButton: local.comment,
-                            padding: EdgeInsets.symmetric(
-                              horizontal: context.height * 0.020,
-                              vertical: context.height * 0.005,
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              context.height * 0.008,
-                            ),
-                            style: context.kTextTheme.labelMedium!.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.kDivider,
-                            ),
+                          return Consumer(
+                            builder: (context, ref, child) {
+                              final state = ref.watch(
+                                createPostCommnetProvider,
+                              );
+                              ref.listen(createPostCommnetProvider, (_, state) {
+                                if (state is CreatePostCommentFailure) {
+                                  ErrorMessage(
+                                    context,
+                                    message: state.errMessage,
+                                  );
+                                  return;
+                                } else if (state is CreatePostCommentSuccess) {
+                                  SuccessMessage(
+                                    context,
+                                    message:
+                                        context
+                                            .kAppLocalizations
+                                            .commentpublishsuccessfully,
+                                  );
+                                  ref
+                                      .read(
+                                        getListPostCommentsProvider.notifier,
+                                      )
+                                      .getListPostComments(
+                                        postId: widget.postId,
+                                      );
+                                }
+                              });
+                              // TODO update comment botton
+                              return CustomCommentBottomSheet(
+                                commentTitle: local.addcomment,
+                                commentController: commentController,
+                                isLoading: state is CreatePostCommentLoading,
+                                commentOnTap: () => createPostComment(),
+                                hintText: local.shareyourcomment,
+                                titleButton: local.comment,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: context.height * 0.020,
+                                  vertical: context.height * 0.005,
+                                ),
+                                borderRadius: BorderRadius.circular(
+                                  context.height * 0.008,
+                                ),
+                                style: context.kTextTheme.labelMedium!.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.kDivider,
+                                ),
+                              );
+                            },
                           );
                         },
                       );
@@ -137,7 +212,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                     itemCount: state.getListPostComments.length,
                     itemBuilder: (context, index) {
                       final data = state.getListPostComments[index];
-
                       return CustomReplyPostWidget(
                         imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                         name: data.user.name ?? context.kAppLocalizations.name,
@@ -145,10 +219,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                             "@${data.user.username ?? context.kAppLocalizations.username}",
                         content: data.content,
                         postImage: '',
-                        // chaseButtonTitle: chaseButtonTitle,
-                        // backGroundColor: chaseButtonColor,
-                        // borderColor: chaseButtonBorder,
-                        chaseButtonOnTap: () {},
                         imageOnTap:
                             () => context.router.push(
                               OtherUserProfileRoute(
@@ -159,13 +229,15 @@ class _PostPageState extends ConsumerState<PostPage> {
                             ),
                         growthNumber: data.upvotesCount.toString(),
                         declineNumber: data.downvotesCount.toString(),
+                        deleteOnTap: () => deleteCommentOnTap(id: data.id),
                         replyOnTap: () {
                           showModalBottomSheet(
                             context: context,
                             builder: (context) {
                               // Add Comment
+                              // TODO update CustomReplyPostWidget
                               return CustomCommentBottomSheet(
-                                title: local.reply,
+                                commentTitle: local.reply,
                                 hintText: local.typeyourreply,
                                 titleButton: local.reply,
                                 padding: EdgeInsets.symmetric(

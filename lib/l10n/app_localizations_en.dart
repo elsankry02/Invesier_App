@@ -484,4 +484,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pleasewritecontentoraddimagebeforesharing => 'Please write content or add an image before sharing';
+
+  @override
+  String get pleasewritecomment => 'Please write a comment before submitting';
+
+  @override
+  String get commentpublishsuccessfully => 'Comment published successfully';
 }

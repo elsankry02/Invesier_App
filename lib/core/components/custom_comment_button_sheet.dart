@@ -10,21 +10,25 @@ import 'custom_icon_button.dart';
 import 'custom_primary_button.dart';
 
 class CustomCommentBottomSheet extends StatelessWidget {
-  final String title, titleButton;
+  final String commentTitle, titleButton;
   final String? hintText;
+  final void Function()? commentOnTap;
   final EdgeInsetsGeometry? padding;
   final TextEditingController? commentController;
   final BorderRadiusGeometry? borderRadius;
   final TextStyle? style;
+  final bool isLoading;
   const CustomCommentBottomSheet({
     super.key,
-    required this.title,
+    required this.commentTitle,
     required this.titleButton,
     this.hintText,
     this.style,
     this.padding,
     this.borderRadius,
     this.commentController,
+    this.isLoading = false,
+    this.commentOnTap,
   });
 
   @override
@@ -58,7 +62,7 @@ class CustomCommentBottomSheet extends StatelessWidget {
               children: [
                 // titel
                 Text(
-                  title,
+                  commentTitle,
                   style: context.kTextTheme.titleSmall!.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -95,11 +99,12 @@ class CustomCommentBottomSheet extends StatelessWidget {
                 // titleButton
                 CustomPrimaryButton(
                   title: titleButton,
+                  isLoading: isLoading,
                   backGroundColor: AppColors.kOceanGreen,
                   border: Border.all(color: AppColors.kOceanGreen),
                   padding: padding,
                   borderRadius: borderRadius,
-                  onTap: () {},
+                  onTap: commentOnTap,
                   style: style,
                 ),
               ],

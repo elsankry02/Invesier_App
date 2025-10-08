@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../../models/get/get_post_model.dart';
 
 class GetPostService {

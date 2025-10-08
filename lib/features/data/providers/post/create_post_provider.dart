@@ -6,41 +6,42 @@ import 'package:invesier/core/constant/app_strings.dart';
 
 import '../provider.dart';
 
-abstract class CreatPostState {}
+abstract class CreatePostState {}
 
-class CreatPostInitial extends CreatPostState {}
+class CreatePostInitial extends CreatePostState {}
 
-class CreatPostSuccess extends CreatPostState {}
+class CreatePostSuccess extends CreatePostState {}
 
-class CreatPostLoading extends CreatPostState {}
+class CreatePostLoading extends CreatePostState {}
 
-class CreatPostFailure extends CreatPostState {
+class CreatePostFailure extends CreatePostState {
   final String errMessage;
 
-  CreatPostFailure({required this.errMessage});
+  CreatePostFailure({required this.errMessage});
 }
 
-class CreatePostNotifier extends Notifier<CreatPostState> {
+class CreatePostNotifier extends Notifier<CreatePostState> {
   @override
-  CreatPostState build() {
-    return CreatPostInitial();
+  CreatePostState build() {
+    return CreatePostInitial();
   }
 
   Future<void> createPost({required String content, List<File>? media}) async {
-    final provider = ref.read(postServiceProvider);
-    state = CreatPostLoading();
+    final provider = ref.read(createPostServiceProvider);
+    state = CreatePostLoading();
     try {
       await provider.createPost(content: content, media: media);
-      state = CreatPostSuccess();
+      state = CreatePostSuccess();
     } on Exception catch (e) {
       if (e is DioException) {
         final message = e.response!.data;
-        state = CreatPostFailure(errMessage: message[AppStrings.message]);
+        state = CreatePostFailure(errMessage: message[AppStrings.message]);
       }
     }
   }
 }
 
-final createPostProvider = NotifierProvider<CreatePostNotifier, CreatPostState>(
-  CreatePostNotifier.new,
-);
+final createPostProvider =
+    NotifierProvider<CreatePostNotifier, CreatePostState>(
+      CreatePostNotifier.new,
+    );

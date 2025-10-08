@@ -2,7 +2,10 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/services/delete/delete_comment.dart';
 import 'package:invesier/features/data/services/delete/delete_post_service.dart';
+import 'package:invesier/features/data/services/get/get_comment_service.dart';
+import 'package:invesier/features/data/services/post/create_post_comment_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
@@ -42,7 +45,7 @@ final dioProvider = Provider<Dio>((ref) {
     ),
   );
 });
-final postServiceProvider = Provider<CreatePostService>((ref) {
+final createPostServiceProvider = Provider<CreatePostService>((ref) {
   return CreatePostService(dio: ref.read(dioProvider));
 });
 final resendOtpServiceProvider = Provider<ResendOtpService>((ref) {
@@ -117,4 +120,15 @@ final getListPostCommentsServiceProvider = Provider<GetListPostCommentsService>(
 );
 final deletePostServiceProvider = Provider<DeletePostService>((ref) {
   return DeletePostService(dio: ref.read(dioProvider));
+});
+final createPostCommentServiceProvider = Provider<CreatePostCommentService>((
+  ref,
+) {
+  return CreatePostCommentService(dio: ref.read(dioProvider));
+});
+final getCommnetServiceProvider = Provider<GetCommentService>((ref) {
+  return GetCommentService(dio: ref.read(dioProvider));
+});
+final deleteCommentServiceProvider = Provider<DeleteCommentService>((ref) {
+  return DeleteCommentService(dio: ref.read(dioProvider));
 });

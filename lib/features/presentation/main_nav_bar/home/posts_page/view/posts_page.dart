@@ -70,9 +70,9 @@ class _PostPageState extends ConsumerState<PostsPage> {
     final local = context.kAppLocalizations;
     final state = ref.watch(createPostProvider);
     ref.listen(createPostProvider, (_, state) {
-      if (state is CreatPostFailure) {
+      if (state is CreatePostFailure) {
         ErrorMessage(context, message: state.errMessage);
-      } else if (state is CreatPostSuccess) {
+      } else if (state is CreatePostSuccess) {
         SuccessMessage(
           context,
           message: context.kAppLocalizations.postpublishsuccessfully,
@@ -143,18 +143,15 @@ class _PostPageState extends ConsumerState<PostsPage> {
                   Row(
                     children: [
                       CustomIconButton(
-                        onPressed: () {
-                          gallery();
-                        },
+                        onPressed: () => gallery(),
                         icon: Icon(
                           FontAwesomeIcons.image,
                           color: AppColors.kNum,
                         ),
                       ),
                       CustomIconButton(
-                        onPressed: () {
-                          camera();
-                        },
+                        onPressed: () => camera(),
+
                         icon: Icon(
                           FontAwesomeIcons.video,
                           color: AppColors.kNum,
@@ -163,7 +160,7 @@ class _PostPageState extends ConsumerState<PostsPage> {
                     ],
                   ),
                   CustomPrimaryButton(
-                    isLoading: state is CreatPostLoading,
+                    isLoading: state is CreatePostLoading,
                     title: local.postnow,
                     backGroundColor: AppColors.kNum,
                     padding: EdgeInsetsDirectional.symmetric(
