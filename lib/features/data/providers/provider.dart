@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/services/delete/delete_comment.dart';
-import 'package:invesier/features/data/services/delete/delete_post_service.dart';
-import 'package:invesier/features/data/services/get/get_comment_service.dart';
-import 'package:invesier/features/data/services/post/create_post_comment_service.dart';
+import '../services/delete/delete_comment.dart';
+import '../services/delete/delete_post_service.dart';
+import '../services/get/get_comment_service.dart';
+import '../services/post/create_post_comment_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';

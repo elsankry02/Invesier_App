@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/core/components/coustom_pop_menu_widget.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
-import 'package:invesier/core/func/show_top_snack_bar.dart';
-import 'package:invesier/features/data/providers/delete/delete_post_provider.dart';
+import '../../../../../../core/components/coustom_pop_menu_widget.dart';
+import '../../../../../../core/constant/app_svgs.dart';
+import '../../../../../../core/func/show_top_snack_bar.dart';
+import '../../../../../data/providers/delete/delete_post_provider.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';

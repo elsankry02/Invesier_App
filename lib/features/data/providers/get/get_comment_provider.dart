@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/models/get_comment_model.dart';
+import '../../models/get_comment_model.dart';
 
 import '../../../../core/constant/app_strings.dart';
 import '../provider.dart';

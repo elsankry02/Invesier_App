@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
+import '../../../../../data/providers/get/get_posts_provider.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
