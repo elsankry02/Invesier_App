@@ -93,6 +93,7 @@ class CustomReplyPostWidget extends StatelessWidget {
               title: Row(
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         name,

@@ -251,7 +251,7 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,
                   ),
-                  onTap: logIn,
+                  onTap: () => logIn(),
                 ),
               ],
             ),

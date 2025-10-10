@@ -89,24 +89,24 @@ class Datum {
 }
 
 class User {
-  final int id;
+  final int? id;
   final String? username;
   final String? name;
   final String? avatarUrl;
   final String? phone;
   final String? email;
-  final int inveesBalance;
+  final int? inveesBalance;
   final String? hostStatus;
-  final bool isShown;
-  final bool isLive;
-  final int fansCount;
-  final int postsCount;
-  final int pioneersCount;
-  final bool isCompleteProfile;
-  final bool isVerified;
-  final bool isExpert;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final bool? isShown;
+  final bool? isLive;
+  final int? fansCount;
+  final int? postsCount;
+  final int? pioneersCount;
+  final bool? isCompleteProfile;
+  final bool? isVerified;
+  final bool? isExpert;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
   final String? socialRelation;
 
   User({
@@ -170,8 +170,8 @@ class User {
     "is_complete_profile": isCompleteProfile,
     "is_verified": isVerified,
     "is_expert": isExpert,
-    "created_at": createdAt.toIso8601String(),
-    "updated_at": updatedAt.toIso8601String(),
+    "created_at": createdAt!.toIso8601String(),
+    "updated_at": updatedAt!.toIso8601String(),
     "social_relation": socialRelation,
   };
 }

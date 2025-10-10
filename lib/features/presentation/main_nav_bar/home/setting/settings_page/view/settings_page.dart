@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -36,8 +37,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
       if (state is DeleteAccountFailure) {
         ErrorMessage(context, message: state.errorMessage);
         return;
-      } else if (state is DeleteAccountSuccess) {
+      }
+      if (state is DeleteAccountSuccess) {
         await ref.read(prefsProvider).remove(AppStrings.userToken);
+        Phoenix.rebirth(context);
         await context.router.replaceAll([WelcomeRoute()]);
         SuccessMessage(context, message: local.accountdeletedsuccessfully);
       }
@@ -121,7 +124,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 onPressed: () => context.router.maybePop(),
                                 child: Text(
                                   local.cancel,
-                                  style: context.kTextTheme.labelMedium!
+                                  style: context.kTextTheme.labelLarge!
                                       .copyWith(fontWeight: FontWeight.w500),
                                 ),
                               ),
@@ -129,7 +132,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 onPressed: () => deleteAccount(),
                                 child: Text(
                                   local.delete,
-                                  style: context.kTextTheme.labelMedium!
+                                  style: context.kTextTheme.labelLarge!
                                       .copyWith(
                                         fontWeight: FontWeight.w500,
                                         color: AppColors.kRedTwo,

@@ -1,17 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/coustom_pop_menu_widget.dart';
-import '../../../../../../core/constant/app_svgs.dart';
-import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../data/providers/delete/delete_post_provider.dart';
 
+import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
 import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/delete/delete_post_provider.dart';
 import '../../../../../data/providers/get/get_posts_provider.dart';
 
 class ForYouPage extends ConsumerStatefulWidget {

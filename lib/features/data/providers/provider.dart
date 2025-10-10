@@ -2,16 +2,15 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/delete/delete_comment.dart';
-import '../services/delete/delete_post_service.dart';
-import '../services/get/get_comment_service.dart';
-import '../services/post/create_post_comment_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
 import '../../../env.dart';
 import '../services/delete/delete_account_service.dart';
+import '../services/delete/delete_comment.dart';
+import '../services/delete/delete_post_service.dart';
 import '../services/get/get_authenticated_user_service.dart';
+import '../services/get/get_comment_service.dart';
 import '../services/get/get_list_post_comments_service.dart';
 import '../services/get/get_list_users_service.dart';
 import '../services/get/get_pioneers_posts_service.dart';
@@ -23,6 +22,7 @@ import '../services/get/get_user_posts_service.dart';
 import '../services/get/get_user_profile_service.dart';
 import '../services/post/check_username_availability_service.dart';
 import '../services/post/complete_profile_service.dart';
+import '../services/post/create_post_comment_service.dart';
 import '../services/post/create_post_service.dart';
 import '../services/post/logout_service.dart';
 import '../services/post/register_new_user_service.dart';
@@ -32,7 +32,8 @@ import '../services/post/store_the_fcm_token_for_the_authenticated_user_service.
 import '../services/post/verify_otp_service.dart';
 
 final dioProvider = Provider<Dio>((ref) {
-  final token = ref.watch(prefsProvider).getString(AppStrings.userToken);
+  final prefs = ref.watch(prefsProvider);
+  final token = prefs.getString(AppStrings.userToken);
   log("Token : $token");
   return Dio(
     BaseOptions(

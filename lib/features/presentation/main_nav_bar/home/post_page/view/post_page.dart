@@ -1,10 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/func/show_top_snack_bar.dart';
-import '../../../../../data/providers/delete/delete_comment.dart';
-import '../../../../../data/providers/delete/delete_post_provider.dart';
-import '../../../../../data/providers/post/create_post_comment_provider.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
@@ -16,9 +12,13 @@ import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
 import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
+import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../core/router/router.dart';
+import '../../../../../data/providers/delete/delete_comment.dart';
+import '../../../../../data/providers/delete/delete_post_provider.dart';
 import '../../../../../data/providers/get/get_list_post_comments_provider.dart';
 import '../../../../../data/providers/get/get_post_provider.dart';
+import '../../../../../data/providers/post/create_post_comment_provider.dart';
 
 @RoutePage()
 class PostPage extends ConsumerStatefulWidget {
@@ -136,7 +136,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                                     message: state.errMessage,
                                   );
                                   return;
-                                } else if (state is CreatePostCommentSuccess) {
+                                }
+                                if (state is CreatePostCommentSuccess) {
                                   SuccessMessage(
                                     context,
                                     message:
@@ -144,6 +145,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                                             .kAppLocalizations
                                             .commentpublishsuccessfully,
                                   );
+                                  context.router.maybePop();
                                   ref
                                       .read(
                                         getListPostCommentsProvider.notifier,

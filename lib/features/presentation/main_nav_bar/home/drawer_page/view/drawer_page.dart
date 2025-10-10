@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
@@ -49,8 +50,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
       }
       if (state is LogoutSuccess) {
         await ref.read(prefsProvider).remove(AppStrings.userToken);
+        Phoenix.rebirth(context);
         await context.router.replaceAll([WelcomeRoute()]);
-        return SuccessMessage(context, message: local.logoutsuccess);
+        SuccessMessage(context, message: local.logoutsuccess);
       }
     });
     return Drawer(
@@ -150,8 +152,9 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         barrierDismissible: false,
                         context: context,
                         builder:
-                            (context) =>
-                                DrawerDialogLogOutWidget(onPressed: logout),
+                            (context) => DrawerDialogLogOutWidget(
+                              onPressed: () => logout(),
+                            ),
                       ),
                   title: local.logout,
                 ),

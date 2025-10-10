@@ -20,7 +20,7 @@ import '../../features/presentation/main_nav_bar/home/setting/rejected_page/view
 import '../../features/presentation/main_nav_bar/home/setting/settings_page/view/settings_page.dart';
 import '../../features/presentation/main_nav_bar/home/setting/under_reveiw_page/view/under_reveiw_page.dart';
 import '../../features/presentation/main_nav_bar/home/setting/verification_request_page/view/verification_request_page.dart';
-import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_page/view/you_are_verified_page.dart';
+import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_page/you_are_verified_page.dart';
 import '../../features/presentation/main_nav_bar/home/transactions_history_page/transactions_history_page.dart';
 import '../../features/presentation/main_nav_bar/home/user_profile/view/other_user_profile_page.dart';
 import '../../features/presentation/main_nav_bar/home/wallet_page/view/wallet_page.dart';

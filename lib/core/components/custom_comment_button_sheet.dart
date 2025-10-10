@@ -70,9 +70,7 @@ class CustomCommentBottomSheet extends StatelessWidget {
                 // Custom Icon Back
                 CustomIconButton(
                   icon: Icon(FontAwesomeIcons.xmark, color: AppColors.kWhite),
-                  onPressed: () {
-                    context.router.maybePop();
-                  },
+                  onPressed: () => context.router.maybePop(),
                 ),
               ],
             ),
