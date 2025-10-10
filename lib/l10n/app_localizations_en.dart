@@ -496,4 +496,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get addreply => 'Add Reply...';
+
+  @override
+  String get postSent => 'Your post was sent';
 }

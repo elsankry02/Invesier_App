@@ -496,4 +496,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get addreply => 'أضف رد...';
+
+  @override
+  String get postSent => 'تم إرسال منشورك';
 }

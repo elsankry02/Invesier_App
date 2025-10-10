@@ -162,5 +162,6 @@
 "pleasewritecomment": "من فضلك اكتب تعليق قبل الإرسال",
 "commentpublishsuccessfully": "تم نشر التعليق بنجاح",
 "addcommentbotton": "أضف تعليق...",
-"addreply": "أضف رد..."
+"addreply": "أضف رد...",
+"postSent": "تم إرسال منشورك"
 }

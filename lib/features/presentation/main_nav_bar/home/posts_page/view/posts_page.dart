@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../../../data/providers/get/get_posts_provider.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
+import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../../../../../data/providers/post/create_post_provider.dart';
 import '../widget/post_app_bar_widget.dart';
 
@@ -72,11 +72,9 @@ class _PostPageState extends ConsumerState<PostsPage> {
     ref.listen(createPostProvider, (_, state) {
       if (state is CreatePostFailure) {
         ErrorMessage(context, message: state.errMessage);
-      } else if (state is CreatePostSuccess) {
-        SuccessMessage(
-          context,
-          message: context.kAppLocalizations.postpublishsuccessfully,
-        );
+      }
+      if (state is CreatePostSuccess) {
+        SuccessMessage(context, message: context.kAppLocalizations.postSent);
         ref.read(getPostsProvider.notifier).getPosts();
       }
     });

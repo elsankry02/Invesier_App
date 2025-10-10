@@ -1072,6 +1072,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add Reply...'**
   String get addreply;
+
+  /// No description provided for @postSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Your post was sent'**
+  String get postSent;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
