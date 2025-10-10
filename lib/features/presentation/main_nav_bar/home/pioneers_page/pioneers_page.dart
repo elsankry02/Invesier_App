@@ -42,6 +42,7 @@ class _PioneersPageState extends ConsumerState<PioneersPage> {
         itemBuilder: (context, index) {
           final data = state.getPioneersPosts[index];
           return CustomPostWidget(
+            createdAt: data.createdAt,
             imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
             name: data.user.name,
             username:

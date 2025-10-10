@@ -1060,6 +1060,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Comment published successfully'**
   String get commentpublishsuccessfully;
+
+  /// No description provided for @addcommentbotton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Comment...'**
+  String get addcommentbotton;
+
+  /// No description provided for @addreply.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Reply...'**
+  String get addreply;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

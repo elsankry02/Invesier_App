@@ -1,16 +1,13 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:invesier/core/components/custom_icon_button.dart';
+import 'package:invesier/core/constant/app_svgs.dart';
 
 import '../constant/app_colors.dart';
-import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
-import 'custom_icon_button.dart';
-import 'custom_primary_button.dart';
 
 class CustomCommentBottomSheet extends StatelessWidget {
-  final String commentTitle, titleButton;
+
   final String? hintText;
   final void Function()? commentOnTap;
   final EdgeInsetsGeometry? padding;
@@ -20,8 +17,6 @@ class CustomCommentBottomSheet extends StatelessWidget {
   final bool isLoading;
   const CustomCommentBottomSheet({
     super.key,
-    required this.commentTitle,
-    required this.titleButton,
     this.hintText,
     this.style,
     this.padding,
@@ -54,56 +49,28 @@ class CustomCommentBottomSheet extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // kArrow
-            SvgPicture.asset(AppSvgs.kArrow),
-            SizedBox(height: context.height * 0.004),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // titel
-                Text(
-                  commentTitle,
-                  style: context.kTextTheme.titleSmall!.copyWith(
-                    fontWeight: FontWeight.w600,
+                Expanded(
+                  child: TextFormField(
+                    cursorColor: AppColors.kWhite,
+                    controller: commentController,
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.zero,
+                      hintText: hintText,
+                      hintStyle: TextStyle(
+                        color: AppColors.kGray,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      border: OutlineInputBorder(borderSide: BorderSide.none),
+                    ),
                   ),
                 ),
-                // Custom Icon Back
                 CustomIconButton(
-                  icon: Icon(FontAwesomeIcons.xmark, color: AppColors.kWhite),
-                  onPressed: () => context.router.maybePop(),
-                ),
-              ],
-            ),
-            // TextFormField
-            TextFormField(
-              cursorColor: AppColors.kWhite,
-              controller: commentController,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.zero,
-                hintText: hintText,
-                hintStyle: TextStyle(
-                  color: AppColors.kGray,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-                border: OutlineInputBorder(borderSide: BorderSide.none),
-              ),
-            ),
-
-            SizedBox(height: context.height * 0.012),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                // titleButton
-                CustomPrimaryButton(
-                  title: titleButton,
-                  isLoading: isLoading,
-                  backGroundColor: AppColors.kOceanGreen,
-                  border: Border.all(color: AppColors.kOceanGreen),
-                  padding: padding,
-                  borderRadius: borderRadius,
-                  onTap: commentOnTap,
-                  style: style,
+                  icon: SvgPicture.asset(AppSvgs.kReply),
+                  onPressed: commentOnTap,
                 ),
               ],
             ),

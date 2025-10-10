@@ -490,4 +490,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get commentpublishsuccessfully => 'تم نشر التعليق بنجاح';
+
+  @override
+  String get addcommentbotton => 'أضف تعليق...';
+
+  @override
+  String get addreply => 'أضف رد...';
 }

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../../models/get_comment_model.dart';
+import '../../models/get/get_comment_model.dart';
 
 class GetCommentService {
   final Dio dio;

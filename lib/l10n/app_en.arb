@@ -160,7 +160,9 @@
 "postdeletedsuccessfully": "Post deleted successfully",
 "pleasewritecontentoraddimagebeforesharing": "Please write content or add an image before sharing",
 "pleasewritecomment": "Please write a comment before submitting",
-"commentpublishsuccessfully": "Comment published successfully"
+"commentpublishsuccessfully": "Comment published successfully",
+"addcommentbotton": "Add Comment...",
+"addreply": "Add Reply..."
 
 
 

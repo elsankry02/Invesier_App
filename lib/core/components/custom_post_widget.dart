@@ -1,18 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/func/get_time_ago.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_images.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
 import 'custom_circuler_progress.dart';
-import 'custom_primary_button.dart';
 import 'custom_tag_button.dart';
 
 class CustomPostWidget extends StatelessWidget {
+  final DateTime createdAt;
   final String imageUrl,
-      chaseButtonTitle,
       name,
       username,
       content,
@@ -23,14 +23,11 @@ class CustomPostWidget extends StatelessWidget {
   final Function()? commentOnTap,
       onSecondTap,
       onFirstTap,
-      chaseButtonOnTap,
       imageOnTap,
       growthOnTap,
       declineOnTap,
       SharingOnTap;
   final Widget? trailing;
-  final Color? backGroundColor;
-  final Color borderColor;
 
   const CustomPostWidget({
     super.key,
@@ -41,7 +38,7 @@ class CustomPostWidget extends StatelessWidget {
     this.trailing,
     this.SharingOnTap,
     required this.imageUrl,
-    this.chaseButtonOnTap,
+
     required this.name,
     required this.username,
     required this.content,
@@ -49,11 +46,10 @@ class CustomPostWidget extends StatelessWidget {
     required this.growthNumber,
     required this.declineNumber,
     required this.commentNumber,
-    this.chaseButtonTitle = "",
-    this.borderColor = Colors.transparent,
-    this.backGroundColor,
+
     this.onSecondTap,
     this.onFirstTap,
+    required this.createdAt,
   });
 
   @override
@@ -96,42 +92,35 @@ class CustomPostWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      name,
-                      style: context.kTextTheme.titleSmall!.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.kWhite,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          name,
+                          style: context.kTextTheme.titleSmall!.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.kWhite,
+                          ),
+                        ),
+                        Text(
+                          " • ${getTimeAgo(createdAt)}",
+                          style: context.kTextTheme.labelLarge!.copyWith(
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.kGray,
+                          ),
+                        ),
+                      ],
                     ),
                     Text(
                       username,
                       style: context.kTextTheme.titleSmall!.copyWith(
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kPostUsername,
+                        color: AppColors.kGray,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(width: context.width * 0.040),
-                InkWell(
-                  onTap: chaseButtonOnTap,
-                  child: CustomPrimaryButton(
-                    title: chaseButtonTitle,
-                    style: context.kTextTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: context.height * 0.020,
-                      vertical: context.height * 0.004,
-                    ),
-                    borderRadius: BorderRadius.circular(context.height * 0.031),
-                    border: Border.all(width: 2, color: borderColor),
-                    backGroundColor: backGroundColor,
-                  ),
-                ),
               ],
             ),
-
             trailing: trailing,
           ),
           //

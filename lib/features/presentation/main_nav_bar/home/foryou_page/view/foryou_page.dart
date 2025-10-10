@@ -61,6 +61,7 @@ class _ForYouWidgetState extends ConsumerState<ForYouPage> {
         itemBuilder: (context, index) {
           final getPosts = state.data[index];
           return CustomPostWidget(
+            createdAt: getPosts.createdAt,
             imageUrl: getPosts.user.avatarUrl ?? AppImages.ImageNetwork,
             name: getPosts.user.name,
             username:

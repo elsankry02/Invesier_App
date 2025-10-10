@@ -2,14 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
 import '../../../../../../core/components/custom_post_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
-import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/func/show_top_snack_bar.dart';
 import '../../../../../../core/router/router.dart';
@@ -134,28 +132,19 @@ class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
                     itemBuilder: (context, index) {
                       final data = state.getUserPosts[index];
                       return CustomPostWidget(
+                        createdAt: data.createdAt,
                         imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                         name: data.user.name ?? context.kAppLocalizations.name,
                         username:
                             "@${data.user.username ?? context.kAppLocalizations.username}",
                         content: data.content,
                         postImage: "",
-                        chaseButtonTitle: "chase",
-                        backGroundColor: AppColors.kTurquoiseBlue,
-                        borderColor: AppColors.kTurquoiseBlue,
-                        chaseButtonOnTap: () {},
                         growthNumber: data.upvotesCount.toString(),
                         declineNumber: data.downvotesCount.toString(),
                         commentNumber: data.commentsCount.toString(),
                         commentOnTap:
                             () =>
                                 context.router.push(PostRoute(postId: data.id)),
-                        trailing: CustomPopMenuWidget(
-                          pinTitle: context.kAppLocalizations.pinpost,
-                          deleteTitle: context.kAppLocalizations.delete,
-                          pinSvg: AppSvgs.kPin,
-                          deleteSvg: AppSvgs.kDelete,
-                        ),
                       );
                     },
                   );

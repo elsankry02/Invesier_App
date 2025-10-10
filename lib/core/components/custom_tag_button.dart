@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../constant/app_colors.dart';
 import '../extension/extension.dart';
 
 class CustomTagButton extends StatelessWidget {
@@ -25,10 +24,7 @@ class CustomTagButton extends StatelessWidget {
           vertical: context.height * 0.005,
           horizontal: context.height * 0.017,
         ),
-        decoration: BoxDecoration(
-          border: Border.all(color: AppColors.kBorderPost),
-          borderRadius: BorderRadius.circular(25),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
         child: Row(
           spacing: context.height * 0.009,
           children: [

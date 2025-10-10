@@ -490,4 +490,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get commentpublishsuccessfully => 'Comment published successfully';
+
+  @override
+  String get addcommentbotton => 'Add Comment...';
+
+  @override
+  String get addreply => 'Add Reply...';
 }

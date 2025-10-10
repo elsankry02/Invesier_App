@@ -53,7 +53,7 @@ class UserConnectionsAppBar extends StatelessWidget {
         subtitle: Text(
           "@${getUserProfileModel.username ?? context.kAppLocalizations.username}",
 
-          style: context.kTextTheme.bodySmall!.copyWith(
+          style: context.kTextTheme.labelLarge!.copyWith(
             color: AppColors.kGray,
             fontWeight: FontWeight.w400,
           ),

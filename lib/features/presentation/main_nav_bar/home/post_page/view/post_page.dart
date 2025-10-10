@@ -101,6 +101,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                 if (state is GetPostSuccess) {
                   final data = state.getPost;
                   return CustomPostWidget(
+                    createdAt: data.createdAt,
                     imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                     name: data.user.name ?? context.kAppLocalizations.name,
                     username:
@@ -120,7 +121,6 @@ class _PostPageState extends ConsumerState<PostPage> {
                     ),
                     commentOnTap: () {
                       showModalBottomSheet(
-                        isDismissible: false,
                         context: context,
                         builder: (context) {
                           // Add Comment
@@ -155,14 +155,11 @@ class _PostPageState extends ConsumerState<PostPage> {
                                       );
                                 }
                               });
-                              // TODO update comment botton
                               return CustomCommentBottomSheet(
-                                commentTitle: local.addcomment,
                                 commentController: commentController,
                                 isLoading: state is CreatePostCommentLoading,
                                 commentOnTap: () => createPostComment(),
-                                hintText: local.shareyourcomment,
-                                titleButton: local.comment,
+                                hintText: local.addcommentbotton,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: context.height * 0.020,
                                   vertical: context.height * 0.005,
@@ -215,6 +212,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                     itemBuilder: (context, index) {
                       final data = state.getListPostComments[index];
                       return CustomReplyPostWidget(
+                        createdAt: data.createdAt,
                         imageUrl: data.user.avatarUrl ?? AppImages.ImageNetwork,
                         name: data.user.name ?? context.kAppLocalizations.name,
                         username:
@@ -236,12 +234,9 @@ class _PostPageState extends ConsumerState<PostPage> {
                           showModalBottomSheet(
                             context: context,
                             builder: (context) {
-                              // Add Comment
-                              // TODO update CustomReplyPostWidget
                               return CustomCommentBottomSheet(
-                                commentTitle: local.reply,
-                                hintText: local.typeyourreply,
-                                titleButton: local.reply,
+                                hintText: local.addreply,
+                                commentOnTap: () {},
                                 padding: EdgeInsets.symmetric(
                                   horizontal: context.height * 0.020,
                                   vertical: context.height * 0.005,
