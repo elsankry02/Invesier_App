@@ -24,7 +24,11 @@ class UserAlertDialogWidget extends StatelessWidget {
               onPressed: () {
                 context.router.maybePop();
               },
-              icon: Icon(Icons.close, color: AppColors.kWhite, size: 20),
+              icon: Icon(
+                Icons.close,
+                color: AppColors.kWhite,
+                size: context.height * 0.020,
+              ),
             ),
           ),
           SizedBox(height: context.height * 0.014),

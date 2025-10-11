@@ -57,8 +57,16 @@ class _UserProfilePageState extends ConsumerState<OtherUserProfilePage> {
               builder: (context, ref, child) {
                 final state = ref.watch(getUserProfileProvider);
                 if (state is GetUserProfileSuccess) {
+                  final data = state.getUserProfileModel;
                   return OtherUserProfileAppBar(
                     getUserProfileModel: state.getUserProfileModel,
+                    imageUrl: data.avatarUrl ?? AppImages.ImageNetwork,
+                    title: data.name ?? context.kAppLocalizations.name,
+                    subTitle:
+                        "@${data.username ?? context.kAppLocalizations.username}",
+                    pioneersCountNumber: data.pioneersCount,
+                    postsCountNumber: data.postsCount,
+                    fansCountNumber: data.fansCount,
                   );
                 } else if (state is GetUserProfileFailure) {
                   return Text(

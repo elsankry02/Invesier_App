@@ -27,15 +27,12 @@ class OtherUserPopMenuWidget extends StatelessWidget {
         return [
           PopupMenuItem(
             padding: EdgeInsets.zero,
-            // onTap
             onTap: onTap,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // icon
                 SvgPicture.asset(icon),
                 SizedBox(width: context.height * 0.007),
-                // title
                 Text(
                   title,
                   style: context.kTextTheme.labelLarge!.copyWith(

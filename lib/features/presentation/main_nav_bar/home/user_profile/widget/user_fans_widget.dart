@@ -48,9 +48,6 @@ class _UserFansWidgetState extends ConsumerState<UserFansWidget> {
                 final username =
                     state.getUserFans[index].username ??
                     context.kAppLocalizations.username;
-
-                // ref.read(usernameProvider.notifier).state = username;
-
                 context.router.push(OtherUserProfileRoute(username: username));
               },
               getUserFansModel: state.getUserFans[index],

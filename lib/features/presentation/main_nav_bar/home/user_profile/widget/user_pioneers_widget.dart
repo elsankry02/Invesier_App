@@ -57,8 +57,6 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
               onTap: () {
                 final username =
                     pioneers.username ?? context.kAppLocalizations.username;
-                // ref.read(usernameProvider.notifier).state = username;
-
                 context.router.push(OtherUserProfileRoute(username: username));
               },
               getUserPioneersModel: pioneers,

@@ -2,24 +2,35 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../core/components/custom_icon_button.dart';
-import '../../../../../../core/constant/app_svgs.dart';
-import 'other_user_pop_menu_widget.dart';
-import 'user_alertdialog_widget.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
+import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
 import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/models/get/get_user_profile_model.dart';
+import 'other_user_pop_menu_widget.dart';
+import 'user_alertdialog_widget.dart';
 
 class OtherUserProfileAppBar extends ConsumerWidget {
   final GetUserProfileModel getUserProfileModel;
-  const OtherUserProfileAppBar({super.key, required this.getUserProfileModel});
+  final String imageUrl, title, subTitle;
+  final int postsCountNumber, fansCountNumber, pioneersCountNumber;
+  const OtherUserProfileAppBar({
+    required this.getUserProfileModel,
+    required this.pioneersCountNumber,
+    required this.imageUrl,
+    required this.title,
+    required this.subTitle,
+    required this.postsCountNumber,
+    required this.fansCountNumber,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, ref) {
@@ -29,17 +40,13 @@ class OtherUserProfileAppBar extends ConsumerWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Custom Icon Back
           CustomIconButton(
             icon: Icon(
               Icons.arrow_back_ios_new_rounded,
               color: AppColors.kWhite,
             ),
-            onPressed: () {
-              context.router.maybePop();
-            },
+            onPressed: () => context.router.maybePop(),
           ),
-
           Expanded(
             child: Container(
               padding: EdgeInsetsDirectional.only(end: 20),
@@ -47,8 +54,7 @@ class OtherUserProfileAppBar extends ConsumerWidget {
                 contentPadding: EdgeInsetsDirectional.zero,
                 leading: ClipOval(
                   child: CachedNetworkImage(
-                    imageUrl:
-                        getUserProfileModel.avatarUrl ?? AppImages.ImageNetwork,
+                    imageUrl: imageUrl,
                     width: context.height * 0.068,
                     height: context.height * 0.068,
                     fit: BoxFit.cover,
@@ -65,17 +71,14 @@ class OtherUserProfileAppBar extends ConsumerWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // title
                         Text(
-                          getUserProfileModel.name ??
-                              context.kAppLocalizations.name,
+                          title,
                           style: context.kTextTheme.bodySmall!.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        // subTitle
                         Text(
-                          "@${getUserProfileModel.username ?? context.kAppLocalizations.username}",
+                          subTitle,
                           style: context.kTextTheme.bodySmall!.copyWith(
                             color: AppColors.kGray,
                             fontWeight: FontWeight.w400,
@@ -103,22 +106,19 @@ class OtherUserProfileAppBar extends ConsumerWidget {
                 subtitle: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Posts
                     CustomFollowersNumberWidget(
                       padding: EdgeInsetsDirectional.only(
                         end: context.height * 0.020,
                         bottom: context.height * 0.010,
                       ),
                       title: local.posts,
-                      number: getUserProfileModel.postsCount,
+                      number: postsCountNumber,
                     ),
-                    // DividerWidget
                     CustomDividerWidget(
                       color: AppColors.kWhite,
                       height: context.height * 0.030,
                       width: context.height * 0.002,
                     ),
-                    // Fans
                     CustomFollowersNumberWidget(
                       padding: EdgeInsetsDirectional.only(
                         start: context.height * 0.020,
@@ -126,31 +126,28 @@ class OtherUserProfileAppBar extends ConsumerWidget {
                         bottom: context.height * 0.010,
                       ),
                       title: local.fans,
-                      number: getUserProfileModel.fansCount,
-                      onTap: () {
-                        context.router.push(
-                          UserConnectionsRoute(
-                            initialPage: 0,
-                            initialTab: FollowersTabType.fans,
-                            getUserProfileModel: getUserProfileModel,
+                      number: fansCountNumber,
+                      onTap:
+                          () => context.router.push(
+                            UserConnectionsRoute(
+                              initialPage: 0,
+                              initialTab: FollowersTabType.fans,
+                              getUserProfileModel: getUserProfileModel,
+                            ),
                           ),
-                        );
-                      },
                     ),
-                    // DividerWidget
                     CustomDividerWidget(
                       color: AppColors.kWhite,
                       height: context.height * 0.030,
                       width: context.height * 0.002,
                     ),
-                    // Pioneers
                     CustomFollowersNumberWidget(
                       padding: EdgeInsetsDirectional.only(
                         start: context.height * 0.020,
                         bottom: context.height * 0.010,
                       ),
                       title: local.pioneers,
-                      number: getUserProfileModel.pioneersCount,
+                      number: pioneersCountNumber,
                       onTap: () {
                         context.router.push(
                           UserConnectionsRoute(
