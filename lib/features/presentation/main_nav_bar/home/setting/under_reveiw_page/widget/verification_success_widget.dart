@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/components/custom_appbar_widget.dart';
@@ -22,7 +23,10 @@ class VerificationSuccessWidget extends StatelessWidget {
     final local = context.kAppLocalizations;
     return Column(
       children: [
-        CustomAppBarWidget(title: local.verificationrequest),
+        CustomAppBarWidget(
+          title: local.verificationrequest,
+          onPressed: () => context.router.maybePop(),
+        ),
         SizedBox(height: context.height * 0.035),
         Image.asset(imageOne),
         SizedBox(height: context.height * 0.043),

@@ -33,7 +33,10 @@ class RecentTransactionsPage extends StatelessWidget {
               top: context.height * 0.020,
             ),
             children: [
-              CustomAppBarWidget(title: local.recenttransactions),
+              CustomAppBarWidget(
+                title: local.recenttransactions,
+                onPressed: () => context.router.maybePop(),
+              ),
               SizedBox(height: context.height * 0.035),
               Text(
                 local.filterby,

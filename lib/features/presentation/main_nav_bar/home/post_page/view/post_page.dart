@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
@@ -93,7 +94,13 @@ class _PostPageState extends ConsumerState<PostPage> {
         child: ListView(
           children: [
             SizedBox(height: context.height * 0.025),
-            CustomAppBarWidget(title: context.kAppLocalizations.post),
+            CustomAppBarWidget(
+              title: context.kAppLocalizations.post,
+              onPressed: () {
+                ref.read(getPostsProvider.notifier).getPosts();
+                context.router.maybePop();
+              },
+            ),
             // Post Card Widget
             Consumer(
               builder: (context, ref, child) {

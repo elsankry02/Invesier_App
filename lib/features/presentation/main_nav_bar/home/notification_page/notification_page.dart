@@ -32,7 +32,10 @@ class NotificationPage extends StatelessWidget {
                     children: [
                       SizedBox(height: context.height * 0.025),
                       // Notification AppBar
-                      CustomAppBarWidget(title: local.notification),
+                      CustomAppBarWidget(
+                        title: local.notification,
+                        onPressed: () => context.router.maybePop(),
+                      ),
                       SizedBox(height: context.height * 0.025),
                       CustomNoPostsWidget(title: local.nonotificationsyet),
                     ],

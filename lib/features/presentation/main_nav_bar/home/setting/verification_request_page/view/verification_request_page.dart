@@ -55,7 +55,10 @@ class _VerificationRequestPageState
             child: ListView(
               padding: EdgeInsets.all(12),
               children: [
-                CustomAppBarWidget(title: local.verificationrequest),
+                CustomAppBarWidget(
+                  title: local.verificationrequest,
+                  onPressed: () => context.router.maybePop(),
+                ),
                 SizedBox(height: context.height * 0.035),
                 Image.asset(
                   AppImages.kVerification,

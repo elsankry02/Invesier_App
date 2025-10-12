@@ -34,7 +34,10 @@ class WalletPage extends StatelessWidget {
               right: context.height * 0.016,
             ),
             children: [
-              CustomAppBarWidget(title: local.wallet),
+              CustomAppBarWidget(
+                title: local.wallet,
+                onPressed: () => context.router.maybePop(),
+              ),
               SizedBox(height: context.height * 0.022),
               WalletInfoCardWidget(),
               SizedBox(height: context.height * 0.024),

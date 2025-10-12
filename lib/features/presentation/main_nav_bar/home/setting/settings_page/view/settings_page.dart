@@ -58,7 +58,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
           child: ListView(
             padding: EdgeInsets.all(20),
             children: [
-              CustomAppBarWidget(title: local.settings),
+              CustomAppBarWidget(
+                title: local.settings,
+                onPressed: () => context.router.maybePop(),
+              ),
               SizedBox(height: context.height * 0.035),
               SettingsItemWidget(
                 leading: SvgPicture.asset(AppSvgs.kShieldChecklist),

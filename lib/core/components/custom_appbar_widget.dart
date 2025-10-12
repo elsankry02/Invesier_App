@@ -1,7 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../features/data/providers/get/get_posts_provider.dart';
 
 import '../constant/app_colors.dart';
 import '../extension/extension.dart';
@@ -9,8 +7,13 @@ import 'custom_icon_button.dart';
 
 class CustomAppBarWidget extends ConsumerWidget {
   final String title;
-  const CustomAppBarWidget({super.key, required this.title});
-
+  //TODO
+  final void Function() onPressed;
+  const CustomAppBarWidget({
+    super.key,
+    required this.onPressed,
+    required this.title,
+  });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Stack(
@@ -32,10 +35,7 @@ class CustomAppBarWidget extends ConsumerWidget {
               Icons.arrow_back_ios_new_rounded,
               color: AppColors.kWhite,
             ),
-            onPressed: () {
-              context.router.maybePop();
-              ref.read(getPostsProvider.notifier).getPosts();
-            },
+            onPressed: onPressed,
           ),
         ),
       ],
