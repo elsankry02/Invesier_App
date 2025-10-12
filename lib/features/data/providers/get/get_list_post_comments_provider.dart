@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../models/get/get_list_post_comments_model.dart';
 
 import '../../../../core/constant/app_strings.dart';
+import '../../models/get/get_list_post_comments_model.dart';
 import '../provider.dart';
 
 abstract class GetListPostCommentsState {}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:invesier/core/components/custom_icon_button.dart';
-import 'package:invesier/core/constant/app_svgs.dart';
+import 'custom_icon_button.dart';
+import '../constant/app_svgs.dart';
 
 import '../constant/app_colors.dart';
 import '../extension/extension.dart';

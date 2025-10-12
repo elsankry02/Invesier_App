@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invesier/core/func/get_time_ago.dart';
+import '../func/get_time_ago.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_images.dart';
