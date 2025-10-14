@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 import 'package:pinput/pinput.dart';
 
 import '../constant/app_colors.dart';
@@ -24,9 +25,7 @@ class CustomOtpCodeField extends StatelessWidget {
         // OTP Code
         Text(
           local.otpcode,
-          style: context.kTextTheme.titleSmall!.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
+          style: AppTextTheme.kTitleSmall(context, fontWeight: FontWeight.w500),
         ),
         SizedBox(height: context.height * 0.015),
         Center(

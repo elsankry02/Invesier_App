@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
@@ -46,14 +47,13 @@ class UserConnectionsAppBar extends StatelessWidget {
         ),
         title: Text(
           getUserProfileModel.name ?? context.kAppLocalizations.name,
-          style: context.kTextTheme.bodySmall!.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+          style: AppTextTheme.kBodySmall(context, fontWeight: FontWeight.w600),
         ),
         subtitle: Text(
           "@${getUserProfileModel.username ?? context.kAppLocalizations.username}",
 
-          style: context.kTextTheme.labelLarge!.copyWith(
+          style: AppTextTheme.kLabelLarge(
+            context,
             color: AppColors.kGray,
             fontWeight: FontWeight.w400,
           ),

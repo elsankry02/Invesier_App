@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:invesier/features/data/providers/get/get_posts_provider.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/coustom_pop_menu_widget.dart';
 import '../../../../../../core/components/custom_appbar_widget.dart';
@@ -19,6 +19,7 @@ import '../../../../../data/providers/delete/delete_comment.dart';
 import '../../../../../data/providers/delete/delete_post_provider.dart';
 import '../../../../../data/providers/get/get_list_post_comments_provider.dart';
 import '../../../../../data/providers/get/get_post_provider.dart';
+import '../../../../../data/providers/get/get_posts_provider.dart';
 import '../../../../../data/providers/post/create_post_comment_provider.dart';
 
 @RoutePage()
@@ -174,7 +175,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                                 borderRadius: BorderRadius.circular(
                                   context.height * 0.008,
                                 ),
-                                style: context.kTextTheme.labelMedium!.copyWith(
+                                style: AppTextTheme.kLabelMedium(
+                                  context,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.kDivider,
                                 ),
@@ -189,7 +191,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                   return Text(
                     state.errmessage,
                     textAlign: TextAlign.center,
-                    style: context.kTextTheme.titleMedium!.copyWith(
+                    style: AppTextTheme.kTitleMedium(
+                      context,
                       fontWeight: FontWeight.w700,
                     ),
                   );
@@ -207,7 +210,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                     return Text(
                       context.kAppLocalizations.nopostcommenttodisplay,
                       textAlign: TextAlign.center,
-                      style: context.kTextTheme.titleMedium!.copyWith(
+                      style: AppTextTheme.kTitleMedium(
+                        context,
                         fontWeight: FontWeight.w700,
                       ),
                     );
@@ -251,7 +255,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                                 borderRadius: BorderRadius.circular(
                                   context.height * 0.008,
                                 ),
-                                style: context.kTextTheme.labelMedium!.copyWith(
+                                style: AppTextTheme.kLabelMedium(
+                                  context,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.kDivider,
                                 ),
@@ -266,7 +271,8 @@ class _PostPageState extends ConsumerState<PostPage> {
                   return Text(
                     state.errMessage,
                     textAlign: TextAlign.center,
-                    style: context.kTextTheme.titleMedium!.copyWith(
+                    style: AppTextTheme.kTitleMedium(
+                      context,
                       fontWeight: FontWeight.w700,
                     ),
                   );

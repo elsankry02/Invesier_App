@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../../models/get/get_list_users_model.dart';
 
 class GetListUsersService {

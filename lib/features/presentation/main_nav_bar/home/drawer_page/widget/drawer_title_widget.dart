@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/extension/extension.dart';
 
@@ -19,7 +20,8 @@ class DrawerTitleWidget extends StatelessWidget {
         // title
         child: Text(
           title,
-          style: context.kTextTheme.labelMedium!.copyWith(
+          style: AppTextTheme.kLabelMedium(
+            context,
             fontWeight: FontWeight.w400,
           ),
         ),

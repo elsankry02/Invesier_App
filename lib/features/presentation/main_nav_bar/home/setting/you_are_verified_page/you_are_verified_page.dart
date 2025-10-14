@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -45,7 +46,8 @@ class YouAreVerifiedPage extends StatelessWidget {
                   horizontal: context.height * 0.112,
                   vertical: context.height * 0.011,
                 ),
-                style: context.kTextTheme.titleMedium!.copyWith(
+                style: AppTextTheme.kTitleMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                 ),
                 onTap: () => context.router.replace(VerificationRequestRoute()),

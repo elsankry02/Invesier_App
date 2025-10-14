@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../../core/extension/extension.dart';
@@ -19,7 +20,8 @@ class ProductDisplayWidget extends StatelessWidget {
         Text(
           item.titel,
           textAlign: TextAlign.center,
-          style: context.kTextTheme.headlineMedium!.copyWith(
+          style: AppTextTheme.kHeadlineMedium(
+            context,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -28,7 +30,8 @@ class ProductDisplayWidget extends StatelessWidget {
         Text(
           item.subTitel,
           textAlign: TextAlign.center,
-          style: context.kTextTheme.titleMedium!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w400,
           ),
         ),

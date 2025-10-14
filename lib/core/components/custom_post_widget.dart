@@ -1,12 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../func/get_time_ago.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_images.dart';
 import '../constant/app_svgs.dart';
 import '../extension/extension.dart';
+import '../func/get_time_ago.dart';
 import 'custom_circuler_progress.dart';
 import 'custom_tag_button.dart';
 
@@ -96,14 +97,16 @@ class CustomPostWidget extends StatelessWidget {
                       children: [
                         Text(
                           name,
-                          style: context.kTextTheme.titleSmall!.copyWith(
+                          style: AppTextTheme.kTitleSmall(
+                            context,
                             fontWeight: FontWeight.w600,
                             color: AppColors.kWhite,
                           ),
                         ),
                         Text(
                           " • ${getTimeAgo(createdAt)}",
-                          style: context.kTextTheme.labelLarge!.copyWith(
+                          style: AppTextTheme.kLabelLarge(
+                            context,
                             fontWeight: FontWeight.w400,
                             color: AppColors.kGray,
                           ),
@@ -112,7 +115,8 @@ class CustomPostWidget extends StatelessWidget {
                     ),
                     Text(
                       username,
-                      style: context.kTextTheme.titleSmall!.copyWith(
+                      style: AppTextTheme.kTitleSmall(
+                        context,
                         fontWeight: FontWeight.w400,
                         color: AppColors.kGray,
                       ),
@@ -126,7 +130,8 @@ class CustomPostWidget extends StatelessWidget {
           //
           Text(
             content,
-            style: context.kTextTheme.titleSmall!.copyWith(
+            style: AppTextTheme.kTitleSmall(
+              context,
               fontWeight: FontWeight.w500,
               color: AppColors.kWhite,
             ),

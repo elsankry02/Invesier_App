@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/extension/extension.dart';
@@ -34,16 +35,15 @@ class _UserPioneersWidgetState extends ConsumerState<UserPioneersWidget> {
       return Text(
         state.errMessage,
         textAlign: TextAlign.center,
-        style: context.kTextTheme.titleMedium!.copyWith(
-          fontWeight: FontWeight.w700,
-        ),
+        style: AppTextTheme.kTitleMedium(context, fontWeight: FontWeight.w700),
       );
     } else if (state is GetUserPioneersSuccess) {
       if (state.getUserPioneers.isEmpty) {
         return Text(
           context.kAppLocalizations.nopioneersfound,
           textAlign: TextAlign.center,
-          style: context.kTextTheme.titleMedium!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w700,
           ),
         );

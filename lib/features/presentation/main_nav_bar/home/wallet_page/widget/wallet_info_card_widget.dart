@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_images.dart';
@@ -32,14 +33,16 @@ class WalletInfoCardWidget extends StatelessWidget {
             children: [
               Text(
                 local.wallet,
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w700,
                   color: AppColors.kOceanGreen,
                 ),
               ),
               Text(
                 "Mohamed Elsankary",
-                style: context.kTextTheme.titleLarge!.copyWith(
+                style: AppTextTheme.kTitleLarge(
+                  context,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -48,14 +51,16 @@ class WalletInfoCardWidget extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: "12,122.30 ",
-                      style: context.kTextTheme.headlineSmall!.copyWith(
+                      style: AppTextTheme.kHeadlineSmall(
+                        context,
                         fontWeight: FontWeight.w700,
                         color: AppColors.kNum,
                       ),
                     ),
                     TextSpan(
                       text: local.invees,
-                      style: context.kTextTheme.labelSmall!.copyWith(
+                      style: AppTextTheme.kLabelSmall(
+                        context,
                         fontWeight: FontWeight.w300,
                         color: AppColors.kInvee,
                       ),

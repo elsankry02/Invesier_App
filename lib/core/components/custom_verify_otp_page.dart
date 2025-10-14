@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../features/data/providers/post/resend_otp_provider.dart';
 import '../../features/data/providers/post/verify_otp_provider.dart';
@@ -159,7 +160,8 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                     children: [
                       TextSpan(
                         text: local.entertheotpcodesent,
-                        style: context.kTextTheme.titleSmall!.copyWith(
+                        style: AppTextTheme.kTitleSmall(
+                          context,
                           color: AppColors.kBoulder,
                           fontWeight: FontWeight.w600,
                         ),
@@ -169,9 +171,10 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                             widget.contactType == ContactType.email
                                 ? widget.emailController.text
                                 : widget.phoneController.text,
-                        style: context.kTextTheme.titleMedium!.copyWith(
-                          color: AppColors.kBoulder,
+                        style: AppTextTheme.kTitleMedium(
+                          context,
                           fontWeight: FontWeight.w900,
+                          color: AppColors.kBoulder,
                         ),
                       ),
                     ],
@@ -214,7 +217,8 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                     ? Text(
                       textAlign: TextAlign.center,
                       '${local.resendotpseconds} $secondsRemaining )',
-                      style: context.kTextTheme.titleMedium!.copyWith(
+                      style: AppTextTheme.kTitleMedium(
+                        context,
                         fontWeight: FontWeight.w400,
                       ),
                     )
@@ -222,7 +226,8 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                       onPressed: resendCode,
                       child: Text(
                         local.resend,
-                        style: context.kTextTheme.titleMedium!.copyWith(
+                        style: AppTextTheme.kTitleMedium(
+                          context,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -240,7 +245,8 @@ class _CustomConfirmOtpPageState extends ConsumerState<CustomVerifyOtpPage> {
                   padding: EdgeInsetsDirectional.symmetric(
                     vertical: context.height * 0.013,
                   ),
-                  style: context.kTextTheme.titleMedium!.copyWith(
+                  style: AppTextTheme.kTitleMedium(
+                    context,
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,
                   ),

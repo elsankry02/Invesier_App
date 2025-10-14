@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_divider_widget.dart';
@@ -73,13 +74,15 @@ class OtherUserProfileAppBar extends ConsumerWidget {
                       children: [
                         Text(
                           title,
-                          style: context.kTextTheme.bodySmall!.copyWith(
+                          style: AppTextTheme.kBodySmall(
+                            context,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
                           subTitle,
-                          style: context.kTextTheme.bodySmall!.copyWith(
+                          style: AppTextTheme.kBodySmall(
+                            context,
                             color: AppColors.kGray,
                             fontWeight: FontWeight.w400,
                           ),

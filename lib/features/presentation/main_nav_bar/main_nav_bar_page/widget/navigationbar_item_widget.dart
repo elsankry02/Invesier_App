@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/extension/extension.dart';
@@ -41,7 +42,8 @@ class NavigationBarItemWidget extends StatelessWidget {
             // Title
             Text(
               title,
-              style: context.kTextTheme.labelSmall!.copyWith(
+              style: AppTextTheme.kLabelSmall(
+                context,
                 fontWeight: FontWeight.w400,
                 color:
                     selectedIndex == index ? AppColors.kNum : AppColors.kWhite,

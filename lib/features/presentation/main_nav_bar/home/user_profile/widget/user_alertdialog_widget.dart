@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -35,7 +36,8 @@ class UserAlertDialogWidget extends StatelessWidget {
           // title
           Text(
             title,
-            style: context.kTextTheme.titleSmall!.copyWith(
+            style: AppTextTheme.kTitleSmall(
+              context,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -47,7 +49,8 @@ class UserAlertDialogWidget extends StatelessWidget {
                 title: local.no,
                 backGroundColor: AppColors.kBackGround,
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
                 ),
@@ -55,9 +58,7 @@ class UserAlertDialogWidget extends StatelessWidget {
                   horizontal: context.height * 0.034,
                   vertical: context.height * 0.006,
                 ),
-                onTap: () {
-                  context.router.maybePop();
-                },
+                onTap: () => context.router.maybePop(),
               ),
               CustomPrimaryButton(
                 title: local.yesBlock,
@@ -67,7 +68,8 @@ class UserAlertDialogWidget extends StatelessWidget {
                   vertical: context.height * 0.006,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
                 ),

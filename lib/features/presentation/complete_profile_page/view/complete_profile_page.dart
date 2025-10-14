@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
@@ -140,7 +141,8 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 // Text: Username
                 Text(
                   local.name,
-                  style: context.kTextTheme.labelLarge!.copyWith(
+                  style: AppTextTheme.kLabelLarge(
+                    context,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -148,7 +150,8 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 // Username FormField
                 CustomTextFormField(
                   hintText: local.namemin,
-                  hintStyle: context.kTextTheme.titleSmall!.copyWith(
+                  hintStyle: AppTextTheme.kTitleSmall(
+                    context,
                     color: AppColors.kGray,
                   ),
                   controller: nameController,
@@ -164,7 +167,8 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 SizedBox(height: context.height * 0.022),
                 Text(
                   local.username,
-                  style: context.kTextTheme.labelLarge!.copyWith(
+                  style: AppTextTheme.kLabelLarge(
+                    context,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -172,9 +176,11 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                 // Fullname FormField
                 CustomTextFormField(
                   hintText: local.usernamemin,
-                  hintStyle: context.kTextTheme.titleSmall!.copyWith(
+                  hintStyle: AppTextTheme.kTitleSmall(
+                    context,
                     color: AppColors.kGray,
                   ),
+
                   controller: usernameController,
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -197,7 +203,8 @@ class _CreateAnAccountPageState extends ConsumerState<CompleteProfilePage> {
                   padding: EdgeInsetsDirectional.symmetric(
                     vertical: context.height * 0.013,
                   ),
-                  style: context.kTextTheme.titleMedium!.copyWith(
+                  style: AppTextTheme.kTitleMedium(
+                    context,
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,
                   ),

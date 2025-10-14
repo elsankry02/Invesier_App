@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/constant/app_colors.dart';
@@ -90,7 +91,8 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                   ),
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   borderRadius: BorderRadius.circular(60),
-                  style: context.kTextTheme.titleMedium!.copyWith(
+                  style: AppTextTheme.kTitleMedium(
+                    context,
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,
                   ),

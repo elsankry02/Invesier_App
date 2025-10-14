@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../extension/extension.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 class CustomTapRichText extends StatelessWidget {
   final String textSpanOne, textSpanTwo;
@@ -21,14 +20,16 @@ class CustomTapRichText extends StatelessWidget {
           // textSpan One
           TextSpan(
             text: textSpanOne,
-            style: context.kTextTheme.titleSmall!.copyWith(
+            style: AppTextTheme.kTitleSmall(
+              context,
               fontWeight: FontWeight.w600,
             ),
           ),
           // textSpan Two
           TextSpan(
             text: textSpanTwo,
-            style: context.kTextTheme.titleSmall!.copyWith(
+            style: AppTextTheme.kTitleSmall(
+              context,
               fontWeight: FontWeight.w600,
             ),
             recognizer: TapGestureRecognizer()..onTap = onTap,

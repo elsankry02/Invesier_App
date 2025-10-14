@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -118,7 +119,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         // title
                         title: Text(
                           user.name,
-                          style: context.kTextTheme.labelMedium!.copyWith(
+                          style: AppTextTheme.kLabelMedium(
+                            context,
                             fontWeight: FontWeight.w500,
                             color: AppColors.kGray,
                           ),
@@ -126,7 +128,8 @@ class _DrawerPageState extends ConsumerState<DrawerPage> {
                         // subtitle
                         subtitle: Text(
                           user.email,
-                          style: context.kTextTheme.labelMedium!.copyWith(
+                          style: AppTextTheme.kLabelMedium(
+                            context,
                             fontWeight: FontWeight.w400,
                           ),
                         ),

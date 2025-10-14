@@ -3,16 +3,17 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
+
 import '../../../../../../core/components/custom_button_sheet_widget.dart';
 import '../../../../../../core/components/custom_circuler_progress.dart';
-import '../../../../../../core/constant/app_images.dart';
-import '../../../../../../core/constant/app_svgs.dart';
-
 import '../../../../../../core/components/custom_divider_widget.dart';
 import '../../../../../../core/components/custom_followers_number_widget.dart';
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/constant/app_enums.dart';
+import '../../../../../../core/constant/app_images.dart';
+import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
@@ -68,14 +69,16 @@ class PersonalAppBarWidget extends ConsumerWidget {
                           // title
                           Text(
                             user.name,
-                            style: context.kTextTheme.labelMedium!.copyWith(
+                            style: AppTextTheme.kLabelMedium(
+                              context,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           // subTitle
                           Text(
                             "@${user.username}",
-                            style: context.kTextTheme.labelMedium!.copyWith(
+                            style: AppTextTheme.kLabelMedium(
+                              context,
                               color: AppColors.kGray,
                               fontWeight: FontWeight.w400,
                             ),

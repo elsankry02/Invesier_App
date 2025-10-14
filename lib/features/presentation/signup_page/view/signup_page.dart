@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../core/components/custom_contact_type_field.dart';
 import '../../../../core/components/custom_primary_button.dart';
@@ -95,7 +96,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                 Text(
                   textAlign: TextAlign.center,
                   local.createanaccount,
-                  style: context.kTextTheme.headlineSmall!.copyWith(
+                  style: AppTextTheme.kHeadlineSmall(
+                    context,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -121,7 +123,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                         //  Email
                         CustomPrimaryButton(
                           title: local.email,
-                          style: context.kTextTheme.titleMedium!.copyWith(
+                          style: AppTextTheme.kTitleMedium(
+                            context,
                             color:
                                 contactType == ContactType.email
                                     ? AppColors.kWhite
@@ -155,7 +158,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                         // Phone
                         CustomPrimaryButton(
                           title: local.phone,
-                          style: context.kTextTheme.titleMedium!.copyWith(
+                          style: AppTextTheme.kTitleMedium(
+                            context,
                             color:
                                 contactType == ContactType.phone
                                     ? AppColors.kWhite
@@ -252,7 +256,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                   ),
                   padding: EdgeInsetsDirectional.symmetric(vertical: 13),
                   borderRadius: BorderRadius.circular(60),
-                  style: context.kTextTheme.titleMedium!.copyWith(
+                  style: AppTextTheme.kTitleMedium(
+                    context,
                     fontWeight: FontWeight.w600,
                     color: AppColors.kWhite,
                   ),

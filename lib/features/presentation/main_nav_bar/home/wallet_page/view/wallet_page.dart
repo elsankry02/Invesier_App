@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
@@ -43,7 +44,8 @@ class WalletPage extends StatelessWidget {
               SizedBox(height: context.height * 0.024),
               CustomPrimaryButton(
                 title: local.deposit,
-                style: context.kTextTheme.titleSmall!.copyWith(
+                style: AppTextTheme.kTitleSmall(
+                  context,
                   fontWeight: FontWeight.w700,
                 ),
                 backGroundColor: AppColors.kNum,
@@ -57,13 +59,15 @@ class WalletPage extends StatelessWidget {
                 children: [
                   CustomPrimaryButton(
                     title: local.recenttransactions,
-                    style: context.kTextTheme.titleSmall!.copyWith(
+                    style: AppTextTheme.kTitleSmall(
+                      context,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   CustomPrimaryButton(
                     title: local.viewall,
-                    style: context.kTextTheme.labelSmall!.copyWith(
+                    style: AppTextTheme.kLabelSmall(
+                      context,
                       fontWeight: FontWeight.w400,
                     ),
                     onTap: () => context.router.push(RecentTransactionsRoute()),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
@@ -42,7 +43,8 @@ class CustomPopMenuWidget extends StatelessWidget {
                 SizedBox(width: context.height * 0.007),
                 Text(
                   pinTitle,
-                  style: context.kTextTheme.labelLarge!.copyWith(
+                  style: AppTextTheme.kLabelLarge(
+                    context,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -59,9 +61,10 @@ class CustomPopMenuWidget extends StatelessWidget {
                 SizedBox(width: context.height * 0.007),
                 Text(
                   deleteTitle,
-                  style: context.kTextTheme.labelLarge!.copyWith(
-                    color: AppColors.kRed,
+                  style: AppTextTheme.kLabelLarge(
+                    context,
                     fontWeight: FontWeight.w600,
+                    color: AppColors.kRed,
                   ),
                 ),
               ],

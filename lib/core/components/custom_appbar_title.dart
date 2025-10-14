@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../extension/extension.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 class CustomAppBarTitle extends StatelessWidget {
   final String title;
@@ -10,9 +9,7 @@ class CustomAppBarTitle extends StatelessWidget {
     return Text(
       textAlign: TextAlign.center,
       title,
-      style: context.kTextTheme.titleLarge!.copyWith(
-        fontWeight: FontWeight.w600,
-      ),
+      style: AppTextTheme.kTitleLarge(context, fontWeight: FontWeight.w600),
     );
   }
 }

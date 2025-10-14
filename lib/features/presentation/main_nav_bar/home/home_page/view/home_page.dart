@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../../core/components/custom_primary_button.dart';
-import '../../../../../../core/constant/app_colors.dart';
-import '../../../../../../core/constant/app_enums.dart';
-import '../../../../../../core/extension/extension.dart';
-import '../../foryou_page/view/foryou_page.dart';
-import '../../pioneers_page/pioneers_page.dart';
-import '../widget/invesier_appbar_widget.dart';
+import 'package:invesier/core/components/custom_primary_button.dart';
+import 'package:invesier/core/constant/app_colors.dart';
+import 'package:invesier/core/constant/app_enums.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
+import 'package:invesier/core/extension/extension.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/foryou_page/view/foryou_page.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/home_page/widget/invesier_appbar_widget.dart';
+import 'package:invesier/features/presentation/main_nav_bar/home/pioneers_page/pioneers_page.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -40,7 +40,8 @@ class _HomePageState extends State<HomePage> {
                       // For You
                       CustomPrimaryButton(
                         title: local.foryou,
-                        style: context.kTextTheme.titleSmall!.copyWith(
+                        style: AppTextTheme.kTitleSmall(
+                          context,
                           fontWeight: FontWeight.w900,
                           color:
                               enumView == EnumView.foryou
@@ -72,7 +73,8 @@ class _HomePageState extends State<HomePage> {
                       // Pioneers
                       CustomPrimaryButton(
                         title: local.pioneers,
-                        style: context.kTextTheme.titleSmall!.copyWith(
+                        style: AppTextTheme.kTitleSmall(
+                          context,
                           fontWeight: FontWeight.w900,
                           color:
                               enumView == EnumView.pioneers

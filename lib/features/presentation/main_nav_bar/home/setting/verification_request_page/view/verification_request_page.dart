@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../../core/components/custom_primary_button.dart';
@@ -100,7 +101,8 @@ class _VerificationRequestPageState
                 SizedBox(height: context.height * 0.024),
                 Text(
                   local.uploadidpassport,
-                  style: context.kTextTheme.titleMedium!.copyWith(
+                  style: AppTextTheme.kTitleMedium(
+                    context,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -122,8 +124,9 @@ class _VerificationRequestPageState
                     horizontal: context.height * 0.112,
                     vertical: context.height * 0.011,
                   ),
-                  style: context.kTextTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.w500,
+                  style: AppTextTheme.kTitleMedium(
+                    context,
+                    fontWeight: FontWeight.w600,
                   ),
                   onTap: () => context.router.replace(UnderReveiwRoute()),
                 ),

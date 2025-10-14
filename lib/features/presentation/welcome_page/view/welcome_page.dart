@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../core/components/custom_primary_button.dart';
 import '../../../../core/components/custom_tap_richtext.dart';
@@ -46,7 +47,8 @@ class WelcomePage extends StatelessWidget {
               margin: EdgeInsetsDirectional.symmetric(
                 horizontal: context.height * 0.043,
               ),
-              style: context.kTextTheme.titleMedium!.copyWith(
+              style: AppTextTheme.kTitleMedium(
+                context,
                 fontWeight: FontWeight.w600,
                 color: AppColors.kWhite,
               ),
@@ -68,7 +70,8 @@ class WelcomePage extends StatelessWidget {
               margin: EdgeInsetsDirectional.symmetric(
                 horizontal: context.height * 0.043,
               ),
-              style: context.kTextTheme.titleMedium!.copyWith(
+              style: AppTextTheme.kTitleMedium(
+                context,
                 fontWeight: FontWeight.w600,
                 color: AppColors.kEucalyptus,
               ),
@@ -84,7 +87,7 @@ class WelcomePage extends StatelessWidget {
               onTap: () {
                 context.router.push(SignupRoute());
               },
-            ), 
+            ),
           ],
         ),
       ),

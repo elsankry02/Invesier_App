@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constant/app_text_theme.dart';
 import '../extension/extension.dart';
 import 'custom_text_form_field.dart';
 
@@ -31,9 +32,7 @@ class CustomContactTypeFieldWidget extends StatelessWidget {
         // Phone number
         Text(
           title,
-          style: context.kTextTheme.labelLarge!.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+          style: AppTextTheme.kLabelLarge(context, fontWeight: FontWeight.w600),
         ),
         SizedBox(height: context.height * 0.004),
         CustomTextFormField(

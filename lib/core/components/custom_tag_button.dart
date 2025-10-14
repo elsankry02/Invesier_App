@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../extension/extension.dart';
 
@@ -33,7 +34,8 @@ class CustomTagButton extends StatelessWidget {
             // title
             Text(
               title,
-              style: context.kTextTheme.labelMedium!.copyWith(
+              style: AppTextTheme.kLabelMedium(
+                context,
                 color: titleColor,
                 fontWeight: FontWeight.w400,
               ),

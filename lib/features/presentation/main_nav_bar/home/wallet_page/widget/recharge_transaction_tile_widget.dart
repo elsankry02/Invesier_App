@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/constant/app_colors.dart';
 import '../../../../../../core/extension/extension.dart';
@@ -27,20 +28,23 @@ class RechargeTransactionTileWidget extends StatelessWidget {
         leading: SvgPicture.asset(leading),
         title: Text(
           title,
-          style: context.kTextTheme.labelMedium!.copyWith(
+          style: AppTextTheme.kLabelMedium(
+            context,
             fontWeight: FontWeight.w500,
           ),
         ),
         subtitle: Text(
           subtitle,
-          style: context.kTextTheme.labelSmall!.copyWith(
+          style: AppTextTheme.kLabelSmall(
+            context,
             color: AppColors.kBoulder,
             fontWeight: FontWeight.w400,
           ),
         ),
         trailing: Text(
           trailing,
-          style: context.kTextTheme.labelMedium!.copyWith(
+          style: AppTextTheme.kLabelMedium(
+            context,
             color: color,
             fontWeight: FontWeight.w600,
           ),

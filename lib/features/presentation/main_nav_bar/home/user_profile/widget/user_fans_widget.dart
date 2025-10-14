@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/components/custom_no_posts_widget.dart';
@@ -34,7 +35,8 @@ class _UserFansWidgetState extends ConsumerState<UserFansWidget> {
         return Text(
           context.kAppLocalizations.noFansFound,
           textAlign: TextAlign.center,
-          style: context.kTextTheme.titleMedium!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w700,
           ),
         );

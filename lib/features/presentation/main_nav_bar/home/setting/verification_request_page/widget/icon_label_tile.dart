@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/constant/app_colors.dart';
 import '../../../../../../../core/extension/extension.dart';
@@ -23,7 +24,8 @@ class IconLabelTile extends StatelessWidget {
           SvgPicture.asset(svg),
           Text(
             title,
-            style: context.kTextTheme.titleMedium!.copyWith(
+            style: AppTextTheme.kTitleMedium(
+              context,
               fontWeight: FontWeight.w600,
             ),
           ),

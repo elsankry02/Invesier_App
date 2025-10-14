@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 import 'package:lottie/lottie.dart';
 
 import '../constant/app_lotties.dart';
-import '../extension/extension.dart';
 
 class CustomNoPostsWidget extends StatelessWidget {
   final String title;
@@ -16,7 +16,8 @@ class CustomNoPostsWidget extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.center,
-          style: context.kTextTheme.titleMedium!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w700,
           ),
         ),

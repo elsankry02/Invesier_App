@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../extension/extension.dart';
 
@@ -29,7 +30,8 @@ class CustomInkwelButtonWidget extends StatelessWidget {
             Text(
               // title
               title,
-              style: context.kTextTheme.titleMedium!.copyWith(
+              style: AppTextTheme.kTitleMedium(
+                context,
                 fontWeight: FontWeight.w700,
               ),
             ),

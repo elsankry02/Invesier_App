@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -34,13 +35,12 @@ class PersonalFollowersAppBarWidget extends StatelessWidget {
       ),
       title: Text(
         userModel.name,
-        style: context.kTextTheme.bodySmall!.copyWith(
-          fontWeight: FontWeight.w600,
-        ),
+        style: AppTextTheme.kBodySmall(context, fontWeight: FontWeight.w600),
       ),
       subtitle: Text(
         userModel.username,
-        style: context.kTextTheme.bodySmall!.copyWith(
+        style: AppTextTheme.kBodySmall(
+          context,
           color: AppColors.kGray,
           fontWeight: FontWeight.w400,
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/components/custom_text_form_field.dart';
 import '../../../../../../../core/extension/extension.dart';
@@ -20,7 +21,8 @@ class LabeledTextField extends StatelessWidget {
       children: [
         Text(
           joptile,
-          style: context.kTextTheme.titleMedium!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w600,
           ),
         ),

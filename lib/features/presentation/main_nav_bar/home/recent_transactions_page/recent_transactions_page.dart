@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../core/components/custom_primary_button.dart';
@@ -40,7 +41,8 @@ class RecentTransactionsPage extends StatelessWidget {
               SizedBox(height: context.height * 0.035),
               Text(
                 local.filterby,
-                style: context.kTextTheme.labelLarge!.copyWith(
+                style: AppTextTheme.kLabelLarge(
+                  context,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -50,7 +52,8 @@ class RecentTransactionsPage extends StatelessWidget {
                 children: [
                   CustomPrimaryButton(
                     title: local.price,
-                    style: context.kTextTheme.labelLarge!.copyWith(
+                    style: AppTextTheme.kLabelLarge(
+                      context,
                       fontWeight: FontWeight.w500,
                     ),
                     padding: EdgeInsets.symmetric(
@@ -64,7 +67,8 @@ class RecentTransactionsPage extends StatelessWidget {
                   ),
                   CustomPrimaryButton(
                     title: local.date,
-                    style: context.kTextTheme.labelLarge!.copyWith(
+                    style: AppTextTheme.kLabelLarge(
+                      context,
                       fontWeight: FontWeight.w500,
                     ),
                     padding: EdgeInsets.symmetric(
@@ -78,7 +82,8 @@ class RecentTransactionsPage extends StatelessWidget {
                   ),
                   CustomPrimaryButton(
                     title: local.invees,
-                    style: context.kTextTheme.labelLarge!.copyWith(
+                    style: AppTextTheme.kLabelLarge(
+                      context,
                       fontWeight: FontWeight.w500,
                     ),
                     padding: EdgeInsets.symmetric(

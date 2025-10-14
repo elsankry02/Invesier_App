@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/components/custom_primary_button.dart';
@@ -30,7 +31,8 @@ class ForYouDialogWidget extends StatelessWidget {
           // title
           Text(
             local.reportthispostandblocktheaccount,
-            style: context.kTextTheme.titleSmall!.copyWith(
+            style: AppTextTheme.kTitleSmall(
+              context,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -47,7 +49,8 @@ class ForYouDialogWidget extends StatelessWidget {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
                 ),
@@ -65,7 +68,8 @@ class ForYouDialogWidget extends StatelessWidget {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
                 ),

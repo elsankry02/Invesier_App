@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../core/extension/extension.dart';
 
@@ -19,15 +20,14 @@ class SignUpRichTextWidget extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: context.kTextTheme.labelMedium!.copyWith(
-          fontWeight: FontWeight.w300,
-        ),
+        style: AppTextTheme.kLabelMedium(context, fontWeight: FontWeight.w300),
         children: [
           TextSpan(text: local.bycontinuingyouagreeto),
           // Terms of Use
           TextSpan(
             text: local.termsofuse,
-            style: context.kTextTheme.labelMedium!.copyWith(
+            style: AppTextTheme.kLabelMedium(
+              context,
               fontWeight: FontWeight.w500,
             ),
             recognizer: TapGestureRecognizer()..onTap = termsOfUseOnTap,
@@ -36,7 +36,8 @@ class SignUpRichTextWidget extends StatelessWidget {
           // Privacy Policy.
           TextSpan(
             text: local.privacypolicy,
-            style: context.kTextTheme.labelMedium!.copyWith(
+            style: AppTextTheme.kLabelMedium(
+              context,
               fontWeight: FontWeight.w500,
             ),
             recognizer: TapGestureRecognizer()..onTap = privacyPolicyOnTap,

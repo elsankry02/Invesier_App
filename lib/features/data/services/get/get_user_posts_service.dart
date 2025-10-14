@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../../models/get/get_user_posts_model;.dart';
 
 class GetUserPostsService {

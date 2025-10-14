@@ -8,6 +8,7 @@ import '../../../core/components/custom_social_auth_button.dart';
 import '../../../core/components/custom_tap_richtext.dart';
 import '../../../core/constant/app_colors.dart';
 import '../../../core/constant/app_enums.dart';
+import '../../../core/constant/app_text_theme.dart';
 import '../../../core/extension/extension.dart';
 import '../../../core/func/show_top_snack_bar.dart';
 import '../../../core/router/router.dart';
@@ -92,7 +93,8 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                 Text(
                   textAlign: TextAlign.center,
                   local.welcometoinvesier,
-                  style: context.kTextTheme.headlineSmall!.copyWith(
+                  style: AppTextTheme.kHeadlineSmall(
+                    context,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -116,7 +118,8 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                         // Email
                         CustomPrimaryButton(
                           title: local.email,
-                          style: context.kTextTheme.titleMedium!.copyWith(
+                          style: AppTextTheme.kTitleMedium(
+                            context,
                             color:
                                 contactType == ContactType.email
                                     ? AppColors.kWhite
@@ -150,13 +153,15 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                         // Phone
                         CustomPrimaryButton(
                           title: local.phone,
-                          style: context.kTextTheme.titleMedium!.copyWith(
+                          style: AppTextTheme.kTitleMedium(
+                            context,
                             color:
                                 contactType == ContactType.phone
                                     ? AppColors.kWhite
                                     : AppColors.kTurquoiseBlue,
                             fontWeight: FontWeight.w600,
                           ),
+
                           padding: EdgeInsets.symmetric(
                             vertical: context.height * 0.001,
                             horizontal: context.height * 0.052,
@@ -247,9 +252,10 @@ class _SignupPageState extends ConsumerState<LoginPage> {
                     vertical: context.height * 0.013,
                   ),
                   borderRadius: BorderRadius.circular(60),
-                  style: context.kTextTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.w600,
+                  style: AppTextTheme.kTitleMedium(
+                    context,
                     color: AppColors.kWhite,
+                    fontWeight: FontWeight.w600,
                   ),
                   onTap: () => logIn(),
                 ),

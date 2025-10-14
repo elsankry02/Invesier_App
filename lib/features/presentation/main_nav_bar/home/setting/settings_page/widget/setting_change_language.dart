@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../../../core/constant/app_colors.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
+import '../../../../../../../core/constant/app_colors.dart';
 import '../../../../../../../core/constant/app_enums.dart';
 import '../../../../../../../core/extension/extension.dart';
 import '../../../../../../data/providers/localization_provider.dart';
@@ -41,7 +42,8 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
             ListTile(
               title: Text(
                 "English",
-                style: context.kTextTheme.titleMedium!.copyWith(
+                style: AppTextTheme.kTitleMedium(
+                  context,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -63,7 +65,8 @@ class _SettingLanguageDialogState extends ConsumerState<SettingChangeLanguage> {
             ListTile(
               title: Text(
                 "Arabic",
-                style: context.kTextTheme.titleMedium!.copyWith(
+                style: AppTextTheme.kTitleMedium(
+                  context,
                   fontWeight: FontWeight.w700,
                 ),
               ),

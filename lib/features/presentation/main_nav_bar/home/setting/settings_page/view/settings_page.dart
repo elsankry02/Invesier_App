@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../../core/constant/app_colors.dart';
@@ -68,7 +69,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                 title: local.verificationrequest,
                 subtitle: Text(
                   local.removeadsenjoyinvesierasyouwish,
-                  style: context.kTextTheme.labelMedium!.copyWith(
+                  style: AppTextTheme.kLabelMedium(
+                    context,
                     color: AppColors.kBoulder,
                   ),
                 ),
@@ -118,7 +120,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             title: Text(local.confirm),
                             content: Text(
                               local.areyousureyouwanttodeleteyouraccount,
-                              style: context.kTextTheme.labelMedium!.copyWith(
+                              style: AppTextTheme.kLabelMedium(
+                                context,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -127,19 +130,21 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 onPressed: () => context.router.maybePop(),
                                 child: Text(
                                   local.cancel,
-                                  style: context.kTextTheme.labelLarge!
-                                      .copyWith(fontWeight: FontWeight.w500),
+                                  style: AppTextTheme.kLabelLarge(
+                                    context,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                               TextButton(
                                 onPressed: () => deleteAccount(),
                                 child: Text(
                                   local.delete,
-                                  style: context.kTextTheme.labelLarge!
-                                      .copyWith(
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.kRedTwo,
-                                      ),
+                                  style: AppTextTheme.kLabelLarge(
+                                    context,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.kRedTwo,
+                                  ),
                                 ),
                               ),
                             ],

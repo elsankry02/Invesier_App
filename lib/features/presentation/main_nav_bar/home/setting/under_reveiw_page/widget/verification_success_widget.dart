@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/components/custom_appbar_widget.dart';
 import '../../../../../../../core/components/custom_primary_button.dart';
@@ -39,7 +40,8 @@ class VerificationSuccessWidget extends StatelessWidget {
         Text(
           textAlign: TextAlign.center,
           title,
-          style: context.kTextTheme.titleMedium!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -53,7 +55,8 @@ class VerificationSuccessWidget extends StatelessWidget {
             end: AlignmentGeometry.bottomLeft,
           ),
           title: subTitle,
-          style: context.kTextTheme.titleSmall!.copyWith(
+          style: AppTextTheme.kTitleMedium(
+            context,
             fontWeight: FontWeight.w600,
           ),
           onTap: onTap,

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../constant/app_colors.dart';
-import '../extension/extension.dart';
 import 'custom_icon_button.dart';
 
 class CustomAppBarWidget extends ConsumerWidget {
   final String title;
-  //TODO
-  final void Function() onPressed;
+
+  final void Function()? onPressed;
   const CustomAppBarWidget({
     super.key,
     required this.onPressed,
@@ -23,9 +23,7 @@ class CustomAppBarWidget extends ConsumerWidget {
         Text(
           textAlign: TextAlign.center,
           title,
-          style: context.kTextTheme.titleLarge!.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+          style: AppTextTheme.kTitleLarge(context, fontWeight: FontWeight.w600),
         ),
         // icon
         Align(

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -18,9 +19,7 @@ class PostAppBarWidget extends StatelessWidget {
         // titel
         Text(
           local.addpost,
-          style: context.kTextTheme.titleSmall!.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+          style: AppTextTheme.kTitleSmall(context, fontWeight: FontWeight.w600),
         ),
         // icon
         CustomIconButton(

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -36,13 +37,12 @@ class UserFansTileWidget extends ConsumerWidget {
       ),
       title: Text(
         getUserFansModel.name ?? context.kAppLocalizations.name,
-        style: context.kTextTheme.titleSmall!.copyWith(
-          fontWeight: FontWeight.w600,
-        ),
+        style: AppTextTheme.kTitleSmall(context, fontWeight: FontWeight.w600),
       ),
       subtitle: Text(
         "@${getUserFansModel.username ?? context.kAppLocalizations.username}",
-        style: context.kTextTheme.titleSmall!.copyWith(
+        style: AppTextTheme.kTitleSmall(
+          context,
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,
         ),
@@ -58,7 +58,8 @@ class UserFansTileWidget extends ConsumerWidget {
         ),
         child: Text(
           context.kAppLocalizations.fans,
-          style: context.kTextTheme.labelMedium!.copyWith(
+          style: AppTextTheme.kLabelMedium(
+            context,
             color: AppColors.kWhite,
             fontWeight: FontWeight.w500,
           ),

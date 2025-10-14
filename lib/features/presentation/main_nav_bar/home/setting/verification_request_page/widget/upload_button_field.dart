@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../../core/constant/app_colors.dart';
@@ -14,9 +15,7 @@ class UploadButtonField extends StatelessWidget {
     return CustomPrimaryButton(
       title: title,
       margin: EdgeInsets.only(bottom: context.height * 0.016),
-      style: context.kTextTheme.titleMedium!.copyWith(
-        fontWeight: FontWeight.w600,
-      ),
+      style: AppTextTheme.kTitleMedium(context, fontWeight: FontWeight.w600),
       borderRadius: BorderRadius.circular(10),
       border: Border.all(color: AppColors.kBorder),
       backGroundColor: AppColors.kDivider,

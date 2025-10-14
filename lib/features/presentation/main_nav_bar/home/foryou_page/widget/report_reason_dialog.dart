@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_primary_button.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -45,7 +46,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                 children: [
                   Text(
                     local.reportreasons,
-                    style: context.kTextTheme.titleSmall!.copyWith(
+                    style: AppTextTheme.kTitleSmall(
+                      context,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -71,7 +73,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color:
                       isSelectedOne == false
@@ -103,10 +106,11 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedTwo == false
+                      isSelectedOne == false
                           ? AppColors.kBackGround
                           : AppColors.kWhite,
                 ),
@@ -135,10 +139,11 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedThree == false
+                      isSelectedOne == false
                           ? AppColors.kBackGround
                           : AppColors.kWhite,
                 ),
@@ -168,10 +173,11 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedFour == false
+                      isSelectedOne == false
                           ? AppColors.kBackGround
                           : AppColors.kWhite,
                 ),
@@ -201,10 +207,11 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedFive == false
+                      isSelectedOne == false
                           ? AppColors.kBackGround
                           : AppColors.kWhite,
                 ),
@@ -235,10 +242,11 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color:
-                      isSelectedSix == false
+                      isSelectedOne == false
                           ? AppColors.kBackGround
                           : AppColors.kWhite,
                 ),
@@ -258,7 +266,8 @@ class _ReportReasonDialogState extends State<ReportReasonDialog> {
                   vertical: context.height * 0.004,
                 ),
                 borderRadius: BorderRadius.circular(31),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                   color: AppColors.kWhite,
                 ),

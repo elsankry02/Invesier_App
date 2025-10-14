@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../core/components/custom_circuler_progress.dart';
 import '../../../../../../core/constant/app_colors.dart';
@@ -30,13 +31,12 @@ class SearchTileWidget extends StatelessWidget {
       ),
       title: Text(
         getListUsers.name ?? context.kAppLocalizations.name,
-        style: context.kTextTheme.titleSmall!.copyWith(
-          fontWeight: FontWeight.w600,
-        ),
+        style: AppTextTheme.kTitleSmall(context, fontWeight: FontWeight.w600),
       ),
       subtitle: Text(
         "@${getListUsers.username}",
-        style: context.kTextTheme.titleSmall!.copyWith(
+        style: AppTextTheme.kTitleSmall(
+          context,
           color: AppColors.kDarkenText,
           fontWeight: FontWeight.w400,
         ),
@@ -52,7 +52,8 @@ class SearchTileWidget extends StatelessWidget {
         ),
         child: Text(
           context.kAppLocalizations.chase,
-          style: context.kTextTheme.labelMedium!.copyWith(
+          style: AppTextTheme.kLabelMedium(
+            context,
             color: AppColors.kWhite,
             fontWeight: FontWeight.w500,
           ),

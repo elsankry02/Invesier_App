@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/constant/app_colors.dart';
 import '../../../../../../../core/extension/extension.dart';
@@ -38,7 +39,8 @@ class SettingsItemWidget extends StatelessWidget {
           leading: leading,
           title: Text(
             title,
-            style: context.kTextTheme.titleMedium!.copyWith(
+            style: AppTextTheme.kTitleMedium(
+              context,
               fontWeight: FontWeight.w400,
               color: color,
             ),

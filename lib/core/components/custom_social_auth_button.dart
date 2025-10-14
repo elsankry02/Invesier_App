@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_svgs.dart';
@@ -21,9 +22,7 @@ class CustomSocialAuthButton extends StatelessWidget {
         // Or connect with
         Text(
           local.orconnectwith,
-          style: context.kTextTheme.labelLarge!.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
+          style: AppTextTheme.kLabelLarge(context, fontWeight: FontWeight.w600),
         ),
         SizedBox(height: context.height * 0.015),
         Row(

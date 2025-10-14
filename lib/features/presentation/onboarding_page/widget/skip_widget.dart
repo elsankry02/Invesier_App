@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/extension/extension.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 class SkipWidget extends StatelessWidget {
   final void Function()? onTap;
@@ -18,7 +17,8 @@ class SkipWidget extends StatelessWidget {
           // skip
           child: Text(
             skip,
-            style: context.kTextTheme.titleMedium!.copyWith(
+            style: AppTextTheme.kTitleMedium(
+              context,
               fontWeight: FontWeight.w400,
             ),
           ),

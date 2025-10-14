@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../features/presentation/main_nav_bar/home/user_profile/view/user_connections_page.dart';
 
 import '../../features/data/models/get/get_user_profile_model.dart';
 import '../../features/presentation/complete_profile_page/view/complete_profile_page.dart';
@@ -23,6 +22,7 @@ import '../../features/presentation/main_nav_bar/home/setting/verification_reque
 import '../../features/presentation/main_nav_bar/home/setting/you_are_verified_page/you_are_verified_page.dart';
 import '../../features/presentation/main_nav_bar/home/transactions_history_page/transactions_history_page.dart';
 import '../../features/presentation/main_nav_bar/home/user_profile/view/other_user_profile_page.dart';
+import '../../features/presentation/main_nav_bar/home/user_profile/view/user_connections_page.dart';
 import '../../features/presentation/main_nav_bar/home/wallet_page/view/wallet_page.dart';
 import '../../features/presentation/main_nav_bar/learn_page/learn_page.dart';
 import '../../features/presentation/main_nav_bar/main_nav_bar_page/view/main_navigation_page.dart';

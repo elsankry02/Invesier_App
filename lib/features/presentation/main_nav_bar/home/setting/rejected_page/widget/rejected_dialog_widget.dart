@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../../../../../../../core/components/custom_icon_button.dart';
 import '../../../../../../../core/components/custom_primary_button.dart';
@@ -27,7 +28,8 @@ class RejectedDialogWidget extends StatelessWidget {
           ),
           Text(
             local.requestattemptnotice,
-            style: context.kTextTheme.titleMedium!.copyWith(
+            style: AppTextTheme.kTitleMedium(
+              context,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -35,7 +37,8 @@ class RejectedDialogWidget extends StatelessWidget {
           Text(
             textAlign: TextAlign.center,
             local.youcansendrequestspermonththiswilluseonecontinue,
-            style: context.kTextTheme.labelMedium!.copyWith(
+            style: AppTextTheme.kTitleMedium(
+              context,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -51,7 +54,8 @@ class RejectedDialogWidget extends StatelessWidget {
                   horizontal: context.height * 0.035,
                   vertical: context.height * 0.004,
                 ),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kTitleMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                 ),
                 onTap: () => context.router.maybePop(),
@@ -64,7 +68,8 @@ class RejectedDialogWidget extends StatelessWidget {
                   horizontal: context.height * 0.029,
                   vertical: context.height * 0.004,
                 ),
-                style: context.kTextTheme.labelMedium!.copyWith(
+                style: AppTextTheme.kLabelMedium(
+                  context,
                   fontWeight: FontWeight.w500,
                 ),
                 onTap: () {

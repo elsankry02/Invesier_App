@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invesier/core/constant/app_text_theme.dart';
 
 import '../constant/app_colors.dart';
-import '../extension/extension.dart';
 
 class CustomFollowersNumberWidget extends StatelessWidget {
   final String title;
@@ -31,14 +31,16 @@ class CustomFollowersNumberWidget extends StatelessWidget {
             // number
             Text(
               "$number",
-              style: context.kTextTheme.titleMedium!.copyWith(
+              style: AppTextTheme.kTitleMedium(
+                context,
                 fontWeight: FontWeight.w700,
               ),
             ),
             // title
             Text(
               title,
-              style: context.kTextTheme.labelMedium!.copyWith(
+              style: AppTextTheme.kLabelMedium(
+                context,
                 fontWeight: FontWeight.w400,
                 color: AppColors.kGray,
               ),
