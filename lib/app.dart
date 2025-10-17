@@ -35,7 +35,7 @@ class _InvesierAppState extends ConsumerState<InvesierApp> {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router.config(),
-      locale: Locale("en"),
+      locale: Locale('en'),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
