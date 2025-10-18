@@ -9,7 +9,6 @@ import '../../../../../../core/constant/app_svgs.dart';
 import '../../../../../../core/extension/extension.dart';
 import '../../../../../../core/router/router.dart';
 import '../../../../../data/providers/get/get_authenticated_user_provider.dart';
-import '../../../main_nav_bar_page/view/main_navigation_page.dart';
 
 class InvesierAppBar extends StatelessWidget {
   const InvesierAppBar({super.key});
@@ -32,9 +31,8 @@ class InvesierAppBar extends StatelessWidget {
               children: [
                 // Search  GestureDetector
                 GestureDetector(
-                  onTap: () {
-                    context.router.push(SearchRoute());
-                  },
+                  onTap: () => context.router.push(SearchRoute()),
+
                   child: SvgPicture.asset(
                     width: context.height * 0.020,
                     height: context.height * 0.020,
@@ -47,9 +45,7 @@ class InvesierAppBar extends StatelessWidget {
                 ),
                 // notifications
                 GestureDetector(
-                  onTap: () {
-                    context.router.push(NotificationRoute());
-                  },
+                  onTap: () => context.router.push(NotificationRoute()),
                   child: Stack(
                     alignment: Alignment.topRight,
                     children: [
@@ -84,9 +80,7 @@ class InvesierAppBar extends StatelessWidget {
                     final state = ref.watch(getAuthenticatedUserProvider);
 
                     return GestureDetector(
-                      onTap: () {
-                        scaffoldKey.currentState!.openDrawer();
-                      },
+                      onTap: () => Scaffold.of(context).openDrawer(),
                       child:
                           state is GetAuthenticatedUserSuccess
                               ? ClipOval(

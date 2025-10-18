@@ -30,7 +30,7 @@ class GetCommentNotifier extends Notifier<GetCommentState> {
   }
 
   Future<void> getComment({required int postId}) async {
-    final provider = ref.read(getCommnetServiceProvider);
+    final provider = ref.read(getCommentServiceProvider);
     state = GetCommentLoading();
 
     try {

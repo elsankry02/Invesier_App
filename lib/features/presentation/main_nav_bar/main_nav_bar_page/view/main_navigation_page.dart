@@ -21,9 +21,8 @@ class MainNavigationPage extends StatefulWidget {
   State<MainNavigationPage> createState() => _MainNavigationPageState();
 }
 
-final scaffoldKey = GlobalKey<ScaffoldState>();
-
 class _MainNavigationPageState extends State<MainNavigationPage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   int selectedIndex = 0;
   List<Widget> pages = [
     HomePage(),

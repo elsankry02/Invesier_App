@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:invesier/env.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/constant/app_strings.dart';
-import '../../../env.dart';
 import '../services/delete/delete_account_service.dart';
 import '../services/delete/delete_comment.dart';
 import '../services/delete/delete_post_service.dart';
@@ -127,7 +127,7 @@ final createPostCommentServiceProvider = Provider<CreatePostCommentService>((
 ) {
   return CreatePostCommentService(dio: ref.read(dioProvider));
 });
-final getCommnetServiceProvider = Provider<GetCommentService>((ref) {
+final getCommentServiceProvider = Provider<GetCommentService>((ref) {
   return GetCommentService(dio: ref.read(dioProvider));
 });
 final deleteCommentServiceProvider = Provider<DeleteCommentService>((ref) {
